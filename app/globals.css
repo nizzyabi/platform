@@ -91,11 +91,25 @@ html {
   }
 }
 
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
 .slide-in-left {
   animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 .slide-in-right {
   animation: 0.5s ease-out 0s 1 slideInFromRight;
+}
+.slide-in-top {
+  animation: 0.5s ease-out 0s 1 slideInFromTop;
 }
 
 /* Image Size */

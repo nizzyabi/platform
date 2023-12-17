@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Poppins } from 'next/font/google'
 import { Sofia_Sans} from 'next/font/google'
 import './globals.css'
+import AuthProvider from '@/components/AuthProvider'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <AuthProvider>
     <html lang="en" className='bg-secondary'>
       <body className={sofia.className}>
       
@@ -27,5 +29,6 @@ export default function RootLayout({
         
       </body>
     </html>
+    </AuthProvider>
   )
 }
