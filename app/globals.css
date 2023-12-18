@@ -8,6 +8,7 @@
 }
 html {
   scroll-behavior: smooth;
+  
 }
 
 @keyframes borderAndShadowGradient {
@@ -103,7 +104,7 @@ html {
 }
 
 .slide-in-left {
-  animation: 0.5s ease-out 0s 1 slideInFromLeft;
+  animation: 0.5s  ease-in 0s 1 slideInFromLeft;
 }
 .slide-in-right {
   animation: 0.5s ease-out 0s 1 slideInFromRight;

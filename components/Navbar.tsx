@@ -1,16 +1,20 @@
 'use client'
-
+import { dark } from "@clerk/themes";
 import Image from "next/image";
 import Link from "next/link";
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
-import {Sparkle} from 'lucide-react';
-import { SignInButton, SignOutButton } from "./SignInButton";
+import { SignUpButton, UserButton, UserProfile, auth, useAuth } from "@clerk/nextjs";
+import PersonIcon from '@mui/icons-material/Person';
+import AuthBtn from "./AuthBtn";
+
+
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
+    const { userId } = useAuth();
   return (
     <div className="w-full z-50 flex justify-between items-center px-2 cursor-pointer mt-3 mb-4">
         <div className="flex items-center ml-2 hover:scale-105 transition-transform duration-300 ease-in-out"
@@ -29,9 +33,9 @@ export default function Navbar() {
         <div className="flex items-center gap-x-6 text-lg md:text-2xl font-extrabold mr-2 ">
             <Link href="/plus">
                 <p 
-                    className="text-blue-500 border-blue-500 hover:text-purple-500 hover:border-purple-500 border rounded p-0.5 px-2"
+                    className="text-white bg-blue-500 hover:bg-purple-500 border-white border rounded p-0.5 px-2"
                 >
-                        plus
+                        pro <AutoAwesomeOutlinedIcon className="bg-transparent"/>
                 </p>
             </Link>
             <Link href="/guides">
@@ -48,14 +52,10 @@ export default function Navbar() {
                         courses
                 </p>
             </Link>
-            <Link href='/'>
-            
-                <VpnKeyIcon className="mb-1 small-screen text-white" />
-                <SignInButton />
-                <SignOutButton />
+            <div>
+                <AuthBtn />
                 
-                
-            </Link>
+            </div>
         </div>
         
     </div>
