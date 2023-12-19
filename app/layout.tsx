@@ -27,6 +27,7 @@ export default function RootLayout({
     <ClerkProvider appearance={{
       baseTheme: dark
     }}>
+      
     <html lang="en" className='bg-secondary'>
       <body className={sofia.className}>
         <Navbar />
