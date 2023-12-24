@@ -6,6 +6,8 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
+import Scroll from '@/components/Scroll'
+import Snowfall from 'react-snowfall'
 
 
 
@@ -31,6 +33,7 @@ export default function RootLayout({
     <html lang="en" className='bg-secondary'>
       <body className={sofia.className}>
         <Navbar />
+        <Scroll />
             {children}
       </body>
     </html>
