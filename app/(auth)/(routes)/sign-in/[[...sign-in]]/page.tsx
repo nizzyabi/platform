@@ -1,24 +1,43 @@
-import { SignIn } from "@clerk/nextjs";
-import { dark, neobrutalism } from "@clerk/themes";
+'use client'
+import React from "react";
+import signIn from "../../../../firebase/auth/signin";
+import { useRouter } from 'next/navigation'
 
-export default function Page() {
-  return (
-  <div className="flex items-center justify-center">
+function Page () {
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const router = useRouter()
 
-        <SignIn 
-  appearance={{
-    baseTheme: neobrutalism,
-    elements: {
-      
-        
-        formButtonPrimary:
-          "bg-purple-500 hover:bg-white hover:text-black text-sm normal-case font-extrabold",
-         socialButtonsBlockButton: "hover:bg-[#191919] hover:scale-105 transition-transform duration-300 ease-in-out",
-         headerSubtitle: "text-white",
-         footerActionText: "text-white",
-         footerActionLink: "text-purple-500",
-      },
-  }}/>   
-  </div>
-  )
+    const handleForm = async (event:any) => {
+        event.preventDefault()
+
+        const { result, error } = await signIn(email, password);
+
+        if (error) {
+            return console.log(error)
+        }
+
+        // else successful
+        console.log(result)
+        return router.push("/courses")
+    }
+    return (<div className="wrapper">
+        <div className="form-wrapper">
+            <h1 className="mt-60 mb-30">Sign in</h1>
+            <form onSubmit={handleForm} className="form">
+                <label htmlFor="email">
+                    <p>Email</p>
+                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
+                </label>
+                <label htmlFor="password">
+                    <p>Password</p>
+                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
+                </label>
+                <button type="submit">Sign in</button>
+            </form>
+        </div>
+
+    </div>);
 }
+
+export default Page;

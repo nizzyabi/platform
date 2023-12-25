@@ -49,10 +49,10 @@ export default function LandingPage() {
   });
 
   return (
-    <div>
+    <div className=''>
     
       
-        <div className='flex flex-col md:flex-row justify-center md:justify-between items-start mx-8 mt-[10px] md:mx-[120px]'>
+        <div className='flex flex-col md:flex-row justify-center md:justify-between items-start mx-8 mt-[10px] md:mx-[120px] bg-none'>
         {/* Intro Text */}
         <div className='text-center mt-8 md:mt-0 md:pr-10 w-full md:max-w-xl lg:max-w-2xl md:self-center'>
             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-2 slide-in-top'>
@@ -62,7 +62,7 @@ export default function LandingPage() {
             
 
             <Link href='/courses'>
-                <Button className='font-extrabold rounded hover:bg-purple-500 hover:scale-105 transition-transform text-xl bg-purple-500 text-white mt-[20px]'>
+                <Button className='font-extrabold rounded hover:bg-purple-500 hover:scale-105 transition-transform text-xl bg-purple-500 text-white mt-[20px] '>
                 Let's Start <LocalFireDepartmentIcon className='bg-transparent ml-2'/>
                 </Button>
             </Link>

@@ -1,43 +1,52 @@
 'use client'
-import { Separator } from '@/components/ui/separator'
-import { useAuth, useUser  } from '@clerk/nextjs'
-import VerifiedIcon from '@mui/icons-material/Verified';
-import { useClerk } from "@clerk/clerk-react";
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getAuth, onAuthStateChanged, signOut as firebaseSignOut } from 'firebase/auth';
+import firebase_app from '@/app/firebase/config';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
-export default function page() {
-  const { signOut } = useClerk();
-  const router = useRouter()
-  const {user} = useUser()
-  const joinedDate = user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A';
-  const primaryEmail = user?.primaryEmailAddress?.emailAddress || 'No primary email';
+export default function Page() {
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+  const auth = getAuth(firebase_app);
 
-  
-  const {userId} = useAuth()
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser); // Update the user state when the auth state changes
+    });
+
+    return () => unsubscribe(); // Unsubscribe from the listener when the component unmounts
+  }, [auth]);
+
+  const joinedDate = user?.metadata.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'N/A';
+  const userEmail = user?.email || 'No email';
+
+  const signOutUser = () => {
+    firebaseSignOut(auth)
+      .then(() => {
+        router.push("/");
+      })
+      .catch((error) => {
+        console.error("Sign out error", error);
+      });
+  };
+
   return (
-    <div>
-      <div className='h-full p-4 space-y-2 max-w-3xl mx-auto'>
-        <div>
-          <h3 className="text-4xl mb-2 font-extrabold pb-2">Settings</h3>
-          <Separator className='bg-gray-500'/>
-        </div>
-
-        <div className='text-lg space-y-2'>
-          <h3 className="text-3xl mb-2 font-bold pb-2 ">Account</h3>
-
-          
-          <h4 className='text-xl font-extrabold'>User Type: <span className='opacity-70 text-xl font-medium'>PRO</span></h4>
-          <h4 className='text-xl font-extrabold'>Dev Email: <span className='font-medium'>{primaryEmail}<VerifiedIcon className='mb-1 text-sm ml-1'/></span></h4>
-          <h4 className='text-xl font-extrabold'>Joined In: <span className='font-medium'>{joinedDate}</span></h4>
-        </div>
-
-        <Button className='rounded bg-violet-600 hover:bg-violet-600 hover:transition-transform hover:scale-105' onClick={() => signOut(() => router.push("/"))}>
-          <p className='font-extrabold text-lg bg-violet-600 hover:bg-violet-600'>sign out</p>
-        </Button>
-
-      </div>
+    <div className='h-full p-4 space-y-2 max-w-3xl mx-auto'>
+      {/* ... rest of your component */}
+      
+      <div className='text-lg space-y-2'>
+        {/* ... other settings */}
         
+        <h4 className='text-xl font-extrabold'>Dev Email: <span className='font-medium'>{userEmail}<VerifiedIcon className='mb-1 text-sm ml-1'/></span></h4>
+        <h4 className='text-xl font-extrabold'>Joined In: <span className='font-medium'>{joinedDate}</span></h4>
+      </div>
+
+      <Button className='rounded bg-violet-600 hover:bg-violet-600 hover:transition-transform hover:scale-105' onClick={signOutUser}>
+        <p className='font-extrabold text-lg bg-violet-600 hover:bg-violet-600'>sign out</p>
+      </Button>
     </div>
-  )
+  );
 }

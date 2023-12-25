@@ -25,21 +25,21 @@ export default function Navbar() {
     
     const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="w-full z-50 flex justify-between items-center px-2 cursor-pointer mt-3 mb-4">
+    <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer  bg-none">
         <Link href='/' className="flex items-center ml-2"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >
             <Image 
                 src={isHovered ? '/logo2.svg' : '/logo.svg'}
-                width={50}  // Base width
-                height={50}
+                width={30}  // Base width
+                height={30}
                 alt='logos2'
                 className="responsive-image"
                 
             />
         </Link>
-        <div className="flex items-center gap-x-6 text-lg md:text-2xl font-extrabold mr-2 ">
+        <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 ">
             <Link href="https://nizzyabi-roadmap.com/landing">
                 <p 
                     className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-400 hover:scale-105 transition-transform  "

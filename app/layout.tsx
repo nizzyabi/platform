@@ -8,6 +8,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
 import Scroll from '@/components/Scroll'
 import Snowfall from 'react-snowfall'
+import { Toaster } from '@/components/ui/toaster'
 
 
 
@@ -30,11 +31,12 @@ export default function RootLayout({
       baseTheme: dark
     }}>
       
-    <html lang="en" className='bg-secondary'>
+    <html lang="en" className='bg-transparent'>
       <body className={sofia.className}>
         <Navbar />
         <Scroll />
             {children}
+            <Toaster />
       </body>
     </html>
     </ClerkProvider>
