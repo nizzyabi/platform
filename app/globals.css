@@ -6,17 +6,16 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  background: #191919;
-  color: white;
-}
+
 html {
+  min-height: 100vh;
   scroll-behavior: smooth;
+  background: #191919;
+  background-image: linear-gradient(#191919, #2c2c2c);
+  color: white;
+  
   
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .small-screen {
@@ -40,12 +39,16 @@ html {
 
 @keyframes slideInFromBottom {
   0% {
-      transform: translateY(100%);
-      opacity: 0;
+    transform: translateY(100%);
+    /* Ensure the element is still hidden at the start of the animation */
+    opacity: 0;
+  }
+  /* Start making the element visible as the animation progresses */
+  1% {
+    opacity: 1;
   }
   100% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -92,7 +95,9 @@ html {
   animation: 0.5s ease-out 0s 1 slideInFromTop;
 }
 .slide-in-bottom {
+  opacity: 0; 
   animation: 0.5s ease-out 0s 1 slideInFromBottom;
+  animation-delay: 2s;
 }
 
 

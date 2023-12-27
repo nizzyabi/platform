@@ -1,13 +1,4 @@
 {
-  "name": "platform",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
     "@clerk/nextjs": "^4.28.1",
     "@clerk/themes": "^1.7.9",
@@ -22,7 +13,8 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
-    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/supabase-js": "^2.39.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -33,12 +25,13 @@
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.297.0",
     "next": "14.0.4",
-    "next-auth": "^4.24.5",
+    "next-auth": "^4.23.2",
     "next-cloudinary": "^5.13.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-activity-calendar": "^2.2.1",
     "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
     "react-github-calender": "^1.1.0",
     "react-icons": "^4.12.0",
     "react-intersection-observer": "^9.5.3",
@@ -48,6 +41,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@grafbase/sdk": "~0.13.1",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -55,5 +50,14 @@
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "name": "platform",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }

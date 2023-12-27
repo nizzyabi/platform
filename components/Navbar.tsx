@@ -1,26 +1,18 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
-import AuthBtn from "./AuthBtn";
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-  } from "@/components/ui/dialog"
-import { SignIn, UserButton } from "@clerk/nextjs";
-import { dark, neobrutalism } from "@clerk/themes";
+import { useState, useEffect } from "react";
+import { Avatar } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 
 
 
 
 export default function Navbar() {
+
     const[isLoading, setIsLoading] = useState(true);
     
     const [isHovered, setIsHovered] = useState(false);
@@ -61,9 +53,11 @@ export default function Navbar() {
                         courses
                 </p>
             </Link>
-            <div>
-                <AuthBtn />
-            </div>
+
+            {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
+            <Link href='/profile' className="transition-transform">
+                <Avatar alt='logo' src="nizar.png" className="hover:border hover:border-gray-400" sx={{ width: 52, height: 52 }}/>
+            </Link>
             
         </div>
         

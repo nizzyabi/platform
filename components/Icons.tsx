@@ -6,14 +6,29 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useInView } from 'react-intersection-observer';
+
 
 
 
 
 export default function Icons() {
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   return (
-    <div className=" space-y-4 pt-[60px] ">
+    <div data-aos='fade-down' className=" space-y-4 pt-[60px]">
         <div className='text-4xl font-extrabold text-center'>
             <h1 className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 '>Our Values</h1>
         </div>
@@ -24,7 +39,7 @@ export default function Icons() {
 
                   <div>
                     <Dialog>
-                      <DialogTrigger className='hover:scale-110 transition-transform'>
+                      <DialogTrigger className='hover:scale-105 transition-transform'>
                         <BiBook />
                         <p className='text-center text-xl'>learn</p>
                       </DialogTrigger>
@@ -40,7 +55,7 @@ export default function Icons() {
 
                   <div>
                   <Dialog>
-                      <DialogTrigger className='hover:scale-110 transition-transform'>
+                      <DialogTrigger className='hover:scale-105 transition-transform'>
                         <BiCode />
                         <p className='text-center text-xl'>apply</p>
                       </DialogTrigger>
@@ -55,7 +70,7 @@ export default function Icons() {
 
                   <div>
                   <Dialog>
-                      <DialogTrigger className='hover:scale-110 transition-transform'>
+                      <DialogTrigger className='hover:scale-105 transition-transform'>
                         <BiBrain />
                         <p className='text-center text-xl'>patience</p>
                       </DialogTrigger>
@@ -70,7 +85,7 @@ export default function Icons() {
 
                   <div>
                   <Dialog>
-                      <DialogTrigger className='hover:scale-110 transition-transform'>
+                      <DialogTrigger className='hover:scale-105 transition-transform'>
                         <BiConversation />
                         <p className='text-center text-xl'>community</p>
                       </DialogTrigger>
