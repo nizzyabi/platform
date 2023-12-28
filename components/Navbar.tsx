@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Separator } from "./ui/separator";
 
 
 
@@ -17,6 +18,16 @@ export default function Navbar() {
     
     const [isHovered, setIsHovered] = useState(false);
   return (
+    <div>
+
+            <div className="text-center pt-4 pb-4  border-b border-gray-300/20 font-bold text-lg">
+                <Link href='https://youtube.com/@NizzyABI?si=dffeDkbsPfFQ24Ez' className="hover:opacity-70 flex items-center justify-center">
+                    <p className="hover:opacity:70">subscribe for daily videos! </p>
+                    <ArrowRightAltIcon className="ml-2"/>
+                </Link>
+                
+            </div>
+    
     <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer  bg-none">
         <Link href='/' className="flex items-center ml-2"
         onMouseEnter={() => setIsHovered(true)}
@@ -61,6 +72,7 @@ export default function Navbar() {
             
         </div>
         
+    </div>
     </div>
   )
 }

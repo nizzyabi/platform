@@ -11,6 +11,7 @@ import Icons from './Icons';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 
 
@@ -28,13 +29,11 @@ export default function LandingPage() {
     <div>
     
       {/* Intro Bar */}
-        <div className='flex flex-col md:flex-row justify-center md:justify-between items-start mx-8 mt-[10px] md:mx-[120px] bg-transparent'>
+        <div className='flex flex-col md:flex-row justify-center md:justify-between items-start mx-8 md:mx-[120px] mt-[10px] bg-transparent'>
         {/* Intro Text */}
         <div className='text-center mt-8 md:mt-0 md:pr-10 w-full md:max-w-xl lg:max-w-2xl md:self-center'>
-            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-2' data-aos="fade-right">
-                BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 '>PROGRAMMER</span>
-            </h1>
-            <h1 data-aos="fade-right" className='text-xl sm:text-base md:text-xl lg:text-2xl font-bold text-'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500'>fun</span> doing it.</h1>
+            
+            <h1 data-aos="fade-right" className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-2'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500'>fun</span> doing it.</h1>
           
             {/* Start Button */}
             <Link href='/courses'>
@@ -51,13 +50,14 @@ export default function LandingPage() {
       
         </div>
           
-          {/* Icons */}
+          {/* Icons 
         <div>
           <Icons data-aos='fade-up'/>
         </div>
+        */}
         
         {/* Arrow ref={ref7}*/}
-        <div className={`transition-all duration-100 flex items-center justify-center pt-[50px]`}>
+        <div className={`transition-all duration-100 flex items-center justify-center pt-[150px]`}>
           <p data-aos="fade-right" className='text-6xl arrowDown'>⏬</p>
         </div>
 
@@ -72,6 +72,10 @@ export default function LandingPage() {
           <div className='flex items-center justify-center'>
             <h1 className='mt-[100px] text-center text-3xl font-extrabold' data-aos='fade-left'>You only retain <span className='text-5xl text-purple-500'>5% - 10%</span> of what you read or watch, which is why you're struggling...</h1>
           </div>
+          {/* Add Pyramid Here*/}
+          <div className='flex justify-center items-center' data-aos='fade-up'>
+            <Image alt='pyramid' src='/pyramid.svg' width={900} height={500} className='flex items-center justify-center pt-[100px]'/>
+          </div>
           <div className='flex items-center justify-center pt-[100px]'>
             <p data-aos='fade-up'className='text-6xl arrowDown'>⏬</p>
           </div>
@@ -81,9 +85,12 @@ export default function LandingPage() {
         <div>
           <div className='flex items-center justify-center mt-[250px]'>
             <h1 data-aos='fade-right' className='rounded px-2 py-1.5 outline-dashed outline-blue-500 font-extrabold text-6xl text-blue-500 text-center'>Reality Check 😬</h1>
+
+            {/* Add Pictures Here*/}
+
           </div>
           <div className='flex items-center justify-center'>
-            <h1 data-aos='fade-left' className='mt-[100px] text-center text-3xl font-extrabold'>It is <span className='text-orange-500 text-5xl'>IMPOSSIBLE</span> to learn code by watching videos and assisted work </h1>
+            <h1 data-aos='fade-left' className='mt-[100px] text-center text-3xl font-extrabold'>It is <span className='text-orange-500 text-5xl'>IMPOSSIBLE</span> to learn code by watching videos and assisted work...I tried </h1>
           </div>
           <div className='transition-all duration-100 flex items-center justify-center pt-[100px]'>
             <p data-aos='fade-up' className='text-6xl arrowDown'>⏬</p>
@@ -99,7 +106,7 @@ export default function LandingPage() {
             <h1 data-aos='fade-left' className='mt-[100px] text-center text-3xl font-bold pt-6'>The only way to learn code successfully is through <span className='text-5xl text-pink-500'>Project Based Learning</span> ( PBL). You retain 75% - 80% of what you learning using PBL. </h1>
           </div>
           <div className='flex items-center justify-center pt-[30px] ml-[20px]'>
-            <Lottie animationData={arrow} className='w-[250px] h-[250px]'/>
+            <Lottie animationData={arrow} className='w-[250px] h-[250px]' loop={false}/>
          </div>
         </div>
 

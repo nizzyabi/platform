@@ -4,31 +4,50 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
 
-
+const guides = [
+  {
+    title: "Deep Work",
+    image: "/deepwork.svg",
+    link: "/deepwork",
+    subjects: [
+      "Deep Work",
+      "Flow State",
+      "Focus",
+      "Attention",
+    ],
+    description: "Learn how to focus and get into a flow state.",
+  },
+  {
+    title: "Productivity",
+    image: "/productivity.svg",
+    link: "/productivity",
+    subjects: [
+      "Productivity",
+      "Notion",
+      "Todoist",
+      "Evernote",
+    ],
+    description: "Learn how to be productive and use productivity tools.",
+  },
+  {
+    title: "Full Learning Guide",
+    image: "/learning.svg",
+    link: "/full",
+    subjects: [
+      "Full Learning Guide",
+      "Learning",
+      "Productivity",
+      "Deep Work",
+    ],
+    description: "Learn how to learn and be productive.",
+  },
+];
 
 export default function Guides() {
 
-  const guides = [
-    {
-      title: "Deep Work",
-      description: "Learn how to focus and get into the flow state.",
-      image: "/deepwork.jpeg",
-      link: "/deepwork",
-    },
-    {
-      title: "Productivity",
-      description: "Learn how to be productive and get more done.",
-      image: "/notion.png",
-      link: "/productivity",
-    },
-    {
-      title: "Full Learning Guide",
-      description: "Learn how to learn and master any skill.",
-      image: "/nizar.png",
-      link: "/full",
-    },
-  ];
+  
   
 
   useEffect(() => {
@@ -39,61 +58,51 @@ export default function Guides() {
     });
   }, []);
     return (
-      <div>
+      <div >
   
           {/*title*/}
           <div className="text-center">
               <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Guides</h1>
               <p className="text-lg md:text-xl pt-1">learn how to learn through detailed & applicable videos.</p>
           </div>
-          <div data-aos='fade-left' className="px-4 flex justify-center space-x-4 pt-4">
-          {/* Reactjs */}
-          <div className="flex flex-col items-center">
-            <Link href='/deepwork' className="border border-gray-400 w-[200px] rounded-xl hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center">
-            <Image 
-              src='/deepwork.jpeg' 
-              width={290} 
-              height={270} 
-              alt='react'
-              className="hover:opacity-70"
-            />
-          </Link>
-          <h3 className="text-xl font-semibold text-center pt-3">Deep Work</h3>
-          
-          </div>
-            
-          {/* Nextjs */}
-          <div className="flex flex-col items-center">
-            <Link href='/productivity' className="border border-gray-400 w-[200px] rounded-xl hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center">
-            <Image 
-              src='/notion.png' 
-              width={170} 
-              height={170} 
-              alt='next'
-              className="hover:opacity-70"
-            />
-          </Link>
-          <h3 className="text-xl font-semibold text-center pt-3">Productivity</h3>
-          
-          </div>
 
-          {/* JavaScript */}
-          <div className="flex flex-col items-center">
-            <Link href='/full' className="border border-gray-400 w-[200px] rounded-xl hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center">
-            <Image 
-              src='/nizar.png' 
-              width={170} 
-              height={170} 
-              alt='next'
-              className="hover:opacity-70"
-            />
-          </Link>
-          <h3 className="text-xl font-semibold text-center pt-3">Full Learning Guide</h3>
-          
-          </div>
+          {/* Guides */}
 
+          <div data-aos='fade-left' className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
+            {guides.map((guide) => (
+              <Card key={guide.title} className="rounded-xl cursor-pointer border border-gray-500 border-opacity-70 bg-gray shadow-2xl hover:scale-105 transition-transform duration-500">
+                <Link href={`/guides${guide.link}`}>
+                <CardHeader className="flex items-center justify-center text-center text-muted-foreground p-0 ">
+                  <div className=" relative w-full h-[200px] ">
+                    <Image 
+                      src={guide.image}
+                      alt={guide.title}
+                      layout="fill"
+                      className="rounded-t-xl object-cover"
+                    />
+                  </div>
+                </CardHeader>
+
+                <div className=" pt-2">
+
+                <p className="font-extrabold text-center text-xl ">{guide.title}</p>
+
+                <p className="font-semibold text-center px-2 pt-5 ">{guide.description}</p>
+                
+                <CardFooter className="flex items-center justify-between text-xs text-muted-foreground pt-12 ">
+                  <p className="flex flex-wrap gap-2 justify-start mt-2 ">{guide.subjects.map((subject, index) => (
+                    <span key={index} className="text-sm font-medium bg-gray-700 text-white rounded px-2 py-1">{subject}</span>
+                  
+                  ))}</p>
+                </CardFooter>
+                </div>
+                </Link>
+              </Card>
+            ))}
+
+          </div>
+        
           
-        </div>
           
       </div>
     )
