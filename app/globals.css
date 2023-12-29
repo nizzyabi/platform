@@ -8,7 +8,7 @@
 
 
 html {
-  min-height: 100vh;
+  
   scroll-behavior: smooth;
   background: #191919;
   background-image: linear-gradient(#191919, #2c2c2c);
@@ -127,7 +127,9 @@ html {
 @media screen and (max-width: 599px) {
   .image-container {
       width: 50px; /* Smaller on mobile */
-      height: 50px; /* Adjust height as needed */
+      height: 50px;
+      
+      /* Adjust height as needed */
   }
 }
 
