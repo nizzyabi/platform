@@ -43,7 +43,7 @@ export default function Navbar() {
             />
         </Link>
         <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 ">
-            <Link href="https://nizzyabi-roadmap.com/landing">
+            <Link href="/roadmap">
                 <p 
                     className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-400 hover:scale-105 transition-transform  "
                 >
