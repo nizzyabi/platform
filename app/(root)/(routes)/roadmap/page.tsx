@@ -227,10 +227,10 @@ export default function RoadmapPage() {
             <div data-aos='fade-left'>
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
-                <div key={index} className="mt-8 space-y-6 max-w-xl mx-auto rounded p-5 border shadow-md shadow-white hover:shadow-violet-500 hover:scale-105 transition-transform duration-500">
+                <div key={index} className="mt-8 space-y-6 max-w-xl mx-auto rounded p-5  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-700">
                     <div className="flex justify-between ">
-                        <h1 className="text-4xl font-bold">{item.title}</h1>
-                        <p className="font-bold text-4xl md: text-md">{item.number}</p>  
+                        <h1 className="text-4xl font-extrabold">{item.title}</h1>
+                        <p className="font-semibold text-4xl md: text-md">{item.number}</p>  
                     </div>
 
                     <p className="text-center font-semibold text-slate-300 text-lg">{item.description}</p>

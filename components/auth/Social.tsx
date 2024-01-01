@@ -10,7 +10,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-                className='w-full rounded hover:scale-105 transition-transform duration-500 shadow-sm shadow-black'
+                className='w-full rounded hover:scale-105 transition-transform duration-500 shadow-sm shadow-black border-2'
                 variant="outline"
                 onClick={() => {}}
             >
@@ -19,7 +19,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-            className='w-full rounded hover:scale-105 transition-transform duration-500 shadow shadow-black'
+            className='w-full rounded hover:scale-105 transition-transform duration-500 shadow shadow-black border-2'
                 variant="outline"
                 onClick={() => {}}
             >
