@@ -15,27 +15,37 @@ import Image from 'next/image';
 import { BiLogoDiscord, BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import { Separator } from './ui/separator';
-import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
 
-const courses = [
+
+const icons1 = [
   {
-    title: "React",
-    image: "/landingreact.svg",
-    link: "/react",
-    
+    name: "Discord",
+    icon: <BsDiscord className='text-blue-500 text-4xl lg:text-5xl'/>
   },
   {
-    title: "Full Coding Guide",
-    image: "/fullguide.svg",
-    link: "/fullguide",
-    
+    name: "Youtube",
+    icon: <BsYoutube className='text-red-500 text-4xl lg:text-5xl'/>
   },
   {
-    title: "HTML & CSS",
-    image: "/landinghtmlcss.svg",
-    link: "/html-css",
+    name: "Github",
+    icon: <BsGithub className='text-black text-4xl lg:text-5xl'/>
   },
-];
+]
+
+const icons2 = [
+  {
+    name: "React",
+    icon: <BiLogoReact className='text-cyan-500 text-5xl lg:text-6xl'/>
+  },
+  {
+    name: "Javascript",
+    icon: <BiLogoJavascript className='text-yellow-400 text-5xl lg:text-6xl'/>
+  },
+  {
+    name: "HTML",
+    icon: <BiLogoHtml5 className='text-orange-500 text-5xl lg:text-6xl'/>
+  },
+]
 
 
 export default function LandingPage() {
@@ -54,37 +64,42 @@ export default function LandingPage() {
       {/* Landing */}
       <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4'>
         {/* Text + Button */}
-        <div className='flex-1 flex flex-col items-center justify-center ml-4'>
+        <div className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
           {/* Main text*/}
           <div className='flex items-center justify-center'>
-            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>Become a Software Developer</h1>
+            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500'>SOFTWARE</span> DEVELOPER</h1>
           </div>
           {/* Sub text */}
           <div>
-            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold'>Learn to code and have fun doing it.</p>
+            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>Learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
           </div>
 
           {/* Button */}
-          <div>
-            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6'>Let's Start <LocalFireDepartmentIcon /></Button>
+          <div className='pt-4'>
+            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
           </div>
         </div>
 
 
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center'>
-          <div className='px-6 py-6 shadow-lg shadow-white'>
+          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-slate-400 rounded lg:mr-12'>
             {/*cards*/}
-            <div className='flex space-x-10 mb-3'>
-              <div className='bg-slate-200 shadow-lg shadow-blue-500 h-[80px] w-[80px] rounded flex justify-center items-center'><BsDiscord className='text-blue-500 text-4xl'/></div>
-              <div className='bg-slate-200 shadow-lg shadow-red-500 h-[80px] w-[80px] rounded flex justify-center items-center'><BsYoutube className='text-red-500 text-4xl'/></div>
-              <div className='bg-slate-200 shadow-lg shadow-black h-[80px] w-[80px] rounded flex justify-center items-center'><BsGithub className='text-black text-4xl'/></div>
+            <div className='flex space-x-10 mb-3 lg:mb-5'>
+              {icons1.map((i) => (
+                <div className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+              ))}
+
             </div>
             {/*cards 2*/}
             <div className='flex space-x-10'>
-              <div className='bg-slate-200 shadow-lg shadow-cyan-500 h-[80px] w-[80px] rounded flex justify-center items-center'><BiLogoReact className='text-cyan-500 text-5xl'/></div>
-              <div className='bg-slate-200 shadow-lg shadow-yellow-500 h-[80px] w-[80px] rounded flex justify-center items-center'><BiLogoJavascript className='text-yellow-400 text-5xl'/></div>
-              <div className='bg-slate-200 shadow-lg shadow-orange-500 h-[80px] w-[80px] rounded flex justify-center items-center'><BiLogoHtml5 className='text-orange-500 text-5xl'/></div>
+              {icons2.map((i) => (
+                <div className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+              ))}
+
+
+
+             
             </div>
           </div>
         </div>
@@ -95,7 +110,7 @@ export default function LandingPage() {
         <p className='text-6xl'>⏬</p>
       </div>
 
-      {/* Description */}
+      {/* Guides Description */}
       <div>
         <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Guides</h1>
         <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>Learn to code and have fun doing it.</p>
@@ -106,33 +121,29 @@ export default function LandingPage() {
 
       </div>
 
-      {/* Cards */}
-      <div data-aos='fade-left' className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
-            {courses.map((course) => (
-              <Card key={course.title} className="rounded-xl cursor-pointer border border-gray-500 border-opacity-70 bg-gray shadow-2xl hover:scale-105 transition-transform duration-500">
-                <Link href={`/guides${course.link}`}>
-                <CardHeader className="flex items-center justify-center text-center text-muted-foreground p-0 ">
-                  <div className=" relative ">
-                    <Image 
-                      src={course.image}
-                      alt={course.title}
-                      height={500}
-                      width={500}
-                      className="rounded-xl object-cover"
-                    />
-                  </div>
-                </CardHeader>
-                </Link>
-              </Card>
-            ))}
+      {/*Arrow*/}
+      <div className=' text-center finger pt-[90px]'>
+        <p className='text-6xl'>⏬</p>
+      </div>
 
-          </div>
+      {/* Coaching Description */}
+      <div>
+        <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Coaching</h1>
+        <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>Get 1-on-1 lessons & your questions answered!</p>
 
+        <div className='flex items-center justify-center'>
+          <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+        </div>
 
-       
-        
-        {/* Footer */}
-        <Footer />
+      </div>
+
+      {/*Arrow*/}
+      <div className=' text-center finger pt-[90px]'>
+        <p className='text-6xl'>⏬</p>
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
