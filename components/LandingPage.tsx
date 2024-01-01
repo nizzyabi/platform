@@ -80,7 +80,7 @@ export default function LandingPage() {
 
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center'>
-          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-slate-400 rounded lg:mr-12'>
+          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12'>
             {/*cards*/}
             <div className='flex space-x-10 mb-3 lg:mb-5'>
               {icons1.map((i, index) => (

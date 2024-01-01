@@ -14,6 +14,8 @@ import {
 import { LoginSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { FormError } from "@/components/Form-Error";
+import { FormSuccess } from "@/components/Form-Success";
 
 export const LoginForm = () => {
     // Form Hook
@@ -82,6 +84,11 @@ export const LoginForm = () => {
                             )}
                         />
                     </div>
+                    {/* Form Error */}
+                    <FormError message="" />
+                    {/* Form Success */}
+                    <FormSuccess message="" />
+
                     {/* Submit Button */}
                     <Button 
                         type="submit"

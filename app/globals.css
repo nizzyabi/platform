@@ -16,9 +16,6 @@ html {
   
   
 }
-.email-input::placeholder {
-  color:#A8A8A8; /* Light grey color */
-}
 
 @media screen and (max-width: 768px) {
   .small-screen {

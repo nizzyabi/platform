@@ -7,6 +7,11 @@ import Footer from "@/components/Footer";
 import { Separator } from "@/components/ui/separator";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BiBrain, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
+import { FaFreeCodeCamp, FaNode, FaNodeJs, FaTools } from "react-icons/fa";
+import { IoBuildOutline } from "react-icons/io5";
+import { TbBrandNextjs } from "react-icons/tb";
+import { GiHammerNails } from "react-icons/gi";
 
 
 export default function RoadmapPage() {
@@ -21,12 +26,12 @@ export default function RoadmapPage() {
                 {
                     title: 'Basics',
                     link: 'https://youtu.be/zOjov-2OZ0E?si=7Y_LnQZ_mj10SfhG',
-                    image: 'youtube.png'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'cs50',
                     link: 'https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?utm_source=google&utm_campaign=19315581336&utm_medium=cpc&utm_term=cs50&hsa_acc=7245054034&hsa_cam=19315581336&hsa_grp=144242542723&hsa_ad=642052609431&hsa_src=g&hsa_tgt=kwd-296840910&hsa_kw=cs50&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiA9dGqBhAqEiwAmRpTC1knf9hYdaVMlE5mOdfTYfbbCW1kFNlkMka0vZ0XDe-kCGTsRW3HMRoCq9wQAvD_BwE',
-                    image: 'cs50.jpeg'
+                    icon: <BiSolidSchool className="text-blue-600"/>
                 }
             ]           
         },
@@ -38,17 +43,17 @@ export default function RoadmapPage() {
                 {
                     title: 'FCC',
                     link: 'https://www.freecodecamp.org/learn/2022/responsive-web-design/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Git',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'youtube.png'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'Project',
                     link: 'https://youtu.be/p0bGHP-PXD4?si=s08EKVPT3caNgzxN/',
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 }
             ]
 
@@ -61,17 +66,17 @@ export default function RoadmapPage() {
                 {
                     title: 'FCC',
                     link: 'https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'JavaScript',
                     link: 'https://youtu.be/PkZNo7MFNFg?si=iYfLsiYjPP2h7DN5',
-                    image: 'javascript-logo.png'
+                    icon: <BiLogoJavascript className="text-yellow-400" />
                 },
                 {
                     title: 'Project',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 },
             ]
 
@@ -84,22 +89,22 @@ export default function RoadmapPage() {
                 {
                     title: 'React',
                     link: 'https://fullstackopen.com/en/',
-                    image: 'reacting.png'
+                    icon: <BiLogoReact className="text-cyan-500" />
                 },
                 {
                     title: 'React Project',
                     link: "https://youtu.be/b9eMGE7QtTk?si=HPCbJHJaBkGZq3OS",
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 },
                 {
                     title: 'Next',
                     link: 'https://www.youtube.com/watch?v=wm5gMKuwSYk',
-                    image: 'next.webp'
+                    icon: <TbBrandNextjs className="text-black"/>
                 },
                 {
                     title: 'Next Project',
                     link: "https://youtu.be/pUNSHPyVryU?si=pyuPmFD1qQVUcSs-",
-                    image: 'tools.png'
+                    icon: <GiHammerNails className="text-purple-500"/>
                 },
                
             ]
@@ -113,22 +118,22 @@ export default function RoadmapPage() {
                 {
                     title: 'MongoDB',
                     link: 'https://youtu.be/ofme2o29ngU?si=tN6vQG1kF_dlnd2h',
-                    image: 'mongodb.png'
+                    icon: <BiLogoMongodb className="text-green-500" />
                 },
                 {
                     title: 'Node',
                     link: 'https://youtu.be/SccSCuHhOw0?si=8WinLJlJl0bpF-DA',
-                    image: 'express.png'
+                    icon: <FaNode className="text-green-600" />
                 },
                 {
                     title: 'MongoDB, Node, Express',
                     link: 'https://www.freecodecamp.org/learn/back-end-development-and-apis/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Youtube',
                     link: 'https://youtu.be/Agw0LdW9xB4?si=3EUsRTSNq8-C3Z0w',
-                    image: 'tools.png',
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 
                 
@@ -239,7 +244,7 @@ export default function RoadmapPage() {
                         {item.resources.map((resource, resIndex) => (
                             <Link key={resIndex} href={resource.link}>
                                 
-                                    <Image src={`/${resource.image}`} height={40} width={40} alt={resource.title} className="rounded-full border-2 border-gray-500 hover:opacity-70 duration-500"/>
+                                    <p className="text-5xl bg-slate-200 shadow-xl shadow-black hover:scale-105 transition-transform duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">{resource.icon}</p>
                                 
                             </Link>
                         ))}
