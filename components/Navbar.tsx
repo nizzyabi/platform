@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Separator } from "./ui/separator";
+import { LoginButton } from "./auth/Login-Button";
 
 
 
@@ -66,9 +67,9 @@ export default function Navbar() {
             </Link>
 
             {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
-            <Link href='/profile' className="transition-transform">
+            <LoginButton>
                 <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
-            </Link>
+            </LoginButton>
             
         </div>
         

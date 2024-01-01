@@ -28,11 +28,7 @@ export default function RootLayout({
 }) {
   return (
    
-    <ClerkProvider appearance={{
-      baseTheme: dark,
-      signIn: { baseTheme: neobrutalism },
-      signUp: { baseTheme: neobrutalism },
-      }}>
+    
     <html lang="en">
       <body className={sofia.className}>
         <Navbar />
@@ -41,7 +37,7 @@ export default function RootLayout({
             <Toaster />
       </body>
     </html>
-    </ClerkProvider>  
+    
     
     
     

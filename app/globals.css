@@ -35,72 +35,6 @@ html {
   }
 }
 
-/* Slide Animation */
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-    /* Ensure the element is still hidden at the start of the animation */
-    opacity: 0;
-  }
-  /* Start making the element visible as the animation progresses */
-  1% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-      transform: translateX(100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-.slide-in-left {
-  animation: 0.5s  ease-in 0s 1 slideInFromLeft;
-}
-.slide-in-right {
-  animation: 0.5s ease-out 0s 1 slideInFromRight;
-}
-.slide-in-top {
-  animation: 0.5s ease-out 0s 1 slideInFromTop;
-}
-.slide-in-bottom {
-  opacity: 0; 
-  animation: 0.5s ease-out 0s 1 slideInFromBottom;
-  animation-delay: 2s;
-}
-
-
 /* Shake Animation */
 @keyframes shake {
   0%, 100% {
@@ -110,12 +44,6 @@ html {
     transform: rotate(3deg);
   }
 }
-.arrowDown {
-  display: inline-block; /* This allows the transform to work */
-  animation: shake 0.3s infinite; /* Adjust the duration and repetition as needed */
-}
-
-
 
 /* Image Size */
 .responsive-image {

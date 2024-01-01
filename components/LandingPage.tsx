@@ -2,12 +2,9 @@
 
 // Imports 
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+
 import Footer from './Footer'
-import Lottie from 'lottie-react';
-import arrow from '../public/arrow.json'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import Icons from './Icons';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
@@ -86,16 +83,19 @@ export default function LandingPage() {
           <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-slate-400 rounded lg:mr-12'>
             {/*cards*/}
             <div className='flex space-x-10 mb-3 lg:mb-5'>
-              {icons1.map((i) => (
-                <div className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+              {icons1.map((i, index) => (
+                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
               ))}
 
             </div>
             {/*cards 2*/}
             <div className='flex space-x-10'>
-              {icons2.map((i) => (
-                <div className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+            <div className='flex space-x-10 mb-3 lg:mb-5'>
+              {icons2.map((i, index) => (
+                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
               ))}
+
+            </div>
 
 
 
