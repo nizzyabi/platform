@@ -4,45 +4,50 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
+import { Card, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "./ui/button";
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import { FaAccessibleIcon } from "react-icons/fa";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
 
-const courses = [
+
+const coaching = [
   {
-    title: "JavaScript",
-    image: "/javascript.svg",
-    link: "/javascript",
+    title: "Deep Work",
+    image: "/deepwork.svg",
+    link: "/deepwork",
     subjects: [
-      "Course",
-      "JavaScript",
-      "Project",
-      "App",
+      "Deep Work",
+      "Flow State",
+      "Focus",
+      "Attention",
     ],
-    description: "Learn JavaScript from scratch by building an app",
+    description: "Learn how to focus and get into a flow state.",
   },
   {
-    title: "React",
-    image: "/react.svg",
-    link: "/react",
+    title: "Productivity",
+    image: "/productivity.svg",
+    link: "/productivity",
     subjects: [
-      "React",
-      "Projects",
-      "App",
-      "Lessons",
+      "Productivity",
+      "Notion",
+      "Todoist",
+      "Evernote",
     ],
-    description: "Build an app with the most popular JavaScript framework.",
+    description: "Learn how to be productive and use productivity tools.",
   },
   {
-    title: "HTML & CSS",
-    image: "/htmlcss.svg",
-    link: "/html-css",
+    title: "Full Learning Guide",
+    image: "/learning.svg",
+    link: "/full",
     subjects: [
-      "HTML",
-      "CSS",
-      "Tutorial",
-      "Design",
-      "Frontend"
+      "Full Learning Guide",
+      "Learning",
+      "Productivity",
+      "Deep Work",
     ],
-    description: "Learn the basics of frontend development by building a simple website",
+    description: "Learn how to learn and be productive.",
   },
 ];
 
@@ -55,49 +60,42 @@ export default function Courses() {
     });
   }, []);
   return (
-    <div data-aos='fade-left'>
+    <div>
 
         {/* Title */}
-        <div className="text-center pb-5">
-            <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Courses</h1>
-            <p className="text-lg md:text-xl pt-1">learn to code through fun & simple project based courses.</p>
+        <div className="text-center pb-5" data-aos='fade-left'>
+            <h1 className="font-extrabold text-3xl md:text-5xl pt-3">1-on-1 Coaching</h1>
+            <p className="text-lg md:text-xl pt-1">get personal advice, mentorship, and guidance to learn code faster</p>
+
+            {/* Separator*/}
+            <div className='flex items-center justify-center'>
+              <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+          </div>
         </div>
 
-        {/* Cards */}
+       
 
-        <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
-            {courses.map((course) => (
-              <Card key={course.title} className="rounded-xl cursor-pointer border border-gray-500 border-opacity-70 bg-gray shadow-2xl hover:scale-105 transition-transform duration-500">
-                <Link href={`/guides${course.link}`}>
-                <CardHeader className="flex items-center justify-center text-center text-muted-foreground p-0 ">
-                  <div className=" relative w-full h-[200px] ">
-                    <Image 
-                      src={course.image}
-                      alt={course.title}
-                      layout="fill"
-                      className="rounded-t-xl object-cover"
-                    />
-                  </div>
-                </CardHeader>
+        {/* Coaching */}
+        <div data-aos='fade-right' className="">
 
-                <div className=" pt-2">
-
-                <p className="font-extrabold text-center text-xl ">{course.title}</p>
-
-                <p className="font-semibold text-center px-2 pt-5 ">{course.description}</p>
-                
-                <CardFooter className="flex items-center justify-between text-xs text-muted-foreground pt-12 ">
-                  <p className="flex flex-wrap gap-2 justify-start mt-2 ">{course.subjects.map((subject, index) => (
-                    <span key={index} className="text-sm font-medium bg-gray-700 text-white rounded px-2 py-1">{subject}</span>
-                  
-                  ))}</p>
-                </CardFooter>
-                </div>
-                </Link>
-              </Card>
-            ))}
-
+          {/* Cards */}
+          <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px]">
+            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
+              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            </div>
+            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
+              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            </div>
+            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
+              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            </div>
           </div>
+
+          {/* Link to coaching */}
+          <Link href='https://calendly.com/nizabizaher/programming-coaching' className='pt-4 flex items-center justify-center'>
+            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Sign Up For Coaching <AutoFixHighIcon className='ml-2 font-extrabold' /></Button>
+          </Link>
+        </div>
         
         
     </div>
