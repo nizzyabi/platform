@@ -20,11 +20,11 @@ export default function RoadmapPage() {
     const roadmapData = [
         {
             number: '01',
-            title: 'Basics of Programming',
+            title: <p>Basics</p>,
             description: 'Learn the basics of programming & how computers work',
             resources: [
                 {
-                    title: 'Basics',
+                    title: <p>Basics</p>,
                     link: 'https://youtu.be/zOjov-2OZ0E?si=7Y_LnQZ_mj10SfhG',
                     icon: <BiLogoYoutube className="text-red-500"/>
                 },
@@ -232,13 +232,13 @@ export default function RoadmapPage() {
             <div data-aos='fade-left'>
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
-                <div key={index} className="mt-8 space-y-6 max-w-xl mx-auto rounded p-5  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-700">
+                <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
                     <div className="flex justify-between ">
-                        <h1 className="text-4xl font-extrabold">{item.title}</h1>
-                        <p className="font-semibold text-4xl md: text-md">{item.number}</p>  
+                        <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
+                        <p className="font-bold text-2xl lg:text-3xl text-slate-300/10">{item.number}</p>  
                     </div>
 
-                    <p className="text-center font-semibold text-slate-300 text-lg">{item.description}</p>
+                    <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
 
                     <div className="flex justify-center space-x-8">
                         {item.resources.map((resource, resIndex) => (
