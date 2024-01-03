@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
+import { login } from "@/actions/login";
 
 export const LoginForm = () => {
     // Form Hook
@@ -28,7 +29,8 @@ export const LoginForm = () => {
     })
     // onSubmit Function
     const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-        console.log(values)
+        // import login from @/actions/login
+        login(values);
     }
 
 
@@ -52,12 +54,12 @@ export const LoginForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel className="font-bold">Email</FormLabel>
-                                    <FormControl>
+                                    <FormControl className="">
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             type='email'
-                                            className="rounded border-2 shadow-sm shadow-black "
+                                            className="rounded shadow-sm text-md shadow-black"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -76,7 +78,7 @@ export const LoginForm = () => {
                                         <Input 
                                             {...field}
                                             type='password'
-                                            className="rounded border-2 shadow-sm shadow-black  "
+                                            className="rounded shadow-sm text-lg shadow-black"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
