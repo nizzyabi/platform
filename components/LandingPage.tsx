@@ -64,7 +64,7 @@ export default function LandingPage() {
         <div className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
           {/* Main text*/}
           <div className='flex items-center justify-center'>
-            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500'>SOFTWARE</span> DEVELOPER</h1>
+            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
           </div>
           {/* Sub text */}
           <div>
@@ -73,7 +73,7 @@ export default function LandingPage() {
 
           {/* Button */}
           <div className='pt-4'>
-            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+            <Button className='bg-gradient-to-r from-yellow-500 to-orange-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
           </div>
         </div>
 

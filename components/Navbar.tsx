@@ -24,11 +24,11 @@ import { BackButton } from "./auth/Back-Button";
 
 
 export default function Navbar() {
-
+    // states
     const[isLoading, setIsLoading] = useState(true);
     const [showRegister, setShowRegister] = useState(false);
-
     const [isHovered, setIsHovered] = useState(false);
+    // Toggle form of auth
     const toggleForm = () => {
         setShowRegister(!showRegister);
     };
@@ -87,10 +87,10 @@ export default function Navbar() {
                     <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
                 </DialogTrigger>
                 
-                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919]">
+                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl">
                 {showRegister ? <RegisterForm /> : <LoginForm />}
                 
-                <button onClick={toggleForm} className="mt-auto py-2 w-full text-center hover:underline">
+                <button onClick={toggleForm} className="mt-auto  w-full text-center hover:underline">
                     {showRegister ? "Already have an account?" : "Don't have an account?"}
                 </button>  
                 

@@ -116,7 +116,7 @@ export const LoginForm = () => {
                     <Button 
                         disabled={isPending}
                         type="submit"
-                        className="w-full bg-purple-600 text-white font-extrabold text-xl rounded hover:bg-purple-600 hover:scale-105 transition-transform duration-500"
+                        className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
                     >
                         login
                     </Button>
