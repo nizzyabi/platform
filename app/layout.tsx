@@ -4,11 +4,9 @@ import { Poppins } from 'next/font/google'
 import { Sofia_Sans} from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
-import { ClerkProvider } from '@clerk/nextjs'
-import { dark, neobrutalism } from '@clerk/themes';
 import Scroll from '@/components/Scroll'
-import Snowfall from 'react-snowfall'
 import { Toaster } from '@/components/ui/toaster'
+
 
 
 
@@ -26,9 +24,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-   
-    
+  
+  return (    
     <html lang="en">
       <body className={sofia.className}>
         <Navbar />
