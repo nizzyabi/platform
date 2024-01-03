@@ -1,13 +1,23 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"
 import { Avatar } from "@mui/material";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Separator } from "./ui/separator";
 import { LoginButton } from "./auth/Login-Button";
+import { LoginForm } from "./auth/Login-Form";
+import { RegisterForm } from "./auth/Register-Form";
+import { BackButton } from "./auth/Back-Button";
 
 
 
@@ -16,8 +26,12 @@ import { LoginButton } from "./auth/Login-Button";
 export default function Navbar() {
 
     const[isLoading, setIsLoading] = useState(true);
-    
+    const [showRegister, setShowRegister] = useState(false);
+
     const [isHovered, setIsHovered] = useState(false);
+    const toggleForm = () => {
+        setShowRegister(!showRegister);
+    };
   return (
     <div>
 
@@ -67,9 +81,25 @@ export default function Navbar() {
             </Link>
 
             {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
-            <LoginButton>
-                <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
-            </LoginButton>
+
+            <Dialog>
+                <DialogTrigger asChild>
+                    <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
+                </DialogTrigger>
+                
+                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between p-0 px-0 bg-[#191919]">
+                {showRegister ? <RegisterForm /> : <LoginForm />}
+                
+                <button onClick={toggleForm} className="mt-auto py-2 w-full text-center hover:underline">
+                    {showRegister ? "Already have an account?" : "Don't have an account?"}
+                </button>  
+                
+                </DialogContent> 
+                         
+            </Dialog>
+            
+                
+            
             
         </div>
         

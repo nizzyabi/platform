@@ -57,7 +57,7 @@ export const RegisterForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Create an account"
+            headerLabel=""
             headerTitle="Register"
             backButtonLabel="Already have an account?"
             backButtonHref="/auth/login"
@@ -66,7 +66,7 @@ export const RegisterForm = () => {
             <Form {...form}>
                 <form 
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6 text-black"
+                    className="space-y-6"
                 >
                     <div className="space-y-4">
 
@@ -146,6 +146,7 @@ export const RegisterForm = () => {
                     >
                         resgister
                     </Button>
+                    <h1 className="text-center">or</h1>
                 </form>
             </Form>
         </CardWrapper>

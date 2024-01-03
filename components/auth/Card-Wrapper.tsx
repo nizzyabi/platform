@@ -29,7 +29,7 @@ export const CardWrapper = ({
     headerTitle,
 }: CardWrapperProps) => {
     return (
-        <Card className="w-[400px] shadow-xl shadow-black rounded bg-slate-100">
+        <Card className="w-[500px] rounded bg-[#191919] border-none px-5">
 
             <CardHeader>
                 <Header label={headerLabel} title={headerTitle}/>
@@ -46,12 +46,7 @@ export const CardWrapper = ({
                 </CardFooter>
             )}
 
-            <CardFooter className="text-black">
-                <BackButton 
-                    label={backButtonLabel}
-                    href={backButtonHref}
-                />
-            </CardFooter>       
+                 
             
         </Card>
     )

@@ -56,7 +56,7 @@ export const LoginForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Welcome Back!"
+            headerLabel=""
             backButtonLabel="Don't have an account?"
             headerTitle="Login"
             backButtonHref="/auth/register"
@@ -65,7 +65,7 @@ export const LoginForm = () => {
             <Form {...form}>
                 <form 
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6 text-black"
+                    className="space-y-6"
                 >
                     <div className="space-y-4">
                         {/* Email Input Form */}
@@ -123,6 +123,7 @@ export const LoginForm = () => {
                     >
                         login
                     </Button>
+                    <h1 className="text-center">or</h1>
                 </form>
             </Form>
         </CardWrapper>
