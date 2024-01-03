@@ -1,11 +1,11 @@
 // Actions must be use server
 "use server"
 import * as z from "zod";
-import { LoginSchema } from "@/schemas";
+import { RegisterSchema } from "@/schemas";
 
-export const login = async (values: z.infer<typeof LoginSchema>) => {
+export const register = async (values: z.infer<typeof RegisterSchema>) => {
     // Validate fields
-    const validatedFields = LoginSchema.safeParse(values);
+    const validatedFields = RegisterSchema.safeParse(values);
 
     // If fields are not valid
     if(!validatedFields.success) {

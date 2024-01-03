@@ -11,16 +11,16 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
-import { LoginSchema } from "@/schemas";
+import { RegisterSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
-import { login } from "@/actions/login";
+import { register } from "@/actions/register";
 import { useState, useTransition } from "react";
 
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
     // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
     const [isPending, startTransition] = useTransition();
 
@@ -30,22 +30,23 @@ export const LoginForm = () => {
     const [success, setSuccess] = useState<string | undefined>("");
 
     // Form Hook
-    const form = useForm<z.infer<typeof LoginSchema>>({
-        resolver: zodResolver(LoginSchema),
+    const form = useForm<z.infer<typeof RegisterSchema>>({
+        resolver: zodResolver(RegisterSchema),
         defaultValues: {
             email: "",
-            password: ""
+            password: "",
+            name: "",
         }
     })
     // onSubmit Function
-    const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
         // reset fields when submitting form
         setError("");
         setSuccess("");
 
         // import login from @/actions/login
         startTransition(() => {
-            login(values)
+            register(values)
               .then((data) => {
                 setError(data.error);
                 setSuccess(data.success);
@@ -56,9 +57,9 @@ export const LoginForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Welcome Back!"
-            backButtonLabel="Don't have an account?"
-            backButtonHref="/auth/register"
+            headerLabel="Create an account"
+            backButtonLabel="Already have an account?"
+            backButtonHref="/auth/login"
             showSocial
         >
             <Form {...form}>
@@ -67,6 +68,27 @@ export const LoginForm = () => {
                     className="space-y-6 text-black"
                 >
                     <div className="space-y-4">
+
+                        {/* Name Input Form */}
+                        <FormField 
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="font-bold">Name</FormLabel>
+                                    <FormControl>
+                                        <Input 
+                                            placeholder="Joe Mama"
+                                            {...field}
+                                            disabled={isPending}
+                                            type='name'
+                                            className="rounded shadow-sm text-md shadow-black"
+                                        />
+                                    </FormControl>
+                                    <FormMessage className="text-red-500" />
+                                </FormItem>
+                            )}
+                        />
                         {/* Email Input Form */}
                         <FormField 
                             control={form.control}
@@ -108,6 +130,7 @@ export const LoginForm = () => {
                                 </FormItem>
                             )}
                         />
+
                     </div>
                     {/* Form Error */}
                     <FormError message={error} />
@@ -120,7 +143,7 @@ export const LoginForm = () => {
                         type="submit"
                         className="w-full bg-purple-600 text-white font-extrabold text-xl rounded hover:bg-purple-600 hover:scale-105 transition-transform duration-500"
                     >
-                        login
+                        resgister
                     </Button>
                 </form>
             </Form>
