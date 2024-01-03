@@ -87,7 +87,7 @@ export default function Navbar() {
                     <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
                 </DialogTrigger>
                 
-                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between p-0 px-0 bg-[#191919]">
+                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919]">
                 {showRegister ? <RegisterForm /> : <LoginForm />}
                 
                 <button onClick={toggleForm} className="mt-auto py-2 w-full text-center hover:underline">
