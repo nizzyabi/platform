@@ -31,7 +31,7 @@
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.297.0",
     "next": "14.0.4",
-    "next-auth": "^4.23.2",
+    "next-auth": "^5.0.0-beta.4",
     "next-cloudinary": "^5.13.0",
     "next-themes": "^0.2.1",
     "react": "^18",
