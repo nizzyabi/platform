@@ -35,6 +35,15 @@ html {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .hide-on-small-screens {
+      display: none;
+  }
+  .navbar {
+    margin-left: 20px;
+  }
+}
+
 /* Shake Animation */
 @keyframes shake {
   0%, 100% {

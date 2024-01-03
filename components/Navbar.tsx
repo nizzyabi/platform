@@ -29,8 +29,8 @@ export default function Navbar() {
                 
             </div>
     
-    <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer  bg-none">
-        <Link href='/' className="flex items-center ml-2"
+    <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer">
+        <Link href='/' className="flex items-center ml-2 hide-on-small-screens"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >
@@ -39,11 +39,11 @@ export default function Navbar() {
                 width={40}  // Base width
                 height={40}
                 alt='logos2'
-                className="responsive-image "
+                className="responsive-image"
                 
             />
         </Link>
-        <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 ">
+        <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 navbar">
             <Link href="/roadmap">
                 <p 
                     className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-400 hover:scale-110 transition-transform duration-500  "
