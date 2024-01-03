@@ -12,20 +12,20 @@ export const Social = () => {
 
             <Button
                 size="lg"
-                className='w-full rounded hover:scale-105 transition-transform duration-500 shadow-sm shadow-white border border-white'
+                className='w-full rounded bg-slate-200 hover:bg-slate-200'
                 variant="outline"
                 onClick={() => {}}
             >
-                <FcGoogle className='h-7 w-7'/>
+                <FcGoogle className='h-9 w-9'/>
             </Button>
 
             <Button
                 size="lg"
-            className='w-full rounded hover:scale-105 transition-transform duration-500 shadow shadow-white border border-white'
+            className='w-full rounded bg-slate-200 hover:bg-slate-200'
                 variant="outline"
                 onClick={() => {}}
             >
-                <FaGithub className="h-7 w-7 text-slate-200"/>
+                <FaGithub className="h-9 w-9 text-black"/>
             </Button>
         </div>
     )
