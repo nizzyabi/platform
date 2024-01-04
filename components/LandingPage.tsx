@@ -113,10 +113,19 @@ export default function LandingPage() {
       {/* Guides Description */}
       <div>
         <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Guides</h1>
-        <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>Learn to code and have fun doing it.</p>
+        <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>learn by doing projects, not watching others 🫥</p>
 
         <div className='flex items-center justify-center'>
           <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+        </div>
+
+        {/* Guides Description */}
+        <div className='flex items-center justify-center'>
+          <Image alt='guides' src='/pyramid.svg' width={600} height={600} className='rounded-lg mt-12' />
+        </div>
+
+        <div className='text-center mx-[200px] text-3xl font-bold pt-3'>
+          <h1>You only retain <span className='text-violet-500'>5% - 10%</span> of what you learn through reading & watching, which is the standard way of learning to code.</h1>
         </div>
 
       </div>
