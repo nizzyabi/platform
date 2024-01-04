@@ -121,7 +121,7 @@ export default function LandingPage() {
 
         {/* Guides Description */}
         <div className='flex items-center justify-center'>
-          <Image alt='guides' src='/pyramid.svg' width={600} height={600} className='rounded-lg mt-12' />
+          <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12' />
         </div>
 
         <div className='text-center mx-[200px] text-3xl font-bold pt-3'>
