@@ -110,6 +110,36 @@ export default function LandingPage() {
         <p className='text-6xl'>⏬</p>
       </div>
 
+      {/* Sales Pitch */}
+      <div className='pt-12 text-center space-y-[300px]'>
+        {/* Why Am I Struggling*/}
+        <div className='space-y-6'>
+          <h1 data-aos='fade-left' className='font-extrabold text-6xl  '>Why Am I Struggling? 😢</h1>
+          <p data-aos='fade-right' className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
+          <div data-aos='fade-down' className='flex items-center justify-center'>
+            <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
+          </div>
+        </div>
+
+        {/* Realization */}
+        <div className='space-y-6'>
+          <h1 data-aos='fade-left' className='font-extrabold text-6xl'>Realization 😮</h1>
+          <p data-aos='fade-right'  className='text-xl text-slate-300'>Learning by doing is the best way to learn how to code.</p>
+          <div  data-aos='fade-down'  className='flex items-center justify-center'>
+            <Image alt='pyramid' src='/pyramidafter.svg' width={700} height={700} className='rounded-xl' />
+          </div>
+        </div>
+
+        {/* Solution */}
+        <div className='space-y-6'>
+          <h1 data-aos='fade-left' className='font-extrabold text-6xl'>Solution 🤩</h1>
+          <p data-aos='fade-right'  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
+          <div  data-aos='fade-down'  className='flex items-center justify-center'>
+            <iframe width="650" height="415" src="https://www.youtube.com/embed/bJU5bg2gfoQ?si=2W3AI_Nh4r9H-PPX" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </div>
+        </div>
+      </div>
+
       {/* Guides Description */}
       <div>
         <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Guides</h1>
@@ -124,8 +154,8 @@ export default function LandingPage() {
           <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12' />
         </div>
 
-        <div className='text-center mx-[200px] text-3xl font-bold pt-3'>
-          <h1>You only retain <span className='text-violet-500'>5% - 10%</span> of what you learn through reading & watching, which is the standard way of learning to code.</h1>
+        <div className='text-center mx-[200px] text-3xl font-bold pt-5'>
+          <h1>Our guides are designed to help new developers find their way through the complexity of learning how to code.</h1>
         </div>
 
       </div>
