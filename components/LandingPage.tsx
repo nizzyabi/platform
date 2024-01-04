@@ -114,27 +114,27 @@ export default function LandingPage() {
       <div className='pt-12 text-center space-y-[300px]'>
         {/* Why Am I Struggling*/}
         <div className='space-y-6'>
-          <h1 data-aos='fade-left' className='font-extrabold text-6xl  '>Why Am I Struggling? 😢</h1>
-          <p data-aos='fade-right' className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
-          <div data-aos='fade-down' className='flex items-center justify-center'>
+          <h1 className='font-extrabold text-6xl  '>Why Am I Struggling? 😢</h1>
+          <p  className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
+          <div className='flex items-center justify-center'>
             <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
           </div>
         </div>
 
         {/* Realization */}
         <div className='space-y-6'>
-          <h1 data-aos='fade-left' className='font-extrabold text-6xl'>Realization 😮</h1>
-          <p data-aos='fade-right'  className='text-xl text-slate-300'>Learning by doing is the best way to learn how to code.</p>
-          <div  data-aos='fade-down'  className='flex items-center justify-center'>
+          <h1 className='font-extrabold text-6xl'>Realization 😮</h1>
+          <p  className='text-xl text-slate-300'>Learning by doing is the best way to learn how to code.</p>
+          <div className='flex items-center justify-center'>
             <Image alt='pyramid' src='/pyramidafter.svg' width={700} height={700} className='rounded-xl' />
           </div>
         </div>
 
         {/* Solution */}
         <div className='space-y-6'>
-          <h1 data-aos='fade-left' className='font-extrabold text-6xl'>Solution 🤩</h1>
-          <p data-aos='fade-right'  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
-          <div  data-aos='fade-down'  className='flex items-center justify-center'>
+          <h1 className='font-extrabold text-6xl'>Solution 🤩</h1>
+          <p  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
+          <div   className='flex items-center justify-center'>
             <iframe width="650" height="415" src="https://www.youtube.com/embed/bJU5bg2gfoQ?si=2W3AI_Nh4r9H-PPX" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </div>
         </div>
