@@ -8,7 +8,8 @@ import { Separator } from "@/components/ui/separator";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiBrain, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
-import { FaFreeCodeCamp, FaNode, FaNodeJs, FaTools } from "react-icons/fa";
+import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaNodeJs, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
+
 import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
@@ -147,18 +148,18 @@ export default function RoadmapPage() {
                 {
                     title: 'MERN',
                     link: 'https://youtu.be/7CqJlxBYj-M?si=aUct4yVHR92-6GUf',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'MERN Project',
                     link: "https://youtu.be/0osXx2oJu44?si=jAgisHX-nI-TXNLw",
-                    image: 'mern.webp'
+                    icon: <FaSquareShareNodes className="text-black"/>
                     
                 },
                 {
                     title: 'MERN Stack Project',
                     link: 'https://youtu.be/-42K44A1oMA?si=AQ6Tbf-1mfM20Qgb',
-                    image: 'tools.png'
+                    icon: <GiHammerNails className="text-purple-500"/>
                 }
                 
             ]
@@ -172,17 +173,17 @@ export default function RoadmapPage() {
                 {
                     title: 'Software Design',
                     link: 'https://youtu.be/FLtqAi7WNBY?si=ZD843HSGgKlc9iBN',
-                    image: 'youtube.png'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'software',
                     link: 'https://youtu.be/tv-_1er1mWI?si=ouX4gv8L3HHEXEqR',
-                    image: 'youtube.png'
+                    icon: <FaCode className="text-blue-500"/>
                 },
                 {
                     title: 'Github',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'git.png'
+                    icon: <FaGithub className="text-black"/>
                 }
             ]
         },
@@ -194,17 +195,17 @@ export default function RoadmapPage() {
                 {
                     title: 'motivation',
                     link: 'https://youtu.be/Xg9ihH15Uto?si=NlXIMxIob79_9kh1',
-                    image: 'youtube.png',
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'Mock Interview',
                     link: 'https://youtu.be/1qw5ITr3k9E?si=DjqosIoiCZkP50xi',
-                    image: 'free.webp',
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Interview Prep',
                     link: 'https://youtu.be/5uhmS8nzxM4?si=LhHymrGRN3qPez_R',
-                    image: 'resume.jpeg',
+                    icon: <FaPaperclip className="text-blue-500"/>
                 }
             ]
         }
