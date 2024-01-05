@@ -11,7 +11,7 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
-import { Avatar } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 import "aos/dist/aos.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { LoginButton } from "./auth/Login-Button";
@@ -19,7 +19,7 @@ import { LoginForm } from "./auth/Login-Form";
 import { RegisterForm } from "./auth/Register-Form";
 import { BackButton } from "./auth/Back-Button";
 import UserButton from "./UserButton";
-
+import { motion } from "framer-motion";
 
 
 
@@ -35,7 +35,6 @@ export default function Navbar() {
     };
   return (
     <div>
-
             <div className="text-center pt-4 pb-4  border-b border-gray-300/20 font-bold text-lg">
                 <Link href='https://youtube.com/@NizzyABI?si=dffeDkbsPfFQ24Ez' className="hover:scale-110 transition-transform duration-500 flex items-center justify-center">
                     <p className="hover:opacity:70">subscribe for daily videos! </p>
@@ -44,20 +43,23 @@ export default function Navbar() {
                 
             </div>
     
-    <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer">
-        <Link href='/' className="flex items-center ml-2 hide-on-small-screens h-20 w-20"
+    <div className="w-full  flex justify-between items-center px-2 cursor-pointer hide-on-small-screens ">
+        <Link href='/' className="flex items-center ml-2 "
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >
-            <Image 
+            <motion.img 
                 src={isHovered ? '/chad.svg' : '/gilbert.svg'}
-                width={420}  // Base width
-                height={420}
+                width={100}  // Base width
+                height={100}
                 alt='logos2'
-                className=""
+                
+                whileHover={{ scale: 1.2, rotate: 90 }}
+                whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
                 
             />
         </Link>
+        
         <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 navbar">
             <Link href="/roadmap">
                 <p 
@@ -80,6 +82,9 @@ export default function Navbar() {
                         coaching
                 </p>
             </Link>
+            
+
+            
 
             {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
             <UserButton />
