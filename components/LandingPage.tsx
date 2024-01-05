@@ -80,11 +80,11 @@ export default function LandingPage() {
 
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center'>
-          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-orange-400 duration-500'>
+          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500'>
             {/*cards*/}
             <div className='flex space-x-10 mb-3 lg:mb-5'>
               {icons1.map((i, index) => (
-                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center'>{i.icon}</div>
               ))}
 
             </div>
@@ -92,7 +92,7 @@ export default function LandingPage() {
             <div className='flex space-x-10'>
             <div className='flex space-x-10 mb-3 lg:mb-5'>
               {icons2.map((i, index) => (
-                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500'>{i.icon}</div>
+                <div key={index} className='bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center'>{i.icon}</div>
               ))}
 
             </div>
