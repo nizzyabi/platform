@@ -51,7 +51,7 @@ const coaching = [
   },
 ];
 
-export default function Courses() {
+export default function Coaching() {
   useEffect(() => {
     AOS.init({
       disable: "phone",

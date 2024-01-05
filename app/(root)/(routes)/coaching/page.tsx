@@ -1,10 +1,10 @@
-import Courses from '@/components/Courses'
+import Coaching from '@/components/Coaching'
 import React from 'react'
 
 export default function page() {
   return (
     <div>
-      <Courses />
+      <Coaching />
     </div>
   )
 }

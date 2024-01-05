@@ -72,7 +72,7 @@ export default function Navbar() {
                         guides
                 </p>
             </Link>
-            <Link href="/courses">
+            <Link href="/coaching">
                 <p 
                     className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-110 transition-transform duration-500"
                 >
