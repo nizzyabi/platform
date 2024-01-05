@@ -6,6 +6,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Scroll from '@/components/Scroll'
 import { Toaster } from '@/components/ui/toaster'
+import { SessionProvider } from 'next-auth/react'
 
 
 
@@ -25,7 +26,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   
-  return (    
+  return (   
+   <SessionProvider>
     <html lang="en">
       <body className={sofia.className}>
         <Navbar />
@@ -34,6 +36,8 @@ export default function RootLayout({
             <Toaster />
       </body>
     </html>
+    </SessionProvider>
+    
     
     
     

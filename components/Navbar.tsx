@@ -18,6 +18,7 @@ import { LoginButton } from "./auth/Login-Button";
 import { LoginForm } from "./auth/Login-Form";
 import { RegisterForm } from "./auth/Register-Form";
 import { BackButton } from "./auth/Back-Button";
+import UserButton from "./UserButton";
 
 
 
@@ -81,8 +82,9 @@ export default function Navbar() {
             </Link>
 
             {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
+            <UserButton />
 
-            <Dialog>
+            {/*<Dialog>
                 <DialogTrigger asChild>
                     <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
                 </DialogTrigger>
@@ -96,7 +98,7 @@ export default function Navbar() {
                 
                 </DialogContent> 
                          
-            </Dialog>
+            </Dialog>*/}
             
                 
             
