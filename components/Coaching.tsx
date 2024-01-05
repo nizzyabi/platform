@@ -79,7 +79,7 @@ export default function Coaching() {
         <div data-aos='fade-right' className="">
 
           {/* Cards */}
-          <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px]">
+          <div data-aos='fade-left' className="flex items-center justify-center space-x-6">
             <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
               <IoChatboxEllipsesOutline className="text-black text-4xl" />
             </div>
