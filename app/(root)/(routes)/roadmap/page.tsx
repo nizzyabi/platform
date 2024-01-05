@@ -13,11 +13,12 @@ import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaNodeJs, FaPaperclip, FaSqua
 import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
+import UserName from "@/components/UserName";
+
 
 
 export default function RoadmapPage() {
-
-
+    
     const roadmapData = [
         {
             number: '01',
@@ -222,7 +223,7 @@ export default function RoadmapPage() {
 
     return (
         <div className="mt-6">
-            <h1 className="text-5xl text-center font-extrabold" data-aos='fade-right'>Roadmap</h1>
+            <h1 className="text-5xl text-center font-extrabold" data-aos='fade-right'> Roadmap</h1>
             <p data-aos='fade-right' className="text-xl text-center font-semibold text-slate-400">Full roadmap to being a web developer</p>
 
             

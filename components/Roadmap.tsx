@@ -3,11 +3,11 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
+import { auth } from "@/auth";
 
 
-export default function RoadmapPage() {
-
-
+export default async function RoadmapPage() {
+    const session = await auth();
     const roadmapData = [
         {
             number: '01',
@@ -234,6 +234,11 @@ export default function RoadmapPage() {
 
     return (
         <div>
+            {session!.user && (
+                    <div>
+                        <h1 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">{session!.user.name} Roadmap</h1>
+                    </div>
+                )}
             <h1 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">Roadmap</h1>
 
             
