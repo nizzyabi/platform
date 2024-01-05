@@ -73,7 +73,7 @@ export default function LandingPage() {
 
           {/* Button */}
           <div className='pt-4'>
-            <Button className='bg-gradient-to-r from-yellow-500 to-orange-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+            <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
           </div>
         </div>
 
@@ -151,12 +151,14 @@ export default function LandingPage() {
 
         {/* Guides Description */}
         <div className='flex items-center justify-center'>
-          <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12' />
+          <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12 shadow-xl shadow-black' />
         </div>
 
-        <div className='text-center mx-[200px] text-3xl font-bold pt-5'>
+        <div className='text-xl lg:text-xl md:text-xl sm:text-xl font-semibold text-center pt-5'>
           <h1>Our guides are designed to help new developers find their way through the complexity of learning how to code.</h1>
+          <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
         </div>
+        
 
       </div>
 
