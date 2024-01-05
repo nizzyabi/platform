@@ -80,7 +80,7 @@ export default function LandingPage() {
 
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center'>
-          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12'>
+          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-orange-400 duration-500'>
             {/*cards*/}
             <div className='flex space-x-10 mb-3 lg:mb-5'>
               {icons1.map((i, index) => (
@@ -114,7 +114,7 @@ export default function LandingPage() {
       <div className='pt-12 text-center space-y-[300px]'>
         {/* Why Am I Struggling*/}
         <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl  '>Why Am I Struggling? 😢</h1>
+          <h1 className='font-extrabold text-6xl  '>WHY AM I STRUGGLING? 😢</h1>
           <p  className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
           <div className='flex items-center justify-center'>
             <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
@@ -123,7 +123,7 @@ export default function LandingPage() {
 
         {/* Realization */}
         <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl'>Realization 😮</h1>
+          <h1 className='font-extrabold text-6xl'>REALIZATION 😮</h1>
           <p  className='text-xl text-slate-300'>Learning by doing is the best way to learn how to code.</p>
           <div className='flex items-center justify-center'>
             <Image alt='pyramid' src='/pyramidafter.svg' width={700} height={700} className='rounded-xl' />
@@ -132,7 +132,7 @@ export default function LandingPage() {
 
         {/* Solution */}
         <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl'>Solution 🤩</h1>
+          <h1 className='font-extrabold text-6xl'>SOLUTION 🤩</h1>
           <p  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
           <div   className='flex items-center justify-center'>
             <iframe width="650" height="415" src="https://www.youtube.com/embed/bJU5bg2gfoQ?si=2W3AI_Nh4r9H-PPX" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
@@ -142,7 +142,7 @@ export default function LandingPage() {
 
       {/* Guides Description */}
       <div>
-        <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Guides</h1>
+        <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-[190px]'>GUIDES</h1>
         <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>learn by doing projects, not watching others 🫥</p>
 
         <div className='flex items-center justify-center'>
@@ -154,9 +154,9 @@ export default function LandingPage() {
           <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12 shadow-xl shadow-black' />
         </div>
 
-        <div className='text-xl lg:text-xl md:text-xl sm:text-xl font-semibold text-center pt-5'>
+        <div className='text-2xl font-semibold text-center pt-5 px-[200px] lg:px-[400px]'>
           <h1>Our guides are designed to help new developers find their way through the complexity of learning how to code.</h1>
-          <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+          <Button variant='gold' className='mt-12'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
         </div>
         
 
