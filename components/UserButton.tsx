@@ -13,21 +13,24 @@ import {
 import { RegisterForm } from "./auth/Register-Form"
 import { LoginForm } from "./auth/Login-Form"
 import { useState } from "react"
-import { Avatar } from "@mui/material"
+import { Avatar, CircularProgress } from "@mui/material"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
 const UserButton = () => {
     // get user
     // if user is logged in, return logout button
     // if user is not logged in, return login button
-    const { data: session } = useSession();    
-    const[isLoading, setIsLoading] = useState(true);
+    const { data: session, status } = useSession();    
     const [showRegister, setShowRegister] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const isLoading = status === "loading";
     // Toggle form of auth
     const toggleForm = () => {
         setShowRegister(!showRegister);
     };
+    if (isLoading) {
+        return <CircularProgress size={24} />;
+      }
   return (
     <div>
         {!session ? (
