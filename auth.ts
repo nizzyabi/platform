@@ -8,6 +8,8 @@ export const {
   handlers: { GET, POST },
 
   auth, // This auth thing helps us get user info such as for display certain content for them and specific data
+  signIn,
+  signOut,
 } = NextAuth({
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
