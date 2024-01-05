@@ -45,16 +45,16 @@ export default function Navbar() {
             </div>
     
     <div className="w-full pt-4 flex justify-between items-center px-2 cursor-pointer">
-        <Link href='/' className="flex items-center ml-2 hide-on-small-screens"
+        <Link href='/' className="flex items-center ml-2 hide-on-small-screens h-20 w-20"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >
             <Image 
-                src={isHovered ? '/logo2.svg' : '/logo.svg'}
-                width={40}  // Base width
-                height={40}
+                src={isHovered ? '/chad.svg' : '/gilbert.svg'}
+                width={420}  // Base width
+                height={420}
                 alt='logos2'
-                className="responsive-image"
+                className=""
                 
             />
         </Link>

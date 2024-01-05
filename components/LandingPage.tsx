@@ -114,7 +114,7 @@ export default function LandingPage() {
       <div className='pt-12 text-center space-y-[300px]'>
         {/* Why Am I Struggling*/}
         <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl  '>WHY AM I STRUGGLING? 😢</h1>
+          <h1 className='font-extrabold text-6xl '>WHY AM I STRUGGLING? 😢</h1>
           <p  className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
           <div className='flex items-center justify-center'>
             <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
@@ -134,55 +134,13 @@ export default function LandingPage() {
         <div className='space-y-6'>
           <h1 className='font-extrabold text-6xl'>SOLUTION 🤩</h1>
           <p  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
-          <div   className='flex items-center justify-center'>
-            <iframe width="650" height="415" src="https://www.youtube.com/embed/bJU5bg2gfoQ?si=2W3AI_Nh4r9H-PPX" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <div className='flex items-center justify-center'>
+            <Image alt='pyramid' src='/git.png' width={700} height={700} className='rounded-xl' />
           </div>
         </div>
       </div>
 
-      {/* Guides Description */}
-      <div>
-        <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-[190px]'>GUIDES</h1>
-        <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>learn by doing projects, not watching others 🫥</p>
-
-        <div className='flex items-center justify-center'>
-          <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
-        </div>
-
-        {/* Guides Description */}
-        <div className='flex items-center justify-center'>
-          <Image alt='guides' src='/gary.svg' width={300} height={200} className='rounded-xl mt-12 shadow-xl shadow-black' />
-        </div>
-
-        <div className='text-2xl font-semibold text-center pt-5 px-[200px] lg:px-[400px]'>
-          <h1>Our guides are designed to help new developers find their way through the complexity of learning how to code.</h1>
-          <Button variant='gold' className='mt-12'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
-        </div>
-        
-
-      </div>
-
-      {/*Arrow*/}
-      <div className=' text-center finger pt-[90px]'>
-        <p className='text-6xl'>⏬</p>
-      </div>
-
-      {/* Coaching Description */}
-      <div>
-        <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center pt-20'>Coaching</h1>
-        <p className='text-xl lg:text-xl md:text-xl sm:text-xl font-semi bold text-slate-300 text-center'>Get 1-on-1 lessons & your questions answered!</p>
-
-        <div className='flex items-center justify-center'>
-          <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
-        </div>
-
-      </div>
-
-      {/*Arrow*/}
-      <div className=' text-center finger pt-[90px]'>
-        <p className='text-6xl'>⏬</p>
-      </div>
-
+      
       {/* Footer */}
       <Footer />
     </div>

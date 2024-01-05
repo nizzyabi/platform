@@ -8,48 +8,43 @@ import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
 
 const guides = [
   {
-    title: "Deep Work",
-    image: "/deepwork.svg",
+    title: "Deep Work Guide",
+    image: "/comingsoon.svg",
     link: "/deepwork",
     subjects: [
-      "Deep Work",
-      "Flow State",
-      "Focus",
-      "Attention",
+      "deep work",
+      "flow State",
+      "focus",
+      "attention",
     ],
-    description: "Learn how to focus and get into a flow state.",
+    description: "coming soon...",
   },
   {
-    title: "Productivity",
-    image: "/productivity.svg",
+    title: "Full Learn to Coding Guide",
+    image: "/gary.svg",
     link: "/productivity",
     subjects: [
-      "Productivity",
-      "Notion",
-      "Todoist",
-      "Evernote",
+      "productivity",
+      "code",
+      "guide",
+      "deep work",
     ],
-    description: "Learn how to be productive and use productivity tools.",
+    description: "From a beginner to a pro, you'll learn everything you need to become a coder.",
   },
   {
-    title: "Full Learning Guide",
-    image: "/learning.svg",
+    title: "Frontend Development Course",
+    image: "/comingsoon.svg",
     link: "/full",
     subjects: [
-      "Full Learning Guide",
-      "Learning",
-      "Productivity",
-      "Deep Work",
+      "react",
+      "html",
+      "css",
     ],
-    description: "Learn how to learn and be productive.",
+    description: "coming soon...",
   },
 ];
 
 export default function Guides() {
-
-  
-  
-
   useEffect(() => {
     AOS.init({
       disable: "phone",

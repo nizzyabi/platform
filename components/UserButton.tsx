@@ -16,6 +16,8 @@ import { useState } from "react"
 import { Avatar, CircularProgress } from "@mui/material"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
+import { IoMdPerson } from "react-icons/io";
+
 const UserButton = () => {
     // get user
     // if user is logged in, return logout button
@@ -53,7 +55,7 @@ const UserButton = () => {
 
         ): (
             <Link href='/settings'>
-                <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
+                <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 bg-red-500 text-6xl " sx={{ width: 52, height: 52}}><IoMdPerson className="text-3xl"/></Avatar>
             </Link>
         )}
 
