@@ -11,7 +11,8 @@ const SettingsPage = async () => {
     return (
         <div>
             {/*JSON DATA*/}
-            { JSON.stringify(session)}
+
+            
             
             <div>
                 {session!.user && (
@@ -41,6 +42,7 @@ const SettingsPage = async () => {
                                 <span className="text-white ">account type:</span>
                                 <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session!.user.role}
                                 </span>
+                                
                             </h2>
                             
                             
