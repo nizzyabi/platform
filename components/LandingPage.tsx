@@ -11,8 +11,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { BiLogoDiscord, BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
-import { motion } from "framer-motion";
-
+import GitHubCalendar from 'react-github-calendar';
 
 const icons1 = [
   {
@@ -140,8 +139,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
-      
+      <GitHubCalendar username="nizarabizaher" />
       {/* Footer */}
       <Footer />
     </div>

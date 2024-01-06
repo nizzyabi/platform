@@ -40,6 +40,7 @@
     "react-activity-calendar": "^2.2.1",
     "react-dom": "^18",
     "react-firebase-hooks": "^5.1.1",
+    "react-github-calendar": "^4.0.8",
     "react-github-calender": "^1.1.0",
     "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
