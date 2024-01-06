@@ -11,6 +11,8 @@ const SettingsPage = async () => {
 
     return (
         <div>
+            {/*JSON DATA*/}
+            { JSON.stringify(session)}
             <div>
                 {session!.user && (
                     <div>

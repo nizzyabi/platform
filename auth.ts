@@ -11,6 +11,22 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  // Callbacks allow us to customuzie the uth process such as who has access to what, get ID, and block users.
+  callbacks: {
+    // token & session
+    async session({ session, token }) {
+      // if they have an id (sub) and user has been created, return it
+      if (token.sub && session.user) {
+      session.user.id = token.sub;
+      }
+      return session
+    },
+
+    // jwt
+    async jwt ({ token }) {
+      return token;
+    }
+  },
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,

@@ -139,7 +139,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <GitHubCalendar username="nizarabizaher" />
+      
       {/* Footer */}
       <Footer />
     </div>
