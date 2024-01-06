@@ -1,6 +1,6 @@
 // npx prisma generate
 // npx prisma db push
-
+// npx prisma migrate reset (reset)
 // DB Source
 datasource db {
   provider  = "postgresql"
@@ -13,6 +13,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
+//User Role
+enum UserRole {
+  USER
+  ADMIN
+}
+
 // User Model
 model User {
   id            String    @id @default(cuid())
@@ -21,6 +27,7 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
+  role          UserRole   @default(USER)
   accounts      Account[]
 }
 // Account Model

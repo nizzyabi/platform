@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';import Image from "next/image";
 const SettingsPage = async () => {
     const session = await auth();
     // Get when user was created
@@ -13,6 +12,7 @@ const SettingsPage = async () => {
         <div>
             {/*JSON DATA*/}
             { JSON.stringify(session)}
+            
             <div>
                 {session!.user && (
                     <div>
@@ -39,9 +39,10 @@ const SettingsPage = async () => {
                         {/* Account Purchases */}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">account type:</span>
-                                <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">ares
+                                <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session!.user.role}
                                 </span>
                             </h2>
+                            
                             
                         </div>
                         
