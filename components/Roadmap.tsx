@@ -3,26 +3,38 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import { auth } from "@/auth";
+import Footer from "@/components/Footer";
+import { Separator } from "@/components/ui/separator";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { BiBrain, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
+import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaNodeJs, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
+
+import { IoBuildOutline } from "react-icons/io5";
+import { TbBrandNextjs } from "react-icons/tb";
+import { GiHammerNails } from "react-icons/gi";
+import { useSession } from "next-auth/react";
+import { CircularProgress } from "@mui/material";
 
 
-export default async function RoadmapPage() {
-    const session = await auth();
+
+export default function Roadmap() {
+    const { data: session } = useSession();
     const roadmapData = [
         {
             number: '01',
-            title: 'Basics of Programming',
+            title: <p>Basics</p>,
             description: 'Learn the basics of programming & how computers work',
             resources: [
                 {
-                    title: 'Basics',
+                    title: <p>Basics</p>,
                     link: 'https://youtu.be/zOjov-2OZ0E?si=7Y_LnQZ_mj10SfhG',
-                    image: 'youtube.webp'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'cs50',
                     link: 'https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?utm_source=google&utm_campaign=19315581336&utm_medium=cpc&utm_term=cs50&hsa_acc=7245054034&hsa_cam=19315581336&hsa_grp=144242542723&hsa_ad=642052609431&hsa_src=g&hsa_tgt=kwd-296840910&hsa_kw=cs50&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiA9dGqBhAqEiwAmRpTC1knf9hYdaVMlE5mOdfTYfbbCW1kFNlkMka0vZ0XDe-kCGTsRW3HMRoCq9wQAvD_BwE',
-                    image: 'cs50.jpeg'
+                    icon: <BiSolidSchool className="text-blue-600"/>
                 }
             ]           
         },
@@ -34,17 +46,17 @@ export default async function RoadmapPage() {
                 {
                     title: 'FCC',
                     link: 'https://www.freecodecamp.org/learn/2022/responsive-web-design/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Git',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'youtube.webp'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'Project',
                     link: 'https://youtu.be/p0bGHP-PXD4?si=s08EKVPT3caNgzxN/',
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 }
             ]
 
@@ -57,17 +69,17 @@ export default async function RoadmapPage() {
                 {
                     title: 'FCC',
                     link: 'https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'JavaScript',
                     link: 'https://youtu.be/PkZNo7MFNFg?si=iYfLsiYjPP2h7DN5',
-                    image: 'javascript-logo.png'
+                    icon: <BiLogoJavascript className="text-yellow-400" />
                 },
                 {
                     title: 'Project',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 },
             ]
 
@@ -80,22 +92,22 @@ export default async function RoadmapPage() {
                 {
                     title: 'React',
                     link: 'https://fullstackopen.com/en/',
-                    image: 'reacting.png'
+                    icon: <BiLogoReact className="text-cyan-500" />
                 },
                 {
                     title: 'React Project',
                     link: "https://youtu.be/b9eMGE7QtTk?si=HPCbJHJaBkGZq3OS",
-                    image: 'tools.png'
+                    icon: <IoBuildOutline className="text-purple-500"/>
                 },
                 {
                     title: 'Next',
                     link: 'https://www.youtube.com/watch?v=wm5gMKuwSYk',
-                    image: 'next.webp'
+                    icon: <TbBrandNextjs className="text-black"/>
                 },
                 {
                     title: 'Next Project',
                     link: "https://youtu.be/pUNSHPyVryU?si=pyuPmFD1qQVUcSs-",
-                    image: 'tools.png'
+                    icon: <GiHammerNails className="text-purple-500"/>
                 },
                
             ]
@@ -109,22 +121,22 @@ export default async function RoadmapPage() {
                 {
                     title: 'MongoDB',
                     link: 'https://youtu.be/ofme2o29ngU?si=tN6vQG1kF_dlnd2h',
-                    image: 'mongodb.png'
+                    icon: <BiLogoMongodb className="text-green-500" />
                 },
                 {
                     title: 'Node',
                     link: 'https://youtu.be/SccSCuHhOw0?si=8WinLJlJl0bpF-DA',
-                    image: 'express.png'
+                    icon: <FaNode className="text-green-600" />
                 },
                 {
                     title: 'MongoDB, Node, Express',
                     link: 'https://www.freecodecamp.org/learn/back-end-development-and-apis/',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Youtube',
                     link: 'https://youtu.be/Agw0LdW9xB4?si=3EUsRTSNq8-C3Z0w',
-                    image: 'tools.png',
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 
                 
@@ -138,18 +150,18 @@ export default async function RoadmapPage() {
                 {
                     title: 'MERN',
                     link: 'https://youtu.be/7CqJlxBYj-M?si=aUct4yVHR92-6GUf',
-                    image: 'free.webp'
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'MERN Project',
                     link: "https://youtu.be/0osXx2oJu44?si=jAgisHX-nI-TXNLw",
-                    image: 'mern.webp'
+                    icon: <FaSquareShareNodes className="text-black"/>
                     
                 },
                 {
                     title: 'MERN Stack Project',
                     link: 'https://youtu.be/-42K44A1oMA?si=AQ6Tbf-1mfM20Qgb',
-                    image: 'tools.png'
+                    icon: <GiHammerNails className="text-purple-500"/>
                 }
                 
             ]
@@ -163,17 +175,17 @@ export default async function RoadmapPage() {
                 {
                     title: 'Software Design',
                     link: 'https://youtu.be/FLtqAi7WNBY?si=ZD843HSGgKlc9iBN',
-                    image: 'youtube.webp'
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'software',
                     link: 'https://youtu.be/tv-_1er1mWI?si=ouX4gv8L3HHEXEqR',
-                    image: 'youtube.webp'
+                    icon: <FaCode className="text-blue-500"/>
                 },
                 {
                     title: 'Github',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    image: 'git.png'
+                    icon: <FaGithub className="text-black"/>
                 }
             ]
         },
@@ -185,83 +197,65 @@ export default async function RoadmapPage() {
                 {
                     title: 'motivation',
                     link: 'https://youtu.be/Xg9ihH15Uto?si=NlXIMxIob79_9kh1',
-                    image: 'youtube.webp',
+                    icon: <BiLogoYoutube className="text-red-500"/>
                 },
                 {
                     title: 'Mock Interview',
                     link: 'https://youtu.be/1qw5ITr3k9E?si=DjqosIoiCZkP50xi',
-                    image: 'free.webp',
+                    icon: <FaFreeCodeCamp className="text-green-800"/>
                 },
                 {
                     title: 'Interview Prep',
                     link: 'https://youtu.be/5uhmS8nzxM4?si=LhHymrGRN3qPez_R',
-                    image: 'resume.jpeg',
+                    icon: <FaPaperclip className="text-blue-500"/>
                 }
             ]
         }
 
     ]
-
-    const [userData, setUserData] = useState({ name: '' }); 
-
-    // capitalize the first letter of a string
-    const capitalizeFirstLetter = (string:any) => {
-        if (!string) return '';
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    };
-
-    // fetch the data
-    const getUserDetails = async () => {
-        try {
-            const res = await axios.get('/api/users/me');
-            if (res.data && res.data.data) {
-                setUserData({
-                    // Capitalize the first letter of the name
-                    name: capitalizeFirstLetter(res.data.data.name),
-                    // Include other user data as needed
-                    
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching user details:', error);
-            // Optionally handle the error (show a message, redirect, etc.)
-        }
-    };
-
+    
     useEffect(() => {
-        getUserDetails();
-    }, []);
+        AOS.init({
+          disable: "phone",
+          duration: 500,
+          easing: "ease-out-cubic",
+        });
+      }, []);
+      
 
     return (
-        <div>
-            {session!.user && (
-                    <div>
-                        <h1 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">{session!.user.name} Roadmap</h1>
-                    </div>
-                )}
-            <h1 className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">Roadmap</h1>
+        <div className="mt-6">
+            <h1 className="text-5xl text-center font-extrabold" data-aos='fade-right'> 
+            {!session ? (
+                <p>Roadmap</p>
+            ): (
+                <p>{session?.user.name}'s Roadmap</p>
+            )}
+            </h1>
+
+            <p data-aos='fade-right' className="text-xl text-center font-semibold text-slate-400">Full roadmap to being a web developer</p>
 
             
-            <Link href='https://youtu.be/tqmG8Xjb4rM?si=chsJkstYfzdfymp1' className="rounded-xl border border-primary flex justify-center mt-4 max-w-sm mx-auto hover:opacity-70 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
-                Struggling? Checkout the SD Routine!
-            </Link>
+            <div className='flex items-center justify-center' data-aos='fade-right'>
+                <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+            </div>
 
-            <div>
+            <div data-aos='fade-left'>
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
-                <div key={index} className="mt-8 space-y-6 max-w-xl mx-auto rounded-xl p-5 border border-primary videoBorderPink">
+                <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
                     <div className="flex justify-between ">
-                        <p className="font-bold text-3xl md: text-md">{item.number}</p>
-                        <h1 className="text-3xl font-bold">{item.title}</h1>
+                        <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
+                        <p className="font-bold text-2xl lg:text-3xl text-slate-300/10">{item.number}</p>  
                     </div>
 
-                    <p className="text-center">{item.description}</p>
+                    <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
 
                     <div className="flex justify-center space-x-8">
                         {item.resources.map((resource, resIndex) => (
                             <Link key={resIndex} href={resource.link}>
                                 
-                                    <Image src={`/${resource.image}`} height={40} width={40} alt={resource.title} className="rounded-full border-2 border-gray-500 hover:opacity-70"/>
+                                    <p className="text-5xl bg-slate-200 shadow-xl shadow-black hover:scale-105 transition-transform duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">{resource.icon}</p>
                                 
                             </Link>
                         ))}
@@ -270,10 +264,8 @@ export default async function RoadmapPage() {
             ))}
   
             </div>
-            <div className="text-center flex justify-center pt-6 mt-8 mb-8 space-x-8 border-t font-bold">
-                <h1>Web Dev Roadmap</h1>
-                <h1>NizzyABI Inc.</h1>
-            </div>
+            <Footer />
         </div>
     )
 }
+

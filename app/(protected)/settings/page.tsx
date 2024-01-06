@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import GitHubCalendar from 'react-github-calendar';
+import { number } from "zod";
 const SettingsPage = async () => {
     const session = await auth();
     // Get when user was created
@@ -41,8 +43,13 @@ const SettingsPage = async () => {
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">account type:</span>
                                 <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session!.user.role}
-                                </span>
-                                
+                                </span>        
+                            </h2>
+                        {/*User Id*/}
+                            <h2 className="text-2xl font-bold text-slate-300">
+                                <span className="text-white ">user id: </span>
+                                <span className="text-xl">{session!.user.id}
+                                </span>        
                             </h2>
                             
                             
@@ -53,6 +60,7 @@ const SettingsPage = async () => {
                 )}
                 
             </div>
+
             
             <form action={async () => {
                 "use server";

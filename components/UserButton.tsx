@@ -26,6 +26,7 @@ const UserButton = () => {
     const { data: session, status } = useSession();    
     const [showRegister, setShowRegister] = useState(false);
     const isLoading = status === "loading";
+    
     // Toggle form of auth
     const toggleForm = () => {
         setShowRegister(!showRegister);
@@ -55,9 +56,14 @@ const UserButton = () => {
 
         ): (
             <Link href='/settings'>
-                <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/50 to-blue-700/50 text-6xl " sx={{ width: 45, height: 45}}>
-                        <IoMdPerson className="text-3xl"/>
-                </Avatar>
+                {!session.user.image ? (
+                    <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/50 to-blue-700/50 text-6xl " sx={{ width: 45, height: 45}}>
+                    <IoMdPerson className="text-3xl"/>
+            </Avatar>
+                ): (
+                    <Avatar alt='logo' src={session!.user.image} className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500"  sx={{ width: 45, height: 45 }}/>
+                )}
+                
             </Link>
         )}
 
