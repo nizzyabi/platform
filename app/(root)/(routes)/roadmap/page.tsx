@@ -14,11 +14,11 @@ import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
 import UserName from "@/components/UserName";
+import { auth } from "@/auth";
 
 
 
 export default function RoadmapPage() {
-    
     const roadmapData = [
         {
             number: '01',

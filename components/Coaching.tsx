@@ -91,10 +91,20 @@ export default function Coaching() {
             </div>
           </div>
 
+          {/* Coaching Description */}
+          <div>
+            <h1>Understand how code works</h1>
+            <h1>Speed up the learning process by learning from someone elses mistakes</h1>
+            <h1>Learn the behind the scenes of how web development works</h1>
+            <h1>Assignments & projects</h1>
+          </div>
+
           {/* Link to coaching */}
-          <Link href='https://calendly.com/nizabizaher/programming-coaching' className='pt-4 flex items-center justify-center'>
-            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Sign Up For Coaching <AutoFixHighIcon className='ml-2 font-extrabold' /></Button>
-          </Link>
+          <div className="flex items-center justify-center">
+            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>
+            <Link href='https://calendly.com/nizabizaher/programming-coaching'>Sign Up For Coaching <AutoFixHighIcon className='ml-2 font-extrabold' /></Link></Button>
+          </div>
+          
         </div>
         
         

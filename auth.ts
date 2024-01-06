@@ -13,9 +13,22 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  // if there is an error, redirect to this page
+  pages: {
+    signIn: '/auth/login',
+    error: '/auth/error',
+  },
+  // events to get emailverfiied if the user used Oauth
+  events: {
+    async linkAccount({ user }) {
+      await db.user.update({
+        where: { id: user.id },
+        data: { emailVerified: new Date()}
+      })
+    }
+  },
   // Callbacks allow us to customuzie the uth process such as who has access to what, get ID, and block users.
   callbacks: {
-
     // token & session
     async session({ session, token }) {
   
