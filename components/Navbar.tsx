@@ -44,12 +44,21 @@ export default function Navbar() {
             </div>
     
     <div className="w-full  flex justify-between items-center px-2 cursor-pointer hide-on-small-screens ">
+        <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 360, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20
+            }}
+        >
         <Link href='/' className="flex items-center ml-2 "
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         >
             <motion.img 
-                src={isHovered ? '/chad.svg' : '/gilbert.svg'}
+                src={isHovered ? '/chad.svg' : '/chad.svg'}
                 width={100}  // Base width
                 height={100}
                 alt='logos2'
@@ -59,6 +68,7 @@ export default function Navbar() {
                 
             />
         </Link>
+        </motion.div>
         
         <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 navbar">
             <Link href="/roadmap">

@@ -55,7 +55,7 @@ const UserButton = () => {
 
         ): (
             <Link href='/settings'>
-                <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500 to-blue-700 text-6xl " sx={{ width: 45, height: 45}}><IoMdPerson className="text-3xl"/></Avatar>
+                <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/50 to-blue-700/50 text-6xl " sx={{ width: 45, height: 45}}><IoMdPerson className="text-3xl"/></Avatar>
             </Link>
         )}
 
