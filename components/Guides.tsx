@@ -10,7 +10,7 @@ const guides = [
   {
     title: "Deep Work Guide",
     image: "/comingsoon.svg",
-    link: "/deepwork",
+    link: "",
     subjects: [
       "deep work",
       "flow State",
@@ -22,7 +22,7 @@ const guides = [
   {
     title: "Full Learn to Coding Guide",
     image: "/gary.svg",
-    link: "/productivity",
+    link: "/fullcoderguide",
     subjects: [
       "productivity",
       "code",
@@ -34,7 +34,7 @@ const guides = [
   {
     title: "Frontend Development Course",
     image: "/comingsoon.svg",
-    link: "/full",
+    link: "",
     subjects: [
       "react",
       "html",

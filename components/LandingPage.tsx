@@ -111,7 +111,7 @@ export default function LandingPage() {
       </div>
 
       {/* Sales Pitch */}
-      <div className='pt-12 text-center space-y-[300px]'>
+      <div className='pt-12 text-center space-y-[50px]'>
         {/* Why Am I Struggling*/}
         <div className='space-y-6'>
           <h1 className='font-extrabold text-6xl '>WHY AM I STRUGGLING? 😢</h1>
@@ -120,6 +120,11 @@ export default function LandingPage() {
             <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
           </div>
         </div>
+
+        {/*Arrow*/}
+      <div className=' text-center finger pt-[90px]'>
+        <p className='text-6xl'>⏬</p>
+      </div>
 
         {/* Realization */}
         <div className='space-y-6'>
@@ -130,14 +135,23 @@ export default function LandingPage() {
           </div>
         </div>
 
+        {/*Arrow*/}
+      <div className=' text-center finger pt-[90px]'>
+        <p className='text-6xl'>⏬</p>
+      </div>
+
         {/* Solution */}
         <div className='space-y-6'>
           <h1 className='font-extrabold text-6xl'>SOLUTION 🤩</h1>
           <p  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
-          <div className='flex items-center justify-center'>
-            <Image alt='pyramid' src='/git.png' width={700} height={700} className='rounded-xl' />
+          <div className='flex items-center justify-center px-12'>
+            <GitHubCalendar username='AntonioErdeljac' year={2023} />
           </div>
         </div>
+      </div>
+
+      <div className='flex items-center justify-center'>
+        <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
       </div>
       
       {/* Footer */}
