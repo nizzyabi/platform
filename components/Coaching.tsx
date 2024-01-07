@@ -93,12 +93,62 @@ export default function Coaching() {
           </div>
 
           {/* Coaching Description */}
-          <div>
-            <h1>Understand how code works</h1>
-            <h1>Speed up the learning process by learning from someone elses mistakes</h1>
-            <h1>Learn the behind the scenes of how web development works</h1>
-            <h1>Assignments & projects</h1>
+          <div className="text-center pt-10">
+            <h1 className="text-4xl font-extrabold">Who is this guy? 🧐</h1>
+            <p>You may be asking what qualifications I have to teach you how to code...</p>
+
+            <div className="relative w-[66] h-50 flex items-center justify-center p-5">
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out videoBorderBlue rounded-xl">
+                <p className="font-extrabold">First Site</p>
+                <Image 
+                  src="/zeina.png"
+                  alt="Nizabizaher"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-xl"
+                />
+              </div>
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out videoBorderBlue rounded-xl">
+                <Image 
+                  src="/voice.png"
+                  alt="Nizabizaher"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-xl"
+                />
+                <p className="font-extrabold">Current Site</p>
+              </div>
+
+            </div>
           </div>
+          <div>
+            <p className="text-center">I was able to overcome the hurdles & teach myself how to code from beginning to end, from awful looking sites to full stack apps.</p>
+            <div className="flex items-center justify-center">
+              <Image 
+                src="/me.png"
+                alt="Nizabizaher"
+                className="rounded-xl"
+                width={360}
+                height={360}
+              />
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-center text-3xl font-extrabold">What will we cover? 🔐</h1>
+            <p className="text-center">Whatever you want! A typical coaching session covers things such as roadmap advice, programming questions, & beginner level coding help. </p>
+          </div>
+
+          <div>
+            <h1 className="text-center text-3xl font-extrabold">Results</h1>
+            <p className="text-center">Talk about results </p>
+          </div>
+
+          <div>
+            <h1 className="text-center text-3xl font-extrabold">Testimonials</h1>
+            <p className="text-center">Nixon, Rohith, Leo, etc. </p>
+          </div>
+
 
           {/* Link to coaching */}
           <div className="flex items-center justify-center">
