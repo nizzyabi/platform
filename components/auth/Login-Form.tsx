@@ -22,6 +22,12 @@ import { useSearchParams } from "next/navigation";
 
 
 export const LoginForm = () => {
+    // Search Params
+    const searchParams = useSearchParams();
+    // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
+    const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already in use with different provider!" : "";
+
+
     // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
     const [isPending, startTransition] = useTransition();
 
@@ -48,7 +54,8 @@ export const LoginForm = () => {
         startTransition(() => {
             login(values)
               .then((data) => {
-                setError(data.error);
+                setError(data?.error);
+                // TODO: Add when we add 2FA
                 setSuccess(data.success);
              })
         })
@@ -109,7 +116,7 @@ export const LoginForm = () => {
                         />
                     </div>
                     {/* Form Error */}
-                    <FormError message={error} />
+                    <FormError message={error || urlError} />
                     {/* Form Success */}
                     <FormSuccess message={success} />
 

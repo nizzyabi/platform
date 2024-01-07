@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { BiLogoDiscord, BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import GitHubCalendar from 'react-github-calendar';
+import { FaCode, FaDiscord, FaYoutube } from 'react-icons/fa';
 
 const icons1 = [
   {
@@ -105,54 +106,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/*Arrow*/}
-      <div className=' text-center finger pt-[90px]'>
-        <p className='text-6xl'>⏬</p>
-      </div>
 
-      {/* Sales Pitch */}
-      <div className='pt-12 text-center space-y-[50px]'>
-        {/* Why Am I Struggling*/}
-        <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl '>WHY AM I STRUGGLING? 😢</h1>
-          <p  className='text-xl text-slate-300'>You only retain 5%-10% of what you learn by reading and watching others code.</p>
-          <div className='flex items-center justify-center'>
-            <Image alt='pyramid' src='/pyramid.svg' width={700} height={700} className='rounded-xl' />
-          </div>
-        </div>
-
-        {/*Arrow*/}
-      <div className=' text-center finger pt-[90px]'>
-        <p className='text-6xl'>⏬</p>
-      </div>
-
-        {/* Realization */}
-        <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl'>REALIZATION 😮</h1>
-          <p  className='text-xl text-slate-300'>Learning by doing is the best way to learn how to code.</p>
-          <div className='flex items-center justify-center'>
-            <Image alt='pyramid' src='/pyramidafter.svg' width={700} height={700} className='rounded-xl' />
-          </div>
-        </div>
-
-        {/*Arrow*/}
-      <div className=' text-center finger pt-[90px]'>
-        <p className='text-6xl'>⏬</p>
-      </div>
-
-        {/* Solution */}
-        <div className='space-y-6'>
-          <h1 className='font-extrabold text-6xl'>SOLUTION 🤩</h1>
-          <p  className='text-xl text-slate-300'>Learn by doing projects, not watching others.</p>
-          <div className='flex items-center justify-center px-12'>
-            <GitHubCalendar username='AntonioErdeljac' year={2023} />
-          </div>
-        </div>
-      </div>
-
-      <div className='flex items-center justify-center'>
-        <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
-      </div>
       
       {/* Footer */}
       <Footer />
