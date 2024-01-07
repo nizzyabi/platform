@@ -29,6 +29,20 @@ export const {
   },
   // Callbacks allow us to customuzie the uth process such as who has access to what, get ID, and block users.
   callbacks: {
+    // sign in
+    async signIn({ user, account}) {
+      // Allow OAuth without verification
+      if(account?.provider !== "credentials") return true;
+
+      // get exisiting user & restrict signin if they have not verified their email
+      const exisitingUser = await getUserById(user.id);
+      
+      if(!exisitingUser?.emailVerified) return false;
+
+      //TODO: add 2FA
+
+      return true;
+    },
     // token & session
     async session({ session, token }) {
   
