@@ -7,6 +7,8 @@ import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
+import { CircularProgress } from "@mui/material"
+
 
 export const NewVerificationForm = () => {
     // use state
@@ -48,7 +50,7 @@ export const NewVerificationForm = () => {
         >
             <div className="flex items-center w-full justify-center">
                 {!success && !error && (
-                    <ClipLoader color="white"/>
+                    <CircularProgress />
                 )}
                 <FormSuccess message={success} />
                 {!success && (

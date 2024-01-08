@@ -26,7 +26,7 @@ const UserButton = () => {
         setShowRegister(!showRegister);
     };
     if (isLoading) {
-        return <CircularProgress size={24} />;
+        return <CircularProgress size={24} color="primary" />;
       }
   return (
     <div>
