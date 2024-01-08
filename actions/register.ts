@@ -48,5 +48,5 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
     );
 
     // If fields are valid
-    return { success: "Confirmation email sent! 📧"}
+    return { success: "Confirmation email sent!"}
 };
