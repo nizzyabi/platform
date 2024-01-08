@@ -92,32 +92,9 @@ export default function Navbar() {
                         coaching
                 </p>
             </Link>
-            
-
-            
-
+    
             {/* In the Auth Button, put user imgage if they are logged in and have an image from thieir inital login, else put the default image*/}
             <UserButton />
-
-            {/*<Dialog>
-                <DialogTrigger asChild>
-                    <Avatar alt='logo' src="nizar.png" className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500 " sx={{ width: 52, height: 52 }}/>
-                </DialogTrigger>
-                
-                <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl">
-                {showRegister ? <RegisterForm /> : <LoginForm />}
-                
-                <button onClick={toggleForm} className="mt-auto  w-full text-center hover:underline">
-                    {showRegister ? "Already have an account?" : "Don't have an account?"}
-                </button>  
-                
-                </DialogContent> 
-                         
-            </Dialog>*/}
-            
-                
-            
-            
         </div>
         
     </div>

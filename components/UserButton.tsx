@@ -51,8 +51,8 @@ const UserButton = () => {
         ): (
             <Link href='/settings'>
                 {!session.user.image ? (
-                    <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/50 to-blue-700/50 text-6xl " sx={{ width: 45, height: 45}}>
-                    <IoMdPerson className="text-3xl"/>
+                    <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/90 to-blue-700/90" sx={{ width: 45, height: 45}}>
+                    <IoMdPerson className="text-2xl"/>
             </Avatar>
                 ): (
                     <Avatar alt='logo' src={session!.user.image} className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500"  sx={{ width: 45, height: 45 }}/>
