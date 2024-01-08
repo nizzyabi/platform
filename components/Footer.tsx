@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="pb-4">
       <div className="text-center pt-[40px] pb-2 text-slate-400">
-        Found a mistake? Let us know on the <Link href='https://github.com/NizarAbiZaher/platform'><span className="text-blue-500">GitHub Page</span><span className="text-2xl">☺</span></Link>
+        Found a mistake? Let us know on the <Link href='https://github.com/NizarAbiZaher/platform'><span className="text-blue-500 hover:underline">GitHub Page</span><span className="text-2xl">☺</span></Link>
       </div>
       <div className="flex items-center justify-center space-x-4 mb-2 text-3xl">
         <Link href='https://github.com/NizarAbiZaher' className="hover:scale-110 transition-transform duration-500" >
@@ -22,7 +22,7 @@ export default function Footer() {
           <BsYoutube />
         </Link>
       </div>
-      <p className="text-xs text-center">© 2023 NizzyAbi LLC</p>
+      <p className="text-xs text-center">© 2024 NizzyAbi LLC</p>
     </div>
   )
 }

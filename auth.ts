@@ -56,6 +56,7 @@ export const {
         session.user.role = token.role as UserRole;
       }
 
+
       // you can add whatever you want. it is very powerful. if lost go to callbacks lesson at the 2:50:00 mark in the course
 
       return session

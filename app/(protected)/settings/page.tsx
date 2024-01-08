@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import GitHubCalendar from 'react-github-calendar';
-import { number } from "zod";
+
 const SettingsPage = async () => {
     const session = await auth();
     // Get when user was created
@@ -37,19 +36,23 @@ const SettingsPage = async () => {
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white">email:</span>
                                 <span className="text-xl"> {session!.user.email}</span> 
+                                
                                 <VerifiedIcon fontSize="large" className="text-blue-400 pb-0.5"/>
                             </h2>
                         {/* Account Purchases */}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">account type:</span>
                                 <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session!.user.role}
+                                
                                 </span>        
                             </h2>
                         {/*User Id*/}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">user id: </span>
                                 <span className="text-xl">{session!.user.id}
-                                </span>        
+                                </span>  
+                                
+                                   
                             </h2>
                             
                             

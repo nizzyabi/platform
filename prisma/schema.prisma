@@ -29,6 +29,7 @@ model User {
   password      String?
   role          UserRole   @default(USER)
   accounts      Account[]
+  createdAt     DateTime  @default(now())
 }
 // Account Model
 model Account {
