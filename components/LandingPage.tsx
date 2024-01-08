@@ -2,17 +2,14 @@
 
 // Imports 
 import { Button } from '@/components/ui/button'
-
 import Footer from './Footer'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import Image from 'next/image';
-import { BiLogoDiscord, BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
+import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
-import GitHubCalendar from 'react-github-calendar';
-import { FaCode, FaDiscord, FaYoutube } from 'react-icons/fa';
+
 
 const icons1 = [
   {
@@ -28,7 +25,6 @@ const icons1 = [
     icon: <BsGithub className='text-black text-4xl lg:text-5xl'/>
   },
 ]
-
 const icons2 = [
   {
     name: "React",
@@ -54,7 +50,6 @@ export default function LandingPage() {
     });
   }, []);
 
-
   return (
     <div className='mt-12'>
 
@@ -76,8 +71,6 @@ export default function LandingPage() {
             <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
           </div>
         </div>
-
-
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center'>
           <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500'>

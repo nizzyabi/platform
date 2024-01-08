@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronUp } from "lucide-react"
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 const Scroll = () => {

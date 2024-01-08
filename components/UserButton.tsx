@@ -1,13 +1,8 @@
 'use client'
-import { auth } from "@/auth"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { RegisterForm } from "./auth/Register-Form"
@@ -17,7 +12,6 @@ import { Avatar, CircularProgress } from "@mui/material"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
 import { IoMdPerson } from "react-icons/io";
-import Image from "next/image"
 
 const UserButton = () => {
     // get user
