@@ -66,7 +66,7 @@ const UserButton = () => {
                 )}
             
             <button onClick={handleShowReset} className=" text-center hover:underline">
-                    {showReset ? <div className="flex items-center justify-center ml-4">Back to login</div> : "Forgot password?"}
+                    {showReset ? <div className="flex items-center justify-center ml-4">Back to login</div> : "Forgot password??"}
             </button>
             </div>
             
