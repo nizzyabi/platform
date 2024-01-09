@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar'
 import Scroll from '@/components/Scroll'
 import { Toaster } from '@/components/ui/toaster'
 import { SessionProvider } from 'next-auth/react'
-
+import { usePathname } from 'next/navigation'
 
 
 
@@ -24,13 +24,12 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
-  
+}) {  
   return (   
    <SessionProvider>
     <html lang="en">
       <body className={sofia.className}>
-        <Navbar />
+      <Navbar />
         <Scroll />
             {children}
             <Toaster />

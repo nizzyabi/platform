@@ -11,65 +11,59 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
-import { LoginSchema } from "@/schemas";
+import { ResetSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
 import { login } from "@/actions/login";
-import { use, useState, useTransition } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useTransition } from "react";
 import Link from "next/link";
-
-
-export const LoginForm = ({ onResetPassword }: any) => {
-    // Search Params
-    const searchParams = useSearchParams();
-    // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
-    const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already in use with different provider!" : "";
-
-
+export const ResetForm = () => {
+    
     // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
     const [isPending, startTransition] = useTransition();
+
     // Error & Success State
     const [error, setError] = useState<string | undefined>("");
 
     const [success, setSuccess] = useState<string | undefined>("");
 
     // Form Hook
-    const form = useForm<z.infer<typeof LoginSchema>>({
-        resolver: zodResolver(LoginSchema),
+    const form = useForm<z.infer<typeof ResetSchema>>({
+        resolver: zodResolver(ResetSchema),
         defaultValues: {
             email: "",
-            password: ""
         }
     })
     // onSubmit Function
-    const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    const onSubmit = (values: z.infer<typeof ResetSchema>) => {
         // reset fields when submitting form
         setError("");
         setSuccess("");
 
+        console.log(values)
+
         // import login from @/actions/login
-        startTransition(() => {
-            login(values)
-              .then((data) => {
-                setError(data?.error);
-                setSuccess(data?.success);
-             })
-        })
+        // startTransition(() => {
+           // login(values)
+           //   .then((data) => {
+               // setError(data?.error);
+              //  setSuccess(data?.success);
+           //  })
+       // })
     }
 
 
     return (
         <CardWrapper
-            headerTitle="Login"
-            showSocial
+            headerTitle="Forgot Password?"
+            
         >
             <Form {...form}>
                 <form 
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
+                    className="space-y-5"
                 >
                     <div className="space-y-4">
                         {/* Email Input Form */}
@@ -93,34 +87,11 @@ export const LoginForm = ({ onResetPassword }: any) => {
                             )}
                         />
 
-                        {/* Password Input Form */}
-                        <FormField 
-                            control={form.control}
-                            name="password"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="font-bold">Password</FormLabel>
-                                    <FormControl>
-                                        <Input 
-                                            placeholder="●●●●●●"
-                                            {...field}
-                                            disabled={isPending}
-                                            type='password'
-                                            className="rounded shadow-sm text-lg shadow-black"
-                                        />
-                                    </FormControl>
-                                
-                                    
-                                    <FormMessage className="text-red-500" />
-                                </FormItem>
-                            )}
-                        />
                     </div>
                     {/* Form Error */}
-                    <FormError message={error || urlError} />
+                    <FormError message={error} />
                     {/* Form Success */}
                     <FormSuccess message={success} />
-                    
 
                     {/* Submit Button */}
                     <Button 
@@ -128,12 +99,10 @@ export const LoginForm = ({ onResetPassword }: any) => {
                         type="submit"
                         className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
                     >
-                        login
+                        send reset email
                     </Button>
                     
-                    <h1 className="text-center">or</h1>
                 </form>
-                
             </Form>
         </CardWrapper>
     )

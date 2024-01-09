@@ -1,23 +1,8 @@
 'use client'
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-  } from "@/components/ui/dialog"
-import { Avatar, Button } from "@mui/material";
 import "aos/dist/aos.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { LoginButton } from "./auth/Login-Button";
-import { LoginForm } from "./auth/Login-Form";
-import { RegisterForm } from "./auth/Register-Form";
-import { BackButton } from "./auth/Back-Button";
 import UserButton from "./UserButton";
 import { motion } from "framer-motion";
 

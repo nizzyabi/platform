@@ -7,23 +7,37 @@ import {
   } from "@/components/ui/dialog"
 import { RegisterForm } from "./auth/Register-Form"
 import { LoginForm } from "./auth/Login-Form"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Avatar, CircularProgress } from "@mui/material"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
 import { IoMdPerson } from "react-icons/io";
+import { ResetForm } from "./auth/Reset-Form"
+
+
 
 const UserButton = () => {
+    
     // get user
     // if user is logged in, return logout button
     // if user is not logged in, return login button
     const { data: session, status } = useSession();    
     const [showRegister, setShowRegister] = useState(false);
     const isLoading = status === "loading";
+    const [open, setOpen] = useState(false);
+    const [showReset, setShowReset] = useState(false);
+
     
     // Toggle form of auth
     const toggleForm = () => {
         setShowRegister(!showRegister);
+        setShowReset(false); // Hide reset form when showing register form
+    };
+    const handleShowReset = () => {
+        setShowReset(!showReset);
+        if (showReset) {
+            setShowRegister(false); // Hide register form when showing reset form
+        }
     };
     if (isLoading) {
         return <CircularProgress size={24} color="primary" />;
@@ -37,12 +51,24 @@ const UserButton = () => {
             </DialogTrigger>
             
             <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl">
-            {showRegister ? <RegisterForm /> : <LoginForm />}
+            {showReset ? (
+                    <ResetForm />
+                ) : showRegister ? (
+                    <RegisterForm />
+                ) : (
+                    <LoginForm />
+                )}
+                <div className="flex items-center justify-center space-x-20 mr-8">
+                {!showReset && (
+                    <button onClick={toggleForm} className="hover:underline">
+                        {showRegister ? "Already have an account?" : "Don't have an account?"}
+                    </button>
+                )}
             
-            <button onClick={toggleForm} className="mt-auto 
-             w-full text-center hover:underline">
-                {showRegister ? "Already have an account?" : "Don't have an account?"}
-            </button>  
+            <button onClick={handleShowReset} className=" text-center hover:underline">
+                    {showReset ? <div className="flex items-center justify-center ml-4">Back to login</div> : "Forgot password?"}
+            </button>
+            </div>
             
             </DialogContent> 
                      
