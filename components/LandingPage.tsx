@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
+import Link from 'next/link';
 
 
 const icons1 = [
@@ -68,7 +69,11 @@ export default function LandingPage() {
 
           {/* Button */}
           <div className='pt-4'>
-            <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+            <Button variant='gold'>
+              <Link href='/guides'>
+                Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' />
+              </Link>
+            </Button>
           </div>
         </div>
         {/* Icon Display*/}
