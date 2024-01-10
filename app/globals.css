@@ -17,6 +17,28 @@ html {
   
 }
 
+/* Default width for larger screens */
+.dialog-content {
+  width: 600px; /* Or whatever your default width is */
+  /* other styles */
+}
+
+/* Smaller screens (e.g., tablets) */
+@media (max-width: 768px) {
+  .dialog-content {
+      width: 80%; /* Reduced width */
+  }
+}
+
+/* Even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+  .dialog-content {
+      width: 95%; /* Further reduced width */
+  }
+}
+
+
+
 @media screen and (max-width: 768px) {
   .small-screen {
       display: block;

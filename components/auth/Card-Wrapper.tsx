@@ -23,7 +23,7 @@ export const CardWrapper = ({
     headerTitle,
 }: CardWrapperProps) => {
     return (
-        <Card className="w-[500px] rounded bg-[#191919] border-none px-5">
+        <Card className=" w-[500px] rounded bg-[#191919] border-none  mx-20">
 
             <CardHeader>
                 <Header title={headerTitle}/>

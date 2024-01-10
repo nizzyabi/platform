@@ -19,7 +19,7 @@ import { FormSuccess } from "@/components/Form-Success";
 import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
-import  Link  from "next/link";
+
 interface formToggle{
     forgotPassword: any;
 }
@@ -72,16 +72,16 @@ export const LoginForm = ({
             <Form {...form}>
                 <form 
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
-                >
-                    <div className="space-y-4">
+                    className="space-y-4">
+                
+                    <div className="space-y-2">
                         {/* Email Input Form */}
                         <FormField 
                             control={form.control}
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Email</FormLabel>
+                                    <FormLabel className="font-bold text-gray-400">Email</FormLabel>
                                     <FormControl className="">
                                         <Input 
                                             {...field}
@@ -102,7 +102,7 @@ export const LoginForm = ({
                             name="password"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Password</FormLabel>
+                                    <FormLabel className="font-bold text-gray-400">Password</FormLabel>
                                     <FormControl>
                                         <Input 
                                             placeholder="●●●●●●"

@@ -10,7 +10,7 @@ import { CardWrapper } from "./Card-Wrapper";
 export const ErrorCard = () => {
     return (
         <Card 
-            className="w-[400px] shadow-xl rounded">
+            className="shadow-xl rounded w-[400px] ">
             <CardHeader>
                 <p className="font-bold text-center text-2xl">Something went wrong 🧐</p>
             </CardHeader>

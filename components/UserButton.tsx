@@ -50,7 +50,7 @@ const UserButton = () => {
                 <Button variant="gold" className="mr-2 mt-5">login</Button>
             </DialogTrigger>
             
-            <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl">
+            <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl dialog-content">
             {showReset ? (
                     <ResetForm />
                 ) : showRegister ? (
