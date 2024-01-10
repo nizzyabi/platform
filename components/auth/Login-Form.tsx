@@ -116,6 +116,7 @@ export const LoginForm = ({
                                         size="sm"
                                         variant="link"
                                         className="px-0 font-normal"
+                                        type="button"
                                         onClick={ forgotPassword}
                                     >
                                        Forgot Password?

@@ -60,7 +60,7 @@ const UserButton = () => {
                 )}
                 <div className="flex items-center justify-center">
                 {!showReset && (
-                    <button onClick={toggleForm} className="hover:underline">
+                    <button onClick={toggleForm} className="hover:underline" type="button">
                         {showRegister ? "Already have an account?" : "Don't have an account?"}
                     </button>
                 )}
