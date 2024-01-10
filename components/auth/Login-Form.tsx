@@ -28,7 +28,6 @@ export const LoginForm = ({ onResetPassword }: any) => {
     // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
     const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already in use with different provider!" : "";
 
-
     // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
     const [isPending, startTransition] = useTransition();
     // Error & Success State
