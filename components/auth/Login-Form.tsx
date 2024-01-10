@@ -124,8 +124,6 @@ export const LoginForm = ({
                                     </Button>
                                     <FormMessage className="text-red-500" />
                             
-                                    
-                                    <FormMessage className="text-red-500" />
                                 </FormItem>
                             )}
                         />
