@@ -22,7 +22,7 @@ const UserButton = () => {
     // if user is logged in, return logout button
     // if user is not logged in, return login button
     const { data: session, status } = useSession();    
-    const [showRegister, setShowRegister] = useState(false);
+    const [showRegister, setShowRegister] = useState(true);
     const isLoading = status === "loading";
     const [open, setOpen] = useState(false);
     const [showReset, setShowReset] = useState(false);

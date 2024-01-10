@@ -16,9 +16,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
-import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
-import Link from "next/link";
+import {reset} from "@/actions/reset";
 export const ResetForm = () => {
     
     // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
@@ -44,14 +43,14 @@ export const ResetForm = () => {
 
         console.log(values)
 
-        // import login from @/actions/login
-        // startTransition(() => {
-           // login(values)
-           //   .then((data) => {
-               // setError(data?.error);
-              //  setSuccess(data?.success);
-           //  })
-       // })
+        
+        startTransition(() => {
+           reset(values)
+              .then((data) => {
+                setError(data?.error);
+                setSuccess(data?.success);
+             })
+        })
     }
 
 
