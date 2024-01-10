@@ -8,7 +8,8 @@ export const authRoutes = [
     '/auth/login',
     '/auth/register',
     '/auth/error',
-    '/auth/reset'
+    '/auth/reset',
+    '/auth/new-password'
 ]
 
 // API Route that id given access all the time as it is an API that needs calling
