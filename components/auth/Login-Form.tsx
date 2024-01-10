@@ -17,12 +17,16 @@ import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
 import { login } from "@/actions/login";
-import { use, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+import  Link  from "next/link";
+interface formToggle{
+    forgotPassword: any;
+}
 
-
-export const LoginForm = ({ onResetPassword }: any) => {
+export const LoginForm = ({
+    forgotPassword
+}: formToggle) => {
     // Search Params
     const searchParams = useSearchParams();
     // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
@@ -87,7 +91,7 @@ export const LoginForm = ({ onResetPassword }: any) => {
                                             className="rounded shadow-sm text-md shadow-black"
                                         />
                                     </FormControl>
-                                    <FormMessage className="text-red-500" />
+                                    
                                 </FormItem>
                             )}
                         />
@@ -108,7 +112,17 @@ export const LoginForm = ({ onResetPassword }: any) => {
                                             className="rounded shadow-sm text-lg shadow-black"
                                         />
                                     </FormControl>
-                                
+                                    <Button
+                                        size="sm"
+                                        variant="link"
+                                        className="px-0 font-normal"
+                                        onClick={ forgotPassword}
+                                    >
+                                       Forgot Password?
+                                       
+                                    </Button>
+                                    <FormMessage className="text-red-500" />
+                            
                                     
                                     <FormMessage className="text-red-500" />
                                 </FormItem>

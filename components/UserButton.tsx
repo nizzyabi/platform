@@ -56,9 +56,9 @@ const UserButton = () => {
                 ) : showRegister ? (
                     <RegisterForm />
                 ) : (
-                    <LoginForm />
+                    <LoginForm forgotPassword={handleShowReset}/>
                 )}
-                <div className="flex items-center justify-center space-x-20 mr-8">
+                <div className="flex items-center justify-center">
                 {!showReset && (
                     <button onClick={toggleForm} className="hover:underline">
                         {showRegister ? "Already have an account?" : "Don't have an account?"}
@@ -66,7 +66,10 @@ const UserButton = () => {
                 )}
             
             <button onClick={handleShowReset} className=" text-center hover:underline">
-                    {showReset ? <div className="flex items-center justify-center ml-4">Back to login</div> : "Forgot password?"}
+                {/* If show reset, show back to login that is it */}
+                
+                {showReset && "Back to login"}
+                
             </button>
             </div>
             
