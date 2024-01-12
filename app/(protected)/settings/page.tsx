@@ -17,9 +17,9 @@ const SettingsPage = () => {
         logout();
     }
     return (
-        <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center pt-8">
+        <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center pt-8 pb-12">
             {/* User Info */}
-            <Card className="w-[600px] rounded shadow-xl">
+            <Card className="w-[600px] rounded shadow-lg border-none">
                 {session && (
                     <div>
                         <div>
@@ -70,11 +70,52 @@ const SettingsPage = () => {
                 
             </Card>
             {/* Manage Account */}
-            <div>
-                <h1>Manage Account</h1>
-            </div>
-            
-            
+            <Card className="w-[600px] shadow-lg text-center font-bold border-none">
+                <h1 className="text-5xl font-extrabold pt-5">Manage Account</h1>
+                {/* Separator */}
+                <div className='flex items-center justify-center'>
+                            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+                </div>
+                <CardContent>
+                    <div className="flex flex-row items-center justify-between rounded p-3 pt-8">
+                        <Button className="bg-red-500 rounded hover:bg-red-500 hover:scale-105 duration-500 transition-transform">Purchase History</Button>
+                    </div>
+                    <div className="flex flex-row items-center justify-between rounded p-3">
+                        <Button className="bg-red-500 rounded hover:bg-red-500 hover:scale-105 duration-500 transition-transform">Reciepts</Button>
+                    </div>
+                    <div className="flex flex-row items-center justify-between rounded p-3">
+                        <Button className="bg-red-500 hover:bg-red-500 rounded hover:scale-105 duration-500 transition-transform">Invoices</Button>
+                    </div>
+                </CardContent>
+                
+
+            </Card>
+            {/* FAQ */}
+            <Card className="w-[600px] shadow-lg text-center font-bold border-none">
+                <h1 className="text-5xl font-extrabold pt-5">Questions</h1>
+                {/* Separator */}
+                <div className='flex items-center justify-center'>
+                            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+                </div>
+                <CardContent>
+                    
+                </CardContent>
+                
+
+            </Card>
+            {/* Help */}
+            <Card className="w-[600px] shadow-lg text-center font-bold border-none">
+                <h1 className="text-5xl font-extrabold pt-5">Questions</h1>
+                {/* Separator */}
+                <div className='flex items-center justify-center'>
+                            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+                </div>
+                <CardContent>
+                    
+                </CardContent>
+                
+
+            </Card>
             
             
         </div>
