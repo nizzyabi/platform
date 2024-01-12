@@ -1,70 +1,64 @@
 'use client'
-import { auth, signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { logout } from "@/actions/logout";
-import { useSession } from "next-auth/react";
 import { useCurrentUser } from "@/hooks/user-current-user";
+import {
+    Card,
+    CardHeader,
+    CardContent,
+  } from "@/components/ui/card";
+import { UserIcon } from "lucide-react";
 const SettingsPage = () => {
     const session = useCurrentUser();
     const onClick = () => {
         logout();
     }
-    // Get when user was created
-
     return (
-        <div>
-            <div>
-                
+        <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center pt-8">
+            <Card className="w-[600px] rounded">
                 {session && (
                     <div>
                         <div>
-                            <h1 className="text-center text-5xl font-extrabold pt-5">Settings</h1>
+                            <h1 className="text-center text-5xl font-extrabold pt-5">Settings ⚙️</h1>
                         </div>
                         {/* Separator*/}
                         <div className='flex items-center justify-center'>
                             <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
                         </div>
                         {/* User Name */}
-                        <div className="ml-20 pt-10 space-y-6">
-                            <h2 className="text-2xl font-bold text-slate-300">
-                                <span className="text-white">name:</span> 
-                                <span className="text-xl"> {session.name} </span>
-                                <FavoriteIcon fontSize="large" className="text-red-500 pb-1"/>
-                            </h2>
+                        <CardContent className="pt-10 space-y-6 font-bold">
+                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
+                                <h2 className="text-2xl text-slate-300">name</h2>
+                                <h2 className="text-xl text-white">
+                                {session.name}<FavoriteIcon fontSize="large" className="text-red-500 pb-1"/>
+                                </h2>
+                            </div>
                         {/* User Email */}
-                            <h2 className="text-2xl font-bold text-slate-300">
-                                <span className="text-white">email:</span>
-                                <span className="text-xl"> {session.email}</span> 
-                                
-                                <VerifiedIcon fontSize="large" className="text-blue-400 pb-0.5"/>
-                            </h2>
-                        {/* Account Purchases */}
-                            <h2 className="text-2xl font-bold text-slate-300">
-                                <span className="text-white ">account type:</span>
-                                <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session.role}
-                                
-                                </span>        
-                            </h2>
+                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
+                                <h2 className="text-2xl text-slate-300">email</h2>
+                                <h2 className="text-xl text-white">
+                                {session.email}<VerifiedIcon fontSize="large" className="text-blue-400 pb-1"/>
+                                </h2>
+                            </div>
                         {/*User Id*/}
-                            <h2 className="text-2xl font-bold text-slate-300">
-                                <span className="text-white ">user id: </span>
-                                <span className="text-xl">{session.id}
-                                </span>  
-                                
-                                   
-                            </h2>
+                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
+                                <h2 className="text-2xl text-slate-300">user id</h2>
+                                <h2 className="text-xl text-white">
+                                {session.id}
+                                </h2>
+                            </div>
                             
                             
-                        </div>
+                        </CardContent>
                         
                     </div>
                     
                 )}
                 
-            </div>
+            </Card>
 
             
             
