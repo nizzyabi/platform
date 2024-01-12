@@ -14,10 +14,7 @@ import { useSession } from "next-auth/react"
 import { IoMdPerson } from "react-icons/io";
 import { ResetForm } from "./auth/Reset-Form"
 
-
-
 const UserButton = () => {
-    
     // get user
     // if user is logged in, return logout button
     // if user is not logged in, return login button
@@ -26,7 +23,6 @@ const UserButton = () => {
     const isLoading = status === "loading";
     const [open, setOpen] = useState(false);
     const [showReset, setShowReset] = useState(false);
-
     
     // Toggle form of auth
     const toggleForm = () => {
@@ -52,7 +48,7 @@ const UserButton = () => {
                 <Button variant="gold" className="mr-2 mt-5">login</Button>
             </DialogTrigger>
             
-            <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between  bg-[#191919] rounded-xl dialog-content">
+            <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between bg-[#191919] rounded-xl dialog-content">
             {showReset ? (
                     <ResetForm />
                 ) : showRegister ? (
@@ -82,11 +78,11 @@ const UserButton = () => {
         ): (
             <Link href='/settings'>
                 {!session.user.image ? (
-                    <Avatar alt='logo' className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/90 to-blue-700/90" sx={{ width: 45, height: 45}}>
+                    <Avatar alt='logo' className="shadow-xl shadow-black hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/90 to-blue-700/90" sx={{ width: 45, height: 45}}>
                     <IoMdPerson className="text-2xl"/>
             </Avatar>
                 ): (
-                    <Avatar alt='logo' src={session.user.image} className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500"  sx={{ width: 45, height: 45 }}/>
+                    <Avatar alt='logo' src={session.user.image} className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50" sx={{ width: 45, height: 45 }}/>
                 )}
                 
             </Link>
