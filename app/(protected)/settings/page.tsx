@@ -18,15 +18,16 @@ const SettingsPage = () => {
     }
     return (
         <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center pt-8">
-            <Card className="w-[600px] rounded">
+            {/* User Info */}
+            <Card className="w-[600px] rounded shadow-xl">
                 {session && (
                     <div>
                         <div>
-                            <h1 className="text-center text-5xl font-extrabold pt-5">Settings ⚙️</h1>
+                            <h1 className="text-center text-5xl font-extrabold pt-5">User Info</h1>
                         </div>
                         {/* Separator*/}
                         <div className='flex items-center justify-center'>
-                            <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+                            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
                         </div>
                         {/* User Name */}
                         <CardContent className="pt-10 space-y-6 font-bold">
@@ -43,15 +44,24 @@ const SettingsPage = () => {
                                 {session.email}<VerifiedIcon fontSize="large" className="text-blue-400 pb-1"/>
                                 </h2>
                             </div>
-                        {/*User Id*/}
+                        {/*User Type*/}
+                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
+                                <h2 className="text-2xl text-slate-300">user type</h2>
+                                <h2 className="text-xl text-white">
+                                {session.role}
+                                </h2>
+                            </div>
+                        {/* User ID */}
                             <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
                                 <h2 className="text-2xl text-slate-300">user id</h2>
                                 <h2 className="text-xl text-white">
                                 {session.id}
                                 </h2>
                             </div>
-                            
-                            
+                        {/* Sign Out*/}
+                        <div className="">
+                        <Button type='submit' variant="gold" className="" onClick={onClick}>Sign Out</Button>
+                        </div>
                         </CardContent>
                         
                     </div>
@@ -59,10 +69,12 @@ const SettingsPage = () => {
                 )}
                 
             </Card>
-
+            {/* Manage Account */}
+            <div>
+                <h1>Manage Account</h1>
+            </div>
             
             
-            <Button type='submit' variant="gold" className="ml-20" onClick={onClick}>Sign Out</Button>
             
             
         </div>
