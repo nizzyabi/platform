@@ -45,7 +45,9 @@ const UserButton = () => {
   return (
     <div>
         {!session ? (
-            <Dialog>
+            <Dialog onOpenChange={() => {
+                setShowReset && setShowReset(false)
+            }}>
             <DialogTrigger asChild>
                 <Button variant="gold" className="mr-2 mt-5">login</Button>
             </DialogTrigger>
