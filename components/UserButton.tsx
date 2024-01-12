@@ -40,8 +40,8 @@ const UserButton = () => {
         }
     };
     if (isLoading) {
-        return <CircularProgress size={24} color="primary" />;
-      }
+         return <CircularProgress size={24} color="primary" />;
+       }
   return (
     <div>
         {!session ? (
@@ -84,7 +84,7 @@ const UserButton = () => {
                     <IoMdPerson className="text-2xl"/>
             </Avatar>
                 ): (
-                    <Avatar alt='logo' src={session!.user.image} className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500"  sx={{ width: 45, height: 45 }}/>
+                    <Avatar alt='logo' src={session.user.image} className="shadow-xl shadow-black  hover:scale-110 transition-transform duration-500"  sx={{ width: 45, height: 45 }}/>
                 )}
                 
             </Link>

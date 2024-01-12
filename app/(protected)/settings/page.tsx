@@ -1,22 +1,24 @@
+'use client'
 import { auth, signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
-const SettingsPage = async () => {
-    const session = await auth();
+import { logout } from "@/actions/logout";
+import { useSession } from "next-auth/react";
+import { useCurrentUser } from "@/hooks/user-current-user";
+const SettingsPage = () => {
+    const session = useCurrentUser();
+    const onClick = () => {
+        logout();
+    }
     // Get when user was created
-    
 
     return (
         <div>
-            {/*JSON DATA*/}
-
-            
-            
             <div>
-                {session!.user && (
+                
+                {session && (
                     <div>
                         <div>
                             <h1 className="text-center text-5xl font-extrabold pt-5">Settings</h1>
@@ -29,27 +31,27 @@ const SettingsPage = async () => {
                         <div className="ml-20 pt-10 space-y-6">
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white">name:</span> 
-                                <span className="text-xl"> {session!.user.name} </span>
+                                <span className="text-xl"> {session.name} </span>
                                 <FavoriteIcon fontSize="large" className="text-red-500 pb-1"/>
                             </h2>
                         {/* User Email */}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white">email:</span>
-                                <span className="text-xl"> {session!.user.email}</span> 
+                                <span className="text-xl"> {session.email}</span> 
                                 
                                 <VerifiedIcon fontSize="large" className="text-blue-400 pb-0.5"/>
                             </h2>
                         {/* Account Purchases */}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">account type:</span>
-                                <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session!.user.role}
+                                <span className="text-xl border p-0.5 px-1 ml-2 rounded border-orange-300 text-orange-300 border-dotted">{session.role}
                                 
                                 </span>        
                             </h2>
                         {/*User Id*/}
                             <h2 className="text-2xl font-bold text-slate-300">
                                 <span className="text-white ">user id: </span>
-                                <span className="text-xl">{session!.user.id}
+                                <span className="text-xl">{session.id}
                                 </span>  
                                 
                                    
@@ -65,13 +67,9 @@ const SettingsPage = async () => {
             </div>
 
             
-            <form action={async () => {
-                "use server";
-
-                await signOut();
-            }}>
-                <Button type='submit' variant="gold" className="ml-20">Sign Out</Button>
-            </form>
+            
+            <Button type='submit' variant="gold" className="ml-20" onClick={onClick}>Sign Out</Button>
+            
             
         </div>
     )
