@@ -5,12 +5,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { Separator } from "@/components/ui/separator";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import { BiLogoJavascript } from "react-icons/bi";
 import { TbBrandVscode } from "react-icons/tb";
-import { SiGooglemeet } from "react-icons/si";
 import { FaLaptop } from "react-icons/fa";
+import { Avatar } from "@mui/material";
 
 
 const coaching = [
@@ -52,6 +60,19 @@ const coaching = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "John Doe",
+    image: "/chad.svg",
+    description: "'Nizar is cool'"
+  },
+  {
+    name: "HIIII",
+    image: "/nizar.png",
+    description: "'Nizar sucks'"
+  },
+]
+
 
 export default function Coaching() {
   useEffect(() => {
@@ -78,7 +99,7 @@ export default function Coaching() {
        
 
         {/* Coaching */}
-        <div data-aos='fade-right' className="">
+        <div data-aos='fade-right' className="space-y-20">
 
           {/* Cards */}
           <div data-aos='fade-left' className="flex items-center justify-center space-x-6">
@@ -95,26 +116,26 @@ export default function Coaching() {
 
           {/* Coaching Description */}
           <div className="text-center pt-10">
-            <h1 className="text-4xl font-extrabold">What will we cover?</h1>
-            <p>We cover anything from programming concepts to building apps. Whatever you need, we can cover it.</p>
-
-          </div>
-          <div>
-            <p className="text-center">Learn from my past mistakes rather than your future ones.</p>
+            <h1 className="text-4xl font-extrabold px-20">We cover anything from programming concepts to building apps. Whatever you need, we can cover it.</h1>
             <div className="flex items-center justify-center">
               <Image 
                 src="/me.png"
                 alt="Nizabizaher"
-                className="rounded-xl"
-                width={360}
-                height={360}
+                className="rounded-lg pt-7"
+                width={460}
+                height={460}
               />
             </div>
+
+          </div>
+          <div>
+            <p className="text-center">Learn from my past mistakes rather than your future ones.</p>
+            
           </div>
           {/* Creds */}
           <div>
-            <h1 className="text-center text-3xl font-extrabold">Credentials</h1>
-            <p className="text-center">I understand what it's like to be in your position. Just a year ago, I was sturggling with basic concepts in coding. I even quit 3 times! However, using the tactics that we will talk about, I was able to learn, improve, and start businesses as a result of learning code. Here are some of them: </p>
+            <h1 className="text-center text-3xl font-extrabold">Some projects I've built</h1>
+           
             {/* Images */}
             <div className="relative w-[66] h-50 flex items-center justify-center p-5">
               <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl">
@@ -161,7 +182,38 @@ export default function Coaching() {
 
           <div>
             <h1 className="text-center text-3xl font-extrabold">Testimonials</h1>
-            <p className="text-center">Nixon, Rohith, Leo, etc. </p>
+
+
+              <div className="flex items-center justify-center space-x-6">
+              <Carousel className="w-full max-w-xs">
+                <CarouselContent>
+                
+                          {testimonials.map((testimonial) =>
+                            <CarouselItem>
+                              <CardContent className="flex aspect-square items-center justify-center p-6">
+                                <div className="bg-slate-200 shadow-xl shadow-black h-[300px] w-[300px] rounded  text-black px-8">
+                                  <div className="pb-12 pt-3">
+                                    <div className="flex items-center justify-center pt-3">
+                                    <Avatar src={testimonial.image} className="h-20 w-20 border-2 border-black"/>
+                                    </div>
+                                    <p className="text-center pt-2">{testimonial.name}</p>
+
+                                  </div>
+                                
+                                <p className="text-center overflow-clip">{testimonial.description}</p>
+                                </div>
+                              </CardContent>
+                            </CarouselItem>
+                          )}
+                        
+                  
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
+              </div>
+              
+
           </div>
 
 
