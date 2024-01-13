@@ -1,15 +1,13 @@
 "use client"
-import {useState, useEffect} from "react";
-import axios from "axios";
+import {useEffect} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Footer from "@/components/Footer";
 import { Separator } from "@/components/ui/separator";
+import { Checkbox } from "@/components/ui/checkbox"
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BiBrain, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
+import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
 import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaNodeJs, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
-
 import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
@@ -246,7 +244,7 @@ export default function Roadmap() {
                 <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
                     <div className="flex justify-between ">
                         <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
-                        <p className="font-bold text-2xl lg:text-3xl text-slate-300/10">{item.number}</p>  
+                        <Checkbox className="shadow-blackA4 hover:bg-violet flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-white outline-none" /> 
                     </div>
 
                     <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
@@ -258,7 +256,9 @@ export default function Roadmap() {
                                     <p className="text-5xl bg-slate-200 shadow-xl shadow-black hover:scale-105 transition-transform duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">{resource.icon}</p>
                                 
                             </Link>
+                            
                         ))}
+                        
                     </div>
                 </div>
             ))}
