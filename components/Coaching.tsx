@@ -4,12 +4,13 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { Card, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "./ui/button";
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import { FaAccessibleIcon } from "react-icons/fa";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { BiLogoJavascript } from "react-icons/bi";
+import { TbBrandVscode } from "react-icons/tb";
+import { SiGooglemeet } from "react-icons/si";
+import { FaLaptop } from "react-icons/fa";
 
 
 const coaching = [
@@ -81,14 +82,14 @@ export default function Coaching() {
 
           {/* Cards */}
           <div data-aos='fade-left' className="flex items-center justify-center space-x-6">
-            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
-              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
+              <BiLogoJavascript className="text-yellow-500 text-6xl" />
             </div>
-            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
-              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
+              <FaLaptop className="text-black text-6xl" />
             </div>
-            <div className="bg-slate-200 shadow-xl shadow-black h-[80px] w-[80px] lg:h-[100px] lg:w-[100px] rounded flex justify-center items-center hover:scale-105 transition-transform hover:duration-500">
-              <IoChatboxEllipsesOutline className="text-black text-4xl" />
+            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
+              <TbBrandVscode className="text-blue-500 text-6xl" />
             </div>
           </div>
 
@@ -116,34 +117,38 @@ export default function Coaching() {
             <p className="text-center">I understand what it's like to be in your position. Just a year ago, I was sturggling with basic concepts in coding. I even quit 3 times! However, using the tactics that we will talk about, I was able to learn, improve, and start businesses as a result of learning code. Here are some of them: </p>
             {/* Images */}
             <div className="relative w-[66] h-50 flex items-center justify-center p-5">
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out rounded-xl">
-                <Link href='www.mymentor-ai.app'>
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl">
+                <Link href='https://www.mymentorai.app'>
                   <Image 
-                    src="/zeina.png"
+                    src="/mentor.png"
                     alt="Nizabizaher"
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-xl"
+                    className="rounded-xl border-2 border-white"
                   />
                 </Link>
               </div>
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out videoBorderBlue rounded-xl">
-                <Image 
-                  src="/voice.png"
-                  alt="Nizabizaher"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-xl"
-                />
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out videoBorderBlue rounded-xl">
+                <Link href='https://voicescribe-ai.com/'>
+                  <Image 
+                    src="/voice.png"
+                    alt="Nizabizaher"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-xl border-2 border-black"
+                  />
+                </Link>
               </div>
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out videoBorderBlue rounded-xl">
-                <Image 
-                  src="/voice.png"
-                  alt="Nizabizaher"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-xl"
-                />
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out videoBorderBlue rounded-xl">
+                <Link href='https://nizzyabi-roadmap.com/landing'>
+                  <Image 
+                    src="/nizzyroadmap.png"
+                    alt="Nizabizaher"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-xl border-2 border-white"
+                  />
+                </Link>
               </div>
 
             </div>
