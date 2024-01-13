@@ -11,13 +11,15 @@ import {
     CardContent,
   } from "@/components/ui/card";
 import { UserIcon } from "lucide-react";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 const SettingsPage = () => {
     const session = useCurrentUser();
     const onClick = () => {
         logout();
     }
     return (
-        <div className="h-full w-full flex flex-col gap-y-10 items-center justify-center pt-8 pb-12">
+        <div className="h-full w-full flex flex-col space-y-20 items-center justify-center pt-8 ">
             {/* User Info */}
             <Card className="w-[600px] rounded shadow-lg border-none">
                 {session && (
@@ -97,25 +99,49 @@ const SettingsPage = () => {
                 <div className='flex items-center justify-center'>
                             <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
                 </div>
-                <CardContent>
-                    
+                <CardContent className="pt-7 space-y-10">
+                    {/* 1 */}
+                    <div className="space-y-3">
+                        <h1 className="text-4xl font-extrabold">What Is This Platform?</h1>
+                        <p className="text-lg font-normal">This is a place for developers to learn, grow, and improve thier coding skills through projects and community based learning. </p>
+                    </div>
+
+                    {/* 2 */}
+                    <div className="space-y-3">
+                        <h1 className="text-4xl font-extrabold">Do I Have To Pay?</h1>
+                        <p className="text-lg font-normal">Not at all 🙃. Most of the content on here is free. however, some indepth guides & coaching do cost some money.</p>
+                    </div>
+                    {/* 3 */}
+                    <div className="space-y-3">
+                        <h1 className="text-4xl font-extrabold">Can I Refund?</h1>
+                        <p className="text-lg font-normal">Unfortunately, since this is a digital product, we don't offer refunds.</p>
+                    </div>
                 </CardContent>
                 
 
             </Card>
             {/* Help */}
             <Card className="w-[600px] shadow-lg text-center font-bold border-none">
-                <h1 className="text-5xl font-extrabold pt-5">Questions</h1>
+                <h1 className="text-5xl font-extrabold pt-5">Contact</h1>
                 {/* Separator */}
                 <div className='flex items-center justify-center'>
                             <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
                 </div>
                 <CardContent>
-                    
+                    <div className="pt-7 text-lg">
+                        <h1>For any questions or issues, please contact <Link href='mailto:nizabizaher@gmail.com' className="text-blue-500 underline">
+                            nizabizaher@gmail.com
+                        </Link>
+                        
+                        </h1>
+                    </div>
                 </CardContent>
                 
 
             </Card>
+
+
+            <Footer />
             
             
         </div>
