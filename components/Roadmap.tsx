@@ -237,7 +237,7 @@ export default function Roadmap() {
 
             
             <div className='flex items-center justify-center' data-aos='fade-right'>
-                <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+                <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
             </div>
 
             <div data-aos='fade-left'>

@@ -66,11 +66,11 @@ export default function Coaching() {
         {/* Title */}
         <div className="text-center pb-5" data-aos='fade-left'>
             <h1 className="font-extrabold text-3xl md:text-5xl pt-3">1-on-1 Coaching</h1>
-            <p className="text-lg md:text-xl pt-1">get personal advice, mentorship, and guidance to learn code faster</p>
+            <p className="text-lg md:text-xl pt-1">Get personal advice, mentorship, and guidance to learn code faster</p>
 
             {/* Separator*/}
             <div className='flex items-center justify-center'>
-              <Separator className='w-20 h-2 rounded bg-slate-200 mt-3'/>
+              <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
           </div>
         </div>
 
@@ -94,14 +94,42 @@ export default function Coaching() {
 
           {/* Coaching Description */}
           <div className="text-center pt-10">
-            <h1 className="text-4xl font-extrabold">Who is this guy? 🧐</h1>
-            <p>You may be asking what qualifications I have to teach you how to code...</p>
+            <h1 className="text-4xl font-extrabold">What will we cover?</h1>
+            <p>We cover anything from programming concepts to building apps. Whatever you need, we can cover it.</p>
 
+          </div>
+          <div>
+            <p className="text-center">Learn from my past mistakes rather than your future ones.</p>
+            <div className="flex items-center justify-center">
+              <Image 
+                src="/me.png"
+                alt="Nizabizaher"
+                className="rounded-xl"
+                width={360}
+                height={360}
+              />
+            </div>
+          </div>
+          {/* Creds */}
+          <div>
+            <h1 className="text-center text-3xl font-extrabold">Credentials</h1>
+            <p className="text-center">I understand what it's like to be in your position. Just a year ago, I was sturggling with basic concepts in coding. I even quit 3 times! However, using the tactics that we will talk about, I was able to learn, improve, and start businesses as a result of learning code. Here are some of them: </p>
+            {/* Images */}
             <div className="relative w-[66] h-50 flex items-center justify-center p-5">
+              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out rounded-xl">
+                <Link href='www.mymentor-ai.app'>
+                  <Image 
+                    src="/zeina.png"
+                    alt="Nizabizaher"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-xl"
+                  />
+                </Link>
+              </div>
               <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-300 ease-in-out videoBorderBlue rounded-xl">
-                <p className="font-extrabold">First Site</p>
                 <Image 
-                  src="/zeina.png"
+                  src="/voice.png"
                   alt="Nizabizaher"
                   layout="fill"
                   objectFit="cover"
@@ -116,27 +144,9 @@ export default function Coaching() {
                   objectFit="cover"
                   className="rounded-xl"
                 />
-                <p className="font-extrabold">Current Site</p>
               </div>
 
             </div>
-          </div>
-          <div>
-            <p className="text-center">I was able to overcome the hurdles & teach myself how to code from beginning to end, from awful looking sites to full stack apps.</p>
-            <div className="flex items-center justify-center">
-              <Image 
-                src="/me.png"
-                alt="Nizabizaher"
-                className="rounded-xl"
-                width={360}
-                height={360}
-              />
-            </div>
-          </div>
-
-          <div>
-            <h1 className="text-center text-3xl font-extrabold">What will we cover? 🔐</h1>
-            <p className="text-center">Whatever you want! A typical coaching session covers things such as roadmap advice, programming questions, & beginner level coding help. </p>
           </div>
 
           <div>
