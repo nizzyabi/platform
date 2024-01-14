@@ -264,7 +264,7 @@ export default function Roadmap() {
             ))}
   
             </div>
-            <Footer />
+            
         </div>
     )
 }

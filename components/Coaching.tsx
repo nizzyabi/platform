@@ -1,24 +1,10 @@
 'use client'
-import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import { BiLogoJavascript } from "react-icons/bi";
-import { TbBrandVscode } from "react-icons/tb";
-import { FaLaptop } from "react-icons/fa";
-import { Avatar } from "@mui/material";
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 
 
 const coaching = [
@@ -71,6 +57,16 @@ const testimonials = [
     image: "/nizar.png",
     description: "'Nizar sucks'"
   },
+  {
+    name: "HIIII",
+    image: "/nizar.png",
+    description: "'Nizar sucks'"
+  },
+  {
+    name: "HIIII",
+    image: "/nizar.png",
+    description: "'Nizar sucks'"
+  },
 ]
 
 
@@ -86,147 +82,19 @@ export default function Coaching() {
     <div>
 
         {/* Title */}
-        <div className="text-center pb-5" data-aos='fade-left'>
+        <div className="text-center pb-5 pt-[200px]" data-aos='fade-left'>
             <h1 className="font-extrabold text-3xl md:text-5xl pt-3">1-on-1 Coaching</h1>
-            <p className="text-lg md:text-xl pt-1">Get personal advice, mentorship, and guidance to learn code faster</p>
-
-            {/* Separator*/}
-            <div className='flex items-center justify-center'>
-              <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
-          </div>
+            <p className="text-lg md:text-xl pt-1">Get personal advice, mentorship, & guidance to learn code faster</p> 
         </div>
-
-       
 
         {/* Coaching */}
-        <div data-aos='fade-right' className="space-y-20">
-
-          {/* Cards */}
-          <div data-aos='fade-left' className="flex items-center justify-center space-x-6">
-            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
-              <BiLogoJavascript className="text-yellow-500 text-6xl" />
-            </div>
-            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
-              <FaLaptop className="text-black text-6xl" />
-            </div>
-            <div className="bg-slate-200 shadow-xl shadow-black h-[100px] w-[100px] rounded flex justify-center items-center">
-              <TbBrandVscode className="text-blue-500 text-6xl" />
-            </div>
-          </div>
-
-          {/* Coaching Description */}
-          <div className="text-center pt-10">
-            <h1 className="text-4xl font-extrabold px-20">We cover anything from programming concepts to building apps. Whatever you need, we can cover it.</h1>
-            <div className="flex items-center justify-center">
-              <Image 
-                src="/me.png"
-                alt="Nizabizaher"
-                className="rounded-lg pt-7"
-                width={460}
-                height={460}
-              />
-            </div>
-
-          </div>
-          <div>
-            <p className="text-center">Learn from my past mistakes rather than your future ones.</p>
-            
-          </div>
-          {/* Creds */}
-          <div>
-            <h1 className="text-center text-3xl font-extrabold">Some projects I've built</h1>
-           
-            {/* Images */}
-            <div className="relative w-[66] h-50 flex items-center justify-center p-5">
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl">
-                <Link href='https://www.mymentorai.app'>
-                  <Image 
-                    src="/mentor.png"
-                    alt="Nizabizaher"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl border-2 border-white"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out videoBorderBlue rounded-xl">
-                <Link href='https://voicescribe-ai.com/'>
-                  <Image 
-                    src="/voice.png"
-                    alt="Nizabizaher"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl border-2 border-black"
-                  />
-                </Link>
-              </div>
-              <div className="relative w-60 h-60 m-2 hover:scale-105 transition-transform duration-500 ease-in-out videoBorderBlue rounded-xl">
-                <Link href='https://nizzyabi-roadmap.com/landing'>
-                  <Image 
-                    src="/nizzyroadmap.png"
-                    alt="Nizabizaher"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl border-2 border-white"
-                  />
-                </Link>
-              </div>
-
-            </div>
-          </div>
-
-          <div>
-            <h1 className="text-center text-3xl font-extrabold">Results</h1>
-            <p className="text-center">Talk about results </p>
-          </div>
-
-          <div>
-            <h1 className="text-center text-3xl font-extrabold">Testimonials</h1>
-
-
-              <div className="flex items-center justify-center space-x-6">
-              <Carousel className="w-full max-w-xs">
-                <CarouselContent>
-               
-                          {testimonials.map((testimonial) =>
-                           <CarouselItem>
-                            
-                              <CardContent className="flex aspect-square items-center justify-center p-6">
-                                <div className="bg-slate-200 shadow-xl shadow-black h-[300px] w-[300px] rounded  text-black px-8">
-                                  <div className="pb-12 pt-3">
-                                    <div className="flex items-center justify-center pt-3">
-                                    <Avatar src={testimonial.image} className="h-20 w-20 border-2 border-black"/>
-                                    </div>
-                                    <p className="text-center pt-2">{testimonial.name}</p>
-
-                                  </div>
-                                
-                                <p className="text-center overflow-clip">{testimonial.description}</p>
-                                </div>
-                              </CardContent>
-                              </CarouselItem>
-                            
-                          )}
-                        
-                        
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
-              </div>
-              
-
-          </div>
-
-
+        <div data-aos='fade-right' className="space-y-20 pb-[200px] ">
           {/* Link to coaching */}
-          <div className="flex items-center justify-center">
-            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>
-            <Link href='https://calendly.com/nizabizaher/programming-coaching'>Sign Up For Coaching <AutoFixHighIcon className='ml-2 font-extrabold' /></Link></Button>
-          </div>
-          
+          <Link href='https://calendly.com/nizabizaher/programming-coaching' className="flex items-center justify-center">
+            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Apply Now<HistoryEduIcon className="ml-1"/></Button>
+          </Link>
         </div>
-        
+
         
     </div>
   )

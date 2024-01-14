@@ -140,8 +140,6 @@ const SettingsPage = () => {
 
             </Card>
 
-
-            <Footer />
             
             
         </div>
