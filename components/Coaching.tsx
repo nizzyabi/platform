@@ -90,7 +90,7 @@ export default function Coaching() {
         {/* Coaching */}
         <div data-aos='fade-right' className="space-y-20 pb-[200px] ">
           {/* Link to coaching */}
-          <Link href='https://calendly.com/nizabizaher/programming-coaching' className="flex items-center justify-center">
+          <Link href='https://xpykzd2a2ce.typeform.com/to/r6Bjujqi' className="flex items-center justify-center">
             <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Apply Now<HistoryEduIcon className="ml-1"/></Button>
           </Link>
         </div>

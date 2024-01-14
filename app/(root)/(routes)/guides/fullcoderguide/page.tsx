@@ -1,8 +1,13 @@
-import React from 'react'
-
 const CoderPage = () => {
   return (
-    <div>page</div>
+    <div>
+      {/* Title */}
+      {/* Video */}
+      {/* Skill Level */}
+      {/* About Course */}
+      {/* Purchase Button */}
+      {/* Module Sections */}
+    </div>
   )
 }
 
