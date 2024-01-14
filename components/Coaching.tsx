@@ -187,9 +187,10 @@ export default function Coaching() {
               <div className="flex items-center justify-center space-x-6">
               <Carousel className="w-full max-w-xs">
                 <CarouselContent>
-                
+               
                           {testimonials.map((testimonial) =>
-                            <CarouselItem>
+                           <CarouselItem>
+                            
                               <CardContent className="flex aspect-square items-center justify-center p-6">
                                 <div className="bg-slate-200 shadow-xl shadow-black h-[300px] w-[300px] rounded  text-black px-8">
                                   <div className="pb-12 pt-3">
@@ -203,10 +204,11 @@ export default function Coaching() {
                                 <p className="text-center overflow-clip">{testimonial.description}</p>
                                 </div>
                               </CardContent>
-                            </CarouselItem>
+                              </CarouselItem>
+                            
                           )}
                         
-                  
+                        
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
