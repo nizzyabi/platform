@@ -13,8 +13,17 @@ import Link from "next/link"
 import { useSession } from "next-auth/react"
 import { IoMdPerson } from "react-icons/io";
 import { ResetForm } from "./auth/Reset-Form"
+import { useRouter } from 'next/navigation';
 
 const UserButton = () => {
+    const router = useRouter();
+    useEffect(() => {
+        // Check if the user is coming from /auth/new-password
+        const referrer = document.referrer;
+        if (referrer.includes('/auth/new-password')) {
+            setOpen(true);
+        }
+    }, []);
     // get user
     // if user is logged in, return logout button
     // if user is not logged in, return login button

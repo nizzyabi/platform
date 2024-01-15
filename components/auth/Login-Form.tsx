@@ -19,14 +19,11 @@ import { FormSuccess } from "@/components/Form-Success";
 import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
-interface formToggle{
-    forgotPassword: any;
-}
 
-export const LoginForm = ({
-    forgotPassword
-}: formToggle) => {
+
+export const LoginForm = () => {
     // Search Params
     const searchParams = useSearchParams();
     // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
@@ -67,6 +64,8 @@ export const LoginForm = ({
     return (
         <CardWrapper
             headerTitle="Login"
+            backButtonLabel="Don't have an account?"
+            backButtonHref="/auth/register"
             showSocial
         >
             <Form {...form}>
@@ -117,10 +116,10 @@ export const LoginForm = ({
                                         variant="link"
                                         className="px-0 font-normal"
                                         type="button"
-                                        onClick={ forgotPassword}
                                     >
-                                       Forgot Password?
-                                       
+                                       <Link href='/auth/reset'>
+                                        Forgot Password?
+                                       </Link>
                                     </Button>
                                     <FormMessage className="text-red-500" />
                             
