@@ -50,39 +50,11 @@ const UserButton = () => {
   return (
     <div>
         {!session ? (
-            <Dialog onOpenChange={() => {
-                setShowReset && setShowReset(false)
-            }}>
-            <DialogTrigger asChild>
-                <Button variant="gold" className="mr-2 mt-5">login</Button>
-            </DialogTrigger>
-            
-            <DialogContent className="shadow-xl shadow-black flex flex-col items-center justify-between bg-[#191919] rounded-xl dialog-content">
-            {showReset ? (
-                    <ResetForm />
-                ) : showRegister ? (
-                    <RegisterForm />
-                ) : (
-                    <LoginForm forgotPassword={handleShowReset}/>
-                )}
-                <div className="flex items-center justify-center">
-                {!showReset && (
-                    <button onClick={toggleForm} className="hover:underline" type="button">
-                        {showRegister ? "Already have an account?" : "Don't have an account?"}
-                    </button>
-                )}
-            
-            <button onClick={handleShowReset} className=" text-center hover:underline">
-                {/* If show reset, show back to login that is it */}
-                
-                {showReset && "Back to login"}
-                
-            </button>
-            </div>
-            
-            </DialogContent> 
-                     
-        </Dialog>
+            <Link href='/auth/register'>
+                <Button variant="gold" className="mt-5" >
+                    Register
+                </Button>
+            </Link>
 
         ): (
             <Link href='/settings'>

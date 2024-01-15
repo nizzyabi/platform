@@ -47,6 +47,8 @@ export const NewVerificationForm = () => {
     return (
         <CardWrapper
             headerTitle="verify your email 😏"
+            backButtonLabel="Back to Login"
+            backButtonHref="/auth/login"
         >
             <div className="flex items-center w-full justify-center">
                 {!success && !error && (
@@ -57,13 +59,6 @@ export const NewVerificationForm = () => {
                     <FormError message={error} />
                 )}
             </div>
-
-            <p className="text-center pt-6 hover:underline cursor-pointer">
-                <a href="/">
-                    Go Back
-                </a>
-            </p>
-            
         </CardWrapper>
     )
 }
