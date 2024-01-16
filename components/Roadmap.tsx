@@ -3,7 +3,6 @@ import {useEffect} from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { Separator } from "@/components/ui/separator";
-import { Checkbox } from "@/components/ui/checkbox"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
@@ -244,7 +243,7 @@ export default function Roadmap() {
                 <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
                     <div className="flex justify-between ">
                         <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
-                        <Checkbox className="shadow-blackA4 hover:bg-violet flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-white outline-none" /> 
+                        
                     </div>
 
                     <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>

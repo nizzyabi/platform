@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
+import { FaFireExtinguisher } from 'react-icons/fa';
 
 
 const icons1 = [
@@ -55,17 +56,16 @@ export default function LandingPage() {
     <div className='mt-12'>
 
       {/* Landing */}
-      <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4'>
+      <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4 mb-20'>
         {/* Text + Button */}
-        <div className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
+        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
           {/* Main text*/}
           <div className='flex items-center justify-center'>
             <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
           </div>
           {/* Sub text */}
-          <div>
             <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>Learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
-          </div>
+          
 
           {/* Button */}
           <div className='pt-4'>
@@ -77,7 +77,7 @@ export default function LandingPage() {
           </div>
         </div>
         {/* Icon Display*/}
-        <div className='flex-1 flex flex-col items-center justify-center'>
+        <div className='flex-1 flex flex-col items-center justify-center' data-aos='fade-right'>
           <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500'>
             {/*cards*/}
             <div 
@@ -102,6 +102,36 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Sales Page */}
+      <div className='text-center space-y-20'>
+
+        {/* Problem */}
+        <div>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>Why do I suck at code? 😞</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>Most people fail because they aren't coding the right way</p>
+          <p>⏬</p>
+        </div>
+
+        {/* Realization */}
+        <div>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>Understand this... 🫥</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>How you learn code matters more than the code itself.</p>
+          <p>⏬</p>
+        </div>
+        
+        {/* Solution*/}
+        <div>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>How do I solve this? 🧐</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>You fix thix by learning to code the RIGHT way</p>
+          <p>⏬</p>
+        </div>
+        {/* Button */}
+        <div>
+          <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+        </div>
+
       </div>
     </div>
   )
