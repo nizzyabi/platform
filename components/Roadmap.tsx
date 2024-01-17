@@ -1,22 +1,22 @@
 "use client"
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
-import Footer from "@/components/Footer";
 import { Separator } from "@/components/ui/separator";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
-import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaNodeJs, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
+import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
 import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
 import { useSession } from "next-auth/react";
-import { CircularProgress } from "@mui/material";
+import { Checkbox } from "./ui/checkbox";
 
 
 
 export default function Roadmap() {
     const { data: session } = useSession();
+    const [checked, setChecked] = useState('indeterminate');
     const roadmapData = [
         {
             number: '01',
@@ -211,6 +211,27 @@ export default function Roadmap() {
 
     ]
     
+    
+      // Function to update the user's checkbox value
+      const updateUserCheckboxValue = async (userId:any, value:any) => {
+        try {
+          // Make an API request to update the user's data
+          const response = await fetch(`/api/updateCheckboxValue?userId=${userId}&value=${value}`, {
+            method: "POST",
+          });
+    
+          if (response.ok) {
+            // Handle success
+            console.log("Checkbox value updated successfully.");
+          } else {
+            // Handle error
+            console.error("Error updating checkbox value.");
+          }
+        } catch (error) {
+          console.error("Error updating checkbox value:", error);
+        }
+      };
+    
     useEffect(() => {
         AOS.init({
           disable: "phone",
@@ -243,7 +264,7 @@ export default function Roadmap() {
                 <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
                     <div className="flex justify-between ">
                         <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
-                        
+                        <Checkbox />
                     </div>
 
                     <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
