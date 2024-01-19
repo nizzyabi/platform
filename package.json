@@ -21,6 +21,7 @@
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/supabase-js": "^2.39.1",
     "@types/bcryptjs": "^2.4.6",
+    "@uploadthing/react": "^6.2.0",
     "aos": "^2.3.4",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -53,6 +54,7 @@
     "resend": "^2.1.0",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
+    "uploadthing": "^6.2.0",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
