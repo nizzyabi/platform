@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import toast from "react-hot-toast";
+import { Toast } from "@/components/ui/toast";
 
 import {
   Form,
@@ -41,9 +41,9 @@ const CreatePage = () => {
     try {
       const response = await axios.post("/api/guides", values);
       router.push(`/guides/${response.data.id}`);
-      toast.success("Guide created");
+      console.log("Guide created");
     } catch {
-      toast.error("Something went wrong");
+      console.error("Something went wrong");
     }
   }
 

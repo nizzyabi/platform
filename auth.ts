@@ -73,7 +73,9 @@ export const {
 
       token.role = exisitingUser.role;
       return token;
-    }
+    },
+    // session userId
+    
   },
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
