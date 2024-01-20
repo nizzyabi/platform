@@ -1,52 +1,32 @@
-// pages/api/courses.ts
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
-import { PrismaClient } from '@prisma/client';
+import { NextResponse } from "next/server";
+import { db } from "@/lib/db";
 
-const prisma = new PrismaClient();
+import { getSession, useSession } from "next-auth/react";
+import { toast } from "react-hot-toast";
+import { useCurrentUser } from "@/hooks/user-current-user";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+export async function POST(
+  req: Request,
 ) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-
   try {
-    // Get the session and hence the user making the request
-    const session = await getSession();
-    if (!session || !session.user) {
-      // Not signed in
-      return res.status(401).json({ message: 'Unauthorized' });
+    const session = useCurrentUser()
+    const userId = session?.id
+    const { title } = await req.json();
+
+    if (!userId) {
+      return new NextResponse("Unauthorized", { status: 401 });
     }
-    
-    // Here we assume that the user object in the session includes the id
-    const userId = session.user.id;
 
-    // Get the data from the request body
-    const { title, description, imageUrl, price, isPublished, categoryId } = req.body;
-
-    // Create the course in the database
-    const course = await prisma.course.create({
+    const course = await db.course.create({
       data: {
-        userId, // Attach the userId from the session to the course
+        userId,
         title,
-        description,
-        imageUrl,
-        price,
-        isPublished,
-        categoryId, // This is optional, depending on if the course has a category
-        // ... other fields you might want to include
-      },
+      }
     });
 
-    // Send the created course as a response
-    return res.status(200).json(course);
+    return NextResponse.json(course);
   } catch (error) {
-    console.error('Error creating course:', error);
-    return res.status(500).json({ message: 'Internal Server Error', error });
+    console.log("[COURSES]", error);
+    return new NextResponse("Internal Error", { status: 500 });
   }
 }
-

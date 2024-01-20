@@ -5,14 +5,16 @@ import { UserRole } from "@prisma/client"
 import { getUserById } from "@/data/user"
 import { db } from "@/lib/db"
 import authConfig from "@/auth.config"
+import { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next"
 
-export const {
+
+export const{
   handlers: { GET, POST },
 
   auth, // This auth thing helps us get user info such as for display certain content for them and specific data
   signIn,
   signOut,
-} = NextAuth({
+} = NextAuth ({
   // if there is an error, redirect to this page
   pages: {
     signIn: '/auth/login',
@@ -81,3 +83,4 @@ export const {
   session: { strategy: "jwt" },
   ...authConfig,
 })
+

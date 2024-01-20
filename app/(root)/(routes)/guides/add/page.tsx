@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from "react-hot-toast";
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -43,7 +44,7 @@ const CreatePage = () => {
       router.push(`/guides/${response.data.id}`);
       console.log("Guide created");
     } catch {
-      console.error("Something went wrong");
+      toast.error("Something went wrong");
     }
   }
 
