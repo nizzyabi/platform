@@ -19,13 +19,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+//interface 
 interface TitleFormProps {
   initialData: {
     title: string;
   };
-  courseId: string;
+  guideId: string;
 };
 
+//form schema
 const formSchema = z.object({
   title: z.string().min(1, {
     message: "Title is required",
@@ -34,25 +36,26 @@ const formSchema = z.object({
 
 export const TitleForm = ({
   initialData,
-  courseId
+  guideId
 }: TitleFormProps) => {
+  // state for editing
   const [isEditing, setIsEditing] = useState(false);
-
+  // toggle
   const toggleEdit = () => setIsEditing((current) => !current);
-
+  // router
   const router = useRouter();
-
+  // form hook
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData,
   });
-
+  // destructure
   const { isSubmitting, isValid } = form.formState;
-
+  // submit patch incase updated
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
+      await axios.patch(`/api/guides/${guideId}`, values);
+      toast.success("Guide updated");
       toggleEdit();
       router.refresh();
     } catch {
@@ -61,7 +64,7 @@ export const TitleForm = ({
   }
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border  rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
         Course title
         <Button onClick={toggleEdit} variant="ghost">

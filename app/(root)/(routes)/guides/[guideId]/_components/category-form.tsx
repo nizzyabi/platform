@@ -8,7 +8,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
+import { Guide } from "@prisma/client";
 
 import {
   Form,
@@ -23,8 +23,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Combobox } from "@/components/ui/combobox";
 
 interface CategoryFormProps {
-  initialData: Course;
-  courseId: string;
+  initialData: Guide;
+  guideId: string;
   options: { label: string; value: string; }[];
 };
 
@@ -34,7 +34,7 @@ const formSchema = z.object({
 
 export const CategoryForm = ({
   initialData,
-  courseId,
+  guideId,
   options,
 }: CategoryFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -54,7 +54,7 @@ export const CategoryForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
+      await axios.patch(`/api/courses/${guideId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();
