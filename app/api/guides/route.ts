@@ -1,25 +1,24 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { auth } from "@/auth";
+import { SessionProvider, getSession } from "next-auth/react";
+import {  } from "@/data/user";
 
-import { getSession, useSession } from "next-auth/react";
-import { toast } from "react-hot-toast";
-import { useCurrentUser } from "@/hooks/user-current-user";
 
 export async function POST(
   req: Request,
 ) {
   try {
-    const session = useCurrentUser()
-    const userId = session?.id
-    const { title } = await req.json();
+    const session = await auth()
+    const {title} = await req.json();
 
-    if (!userId) {
+    if (!session) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
     const course = await db.course.create({
       data: {
-        userId,
+        userId: session.user.id,
         title,
       }
     });
