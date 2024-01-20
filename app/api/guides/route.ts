@@ -16,16 +16,16 @@ export async function POST(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const course = await db.course.create({
+    const guide = await db.guide.create({
       data: {
         userId: session.user.id,
         title,
       }
     });
 
-    return NextResponse.json(course);
+    return NextResponse.json(guide);
   } catch (error) {
-    console.log("[COURSES]", error);
+    console.log("[GUIDE]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

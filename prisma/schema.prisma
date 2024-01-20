@@ -71,13 +71,8 @@ model PasswordResetToken {
   @@unique([email, token])
 }
 
-// attachment 
-
-
-
-
-// course
-model Course {
+// Guides
+model Guide {
   id String @id @default(uuid())
   userId String
   title String @db.Text
@@ -103,7 +98,7 @@ model Course {
 model Category {
   id String @id @default(uuid())
   name String @unique
-  courses Course[]
+  guides Guide[]
 }
 
 model Attachment {
@@ -111,13 +106,13 @@ model Attachment {
   name String
   url String @db.Text
 
-  courseId String
-  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  guideId String
+  guide Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([courseId])
+  @@index([guideId])
 }
 
 model Chapter {
@@ -131,15 +126,15 @@ model Chapter {
 
   muxData MuxData?
 
-  courseId String
-  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  guideId String
+  guide Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
 
   userProgress UserProgress[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([courseId])
+  @@index([guideId])
 }
 
 
@@ -172,14 +167,14 @@ model Purchase {
   id String @id @default(uuid())
   userId String
 
-  courseId String
-  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  guideId String
+  course Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
 
-  @@unique([userId, courseId])
-  @@index([courseId])
+  @@unique([userId, guideId])
+  @@index([guideId])
 }
 
 model StripeCustomer {
