@@ -4,6 +4,11 @@ import { db } from "@/lib/db";
 import { LayoutDashboard } from "lucide-react";
 import { redirect } from "next/navigation";
 import { TitleForm } from "./_components/title-form";
+import { DescriptionForm } from "./_components/description-form";
+import { CategoryForm } from "./_components/category-form";
+import { ImageForm } from "./_components/image-form";
+import { AttachmentForm } from "./_components/attachment-form";
+import { PriceForm } from "./_components/price-form";
 const GuidesIdPage = async ({
   params
 }: {
@@ -38,6 +43,12 @@ const GuidesIdPage = async ({
     guide.categoryId
   ];
 
+  // categories
+  const categories = await db.category.findMany({
+    orderBy: {
+      name: "asc",
+    }
+  })
   const totalFields = requiredFields.length;
   // total that dont equal false
   const completedFields = requiredFields.filter(Boolean).length
@@ -46,7 +57,7 @@ const GuidesIdPage = async ({
   return (
     <div className="p-6">
       {/* Title */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center">
         <div className="flex flex-col gap-y-2">
           <h1 className="text-2xl font-bold">
             Guide SetUp
@@ -56,15 +67,28 @@ const GuidesIdPage = async ({
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-        <div>
-          <div className="flex items-center gap-x-2">
+      <div className="mt-16">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-x-2">
             <IconBadge icon={LayoutDashboard} variant="success"/>
             <h2 className="text-xl">
               Customize Gudie
             </h2>
           </div>
           <TitleForm initialData={guide} guideId={guide.id}/>
+          <DescriptionForm initialData={guide} guideId={guide.id}/>
+          <ImageForm initialData={guide} guideId={guide.id}/>
+          {/* Attachement Item */}
+          {/* Category Item */}
+          <CategoryForm 
+            initialData={guide} 
+            guideId={guide.id}
+            options={categories.map((category) => ({
+              label: category.name,
+              value: category.id,
+            }))}
+          />
+          <PriceForm initialData={guide} guideId={guide.id}/>
         </div>
       </div>
     </div>

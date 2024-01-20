@@ -50,12 +50,13 @@ export const CategoryForm = ({
     },
   });
 
+
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${guideId}`, values);
-      toast.success("Course updated");
+      await axios.patch(`/api/guides/${guideId}`, values);
+      toast.success("Guide updated");
       toggleEdit();
       router.refresh();
     } catch {
@@ -66,9 +67,9 @@ export const CategoryForm = ({
   const selectedOption = options.find((option) => option.value === initialData.categoryId);
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
-        Course category
+    <div className="mt-6 rounded-md p-4">
+      <div className="font-medium flex items-center justify-center">
+        Guide category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
@@ -83,7 +84,7 @@ export const CategoryForm = ({
       {!isEditing && (
         <p className={cn(
           "text-sm mt-2",
-          !initialData.categoryId && "text-slate-500 italic"
+          !initialData.categoryId && " italic"
         )}>
           {selectedOption?.label || "No category"}
         </p>

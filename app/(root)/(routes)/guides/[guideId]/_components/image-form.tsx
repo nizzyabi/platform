@@ -6,15 +6,15 @@ import { Pencil, PlusCircle, ImageIcon } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
+import { Guide } from "@prisma/client";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/File-Upload";
 
 interface ImageFormProps {
-  initialData: Course
-  courseId: string;
+  initialData: Guide
+  guideId: string;
 };
 
 const formSchema = z.object({
@@ -25,7 +25,7 @@ const formSchema = z.object({
 
 export const ImageForm = ({
   initialData,
-  courseId
+  guideId
 }: ImageFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -35,7 +35,7 @@ export const ImageForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
+      await axios.patch(`/api/guides/${guideId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();
@@ -45,8 +45,8 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 rounded-md p-4">
+      <div className="font-medium flex items-center justify-center">
         Course image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
@@ -68,7 +68,7 @@ export const ImageForm = ({
       </div>
       {!isEditing && (
         !initialData.imageUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
+          <div className="flex items-center justify-center h-60 rounded-md">
             <ImageIcon className="h-10 w-10 text-slate-500" />
           </div>
         ) : (

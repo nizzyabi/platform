@@ -8,7 +8,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
+import { Guide } from "@prisma/client";
 
 import {
   Form,
@@ -23,8 +23,8 @@ import { Input } from "@/components/ui/input";
 import { formatPrice } from "@/lib/format";
 
 interface PriceFormProps {
-  initialData: Course;
-  courseId: string;
+  initialData: Guide;
+  guideId: string;
 };
 
 const formSchema = z.object({
@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export const PriceForm = ({
   initialData,
-  courseId
+  guideId
 }: PriceFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -52,7 +52,7 @@ export const PriceForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
+      await axios.patch(`/api/guides/${guideId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();
@@ -62,8 +62,8 @@ export const PriceForm = ({
   }
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 rounded-md p-4">
+      <div className="font-medium flex items-center justify-center">
         Course price
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (

@@ -64,10 +64,10 @@ export const TitleForm = ({
   }
 
   return (
-    <div className="mt-6 border  rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 rounded-md text-center">
+      <div className="font-medium">
         Course title
-        <Button onClick={toggleEdit} variant="ghost">
+        <Button onClick={toggleEdit} variant="ghost" className=""mb-3>
           {isEditing ? (
             <>Cancel</>
           ) : (
