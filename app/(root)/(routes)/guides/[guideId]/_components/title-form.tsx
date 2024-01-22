@@ -64,12 +64,14 @@ export const TitleForm = ({
   }
 
   return (
-    <div className="mt-6 mb-6 rounded-md text-center">
-      <h1 className="text-2xl font-bold">Course title</h1>
-      <div className="font-bold">
-        <Button onClick={toggleEdit} variant="ghost" className="mb-3">
+    <div className="mt-6 mb-6 rounded-md">
+      <div className="font-bold flex items-center justify-center">
+        <h1 className="text-lg font-bold">Course title</h1>
+        <Button onClick={toggleEdit} variant="ghost" className="">
           {isEditing ? (
-            <>Cancel</>
+            <>
+            <h1 className="text-lg">Cancel</h1>
+            </>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-1" />
@@ -79,7 +81,7 @@ export const TitleForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <p className="text-lg">
+        <p className="text-lg text-slate-300">
           {initialData.title}
         </p>
       )}
@@ -87,14 +89,14 @@ export const TitleForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex items-center justify-center"
+            className="space-y-4 mt-4"
           >
             <FormField
               control={form.control}
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="w-20 rounded-lg">
+                  <FormControl className="w-full">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"
@@ -109,6 +111,7 @@ export const TitleForm = ({
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"
+                variant="ghost"
               >
                 Save
               </Button>

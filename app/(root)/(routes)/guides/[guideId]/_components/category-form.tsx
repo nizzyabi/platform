@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
 import { Combobox } from "@/components/ui/combobox";
 
 interface CategoryFormProps {
@@ -68,22 +67,24 @@ export const CategoryForm = ({
 
   return (
     <div className="mt-6 rounded-md p-4">
-      <h1 className="text-2xl font-bold">Course Category</h1>
-      <div className="font-medium flex items-center justify-center">
+      <div className="font-bold flex items-center justify-center">
+      <h1 className="text-lg font-bold">Course Category</h1>
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>
+            <h1 className="text-lg">Cancel</h1>
+            </>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit category
+              <Pencil className="h-4 w-4 mr-1" />
+              <h1 className="text-lg">Edit Title</h1>
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-sm mt-2",
+          "text-lg text-slate-300",
           !initialData.categoryId && " italic"
         )}>
           {selectedOption?.label || "No category"}
@@ -100,7 +101,7 @@ export const CategoryForm = ({
               name="categoryId"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="bg-black"z>
+                  <FormControl>
                     <Combobox
                       options={...options}
                       {...field}

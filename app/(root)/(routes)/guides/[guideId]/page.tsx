@@ -6,6 +6,7 @@ import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
 import { CategoryForm } from "./_components/category-form";
+import { Separator } from "@/components/ui/separator";
 const GuidesIdPage = async ({
   params
 }: {
@@ -33,6 +34,7 @@ const GuidesIdPage = async ({
 
   // array of required fields
   const requiredFields = [
+    guide.title,
     guide.description,
     guide.imageUrl,
     guide.price,
@@ -45,25 +47,30 @@ const GuidesIdPage = async ({
       name: "asc",
     }
   })
+  // Get Total Fields
   const totalFields = requiredFields.length;
   // total that dont equal false
   const completedFields = requiredFields.filter(Boolean).length
-
+  // completion text
   const completionText = `(${completedFields}/${totalFields})`
-
+  // check if all fields are complete
   const isComplete = requiredFields.every(Boolean);
+
   return (
     <div className="p-6">
       {/* Title */}
       <div className="flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-5xl font-extrabold">
             Guide Setup
           </h1>
           {/* Amount Complete */}
           <span className="text-sm text-slate-300">
             {completionText} Complete
           </span>
+          <div className='flex items-center justify-center'>
+            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+          </div>
         </div>
         
       </div>
@@ -71,9 +78,13 @@ const GuidesIdPage = async ({
         <div className="text-center">
             {/* Customize Guide */}
             <h2 className="text-3xl font-bold">
-              Customize Guide
+              Customize Course
             </h2>
 
+            <div className='flex items-center justify-center'>
+                <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+            </div>
+            
             {/* Guide TItle */}
             <TitleForm
               initialData={guide}

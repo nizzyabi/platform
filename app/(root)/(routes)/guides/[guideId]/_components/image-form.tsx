@@ -27,6 +27,7 @@ export const ImageForm = ({
   initialData,
   guideId
 }: ImageFormProps) => {
+  
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -45,9 +46,9 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="rounded-md p-4">
-      <h1 className="text-2xl font-bold">Guide Image</h1>
-      <div className="font-medium flex items-center justify-center">
+    <div className="mt-6 mb-6 rounded-md">
+      <div className="font-bold flex items-center justify-center">
+      <h1 className="text-lg font-bold">Guide Image</h1>
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
             <>Cancel</>
@@ -61,7 +62,7 @@ export const ImageForm = ({
           {!isEditing && initialData.imageUrl && (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit image
+              <h1 className="text-lg">Edit Image</h1>
             </>
           )}
         </Button>
@@ -69,13 +70,14 @@ export const ImageForm = ({
       {!isEditing && (
         !initialData.imageUrl ? (
           <div className="flex items-center justify-center h-10 rounded-md">
-            <ImageIcon className="h-10 w-10 text-slate-500" />
+            <ImageIcon className="h-20 w-20 mt-8 text-slate-500" />
           </div>
         ) : (
-          <div className="relative aspect-video mt-2">
+          <div className="mt-2 flex items-center justify-center">
             <Image
               alt="Upload"
-              fill
+              height={500}
+              width={500}
               className="object-cover rounded-md"
               src={initialData.imageUrl}
             />
