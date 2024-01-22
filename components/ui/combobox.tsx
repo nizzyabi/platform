@@ -45,7 +45,7 @@ export const Combobox = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
-        <Command className="bg-[#2c2c2c]">
+        <Command className="bg-[#2c2c2c]d">
           <CommandInput placeholder="Search option..." />
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>
