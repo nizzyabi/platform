@@ -12,8 +12,8 @@ interface CategoriesProps {
 // Catgories 
 const iconData: Record<Category["name"], IconType> = {
     "Tutorials": FcSettings,
-    "Guides": BiBook,
-    "Live Sessions": BiCamera
+    "Courses": BiBook,
+    "Live Lessons": BiCamera
 } 
 
 // Display Categories

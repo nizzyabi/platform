@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
 
@@ -47,7 +45,7 @@ export const Combobox = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
-        <Command>
+        <Command className="bg-[#2c2c2c]">
           <CommandInput placeholder="Search option..." />
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>

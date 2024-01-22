@@ -8,6 +8,7 @@ import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
 import { Actions } from "./_components/actions";
+import { CategoryForm } from "./_components/category-form";
 const GuidesIdPage = async ({
   params
 }: {
@@ -48,6 +49,7 @@ const GuidesIdPage = async ({
       name: "asc",
     }
   })
+  console.log(categories)
   const totalFields = requiredFields.length;
   // total that dont equal false
   const completedFields = requiredFields.filter(Boolean).length
@@ -95,11 +97,20 @@ const GuidesIdPage = async ({
               guideId={guide.id}
             />
 
+            {/* Categories */}
+            <CategoryForm
+              initialData={guide}
+              guideId={guide.id}
+              options={categories.map((category) => ({
+                label: category.name,
+                value: category.id,
+              }))}
+            />
 
-          
+
             {/* Chapters */}
-            <div className="text-center">
-              <h2 className="text-2xl font-bold">
+            <div className="text-center mt-12">
+              <h2 className="text-3xl font-bold">
                 Guide chapters
               </h2>
             </div> 

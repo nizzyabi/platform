@@ -67,7 +67,7 @@ export const TitleForm = ({
     <div className="mt-6 mb-6 rounded-md text-center">
       <h1 className="text-2xl font-bold">Course title</h1>
       <div className="font-bold">
-        <Button onClick={toggleEdit} variant="ghost" className=""mb-3>
+        <Button onClick={toggleEdit} variant="ghost" className="mb-3">
           {isEditing ? (
             <>Cancel</>
           ) : (

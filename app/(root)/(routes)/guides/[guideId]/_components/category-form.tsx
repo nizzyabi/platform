@@ -68,8 +68,8 @@ export const CategoryForm = ({
 
   return (
     <div className="mt-6 rounded-md p-4">
+      <h1 className="text-2xl font-bold">Course Category</h1>
       <div className="font-medium flex items-center justify-center">
-        Guide category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
@@ -100,10 +100,11 @@ export const CategoryForm = ({
               name="categoryId"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="bg-black"z>
                     <Combobox
                       options={...options}
                       {...field}
+                      
                     />
                   </FormControl>
                   <FormMessage />
