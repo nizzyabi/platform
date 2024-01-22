@@ -64,7 +64,7 @@ export default function LandingPage() {
             <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
           </div>
           {/* Sub text */}
-            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>Learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
+            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
           
 
           {/* Button */}
@@ -95,35 +95,33 @@ export default function LandingPage() {
               ))}
 
             </div>
-
-
-
-             
             </div>
           </div>
         </div>
       </div>
 
       {/* Sales Page */}
-      <div className='text-center space-y-20 pt-12'>
+      <div className='text-center space-y-[200px] pt-[90px]'>
 
         {/* Problem */}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700'>Why do I suck at code?</span> 😞</h1>
+          <div className=''>
+          <h1 data-aos='fade-right' className='lg:text-6xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500'>Why do I suck at code?</span> 😞</h1>
+          </div>
           <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>most people fail because they aren't coding the right way</p>
           <p className='text-6xl finger'>⏬</p>
         </div>
 
         {/* Realization */}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700'>Understand this...</span> 🫥</h1>
+          <h1 data-aos='fade-right' className='lg:text-6xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500'>Understand this...</span> 🫥</h1>
           <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>how you learn code matters more than the code itself.</p>
           <p className='text-6xl finger'>⏬</p>
         </div>
         
         {/* Solution*/}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-700'>How do I solve this?</span> 🧐</h1>
+          <h1 data-aos='fade-right' className='lg:text-6xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-violet-500'>How do I solve this?</span> 🧐</h1>
           <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>you fix this by building projects YOU want & having fun while coding</p>
           <p className='text-6xl finger'>⏬</p>
           {/* Video */}
