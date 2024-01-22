@@ -64,22 +64,22 @@ export const TitleForm = ({
   }
 
   return (
-    <div className="mt-6 rounded-md text-center">
-      <div className="font-medium">
-        Course title
+    <div className="mt-6 mb-6 rounded-md text-center">
+      <h1 className="text-2xl font-bold">Course title</h1>
+      <div className="font-bold">
         <Button onClick={toggleEdit} variant="ghost" className=""mb-3>
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit title
+              <Pencil className="h-4 w-4 mr-1" />
+              <h1 className="text-lg">Edit Title</h1>
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        <p className="text-sm mt-2">
+        <p className="text-lg">
           {initialData.title}
         </p>
       )}
@@ -87,14 +87,14 @@ export const TitleForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
+            className="flex items-center justify-center"
           >
             <FormField
               control={form.control}
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="w-20 rounded-lg">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"

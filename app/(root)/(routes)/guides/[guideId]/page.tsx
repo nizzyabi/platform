@@ -1,14 +1,13 @@
 import { auth } from "@/auth";
 import { IconBadge } from "@/components/Icon-Badge";
 import { db } from "@/lib/db";
-import { LayoutDashboard } from "lucide-react";
+import { LayoutDashboard, ListChecks } from "lucide-react";
 import { redirect } from "next/navigation";
 import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
-import { CategoryForm } from "./_components/category-form";
 import { ImageForm } from "./_components/image-form";
-import { AttachmentForm } from "./_components/attachment-form";
 import { PriceForm } from "./_components/price-form";
+import { Actions } from "./_components/actions";
 const GuidesIdPage = async ({
   params
 }: {
@@ -54,41 +53,63 @@ const GuidesIdPage = async ({
   const completedFields = requiredFields.filter(Boolean).length
 
   const completionText = `(${completedFields}/${totalFields})`
+
+  const isComplete = requiredFields.every(Boolean);
   return (
     <div className="p-6">
       {/* Title */}
       <div className="flex items-center justify-center">
-        <div className="flex flex-col gap-y-2">
-          <h1 className="text-2xl font-bold">
-            Guide SetUp
+        <div className="text-center">
+          <h1 className="text-4xl font-bold">
+            Guide Setup
           </h1>
+          {/* Amount Complete */}
           <span className="text-sm text-slate-300">
-            Complete all fields {completionText}
+            {completionText} Complete
           </span>
         </div>
+        
       </div>
       <div className="mt-16">
         <div className="text-center">
-          <div className="flex items-center justify-center gap-x-2">
-            <IconBadge icon={LayoutDashboard} variant="success"/>
-            <h2 className="text-xl">
-              Customize Gudie
+            {/* Customize Guide */}
+            <h2 className="text-3xl font-bold">
+              Customize Guide
             </h2>
-          </div>
-          <TitleForm initialData={guide} guideId={guide.id}/>
-          <DescriptionForm initialData={guide} guideId={guide.id}/>
-          <ImageForm initialData={guide} guideId={guide.id}/>
-          {/* Attachement Item */}
-          {/* Category Item */}
-          <CategoryForm 
-            initialData={guide} 
-            guideId={guide.id}
-            options={categories.map((category) => ({
-              label: category.name,
-              value: category.id,
-            }))}
-          />
+
+            {/* Guide TItle */}
+            <TitleForm
+              initialData={guide}
+              guideId={guide.id}
+            />
+
+            {/* Description Form */}
+            <DescriptionForm
+              initialData={guide}
+              guideId={guide.id}
+            />
+
+            {/*Image Form*/}
+            <ImageForm
+              initialData={guide}
+              guideId={guide.id}
+            />
+
+
+          
+            {/* Chapters */}
+            <div className="text-center">
+              <h2 className="text-2xl font-bold">
+                Guide chapters
+              </h2>
+            </div> 
+          
+          
+          {/* Price */}
+          
           <PriceForm initialData={guide} guideId={guide.id}/>
+
+          
         </div>
       </div>
     </div>

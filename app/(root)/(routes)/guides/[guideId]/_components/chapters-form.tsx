@@ -8,7 +8,7 @@ import { Loader2, PlusCircle } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Chapter, Course } from "@prisma/client";
+import { Chapter, Guide } from "@prisma/client";
 
 import {
   Form,
@@ -24,8 +24,8 @@ import { Input } from "@/components/ui/input";
 import { ChaptersList } from "./chapters-list";
 
 interface ChaptersFormProps {
-  initialData: Course & { chapters: Chapter[] };
-  courseId: string;
+  initialData: Guide & { chapters: Chapter[] };
+  guideId: string;
 };
 
 const formSchema = z.object({
@@ -34,7 +34,7 @@ const formSchema = z.object({
 
 export const ChaptersForm = ({
   initialData,
-  courseId
+  guideId
 }: ChaptersFormProps) => {
   const [isCreating, setIsCreating] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
@@ -56,7 +56,7 @@ export const ChaptersForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post(`/api/courses/${courseId}/chapters`, values);
+      await axios.post(`/api/courses/${guideId}/chapters`, values);
       toast.success("Chapter created");
       toggleCreating();
       router.refresh();
@@ -69,7 +69,7 @@ export const ChaptersForm = ({
     try {
       setIsUpdating(true);
 
-      await axios.put(`/api/courses/${courseId}/chapters/reorder`, {
+      await axios.put(`/api/guides/${guideId}/chapters/reorder`, {
         list: updateData
       });
       toast.success("Chapters reordered");
@@ -82,7 +82,7 @@ export const ChaptersForm = ({
   }
 
   const onEdit = (id: string) => {
-    router.push(`/teacher/courses/${courseId}/chapters/${id}`);
+    router.push(`/teacher/courses/${guideId}/chapters/${id}`);
   }
 
   return (

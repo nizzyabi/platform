@@ -62,23 +62,24 @@ export const PriceForm = ({
   }
 
   return (
-    <div className="mt-6 rounded-md p-4">
-      <div className="font-medium flex items-center justify-center">
-        Course price
+    <div className="rounded-md p-4">
+      <h1 className="text-2xl font-bold">Guide price</h1>
+      <div className="font-bold flex items-center justify-center">
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit price
+              
+              <Pencil className="h-4 w-4 mr-1" />
+              <h1 className="text-lg">Edit Price</h1>
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-sm mt-2",
+          "text-lg text-center",
           !initialData.price && "text-slate-500 italic"
         )}>
           {initialData.price
@@ -91,19 +92,20 @@ export const PriceForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
+            className="flex items-center justify-center"
           >
             <FormField
               control={form.control}
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="rounded opacity-70">
                     <Input
+                      
                       type="number"
-                      step="0.01"
                       disabled={isSubmitting}
-                      placeholder="Set a price for your course"
+                      placeholder="$$$"
+                      className="w-20"
                       {...field}
                     />
                   </FormControl>
@@ -111,7 +113,7 @@ export const PriceForm = ({
                 </FormItem>
               )}
             />
-            <div className="flex items-center gap-x-2">
+            <div className="text-center">
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"

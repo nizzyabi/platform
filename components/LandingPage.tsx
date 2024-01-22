@@ -109,23 +109,23 @@ export default function LandingPage() {
 
         {/* Problem */}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>Why do I suck at code? 😞</h1>
-          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>Most people fail because they aren't coding the right way</p>
-          <p className='text-6xl'>⏬</p>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700'>Why do I suck at code?</span> 😞</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>most people fail because they aren't coding the right way</p>
+          <p className='text-6xl finger'>⏬</p>
         </div>
 
         {/* Realization */}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>Understand this... 🫥</h1>
-          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>How you learn code matters more than the code itself.</p>
-          <p className='text-6xl'>⏬</p>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700'>Understand this...</span> 🫥</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>how you learn code matters more than the code itself.</p>
+          <p className='text-6xl finger'>⏬</p>
         </div>
         
         {/* Solution*/}
         <div className='space-y-12 pb-[90px]'>
-          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'>How do I solve this? 🧐</h1>
-          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>You fix this by building projects YOU want & having fun while coding</p>
-          <p className='text-6xl'>⏬</p>
+          <h1 data-aos='fade-right' className='lg:text-5xl text-4xl font-extrabold'><span className='text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-700'>How do I solve this?</span> 🧐</h1>
+          <p data-aos='fade-up' className='text-bold lg:text-2xl text-xl text-slate-200/50'>you fix this by building projects YOU want & having fun while coding</p>
+          <p className='text-6xl finger'>⏬</p>
           {/* Video */}
           <div className='flex items-center justify-center '>
             <iframe className='sproutvideo-player rounded shadow-md shadow-black' src='https://videos.sproutvideo.com/embed/d390d1b61a1fe9ce5a/e56032fb0653d246' width='640' height='360' title='Video Player'></iframe>

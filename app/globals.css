@@ -110,6 +110,8 @@ html {
   animation: hop 1s ease-in-out infinite;
 }
 
+@import "~@uploadthing/react/styles.css"
+
 
  
 

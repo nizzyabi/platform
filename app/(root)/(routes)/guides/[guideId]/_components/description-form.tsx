@@ -65,22 +65,22 @@ export const DescriptionForm = ({
 
   return (
     <div className="mt-6  rounded-md p-4">
-      <div className="font-medium flex items-center justify-center">
-        Course description
+      <h1 className="text-2xl font-bold">Course description</h1>
+      <div className="font-bold">
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit description
+              <Pencil className="h-4 w-4 mr-1" />
+              <h1 className="text-lg">Edit Description</h1>
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-sm mt-2",
+          "text-lg mt-2",
           !initialData.description && "text-slate-500 italic"
         )}>
           {initialData.description || "No description"}
@@ -90,7 +90,7 @@ export const DescriptionForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
+            className="space-y-4 flex items-center justify-center"
           >
             <FormField
               control={form.control}

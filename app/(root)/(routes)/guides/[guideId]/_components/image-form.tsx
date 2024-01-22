@@ -45,17 +45,17 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="mt-6 rounded-md p-4">
+    <div className="rounded-md p-4">
+      <h1 className="text-2xl font-bold">Guide Image</h1>
       <div className="font-medium flex items-center justify-center">
-        Course image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
             <>Cancel</>
           )}
           {!isEditing && !initialData.imageUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add an image
+              <PlusCircle className="h-4 w-4 mr-2 text-lg" />
+              <h1 className="text-lg">Add an image</h1>
             </>
           )}
           {!isEditing && initialData.imageUrl && (
@@ -68,7 +68,7 @@ export const ImageForm = ({
       </div>
       {!isEditing && (
         !initialData.imageUrl ? (
-          <div className="flex items-center justify-center h-60 rounded-md">
+          <div className="flex items-center justify-center h-10 rounded-md">
             <ImageIcon className="h-10 w-10 text-slate-500" />
           </div>
         ) : (
@@ -92,9 +92,6 @@ export const ImageForm = ({
               }
             }}
           />
-          <div className="text-xs text-muted-foreground mt-4">
-            16:9 aspect ratio recommended
-          </div>
         </div>
       )}
     </div>
