@@ -1,5 +1,5 @@
+// Scroll Animation
 "use client"
-
 import { useEffect, useState } from "react"
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 

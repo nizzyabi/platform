@@ -1,3 +1,4 @@
+// Courses Page
 'use client'
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
 
+// TODO: Remove this and replace with course creation data
 const guides = [
   {
     title: "Deep Work Guide",
@@ -45,6 +47,7 @@ const guides = [
 ];
 
 export default function Guides() {
+  // AOS Effect
   useEffect(() => {
     AOS.init({
       disable: "phone",
@@ -52,17 +55,16 @@ export default function Guides() {
       easing: "ease-out-cubic",
     });
   }, []);
+
     return (
       <div >
-  
-          {/*title*/}
+          {/* Title*/}
           <div className="text-center">
               <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Guides</h1>
               <p className="text-lg md:text-xl pt-1">learn how to learn through detailed & applicable videos.</p>
           </div>
 
-          {/* Guides */}
-
+          {/* Courses */}
           <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
             {guides.map((guide) => (
               <Card key={guide.title} className="rounded-xl cursor-pointer border border-gray-500 border-opacity-70 bg-gray shadow-2xl hover:scale-105 transition-transform duration-500">
@@ -95,10 +97,7 @@ export default function Guides() {
               </Card>
             ))}
 
-          </div>
-        
-          
-          
+          </div>  
       </div>
     )
   }

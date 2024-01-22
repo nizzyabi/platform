@@ -1,6 +1,6 @@
+// Footer Page
 import Link from "next/link"
 import { BsTwitterX, BsYoutube, BsDiscord, BsGithub } from "react-icons/bs";
-
 
 export default function Footer() {
   return (

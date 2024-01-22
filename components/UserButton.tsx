@@ -1,3 +1,4 @@
+// User Button Avatar
 'use client'
 import { Button } from "@/components/ui/button"
 import { Avatar } from "@mui/material"
@@ -6,9 +7,11 @@ import { IoMdPerson } from "react-icons/io";
 import { useCurrentUser } from "@/hooks/user-current-user"
 
 const UserButton = () => {
+    // Get current user data
     const session = useCurrentUser();   
   return (
     <div>
+        {/* If no user session, show register button, else show user image or boilerplate image*/}
         {!session ? (
             <Link href='/auth/register'>
                 <Button variant="gold" className="mt-5" >

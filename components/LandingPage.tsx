@@ -1,5 +1,4 @@
 'use client'
-
 // Imports 
 import { Button } from '@/components/ui/button'
 import Footer from './Footer'
@@ -54,8 +53,7 @@ export default function LandingPage() {
 
   return (
     <div className='mt-12'>
-
-      {/* Landing */}
+      {/* Landing Page */}
       <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4 mb-20'>
         {/* Text + Button */}
         <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
@@ -65,8 +63,6 @@ export default function LandingPage() {
           </div>
           {/* Sub text */}
             <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
-          
-
           {/* Button */}
           <div className='pt-4'>
             <Button variant='gold'>

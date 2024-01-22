@@ -1,3 +1,4 @@
+// Coaching page
 'use client'
 import Link from "next/link";
 import AOS from "aos";
@@ -80,7 +81,6 @@ export default function Coaching() {
   }, []);
   return (
     <div>
-
         {/* Title */}
         <div className="text-center pb-5 pt-[200px]" data-aos='fade-left'>
             <h1 className="font-extrabold text-3xl md:text-5xl pt-3">1-on-1 Coaching</h1>

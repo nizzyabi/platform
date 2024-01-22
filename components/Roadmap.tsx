@@ -1,3 +1,4 @@
+// Roadmap Page
 "use client"
 import {useEffect, useState} from "react";
 import Link from "next/link";
@@ -15,8 +16,9 @@ import { Checkbox } from "./ui/checkbox";
 
 
 export default function Roadmap() {
+    // Current User Data
     const { data: session } = useSession();
-    const [checked, setChecked] = useState('indeterminate');
+    // Roadmap Display Data
     const roadmapData = [
         {
             number: '01',
@@ -210,28 +212,7 @@ export default function Roadmap() {
         }
 
     ]
-    
-    
-      // Function to update the user's checkbox value
-      const updateUserCheckboxValue = async (userId:any, value:any) => {
-        try {
-          // Make an API request to update the user's data
-          const response = await fetch(`/api/updateCheckboxValue?userId=${userId}&value=${value}`, {
-            method: "POST",
-          });
-    
-          if (response.ok) {
-            // Handle success
-            console.log("Checkbox value updated successfully.");
-          } else {
-            // Handle error
-            console.error("Error updating checkbox value.");
-          }
-        } catch (error) {
-          console.error("Error updating checkbox value:", error);
-        }
-      };
-    
+    // AOS Effect
     useEffect(() => {
         AOS.init({
           disable: "phone",
@@ -239,25 +220,28 @@ export default function Roadmap() {
           easing: "ease-out-cubic",
         });
       }, []);
-      
 
     return (
         <div className="mt-6">
-            <h1 className="text-5xl text-center font-extrabold" data-aos='fade-right'> 
-            {!session ? (
-                <p>Roadmap</p>
-            ): (
-                <p>{session?.user.name}'s Roadmap</p>
-            )}
-            </h1>
+            {/* Roadmap Title */}
+            <div>
+                <h1 className="text-5xl text-center font-extrabold" data-aos='fade-right'> 
+                    {!session ? (
+                        <p>Roadmap</p>
+                    ): (
+                        <p>{session?.user.name}'s Roadmap</p>
+                    )}
+                </h1>
 
-            <p data-aos='fade-right' className="text-xl text-center font-semibold text-slate-400">Full roadmap to being a web developer</p>
+                <p data-aos='fade-right' className="text-xl text-center font-semibold text-slate-400">Full roadmap to being a web developer</p>
 
             
-            <div className='flex items-center justify-center' data-aos='fade-right'>
-                <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
+                <div className='flex items-center justify-center' data-aos='fade-right'>
+                    <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
+                </div>
             </div>
 
+            {/* Resources */}
             <div data-aos='fade-left'>
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
@@ -283,8 +267,7 @@ export default function Roadmap() {
                 </div>
             ))}
   
-            </div>
-            
+            </div> 
         </div>
     )
 }
