@@ -71,7 +71,7 @@ model PasswordResetToken {
   @@unique([email, token])
 }
 
-// Guides
+// Courses
 model Guide {
   id String @id @default(uuid())
   userId String

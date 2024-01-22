@@ -1,13 +1,10 @@
 import { auth } from "@/auth";
-import { IconBadge } from "@/components/Icon-Badge";
 import { db } from "@/lib/db";
-import { LayoutDashboard, ListChecks } from "lucide-react";
 import { redirect } from "next/navigation";
 import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
-import { Actions } from "./_components/actions";
 import { CategoryForm } from "./_components/category-form";
 const GuidesIdPage = async ({
   params
@@ -36,7 +33,6 @@ const GuidesIdPage = async ({
 
   // array of required fields
   const requiredFields = [
-    guide.title,
     guide.description,
     guide.imageUrl,
     guide.price,
@@ -49,7 +45,6 @@ const GuidesIdPage = async ({
       name: "asc",
     }
   })
-  console.log(categories)
   const totalFields = requiredFields.length;
   // total that dont equal false
   const completedFields = requiredFields.filter(Boolean).length
