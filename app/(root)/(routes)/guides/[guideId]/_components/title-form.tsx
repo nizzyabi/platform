@@ -96,7 +96,7 @@ export const TitleForm = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="w-full">
+                  <FormControl className="w-full rounded bg-slate-100 text-black">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"

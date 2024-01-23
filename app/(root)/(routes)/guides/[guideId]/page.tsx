@@ -8,13 +8,14 @@ import { PriceForm } from "./_components/price-form";
 import { CategoryForm } from "./_components/category-form";
 import { Separator } from "@/components/ui/separator";
 import { AttachmentForm } from "./_components/attachment-form";
+import { ChaptersForm } from "./_components/chapters-form";
 const GuidesIdPage = async ({
   params
 }: {
   params: { guideId: string }
 }) => {
   // get user ID
-  const session = auth()
+  const session = await auth()
 
   // check if user is logged in
   if (!session) {
@@ -24,9 +25,15 @@ const GuidesIdPage = async ({
   // get guide
   const guide = await db.guide.findUnique({
     where: {
-      id: params.guideId
+      id: params.guideId,
+      userId: session.user.id
     },
     include: {
+      chapters: {
+        orderBy: {
+          position: "asc"
+        }
+      },
       attachments: {
         orderBy: {
           createdAt: "desc"
@@ -46,7 +53,8 @@ const GuidesIdPage = async ({
     guide.description,
     guide.imageUrl,
     guide.price,
-    guide.categoryId
+    guide.categoryId,
+    guide.chapters.some(chapter => chapter.isPublished)
   ];
 
   // categories
@@ -121,15 +129,17 @@ const GuidesIdPage = async ({
               }))}
             />
 
-
             {/* Chapters */}
             <div className="text-center mt-12">
               <h2 className="text-3xl font-bold">
-                Guide chapters
+                Course chapters
               </h2>
+              <ChaptersForm
+                initialData={guide}
+                guideId={guide.id}
+              />
             </div> 
-          
-          
+
           {/* Price */}
           
           <PriceForm initialData={guide} guideId={guide.id}/>

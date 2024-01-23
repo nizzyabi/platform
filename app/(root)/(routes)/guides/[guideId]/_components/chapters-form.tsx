@@ -56,7 +56,7 @@ export const ChaptersForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post(`/api/courses/${guideId}/chapters`, values);
+      await axios.post(`/api/guides/${guideId}/chapters`, values);
       toast.success("Chapter created");
       toggleCreating();
       router.refresh();
@@ -86,13 +86,13 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="relative mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="relative mt-6 rounded-md p-4">
       {isUpdating && (
-        <div className="absolute h-full w-full bg-slate-500/20 top-0 right-0 rounded-m flex items-center justify-center">
+        <div className="absolute h-full w-full top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
         </div>
       )}
-      <div className="font-medium flex items-center justify-between">
+      <div className="font-medium flex items-center justify-center">
         Course chapters
         <Button onClick={toggleCreating} variant="ghost">
           {isCreating ? (
