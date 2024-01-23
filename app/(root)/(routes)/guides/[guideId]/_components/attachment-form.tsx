@@ -80,11 +80,11 @@ export const AttachmentForm = ({
             </p>
           )}
           {initialData.attachments.length > 0 && (
-            <div className="space-y-2">
+            <div className="space-y-2 flex items-center justify-center">
               {initialData.attachments.map((attachment) => (
                 <div
                   key={attachment.id}
-                  className="flex items-center p-3 w-full bg-sky-100 border-sky-200 border text-sky-700 rounded-md"
+                  className="flex items-center justify-center p-3 w-[300px] bg-slate-100 border-black rounded border text-black"
                 >
                   <File className="h-4 w-4 mr-2 flex-shrink-0" />
                   <p className="text-xs line-clamp-1">

@@ -130,18 +130,20 @@ const GuidesIdPage = async ({
             />
 
             {/* Chapters */}
-            <div className="text-center mt-12">
-              <h2 className="text-3xl font-bold">
-                Course chapters
-              </h2>
-              <ChaptersForm
-                initialData={guide}
-                guideId={guide.id}
-              />
-            </div> 
+            
+            <h2 className="text-3xl font-bold">
+              Course chapters
+            </h2>
+            <div className='flex items-center justify-center'>
+              <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+            </div>
+              
+            <ChaptersForm
+              initialData={guide}
+              guideId={guide.id}
+            />
 
-          {/* Price */}
-          
+          {/* Price */}  
           <PriceForm initialData={guide} guideId={guide.id}/>
 
           {/* Attachments */}

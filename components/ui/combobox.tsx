@@ -36,7 +36,7 @@ export const Combobox = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className="w-full justify-between bg-slate-100 text-black hover:bg-slate-100 hover:text-black"
         >
           {value
             ? options.find((option) => option.value === value)?.label
@@ -45,7 +45,7 @@ export const Combobox = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
-        <Command className="bg-[#2c2c2c]">
+        <Command className="bg-slate-100 text-black">
           <CommandInput placeholder="Search option..." />
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>

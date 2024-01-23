@@ -121,6 +121,7 @@ export const ChaptersForm = ({
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="rounded bg-slate-100 text-black border border-black"
                     />
                   </FormControl>
                   <FormMessage />

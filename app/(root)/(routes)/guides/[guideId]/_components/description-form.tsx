@@ -99,7 +99,7 @@ export const DescriptionForm = ({
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="bg-slate-100 text-black rounded w-[500px] h-[500px]">
                     <Textarea
                       disabled={isSubmitting}
                       placeholder="e.g. 'This course is about...'"

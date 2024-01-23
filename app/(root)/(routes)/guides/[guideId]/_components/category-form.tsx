@@ -101,7 +101,7 @@ export const CategoryForm = ({
               name="categoryId"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="bg-slate-100">
                     <Combobox
                       options={...options}
                       {...field}

@@ -81,7 +81,7 @@ export const PriceForm = ({
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-lg text-slate-300",
+          "text-lg",
           !initialData.price
         )}>
           {initialData.price
@@ -101,13 +101,12 @@ export const PriceForm = ({
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded opacity-70">
+                  <FormControl className="rounded">
                     <Input
-                      
                       type="number"
                       disabled={isSubmitting}
                       placeholder="$$$"
-                      className="w-20"
+                      className="w-20 bg-slate-100 text-black"
                       {...field}
                     />
                   </FormControl>
