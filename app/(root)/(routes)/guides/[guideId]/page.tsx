@@ -7,6 +7,7 @@ import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
 import { CategoryForm } from "./_components/category-form";
 import { Separator } from "@/components/ui/separator";
+import { AttachmentForm } from "./_components/attachment-form";
 const GuidesIdPage = async ({
   params
 }: {
@@ -24,6 +25,13 @@ const GuidesIdPage = async ({
   const guide = await db.guide.findUnique({
     where: {
       id: params.guideId
+    },
+    include: {
+      attachments: {
+        orderBy: {
+          createdAt: "desc"
+        }
+      }
     }
   })
 
@@ -126,6 +134,11 @@ const GuidesIdPage = async ({
           
           <PriceForm initialData={guide} guideId={guide.id}/>
 
+          {/* Attachments */}
+          <AttachmentForm
+            initialData={guide}
+            guideId={guide.id}
+          />
           
         </div>
       </div>
