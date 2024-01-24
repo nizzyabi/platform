@@ -62,27 +62,24 @@ export const PriceForm = ({
   }
 
   return (
-    <div className="mt-6 mb-6 rounded-md">
-      <div className="font-bold flex items-center justify-center">
-      <h1 className="text-lg font-bold">Course Price</h1>
+    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
+      <div className="font-extrabold flex items-center justify-between text-xl">
+        Course price
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>
-            <h1 className="text-lg">Cancel</h1>
-            </>
+            <>Cancel</>
           ) : (
             <>
-              
-              <Pencil className="h-4 w-4 mr-1" />
-              <h1 className="text-lg">Edit Price</h1>
+              <Pencil className="h-4 w-4 mr-2" />
+              Edit price
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-lg",
-          !initialData.price
+          "text-lg mt-2",
+          !initialData.price && "text-slate-500 italic"
         )}>
           {initialData.price
             ? formatPrice(initialData.price)
@@ -94,19 +91,19 @@ export const PriceForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex items-center justify-center"
+            className="space-y-4 mt-4"
           >
             <FormField
               control={form.control}
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded">
+                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
                     <Input
                       type="number"
+                      step="0.01"
                       disabled={isSubmitting}
-                      placeholder="$$$"
-                      className="w-20 bg-slate-100 text-black"
+                      placeholder="Set a price for your course"
                       {...field}
                     />
                   </FormControl>
@@ -114,7 +111,7 @@ export const PriceForm = ({
                 </FormItem>
               )}
             />
-            <div className="text-center">
+            <div className="flex items-center gap-x-2">
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"

@@ -46,38 +46,37 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="mt-6 mb-6 rounded-md">
-      <div className="font-bold flex items-center justify-center">
-      <h1 className="text-lg font-bold">Guide Image</h1>
+    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
+      <div className="font-extrabold flex items-center justify-between text-xl">
+        Course image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
             <>Cancel</>
           )}
           {!isEditing && !initialData.imageUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2 text-lg" />
-              <h1 className="text-lg">Add an image</h1>
+              <PlusCircle className="h-4 w-4 mr-2" />
+              Add an image
             </>
           )}
           {!isEditing && initialData.imageUrl && (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              <h1 className="text-lg">Edit Image</h1>
+              Edit image
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         !initialData.imageUrl ? (
-          <div className="flex items-center justify-center h-10 rounded-md">
-            <ImageIcon className="h-20 w-20 mt-8 text-slate-500" />
+          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
+            <ImageIcon className="h-10 w-10 text-slate-500" />
           </div>
         ) : (
-          <div className="mt-2 flex items-center justify-center">
+          <div className="relative aspect-video mt-2">
             <Image
               alt="Upload"
-              height={500}
-              width={500}
+              fill
               className="object-cover rounded-md"
               src={initialData.imageUrl}
             />
@@ -94,6 +93,9 @@ export const ImageForm = ({
               }
             }}
           />
+          <div className="text-xs text-muted-foreground mt-4">
+            16:9 aspect ratio recommended
+          </div>
         </div>
       )}
     </div>

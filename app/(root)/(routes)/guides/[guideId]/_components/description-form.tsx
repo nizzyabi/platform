@@ -64,25 +64,23 @@ export const DescriptionForm = ({
   }
 
   return (
-    <div className="mt-6 mb-6 rounded-md">
-      <div className="font-bold flex items-center justify-center">
-      <h1 className="text-lg font-bold">Course description</h1>
+    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
+      <div className="font-extrabold flex items-center justify-between text-xl">
+        Course description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>
-              <h1 className="text-lg">Cancel</h1>
-            </>
+            <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-1" />
-              <h1 className="text-lg">Edit Description</h1>
+              <Pencil className="h-4 w-4 mr-2" />
+              Edit description
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-lg text-slate-300",
+          "text-lg mt-2",
           !initialData.description && "text-slate-500 italic"
         )}>
           {initialData.description || "No description"}
@@ -92,14 +90,14 @@ export const DescriptionForm = ({
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 flex items-center justify-center"
+            className="space-y-4 mt-4"
           >
             <FormField
               control={form.control}
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="bg-slate-100 text-black rounded w-[500px] h-[500px]">
+                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
                     <Textarea
                       disabled={isSubmitting}
                       placeholder="e.g. 'This course is about...'"

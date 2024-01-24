@@ -76,30 +76,25 @@ const GuidesIdPage = async ({
     <div className="p-6">
       {/* Title */}
       <div className="flex items-center justify-center">
-        <div className="text-center">
+        <div className="flex flex-col gap-y-2">
           <h1 className="text-5xl font-extrabold">
             Guide Setup
           </h1>
           {/* Amount Complete */}
-          <span className="text-sm text-slate-300">
+          <span className="text-sm text-slate-300 text-center">
             {completionText} Complete
           </span>
-          <div className='flex items-center justify-center'>
-            <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
-          </div>
         </div>
         
       </div>
-      <div className="mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
         <div className="text-center">
+          <div className="flex items-center gap-x-2">
             {/* Customize Guide */}
             <h2 className="text-3xl font-bold">
               Customize Course
             </h2>
-
-            <div className='flex items-center justify-center'>
-                <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
-            </div>
+          </div>
             
             {/* Guide TItle */}
             <TitleForm
@@ -128,30 +123,44 @@ const GuidesIdPage = async ({
                 value: category.id,
               }))}
             />
+        </div>
 
-            {/* Chapters */}
-            
-            <h2 className="text-3xl font-bold">
-              Course chapters
-            </h2>
-            <div className='flex items-center justify-center'>
-              <Separator className='w-20 h-0.5 rounded bg-slate-200 mt-3'/>
+        <div className="space-y-6">
+          <div>
+            <div className="flex items-center gap-x-2">
+              {/* Chapters */}
+              <h2 className="text-3xl font-bold">
+                Course chapters
+              </h2>
+              
             </div>
               
             <ChaptersForm
               initialData={guide}
               guideId={guide.id}
             />
-
-          {/* Price */}  
-          <PriceForm initialData={guide} guideId={guide.id}/>
-
-          {/* Attachments */}
-          <AttachmentForm
-            initialData={guide}
-            guideId={guide.id}
-          />
-          
+            </div>
+            <div>
+              <div className="flex items-center gap-x-2">
+                <h2 className="text-2xl font-bold">
+                  Sell your course
+                </h2>
+              </div>
+              {/* Price */}  
+              <PriceForm initialData={guide} guideId={guide.id}/>
+            </div>
+            <div>
+              <div className="flex items-center gap-x-2"> 
+                <h2 className="text-2xl font-bold">
+                  Resources & Attachments
+                </h2>
+              </div>
+              {/* Attachments */}
+              <AttachmentForm
+                initialData={guide}
+                guideId={guide.id}
+              />
+          </div>
         </div>
       </div>
     </div>

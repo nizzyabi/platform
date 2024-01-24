@@ -86,7 +86,7 @@ export const ChaptersList = ({
                 {(provided) => (
                   <div
                     className={cn(
-                      "flex items-center gap-x-2 border rounded-md mb-4 text-sm",
+                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-[#2c2c2c]",
                       chapter.isPublished && "bg-sky-100 border-sky-200 text-sky-700"
                     )}
                     ref={provided.innerRef}
@@ -112,11 +112,11 @@ export const ChaptersList = ({
                       )}
                       <Badge
                         className={cn(
-                          "bg-slate-500",
-                          chapter.isPublished && "bg-red-500"
+                          "bg-gradient-to-r from-yellow-500 to-orange-500",
+                          chapter.isPublished && "bg-gradient-to-r from-blue-500 to-blue-800"
                         )}
                       >
-                        {chapter.isPublished ? "Published" : "Draft"}
+                        {chapter.isPublished ? "Posted" : "Draft"}
                       </Badge>
                       <Pencil
                         onClick={() => onEdit(chapter.id)}

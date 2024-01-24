@@ -86,13 +86,13 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="relative mt-6 rounded-md p-4">
+    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
       {isUpdating && (
-        <div className="absolute h-full w-full top-0 right-0 rounded-m flex items-center justify-center">
+        <div className="absolute h-full w-full bg-slate-500/20 top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
         </div>
       )}
-      <div className="font-medium flex items-center justify-center">
+      <div className="font-extrabold flex items-center justify-between text-xl">
         Course chapters
         <Button onClick={toggleCreating} variant="ghost">
           {isCreating ? (
@@ -116,12 +116,11 @@ export const ChaptersForm = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
-                      className="rounded  border border-slate-200"
                     />
                   </FormControl>
                   <FormMessage />
