@@ -67,11 +67,10 @@ export const PriceForm = ({
         Course price
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit price
+              <Pencil className="text-slate-200" />
             </>
           )}
         </Button>
@@ -116,7 +115,7 @@ export const PriceForm = ({
                 disabled={!isValid || isSubmitting}
                 type="submit"
               >
-                Save
+                save
               </Button>
             </div>
           </form>

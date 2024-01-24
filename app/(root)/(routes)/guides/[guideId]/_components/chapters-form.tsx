@@ -93,14 +93,14 @@ export const ChaptersForm = ({
         </div>
       )}
       <div className="font-extrabold flex items-center justify-between text-xl">
-        Course chapters
+        chapters
         <Button onClick={toggleCreating} variant="ghost">
           {isCreating ? (
-            <>Cancel</>
+            <>cancel</>
           ) : (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add a chapter
+              <PlusCircle className="text-slate-200" />
+              
             </>
           )}
         </Button>

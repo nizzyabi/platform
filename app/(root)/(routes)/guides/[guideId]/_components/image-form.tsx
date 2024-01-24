@@ -48,21 +48,20 @@ export const ImageForm = ({
   return (
     <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
       <div className="font-extrabold flex items-center justify-between text-xl">
-        Course image
+        course image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
-            <>Cancel</>
+            <>cancel</>
           )}
           {!isEditing && !initialData.imageUrl && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add an image
+              add an image
             </>
           )}
           {!isEditing && initialData.imageUrl && (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit image
+              <Pencil className="text-slate-200" />
             </>
           )}
         </Button>

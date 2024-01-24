@@ -66,14 +66,14 @@ export const TitleForm = ({
   return (
   <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
   <div className="font-extrabold flex items-center justify-between text-xl">
-    Course title
-    <Button onClick={toggleEdit} variant="ghost">
+    course title
+    <Button onClick={toggleEdit} >
       {isEditing ? (
-        <>Cancel</>
+        <>cancel</>
       ) : (
         <>
-          <Pencil className="h-4 w-4 mr-2" />
-          Edit title
+          <Pencil className="text-slate-200" />
+          
         </>
       )}
     </Button>
@@ -110,7 +110,7 @@ export const TitleForm = ({
             disabled={!isValid || isSubmitting}
             type="submit"
           >
-            Save
+            save
           </Button>
         </div>
       </form>

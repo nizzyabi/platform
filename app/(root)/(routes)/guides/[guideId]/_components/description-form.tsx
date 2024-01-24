@@ -66,14 +66,13 @@ export const DescriptionForm = ({
   return (
     <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
       <div className="font-extrabold flex items-center justify-between text-xl">
-        Course description
+        course description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit description
+              <Pencil className="text-slate-200" />
             </>
           )}
         </Button>
@@ -113,7 +112,7 @@ export const DescriptionForm = ({
                 disabled={!isValid || isSubmitting}
                 type="submit"
               >
-                Save
+                save
               </Button>
             </div>
           </form>

@@ -94,7 +94,7 @@ export const ChaptersList = ({
                   >
                     <div
                       className={cn(
-                        "px-2 py-3 border-r border-r-slate-200 hover:bg-slate-300 rounded-l-md transition",
+                        "px-2 py-3 border-r border-r-slate-200 hover:text-[#2c2c2c] hover:bg-slate-200 rounded-l-md transition",
                         chapter.isPublished && "border-r-sky-200 hover:bg-sky-200"
                       )}
                       {...provided.dragHandleProps}
@@ -112,11 +112,11 @@ export const ChaptersList = ({
                       )}
                       <Badge
                         className={cn(
-                          "bg-gradient-to-r from-yellow-500 to-orange-500",
+                          "bg-gradient-to-r from-yellow-500 to-orange-500 border border-black",
                           chapter.isPublished && "bg-gradient-to-r from-blue-500 to-blue-800"
                         )}
                       >
-                        {chapter.isPublished ? "Posted" : "Draft"}
+                        {chapter.isPublished ? "posted" : "draft"}
                       </Badge>
                       <Pencil
                         onClick={() => onEdit(chapter.id)}

@@ -72,6 +72,7 @@ const GuidesIdPage = async ({
   // check if all fields are complete
   const isComplete = requiredFields.every(Boolean);
 
+  
   return (
     <div className="p-6">
       {/* Title */}
@@ -130,7 +131,7 @@ const GuidesIdPage = async ({
             <div className="flex items-center gap-x-2">
               {/* Chapters */}
               <h2 className="text-3xl font-bold">
-                Course chapters
+                Course Chapters
               </h2>
               
             </div>
@@ -141,7 +142,7 @@ const GuidesIdPage = async ({
             />
             </div>
             <div>
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-1">
                 <h2 className="text-2xl font-bold">
                   Sell your course
                 </h2>
