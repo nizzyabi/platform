@@ -109,7 +109,7 @@ const SettingsPage = () => {
                     {/* 2 */}
                     <div className="space-y-3">
                         <h1 className="text-4xl font-extrabold">Do I Have To Pay?</h1>
-                        <p className="text-lg font-normal">Not at all 🙃. Most of the content on here is free. however, some indepth guides & coaching do cost some money.</p>
+                        <p className="text-lg font-normal">Not at all 🙃. Most of the content on here is free. however, some indepth courses & coaching do cost some money.</p>
                     </div>
                     {/* 3 */}
                     <div className="space-y-3">
