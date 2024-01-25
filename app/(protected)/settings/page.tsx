@@ -12,7 +12,7 @@ import {
   } from "@/components/ui/card";
 import { UserIcon } from "lucide-react";
 import Link from "next/link";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 const SettingsPage = () => {
     const session = useCurrentUser();
     const onClick = () => {

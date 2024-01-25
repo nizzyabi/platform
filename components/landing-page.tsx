@@ -1,7 +1,7 @@
 'use client'
 // Imports 
 import { Button } from '@/components/ui/button'
-import Footer from './Footer'
+import Footer from './footer'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import AOS from "aos";
 import "aos/dist/aos.css";

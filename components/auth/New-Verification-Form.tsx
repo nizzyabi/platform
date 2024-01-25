@@ -5,8 +5,8 @@ import { CardWrapper } from "@/components/auth/Card-Wrapper";
 import { newVerification } from "@/actions/new-verification";
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react";
-import { FormError } from "@/components/Form-Error";
-import { FormSuccess } from "@/components/Form-Success";
+import { FormError } from "@/components/form-error";
+import { FormSuccess } from "@/components/form-success";
 import { CircularProgress } from "@mui/material"
 
 

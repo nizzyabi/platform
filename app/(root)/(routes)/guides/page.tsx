@@ -1,5 +1,5 @@
 'use client'
-import Guides from '@/components/Guides'
+import Guides from '@/components/guides'
 import { Button } from '@/components/ui/button';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import Link from 'next/link';

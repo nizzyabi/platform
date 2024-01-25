@@ -1,4 +1,4 @@
-import Coaching from '@/components/Coaching'
+import Coaching from '@/components/coaching'
 import React from 'react'
 
 export default function page() {

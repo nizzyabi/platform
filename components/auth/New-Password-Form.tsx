@@ -15,8 +15,8 @@ import {
 import { NewPasswordSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/Form-Error";
-import { FormSuccess } from "@/components/Form-Success";
+import { FormError } from "@/components/form-error";
+import { FormSuccess } from "@/components/form-success";
 import { useState, useTransition } from "react";
 import { newPassword } from "@/actions/new-password";
 import Link from "next/link";

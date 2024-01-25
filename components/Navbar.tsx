@@ -3,21 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 import "aos/dist/aos.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import UserButton from "./UserButton";
+import UserButton from "./user-button";
 import { motion } from "framer-motion";
 
 
 
 
 export default function Navbar() {
-    // states
-    const[isLoading, setIsLoading] = useState(true);
-    const [showRegister, setShowRegister] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    // Toggle form of auth
-    const toggleForm = () => {
-        setShowRegister(!showRegister);
-    };
   return (
     <div>
         {/* Top of page subscribe */}
