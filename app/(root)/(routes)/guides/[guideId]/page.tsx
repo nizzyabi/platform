@@ -9,10 +9,10 @@ import { CategoryForm } from "./_components/category-form";
 import { Separator } from "@/components/ui/separator";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
-const GuidesIdPage = async ({
+const CoursesIdPage = async ({
   params
 }: {
-  params: { guideId: string }
+  params: { courseId: string }
 }) => {
   // get user ID
   const session = await auth()
@@ -23,9 +23,9 @@ const GuidesIdPage = async ({
   }
 
   // get guide
-  const guide = await db.guide.findUnique({
+  const course = await db.course.findUnique({
     where: {
-      id: params.guideId,
+      id: params.courseId,
       userId: session.user.id
     },
     include: {
@@ -43,18 +43,18 @@ const GuidesIdPage = async ({
   })
 
   // if no guide, redirect to home
-  if (!guide) {
+  if (!course) {
     return redirect('/')
   }
 
   // array of required fields
   const requiredFields = [
-    guide.title,
-    guide.description,
-    guide.imageUrl,
-    guide.price,
-    guide.categoryId,
-    guide.chapters.some(chapter => chapter.isPublished)
+    course.title,
+    course.description,
+    course.imageUrl,
+    course.price,
+    course.categoryId,
+    course.chapters.some(chapter => chapter.isPublished)
   ];
 
   // categories
@@ -167,4 +167,4 @@ const GuidesIdPage = async ({
     </div>
   );
 }
-export default GuidesIdPage;
+export default CoursesIdPage;

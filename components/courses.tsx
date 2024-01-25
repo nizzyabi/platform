@@ -46,7 +46,7 @@ const guides = [
   },
 ];
 
-export default function Guides() {
+export default function Courses() {
   // AOS Effect
   useEffect(() => {
     AOS.init({
