@@ -42,7 +42,7 @@ const CreatePage = () => {
     try {
       const response = await axios.post("/api/courses", values);
       router.push(`/courses/${response.data.id}`);
-      console.log("Guide created");
+      console.log("Course created");
     } catch {
       toast.error("Something went wrong");
     }
@@ -51,11 +51,11 @@ const CreatePage = () => {
   return ( 
     <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
       <div>
-        <h1 className="text-2xl">
+        <h1 className="text-3xl text-center font-extrabold">
           Name your course
         </h1>
-        <p className="text-sm text-slate-600">
-          What would you like to name your course? Don&apos;t worry, you can change this later.
+        <p className="text-sm text-slate-300">
+          What would you like to name your course? Don't worry, you can change this later.
         </p>
         <Form {...form}>
           <form
@@ -70,7 +70,7 @@ const CreatePage = () => {
                   <FormLabel>
                     Course title
                   </FormLabel>
-                  <FormControl>
+                  <FormControl className="rounded bg-slate-100 text-[#2e2e2e]">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"

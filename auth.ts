@@ -1,11 +1,9 @@
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
-
 import { UserRole } from "@prisma/client"
 import { getUserById } from "@/data/user"
 import { db } from "@/lib/db"
 import authConfig from "@/auth.config"
-import { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next"
 
 
 export const{
