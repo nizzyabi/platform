@@ -79,7 +79,7 @@ const CoursesIdPage = async ({
       <div className="flex items-center justify-center">
         <div className="flex flex-col gap-y-2">
           <h1 className="text-5xl font-extrabold">
-            Guide Setup
+            Course Setup
           </h1>
           {/* Amount Complete */}
           <span className="text-sm text-slate-300 text-center">
@@ -99,26 +99,26 @@ const CoursesIdPage = async ({
             
             {/* Guide TItle */}
             <TitleForm
-              initialData={guide}
-              guideId={guide.id}
+              initialData={course}
+              courseId={course.id}
             />
 
             {/* Description Form */}
             <DescriptionForm
-              initialData={guide}
-              guideId={guide.id}
+              initialData={course}
+              courseId={course.id}
             />
 
             {/*Image Form*/}
             <ImageForm
-              initialData={guide}
-              guideId={guide.id}
+              initialData={course}
+              courseId={course.id}
             />
 
             {/* Categories */}
             <CategoryForm
-              initialData={guide}
-              guideId={guide.id}
+              initialData={course}
+              courseId={course.id}
               options={categories.map((category) => ({
                 label: category.name,
                 value: category.id,
@@ -137,8 +137,8 @@ const CoursesIdPage = async ({
             </div>
               
             <ChaptersForm
-              initialData={guide}
-              guideId={guide.id}
+              initialData={course}
+              courseId={course.id}
             />
             </div>
             <div>
@@ -148,7 +148,10 @@ const CoursesIdPage = async ({
                 </h2>
               </div>
               {/* Price */}  
-              <PriceForm initialData={guide} guideId={guide.id}/>
+              <PriceForm 
+                initialData={course}
+                courseId={course.id}
+              />
             </div>
             <div>
               <div className="flex items-center gap-x-2"> 
@@ -158,8 +161,8 @@ const CoursesIdPage = async ({
               </div>
               {/* Attachments */}
               <AttachmentForm
-                initialData={guide}
-                guideId={guide.id}
+                initialData={course}
+                courseId={course.id}
               />
           </div>
         </div>

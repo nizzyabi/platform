@@ -24,7 +24,7 @@ interface TitleFormProps {
   initialData: {
     title: string;
   };
-  guideId: string;
+  courseId: string;
 };
 
 //form schema
@@ -36,7 +36,7 @@ const formSchema = z.object({
 
 export const TitleForm = ({
   initialData,
-  guideId
+  courseId
 }: TitleFormProps) => {
   // state for editing
   const [isEditing, setIsEditing] = useState(false);
@@ -54,8 +54,8 @@ export const TitleForm = ({
   // submit patch incase updated
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/guides/${guideId}`, values);
-      toast.success("Guide updated");
+      await axios.patch(`/api/courses/${courseId}`, values);
+      toast.success("Course updated");
       toggleEdit();
       router.refresh();
     } catch {

@@ -10,11 +10,11 @@ import { Guide } from "@prisma/client";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/file-upload";
+import { FileUpload } from "@/components/File-Upload";
 
 interface ImageFormProps {
   initialData: Guide
-  guideId: string;
+  courseId: string;
 };
 
 const formSchema = z.object({
@@ -25,7 +25,7 @@ const formSchema = z.object({
 
 export const ImageForm = ({
   initialData,
-  guideId
+  courseId
 }: ImageFormProps) => {
   
   const [isEditing, setIsEditing] = useState(false);
@@ -36,7 +36,7 @@ export const ImageForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/guides/${guideId}`, values);
+      await axios.patch(`/api/courses/${courseId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();

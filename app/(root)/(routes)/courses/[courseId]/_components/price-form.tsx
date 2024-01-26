@@ -24,7 +24,7 @@ import { formatPrice } from "@/lib/format";
 
 interface PriceFormProps {
   initialData: Guide;
-  guideId: string;
+  courseId: string;
 };
 
 const formSchema = z.object({
@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export const PriceForm = ({
   initialData,
-  guideId
+  courseId
 }: PriceFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -52,7 +52,7 @@ export const PriceForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/guides/${guideId}`, values);
+      await axios.patch(`/api/courses/${courseId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();

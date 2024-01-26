@@ -10,11 +10,11 @@ import { Attachment, Guide } from "@prisma/client";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/file-upload";
+import { FileUpload } from "@/components/File-Upload";
 
 interface AttachmentFormProps {
   initialData: Guide & { attachments: Attachment[] };
-  guideId: string;
+  courseId: string;
 };
 
 const formSchema = z.object({
@@ -23,7 +23,7 @@ const formSchema = z.object({
 
 export const AttachmentForm = ({
   initialData,
-  guideId
+  courseId
 }: AttachmentFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -34,7 +34,7 @@ export const AttachmentForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post(`/api/guides/${guideId}/attachments`, values);
+      await axios.post(`/api/courses/${courseId}/attachments`, values);
       toast.success("Guide updated");
       toggleEdit();
       router.refresh();
@@ -46,7 +46,7 @@ export const AttachmentForm = ({
   const onDelete = async (id: string) => {
     try {
       setDeletingId(id);
-      await axios.delete(`/api/guides/${guideId}/attachments/${id}`);
+      await axios.delete(`/api/courses/${courseId}/attachments/${id}`);
       toast.success("Attachment deleted");
       router.refresh();
     } catch {

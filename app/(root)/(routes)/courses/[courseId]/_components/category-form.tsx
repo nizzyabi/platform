@@ -10,7 +10,6 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Guide } from "@prisma/client";
 
-
 import {
   Form,
   FormControl,
@@ -20,23 +19,23 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
+import { Combobox } from "@/components/ui/combobox";
 
-interface DescriptionFormProps {
+interface CategoryFormProps {
   initialData: Guide;
-  guideId: string;
+  courseId: string;
+  options: { label: string; value: string; }[];
 };
 
 const formSchema = z.object({
-  description: z.string().min(1, {
-    message: "Description is required",
-  }),
+  categoryId: z.string().min(1),
 });
 
-export const DescriptionForm = ({
+export const CategoryForm = ({
   initialData,
-  guideId
-}: DescriptionFormProps) => {
+  courseId,
+  options,
+}: CategoryFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -46,15 +45,16 @@ export const DescriptionForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      description: initialData?.description || ""
+      categoryId: initialData?.categoryId || ""
     },
   });
+
 
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/guides/${guideId}`, values);
+      await axios.patch(`/api/courses/${courseId}`, values);
       toast.success("Course updated");
       toggleEdit();
       router.refresh();
@@ -63,16 +63,19 @@ export const DescriptionForm = ({
     }
   }
 
+  const selectedOption = options.find((option) => option.value === initialData.categoryId);
+
   return (
     <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
       <div className="font-extrabold flex items-center justify-between text-xl">
-        course description
+        course category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>cancel</>
           ) : (
             <>
               <Pencil className="text-slate-200" />
+              
             </>
           )}
         </Button>
@@ -80,9 +83,9 @@ export const DescriptionForm = ({
       {!isEditing && (
         <p className={cn(
           "text-lg mt-2",
-          !initialData.description && "text-slate-500 italic"
+          !initialData.categoryId && "text-slate-500 italic"
         )}>
-          {initialData.description || "No description"}
+          {selectedOption?.label || "No category"}
         </p>
       )}
       {isEditing && (
@@ -93,13 +96,12 @@ export const DescriptionForm = ({
           >
             <FormField
               control={form.control}
-              name="description"
+              name="categoryId"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Textarea
-                      disabled={isSubmitting}
-                      placeholder="e.g. 'This course is about...'"
+                  <FormControl>
+                    <Combobox
+                      options={...options}
                       {...field}
                     />
                   </FormControl>

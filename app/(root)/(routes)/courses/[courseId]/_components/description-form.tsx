@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Guide } from "@prisma/client";
 
+
 import {
   Form,
   FormControl,
@@ -19,23 +20,23 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Combobox } from "@/components/ui/combobox";
+import { Textarea } from "@/components/ui/textarea";
 
-interface CategoryFormProps {
+interface DescriptionFormProps {
   initialData: Guide;
-  guideId: string;
-  options: { label: string; value: string; }[];
+  courseId: string;
 };
 
 const formSchema = z.object({
-  categoryId: z.string().min(1),
+  description: z.string().min(1, {
+    message: "Description is required",
+  }),
 });
 
-export const CategoryForm = ({
+export const DescriptionForm = ({
   initialData,
-  guideId,
-  options,
-}: CategoryFormProps) => {
+  courseId
+}: DescriptionFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -45,17 +46,16 @@ export const CategoryForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      categoryId: initialData?.categoryId || ""
+      description: initialData?.description || ""
     },
   });
-
 
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/guides/${guideId}`, values);
-      toast.success("Guide updated");
+      await axios.patch(`/api/courses/${courseId}`, values);
+      toast.success("Course updated");
       toggleEdit();
       router.refresh();
     } catch {
@@ -63,19 +63,16 @@ export const CategoryForm = ({
     }
   }
 
-  const selectedOption = options.find((option) => option.value === initialData.categoryId);
-
   return (
     <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
       <div className="font-extrabold flex items-center justify-between text-xl">
-        course category
+        course description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>cancel</>
           ) : (
             <>
               <Pencil className="text-slate-200" />
-              
             </>
           )}
         </Button>
@@ -83,9 +80,9 @@ export const CategoryForm = ({
       {!isEditing && (
         <p className={cn(
           "text-lg mt-2",
-          !initialData.categoryId && "text-slate-500 italic"
+          !initialData.description && "text-slate-500 italic"
         )}>
-          {selectedOption?.label || "No category"}
+          {initialData.description || "No description"}
         </p>
       )}
       {isEditing && (
@@ -96,12 +93,13 @@ export const CategoryForm = ({
           >
             <FormField
               control={form.control}
-              name="categoryId"
+              name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
-                    <Combobox
-                      options={...options}
+                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                    <Textarea
+                      disabled={isSubmitting}
+                      placeholder="e.g. 'This course is about...'"
                       {...field}
                     />
                   </FormControl>
