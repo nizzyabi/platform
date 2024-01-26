@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function DELETE(
     req: Request,
-    { params }:  { params: { guideId: string, attachmentId: string } }
+    { params }:  { params: { courseId: string, attachmentId: string } }
 ) {
     try {
         // check for auth
@@ -14,9 +14,9 @@ export async function DELETE(
             return new NextResponse("Unauthorized", { status: 401 });
         }
         // get current course owner
-        const courseOwner = await db.guide.findUnique({
+        const courseOwner = await db.course.findUnique({
             where: {
-                id: params.guideId,
+                id: params.courseId,
                 userId: session.user.id
             }
         })
@@ -27,7 +27,7 @@ export async function DELETE(
         // delete attachment
         const attachment = await db.attachment.delete({
             where: {
-                guideId: params.guideId,
+                courseId: params.courseId,
                 id: params.attachmentId
             }
         })

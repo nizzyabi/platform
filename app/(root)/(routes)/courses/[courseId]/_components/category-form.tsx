@@ -8,7 +8,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Guide } from "@prisma/client";
+import { Course } from "@prisma/client";
 
 import {
   Form,
@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 import { Combobox } from "@/components/ui/combobox";
 
 interface CategoryFormProps {
-  initialData: Guide;
+  initialData: Course;
   courseId: string;
   options: { label: string; value: string; }[];
 };
@@ -100,7 +100,7 @@ export const CategoryForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Combobox
+                  <Combobox
                       options={...options}
                       {...field}
                     />

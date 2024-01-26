@@ -8,7 +8,7 @@ import { Loader2, PlusCircle } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Chapter, Guide } from "@prisma/client";
+import { Chapter, Course } from "@prisma/client";
 
 import {
   Form,
@@ -24,7 +24,7 @@ import { Input } from "@/components/ui/input";
 import { ChaptersList } from "./chapters-list";
 
 interface ChaptersFormProps {
-  initialData: Guide & { chapters: Chapter[] };
+  initialData: Course & { chapters: Chapter[] };
   courseId: string;
 };
 
@@ -69,7 +69,7 @@ export const ChaptersForm = ({
     try {
       setIsUpdating(true);
 
-      await axios.put(`/api/guides/${courseId}/chapters/reorder`, {
+      await axios.put(`/api/courses/${courseId}/chapters/reorder`, {
         list: updateData
       });
       toast.success("Chapters reordered");

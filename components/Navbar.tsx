@@ -53,11 +53,11 @@ export default function Navbar() {
                         roadmap
                     </p>
                 </Link>
-                <Link href="/guides">
+                <Link href="/courses">
                     <p 
                         className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 hover:scale-110 transition-transform duration-500  "
                     >
-                        guides
+                        courses
                     </p>
                 </Link>
                 <Link href="/coaching">

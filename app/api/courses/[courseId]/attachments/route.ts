@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // Attachment videos & images api end point
 export async function POST (
     req: Request,
-    { params }: { params: { guideId: string } }
+    { params }: { params: { courseId: string } }
 ) {
     try {
         // get session & URL
@@ -16,9 +16,9 @@ export async function POST (
             return new NextResponse("Unauthorized", { status: 401 });
         }
         // find course owner
-        const courseOwner = await db.guide.findUnique({
+        const courseOwner = await db.course.findUnique({
             where: {
-                id: params.guideId,
+                id: params.courseId,
                 userId: session.user.id
             }
         })
@@ -31,7 +31,7 @@ export async function POST (
             data: {
                 url,
                 name: url.split("/").pop(),
-                guideId: params.guideId,
+                courseId: params.courseId,
             }
         })
         // return attachment

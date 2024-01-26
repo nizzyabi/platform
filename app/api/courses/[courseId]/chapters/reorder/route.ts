@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 export async function PUT(
     req: Request,
-    { params }: { params: { guideId: string } }
+    { params }: { params: { courseId: string } }
 ) {
     try {
         const session = await auth();
@@ -15,9 +15,9 @@ export async function PUT(
             return new NextResponse("Unauthorized", { status: 401 });
         }
             const { list } = await req.json();
-            const ownCourse = await db.guide.findUnique({
+            const ownCourse = await db.course.findUnique({
                 where: {
-                    id: params.guideId,
+                    id: params.courseId,
                     userId: session?.user.id
                 }
             });

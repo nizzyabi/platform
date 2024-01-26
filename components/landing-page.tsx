@@ -66,7 +66,7 @@ export default function LandingPage() {
           {/* Button */}
           <div className='pt-4'>
             <Button variant='gold'>
-              <Link href='/guides'>
+              <Link href='/courses'>
                 Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' />
               </Link>
             </Button>

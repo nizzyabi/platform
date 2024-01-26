@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // Post Chapters Data
 export async function POST(
     req: Request,
-    { params }: { params: { guideId: string } }
+    { params }: { params: { courseId: string } }
 ) {
     try {
         const session = await auth();
@@ -15,9 +15,9 @@ export async function POST(
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
-        const courseOwner = await db.guide.findUnique({
+        const courseOwner = await db.course.findUnique({
             where: {
-                id: params.guideId,
+                id: params.courseId,
                 userId: session.user.id
             }
         });
@@ -28,7 +28,7 @@ export async function POST(
 
         const lastChapter = await db.chapter.findFirst({
             where: {
-                guideId: params.guideId,
+                courseId: params.courseId,
             },
             orderBy: {
                 position: "desc"
@@ -40,7 +40,7 @@ export async function POST(
         const chapter = await db.chapter.create({
             data: {
                 title,
-                guideId: params.guideId,
+                courseId: params.courseId,
                 position: newPosition,
             }
         });

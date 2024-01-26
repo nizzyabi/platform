@@ -6,6 +6,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
+import { useCurrentUser } from "@/hooks/user-current-user";
+import { Button } from "./ui/button";
 
 // TODO: Remove this and replace with course creation data
 const guides = [
@@ -46,6 +48,7 @@ const guides = [
   },
 ];
 
+
 export default function Courses() {
   // AOS Effect
   useEffect(() => {
@@ -55,14 +58,22 @@ export default function Courses() {
       easing: "ease-out-cubic",
     });
   }, []);
+  const session = useCurrentUser();
+  const nizzyuser = session?.id === 'clrulbr1h0000x3js9ldvplex';
 
     return (
       <div >
           {/* Title*/}
           <div className="text-center">
-              <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Guides</h1>
+              <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Courses</h1>
               <p className="text-lg md:text-xl pt-1">learn how to learn through detailed & applicable videos.</p>
           </div>
+
+          {nizzyuser && 
+            <Link href='/courses/add' className="flex items-center justify-center">
+              <Button variant="gold">Create</Button>
+            </Link>
+          }
 
           {/* Courses */}
           <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
