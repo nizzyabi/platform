@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { ChapterTitleForm } from "./_components/chapter-title-form";
 
 const ChapterIdPage = async ({
     params
@@ -57,6 +58,20 @@ const ChapterIdPage = async ({
                 <span className="text-sm text-slate-300 text-center">
                     {completionText} Complete
                 </span>
+            </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+            <div className="text-center">
+                <div className="flex items-center gap-x-2">
+                    <h2 className="text-3xl font-bold">
+                        Customize Chapter
+                    </h2>
+                </div>
+                <ChapterTitleForm 
+                    initialData={chapter}
+                    courseId={params.courseId}
+                    chapterId={params.chapterId}
+                />
             </div>
         </div>
             
