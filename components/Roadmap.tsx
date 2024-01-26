@@ -246,8 +246,8 @@ export default function Roadmap() {
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
                 <div key={index} className="mt-8 space-y-6 lg:space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000">
-                    <div className="flex justify-between ">
-                        <h1 className="text-4xl lg:text-5xl font-extrabold">{item.title}</h1>
+                    <div className="text-center">
+                        <h1 className="text-4xl lg:text-5xl font-extrabold p-3">{item.title}</h1>
                         <Checkbox />
                     </div>
 
