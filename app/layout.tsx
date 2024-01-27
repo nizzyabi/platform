@@ -33,9 +33,9 @@ export default async function RootLayout({
   return (   
    <SessionProvider session={session}>
     
-    <html lang="en" className='special'>
+    <html lang="en" className='body-background'>
     
-      <body className={bowlby.className}>
+      <body className={inter.className}>
       <Navbar />
         <Scroll />
             {children}

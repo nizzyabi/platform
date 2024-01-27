@@ -52,11 +52,10 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className='mt-12'>
-   
-      
+    
+    <div className='pt-5'>
       {/* Landing Page */}
-      <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4 mb-20'>
+      <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4 mb-20 font-extrabold'>
         {/* Text + Button */}
         <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
           {/* Main text*/}
@@ -74,9 +73,10 @@ export default function LandingPage() {
             </Button>
           </div>
         </div>
+        
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center' data-aos='fade-right'>
-          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500'>
+          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500 bg-[#2e2e2e]'>
             {/*cards*/}
             <div 
             className='flex space-x-10 mb-3 lg:mb-5'>
@@ -136,5 +136,6 @@ export default function LandingPage() {
 
       </div>
     </div>
+    
   )
 }

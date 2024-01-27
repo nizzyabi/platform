@@ -6,13 +6,25 @@
 html {
   
   scroll-behavior: smooth;
-  background: #191919;
-  background-image: linear-gradient(#191919, #2c2c2c);
   color: white;
   background-color: black; /* Replace with actual color value */
-  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2e2e2e, #191919);
+  /*background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2c2c2c, #191919); */
+  background: radial-gradient(circle at 50%, #2c2c2c, #191919);
   
 }
+
+
+
+.body-background {
+  background-image: linear-gradient(to right, #4f4f4f2e 1px, transparent 1px),
+                    linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+  background-size: 14px 24px;
+  background-attachment: fixed;
+  background-color: #2c2c2c;
+  
+}
+
+
 
 
 /* Default width for larger screens */

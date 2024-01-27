@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
   return (
-    <div>
+    <div className="bg-transparent">
         {/* Top of page subscribe */}
         <div className="text-center pt-4 pb-4  border-b border-gray-300/20 font-bold text-lg">
             <Link href='https://youtube.com/@NizzyABI?si=dffeDkbsPfFQ24Ez' className="hover:scale-110 transition-transform duration-500 flex items-center justify-center">
