@@ -9,13 +9,11 @@ html {
   background: #191919;
   background-image: linear-gradient(#191919, #2c2c2c);
   color: white;
-  
+  background-color: black; /* Replace with actual color value */
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2e2e2e, #191919);
   
 }
 
-.grid {
-  background-image: url('/public/grid.svg');
-}
 
 /* Default width for larger screens */
 .dialog-content {

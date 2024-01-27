@@ -53,8 +53,6 @@ export default function LandingPage() {
 
   return (
     <div className='mt-12'>
-      
-
    
       
       {/* Landing Page */}
@@ -63,10 +61,10 @@ export default function LandingPage() {
         <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
           {/* Main text*/}
           <div className='flex items-center justify-center'>
-            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
+            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
           </div>
           {/* Sub text */}
-            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg font-semi bold text-slate-300 text-center font-semibold pt-3'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
+            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg text-slate-300 text-center pt-3 font-light'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
           {/* Button */}
           <div className='pt-4'>
             <Button variant='gold'>
