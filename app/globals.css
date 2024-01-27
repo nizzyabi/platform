@@ -13,6 +13,10 @@ html {
   
 }
 
+.grid {
+  background-image: url('/public/grid.svg');
+}
+
 /* Default width for larger screens */
 .dialog-content {
   width: 600px; /* Or whatever your default width is */
