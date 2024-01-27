@@ -53,30 +53,29 @@ export default function LandingPage() {
 
   return (
     
-    <div className='pt-5'>
+    <div className='pt-12 extra'>
       {/* Landing Page */}
-      <div className='flex flex-col md:flex-row space-y-0 md:space-y-0 md:space-x-4 mb-20 font-extrabold'>
+      <div className='mb-20 font-extrabold '>
         {/* Text + Button */}
-        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center ml-4 lg:ml-12'>
-          {/* Main text*/}
-          <div className='flex items-center justify-center'>
-            <h1 className='text-6xl sm:text-2xl md:text-3xl lg:text-5xl text-center'>BECOME A <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>SOFTWARE</span> DEVELOPER</h1>
-          </div>
+        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center'>
+          
+          
           {/* Sub text */}
-            <p className='text-2xl lg:text-2xl md:text-2xl sm:text-lg text-slate-300 text-center pt-3 font-light'>learn to <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600'>code</span> & have <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600'>fun</span> doing it.</p>
+            <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
+            <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
           {/* Button */}
-          <div className='pt-4'>
-            <Button variant='gold'>
+          
+            <Button className='border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-[#2e2e2e] font-medium'>
               <Link href='/courses'>
-                Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' />
+                Let's Start
               </Link>
             </Button>
-          </div>
+          
         </div>
         
         {/* Icon Display*/}
         <div className='flex-1 flex flex-col items-center justify-center' data-aos='fade-right'>
-          <div className='px-6 py-6 lg:px-12 lg:py-12 shadow-2xl shadow-black rounded lg:mr-12 hover:shadow-slate-400 duration-500 bg-[#2e2e2e]'>
+          <div className='px-6 py-6 lg:px-12 shadow-2xl shadow-black rounded  hover:shadow-slate-400 duration-500 bg-[#2e2e2e]'>
             {/*cards*/}
             <div 
             className='flex space-x-10 mb-3 lg:mb-5'>

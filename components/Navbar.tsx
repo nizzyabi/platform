@@ -14,12 +14,7 @@ export default function Navbar() {
   return (
     <div className="bg-transparent">
         {/* Top of page subscribe */}
-        <div className="text-center pt-4 pb-4  border-b border-gray-300/20 font-bold text-lg">
-            <Link href='https://youtube.com/@NizzyABI?si=dffeDkbsPfFQ24Ez' className="hover:scale-110 transition-transform duration-500 flex items-center justify-center">
-                <p className="hover:opacity:70">subscribe for daily videos! </p>
-                <ArrowRightAltIcon className="ml-2"/>
-            </Link>    
-        </div>
+        
         <div className="w-full  flex justify-between items-center px-2 cursor-pointer hide-on-small-screens ">
             {/* App Logo */}
             <motion.div
