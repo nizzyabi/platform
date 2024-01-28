@@ -6,21 +6,17 @@ import Image from "next/image";
 export function AnimatedPinDemo() {
   return (
     <div>
-    <div className="h-[40rem] w-full flex items-center justify-center ">
+    <div className="h-[40rem] w-full flex items-center justify-center space-x-12 ">
       <PinContainer
-        title="/ui.aceternity.com"
+        title="react course"
         href="/react"
       >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+        <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+          <h1 className="max-w-xs !pb-2 !m-0 font-bold  text-xl text-slate-100 text-center pt-10">
             React Course
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-              Customizable Tailwind CSS and Framer Motion Components.
-            </span>
-          </div>
-          <div className="flex items-center justify-center">
+          </h1>
+          
+          <div className="flex items-center justify-center mt-8">
           <Image
             src="/react.png"
             alt="Picture of the author"
