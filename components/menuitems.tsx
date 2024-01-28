@@ -13,42 +13,43 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { BiAccessibility } from "react-icons/bi"
 
-const components: { title: string; href: string; description: string }[] = [
+const components: { title: any; href: string; description: string;}[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Lessons 📚",
+    href: "/lessons",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Learn through a series of fun lessons",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Applicable 📝" ,
+    href: "/lessons",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Apply your knowledge",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Collaboration 🤝",
+    href: "/collaboration",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Have fun and learn with others",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Projects 🏗️",
+    href: "/real",
+    description: "Build real world projects",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Community 🌎",
+    href: "/community",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Build connections with others",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Teaching 📖",
+    href: "/teaching",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Become a teacher here",
   },
 ]
 
@@ -57,9 +58,9 @@ export function NavigationMenuDemo() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-lg md:text-lg font-medium">Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-lg md:text-lg font-medium hover:opacity-20">Features</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-[#2e2e2e] border-transparent">
-            <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[200px] gap-1 p-3 md:w-[300px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -87,13 +88,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none  rounded p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-bold leading-none">{title}</div>
+          <p className="line-clamp-2 pt-3 text-sm leading-snug text-muted-foreground opacity-50">
             {children}
           </p>
         </a>
