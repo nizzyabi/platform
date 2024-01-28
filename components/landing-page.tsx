@@ -127,7 +127,7 @@ export default function LandingPage() {
           </div>
           {/* Button */}
           <div>
-            <Button variant='gold'>Let's Start <LocalFireDepartmentIcon className='ml-2 font-extrabold' /></Button>
+            <Button variant='goldHover'>Let's Start</Button>
           </div>
         </div>
         

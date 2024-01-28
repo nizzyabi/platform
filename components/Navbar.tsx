@@ -40,24 +40,24 @@ export default function Navbar() {
                 </Link>
             </motion.div>
             {/* Navigation Buttons */}
-            <div className="flex items-center gap-x-6 text-lg md:text-lg font-medium mr-2 navbar text-slate-2">
+            <div className="flex items-center gap-x-6 text-lg md:text-lg font-medium mr-2 navbar">
                 <Link href="/roadmap">
                     <p 
-                        className="navbarHover"
+                        className="hover:opacity-20"
                     >
                         roadmap
                     </p>
                 </Link>
                 <Link href="/courses">
                     <p 
-                        className="navbarHover"
+                        className="hover:opacity-20"
                     >
                         courses
                     </p>
                 </Link>
                 <Link href="/coaching">
                     <p 
-                        className="navbarHover"
+                        className="hover:opacity-20"
                     >
                         coaching
                     </p>
