@@ -2,19 +2,25 @@
 import Link from "next/link";
 import { useState } from "react";
 import "aos/dist/aos.css";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import UserButton from "./user-button";
 import { motion } from "framer-motion";
-
-
-
+import { NavigationMenuDemo } from "./menuitems";
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuViewport,
+  } from "@/components/ui/navigation-menu"
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="bg-transparent">
         {/* Top of page subscribe */}
-        
         <div className="w-full  flex justify-between items-center px-2 cursor-pointer hide-on-small-screens ">
             {/* App Logo */}
             <motion.div
@@ -41,25 +47,27 @@ export default function Navbar() {
             </motion.div>
             {/* Navigation Buttons */}
             <div className="flex items-center gap-x-6 text-lg md:text-lg font-medium mr-2 navbar">
+            <NavigationMenuDemo />
+
                 <Link href="/roadmap">
                     <p 
                         className="hover:opacity-20"
                     >
-                        roadmap
+                        Roadmap
                     </p>
                 </Link>
                 <Link href="/courses">
                     <p 
                         className="hover:opacity-20"
                     >
-                        courses
+                        Courses
                     </p>
                 </Link>
                 <Link href="/coaching">
                     <p 
                         className="hover:opacity-20"
                     >
-                        coaching
+                        Coaching
                     </p>
                 </Link>
     
