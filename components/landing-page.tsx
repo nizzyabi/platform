@@ -65,7 +65,7 @@ export default function LandingPage() {
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
           {/* Button */}
           
-            <Button className='border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-[#2e2e2e] font-medium'>
+            <Button variant='goldHover'>
               <Link href='/courses'>
                 Let's Start
               </Link>
