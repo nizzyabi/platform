@@ -18,12 +18,14 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        gold: "bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold",
-        goldHover: "border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 font-medium hover: border-none"
+        gold: "bg-gradient-to-r from-yellow-500 to-orange-500 rounded-md mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold",
+        goldHover: "border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 font-medium hover: border-none",
+        basic: 'bg-slate-100 text-black border border-[#2e2e2e] hover:text-slate-100 hover:bg-[#2e2e2e] hover:text-slate-100 hover:border hover:border-slate-100 px-3 py-0.5 rounded-full'
+        
 
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "px-4 py-1.5",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",

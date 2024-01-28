@@ -40,24 +40,24 @@ export default function Navbar() {
                 </Link>
             </motion.div>
             {/* Navigation Buttons */}
-            <div className="flex items-center gap-x-6 text-xl md:text-2xl font-extrabold mr-2 navbar">
+            <div className="flex items-center gap-x-6 text-lg md:text-lg font-medium mr-2 navbar text-slate-2">
                 <Link href="/roadmap">
                     <p 
-                        className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-400 hover:scale-110 transition-transform duration-500  "
+                        className="navbarHover"
                     >
                         roadmap
                     </p>
                 </Link>
                 <Link href="/courses">
                     <p 
-                        className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 hover:scale-110 transition-transform duration-500  "
+                        className="navbarHover"
                     >
                         courses
                     </p>
                 </Link>
                 <Link href="/coaching">
                     <p 
-                        className="text-white font-bold hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-110 transition-transform duration-500"
+                        className="navbarHover"
                     >
                         coaching
                     </p>

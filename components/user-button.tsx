@@ -14,8 +14,8 @@ const UserButton = () => {
         {/* If no user session, show register button, else show user image or boilerplate image*/}
         {!session ? (
             <Link href='/auth/register'>
-                <Button variant="gold" className="mt-5" >
-                    register
+                 <Button variant='basic'>
+                    <h1 className="text-md">Sign Up</h1>
                 </Button>
             </Link>
 
