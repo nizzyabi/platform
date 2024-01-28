@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
+import { ThreeDCardDemo } from './mycard';
 
 
 
@@ -53,6 +54,7 @@ export default function LandingPage() {
   return (
     
     <div className='pt-40 extra'>
+      <ThreeDCardDemo />
       {/* Landing Page */}
       <div className='mb-20 font-extrabold '>
         {/* Text + Button */}
