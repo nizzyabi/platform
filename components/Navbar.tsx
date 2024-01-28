@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import UserButton from './user-button';
@@ -7,9 +7,24 @@ import { NavigationMenuDemo } from './menuitems';
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollThreshold = 100;
+            setHasScrolled(window.pageYOffset > scrollThreshold);
+        };
 
+        // Set up scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    const navbarChange = hasScrolled ? 'border-b border-slate-100/50 bg-[#2e2e2e]' : 'bg-transparent';
     return (
-        <nav className=" py-4">
+        <nav className={`fixed top-0 w-full z-50 py-1  ${navbarChange}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     <motion.div
@@ -28,13 +43,13 @@ export default function Navbar() {
                             
                                 <motion.img 
                                     src={isHovered ? '/chad.svg' : '/chad.svg'}
-                                    width={100}
-                                    height={100}
+                                    width={50}
+                                    height={50}
                                     alt='logos2'
                                     whileHover={{ scale: 1.2, rotate: 90 }}
                                     whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
                                 />
-                            
+                                HI
                         </Link>
                     </motion.div>
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">

@@ -1,15 +1,14 @@
 'use client'
 // Imports 
 import { Button } from '@/components/ui/button'
-import Footer from './footer'
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
-import { FaFireExtinguisher } from 'react-icons/fa';
+
 
 
 const icons1 = [
@@ -53,7 +52,7 @@ export default function LandingPage() {
 
   return (
     
-    <div className='pt-12 extra'>
+    <div className='pt-40 extra'>
       {/* Landing Page */}
       <div className='mb-20 font-extrabold '>
         {/* Text + Button */}
