@@ -5,7 +5,7 @@ import { Bowlby_One_SC } from 'next/font/google'
 import { Sofia_Sans} from 'next/font/google'
 import { Lato } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/Navbar'
 import Scroll from '@/components/scroll'
 import { Toaster } from '@/components/ui/toaster'
 import { SessionProvider } from 'next-auth/react'
@@ -40,7 +40,7 @@ export default async function RootLayout({
         <Scroll />
             {children}
             <ToastProvider />
-      <Footer />
+      
       </body>
       
     </html>
