@@ -73,7 +73,7 @@ export default function LandingPage() {
         </div>
         
         {/* Icon Display*/}
-        <div className='flex-1 flex flex-col items-center justify-center' data-aos='fade-right'>
+        <div className='flex-1 flex flex-col items-center justify-center mt-8' data-aos='fade-right'>
           <div className='px-6 py-6 lg:px-12 shadow-2xl shadow-black rounded  hover:shadow-slate-400 duration-500 bg-[#2e2e2e]'>
             {/*cards*/}
             <div 

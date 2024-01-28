@@ -49,7 +49,7 @@ export default function Navbar() {
                                     whileHover={{ scale: 1.2, rotate: 90 }}
                                     whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
                                 />
-                                HI
+                                
                         </Link>
                     </motion.div>
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
