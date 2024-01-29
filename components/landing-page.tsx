@@ -10,6 +10,9 @@ import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { GlowingStars } from './designs/course-cards';
+import { ThreeDCardDemo } from './3d';
+
+
 
 
 
@@ -60,7 +63,7 @@ export default function LandingPage() {
       {/* Landing Page */}
       <div className='mb-20 font-extrabold '>
         {/* Text + Button */}
-        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center mb-12'>
+        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center mb-4'>
           
           
           {/* Sub text */}
@@ -77,8 +80,13 @@ export default function LandingPage() {
           
         </div>
 
+        <div className='text-center'>
+          <ThreeDCardDemo />
+          
+        </div>
+
         {/* Middle display for looks*/}
-        <div data-aos='fade-right'>
+        <div data-aos='fade-right' className='pt-20'>
         <LanguageBackground />
         </div>
 
