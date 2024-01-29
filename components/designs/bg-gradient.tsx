@@ -3,7 +3,7 @@ import React from "react";
 import { BackgroundGradient } from "../ui/background-gradient";
 import Image from "next/image";
 
-export function TSBackground() {
+export function LanguageBackground() {
   return (
     <div className="flex items-center justify-center space-x-5">
       <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
@@ -37,6 +37,24 @@ export function TSBackground() {
         <Image
           src={`/JS.png`}
           alt="JavaScript"
+          height="100"
+          width="100"
+          className="object-contain"
+        />
+      </BackgroundGradient>
+      <BackgroundGradient className="rounded-[22px] max-w-sm p-3  bg-zinc-900">
+        <Image
+          src={`/C.png`}
+          alt="Next.js"
+          height="100"
+          width="100"
+          className="object-contain"
+        />
+      </BackgroundGradient>
+      <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
+        <Image
+          src={`/next.png`}
+          alt="Next.js"
           height="100"
           width="100"
           className="object-contain"

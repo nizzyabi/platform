@@ -70,6 +70,14 @@ html {
   height: auto; /* Maintain aspect ratio */
 }
 
+.text-gradient {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media screen and (max-width: 599px) {
   .image-container {
       width: 50px; /* Smaller on mobile */

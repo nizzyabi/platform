@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export function GlowingStars() {
   return (
-    <div className="flex py-20 items-center justify-center antialiased space-x-8 ">
+    <div className="flex py-10 items-center justify-center antialiased space-x-8 ">
       <GlowingStarsBackgroundCard>
         <GlowingStarsTitle>HTML & CSS</GlowingStarsTitle>
         <div className="flex justify-between items-end">
@@ -66,7 +66,7 @@ const Icon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
       className="h-4 w-4 text-white stroke-2"
     >
