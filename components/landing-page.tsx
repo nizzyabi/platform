@@ -75,17 +75,15 @@ export default function LandingPage() {
             </Button>
           
         </div>
-        
-        
-        
+        {/* Middle display for looks*/}
         <TSBackground />
-        <AnimatedPinDemo />
-       
 
-       
+        {/* Courses Display */}
+     
       </div>
 
       {/* Testimonial */}
+
        
      </div>
    
