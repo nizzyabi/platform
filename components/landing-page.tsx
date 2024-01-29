@@ -78,7 +78,9 @@ export default function LandingPage() {
         </div>
 
         {/* Middle display for looks*/}
+        <div data-aos='fade-right'>
         <LanguageBackground />
+        </div>
 
         {/* Courses Display */}
         <div className='pt-60'>

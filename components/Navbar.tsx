@@ -27,7 +27,7 @@ export default function Navbar() {
         <nav className={`fixed top-0 w-full z-50 py-1  ${navbarChange}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
-                    <motion.div
+                <motion.div
                         initial={{ scale: 0 }}
                         animate={{ rotate: 360, scale: 1 }}
                         transition={{
