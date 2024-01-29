@@ -9,7 +9,8 @@ import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
 import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
 import { TSBackground } from './designs/bg-gradient';
-import { AnimatedPinDemo } from './designs/3d-pin';
+import { GlowingStars } from './designs/course-cards';
+
 
 
 
@@ -75,10 +76,20 @@ export default function LandingPage() {
             </Button>
           
         </div>
+
         {/* Middle display for looks*/}
         <TSBackground />
 
         {/* Courses Display */}
+        <div className='pt-20'>
+          <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-blue-500 to-yellow-500'>Courses</h1>
+
+          {/* Courses */}
+          <GlowingStars />
+          
+        </div>
+        
+        
      
       </div>
 
