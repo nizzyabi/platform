@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+
 
 
 const coaching = [
@@ -91,7 +91,7 @@ export default function Coaching() {
         <div data-aos='fade-right' className="space-y-20 pb-[200px] ">
           {/* Link to coaching */}
           <Link href='https://xpykzd2a2ce.typeform.com/to/r6Bjujqi' className="flex items-center justify-center">
-            <Button className='hover:bg-violet-500 bg-violet-500 text-xl rounded mt-3 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold'>Apply Now<HistoryEduIcon className="ml-1"/></Button>
+            <Button variant='pinkHover'>Apply Now</Button>
           </Link>
         </div>
 
