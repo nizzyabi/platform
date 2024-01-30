@@ -65,6 +65,7 @@
     "react-player": "^2.14.0",
     "react-snowfall": "^1.2.1",
     "react-spinners": "^0.13.8",
+    "react-tweet": "^3.2.0",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^2.1.0",
     "tailwind-merge": "^2.2.1",

@@ -11,11 +11,7 @@ import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { GlowingStars } from './designs/course-cards';
 import { ThreeDCardDemo } from './3d';
-
-
-
-
-
+import { Tweet } from 'react-tweet'
 
 const icons1 = [
   {
@@ -45,7 +41,6 @@ const icons2 = [
     icon: <BiLogoHtml5 className='text-orange-500 text-5xl lg:text-6xl'/>
   },
 ]
-
 
 export default function LandingPage() {
   useEffect(() => {
@@ -86,13 +81,13 @@ export default function LandingPage() {
         </div>
 
         {/* Middle display for looks*/}
-        <div data-aos='fade-right' className='pt-20'>
+        <div data-aos='fade-right' className='pt-64'>
         <LanguageBackground />
         </div>
 
         {/* Courses Display */}
         <div className='pt-60'>
-          <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-300'>Courses</h1>
+          <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-300 pb-3'>Courses</h1>
 
           {/* Courses */}
           <GlowingStars />
@@ -106,8 +101,8 @@ export default function LandingPage() {
       {/* Testimonial */}
       <div className='pt-12'>
           <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent text-gradient'>Testimonials</h1>
-
           
+          <Tweet id="1628832338187636740" />
       </div>
 
        

@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export function GlowingStars() {
   return (
-    <div className="flex py-10 items-center justify-center antialiased space-x-8 ">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center px-8">
       <GlowingStarsBackgroundCard>
         <GlowingStarsTitle>HTML & CSS</GlowingStarsTitle>
         <div className="flex justify-between items-end">
