@@ -11,6 +11,7 @@ import { GlowingStars } from './designs/course-cards';
 import { ThreeDCardDemo } from './3d';
 import { Tweet } from 'react-tweet'
 import { Testimonials } from './testimonials3D';
+import { BentoGridThirdDemo } from './bento';
 
 
 export default function LandingPage() {
@@ -47,7 +48,8 @@ export default function LandingPage() {
         </div>
 
         <div className='text-center'>
-          <ThreeDCardDemo />
+         <BentoGridThirdDemo />
+          {/*<ThreeDCardDemo />*/}
           
         </div>
 
@@ -73,7 +75,7 @@ export default function LandingPage() {
       <div className='pt-12'>
           <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent text-gradient'>Testimonials</h1>
           
-          <Testimonials />
+          
       </div>
 
        
