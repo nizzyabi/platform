@@ -190,7 +190,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4 border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/gilbert.png"
+          src="/gilbert_hoodie.png"
           alt="avatar"
           height="100"
           width="100"
@@ -205,7 +205,7 @@ const SkeletonFour = () => {
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-[#2e2e2e] p-4 border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="/gilbert.png"
+          src="/ares_hoodie.png"
           alt="avatar"
           height="100"
           width="100"
@@ -223,7 +223,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/gilbert.png"
+          src="/gilbert_shirt.png"
           alt="avatar"
           height="100"
           width="100"
@@ -282,17 +282,16 @@ const SkeletonFive = () => {
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="text-xs text-slate-200">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
+        <p className="text-sm text-slate-200">
+          What's the best framework out there?
         </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}
         className="flex flex-row rounded-full border border-neutral-100 p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-[#2e2e2e]"
       >
-        <p className="text-xs text-slate-200">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex-shrink-0" />
+        <p className="text-sm text-slate-200"> NextJS.</p>
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex-shrink-0" />
       </motion.div>
     </motion.div>
   );
