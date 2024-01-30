@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "./cards";
+import { CardBody, CardContainer, CardItem } from "./glowingdots";
 
 export function ThreeDCardDemo() {
   return (

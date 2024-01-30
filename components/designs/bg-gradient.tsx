@@ -1,65 +1,46 @@
-"use client";
 import React from "react";
 import { BackgroundGradient } from "../ui/background-gradient";
 import Image from "next/image";
 
+type ImageInfo = {
+  src: string;
+  alt: string;
+  padding: string;
+};
+
+const imagesRow1: ImageInfo[] = [
+  { src: '/TS.png', alt: 'TypeScript', padding: 'p-7' },
+  { src: '/react.png', alt: 'React', padding: 'p-8' },
+  { src: '/prisma.png', alt: 'Prisma', padding: 'p-7' },
+];
+
+const imagesRow2: ImageInfo[] = [
+  { src: '/JS.png', alt: 'JavaScript', padding: 'p-7' },
+  { src: '/C.png', alt: 'C', padding: 'p-6' },
+  { src: '/next.png', alt: 'Next.js', padding: 'p-7' },
+];
+
+const renderImages = (images: ImageInfo[]) => (
+  <div className="flex justify-center space-x-7">
+    {images.map(({ src, alt, padding }) => (
+      <BackgroundGradient className={`rounded-[22px] max-w-sm flex items-center justify-center ${padding} bg-zinc-900`} key={src}>
+        <Image
+          src={src}
+          alt={alt}
+          height="100"
+          width="100"
+          className="object-contain"
+        />
+      </BackgroundGradient>
+    ))}
+  </div>
+);
+
 export function LanguageBackground() {
   return (
-    <div className="flex items-center justify-center space-x-5">
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
-        <Image
-          src={`/TS.png`}
-          alt="jordans"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-5  bg-zinc-900">
-        <Image
-          src={`/react.png`}
-          alt="react"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
-        <Image
-          src={`/prisma.png`}
-          alt="Prisma"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
-        <Image
-          src={`/JS.png`}
-          alt="JavaScript"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-3  bg-zinc-900">
-        <Image
-          src={`/C.png`}
-          alt="Next.js"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-4  bg-zinc-900">
-        <Image
-          src={`/next.png`}
-          alt="Next.js"
-          height="100"
-          width="100"
-          className="object-contain"
-        />
-      </BackgroundGradient>
+    <div className="flex flex-col items-center space-y-5">
+      {renderImages(imagesRow1)}
+      {renderImages(imagesRow2)}
     </div>
   );
 }
