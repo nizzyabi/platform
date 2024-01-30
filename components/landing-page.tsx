@@ -21,7 +21,7 @@ export default function LandingPage() {
 
   return (
     
-    <div className='pt-40 extra'>
+    <div className='extra pt-40'>
       
       {/* Landing Page */}
       <div className='mb-20 font-extrabold '>
@@ -53,7 +53,7 @@ export default function LandingPage() {
 
         {/* Courses Display */}
         <div className='pt-60'>
-          <h1 className='text-7xl text-slate-100 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-300 pb-3'>Courses</h1>
+          <h1 className='text-7xl text-slate-100 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 pb-6'>Courses</h1>
           {/* Courses */}
           <Evervault />
         </div>
