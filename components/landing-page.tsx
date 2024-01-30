@@ -6,8 +6,8 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
-import { GlowingStars } from './designs/course-cards';
 import { BentoGridThirdDemo } from './bento';
+import { Evervault } from './evervault';
 
 
 export default function LandingPage() {
@@ -53,9 +53,9 @@ export default function LandingPage() {
 
         {/* Courses Display */}
         <div className='pt-60'>
-          <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-300 pb-3'>Courses</h1>
+          <h1 className='text-7xl text-slate-100 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-300 pb-3'>Courses</h1>
           {/* Courses */}
-          <GlowingStars />
+          <Evervault />
         </div>
         
         
