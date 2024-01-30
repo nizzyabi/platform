@@ -3,8 +3,6 @@
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import { Button } from "./ui/button";
-import Link from "next/link";
 
 export function ThreeDCardDemo() {
   return (

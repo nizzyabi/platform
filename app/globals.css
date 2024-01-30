@@ -24,6 +24,14 @@ html {
   background-color: #2c2c2c; /* Modify to better match your desired base color */
 }
 
+.myTweetBackground {
+  background-color: #f0f0f0; /* Light grey background */
+  border-radius: 10px;       /* Rounded corners */
+  padding: 15px;             /* Padding around the tweet */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+}
+
+
 
  
 

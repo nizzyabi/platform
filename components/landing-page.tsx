@@ -5,42 +5,13 @@ import { Button } from '@/components/ui/button'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { BiLogoHtml5, BiLogoJavascript, BiLogoReact } from 'react-icons/bi';
-import { BsDiscord, BsGithub, BsYoutube } from 'react-icons/bs';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { GlowingStars } from './designs/course-cards';
 import { ThreeDCardDemo } from './3d';
 import { Tweet } from 'react-tweet'
+import { Testimonials } from './testimonials3D';
 
-const icons1 = [
-  {
-    name: "Discord",
-    icon: <BsDiscord className='text-blue-500 text-4xl lg:text-5xl'/>
-  },
-  {
-    name: "Youtube",
-    icon: <BsYoutube className='text-red-500 text-4xl lg:text-5xl'/>
-  },
-  {
-    name: "Github",
-    icon: <BsGithub className='text-black text-4xl lg:text-5xl'/>
-  },
-]
-const icons2 = [
-  {
-    name: "React",
-    icon: <BiLogoReact className='text-cyan-500 text-5xl lg:text-6xl'/>
-  },
-  {
-    name: "Javascript",
-    icon: <BiLogoJavascript className='text-yellow-400 text-5xl lg:text-6xl'/>
-  },
-  {
-    name: "HTML",
-    icon: <BiLogoHtml5 className='text-orange-500 text-5xl lg:text-6xl'/>
-  },
-]
 
 export default function LandingPage() {
   useEffect(() => {
@@ -102,7 +73,7 @@ export default function LandingPage() {
       <div className='pt-12'>
           <h1 className='text-7xl text-slate-100 text-center font-semibold text-transparent text-gradient'>Testimonials</h1>
           
-          <Tweet id="1628832338187636740" />
+          <Testimonials />
       </div>
 
        
