@@ -90,9 +90,13 @@ export default function Coaching() {
         {/* Coaching */}
         <div data-aos='fade-right' className="space-y-20 pb-[200px] ">
           {/* Link to coaching */}
-          <Link href='https://xpykzd2a2ce.typeform.com/to/r6Bjujqi' className="flex items-center justify-center">
-            <Button variant='pinkHover'>Apply Now</Button>
-          </Link>
+          
+            <Button variant='pinkHover'>
+              <Link href='https://xpykzd2a2ce.typeform.com/to/r6Bjujqi' className="flex items-center justify-center">
+                Apply Now
+              </Link>
+            </Button>
+          
         </div>
 
         

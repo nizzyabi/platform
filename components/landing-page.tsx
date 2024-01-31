@@ -52,7 +52,7 @@ export default function LandingPage() {
         </div>
 
         {/* Courses Display */}
-        <div className='pt-60'>
+        <div className='pt-60' data-aos='fade-right'>
           <h1 className='text-7xl text-slate-100 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 pb-6'>Courses</h1>
           {/* Courses */}
           <Evervault />
