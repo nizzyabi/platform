@@ -53,8 +53,8 @@ export const EvervaultCard = ({
                 <Image
                   src={image}
                   alt="Evervault"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain"}}
                 />
             </span>
           </div>
