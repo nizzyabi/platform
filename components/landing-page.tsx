@@ -48,12 +48,18 @@ export default function LandingPage() {
 
         {/* Middle display for looks*/}
         <div data-aos='fade-right' className='pt-64'>
+          <div className='text-center'>
+          <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn modern day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block pb-12'> Languages</span></h1>
+          </div>
           <LanguageBackground />
         </div>
 
         {/* Courses Display */}
         <div className='pt-60' data-aos='fade-right'>
-          <h1 className='text-7xl text-slate-100 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 pb-6'>Courses</h1>
+          <div className='text-center pb-12'>
+            <h1><span className='text-7xl text-slate-100 font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500'>Courses</span></h1>
+            <p className='font-medium text-xl text-gray-200'>Build projects that matter</p>
+          </div>
           {/* Courses */}
           <Evervault />
         </div>
