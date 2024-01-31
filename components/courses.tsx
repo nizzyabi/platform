@@ -64,51 +64,18 @@ export default function Courses() {
     return (
       <div >
           {/* Title*/}
-          <div className="text-center">
-              <h1 className="font-extrabold text-3xl md:text-5xl pt-3">Courses</h1>
-              <p className="text-lg md:text-xl pt-1">learn how to learn through detailed & applicable videos.</p>
+          <div className="text-center pt-40">
+              <h1 className="font-bold text-7xl pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
+              <p className="text-xl font-medium text-gray-200"></p>
           </div>
 
           {nizzyuser && 
             <Link href='/courses/add' className="flex items-center justify-center">
-              <Button variant="gold">Create</Button>
+              <Button variant="goldHover">Create</Button>
             </Link>
           }
 
-          {/* Courses */}
-          <div data-aos='fade-left' className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 pb-10 pt-8 xl:px-[350px] px-[50px] ">
-            {guides.map((guide) => (
-              <Card key={guide.title} className="rounded-xl cursor-pointer border border-gray-500 border-opacity-70 bg-gray shadow-2xl hover:scale-105 transition-transform duration-500">
-                <Link href={`/guides${guide.link}`}>
-                <CardHeader className="flex items-center justify-center text-center text-muted-foreground p-0 ">
-                  <div className=" relative w-full h-[200px] ">
-                    <Image 
-                      src={guide.image}
-                      alt={guide.title}
-                      layout="fill"
-                      className="rounded-t-xl object-cover"
-                    />
-                  </div>
-                </CardHeader>
-
-                <div className=" pt-2">
-
-                <p className="font-extrabold text-center text-xl ">{guide.title}</p>
-
-                <p className="font-semibold text-center px-2 pt-5 ">{guide.description}</p>
-                
-                <CardFooter className="flex items-center justify-between text-xs text-muted-foreground pt-12 ">
-                  <p className="flex flex-wrap gap-2 justify-start mt-2 ">{guide.subjects.map((subject, index) => (
-                    <span key={index} className="text-sm font-medium bg-gray-700 text-white rounded px-2 py-1">{subject}</span>
-                  
-                  ))}</p>
-                </CardFooter>
-                </div>
-                </Link>
-              </Card>
-            ))}
-
-          </div>  
+           
       </div>
     )
   }
