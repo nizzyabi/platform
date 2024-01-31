@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useCurrentUser } from "@/hooks/user-current-user";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { SiNextdotjs } from "react-icons/si";
 import {
   CommandDialog,
   CommandEmpty,
@@ -19,6 +19,9 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
+import { BiBrain, BiLogoJavascript, BiLogoReact } from "react-icons/bi";
+import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+
 
 export default function Courses() {
   // AOS Effect
@@ -52,7 +55,7 @@ export default function Courses() {
           {/* Title*/}
           <div className="text-center pt-40">
               <h1 className="font-bold text-7xl pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
-              <p className="text-xl font-medium text-gray-200"></p>
+              
           </div>
           {/* special create button */}
           {nizzyuser && 
@@ -66,11 +69,11 @@ export default function Courses() {
           <div className="flex items-center justify-center pt-5">
             <div className="relative w-96">
             
-              <div onClick={handleClick} className="flex items-center justify-between bg-[#2e2e2e] rounded cursor-pointer border border-slate-100/50 p-2">
-                <SearchIcon className="text-white/50" />
-                <span className="flex-1 text-white/50 placeholder:text-white/50 ml-2">Search for a course</span>
+              <div onClick={handleClick} className="flex items-center justify-between bg-white rounded cursor-pointer border border-black p-2">
+                <SearchIcon className="text-black/50 h-4 w-4" />
+                <span className="flex-1 text-black/50 placeholder:text-black/50 ml-2">Search for a course</span>
                 <div className="text-black">
-                  <span className="text-sm bg-slate-100/70 p-1 rounded bg-opacity-80">⌘K</span>
+                  <span className=" bg-black/20 p-1 rounded bg-opacity-80 text-xs">⌘ K</span>
                 </div>
               </div>
             </div>
@@ -78,14 +81,18 @@ export default function Courses() {
             
             <CommandDialog open={open} onOpenChange={setOpen}>
               
-              <CommandInput placeholder="NextJS Full Stack" className="border-slate-100/50 w-[400px]  placeholder:text-white/50"/>
-
+              <CommandInput placeholder="NextJS Full Stack" className="border-slate-100/50 w-[400px] text-black/80 placeholder:text-black/50"/>
+              {/* TODO: Get Course Data to diaply here.*/}
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="All Courses">
-                  <CommandItem>NextJS</CommandItem>
-                  <CommandItem>Focus & Deep Work</CommandItem>
-                  <CommandItem>JavaScript</CommandItem>
+                <CommandGroup heading="All Courses" className="text-black/80">
+                  <CommandItem>NextJS <SiNextdotjs className='ml-2 text-black'/></CommandItem>
+                  <CommandItem>React <BiLogoReact className="text-cyan-300 ml-2"/></CommandItem>
+                  <CommandItem>HTML & CSS <FaHtml5 className="text-orange-500 ml-2"/><FaCss3Alt className="text-blue-500"/></CommandItem>
+                  <CommandItem>Focus & Deep Work <BiBrain className="text-pink-300 ml-2"/></CommandItem>
+
+                  <CommandItem>JavaScript <BiLogoJavascript className="text-yellow-500 ml-2"/></CommandItem>
+
                 </CommandGroup>
               </CommandList>
             </CommandDialog>
