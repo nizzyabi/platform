@@ -222,10 +222,10 @@ export default function Roadmap() {
       }, []);
 
     return (
-        <div className="pt-40">
+        <div className="pt-40 pb-40">
             {/* Roadmap Title */}
-            <div>
-                <h1 className="text-5xl text-center font-bold " data-aos='fade-right'> 
+            <div data-aos='fade-right'>
+                <h1 className="text-5xl text-center font-bold "> 
                     {!session ? (
                         <p>Roadmap</p>
                     ): (
@@ -233,21 +233,16 @@ export default function Roadmap() {
                     )}
                 </h1>
                 <p className='pt-3 font-medium text-xl text-gray-200 text-center'>Full roadmap to being a web developer</p>
-
-            
-                <div className='flex items-center justify-center' data-aos='fade-right'>
-                    <Separator className='w-20 h-1 rounded bg-slate-200 mt-3'/>
-                </div>
             </div>
 
             {/* Resources */}
-            <div data-aos='fade-left'>
+            <div data-aos='fade-left' className="space-y-20">
             {/* Map through roadmap data */}
             {roadmapData.map((item, index) => (
-                <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto rounded p-6  shadow-2xl shadow-black hover:shadow-violet-500 hover:duration-1000 bg-[#2e2e2e]">
+                <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-black/50 shadow-lg shadow-black">
                     <div className="flex items-center justify-between">
-                        <h1 className="text-3xl lg:text-5xl font-semibold p-3">{item.title}</h1>
-                        <p className="text-3xl font-bold text-black/30">{item.number}</p>
+                        <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
+                        <p className="text-3xl font-bold text-slate-300/50">{item.number}</p>
                     </div>
 
                     <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
