@@ -8,67 +8,7 @@ import { Button } from "@/components/ui/button";
 
 
 
-const coaching = [
-  {
-    title: "Deep Work",
-    image: "/deepwork.svg",
-    link: "/deepwork",
-    subjects: [
-      "Deep Work",
-      "Flow State",
-      "Focus",
-      "Attention",
-    ],
-    description: "Learn how to focus and get into a flow state.",
-  },
-  {
-    title: "Productivity",
-    image: "/productivity.svg",
-    link: "/productivity",
-    subjects: [
-      "Productivity",
-      "Notion",
-      "Todoist",
-      "Evernote",
-    ],
-    description: "Learn how to be productive and use productivity tools.",
-  },
-  {
-    title: "Full Learning Guide",
-    image: "/learning.svg",
-    link: "/full",
-    subjects: [
-      "Full Learning Guide",
-      "Learning",
-      "Productivity",
-      "Deep Work",
-    ],
-    description: "Learn how to learn and be productive.",
-  },
-];
 
-const testimonials = [
-  {
-    name: "John Doe",
-    image: "/chad.svg",
-    description: "'Nizar is cool'"
-  },
-  {
-    name: "HIIII",
-    image: "/nizar.png",
-    description: "'Nizar sucks'"
-  },
-  {
-    name: "HIIII",
-    image: "/nizar.png",
-    description: "'Nizar sucks'"
-  },
-  {
-    name: "HIIII",
-    image: "/nizar.png",
-    description: "'Nizar sucks'"
-  },
-]
 
 
 export default function Coaching() {

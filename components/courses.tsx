@@ -85,7 +85,7 @@ export default function Courses() {
               {/* TODO: Get Course Data to diaply here.*/}
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="All Courses" className="text-black/80">
+                <CommandGroup className="text-black/80">
                   <CommandItem>NextJS <SiNextdotjs className='ml-2 text-black'/></CommandItem>
                   <CommandItem>React <BiLogoReact className="text-cyan-300 ml-2"/></CommandItem>
                   <CommandItem>HTML & CSS <FaHtml5 className="text-orange-500 ml-2"/><FaCss3Alt className="text-blue-500"/></CommandItem>
