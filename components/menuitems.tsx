@@ -16,42 +16,42 @@ import {
 const components: { title: any; href: string; description: string;}[] = [
   {
     title: "Lessons 📚",
-    href: "/lessons",
+    href: "/courses",
     description:
       "Learn through a series of fun lessons",
   },
   {
     title: "Applicable 📝" ,
-    href: "/lessons",
+    href: "/courses",
     description:
       "Apply your knowledge",
   },
   {
     title: "Collaboration 🤝",
-    href: "/collaboration",
+    href: "https://discord.com/invite/BenP3YkbJT",
     description:
-      "Have fun and learn with others",
+      "Have fun and learn with others"
   },
   {
     title: "Projects 🏗️",
-    href: "/real",
-    description: "Build real world projects",
+    href: "/courses",
+    description: "Build real world projects"
   },
   {
     title: "Community 🌎",
-    href: "/community",
+    href: "https://discord.com/invite/BenP3YkbJT",
     description:
       "Build connections with others",
   },
   {
     title: "Teaching 📖",
-    href: "/teaching",
+    href: "/courses",
     description:
       "Become a teacher here",
   },
 ]
 
-export function NavigationMenuDemo() {
+export function Features() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
