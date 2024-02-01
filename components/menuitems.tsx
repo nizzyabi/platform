@@ -39,7 +39,7 @@ const components: { title: any; href: string; description: string;}[] = [
   },
   {
     title: "Community 🌎",
-    href: "/community",
+    href: "https://discord.com/invite/BenP3YkbJT",
     description:
       "Build connections with others",
   },

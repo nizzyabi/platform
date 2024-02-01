@@ -54,8 +54,8 @@ export default function Navbar() {
                     </motion.div>
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
                         <NavigationMenuDemo />
-                        <Link href="/community">
-                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Community</p>
+                        <Link href="/roadmap">
+                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Roadmap</p>
                         </Link>
                         <Link href="/courses">
                             <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Courses</p>
