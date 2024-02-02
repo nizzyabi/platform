@@ -5,22 +5,12 @@
 
 
 html {
-  
   scroll-behavior: smooth;
   color: white;
   background-color: black; /* Replace with actual color value */
   /*background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2c2c2c, #191919); */
   background: radial-gradient(circle at 50%, #2c2c2c, #191919);
   
-}
-
-
-
-.myTweetBackground {
-  background-color: #f0f0f0; /* Light grey background */
-  border-radius: 10px;       /* Rounded corners */
-  padding: 15px;             /* Padding around the tweet */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow */
 }
 
 .body-background {
@@ -70,22 +60,6 @@ html {
   }
 }
 
-
-/* Image Size */
-.responsive-image {
-  width: 100%; /* Make the image fill its container */
-  max-width: 70px; /* Set a max-width if you want to limit how large it can grow */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.text-gradient {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @media screen and (max-width: 599px) {
   .image-container {
       width: 50px; /* Smaller on mobile */
@@ -109,18 +83,18 @@ html {
   }
 }
 
-@keyframes hop {
-  0%, 100% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-20px);
-  }
+
+/* Image Size */
+.responsive-image {
+  width: 100%; /* Make the image fill its container */
+  max-width: 70px; /* Set a max-width if you want to limit how large it can grow */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.finger {
-  animation: hop 1s ease-in-out infinite;
+.ql-container {
+  font-size: 16px !important;
 }
+
 
 @import "~@uploadthing/react/styles.css"
 

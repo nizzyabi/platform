@@ -74,7 +74,7 @@ const CoursesIdPage = async ({
 
   
   return (
-    <div className="p-6">
+    <div className="px-6 pt-40">
       {/* Title */}
       <div className="flex items-center justify-center">
         <div className="flex flex-col gap-y-2">
