@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "react-hot-toast";
+import { SearchIcon } from "lucide-react";
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -49,18 +50,16 @@ const CreatePage = () => {
   }
 
   return ( 
-    <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
+    <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full pt-40">
       <div>
-        <h1 className="text-3xl text-center font-extrabold">
+        <h1 className="text-5xl text-center font-bold">
           Name your course
         </h1>
-        <p className="text-sm text-slate-300">
-          What would you like to name your course? Don't worry, you can change this later.
-        </p>
+        
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 mt-8"
+            className="space-y-2 mt-8"
           >
             <FormField
               control={form.control}
@@ -70,32 +69,25 @@ const CreatePage = () => {
                   <FormLabel>
                     Course title
                   </FormLabel>
-                  <FormControl className="rounded bg-slate-100 text-[#2e2e2e]">
+                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                    
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"
                       {...field}
                     />
+                    
                   </FormControl>
-                  <FormDescription>
-                    What will you teach in this course?
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div className="flex items-center gap-x-2">
-              <Link href="/">
-                <Button
-                  type="button"
-                  variant="ghost"
-                >
-                  Cancel
-                </Button>
-              </Link>
+            <div className="flex items-center gap-x-1">
+              
               <Button
                 type="submit"
                 disabled={!isValid || isSubmitting}
+                variant='blueHover'
               >
                 Continue
               </Button>

@@ -78,11 +78,11 @@ const CoursesIdPage = async ({
       {/* Title */}
       <div className="flex items-center justify-center">
         <div className="flex flex-col gap-y-2">
-          <h1 className="text-5xl font-extrabold">
+          <h1 className="text-5xl font-bold">
             Course Setup
           </h1>
           {/* Amount Complete */}
-          <span className="text-sm text-slate-300 text-center">
+          <span className="text-md text-slate-300 text-center">
             {completionText} Complete
           </span>
         </div>
@@ -143,7 +143,7 @@ const CoursesIdPage = async ({
             </div>
             <div>
               <div className="flex items-center gap-x-1">
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl font-semibold">
                   Sell your course
                 </h2>
               </div>
@@ -155,7 +155,7 @@ const CoursesIdPage = async ({
             </div>
             <div>
               <div className="flex items-center gap-x-2"> 
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl font-semibold">
                   Resources & Attachments
                 </h2>
               </div>

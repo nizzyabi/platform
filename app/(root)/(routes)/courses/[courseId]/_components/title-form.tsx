@@ -4,7 +4,7 @@ import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Pencil } from "lucide-react";
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -64,15 +64,15 @@ export const TitleForm = ({
   }
 
   return (
-  <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-  <div className="font-extrabold flex items-center justify-between text-xl">
-    course title
+  <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+  <div className="font-semibold flex items-center justify-between text-xl">
+    Title
     <Button onClick={toggleEdit} >
       {isEditing ? (
-        <>cancel</>
+        <>Cancel</>
       ) : (
         <>
-          <Pencil className="text-slate-200" />
+          <AutoFixNormalIcon className="text-slate-200" />
           
         </>
       )}
@@ -94,7 +94,7 @@ export const TitleForm = ({
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormControl>
+              <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
                 <Input
                   disabled={isSubmitting}
                   placeholder="e.g. 'Advanced web development'"
@@ -105,14 +105,16 @@ export const TitleForm = ({
             </FormItem>
           )}
         />
-        <div className="flex items-center gap-x-2">
+        
           <Button
             disabled={!isValid || isSubmitting}
             type="submit"
+            className=" flex"
+            variant="basic"
           >
-            save
+            Save
           </Button>
-        </div>
+        
       </form>
     </Form>
   )}
