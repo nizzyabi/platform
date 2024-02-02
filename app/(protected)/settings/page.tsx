@@ -7,58 +7,90 @@ import { useCurrentUser } from "@/hooks/user-current-user";
 import {
     Card,
     CardContent,
-  } from "@/components/ui/card";
-import Link from "next/link";
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
+import { useState } from "react";
 
 const SettingsPage = () => {
     const session = useCurrentUser();
     const onClick = () => {
         logout();
     }
+    const [activeTab, setActiveTab] = useState("account");
+    const handleTabChange = (tab:any) => {
+        setActiveTab(tab);
+        console.log(activeTab)
+    }
+    
     return (
         <div className="h-full w-full flex flex-col space-y-20 items-center justify-center pt-40 ">
-            {/* User Info */}
-            <Card className="w-[600px] rounded shadow-lg border-none">
-                {session && (
-                    <div>
-                        <div>
-                            <h1 className="text-center text-5xl font-bold pt-5">User Info</h1>
-                        </div>
-                        
-                        {/* User Name */}
-                        <CardContent className="pt-10 space-y-6 font-bold">
-                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
-                                <h2 className="text-2xl text-slate-300">name</h2>
-                                <h2 className="text-xl text-white">
-                                {session.name}<FavoriteIcon fontSize="large" className="text-red-500 pb-1"/>
-                                </h2>
+            <Tabs defaultValue="account" className="w-[600px]">
+                <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="account">Account</TabsTrigger>
+
+                    <TabsTrigger value="payment">Payment</TabsTrigger>
+                </TabsList>
+                <TabsContent value="account">
+                    <Card>
+                        <CardHeader >
+                            <CardTitle>Account</CardTitle>
+                                <CardDescription>
+                                    Make changes to your account here.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="space-y-2">
+                                <div className="space-y-1">
+                                    <Label htmlFor="name" className="text-xl font-semibold">Name</Label>
+                                    <h2>{session?.name}</h2>
+                                </div>
+                                <div className="space-y-1">
+                                    <Label htmlFor="email" className="text-xl font-semibold">Email</Label>
+                                    <h2>{session?.email}</h2>
+                                </div>
+                                <div className="space-y-1">
+                                    <Label htmlFor="id" className="text-xl font-semibold">User ID</Label>
+                                    <h2>{session?.id}</h2>
+                                </div>
+                            </CardContent>
+                            <CardFooter>
+                                <Button type='submit' variant="goldHover" onClick={onClick}>Sign Out</Button>
+                            </CardFooter>
+                    </Card>
+                </TabsContent>
+                {/*TODO: Payment history & invoices*/}
+                <TabsContent value="payment">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Payments</CardTitle>
+                                <CardDescription>
+                                    Manage your payments here.
+                                </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-2">
+                            <div className="space-y-1">
+                                
+                                <Button type='submit' variant="pinkHover">Payment History</Button>
                             </div>
-                        {/* User Email */}
-                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
-                                <h2 className="text-2xl text-slate-300">email</h2>
-                                <h2 className="text-xl text-white">
-                                {session.email}<VerifiedIcon fontSize="large" className="text-blue-400 pb-1"/>
-                                </h2>
+                            <div className="space-y-2">
+                                
+                                <Button type='submit' variant="goldHover" >Invoices</Button>
                             </div>
-                            
-                        {/* User ID */}
-                            <div className="flex flex-row items-center justify-between rounded p-3 shadow-sm shadow-white ">
-                                <h2 className="text-2xl text-slate-300">user id</h2>
-                                <h2 className="text-xl text-white">
-                                {session.id}
-                                </h2>
-                            </div>
-                        {/* Sign Out*/}
-                        <div className="">
-                        <Button type='submit' variant="goldHover" className="" onClick={onClick}>Sign Out</Button>
-                        </div>
                         </CardContent>
                         
-                    </div>
-                    
-                )}
-                
-            </Card>   
+                    </Card>
+                </TabsContent>
+            </Tabs>
         </div>
     )
 }
