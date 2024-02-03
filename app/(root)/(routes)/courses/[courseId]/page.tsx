@@ -9,6 +9,8 @@ import { CategoryForm } from "./_components/category-form";
 import { Separator } from "@/components/ui/separator";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 const CoursesIdPage = async ({
   params
 }: {
@@ -74,9 +76,20 @@ const CoursesIdPage = async ({
 
   
   return (
-    <div className="px-6 pt-40">
+    <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
       {/* Title */}
       <div className="flex items-center justify-center">
+        <div className="w-full">
+        <Link
+          href={`/courses`}
+          className="flex items-center text-sm hover:opacity-75 transition mb-6"
+        >
+          <div className="flex text-lg">
+            <ArrowLeft className="mr-2 pt-1" />
+            <p className="font-semibold">Back</p>
+          </div>
+        </Link>
+        <div className="flex items-center justify-center w-full">
         <div className="flex flex-col gap-y-2">
           <h1 className="text-5xl font-bold">
             Course Setup
@@ -86,7 +99,8 @@ const CoursesIdPage = async ({
             {completionText} Complete
           </span>
         </div>
-        
+        </div>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
         <div className="text-center">
@@ -143,7 +157,7 @@ const CoursesIdPage = async ({
             </div>
             <div>
               <div className="flex items-center gap-x-1">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-3xl font-bold">
                   Sell your course
                 </h2>
               </div>
@@ -155,7 +169,7 @@ const CoursesIdPage = async ({
             </div>
             <div>
               <div className="flex items-center gap-x-2"> 
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-3xl font-bold">
                   Resources & Attachments
                 </h2>
               </div>

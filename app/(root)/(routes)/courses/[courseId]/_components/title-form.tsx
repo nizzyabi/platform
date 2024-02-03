@@ -73,7 +73,6 @@ export const TitleForm = ({
       ) : (
         <>
           <AutoFixNormalIcon className="text-slate-200" />
-          
         </>
       )}
     </Button>

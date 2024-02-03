@@ -93,6 +93,12 @@ html {
 
 .ql-container {
   font-size: 16px !important;
+  background-color: white;
+  color: black;
+}
+
+.ql {
+  border-radius: 10px !important;
 }
 
 

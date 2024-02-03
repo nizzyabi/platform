@@ -4,12 +4,12 @@ import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Loader2, PlusCircle } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Chapter, Course } from "@prisma/client";
-
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import {
   Form,
   FormControl,
@@ -86,20 +86,20 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
       {isUpdating && (
         <div className="absolute h-full w-full bg-slate-500/20 top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
         </div>
       )}
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        chapters
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Chapters
         <Button onClick={toggleCreating} variant="ghost">
           {isCreating ? (
-            <>cancel</>
+            <>Cancel</>
           ) : (
             <>
-              <PlusCircle className="text-slate-200" />
+              <AddCircleIcon className="text-slate-200" />
               
             </>
           )}
@@ -127,22 +127,25 @@ export const ChaptersForm = ({
                 </FormItem>
               )}
             />
-            <Button
-              disabled={!isValid || isSubmitting}
-              type="submit"
-            >
-              Create
-            </Button>
+             <Button
+                disabled={!isValid || isSubmitting}
+                type="submit"
+                className=" flex"
+                variant="basic"
+              >
+                Save
+              </Button>
           </form>
         </Form>
       )}
       {!isCreating && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.chapters.length && "text-slate-500 italic"
+          !initialData.chapters.length && "text-slate-300 italic"
         )}>
           {!initialData.chapters.length && "No chapters"}
           <ChaptersList
+          
             onEdit={onEdit}
             onReorder={onReorder}
             items={initialData.chapters || []}

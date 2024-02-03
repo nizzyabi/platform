@@ -53,22 +53,24 @@ const ChapterIdPage = async ({
   return (
     <>
       
-      <div className="px-6 pt-40">
+      <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
         <div className="flex items-center justify-between">
           <div className="w-full">
             <Link
               href={`/courses/${params.courseId}`}
               className="flex items-center text-sm hover:opacity-75 transition mb-6"
             >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to course setup
+              <div className="flex text-lg">
+              <ArrowLeft className="mr-2 pt-1" />
+              <p className="font-semibold">Back</p>
+              </div>
             </Link>
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-center w-full">
               <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-medium">
+                <h1 className="text-5xl font-bold">
                   Chapter Creation
                 </h1>
-                <span className="text-sm text-slate-300">
+                <span className="text-md text-slate-300 text-center">
                   Complete all fields {completionText}
                 </span>
               </div>
@@ -81,7 +83,7 @@ const ChapterIdPage = async ({
             <div>
               <div className="flex items-center gap-x-2">
                 
-                <h2 className="text-xl">
+                <h2 className="text-3xl font-bold">
                   Customize your chapter
                 </h2>
               </div>
@@ -97,9 +99,9 @@ const ChapterIdPage = async ({
               />
             </div>
             <div>
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-2 pt-3">
                 
-                <h2 className="text-xl">
+                <h2 className="text-3xl font-bold">
                   Access Settings
                 </h2>
               </div>
@@ -113,7 +115,7 @@ const ChapterIdPage = async ({
           <div>
             <div className="flex items-center gap-x-2">
               
-              <h2 className="text-xl">
+              <h2 className="text-3xl font-bold">
                 Add a video
               </h2>
             </div>

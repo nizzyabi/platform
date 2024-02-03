@@ -9,7 +9,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
-
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 
 import {
   Form,
@@ -39,7 +39,7 @@ export const DescriptionForm = ({
 }: DescriptionFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const toggleEdit = () => setIsEditing((current) => !current);
+  const toggleEdit = () => setIsEditing((current) => !current)
 
   const router = useRouter();
 
@@ -64,26 +64,28 @@ export const DescriptionForm = ({
   }
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        course description
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Course Description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>cancel</>
+            <>Cancel</>
           ) : (
             <>
-              <Pencil className="text-slate-200" />
+              <AutoFixNormalIcon className="text-slate-200" />
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
+        <div className="flex justify-between">
         <p className={cn(
-          "text-lg mt-2",
-          !initialData.description && "text-slate-500 italic"
+          "text-sm mt-2",
+          !initialData.description && "text-slate-300 italic"
         )}>
           {initialData.description || "No description"}
         </p>
+        </div>
       )}
       {isEditing && (
         <Form {...form}>
@@ -107,14 +109,14 @@ export const DescriptionForm = ({
                 </FormItem>
               )}
             />
-            <div className="flex items-center gap-x-2">
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"
+                className=" flex"
+                variant="basic"
               >
-                save
+                Save
               </Button>
-            </div>
           </form>
         </Form>
       )}

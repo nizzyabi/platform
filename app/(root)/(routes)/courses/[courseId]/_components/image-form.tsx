@@ -2,7 +2,8 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { Pencil, PlusCircle, ImageIcon } from "lucide-react";
+import { ImageIcon } from "lucide-react";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -46,30 +47,26 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        course image
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Course Image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
-            <>cancel</>
+            <>Cancel</>
           )}
           {!isEditing && !initialData.imageUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              add an image
+              <AddCircleIcon className="text-slate-200" />
+              
             </>
           )}
-          {!isEditing && initialData.imageUrl && (
-            <>
-              <Pencil className="text-slate-200" />
-            </>
-          )}
+         
         </Button>
       </div>
       {!isEditing && (
         !initialData.imageUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
-            <ImageIcon className="h-10 w-10 text-slate-500" />
+          <div className="flex items-center justify-center h-60 mt-4 bg-slate-200 rounded">
+            <ImageIcon className="h-10 w-10 text-[#1e1e1e]" />
           </div>
         ) : (
           <div className="relative aspect-video mt-2">

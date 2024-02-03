@@ -8,7 +8,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import {
   Form,
   FormControl,
@@ -61,16 +61,15 @@ export const ChapterTitleForm = ({
   }
 
   return (
-    <div className="mt-6 border bg-[#2e2e2e] rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
-        Chapter title
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Chapter Title
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit title
+              <AutoFixNormalIcon className="text-slate-200" />
             </>
           )}
         </Button>
@@ -91,7 +90,7 @@ export const ChapterTitleForm = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
@@ -102,14 +101,14 @@ export const ChapterTitleForm = ({
                 </FormItem>
               )}
             />
-            <div className="flex items-center gap-x-2">
-              <Button
-                disabled={!isValid || isSubmitting}
-                type="submit"
-              >
-                Save
-              </Button>
-            </div>
+            <Button
+              disabled={!isValid || isSubmitting}
+              type="submit"
+              className=" flex"
+              variant="basic"
+            >
+              Save
+            </Button>
           </form>
         </Form>
       )}

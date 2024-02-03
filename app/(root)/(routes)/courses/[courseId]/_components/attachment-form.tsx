@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Attachment, Course } from "@prisma/client";
 import Image from "next/image";
-
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 
@@ -57,16 +57,16 @@ export const AttachmentForm = ({
   }
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        course attachments
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Course Attachments
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
-            <>cancel</>
+            <>Cancel</>
           )}
           {!isEditing && (
             <>
-              <PlusCircle className="text-slate-200" />
+              <AddCircleIcon className="text-slate-200" />
               
             </>
           )}
@@ -75,7 +75,7 @@ export const AttachmentForm = ({
       {!isEditing && (
         <>
           {initialData.attachments.length === 0 && (
-            <p className="text-lg mt-2 text-slate-500 italic">
+            <p className="text-sm mt-2 text-slate-300 italic">
               No attachments yet
             </p>
           )}

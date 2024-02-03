@@ -11,7 +11,7 @@ import {
 import { Grip, Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 // interface will have an item, edit, and reorder prop
 interface ChaptersListProps {
   items: Chapter[];
@@ -86,7 +86,7 @@ export const ChaptersList = ({
                 {(provided) => (
                   <div
                     className={cn(
-                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-[#2c2c2c]",
+                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-slate-100 text-[#1e1e1e]",
                       chapter.isPublished && "bg-sky-100 border-sky-200 text-sky-700"
                     )}
                     ref={provided.innerRef}
@@ -94,7 +94,7 @@ export const ChaptersList = ({
                   >
                     <div
                       className={cn(
-                        "px-2 py-3 border-r border-r-slate-200 hover:text-[#2c2c2c] hover:bg-slate-200 rounded-l-md transition",
+                        "px-2 py-3 text-[#1e1e1e] border-r border-r-black/40 hover:bg-slate-200 rounded-l-md transition",
                         chapter.isPublished && "border-r-sky-200 hover:bg-sky-200"
                       )}
                       {...provided.dragHandleProps}
@@ -112,15 +112,15 @@ export const ChaptersList = ({
                       )}
                       <Badge
                         className={cn(
-                          "bg-gradient-to-r from-yellow-500 to-orange-500 border border-black",
+                          "bg-[#1e1e1e] text-slate-100",
                           chapter.isPublished && "bg-gradient-to-r from-blue-500 to-blue-800"
                         )}
                       >
                         {chapter.isPublished ? "posted" : "draft"}
                       </Badge>
-                      <Pencil
+                      <AutoFixNormalIcon
                         onClick={() => onEdit(chapter.id)}
-                        className="w-4 h-4 cursor-pointer hover:opacity-75 transition"
+                        className="mb-1 cursor-pointer text-[#1e1e1e]"
                       />
                     </div>
                   </div>

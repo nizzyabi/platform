@@ -2,7 +2,7 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { Pencil, PlusCircle, ImageIcon, VideoIcon } from "lucide-react";
+import { Pencil, VideoIcon } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -10,7 +10,7 @@ import { Chapter, MuxData } from "@prisma/client";
 import MuxPlayer from "@mux/mux-player-react";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
-
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 interface ChapterVideoFormProps {
   initialData: Chapter & { muxData?: MuxData | null}
   courseId: string;
@@ -45,17 +45,16 @@ export const ChapterVideoForm = ({
   }
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        chapter video
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Chapter Video
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
-            <>cancel</>
+            <>Cancel</>
           )}
           {!isEditing && !initialData.videoUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              add an video
+              <AddCircleIcon className="text-slate-200" />
             </>
           )}
           {!isEditing && initialData.videoUrl && (
@@ -67,8 +66,8 @@ export const ChapterVideoForm = ({
       </div>
       {!isEditing && (
         !initialData.videoUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
-            <VideoIcon className="h-10 w-10 text-slate-500" />
+          <div className="flex items-center justify-center h-60 mt-4 bg-slate-200 rounded">
+            <VideoIcon className="h-10 w-10 text-[#1e1e1e]" />
           </div>
         ) : (
           <div className="relative aspect-video mt-2 ">

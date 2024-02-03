@@ -9,7 +9,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
-
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import {
   Form,
   FormControl,
@@ -66,27 +66,29 @@ export const CategoryForm = ({
   const selectedOption = options.find((option) => option.value === initialData.categoryId);
 
   return (
-    <div className="mt-6 border-2 shadow-md shadow-slate-100 bg-[#2c2c2c] bg-opacity-95 rounded p-4">
-      <div className="font-extrabold flex items-center justify-between text-xl">
-        course category
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Course Category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>cancel</>
+            <>Cancel</>
           ) : (
             <>
-              <Pencil className="text-slate-200" />
+              <AutoFixNormalIcon className="text-slate-200" />
               
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
+        <div className="flex justify-between">
         <p className={cn(
-          "text-lg mt-2",
-          !initialData.categoryId && "text-slate-500 italic"
+          "text-sm mt-2",
+          !initialData.categoryId && "text-slate-300 italic"
         )}>
           {selectedOption?.label || "No category"}
         </p>
+        </div>
       )}
       {isEditing && (
         <Form {...form}>
@@ -109,14 +111,14 @@ export const CategoryForm = ({
                 </FormItem>
               )}
             />
-            <div className="flex items-center gap-x-2">
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"
+                className=" flex"
+                variant="basic"
               >
-                save
+                Save
               </Button>
-            </div>
           </form>
         </Form>
       )}

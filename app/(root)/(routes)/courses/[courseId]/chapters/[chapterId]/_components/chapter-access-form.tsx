@@ -4,7 +4,7 @@ import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Pencil } from "lucide-react";
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -66,16 +66,15 @@ export const ChapterAccessForm = ({
   }
 
   return (
-    <div className="mt-6 border bg-[#2e2e2e] rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
-        Chapter access
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+      <div className="font-semibold flex items-center justify-between text-xl">
+        Chapter Access
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit access
+              <AutoFixNormalIcon className="text-slate-200" />
             </>
           )}
         </Button>
@@ -83,7 +82,7 @@ export const ChapterAccessForm = ({
       {!isEditing && (
         <p className={cn(
           "text-sm mt-2",
-          !initialData.isFree && "text-slate-500 italic"
+          !initialData.isFree && "text-slate-200 italic"
         )}>
           {initialData.isFree ? (
             <>This chapter is free for preview.</>
