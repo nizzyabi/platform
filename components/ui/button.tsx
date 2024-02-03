@@ -20,9 +20,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         gold: "bg-gradient-to-r from-yellow-500 to-orange-500 rounded-md mt-3 mb-6 shadow-xl shadow-black hover:scale-105 transition-transform hover:duration-500 lg:text-2xl lg:py-6 font-extrabold",
         goldHover: "border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 font-medium hover: border-none",
-        basic: 'bg-slate-100 text-black border border-[#1e1e1e] hover:text-slate-100 hover:bg-[#1e1e1e] hover:text-slate-100 hover:border hover:border-slate-100 px-3 py-0.5 rounded-full',
+        basic: 'bg-slate-100 text-black border border-[#1e1e1e] hover:text-slate-100 hover:bg-[#1e1e1e] hover:text-slate-100 hover:border hover:border-slate-100 my-3 rounded-full',
         pinkHover:"border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 font-medium hover: border-none",
         blueHover:"border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 font-medium hover: border-none",
+        iconButton:"rounded-full my-3 bg-[#191919] text-white hover:text-slate-100 hover:opacity-75 font-medium"
         
         
 

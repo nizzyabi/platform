@@ -1,15 +1,14 @@
 import { auth } from "@/auth"
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
-
+import { ArrowLeft } from "lucide-react";
 import { db } from "@/lib/db";
-import { IconBadge } from "@/components/icon-badge";
-
 import { ChapterTitleForm } from "./_components/chapter-title-form";
 import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessForm } from "./_components/chapter-access-form";
 import { ChapterVideoForm } from "./_components/chapter-video-form";
+import { Banner } from "@/components/banner";
+import ChapterActions from "./_components/chapter-actions";
 
 
 const ChapterIdPage = async ({
@@ -47,24 +46,34 @@ const ChapterIdPage = async ({
   const completedFields = requiredFields.filter(Boolean).length;
 
   const completionText = `(${completedFields}/${totalFields})`;
-
+  // check if every item in the required fields is true
   const isComplete = requiredFields.every(Boolean);
 
   return (
     <>
-      
+      {!chapter.isPublished && (
+        <Banner variant="warning" label="This chapter is not published" />
+      )}
       <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
         <div className="flex items-center justify-between">
           <div className="w-full">
+            <div className="flex justify-between">
             <Link
               href={`/courses/${params.courseId}`}
-              className="flex items-center text-sm hover:opacity-75 transition mb-6"
+              className="flex items-center text-sm hover:opacity-75 transition "
             >
               <div className="flex text-lg">
               <ArrowLeft className="mr-2 pt-1" />
               <p className="font-semibold">Back</p>
               </div>
             </Link>
+            <ChapterActions 
+                disabled={!isComplete}
+                courseId={params.courseId}
+                chapterId={params.chapterId}
+                isPublished={chapter.isPublished}
+              />
+            </div>
             <div className="flex items-center justify-center w-full">
               <div className="flex flex-col gap-y-2">
                 <h1 className="text-5xl font-bold">
@@ -74,6 +83,7 @@ const ChapterIdPage = async ({
                   Complete all fields {completionText}
                 </span>
               </div>
+              
               
             </div>
           </div>
