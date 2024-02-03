@@ -75,14 +75,14 @@ export const RegisterForm = () => {
                             name="name"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Name</FormLabel>
-                                    <FormControl>
+                                    <FormLabel>Name</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
-                                            placeholder="Joe Mama"
+                                            placeholder="John Doe"
                                             {...field}
                                             disabled={isPending}
                                             type='name'
-                                            className="rounded shadow-sm text-md shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -95,14 +95,14 @@ export const RegisterForm = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Email</FormLabel>
-                                    <FormControl className="">
+                                    <FormLabel>Email</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-md shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -116,14 +116,14 @@ export const RegisterForm = () => {
                             name="password"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Password</FormLabel>
-                                    <FormControl>
+                                    <FormLabel>Password</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             placeholder="●●●●●●"
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-lg shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/30"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -141,11 +141,12 @@ export const RegisterForm = () => {
                     <Button 
                         disabled={isPending}
                         type="submit"
-                        className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
+                        variant="goldHover"
+                    className="w-full text-lg font-bold"
                     >
-                        register
+                        Register
                     </Button>
-                    <h1 className="text-center">or</h1>
+                    <h1 className="text-center font-semibold">or</h1>
                 </form>
             </Form>
         </CardWrapper>

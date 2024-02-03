@@ -74,14 +74,14 @@ export const NewPasswordForm = () => {
                             name="password"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Password</FormLabel>
-                                    <FormControl className="">
+                                    <FormLabel>Password</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             {...field}
                                             placeholder="●●●●●●"
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-lg shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -99,21 +99,14 @@ export const NewPasswordForm = () => {
                     <Button 
                         disabled={isPending}
                         type="submit"
-                        className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
+                        variant="goldHover"
+                        className="w-full text-lg font-bold"
                     >
-                        reset password
+                        Reset
                     </Button>
                     
                 </form>
-                <div className="flex items-center justify-center pt-2">
-                <Button
-                    variant='link'
-                >
-                    <Link href="/">
-                        Back to Home
-                    </Link>
-                </Button>
-                </div>
+                
             </Form>
         </CardWrapper>
     )

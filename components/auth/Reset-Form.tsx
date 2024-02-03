@@ -73,14 +73,14 @@ export const ResetForm = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold">Email</FormLabel>
-                                    <FormControl className="">
+                                    <FormLabel>Email</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-md shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/30"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -98,9 +98,10 @@ export const ResetForm = () => {
                     <Button 
                         disabled={isPending}
                         type="submit"
-                        className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
+                        variant="goldHover"
+                        className="w-full text-lg font-bold"
                     >
-                        send reset email
+                        Reset Email
                     </Button>
                     
                 </form>

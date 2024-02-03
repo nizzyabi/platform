@@ -84,7 +84,7 @@ const SettingsPage = () => {
                             </div>
                             <div className="space-y-2">
                                 
-                                <Button type='submit' variant="goldHover" >Invoices</Button>
+                                <Button type='submit' variant="blueHover" >Invoices</Button>
                             </div>
                         </CardContent>
                         
