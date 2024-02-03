@@ -18,7 +18,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-                className='w-full border-none rounded bg-slate-200 hover:bg-slate-200 hover:bg-slate-200/80'
+                className='w-full border-none rounded bg-slate-200 hover:bg-slate-200'
                 variant="outline"
                 onClick={() => onClick('google')}
             >
@@ -27,7 +27,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-            className='w-full rounded bg-slate-200 hover:bg-slate-200 hover:bg-slate-200/80 border-none'
+            className='w-full rounded bg-slate-200 hover:bg-slate-200'
                 variant="outline"
                 onClick={() => onClick('github')}
             >

@@ -80,14 +80,14 @@ export const LoginForm = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold text-gray-400">Email</FormLabel>
-                                    <FormControl className="">
+                                    <FormLabel>Email</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-md shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     
@@ -101,20 +101,20 @@ export const LoginForm = () => {
                             name="password"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-bold text-gray-400">Password</FormLabel>
-                                    <FormControl>
+                                    <FormLabel>Password</FormLabel>
+                                    <FormControl className="bg-slate-200">
                                         <Input 
                                             placeholder="●●●●●●"
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-lg shadow-black"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <Button
                                         size="sm"
                                         variant="link"
-                                        className="px-0 font-normal"
+                                        className="px-0 "
                                         type="button"
                                     >
                                        <Link href='/auth/reset'>
@@ -137,9 +137,10 @@ export const LoginForm = () => {
                     <Button 
                         disabled={isPending}
                         type="submit"
-                        className="w-full text-white font-extrabold text-xl rounded bg-gradient-to-r from-yellow-500 to-orange-500 hover:scale-105 transition-transform duration-500"
+                        variant="goldHover"
+                        className="w-full text-lg font-bold"
                     >
-                        login
+                        Login
                     </Button>
                     
                     <h1 className="text-center">or</h1>
