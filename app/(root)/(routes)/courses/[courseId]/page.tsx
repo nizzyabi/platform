@@ -11,6 +11,8 @@ import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { Banner } from "@/components/banner";
+import { Actions } from "./_components/actions";
 const CoursesIdPage = async ({
   params
 }: {
@@ -76,84 +78,84 @@ const CoursesIdPage = async ({
 
   
   return (
-    <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
-      {/* Title */}
-      <div className="flex items-center justify-center">
-        <div className="w-full">
-        <Link
-          href={`/courses`}
-          className="flex items-center text-sm hover:opacity-75 transition mb-6"
-        >
-          <div className="flex text-lg">
-            <ArrowLeft className="mr-2 pt-1" />
-            <p className="font-semibold">Back</p>
-          </div>
-        </Link>
-        <div className="flex items-center justify-center w-full">
-        <div className="flex flex-col gap-y-2">
-          <h1 className="text-5xl font-bold">
-            Course Setup
-          </h1>
-          {/* Amount Complete */}
-          <span className="text-md text-slate-300 text-center">
-            {completionText} Complete
-          </span>
-        </div>
-        </div>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-        <div className="text-center">
-          <div className="flex items-center gap-x-2">
-            {/* Customize Guide */}
-            <h2 className="text-3xl font-bold">
-              Customize Course
-            </h2>
-          </div>
-            
-            {/* Guide TItle */}
-            <TitleForm
-              initialData={course}
-              courseId={course.id}
-            />
-
-            {/* Description Form */}
-            <DescriptionForm
-              initialData={course}
-              courseId={course.id}
-            />
-
-            {/*Image Form*/}
-            <ImageForm
-              initialData={course}
-              courseId={course.id}
-            />
-
-            {/* Categories */}
-            <CategoryForm
-              initialData={course}
-              courseId={course.id}
-              options={categories.map((category) => ({
-                label: category.name,
-                value: category.id,
-              }))}
-            />
-        </div>
-
-        <div className="space-y-6">
-          <div>
-            <div className="flex items-center gap-x-2">
-              {/* Chapters */}
-              <h2 className="text-3xl font-bold">
-                Course Chapters
-              </h2>
-              
+    <>
+      {!course.isPublished && (
+        <Banner label="This course is unpublished" />
+      )}
+      <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
+        {/* Title */}
+        <div className="flex items-center justify-center">
+          <div className="w-full">
+            <div className="flex justify-between">
+              <Link
+                href={`/courses`}
+                className="flex items-center text-sm hover:opacity-75 transition"
+              >
+                <div className="flex text-lg">
+                  <ArrowLeft className="mr-2 pt-1" />
+                  <p className="font-semibold">Back</p>
+                </div>
+              </Link>
+                <Actions 
+                  disabled={!isComplete}
+                  courseId={course.id}
+                  isPublished={course.isPublished}
+                />
             </div>
-              
-            <ChaptersForm
-              initialData={course}
-              courseId={course.id}
-            />
+            <div className="flex items-center justify-center w-full">
+              <div className="flex flex-col gap-y-2">
+                <h1 className="text-5xl font-bold">
+                  Course Setup
+                </h1>
+                {/* Amount Complete */}
+                <span className="text-md text-slate-300 text-center">
+                  {completionText} Complete
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          <div className="text-center">
+            <div className="flex items-center gap-x-2">
+              {/* Customize Guide */}
+              <h2 className="text-3xl font-bold">
+                Customize Course
+              </h2>
+            </div>
+              <TitleForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <DescriptionForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <ImageForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <CategoryForm
+                initialData={course}
+                courseId={course.id}
+                options={categories.map((category) => ({
+                  label: category.name,
+                  value: category.id,
+                }))}
+              />
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <div className="flex items-center gap-x-2">
+                <h2 className="text-3xl font-bold">
+                  Course Chapters
+                </h2>
+              </div>
+              <ChaptersForm
+                initialData={course}
+                courseId={course.id}
+              />
             </div>
             <div>
               <div className="flex items-center gap-x-1">
@@ -182,6 +184,7 @@ const CoursesIdPage = async ({
         </div>
       </div>
     </div>
+    </>
   );
 }
 export default CoursesIdPage;
