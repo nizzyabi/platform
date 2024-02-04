@@ -56,6 +56,7 @@
     "query-string": "^8.1.0",
     "react": "^18",
     "react-activity-calendar": "^2.2.1",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
     "react-firebase-hooks": "^5.1.1",

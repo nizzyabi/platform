@@ -12,6 +12,7 @@ import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import Footer from '@/components/footer'
 import { ToastProvider } from '@/components/providers/toaster-provider'
+import { ConfettiProvder } from '@/components/providers/confetti-provider'
 
 const bowlby = Bowlby_One_SC({ subsets: ['latin'], weight: ['400'] })
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] })
@@ -34,15 +35,13 @@ export default async function RootLayout({
    <SessionProvider session={session}>
     
     <html lang="en" className='body-background'>
-    
       <body className={inter.className}>
-      <Navbar />
+        <Navbar />
         <Scroll />
-            {children}
-            <ToastProvider />
-      
+        <ToastProvider />
+        <ConfettiProvder />
+          {children}
       </body>
-      
     </html>
     </SessionProvider>
     
