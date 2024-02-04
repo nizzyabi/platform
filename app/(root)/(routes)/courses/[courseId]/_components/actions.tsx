@@ -34,8 +34,9 @@ export const Actions = ({
         toast.success("Guides unpublished");
       } else {
         await axios.patch(`/api/courses/${courseId}/publish`);
-        toast.success("Course published");
+        toast.success("Course published!");
         confetti.onOpen();
+
       }
 
       router.refresh();
