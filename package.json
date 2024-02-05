@@ -55,7 +55,7 @@
     "next-auth": "^5.0.0-beta.4",
     "next-cloudinary": "^5.13.0",
     "next-themes": "^0.2.1",
-    "query-string": "^8.1.0",
+    "query-string": "^8.2.0",
     "react": "^18",
     "react-activity-calendar": "^2.2.1",
     "react-confetti": "^6.1.0",

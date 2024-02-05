@@ -1,9 +1,14 @@
-import { IconTypeMap } from "@mui/material";
-import { Category } from "@prisma/client";
-import { IconType } from "react-icons";
-import { BiBook, BiCamera } from "react-icons/bi";
-import { FcSettings } from "react-icons/fc";
+"use client"
+
+import { Category } from "@prisma/client"
+import {
+    FcCamera,
+    FcConferenceCall,
+    FcTemplate
+} from "react-icons/fc"
+import { IconType } from "react-icons"
 import { CategoryItem } from "./category-item";
+
 // Interface
 interface CategoriesProps {
     items: Category[];
@@ -11,9 +16,9 @@ interface CategoriesProps {
 
 // Catgories 
 const iconData: Record<Category["name"], IconType> = {
-    "Tutorials": FcSettings,
-    "Courses": BiBook,
-    "Live Lessons": BiCamera
+    "Tutorials": FcConferenceCall,
+    "Courses": FcTemplate,
+    "Live Lessons": FcCamera
 } 
 
 // Display Categories
