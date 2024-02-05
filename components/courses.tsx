@@ -15,13 +15,38 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
 import { BiBrain, BiLogoJavascript, BiLogoReact } from "react-icons/bi";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
 
+const commandInputs = [
+  {
+    course: "NextJS",
+    icon: <SiNextdotjs className='mr-2 text-black'/>,
+    link: '/courses/nextjs'
+  },
+  {
+    course: "React",
+    icon: <BiLogoReact className="text-cyan-300 mr-2"/>,
+    link: '/courses/react'
+  },
+  {
+    course: "HTML & CSS",
+    icon: <FaHtml5 className="text-orange-500 mr-2"/>,
+    link: '/courses/html-css'
+  },
+  {
+    course: "Focus & Deep Work",
+    icon: <BiBrain className="text-pink-300 mr-2"/>,
+    link: '/courses/focus-deep-work'
+  },
+  {
+    course: "JavaScript",
+    icon: <BiLogoJavascript className="text-yellow-500 mr-2"/>,
+    link: '/courses/javascript'
+  },
+]
 
 export default function Courses() {
   // AOS Effect
@@ -81,18 +106,18 @@ export default function Courses() {
             
             <CommandDialog open={open} onOpenChange={setOpen}>
               
-              <CommandInput placeholder="NextJS Full Stack" className="border-slate-100/50 w-[400px] text-black/80 placeholder:text-black/50"/>
+              <CommandInput placeholder="JavaScript Course" className="border-slate-100/50 w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
               {/* TODO: Get Course Data to diaply here.*/}
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup className="text-black/80">
-                  <CommandItem>NextJS <SiNextdotjs className='ml-2 text-black'/></CommandItem>
-                  <CommandItem>React <BiLogoReact className="text-cyan-300 ml-2"/></CommandItem>
-                  <CommandItem>HTML & CSS <FaHtml5 className="text-orange-500 ml-2"/><FaCss3Alt className="text-blue-500"/></CommandItem>
-                  <CommandItem>Focus & Deep Work <BiBrain className="text-pink-300 ml-2"/></CommandItem>
 
-                  <CommandItem>JavaScript <BiLogoJavascript className="text-yellow-500 ml-2"/></CommandItem>
-
+                <CommandGroup>
+                  {commandInputs.map((item) => (
+                    <Link href={item.link}>
+                      <CommandItem>{item.icon}{item.course}</CommandItem>
+                    </Link>
+                  ))}
+                  
                 </CommandGroup>
               </CommandList>
             </CommandDialog>
