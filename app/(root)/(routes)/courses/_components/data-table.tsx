@@ -7,7 +7,10 @@ import {
   getCoreRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  getFilteredRowModel,
   useReactTable,
+  ColumnFiltersState,
+
 } from "@tanstack/react-table"
 
 import {
@@ -19,6 +22,9 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import Link from "next/link"
+import { PlusCircle } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -30,6 +36,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
 
   const table = useReactTable({
     data,
@@ -38,14 +45,32 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
   })
 
   return (
     <div>
-    <div className="rounded border border-slate-100/50 bg-[#191919] mt-20">
+        <div className="flex items-center justify-between pt-20">
+          <Input
+            placeholder="Filter courses..."
+            value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("title")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm bg-slate-200 text-[#191919]"
+          />
+          <Link href='/courses'>
+            <Button variant="basic">
+              New course
+            </Button>
+          </Link>
+        </div>
+    <div className="rounded border border-slate-100/50 bg-[#191919] mt-3">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
