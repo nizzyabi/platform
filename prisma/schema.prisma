@@ -92,7 +92,6 @@ model Course {
   updatedAt DateTime @updatedAt
 
   @@index([categoryId])
-  
 }
 
 model Category {
