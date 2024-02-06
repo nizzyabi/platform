@@ -16,7 +16,7 @@ export const CoursesList = ({
 }: CoursesListProps) => {
     return (
         <div>
-            <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4'>
+            <div className='px-4 py-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4'>
                 {items.map((item) => (
                     <CourseCard 
                         key={item.id}
@@ -27,6 +27,7 @@ export const CoursesList = ({
                         progress={item.progress}
                         price={item.price!}
                         category={item?.category?.name!}
+                        description={item.description!}
                     />
                 ))}
             </div>
