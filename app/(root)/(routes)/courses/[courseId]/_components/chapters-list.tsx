@@ -87,7 +87,7 @@ export const ChaptersList = ({
                   <div
                     className={cn(
                       "flex items-center gap-x-2 border rounded mb-4 text-sm bg-slate-100 text-[#1e1e1e]",
-                      chapter.isPublished && "bg-sky-100 border-sky-200 text-sky-700"
+                      chapter.isPublished && "bg-slate-100 border-slate-100/30 text-[#191919]"
                     )}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
@@ -95,7 +95,7 @@ export const ChaptersList = ({
                     <div
                       className={cn(
                         "px-2 py-3 text-[#1e1e1e] border-r border-r-black/40 hover:bg-slate-200 rounded-l-md transition",
-                        chapter.isPublished && "border-r-sky-200 hover:bg-sky-200"
+                        chapter.isPublished && "border-r-slate-200"
                       )}
                       {...provided.dragHandleProps}
                     >
@@ -112,8 +112,8 @@ export const ChaptersList = ({
                       )}
                       <Badge
                         className={cn(
-                          "bg-[#1e1e1e] text-slate-100",
-                          chapter.isPublished && "bg-gradient-to-r from-blue-500 to-blue-800"
+                          "bg-[#1e1e1e] hover:bg-[#191919] text-slate-100",
+                          chapter.isPublished && "bg-gradient-to-r from-pink-500 to-purple-500"
                         )}
                       >
                         {chapter.isPublished ? "posted" : "draft"}
