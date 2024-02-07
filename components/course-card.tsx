@@ -20,6 +20,7 @@ export const CourseCard = ({
     price,
     progress,
     description,
+    category
     
 }: CourseCardProps) => {
     return (

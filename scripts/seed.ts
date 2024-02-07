@@ -7,9 +7,16 @@ async function main() {
     // Create new categories
     await database.category.createMany({
       data: [
-        { name: "Tutorials" },
-        { name: "Courses" },
-        { name: "Live Lessons" }
+        { name: "JavaScript" },
+        { name: "React" },
+        { name: "NextJS" },
+        { name: "TypeScript" },
+        { name: "Python" },
+        { name: "SQL" },
+        { name: "HTML & CSS" },
+        { name: "HTML" },
+        { name: "CSS"},
+        { name: "Study"}
       ]
     });
 
