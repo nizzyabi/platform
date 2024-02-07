@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconBadge } from "./icon-badge";
-import { BookOpen } from "lucide-react";
 import { CourseProgress } from "@/components/course-progress";
-import { formatPrice } from "@/lib/format";
+
 interface CourseCardProps {
     id: string;
     title: string;
@@ -26,7 +24,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
     return (
         <Link href={`courses/${id}`}>
-            <div className="group hover:scale-105 duration-500 transition overflow-hidden rounded h-full bg-[#191919]">
+            <div className="group hover:scale-105 duration-500 transition overflow-hidden rounded h-full bg-[#111111]">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
@@ -46,7 +44,7 @@ export const CourseCard = ({
                     
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
                         <div className="flex items-center gap-x-1 text-slate-500">
-                        <Image src="/gilbert_paradise.png" width={16} height={16} alt="Book Open" />
+                        <Image src="/gilbert_paradise.png" width={16} height={16} alt="paradise" />
                             <span className="mt-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>

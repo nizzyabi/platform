@@ -2,7 +2,6 @@
 "use client"
 import { useEffect } from "react";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
@@ -11,6 +10,9 @@ import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 
 
@@ -21,7 +23,8 @@ export default function Roadmap() {
     // Roadmap Display Data
     const roadmapData = [
         {
-            number: '01',
+            difficulty: '/gilbert.svg',
+            difficultyTitle: 'Beginner',
             title: <p>Basics</p>,
             description: 'Learn the basics of programming & how computers work',
             resources: [
@@ -38,7 +41,8 @@ export default function Roadmap() {
             ]           
         },
         {
-            number: '02',
+            difficulty: '/gilbert.svg',
+            difficultyTitle: 'Beginner',
             title: 'HTML & CSS',
             description: 'It is time to learn the basics of web development using the building blocks of the web (HTML & CSS).',
             resources: [
@@ -61,7 +65,8 @@ export default function Roadmap() {
 
         },
         {
-            number: '03',
+            difficulty: '/gilbert.svg',
+            difficultyTitle: 'Beginner',
             title: 'JavaScript | Data Structures',
             description: 'It is time to get functional! Learn JavaScript & how to use it to make your websites interactive.',
             resources: [
@@ -84,7 +89,8 @@ export default function Roadmap() {
 
         },
         {
-            number: '04',
+            difficulty: '/gilbert.png',
+            difficultyTitle: 'Intermediate',
             title: 'Frameworks',
             description: 'Learn how to use JavaScript frameworks to build better & faster websites.',
             resources: [
@@ -112,7 +118,8 @@ export default function Roadmap() {
             ]
         },
         {
-            number: '05',
+            difficulty: '/gilbert.png',
+            difficultyTitle: 'Intermediate',
             title: 'Backend | APIs',
             description: 'Make your websites dynamic by learning how to build servers, user profiles, APIs & more.',
             resources: [
@@ -142,7 +149,8 @@ export default function Roadmap() {
             ]
         },
         {
-            number: '06',
+            difficulty: '/gilbert.png',
+            difficultyTitle: 'Intermediate',
             title: 'Full Stack Development',
             description: 'Learn how to connect the frontend & backend by creating functioning full stack applications!',
             resources: [
@@ -167,7 +175,8 @@ export default function Roadmap() {
 
         },
         {
-            number: '07',
+            difficulty: '/chad.svg',
+            difficultyTitle: 'Pro',
             title: 'Finishing Touches',
             description: 'Learn how software design, github, & other software principles work.',
             resources: [
@@ -189,7 +198,8 @@ export default function Roadmap() {
             ]
         },
         {
-            number: '08',
+            difficulty: '/chad.svg',
+            difficultyTitle: 'Pro',
             title: 'Interview Prep',
             description: 'Learn how to prepare for interviews & get a job as a developer!',
             resources: [
@@ -242,7 +252,17 @@ export default function Roadmap() {
                 <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#1e1e1e] shadow-lg shadow-black">
                     <div className="flex items-center justify-between">
                         <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
-                        <p className="text-3xl font-bold text-slate-300/50">{item.number}</p>
+                        <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger>
+                                    <Image src={item.difficulty} alt="difficulty" width={30} height={30} />
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-[#191919] p-3 rounded">
+                                    <p className="font-semibold">Difficulty: {item.difficultyTitle}</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
+                        
                     </div>
 
                     <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
