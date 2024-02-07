@@ -2,10 +2,18 @@
 
 import { Category } from "@prisma/client"
 import {
-    FcCamera,
-    FcConferenceCall,
-    FcTemplate
-} from "react-icons/fc"
+    BiLogoJavascript,
+    BiLogoReact,
+    BiLogoTypescript,
+    BiLogoPython,
+    BiData,
+    BiLogoHtml5,
+    BiLogoCss3,
+    BiBrain,
+    BiWebcam
+} from "react-icons/bi"
+import { TbBrandNextjs } from "react-icons/tb";
+
 import { IconType } from "react-icons"
 import { CategoryItem } from "./category-item";
 
@@ -16,9 +24,16 @@ interface CategoriesProps {
 
 // Catgories 
 const iconData: Record<Category["name"], IconType> = {
-    "Tutorials": FcConferenceCall,
-    "Courses": FcTemplate,
-    "Live Lessons": FcCamera
+    "JavaScript": BiLogoJavascript,
+    "React": BiLogoReact,
+    "NextJS": TbBrandNextjs,
+    "TypeScript": BiLogoTypescript,
+    "Python": BiLogoPython,
+    "SQL": BiData,
+    "HTML & CSS": BiWebcam,
+    "HTML": BiLogoHtml5,
+    "CSS": BiLogoCss3,
+    "Study": BiBrain,
 } 
 
 // Display Categories
