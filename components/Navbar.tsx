@@ -25,7 +25,7 @@ export default function Navbar() {
     const navbarChange = hasScrolled ? 'border-b border-slate-100/50 bg-[#2e2e2e]' : 'bg-transparent';
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
                 <div className="flex justify-between items-center">
                 <motion.div
                         initial={{ scale: 0 }}
