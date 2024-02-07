@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
-import { Evervault } from './evervault';
+
 
 
 export default function LandingPage() {
@@ -61,7 +61,7 @@ export default function LandingPage() {
             <p className='font-medium text-xl text-gray-200'>Build projects that matter</p>
           </div>
           {/* Courses */}
-          <Evervault />
+          
         </div>
         
         

@@ -46,8 +46,8 @@ export const CourseCard = ({
                     
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
                         <div className="flex items-center gap-x-1 text-slate-500">
-                        <IconBadge size="sm" icon={BookOpen} />
-                            <span>
+                        <Image src="/gilbert_paradise.png" width={16} height={16} alt="Book Open" />
+                            <span className="mt-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>

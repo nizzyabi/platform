@@ -23,11 +23,11 @@ const UserButton = () => {
         ): (
             <Link href='/settings'>
                 {!session.image ? (
-                    <Avatar alt='logo' className="shadow-xl shadow-black hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-blue-500/90 to-blue-700/90" sx={{ width: 45, height: 45}}>
-                    <IoMdPerson className="text-2xl"/>
+                    <Avatar alt='logo' className="shadow-xl shadow-black hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-pink-500 to-purple-500" sx={{ width: 40, height: 40}}>
+                    
             </Avatar>
                 ): (
-                    <Avatar alt='logo' src={session.image} className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50" sx={{ width: 45, height: 45 }}/>
+                    <Avatar alt='logo' src={session.image} className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50" sx={{ width: 40, height: 40 }}/>
                 )}
                 
             </Link>
