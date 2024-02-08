@@ -25,7 +25,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
     return (
         <Link href={`courses/${id}`}>
-            <div className="group hover:scale-105 duration-500 transition overflow-hidden rounded h-full bg-[#111111]">
+            <div className="group hover:scale-105 duration-500 transition overflow-hidden rounded-xl h-full bg-[#111111]">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
@@ -46,7 +46,7 @@ export const CourseCard = ({
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
                         <div className="flex items-center gap-x-1 text-slate-500">
                         <Image src="/gilbert_paradise.png" width={16} height={16} alt="paradise" />
-                            <span className="mt-1">
+                            <span className="mt-0.5 font-semibold text-slate-300 ml-2">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>

@@ -21,7 +21,7 @@ import qs from "query-string";
 const commandInputs = [
     {
       course: "NextJS",
-      icon: <SiNextdotjs className='mr-2 text-black'/>,
+      icon: <SiNextdotjs className='mr-2 text-slate-100'/>,
       link: '/courses/nextjs'
     },
     {
