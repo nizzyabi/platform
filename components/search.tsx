@@ -13,9 +13,6 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import { BiBrain, BiLogoJavascript, BiLogoReact } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
-import { useDebounce } from "@/hooks/use-debounce";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import qs from "query-string";
 
 
 const commandInputs = [
@@ -47,24 +44,6 @@ const commandInputs = [
   ]
 export default function Search() {
     const [open, setOpen] = React.useState(false);
-    // const [value, setValue] = React.useState("");
-
-    // const debouncedValue = useDebounce(value);
-    // const searchParams = useSearchParams();
-    // const router = useRouter();
-    // const pathname = usePathname();
-
-    {/*React.useEffect(() => {
-        const url = qs.stringifyUrl({
-            url: pathname,
-            query: {
-                title: debouncedValue
-            }
-        }, { skipEmptyString: true, skipNull: true });
-
-        router.push(url)
-    }, [debouncedValue, router, pathname])*/}
-
     React.useEffect(() => {
       const down = (e: KeyboardEvent) => {
         if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -72,7 +51,6 @@ export default function Search() {
           setOpen((open) => !open)
         }
       }
-   
       document.addEventListener("keydown", down)
       return () => document.removeEventListener("keydown", down)
     }, [])

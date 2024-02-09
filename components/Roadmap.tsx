@@ -14,9 +14,6 @@ import Image from "next/image";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
-
-
-
 export default function Roadmap() {
     // Current User Data
     const { data: session } = useSession();
@@ -247,40 +244,32 @@ export default function Roadmap() {
 
             {/* Resources */}
             <div data-aos='fade-left' className="space-y-20">
-            {/* Map through roadmap data */}
-            {roadmapData.map((item, index) => (
-                <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#1e1e1e] shadow-lg shadow-black">
-                    <div className="flex items-center justify-between">
-                        <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Image src={item.difficulty} alt="difficulty" width={30} height={30} />
-                                </TooltipTrigger>
-                                <TooltipContent className="bg-[#191919] p-3 rounded">
-                                    <p className="font-semibold">Level: {item.difficultyTitle}</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        
-                    </div>
+                {roadmapData.map((item, index) => (
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#1e1e1e] shadow-lg shadow-black">
+                        <div className="flex items-center justify-between">
+                            <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <TooltipTrigger>
+                                        <Image src={item.difficulty} alt="difficulty" width={30} height={30} />
+                                    </TooltipTrigger>
+                                    <TooltipContent className="bg-[#191919] p-3 rounded">
+                                        <p className="font-semibold">Level: {item.difficultyTitle}</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
+                        </div>
 
-                    <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
-
-                    <div className="flex justify-center space-x-8">
-                        {item.resources.map((resource, resIndex) => (
-                            <Link key={resIndex} href={resource.link}>
-                                
+                        <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
+                        <div className="flex justify-center space-x-8">
+                            {item.resources.map((resource, resIndex) => (
+                                <Link key={resIndex} href={resource.link}>
                                     <p className="text-5xl bg-slate-200 shadow-xl shadow-black hover:scale-105 transition-transform duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">{resource.icon}</p>
-                                
-                            </Link>
-                            
-                        ))}
-                        
+                                </Link>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            ))}
-  
+                ))}
             </div> 
         </div>
     )
