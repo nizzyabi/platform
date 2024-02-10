@@ -1,7 +1,7 @@
 "use client"
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Roadmap from "@/components/roadmap";
+import Roadmap from "@/components/Roadmap";
 
 export default function RoadmapPage() {
     return (

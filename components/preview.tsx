@@ -5,7 +5,6 @@ import { useMemo } from "react";
 import "react-quill/dist/quill.bubble.css"
 
 interface PreviewProps {
-    
     value: string;
 }
 

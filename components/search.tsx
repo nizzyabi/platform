@@ -13,9 +13,6 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import { BiBrain, BiLogoJavascript, BiLogoReact } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
-import { useDebounce } from "@/hooks/use-debounce";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import qs from "query-string";
 
 
 const commandInputs = [
@@ -47,24 +44,6 @@ const commandInputs = [
   ]
 export default function Search() {
     const [open, setOpen] = React.useState(false);
-    // const [value, setValue] = React.useState("");
-
-    // const debouncedValue = useDebounce(value);
-    // const searchParams = useSearchParams();
-    // const router = useRouter();
-    // const pathname = usePathname();
-
-    {/*React.useEffect(() => {
-        const url = qs.stringifyUrl({
-            url: pathname,
-            query: {
-                title: debouncedValue
-            }
-        }, { skipEmptyString: true, skipNull: true });
-
-        router.push(url)
-    }, [debouncedValue, router, pathname])*/}
-
     React.useEffect(() => {
       const down = (e: KeyboardEvent) => {
         if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -72,7 +51,6 @@ export default function Search() {
           setOpen((open) => !open)
         }
       }
-   
       document.addEventListener("keydown", down)
       return () => document.removeEventListener("keydown", down)
     }, [])
@@ -84,7 +62,6 @@ export default function Search() {
           <>
           <div className="flex items-center justify-center pt-5">
             <div className="relative w-96">
-            
               <div onClick={handleClick} className="flex items-center justify-between bg-white rounded cursor-pointer border border-black p-2">
                 <SearchIcon className="text-black/50 h-4 w-4" />
                 <span className="flex-1 text-black/50 placeholder:text-black/50 ml-2">Search for a course</span>
@@ -99,7 +76,7 @@ export default function Search() {
               
               <CommandInput 
                 placeholder="JavaScript Course" className="border-slate-100/50 w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
-              {/* TODO: Get Course Data to diaply here.*/}
+              
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
 
