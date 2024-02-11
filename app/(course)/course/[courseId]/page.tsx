@@ -26,11 +26,7 @@ const CourseIdPage = async ({
     return redirect("/");
   }
 
-  return (
-    <div>
-        
-    </div>
-  )
+  return redirect(`/course/${course.id}/chapter/${course.chapters[0].id}`);
 }
  
 export default CourseIdPage;
