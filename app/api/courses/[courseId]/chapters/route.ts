@@ -23,7 +23,7 @@ export async function POST(
         });
 
         if (!courseOwner) {
-            return new NextResponse("Unauthorized", { status: 401 });
+            return new NextResponse("Unauthorized Code", { status: 401 });
         }
 
         const lastChapter = await db.chapter.findFirst({

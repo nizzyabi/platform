@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { auth } from "@/auth";
-import { SessionProvider, getSession } from "next-auth/react";
 import {  } from "@/data/user";
 
 
