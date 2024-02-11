@@ -14,8 +14,8 @@ export const CourseNavbar = ({
     progressCount,
 }: CourseNavbarProps) => {
     return (
-        <div className="p-4 h-full flex items-center  shadow-sm">
-            navbar course
+        <div className="">
+            
         </div>
     )
 }

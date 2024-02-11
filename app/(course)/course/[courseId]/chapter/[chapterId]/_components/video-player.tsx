@@ -33,7 +33,7 @@ export const VideoPlayer = ({
 }: VideoPlayerProps) => {
     const [isReady, setIsReady] = useState(false); 
   return (
-    <div className="relative aspect-video">
+    <div className="relative space-x-7 aspect-video ">
         {!isReady && !isLocked && (
             <div className="absolute inset-0 flex items-center justify-center bg-[#191919]">
                 <Loader2 className="mx-auto animate-spin text-slate-100 h-8 w-8" />
@@ -42,18 +42,16 @@ export const VideoPlayer = ({
         {isLocked && (
             <div className="absolute inset-0 flex items-center justify-center bg-[#191919] flex-col gap-y-2 text-slate-100">
                 <Lock className="h-8 w-8" />
-                <p>This chapter is locked</p>
+                <p>Buy this course to unlock</p>
             </div>
         )}
         {!isLocked && (
             <MuxPlayer
-                title={title}
                 className={cn(
                 !isReady && "hidden"
                 )}
                 onCanPlay={() => setIsReady(true)}
                 onEnded={() => {}}
-                autoPlay
                 playbackId={playbackId}
                 accent-color="#191919"
             />

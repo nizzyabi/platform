@@ -7,6 +7,7 @@ import { CourseProgress } from "@/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
 import { CourseItem } from "./course-item";
+import { Scrollbar } from 'react-scrollbars-custom';
 
 interface CourseSidebarProps {
   course: Course & {
@@ -37,11 +38,8 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="h-full  flex flex-col overflow-y-auto shadow-sm">
-      <div className=" p-4 flex flex-col border-b">
-        <h1 className="font-semibold">
-          {course.title}
-        </h1>
+      <div className="max-w-7xl mx-auto pt-8">
+      <div className="flex flex-col">
         {purchase && (
           <div className="mt-10">
             <CourseProgress
@@ -51,7 +49,8 @@ interface CourseSidebarProps {
           </div>
         )}
       </div>
-      <div className="flex flex-col w-full">
+     
+      <div className="flex flex-col w-full border-r">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -63,6 +62,7 @@ interface CourseSidebarProps {
           />
         ))}
       </div>
+      
     </div>
     )
   }
