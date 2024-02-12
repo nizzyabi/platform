@@ -1,7 +1,9 @@
 "use client";
 
-import { CheckCircle, LockKeyhole, Circle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import { FaLock } from "react-icons/fa";
+import { FaRegCircleDot } from "react-icons/fa6";
 
 import { cn } from "@/lib/utils";
 
@@ -22,9 +24,15 @@ export const CourseSidebarItem = ({
 }: CourseSidebarItemProps) => {
   const pathname = usePathname();
   const router = useRouter();
-
-  const Icon = isLocked ? LockKeyhole : (isCompleted ? CheckCircle : Circle);
   const isActive = pathname?.includes(id);
+  const Icon = isLocked ? FaLock : (isCompleted ? CheckCircle : FaRegCircleDot);
+  const iconClassNames = cn(
+    "text-slate-200/20",
+    isActive && "text-slate-200",
+    isCompleted && "text-emerald-700",
+    isLocked && "text-red-500"
+  );
+  
 
   const onClick = () => {
     router.push(`/course/${courseId}/chapter/${id}`);
@@ -37,7 +45,7 @@ export const CourseSidebarItem = ({
       className={cn(
         "flex items-center gap-x-2 text-slate-200/20 text-lg font-semibold transition-all hover:text-slate-200 ",
         
-        isActive && "text-slate-200 font-extrabold",
+        isActive && "text-slate-200",
         isCompleted && "text-emerald-700 hover:text-emerald-700",
         isCompleted && isActive && "bg-emerald-200/20",
         
@@ -45,12 +53,8 @@ export const CourseSidebarItem = ({
     >
       <div className="flex items-center gap-x-2 py-4">
         <Icon
-          size={15}
-          className={cn(
-            "text-slate-200/20",
-            isActive && "",
-            isCompleted && "text-emerald-700"
-          )}
+          size={17}
+          className={iconClassNames}
         />
         {label}
       </div>
