@@ -2,6 +2,7 @@
 
 import { CheckCircle, Lock, Circle } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import { ScrollArea } from "@/components/ui/scrollbar";
 
 import { cn } from "@/lib/utils";
 
@@ -36,9 +37,11 @@ export const CourseSidebarItem = ({
       type="button"
       className={cn(
         "flex items-center gap-x-2 text-slate-200/20 text-lg font-semibold transition-all hover:text-slate-200 ",
-        isActive && "text-slate-200 ",
+        
+        isActive && "text-slate-200 font-bold",
         isCompleted && "text-emerald-700 hover:text-emerald-700",
         isCompleted && isActive && "bg-emerald-200/20",
+        
       )}
     >
       <div className="flex items-center gap-x-2 py-4">

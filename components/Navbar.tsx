@@ -42,8 +42,8 @@ export default function Navbar() {
                             
                                 <motion.img 
                                     src={isHovered ? '/chad.svg' : '/chad.svg'}
-                                    width={50}
-                                    height={50}
+                                    width={70}
+                                    height={70}
                                     alt='logos2'
                                     whileHover={{ scale: 1.2, rotate: 90 }}
                                     whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}

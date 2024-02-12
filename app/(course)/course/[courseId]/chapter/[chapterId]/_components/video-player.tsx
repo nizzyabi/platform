@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader2, Lock } from "lucide-react";
+import "@mux/mux-player/themes/classic";
 
 import { cn } from "@/lib/utils";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
@@ -33,7 +34,7 @@ export const VideoPlayer = ({
 }: VideoPlayerProps) => {
     const [isReady, setIsReady] = useState(false); 
   return (
-    <div className="relative space-x-7 aspect-video ">
+    <div className="relative aspect-video h-full">
         {!isReady && !isLocked && (
             <div className="absolute inset-0 flex items-center justify-center bg-[#191919]">
                 <Loader2 className="mx-auto animate-spin text-slate-100 h-8 w-8" />
@@ -46,15 +47,21 @@ export const VideoPlayer = ({
             </div>
         )}
         {!isLocked && (
+            <div>
             <MuxPlayer
                 className={cn(
+                "h-auto sm:w-full md:w-[500px] lg:w-[700px] xl:w-[900px]",
                 !isReady && "hidden"
                 )}
                 onCanPlay={() => setIsReady(true)}
                 onEnded={() => {}}
                 playbackId={playbackId}
                 accent-color="#191919"
+                theme="classic"
+                
+                
             />
+            </div>
       )}
     </div>
   )
