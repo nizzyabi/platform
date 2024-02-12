@@ -1,7 +1,5 @@
 'use client'
 import { Button } from "@/components/ui/button";
-import VerifiedIcon from '@mui/icons-material/Verified';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { logout } from "@/actions/logout";
 import { useCurrentUser } from "@/hooks/user-current-user";
 import {
@@ -12,7 +10,6 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
     Tabs,
@@ -20,22 +17,17 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { useState } from "react";
 
 const SettingsPage = () => {
     const session = useCurrentUser();
     const onClick = () => {
         logout();
     }
-    const [activeTab, setActiveTab] = useState("account");
-    const handleTabChange = (tab:any) => {
-        setActiveTab(tab);
-        console.log(activeTab)
-    }
+   
     
     return (
-        <div className="h-full w-full flex flex-col space-y-20 items-center justify-center pt-40 ">
-            <Tabs defaultValue="account" className="w-[600px]">
+        <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8">
+            <Tabs defaultValue="account" className="sm:w-[250px] md:w-[400px] lg:w-[600px]">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="account">Account</TabsTrigger>
 

@@ -9,8 +9,8 @@ type ImageInfo = {
 };
 
 const imagesRow1: ImageInfo[] = [
-  { src: '/TS.png', alt: 'TypeScript', padding: 'p-7' },
-  { src: '/react.png', alt: 'React', padding: 'p-8' },
+  { src: '/Next.png', alt: 'JavaScript', padding: 'p-7' },
+  { src: '/JS.png', alt: 'JavaScript', padding: 'p-7' },
   { src: '/prisma.png', alt: 'Prisma', padding: 'p-7' },
 ];
 
@@ -40,7 +40,7 @@ export function LanguageBackground() {
   return (
     <div className="flex flex-col items-center space-y-5">
       {renderImages(imagesRow1)}
-      {renderImages(imagesRow2)}
+      
     </div>
   );
 }

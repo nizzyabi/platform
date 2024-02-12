@@ -251,7 +251,7 @@ export default function Roadmap() {
                             <TooltipProvider>
                                 <Tooltip>
                                     <TooltipTrigger>
-                                        <Image src={item.difficulty} alt="difficulty" width={30} height={30} />
+                                        <Image src={item.difficulty} alt="difficulty" width={40} height={40} />
                                     </TooltipTrigger>
                                     <TooltipContent className="bg-[#191919] p-3 rounded">
                                         <p className="font-semibold">Level: {item.difficultyTitle}</p>

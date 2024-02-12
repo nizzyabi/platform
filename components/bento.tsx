@@ -205,7 +205,7 @@ const SkeletonFour = () => {
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-[#2e2e2e] p-4 border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="/ares_hoodie.png"
+          src="/gilbert_cool.png"
           alt="avatar"
           height="100"
           width="100"
@@ -223,7 +223,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/gilbert_shirt.png"
+          src="/ares_hoodie.png"
           alt="avatar"
           height="100"
           width="100"
