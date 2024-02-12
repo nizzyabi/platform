@@ -24,7 +24,7 @@ export default function Navbar() {
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 ">
                 <div className="flex justify-between items-center">
                 <motion.div
                         initial={{ scale: 0 }}
@@ -40,13 +40,14 @@ export default function Navbar() {
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}>
                             
-                                <motion.img 
-                                    src={isHovered ? '/chad.svg' : '/chad.svg'}
+                                <motion.img
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    src='/gilbert_cool.png'
                                     width={70}
                                     height={70}
                                     alt='logos2'
-                                    whileHover={{ scale: 1.2, rotate: 90 }}
-                                    whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
                                 />
                                 
                         </Link>
