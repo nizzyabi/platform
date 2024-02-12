@@ -8,6 +8,9 @@ import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
 
+const numRows = 8; // Total number of rows
+const numCols = 21; // Avatars per row
+
 export default function LandingPage() {
   useEffect(() => {
     AOS.init({
@@ -43,8 +46,22 @@ export default function LandingPage() {
 
         <div className='pt-60' data-aos='fade-right'>
           <div className='text-center pb-12'>
-            <h1 className='text-7xl text-slate-100 font-semibold'>Build <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500'>Projects</span> That Matter</h1>
+            <h1 className='text-7xl text-slate-100 font-semibold'>Join a <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500'>Community</span></h1>
+            <p className='pt-3 font-medium text-xl text-gray-200'>Build stuff with people like you</p>
           </div>
+          {/* TODO: Add hover with names and images from the discord*/}
+          <div className='space-y-4'>
+          {Array.from({ length: numRows }).map((_, rowIndex) => (
+            <div className="flex space-x-4 px-20" key={`row-${rowIndex}`}>
+            {Array.from({ length: numCols }).map((_, colIndex) => (
+              <div className="w-10" key={`col-${colIndex}`}>
+                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="rounded" alt="Avatar"/>
+              </div>
+            ))}
+          </div>
+          ))}
+          </div>
+          
         </div>
       </div>
      </div>
