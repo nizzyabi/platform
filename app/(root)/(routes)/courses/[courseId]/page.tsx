@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
 const CoursesIdPage = async ({
@@ -79,10 +79,7 @@ const CoursesIdPage = async ({
   
   return (
     <>
-      {!course.isPublished && (
-        <Banner label="This course is unpublished" />
-      )}
-      <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
+      <div className="lg:px-[250px] md:px-[50px] sm:px-6 pt-40">
         {/* Title */}
         <div className="flex items-center justify-center">
           <div className="w-full">
@@ -111,6 +108,12 @@ const CoursesIdPage = async ({
                 <span className="text-md text-slate-300 text-center">
                   {completionText} Complete
                 </span>
+                {!course.isPublished && (
+                  <div className="flex space-x-2 text-red-500 items-center justify-center pt-8">
+                    <AlertTriangle />
+                    <p>This course is not published</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

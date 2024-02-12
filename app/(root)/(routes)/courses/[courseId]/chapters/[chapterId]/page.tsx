@@ -1,13 +1,12 @@
 import { auth } from "@/auth"
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { db } from "@/lib/db";
 import { ChapterTitleForm } from "./_components/chapter-title-form";
 import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessForm } from "./_components/chapter-access-form";
 import { ChapterVideoForm } from "./_components/chapter-video-form";
-import { Banner } from "@/components/banner";
 import ChapterActions from "./_components/chapter-actions";
 
 
@@ -51,10 +50,8 @@ const ChapterIdPage = async ({
 
   return (
     <>
-      {!chapter.isPublished && (
-        <Banner variant="warning" label="This chapter is not published" />
-      )}
-      <div className="lg:px-96 md:px-40 sm:px-6 pt-40">
+      
+      <div className="lg:px-[250px] md:px-[50px] sm:px-6 pt-40">
         <div className="flex items-center justify-between">
           <div className="w-full">
             <div className="flex justify-between">
@@ -81,7 +78,15 @@ const ChapterIdPage = async ({
                 </h1>
                 <span className="text-md text-slate-300 text-center">
                   Complete all fields {completionText}
+                  
                 </span>
+                {!chapter.isPublished && (
+                  <div className="flex space-x-2 text-red-500 items-center justify-center pt-8">
+                    <AlertTriangle />
+                    <p>This chapter is not published</p>
+                  </div>
+                )}
+                
               </div>
               
               

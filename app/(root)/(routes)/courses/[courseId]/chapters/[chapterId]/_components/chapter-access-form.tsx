@@ -101,16 +101,17 @@ export const ChapterAccessForm = ({
               control={form.control}
               name="isFree"
               render={({ field }) => (
-                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded border border-slate-100/30 p-4">
                   <FormControl>
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
+                      className="text-slate-200/90 rounded"
                     />
                   </FormControl>
-                  <div className="space-y-1 leading-none">
+                  <div className="space-y-1 leading-none ">
                     <FormDescription>
-                      Check this box if you want to make this chapter free for preview
+                      Check if you want to make this chapter free
                     </FormDescription>
                   </div>
                 </FormItem>
@@ -120,6 +121,8 @@ export const ChapterAccessForm = ({
               <Button
                 disabled={!isValid || isSubmitting}
                 type="submit"
+                className=" flex"
+                variant="basic"
               >
                 Save
               </Button>
