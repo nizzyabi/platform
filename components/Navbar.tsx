@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import UserButton from './user-button';
 import { Features } from './menuitems';
-
+import { MobileSidebar } from "@/components/mobile-sidebar"
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -26,6 +26,7 @@ export default function Navbar() {
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 ">
                 <div className="flex justify-between items-center">
+                <MobileSidebar />
                 <motion.div
                         initial={{ scale: 0 }}
                         animate={{ rotate: 360, scale: 1 }}
@@ -52,6 +53,7 @@ export default function Navbar() {
                                 
                         </Link>
                     </motion.div>
+                
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
                         <Features />
                         <Link href="/roadmap">
@@ -63,6 +65,7 @@ export default function Navbar() {
                         <Link href="/coaching">
                             <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Coaching</p>
                         </Link>
+                        
                         <UserButton />
                     </div>
                 </div>
