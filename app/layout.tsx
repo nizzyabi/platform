@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Scroll from '@/components/scroll'
+import Navbar from '@/components/navbar'
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
+import Scroll from '@/components/scroll'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export const metadata: Metadata = {
-  title: 'Ares Gang',
+  title: 'Ares Coding',
   description: 'Self taught developers',
 }
 

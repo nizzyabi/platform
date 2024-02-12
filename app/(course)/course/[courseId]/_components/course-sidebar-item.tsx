@@ -2,7 +2,6 @@
 
 import { CheckCircle, Lock, Circle } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { ScrollArea } from "@/components/ui/scrollbar";
 
 import { cn } from "@/lib/utils";
 

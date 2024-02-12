@@ -1,11 +1,11 @@
-import { Header } from "@/components/auth/Header"
+
 import { BackButton } from "@/components/auth/Back-Button"
 import {
     Card,
     CardFooter,
     CardHeader
 } from "@/components/ui/card";
-import { CardWrapper } from "./Card-Wrapper";
+
 
 export const ErrorCard = () => {
     return (

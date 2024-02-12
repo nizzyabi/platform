@@ -1,6 +1,5 @@
 "use client";
 
-import { ClipLoader } from "react-spinners";
 import { CardWrapper } from "@/components/auth/Card-Wrapper";
 import { newVerification } from "@/actions/new-verification";
 import { useSearchParams } from "next/navigation"
