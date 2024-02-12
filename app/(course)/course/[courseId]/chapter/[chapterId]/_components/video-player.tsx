@@ -6,7 +6,7 @@ import MuxPlayer from "@mux/mux-player-react";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Loader2, Lock } from "lucide-react";
+import { Loader2, Lock, LockKeyhole } from "lucide-react";
 import "@mux/mux-player/themes/classic";
 
 import { cn } from "@/lib/utils";
@@ -41,9 +41,10 @@ export const VideoPlayer = ({
             </div>
         )}
         {isLocked && (
-            <div className="absolute inset-0 flex items-center justify-center bg-[#191919] flex-col gap-y-2 text-slate-100">
-                <Lock className="h-8 w-8" />
-                <p>Buy this course to unlock</p>
+            <div className="absolute inset-0 flex items-center justify-center bg-[#191919] flex-col gap-y-2 ">
+                <LockKeyhole className="h-10 w-10 text-pink-500 " />
+                {/*TODO: ADD LINK TO PAYMENT TO PAY FOR COURSE*/}
+                <p className="text-3xl font-bold border-double px-3 rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Buy this course to unlock</p>
             </div>
         )}
         {!isLocked && (
