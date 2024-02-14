@@ -80,6 +80,7 @@
     "react-tweet": "^3.2.0",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^2.1.0",
+    "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.2.0",
