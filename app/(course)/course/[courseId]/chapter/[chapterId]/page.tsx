@@ -3,6 +3,9 @@ import { auth } from "@/auth";
 import { Banner } from "@/components/banner";
 import { redirect } from "next/navigation";
 import { VideoPlayer } from "./_components/video-player";
+import { CoursePurchaseButton } from "./_components/course-purchase-button";
+import { Preview } from "@/components/preview";
+import { File } from "lucide-react";
 
 const ChapterIdPage = async ({
     params
@@ -57,6 +60,42 @@ const ChapterIdPage = async ({
                     completeOnEnd={completeOnEnd}
                     playbackId={muxData?.playbackId!}
                 />
+            </div>
+            <div>
+                <div className="p-4 flex flex-col md:flex-row items-center justify-between">
+                    <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
+                
+                {purchase ? (
+                    <div>
+                    </div> 
+                ) : (
+                    <CoursePurchaseButton
+                        courseId={params.courseId}
+                        price={course.price!}
+                    />
+                )}
+                </div>
+                <div>
+                    <Preview value={chapter.description!} />
+                </div>
+                {!!attachments.length && (
+                    <>
+                        <div className="p-4">
+                            {attachments.map((attachment) => (
+                            <a 
+                                href={attachment.url}
+                                key={attachment.id}
+                                target="_blank"
+                                className="flex items-center p-3 w-full bg-slate-200 border text-[#191919] rounded hover:underline"
+                            >
+                                <File />
+                                {attachment.name}
+                            </a>
+
+                             ))}
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     </div>

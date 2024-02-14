@@ -20,6 +20,7 @@ export const Preview = ({
             theme="bubble"
             readOnly 
             value={value} 
+            className="rounded-full"
         />
     )
 }
