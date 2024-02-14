@@ -25,7 +25,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
     return (
         <Link href={`course/${id}`}>
-            <div className="group hover:scale-105 duration-500 transition overflow-hidden rounded-xl h-full bg-[#111111]">
+            <div className="group hover:opacity-60 transition duration-300 overflow-hidden rounded h-full bg-[#111111]">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
@@ -34,7 +34,7 @@ export const CourseCard = ({
                         alt={title}
                     />
                 </div>
-                <div className="flex flex-col px-3 space-y-8 pt-4">
+                <div className="flex flex-col px-3 space-y-6 pt-4">
                     <div className="text-2xl font-extrabold">
                         {title}
                     </div>

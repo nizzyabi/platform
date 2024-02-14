@@ -9,6 +9,8 @@ import { CourseSidebarItem } from "./course-sidebar-item";
 import { CourseItem } from "./course-item";
 
 import { ScrollArea } from "@/components/ui/scrollbar";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 interface CourseSidebarProps {
   course: Course & {
@@ -41,10 +43,15 @@ interface CourseSidebarProps {
     return (
       <div className="max-w-7xl mx-auto pt-8">
       <div className="flex flex-col">
+        <Link href='/courses' className="flex text-lg hover:opacity-50">
+          <ArrowLeft className="mr-2 pt-1" />
+            <p className="font-semibold">Back</p>
+        </Link>
         {purchase && (
-          <div className="mt-10">
+          <div className="mt-3">
+            
             <CourseProgress
-              variant="success"
+              variant="default"
               value={progressCount}
             />
           </div>

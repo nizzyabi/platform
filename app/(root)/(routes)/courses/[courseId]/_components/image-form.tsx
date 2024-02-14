@@ -3,7 +3,7 @@
 import * as z from "zod";
 import axios from "axios";
 import { ImageIcon } from "lucide-react";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -54,9 +54,9 @@ export const ImageForm = ({
           {isEditing && (
             <>Cancel</>
           )}
-          {!isEditing && !initialData.imageUrl && (
+          {!isEditing && (
             <>
-              <AddCircleIcon className="text-slate-200" />
+              <AutoFixNormalIcon className="text-slate-200" />
               
             </>
           )}
