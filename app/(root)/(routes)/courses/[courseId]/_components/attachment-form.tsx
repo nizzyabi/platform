@@ -57,7 +57,7 @@ export const AttachmentForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-90 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Course Attachments
         <Button onClick={toggleEdit} variant="ghost">
@@ -67,7 +67,6 @@ export const AttachmentForm = ({
           {!isEditing && (
             <>
               <AddCircleIcon className="text-slate-200" />
-              
             </>
           )}
         </Button>
