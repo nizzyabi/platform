@@ -42,12 +42,9 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="max-w-7xl mx-auto pt-8 hidden sm:block">
+      <div className="max-w-7xl mx-auto pt-10">
       <div className="flex flex-col">
-        <Link href='/courses' className="flex text-lg hover:opacity-50">
-          <ArrowLeft className="mr-2 pt-1" />
-            <p className="font-semibold">Back</p>
-        </Link>
+        
         {purchase && (
           <div className="mt-3">
             
@@ -60,7 +57,7 @@ interface CourseSidebarProps {
       </div>
       
      <ScrollArea className="h-72 w-[290px] rounded">
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full pt-6">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}

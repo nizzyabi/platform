@@ -51,7 +51,7 @@ export const CourseSidebarItem = ({
         
       )}
     >
-      <div className="flex items-center gap-x-2 py-4">
+      <div className="flex items-center gap-x-2 py-1">
         <Icon
           size={17}
           className={iconClassNames}
