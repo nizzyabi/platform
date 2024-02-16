@@ -65,15 +65,13 @@ export default function LandingPage() {
           </div>
           ))}
           <div className='flex items-center justify-center'>
-           <Button variant='goldHover'>
-              <Link href='/courses'>
-                Let's Start
+           <Button variant='discord'>
+              <Link href='https://discord.gg/BenP3YkbJT'>
+                Go To Discord
               </Link>
             </Button>
             </div>
           </div>
-
-          
         </div>
       </div>
      </div>
