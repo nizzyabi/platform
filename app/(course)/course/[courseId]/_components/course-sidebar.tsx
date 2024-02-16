@@ -11,6 +11,7 @@ import { CourseItem } from "./course-item";
 import { ScrollArea } from "@/components/ui/scrollbar";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { CourseMobileSidebar } from "./course-mobile-sidebar";
 
 interface CourseSidebarProps {
   course: Course & {
@@ -41,7 +42,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="max-w-7xl mx-auto pt-8">
+      <div className="max-w-7xl mx-auto pt-8 hidden sm:block">
       <div className="flex flex-col">
         <Link href='/courses' className="flex text-lg hover:opacity-50">
           <ArrowLeft className="mr-2 pt-1" />
@@ -57,6 +58,7 @@ interface CourseSidebarProps {
           </div>
         )}
       </div>
+      
      <ScrollArea className="h-72 w-[290px] rounded">
       <div className="flex flex-col w-full">
         {course.chapters.map((chapter) => (
