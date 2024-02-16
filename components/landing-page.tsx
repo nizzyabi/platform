@@ -11,9 +11,7 @@ import { BentoGridThirdDemo } from './bento';
 const numRows = 8; // Total number of rows
 const numCols = 21; // Avatars per row
 
-const discordImages = [
-  
-]
+
 
 export default function LandingPage() {
   useEffect(() => {
@@ -74,6 +72,11 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-     </div>
+      <footer className="footer footer-center p-4 bg-base-300 text-base-content text-center">
+        <aside>
+          <p>Copyright © 2024 - All right reserved by NizzyABI Corp.</p>
+        </aside>
+      </footer>
+    </div>
   )
 }

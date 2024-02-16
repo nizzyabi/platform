@@ -20,7 +20,7 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    const navbarChange = hasScrolled ? 'border-b border-slate-100/50 bg-[#2e2e2e]' : 'bg-transparent';
+    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
@@ -48,6 +48,7 @@ export default function Navbar() {
                                     src='/gilbert_cool.png'
                                     width={70}
                                     height={70}
+                                    className='pb-2'
                                     alt='logos2'
                                 />
                                 

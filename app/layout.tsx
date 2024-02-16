@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar'
 import { SessionProvider } from 'next-auth/react'
@@ -7,9 +6,9 @@ import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
 import Scroll from '@/components/scroll'
+import { GeistSans } from 'geist/font/sans'
 
-
-const inter = Inter({ subsets: ['latin'] })
+const geist = GeistSans
 
 
 export const metadata: Metadata = {
@@ -26,7 +25,7 @@ export default async function RootLayout({
   return (   
    <SessionProvider session={session}>
     <html lang="en" className='body-background'>
-      <body className={inter.className}>
+      <body className={geist.className}>
         <Navbar />
         <Scroll />
         <ToastProvider />

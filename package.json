@@ -51,6 +51,7 @@
     "firebase": "^10.7.1",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.18.0",
+    "geist": "^1.2.2",
     "gsap": "^3.12.4",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.297.0",
