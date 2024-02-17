@@ -21,6 +21,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { Preview } from "@/components/preview";
+import { Editor } from "@/components/editor";
 
 interface LearningOutcomeFormProps {
   initialData: Course;
@@ -64,7 +66,7 @@ export const LearningOutcomeForm = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Learning Outcome
+        Chapter Description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
@@ -76,13 +78,14 @@ export const LearningOutcomeForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <div className="flex justify-between">
-        <p className={cn(
+        <div className={cn(
           "text-sm mt-2",
           !initialData.learningOutcome && "text-slate-300 italic"
         )}>
-          {initialData.learningOutcome || "No description"}
-        </p>
+          {!initialData.learningOutcome && "No description"}
+          {initialData.learningOutcome && (
+            <Preview value={initialData.learningOutcome} />
+          )}
         </div>
       )}
       {isEditing && (
@@ -97,9 +100,7 @@ export const LearningOutcomeForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Textarea
-                      disabled={isSubmitting}
-                      placeholder="e.g. 'This course is about...'"
+                    <Editor
                       {...field}
                     />
                   </FormControl>
@@ -107,14 +108,14 @@ export const LearningOutcomeForm = ({
                 </FormItem>
               )}
             />
-              <Button
-                disabled={!isValid || isSubmitting}
-                type="submit"
-                className=" flex"
-                variant="basic"
-              >
-                Save
-              </Button>
+            <Button
+              disabled={!isValid || isSubmitting}
+              type="submit"
+              className=" flex"
+              variant="basic"
+            >
+              Save
+            </Button>
           </form>
         </Form>
       )}

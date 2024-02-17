@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { Preview } from "@/components/preview";
 import { db } from "@/lib/db";
 import Image from "next/image";
 import { redirect } from "next/navigation";
@@ -49,7 +50,7 @@ const CourseInfoLayout = async ({
             </div>
             <div>
                 <h1>What's included:</h1>
-                {course?.learningOutcome}
+                <Preview value={course?.learningOutcome!} />
             </div>
         </div>
     )
