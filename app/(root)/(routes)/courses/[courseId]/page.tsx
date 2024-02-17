@@ -13,6 +13,7 @@ import Link from "next/link";
 import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
+import { LearningOutcomeForm } from "./_components/learning-outcome";
 const CoursesIdPage = async ({
   params
 }: {
@@ -26,7 +27,7 @@ const CoursesIdPage = async ({
     return redirect('/')
   }
 
-  // get guide
+  // get course
   const course = await db.course.findUnique({
     where: {
       id: params.courseId,
@@ -57,6 +58,7 @@ const CoursesIdPage = async ({
     course.description,
     course.imageUrl,
     course.price,
+    course.learningOutcome,
     course.categoryId,
     course.chapters.some(chapter => chapter.isPublished)
   ];
@@ -171,6 +173,12 @@ const CoursesIdPage = async ({
                 initialData={course}
                 courseId={course.id}
               />
+            </div>
+            <div>
+              <LearningOutcomeForm
+                courseId={course.id}
+                initialData={course}
+                />
             </div>
             <div>
               <div className="flex items-center gap-x-2"> 

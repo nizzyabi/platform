@@ -81,7 +81,7 @@ export async function PATCH(
         });
         return NextResponse.json(guide)
     } catch (error) {
-        console.log("[GUIDE]", error);
+        console.log("[COURSE]", error);
         return new NextResponse("Internal Error", { status: 500 });
     }
 }
