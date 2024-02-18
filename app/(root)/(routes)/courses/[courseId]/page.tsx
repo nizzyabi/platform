@@ -14,6 +14,7 @@ import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
 import { LearningOutcomeForm } from "./_components/learning-outcome";
+import { LanguageImageForm } from "./_components/language-image";
 const CoursesIdPage = async ({
   params
 }: {
@@ -59,6 +60,7 @@ const CoursesIdPage = async ({
     course.imageUrl,
     course.price,
     course.learningOutcome,
+    course.language,
     course.categoryId,
     course.chapters.some(chapter => chapter.isPublished)
   ];
@@ -147,6 +149,10 @@ const CoursesIdPage = async ({
                   label: category.name,
                   value: category.id,
                 }))}
+              />
+              <LanguageImageForm
+                initialData={course}
+                courseId={course.id}
               />
           </div>
 

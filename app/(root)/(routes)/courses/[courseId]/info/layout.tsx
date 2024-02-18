@@ -62,9 +62,18 @@ const CourseInfoLayout = async ({
               <h1 className="text-5xl font-semibold ">About this course</h1>
               <h1 className="pr-20 text-2xl font-semibold">What you will learn:</h1>
             </div>
-                  <div className="flex justify-center items-center mr-12">
-                    <Preview value={course?.learningOutcome!} />
-                  </div>
+            <div className="flex justify-center items-center mr-12">
+              <Preview value={course?.learningOutcome!} />
+            </div>
+            <div className="flex items-center justify-center pb-4">
+                <Image 
+                    src={`${course?.language}`} 
+                    alt='Image' 
+                    width={200} 
+                    height={200} 
+                    className="rounded-xl shadow-lg shadow-black"
+                />
+            </div>
         </div>
     )
 }
