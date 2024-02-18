@@ -1,7 +1,9 @@
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
+import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 const CourseInfoLayout = async ({
@@ -38,20 +40,31 @@ const CourseInfoLayout = async ({
       });
     return (
         <div className="pt-40 px-12">
-            <h1 className="text-7xl font-semibold text-center mb-6">{course?.title}</h1>
-            <p className="text-2xl">{course?.description}</p>
-            <div className="flex items-center justify-center">
+          <div className="text-center pb-8">
+            <h1 className="text-7xl font-semibold mb-3">{course?.title}</h1>
+            <p className="text-xl text-gray-400 font-semibold">{course?.description}</p>
+          </div>
+            <div className="flex items-center justify-center pb-4">
                 <Image 
                     src={`${course?.imageUrl}`} 
                     alt='Image' 
                     width={800} 
                     height={800} 
+                    className="rounded-xl shadow-lg shadow-black"
                 />
             </div>
-            <div>
-                <h1>What's included:</h1>
-                <Preview value={course?.learningOutcome!} />
+            <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
+              <Button variant='basic'>
+                Go To Course
+              </Button>
+            </Link>
+            <div className="text-center space-y-8">
+              <h1 className="text-5xl font-semibold ">About this course</h1>
+              <h1 className="pr-20 text-2xl font-semibold">What you will learn:</h1>
             </div>
+                  <div className="flex justify-center items-center mr-12">
+                    <Preview value={course?.learningOutcome!} />
+                  </div>
         </div>
     )
 }

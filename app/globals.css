@@ -92,9 +92,10 @@ html {
 }
 
 .ql-container {
-  font-size: 16px !important;
+  font-size: 19px !important;
   background-color: transparent;
   color: white;
+  font-weight: 600 !important;
 }
 
 
