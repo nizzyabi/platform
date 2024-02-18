@@ -1,5 +1,6 @@
-import { Category, Course } from '@prisma/client';
+import { Category, Course, Purchase } from '@prisma/client';
 import { CourseCard } from '@/components/course-card';
+
 
 type CourseWithProgressWithCategory = Course & {
     category: Category | null;
@@ -7,13 +8,22 @@ type CourseWithProgressWithCategory = Course & {
     chapters: { id: string }[];
 }
 
-interface CoursesListProps {
-    items: CourseWithProgressWithCategory[];
+type PurchasedCourse = Purchase[]
+
+interface CoursesPurchased {
+    purchase: PurchasedCourse[];
 }
 
-export const CoursesList = ({
-    items
+interface CoursesListProps {
+    items: CourseWithProgressWithCategory[];
+    purchase: CoursesPurchased;
+}
+
+export const CoursesList = async ({
+    items,
+    purchase
 }: CoursesListProps) => {
+        
     return (
         <div>
             <div className='px-4 py-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4'>
@@ -28,6 +38,7 @@ export const CoursesList = ({
                         price={item.price!}
                         category={item?.category?.name!}
                         description={item.description!}
+                        isPurchased={item.price}
                     />
                 ))}
             </div>

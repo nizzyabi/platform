@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CourseProgress } from "@/components/course-progress";
+import { auth } from "@/auth";
+import { db } from "@/lib/db";
+
 
 interface CourseCardProps {
     id: string;
@@ -11,6 +14,7 @@ interface CourseCardProps {
     progress: number | null;
     category: string;
     description: string;
+    isPurchased: any;
   };
 export const CourseCard = ({
     id,
@@ -20,11 +24,13 @@ export const CourseCard = ({
     price,
     progress,
     description,
-    category
+    category,
+    isPurchased
     
 }: CourseCardProps) => {
+        
     return (
-        <Link href={`course/${id}`}>
+        <Link href={`courses/${id}/info`}> 
             <div className="group hover:opacity-60 transition duration-300 overflow-hidden rounded h-full bg-[#111111]">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
@@ -33,6 +39,7 @@ export const CourseCard = ({
                         src={imageUrl}
                         alt={title}
                     />
+                    h
                 </div>
                 <div className="flex flex-col px-3 space-y-6 pt-4">
                     <div className="text-2xl font-extrabold">
