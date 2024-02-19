@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { Chapter, MuxData } from "@prisma/client";
 import MuxPlayer from "@mux/mux-player-react";
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/file-upload";
+import { FileUpload } from "@/components/File-Upload";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 interface ChapterVideoFormProps {
   initialData: Chapter & { muxData?: MuxData | null}
