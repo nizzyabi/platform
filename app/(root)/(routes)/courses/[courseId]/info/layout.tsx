@@ -1,15 +1,23 @@
+import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
+import { Chapter, Course } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+interface CourseInfoProps {
+  course: Course & {
+    chapters: (Chapter[])
+  };
+}
+
 const CourseInfoLayout = async ({
     params
 } : {
-    params: { courseId: string };
+    params: { courseId: string;  };
 }) => {
     const session  = await auth();
 
@@ -74,6 +82,15 @@ const CourseInfoLayout = async ({
                     className="rounded-xl shadow-lg shadow-black"
                 />
             </div>
+            {course?.chapters.map((chapter) => (
+                <div key={chapter.id} className="flex items-center justify-center">
+                    <h1 className="text-4xl font-semibold">{chapter.title}</h1>
+                </div>
+            ))}
+            
+            
+            
+            
         </div>
     )
 }
