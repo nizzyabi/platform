@@ -84,14 +84,14 @@ export default function Coaching() {
           {coaching.map((item, index) => (
             <Card key={index} className="w-[450px]">
               <CardHeader className="space-y-4">
-                <div className="flex justify-between">
-                  <h1 className="text-3xl font-bold">{item.title}</h1>
+                <div className="flex justify-between pb-2">
+                  <h1 className="text-3xl font-semibold">{item.title}</h1>
                 </div>
-                <CardDescription className="font-medium text-lg">{item.description}</CardDescription>
+                <p className="text-lg font-medium"><span className="text-5xl font-bold text-slate-100">{item.price}</span> <span className="opacity-40">/ month</span></p>
+                <CardDescription className="text-md opacity-40">{item.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <h1 className="font-semibold text-xl">Includes:</h1>
-                <ul className="pt-3 space-y-2 text-lg font-medium">
+                <ul className="space-y-2 text-lg font-medium">
                   {item.includes.map((include, index) => (
                     <li key={index} className="flex">{include}</li>
                   ))}
@@ -101,7 +101,6 @@ export default function Coaching() {
                 <Button variant="goldHover">
                   Register
                 </Button>
-                <p className="text-lg font-medium">{item.price} USD / Month</p>
               </CardFooter>
             </Card>
           

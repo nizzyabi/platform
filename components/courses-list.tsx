@@ -16,12 +16,10 @@ interface CoursesPurchased {
 
 interface CoursesListProps {
     items: CourseWithProgressWithCategory[];
-    purchase: CoursesPurchased;
 }
 
 export const CoursesList = async ({
     items,
-    purchase
 }: CoursesListProps) => {
         
     return (
