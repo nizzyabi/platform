@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CourseProgress } from "@/components/course-progress";
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
+import { Chapter, Course } from "@prisma/client";
 
 
 interface CourseCardProps {
@@ -15,8 +16,9 @@ interface CourseCardProps {
     category: string;
     description: string;
     isPurchased: any;
+    course?: Course []
   };
-export const CourseCard = ({
+export const CourseCard = async ({
     id,
     title,
     imageUrl,
@@ -25,12 +27,25 @@ export const CourseCard = ({
     progress,
     description,
     category,
-    isPurchased
+    isPurchased,
+    course,
     
 }: CourseCardProps) => {
-        
+    const session = await auth()
+    if (!session) {
+        return null
+    }
+    const purchase = await db.purchase.findUnique({
+        where: {
+            userId_courseId: {
+                userId: session.user.id,
+                courseId: id
+            }
+        }
+    });
     return (
-        <Link href={`courses/${id}/info`}> 
+        
+        <Link href={purchase ? `course/${id}` : `courses/${id}/info`}> 
             <div className="group hover:opacity-60 transition duration-300 overflow-hidden rounded h-full bg-[#111111]">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image

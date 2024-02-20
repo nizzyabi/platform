@@ -3,16 +3,11 @@ import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
-import { Chapter, Course } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-interface CourseInfoProps {
-  course: Course & {
-    chapters: (Chapter[])
-  };
-}
+
 
 const CourseInfoLayout = async ({
     params
@@ -20,7 +15,6 @@ const CourseInfoLayout = async ({
     params: { courseId: string;  };
 }) => {
     const session  = await auth();
-
     if (!session) {
         return redirect("/")
     }
@@ -37,15 +31,24 @@ const CourseInfoLayout = async ({
               userProgress: {
                 where: {
                   userId: session.user.id,
-                }
+                },
               }
             },
+            
             orderBy: {
               position: "asc"
             }
           },
         },
       });
+      const purchase = await db.purchase.findUnique({
+        where: {
+            userId_courseId: {
+                userId: session.user.id,
+                courseId: params.courseId
+            }
+        }
+    });
     return (
         <div className="pt-40 px-12">
           <div className="text-center pb-8">
@@ -87,7 +90,16 @@ const CourseInfoLayout = async ({
                     <h1 className="text-4xl font-semibold">{chapter.title}</h1>
                 </div>
             ))}
-            
+            {/* if user bought course, display pourchases, if they didn't display you need to buy*/}
+            {purchase ? (
+                <div>
+                    <h1 className="text-4xl font-semibold">Purchased</h1>
+                </div>
+            ) : (
+                <div>
+                    <h1 className="text-4xl font-semibold">You need to buy</h1>
+                </div>
+            )}
             
             
             
