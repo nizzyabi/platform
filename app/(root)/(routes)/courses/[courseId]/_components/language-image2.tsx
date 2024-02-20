@@ -13,21 +13,21 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/File-Upload";
 
-interface LanguageImageProps {
+interface LanguageImage2Props {
   initialData: Course
   courseId: string;
 };
 
 const formSchema = z.object({
-  language: z.string().min(1, {
+  language2: z.string().min(1, {
     message: "Image is required",
   }),
 });
 
-export const LanguageImageForm = ({
+export const Language2ImageForm = ({
   initialData,
   courseId
-}: LanguageImageProps) => {
+}: LanguageImage2Props) => {
   
   const [isEditing, setIsEditing] = useState(false);
 
@@ -64,7 +64,7 @@ export const LanguageImageForm = ({
         </Button>
       </div>
       {!isEditing && (
-        !initialData.language ? (
+        !initialData.language2 ? (
           <div className="flex items-center justify-center h-60 mt-4 bg-slate-200 rounded">
             <ImageIcon className="h-10 w-10 text-[#1e1e1e]" />
           </div>
@@ -74,7 +74,7 @@ export const LanguageImageForm = ({
               alt="Upload"
               fill
               className="object-cover rounded-md"
-              src={initialData.language}
+              src={initialData.language2}
             />
           </div>
         )
@@ -85,14 +85,13 @@ export const LanguageImageForm = ({
             endpoint="courseImage"
             onChange={(url) => {
               if (url) {
-                onSubmit({ language: url });
+                onSubmit({ language2: url });
               }
             }}
           />
           <div className="text-xs text-muted-foreground mt-4">
             16:9 aspect ratio recommended
           </div>
-          
         </div>
       )}
     </div>

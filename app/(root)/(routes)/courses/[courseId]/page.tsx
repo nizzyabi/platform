@@ -6,15 +6,15 @@ import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
 import { CategoryForm } from "./_components/category-form";
-import { Separator } from "@/components/ui/separator";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import Link from "next/link";
 import { AlertTriangle, ArrowLeft } from "lucide-react";
-import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
 import { LearningOutcomeForm } from "./_components/learning-outcome";
 import { LanguageImageForm } from "./_components/language-image";
+import { Language2ImageForm } from "./_components/language-image2";
+import { Language3ImageForm } from "./_components/language-image3";
 const CoursesIdPage = async ({
   params
 }: {
@@ -61,6 +61,8 @@ const CoursesIdPage = async ({
     course.price,
     course.learningOutcome,
     course.language,
+    course.language2,
+    course.language3,
     course.categoryId,
     course.chapters.some(chapter => chapter.isPublished)
   ];
@@ -151,6 +153,14 @@ const CoursesIdPage = async ({
                 }))}
               />
               <LanguageImageForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <Language2ImageForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <Language3ImageForm
                 initialData={course}
                 courseId={course.id}
               />

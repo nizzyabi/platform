@@ -84,25 +84,26 @@ const CourseInfoLayout = async ({
                     height={200} 
                     className="rounded-xl shadow-lg shadow-black"
                 />
+                <Image 
+                    src={`${course?.language2}`} 
+                    alt='Image' 
+                    width={200} 
+                    height={200} 
+                    className="rounded-xl shadow-lg shadow-black"
+                />
+                <Image 
+                    src={`${course?.language3}`} 
+                    alt='Image' 
+                    width={200} 
+                    height={200} 
+                    className="rounded-xl shadow-lg shadow-black"
+                />
             </div>
             {course?.chapters.map((chapter) => (
                 <div key={chapter.id} className="flex items-center justify-center">
                     <h1 className="text-4xl font-semibold">{chapter.title}</h1>
                 </div>
             ))}
-            {/* if user bought course, display pourchases, if they didn't display you need to buy*/}
-            {purchase ? (
-                <div>
-                    <h1 className="text-4xl font-semibold">Purchased</h1>
-                </div>
-            ) : (
-                <div>
-                    <h1 className="text-4xl font-semibold">You need to buy</h1>
-                </div>
-            )}
-            
-            
-            
         </div>
     )
 }
