@@ -82,7 +82,7 @@ export default function Search() {
 
                 <CommandGroup>
                   {commandInputs.map((item) => (
-                    <Link href={item.link}>
+                    <Link href={item.link} key={item.link} >
                       <CommandItem>{item.icon}{item.course}</CommandItem>
                     </Link>
                   ))}
