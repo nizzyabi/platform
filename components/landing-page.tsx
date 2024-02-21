@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
+import { ThreeDCardDemo } from './3d';
 
 const numRows = 8; // Total number of rows
 const numCols = 21; // Avatars per row
@@ -46,30 +47,11 @@ export default function LandingPage() {
             <LanguageBackground />
         </div>
 
-        <div className='pt-60' data-aos='fade-right'>
-          <div className='text-center pb-12'>
-            <h1 className='text-7xl text-slate-100 font-semibold'>Join a <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500'>Community</span></h1>
-            <p className='pt-3 font-medium text-xl text-gray-200'>Build cool stuff with people like you</p>
+        <div>
+          <div className='text-center pt-64'>
+            <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
           </div>
-          {/* TODO: Add hover with names and images from the discord*/}
-          <div className='space-y-4'>
-          {Array.from({ length: numRows }).map((_, rowIndex) => (
-            <div className="flex space-x-4 px-20 items-center justify-center" key={`row-${rowIndex}`}>
-            {Array.from({ length: numCols }).map((_, colIndex) => (
-              <div className="w-10" key={`col-${colIndex}`}>
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="rounded" alt="Avatar"/>
-              </div>
-            ))}
-          </div>
-          ))}
-          <div className='flex items-center justify-center'>
-           <Button variant='discord'>
-              <Link href='https://discord.gg/BenP3YkbJT'>
-                Go To Discord
-              </Link>
-            </Button>
-            </div>
-          </div>
+          <ThreeDCardDemo />
         </div>
       </div>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content text-center">
