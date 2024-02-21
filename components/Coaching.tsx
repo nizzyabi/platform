@@ -16,7 +16,7 @@ const coaching = [
     description: "Get the benefits of personal advice and help but on the low",
     price: "$40",
     includes: [
-      <p className="flex"><FcVideoCall className='mr-2 mt-1'/>Weekly Live Lessons</p>,
+      <p className="flex"><FcVideoCall className='mr-2 mt-1'/>Bi-Weekly Live Lessons</p>,
       <p className="flex"><FcCalendar className='mr-2 mt-1'/>Weekly Check-ins</p>,
       <p className="flex"><FcTwoSmartphones className='mr-2 mt-1'/>Unlimited Texts</p>,
       <p className="line-through opacity-50 flex"><FcTemplate className="mr-2 mt-1" />Build Projects Together</p>,
