@@ -33,10 +33,7 @@ export const CoursesList = async ({
                         imageUrl={item.imageUrl!}
                         chaptersLength={item.chapters.length}
                         progress={item.progress}
-                        price={item.price!}
-                        category={item?.category?.name!}
                         description={item.description!}
-                        isPurchased={item.price}
                     />
                 ))}
             </div>

@@ -11,11 +11,8 @@ interface CourseCardProps {
     title: string;
     imageUrl: string;
     chaptersLength: number;
-    price: number;
     progress: number | null;
-    category: string;
     description: string;
-    isPurchased: any;
     course?: Course []
   };
 export const CourseCard = async ({
@@ -23,11 +20,8 @@ export const CourseCard = async ({
     title,
     imageUrl,
     chaptersLength,
-    price,
     progress,
     description,
-    category,
-    isPurchased,
     course,
     
 }: CourseCardProps) => {
