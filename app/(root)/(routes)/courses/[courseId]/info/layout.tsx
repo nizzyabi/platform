@@ -1,3 +1,4 @@
+
 import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
@@ -6,6 +7,7 @@ import { db } from "@/lib/db";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+
 
 
 
@@ -41,7 +43,7 @@ const CourseInfoLayout = async ({
           },
         },
       });
-      const purchase = await db.purchase.findUnique({
+    const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
                 userId: session.user.id,
@@ -49,6 +51,7 @@ const CourseInfoLayout = async ({
             }
         }
     });
+    
     return (
         <div className="pt-40 px-12 pb-40 space-y-10">
 
@@ -103,6 +106,7 @@ const CourseInfoLayout = async ({
                 <Preview value={course?.learningOutcome!} />
               </div>
             </div>
+
 
             <div>
               <h1 className="text-center text-5xl font-semibold">Chapters</h1>
