@@ -7,12 +7,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
-import { ThreeD, ThreeDCardDemo } from './3d';
-
-const numRows = 8; // Total number of rows
-const numCols = 21; // Avatars per row
-
-
+import { ThreeD } from './3d';
 
 export default function LandingPage() {
   useEffect(() => {
