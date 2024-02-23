@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
-import { ThreeDCardDemo } from './3d';
+import { ThreeD, ThreeDCardDemo } from './3d';
 
 const numRows = 8; // Total number of rows
 const numCols = 21; // Avatars per row
@@ -51,7 +51,7 @@ export default function LandingPage() {
           <div className='text-center pt-64'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
           </div>
-          <ThreeDCardDemo />
+          <ThreeD />
         </div>
       </div>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content text-center">

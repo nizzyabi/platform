@@ -6,7 +6,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { FaDiscord } from "react-icons/fa";
 import { Avatar } from "@mui/material";
 
-export function ThreeDCardDemo() {
+export function ThreeD() {
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-[#191919] relative group/card border-slate-100/20 w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-3 border  ">
