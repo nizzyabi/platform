@@ -4,6 +4,7 @@ import { auth } from "@/auth";
 import { ThreeD } from "@/components/3d";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
+
 import { db } from "@/lib/db";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,12 +54,14 @@ const CourseInfoLayout = async ({
         }
     });
     
+    const imageUrl = course?.imageUrl;
     return (
         <div className="pt-40 px-12 pb-40 space-y-10">
 
           <div className="text-center pb-8">
             <h1 className="text-7xl font-bold mb-3">{course?.title}</h1>
             <p className="text-xl opacity-50 font-medium pb-8">{course?.description}</p>
+            
             <div className="flex items-center justify-center pb-4">
                 <Image 
                     src={`${course?.imageUrl}`} 
@@ -117,18 +120,21 @@ const CourseInfoLayout = async ({
             </div>
 
             <div>
-              <h1 className="text-center text-5xl font-semibold">Chapters</h1>
-              <div className="grid grid-cols-4 pt-12 justify-items-center ">
+              <h1 className="text-center text-5xl font-semibold my-8">Chapters</h1>
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  justify-items-center">
                 {course?.chapters.map((chapter) => (
-                  <div key={chapter.id} className="border border-slate-100/20 bg-[#191919] rounded w-[250px] p-3 m-2">
-                    <h1 className="text-2xl font-semibold text-center">{chapter.title}</h1>
-                    <div className="flex items-center justify-center">
-                      <p>{chapter.description}</p>
+                  <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
+                    <div className="bg-[#131212] shadow-lg shadow-black/50 rounded-xl w-[300px] p-6 m-2 flex flex-col hover:bg-[#1a1a1a] transition duration-300 ease-in-out">
+
+                    <h2 className="text-2xl font-bold  text-white mb-4">{chapter.title}</h2>
+          
+                    <p className="opacity-50">{chapter.description}</p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
-                </div>
+              </div>
             </div>
+            
             <div className="text-4xl">
             <Preview value={course?.bonus!}/>
           </div>
