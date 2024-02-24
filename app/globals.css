@@ -92,12 +92,18 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
 }
 
 .ql-container {
-  font-size: 18px !important;
+  font-size: 23px !important;
   background-color: transparent;
   color: white;
+  
   font-weight: 500 !important;
 }
 
+.ql-snow {
+  background-color: white;
+  color: #191919;
+  overflow: visible;
+}
 
 
 

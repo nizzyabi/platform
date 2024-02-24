@@ -64,7 +64,7 @@ const CourseInfoLayout = async ({
                     alt='Image' 
                     width={800} 
                     height={800} 
-                    className="rounded-xl shadow-lg shadow-black"
+                    className="rounded shadow-lg shadow-black"
                 />
             </div>
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
@@ -115,7 +115,6 @@ const CourseInfoLayout = async ({
               </div>
             </div>
 
-
             <div>
               <h1 className="text-center text-5xl font-semibold">Chapters</h1>
               <div className="grid grid-cols-3 pt-12 justify-items-center">
@@ -129,7 +128,7 @@ const CourseInfoLayout = async ({
                 ))}
                 </div>
             </div>
-            <div>
+            <div className="text-4xl">
             <Preview value={course?.bonus!}/>
           </div>
         </div>
