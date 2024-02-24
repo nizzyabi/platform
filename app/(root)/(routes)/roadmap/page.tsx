@@ -229,7 +229,7 @@ export default function Roadmap() {
       }, []);
 
     return (
-        <div className="pt-40 pb-40">
+        <div className="pt-40 pb-40 landing">
             {/* Roadmap Title */}
             <div data-aos='fade-right'>
                 <h1 className="text-5xl text-center font-bold "> 

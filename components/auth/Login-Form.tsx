@@ -85,7 +85,7 @@ export const LoginForm = () => {
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35 font-medium"
                                         />
                                     </FormControl>
                                     
@@ -106,7 +106,7 @@ export const LoginForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
+                                            className="rounded shadow-sm text-xs text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <Button
@@ -136,7 +136,7 @@ export const LoginForm = () => {
                         disabled={isPending}
                         type="submit"
                         variant="goldHover"
-                        className="w-full text-lg font-bold"
+                        className="w-full text-lg font-semibold"
                     >
                         Login
                     </Button>

@@ -26,7 +26,7 @@ const SettingsPage = () => {
    
     
     return (
-        <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8">
+        <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8 landing">
             <Tabs defaultValue="account" className="sm:w-[250px] md:w-[400px] lg:w-[600px]">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="account">Account</TabsTrigger>

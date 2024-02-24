@@ -4,7 +4,7 @@ import Coaching from '@/components/coaching'
 
 export default function page() {
   return (
-    <div>
+    <div className='landing'>
       <Coaching />
     </div>
   )

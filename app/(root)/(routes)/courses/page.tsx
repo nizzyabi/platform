@@ -16,7 +16,7 @@ const CoursesPage = async ({}) => {
     userId: session?.user.id
   })
   return (
-    <div>
+    <div className='landing'>
       
       <Courses />
       <CoursesList items={courses}/>

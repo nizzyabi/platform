@@ -82,7 +82,7 @@ export const RegisterForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='name'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35 font-medium"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -99,10 +99,10 @@ export const RegisterForm = () => {
                                     <FormControl className="bg-slate-200">
                                         <Input 
                                             {...field}
-                                            placeholder="john@gmail.com"
+                                            placeholder="John@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35 font-medium"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -123,7 +123,7 @@ export const RegisterForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/30"
+                                            className="rounded shadow-sm text-xs text-[#191919] shadow-black placeholder:text-black/30"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -142,11 +142,11 @@ export const RegisterForm = () => {
                         disabled={isPending}
                         type="submit"
                         variant="goldHover"
-                    className="w-full text-lg font-bold"
+                    className="w-full text-lg font-semibold"
                     >
                         Register
                     </Button>
-                    <h1 className="text-center font-semibold">or</h1>
+                    <h1 className="text-center font-medium">or</h1>
                 </form>
             </Form>
         </CardWrapper>

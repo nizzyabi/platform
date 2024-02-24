@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/navbar'
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
