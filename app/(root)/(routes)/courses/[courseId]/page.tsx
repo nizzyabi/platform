@@ -15,6 +15,9 @@ import { LearningOutcomeForm } from "./_components/learning-outcome";
 import { LanguageImageForm } from "./_components/language-image";
 import { Language2ImageForm } from "./_components/language-image2";
 import { Language3ImageForm } from "./_components/language-image3";
+import { IssueForm } from "./_components/issue";
+import { SolutionForm } from "./_components/solution";
+import { BonusForm } from "./_components/bonuses";
 const CoursesIdPage = async ({
   params
 }: {
@@ -60,6 +63,9 @@ const CoursesIdPage = async ({
     course.imageUrl,
     course.price,
     course.learningOutcome,
+    course.solution,
+    course.bonus,
+    course.issue,
     course.language,
     course.language2,
     course.language3,
@@ -195,6 +201,24 @@ const CoursesIdPage = async ({
                 courseId={course.id}
                 initialData={course}
                 />
+            </div>
+            <div>
+              <IssueForm
+                courseId={course.id}
+                initialData={course}
+              />
+            </div>
+            <div>
+              <SolutionForm
+                courseId={course.id}
+                initialData={course}
+              />
+            </div>
+            <div>
+              <BonusForm
+                courseId={course.id}
+                initialData={course}
+              />
             </div>
             <div>
               <div className="flex items-center gap-x-2"> 

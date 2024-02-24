@@ -20,23 +20,22 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
 import { Preview } from "@/components/preview";
 import { Editor } from "@/components/editor";
 
-interface LearningOutcomeFormProps {
+interface IssueFormProps {
   initialData: Course;
   courseId: string;
 };
 
 const formSchema = z.object({
-  learningOutcome: z.string().min(1),
+    issue: z.string().min(1),
 });
 
-export const LearningOutcomeForm = ({
+export const IssueForm = ({
   initialData,
   courseId
-}: LearningOutcomeFormProps) => {
+}: IssueFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current)
@@ -46,7 +45,7 @@ export const LearningOutcomeForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        learningOutcome: initialData?.learningOutcome || ""
+        issue: initialData?.issue || ""
     },
   });
 
@@ -66,7 +65,7 @@ export const LearningOutcomeForm = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Getting
+        Issue
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
@@ -80,11 +79,11 @@ export const LearningOutcomeForm = ({
       {!isEditing && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.learningOutcome && "text-slate-300 italic"
+          !initialData.issue && "text-slate-300 italic"
         )}>
-          {!initialData.learningOutcome && "No description"}
-          {initialData.learningOutcome && (
-            <Preview value={initialData.learningOutcome} />
+          {!initialData.issue && "No issue"}
+          {initialData.issue && (
+            <Preview value={initialData.issue} />
           )}
         </div>
       )}
@@ -96,7 +95,7 @@ export const LearningOutcomeForm = ({
           >
             <FormField
               control={form.control}
-              name="learningOutcome"
+              name="issue"
               render={({ field }) => (
                 <FormItem>
                   <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">

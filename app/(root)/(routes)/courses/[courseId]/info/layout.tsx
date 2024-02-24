@@ -74,6 +74,14 @@ const CourseInfoLayout = async ({
             </Link>
           </div>
 
+          <div>
+            <Preview value={course?.issue!}/>
+          </div>
+
+          <div>
+            <Preview value={course?.solution!}/>
+          </div>
+
             <div className="flex items-center justify-center pb-4 space-x-4">
                 <Image 
                     src={`${course?.language}`} 
@@ -121,6 +129,9 @@ const CourseInfoLayout = async ({
                 ))}
                 </div>
             </div>
+            <div>
+            <Preview value={course?.bonus!}/>
+          </div>
         </div>
     )
 }
