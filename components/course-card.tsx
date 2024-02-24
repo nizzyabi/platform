@@ -40,7 +40,7 @@ export const CourseCard = async ({
     return (
         
         <Link href={purchase ? `course/${id}` : `courses/${id}/info`}> 
-            <div className="group hover:opacity-60 transition duration-300 overflow-hidden rounded h-full bg-[#111111]">
+            <div className="group hover:opacity-60 transition duration-300 overflow-hidden  h-full bg-[#131212] rounded">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill

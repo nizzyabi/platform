@@ -1,6 +1,7 @@
 
 import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
+import { ThreeD } from "@/components/3d";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
@@ -117,12 +118,12 @@ const CourseInfoLayout = async ({
 
             <div>
               <h1 className="text-center text-5xl font-semibold">Chapters</h1>
-              <div className="grid grid-cols-3 pt-12 justify-items-center">
+              <div className="grid grid-cols-4 pt-12 justify-items-center ">
                 {course?.chapters.map((chapter) => (
-                  <div key={chapter.id} className="border border-slate-100/20 bg-[#191919] rounded py-5 w-[250px]">
+                  <div key={chapter.id} className="border border-slate-100/20 bg-[#191919] rounded w-[250px] p-3 m-2">
                     <h1 className="text-2xl font-semibold text-center">{chapter.title}</h1>
-                    <div className="flex items-center justify-center font-medium">
-                      <Preview value={chapter?.description!} />
+                    <div className="flex items-center justify-center">
+                      <p>{chapter.description}</p>
                     </div>
                   </div>
                 ))}

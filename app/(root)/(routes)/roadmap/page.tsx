@@ -245,7 +245,7 @@ export default function Roadmap() {
             {/* Resources */}
             <div data-aos='fade-left' className="space-y-20">
                 {roadmapData.map((item, index) => (
-                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#1e1e1e] shadow-lg shadow-black">
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#131212] border border-slate-100/20 shadow-lg shadow-black">
                         <div className="flex items-center justify-between">
                             <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
                             <TooltipProvider>
@@ -253,7 +253,7 @@ export default function Roadmap() {
                                     <TooltipTrigger>
                                         <Image src={item.difficulty} alt="difficulty" width={40} height={40} />
                                     </TooltipTrigger>
-                                    <TooltipContent className="bg-[#191919] p-3 rounded">
+                                    <TooltipContent className="bg-[#131212] p-3 rounded">
                                         <p className="font-semibold">Level: {item.difficultyTitle}</p>
                                     </TooltipContent>
                                 </Tooltip>

@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import { Editor } from "@/components/editor";
 import { init } from "aos";
 import { Preview } from "@/components/preview";
+import { Input } from "@/components/ui/input";
 
 interface ChapterDescriptionFormProps {
   initialData: Chapter;
@@ -79,15 +80,9 @@ export const ChapterDescriptionForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <div className={cn(
-          "text-sm mt-2",
-          !initialData.description && "text-slate-300 italic"
-        )}>
-          {!initialData.description && "No description"}
-          {initialData.description && (
-            <Preview value={initialData.description} />
-          )}
-        </div>
+        <p className="text-sm mt-2">
+          {initialData.description}
+        </p>
       )}
       {isEditing && (
         <Form {...form}>
@@ -100,8 +95,10 @@ export const ChapterDescriptionForm = ({
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Editor
+                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                    <Input
+                      disabled={isSubmitting}
+                      placeholder="e.g. 'Introduction to the course'"
                       {...field}
                     />
                   </FormControl>
