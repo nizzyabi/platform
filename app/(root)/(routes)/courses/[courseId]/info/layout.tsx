@@ -1,7 +1,6 @@
 
 import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
-import { ThreeD } from "@/components/3d";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
 
