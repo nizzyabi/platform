@@ -6,6 +6,7 @@ import { VideoPlayer } from "./_components/video-player";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
+import { CourseProgressButton } from "./_components/course-progress-button";
 
 const ChapterIdPage = async ({
     params
@@ -27,7 +28,7 @@ const ChapterIdPage = async ({
         userProgress,
         purchase,
     } = await getChapter({
-        userId: session.user.id,
+        userId: session.user.id ?? '',
         courseId: params.courseId,
         chapterId: params.chapterId
     })
@@ -66,8 +67,12 @@ const ChapterIdPage = async ({
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
                 
                 {purchase ? (
-                    <div>
-                    </div> 
+                    <CourseProgressButton 
+                        chapterId={params.chapterId}
+                        courseId={params.courseId}
+                        nextChapterId={nextChapter?.id}
+                        isCompleted={!!userProgress?.isCompleted}
+                    />
                 ) : (
                     <CoursePurchaseButton
                         courseId={params.courseId}

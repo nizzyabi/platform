@@ -47,7 +47,7 @@ const CourseInfoLayout = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id,
+                userId: session.user.id ?? '',
                 courseId: params.courseId
             }
         }

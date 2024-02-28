@@ -4,6 +4,7 @@ import { CourseProgress } from "@/components/course-progress";
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { Chapter, Course } from "@prisma/client";
+import { formatPrice } from "@/lib/format";
 
 
 interface CourseCardProps {
@@ -32,7 +33,7 @@ export const CourseCard = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id,
+                userId: session.user.id ?? '',
                 courseId: id
             }
         }
@@ -75,7 +76,7 @@ export const CourseCard = async ({
                             />
                         ) : (
                             <div>
-
+                                
                             </div>
                         )}
                     </div>

@@ -47,7 +47,7 @@ const CourseLayout = async ({
     return redirect("/");
   }
 
-  const progressCount = getProgress(session.user.id, course.id)
+  const progressCount = getProgress(session.user.id ?? '', course.id)
 
   return (
     <div className="h-full">
