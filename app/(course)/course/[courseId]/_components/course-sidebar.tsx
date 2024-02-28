@@ -15,7 +15,7 @@ interface CourseSidebarProps {
       userProgress: UserProgress[] | null;
     })[]
   };
-  progressCount: any;
+  progressCount: number;
 };
 
   export const CourseSidebar = async ({

@@ -43,13 +43,6 @@ const ChapterIdPage = async ({
 
   return (
     <div>
-        {userProgress?.isCompleted && (
-            <Banner
-                label="Chapter Completed"
-                variant="success"
-            />
-        )}
-        
         <div className="flex flex-col">
             <div className="py-10">
                 <VideoPlayer
