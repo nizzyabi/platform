@@ -32,7 +32,31 @@ export const VideoPlayer = ({
     completeOnEnd,
     title,
 }: VideoPlayerProps) => {
-    const [isReady, setIsReady] = useState(false); 
+    const [isReady, setIsReady] = useState(false);
+    const router = useRouter();
+    const confetti = useConfettiStore();
+    
+    const onEnd = async () => {
+        try {
+            if (completeOnEnd) {
+                await axios.put(`/api/courses/${courseId}/chapters/${chapterId}/progress`, {
+                    isCompleted: true,
+                });
+            if (!nextChapterId) {
+                    confetti.onOpen();
+                }
+            
+                toast.success("Progress updated");
+                router.refresh();
+
+                if(nextChapterId) {
+                    router.push(`/course/${courseId}/chapter/${nextChapterId}`);
+                }
+            }
+        } catch {
+            toast.error("Something went wrong");
+        }
+    }
   return (
     <div className="relative aspect-video h-full">
         {!isReady && !isLocked && (
@@ -49,7 +73,7 @@ export const VideoPlayer = ({
                     width={100}
                     height={100}
                 />
-                {/*TODO: ADD LINK TO PAYMENT TO PAY FOR COURSE*/}
+                
             </div>
         )}
         {!isLocked && (
@@ -60,7 +84,7 @@ export const VideoPlayer = ({
                 !isReady && "hidden"
                 )}
                 onCanPlay={() => setIsReady(true)}
-                onEnded={() => {}}
+                onEnded={onEnd}
                 playbackId={playbackId}
                 accent-color="#191919"
                 theme="classic"
