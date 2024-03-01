@@ -245,9 +245,9 @@ export default function Roadmap() {
             {/* Resources */}
             <div data-aos='fade-left' className="space-y-20">
                 {roadmapData.map((item, index) => (
-                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#131212] border border-slate-100/20 shadow-lg shadow-black">
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#131212] shadow-lg shadow-black">
                         <div className="flex items-center justify-between">
-                            <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
+                            <h1 className="text-4xl font-semibold p-3">{item.title}</h1>
                             <TooltipProvider>
                                 <Tooltip>
                                     <TooltipTrigger>
@@ -260,7 +260,7 @@ export default function Roadmap() {
                             </TooltipProvider>
                         </div>
 
-                        <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
+                        <p className="text-center font-medium text-slate-300/40 text-xl">{item.description}</p>
                         <div className="flex justify-center space-x-8">
                             {item.resources.map((resource, resIndex) => (
                                 <Link key={resIndex} href={resource.link}>

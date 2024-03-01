@@ -56,14 +56,14 @@ export const CourseCard = async ({
                         {title}
                     </div>
 
-                    <div className="text-md font-semibold">
+                    <div className="text-md font-medium">
                         {description}
                     </div>
                     
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
-                        <div className="flex items-center gap-x-1 text-blue-500">
-                        <BookMarked width={25} height={25} />
-                            <span className="mt-0.5 font-semibold text-slate-300 ml-1">
+                        <div className="flex items-center gap-x-1 ">
+                        <BookMarked width={20} height={20} className="" />
+                            <span className="mt-0.5 font-semibold text-slate-100 ml-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>

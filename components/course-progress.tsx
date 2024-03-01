@@ -9,7 +9,7 @@ interface CourseProgressProps {
 
 const colorByVariant = {
   default: "text-slate-200",
-  success: "text-emerald-700",
+  success: "text-slate-200/20",
 }
 
 const sizeByVariant = {

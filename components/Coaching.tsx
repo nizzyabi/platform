@@ -73,13 +73,13 @@ export default function Coaching() {
   return (
     <div>
         {/* Title */}
-        <div className="text-center pb-5 pt-[200px]">
-            <h1 className="font-bold text-7xl md:text-5xl pt-3">Coaching</h1>
+        <div className="text-center pb-5 pt-40">
+            <h1 className="font-bold text-7xl ">Coaching</h1>
             <p className="text-lg md:text-xl pt-1">Get personal advice, mentorship, & guidance to learn code faster!</p> 
         </div>
 
         
-        <div className="  flex items-center justify-center space-x-3 px-8 pt-5">
+        <div className="  flex items-center justify-center space-x-3 px-8 pt-20">
           {/* Link to coaching */}
           {coaching.map((item, index) => (
             <Card key={index} className="w-[450px]">
@@ -99,7 +99,7 @@ export default function Coaching() {
               </CardContent>
               <CardFooter className="flex justify-between mt-2">
                 <Button variant="goldHover">
-                  Register
+                  Book a free call
                 </Button>
               </CardFooter>
             </Card>

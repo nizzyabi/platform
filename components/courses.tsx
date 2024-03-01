@@ -27,7 +27,7 @@ export default function Courses() {
     return (
       <div>
           <div className="text-center pt-40">
-              <h1 className="font-bold text-7xl pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
+              <h1 className="font-bold text-7xl  pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
           </div>
           {nizzyuser && 
           <div className="flex items-center justify-center space-x-7">
