@@ -23,7 +23,7 @@ export const CourseProgress = ({
   size,
 }: CourseProgressProps) => {
   return (
-    <div>
+    <div className="pb-3">
       <Progress
         className="mb-2"
         value={value}

@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { Chapter, Course } from "@prisma/client";
 import { formatPrice } from "@/lib/format";
-
+import { BookMarked } from "lucide-react";
 
 interface CourseCardProps {
     id: string;
@@ -61,9 +61,9 @@ export const CourseCard = async ({
                     </div>
                     
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
-                        <div className="flex items-center gap-x-1 text-slate-500">
-                        <Image src="/gilbert_paradise.png" width={16} height={16} alt="paradise" />
-                            <span className="mt-0.5 font-semibold text-slate-300 ml-2">
+                        <div className="flex items-center gap-x-1 text-blue-500">
+                        <BookMarked width={25} height={25} />
+                            <span className="mt-0.5 font-semibold text-slate-300 ml-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>
@@ -73,6 +73,7 @@ export const CourseCard = async ({
                                 variant={progress === 100 ? "success" : "default"}
                                 size="sm"
                                 value={progress}
+                                
                             />
                         ) : (
                             <div>

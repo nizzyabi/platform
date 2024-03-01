@@ -39,7 +39,9 @@ export default function Courses() {
             </Link>
           </div>
           }
+          {/*
           <Search />
+          */}
       </div>
     )
   }
