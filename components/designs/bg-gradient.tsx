@@ -23,7 +23,7 @@ const imagesRow2: ImageInfo[] = [
 const renderImages = (images: ImageInfo[]) => (
   <div className="flex justify-center space-x-7">
     {images.map(({ src, alt, padding }) => (
-      <BackgroundGradient className={`rounded-[22px] max-w-sm flex items-center justify-center ${padding} bg-zinc-900`} key={src}>
+      <BackgroundGradient className={`rounded-[22px] max-w-sm flex items-center justify-center ${padding} bg-[#131212]`} key={src}>
         <Image
           src={src}
           alt={alt}

@@ -56,7 +56,7 @@ export function ThreeD() {
     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 items-start gap-2 pt-10">
       {testimonials.map((testimonial, index) => (
         <CardContainer className="" key={testimonial.username}>
-          <CardBody className="bg-[#191919] relative group/card border-slate-100/20 w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-3 border ">
+          <CardBody className="bg-[#131212] relative group/card border-slate-100/20 w-auto sm:w-[30rem] h-auto rounded-xl px-6 py-3 border ">
             <div className="flex justify-between">
               <CardItem
                   translateZ="50"
