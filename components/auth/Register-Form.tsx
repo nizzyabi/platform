@@ -76,13 +76,12 @@ export const RegisterForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Name</FormLabel>
-                                    <FormControl className="bg-slate-200">
+                                    <FormControl>
                                         <Input 
-                                            placeholder="John Doe"
+                                            placeholder="Tyler Durden"
                                             {...field}
                                             disabled={isPending}
                                             type='name'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -96,13 +95,12 @@ export const RegisterForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
-                                    <FormControl className="bg-slate-200">
+                                    <FormControl>
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -117,13 +115,13 @@ export const RegisterForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
-                                    <FormControl className="bg-slate-200">
+                                    <FormControl>
                                         <Input 
-                                            placeholder="●●●●●●"
+                                            placeholder="••••••••"
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/30"
+                                            
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -138,15 +136,16 @@ export const RegisterForm = () => {
                     <FormSuccess message={success} />
 
                     {/* Submit Button */}
-                    <Button 
-                        disabled={isPending}
-                        type="submit"
-                        variant="goldHover"
-                    className="w-full text-lg font-bold"
-                    >
-                        Register
+                    <Button  disabled={isPending}
+                        type="submit" className="p-[3px] relative font-semibold w-full">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl w-full" />
+                        <div className="px-8 py-2  w-full bg-zinc-800 rounded-xl  relative group transition duration-200 text-white hover:bg-transparent text-lg">
+                            Register &rarr;
+                        </div>
                     </Button>
-                    <h1 className="text-center font-semibold">or</h1>
+
+                    
+                    
                 </form>
             </Form>
         </CardWrapper>

@@ -12,14 +12,14 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         discord: " hover:opacity-70 rounded-full my-4 bg-[#738ADB] text-slate-100",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         goldHover: "border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 font-medium hover: border-none",
-        basic: 'bg-slate-100 text-black border border-[#1e1e1e] hover:text-slate-100 hover:bg-[#1e1e1e] hover:text-slate-100 hover:border hover:border-slate-100 my-3 rounded-full',
+        basic: 'bg-slate-100 text-black border border-[#1e1e1e] hover:text-slate-100 hover:bg-[#1e1e1e] hover:text-slate-100 hover:border hover:border-slate-100/20 my-3 rounded-full',
         pinkHover:"border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 font-medium hover: border-none",
         blueHover:"border-2 border-white rounded-full my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 font-medium hover: border-none",
         iconButton:"rounded-full my-3 bg-[#191919] text-white hover:text-slate-100 hover:opacity-75 font-medium"

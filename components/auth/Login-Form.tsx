@@ -20,7 +20,7 @@ import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-
+import { IconArrowNarrowRight } from '@tabler/icons-react';
 export const LoginForm = () => {
     // Search Params
     const searchParams = useSearchParams();
@@ -79,13 +79,12 @@ export const LoginForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
-                                    <FormControl className="bg-slate-200">
+                                    <FormControl>
                                         <Input 
                                             {...field}
                                             placeholder="john@gmail.com"
                                             disabled={isPending}
                                             type='email'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
                                         />
                                     </FormControl>
                                     
@@ -100,14 +99,14 @@ export const LoginForm = () => {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
-                                    <FormControl className="bg-slate-200">
+                                    <FormControl>
                                         <Input 
-                                            placeholder="●●●●●●"
+                                            placeholder="••••••••"
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35"
-                                        />
+                                            
+                                            />
                                     </FormControl>
                                     <Button
                                         size="sm"
@@ -132,16 +131,15 @@ export const LoginForm = () => {
                     
 
                     {/* Submit Button */}
-                    <Button 
-                        disabled={isPending}
-                        type="submit"
-                        variant="goldHover"
-                        className="w-full text-lg font-bold"
-                    >
-                        Login
+                    <Button  disabled={isPending}
+                        type="submit" className="p-[3px] relative font-semibold w-full">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl w-full" />
+                        <div className="px-8 py-2  w-full bg-zinc-800 rounded-xl  relative group transition duration-200 text-white hover:bg-transparent text-lg">
+                            Login &rarr;
+                        </div>
                     </Button>
                     
-                    <h1 className="text-center">or</h1>
+                    
                 </form>
                 
             </Form>
