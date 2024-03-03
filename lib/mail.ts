@@ -15,6 +15,13 @@ export const sendVerificationEmail = async (
         subject: "Confirm your email",
         html: `<p>Click <a href="${confirmLink}">here</a> to confirm email.</p>`
     })
+
+    resend.contacts.create({
+        email: email,
+        audience_id: 'ed288a7a-23ef-4f32-a2f1-3dc887da7a1c'
+    })
+
+    
 }
 // Send password reset token to user
 export const sendPasswordResetEmail = async (

@@ -9,6 +9,8 @@ import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
 
+
+
 export default function LandingPage() {
   useEffect(() => {
     AOS.init({
@@ -19,7 +21,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className='extra pt-40'>
+    <div className='extra pt-40 landing'>
       <div className='mb-20 font-extrabold '>
         <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center mb-4'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
@@ -46,6 +48,7 @@ export default function LandingPage() {
           <div className='text-center pt-64'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
           </div>
+
           <ThreeD />
         </div>
       </div>

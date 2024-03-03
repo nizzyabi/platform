@@ -6,12 +6,8 @@ import { db } from "@/lib/db";
 import { CourseProgress } from "@/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
-import { CourseItem } from "./course-item";
-
 import { ScrollArea } from "@/components/ui/scrollbar";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { CourseMobileSidebar } from "./course-mobile-sidebar";
+
 
 interface CourseSidebarProps {
   course: Course & {
@@ -19,7 +15,7 @@ interface CourseSidebarProps {
       userProgress: UserProgress[] | null;
     })[]
   };
-  progressCount: any;
+  progressCount: number;
 };
 
   export const CourseSidebar = async ({
@@ -35,7 +31,7 @@ interface CourseSidebarProps {
     const purchase = await db.purchase.findUnique({
       where: {
         userId_courseId: {
-          userId: session.user.id,
+          userId: session.user.id ?? '',
           courseId: course.id,
         }
       }

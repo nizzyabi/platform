@@ -3,6 +3,7 @@ import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
+
 import { db } from "@/lib/db";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,25 +47,27 @@ const CourseInfoLayout = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id,
+                userId: session.user.id ?? '',
                 courseId: params.courseId
             }
         }
     });
     
+    const imageUrl = course?.imageUrl;
     return (
         <div className="pt-40 px-12 pb-40 space-y-10">
 
           <div className="text-center pb-8">
             <h1 className="text-7xl font-bold mb-3">{course?.title}</h1>
             <p className="text-xl opacity-50 font-medium pb-8">{course?.description}</p>
+            
             <div className="flex items-center justify-center pb-4">
                 <Image 
                     src={`${course?.imageUrl}`} 
                     alt='Image' 
                     width={800} 
                     height={800} 
-                    className="rounded-xl shadow-lg shadow-black"
+                    className="rounded shadow-lg shadow-black"
                 />
             </div>
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
@@ -72,6 +75,14 @@ const CourseInfoLayout = async ({
                 Go To Course
               </Button>
             </Link>
+          </div>
+
+          <div>
+            <Preview value={course?.issue!}/>
+          </div>
+
+          <div>
+            <Preview value={course?.solution!}/>
           </div>
 
             <div className="flex items-center justify-center pb-4 space-x-4">
@@ -107,20 +118,25 @@ const CourseInfoLayout = async ({
               </div>
             </div>
 
-
-            <div>
-              <h1 className="text-center text-5xl font-semibold">Chapters</h1>
-              <div className="grid grid-cols-3 pt-12 justify-items-center">
-                {course?.chapters.map((chapter) => (
-                  <div key={chapter.id} className="border border-slate-100/20 bg-[#191919] rounded py-5 w-[250px]">
-                    <h1 className="text-2xl font-semibold text-center">{chapter.title}</h1>
-                    <div className="flex items-center justify-center font-medium">
-                      <Preview value={chapter?.description!} />
-                    </div>
-                  </div>
-                ))}
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center">
+                <h1 className="text-center text-5xl font-semibold my-8">Chapters</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {course?.chapters.map((chapter) => (
+                    <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
+                      <div className="bg-[#131212] shadow-lg shadow-black/50 rounded-xl w-[300px] p-6 m-4 flex flex-col hover:bg-[#1a1a1a] transition duration-300 ease-in-out">
+                        <h2 className="text-2xl font-bold text-white mb-4">{chapter.title}</h2>
+                        <p className="opacity-50">{chapter.description}</p>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
+              </div>
             </div>
+            
+            <div className="text-4xl">
+            <Preview value={course?.bonus!}/>
+          </div>
         </div>
     )
 }

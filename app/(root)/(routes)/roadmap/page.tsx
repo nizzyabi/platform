@@ -229,7 +229,7 @@ export default function Roadmap() {
       }, []);
 
     return (
-        <div className="pt-40 pb-40">
+        <div className="pt-40 pb-40 landing">
             {/* Roadmap Title */}
             <div data-aos='fade-right'>
                 <h1 className="text-5xl text-center font-bold "> 
@@ -245,22 +245,22 @@ export default function Roadmap() {
             {/* Resources */}
             <div data-aos='fade-left' className="space-y-20">
                 {roadmapData.map((item, index) => (
-                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#1e1e1e] shadow-lg shadow-black">
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#131212] shadow-lg shadow-black">
                         <div className="flex items-center justify-between">
-                            <h1 className="text-3xl font-semibold p-3">{item.title}</h1>
+                            <h1 className="text-4xl font-semibold p-3">{item.title}</h1>
                             <TooltipProvider>
                                 <Tooltip>
                                     <TooltipTrigger>
                                         <Image src={item.difficulty} alt="difficulty" width={40} height={40} />
                                     </TooltipTrigger>
-                                    <TooltipContent className="bg-[#191919] p-3 rounded">
+                                    <TooltipContent className="bg-[#131212] p-3 rounded">
                                         <p className="font-semibold">Level: {item.difficultyTitle}</p>
                                     </TooltipContent>
                                 </Tooltip>
                             </TooltipProvider>
                         </div>
 
-                        <p className="text-center font-semibold text-gray-300/90 text-lg lg:text-xl">{item.description}</p>
+                        <p className="text-center font-medium text-slate-300/40 text-xl">{item.description}</p>
                         <div className="flex justify-center space-x-8">
                             {item.resources.map((resource, resIndex) => (
                                 <Link key={resIndex} href={resource.link}>

@@ -4,7 +4,8 @@ import { CourseProgress } from "@/components/course-progress";
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { Chapter, Course } from "@prisma/client";
-
+import { formatPrice } from "@/lib/format";
+import { BookMarked } from "lucide-react";
 
 interface CourseCardProps {
     id: string;
@@ -32,7 +33,7 @@ export const CourseCard = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id,
+                userId: session.user.id ?? '',
                 courseId: id
             }
         }
@@ -40,7 +41,7 @@ export const CourseCard = async ({
     return (
         
         <Link href={purchase ? `course/${id}` : `courses/${id}/info`}> 
-            <div className="group hover:opacity-60 transition duration-300 overflow-hidden rounded h-full bg-[#111111]">
+            <div className="group hover:opacity-60 transition duration-300 overflow-hidden  h-full bg-[#131212] rounded">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
@@ -55,14 +56,14 @@ export const CourseCard = async ({
                         {title}
                     </div>
 
-                    <div className="text-md font-semibold">
+                    <div className="text-md font-medium">
                         {description}
                     </div>
                     
                     <div className="flex items-center gap-x-2 text-sm md:text-xs">
-                        <div className="flex items-center gap-x-1 text-slate-500">
-                        <Image src="/gilbert_paradise.png" width={16} height={16} alt="paradise" />
-                            <span className="mt-0.5 font-semibold text-slate-300 ml-2">
+                        <div className="flex items-center gap-x-1 ">
+                        <BookMarked width={20} height={20} className="" />
+                            <span className="mt-0.5 font-semibold text-slate-100 ml-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>
@@ -72,10 +73,11 @@ export const CourseCard = async ({
                                 variant={progress === 100 ? "success" : "default"}
                                 size="sm"
                                 value={progress}
+                                
                             />
                         ) : (
                             <div>
-
+                                
                             </div>
                         )}
                     </div>

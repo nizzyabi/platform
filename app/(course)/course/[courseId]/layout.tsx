@@ -47,7 +47,7 @@ const CourseLayout = async ({
     return redirect("/");
   }
 
-  const progressCount = getProgress(session.user.id, course.id)
+  const progressCount = getProgress(session.user.id ?? '', course.id)
 
   return (
     <div className="h-full">
@@ -64,7 +64,7 @@ const CourseLayout = async ({
         <div className="hidden md:flex h-full w-40 pt-20 flex-col fixed inset-y-0 ">
           <CourseSidebar 
             course={course}
-            progressCount={progressCount}
+            progressCount={await progressCount}
           />
         </div>
       </div>

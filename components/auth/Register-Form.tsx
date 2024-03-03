@@ -82,6 +82,10 @@ export const RegisterForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='name'
+<<<<<<< HEAD
+=======
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35 font-medium"
+>>>>>>> f569afabd03dcdb6d032d2720aa6143c4f79a890
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -98,9 +102,13 @@ export const RegisterForm = () => {
                                     <FormControl>
                                         <Input 
                                             {...field}
-                                            placeholder="john@gmail.com"
+                                            placeholder="John@gmail.com"
                                             disabled={isPending}
                                             type='email'
+<<<<<<< HEAD
+=======
+                                            className="rounded shadow-sm text-sm text-[#191919] shadow-black placeholder:text-black/35 font-medium"
+>>>>>>> f569afabd03dcdb6d032d2720aa6143c4f79a890
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -121,7 +129,11 @@ export const RegisterForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='password'
+<<<<<<< HEAD
                                             
+=======
+                                            className="rounded shadow-sm text-xs text-[#191919] shadow-black placeholder:text-black/30"
+>>>>>>> f569afabd03dcdb6d032d2720aa6143c4f79a890
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -136,6 +148,7 @@ export const RegisterForm = () => {
                     <FormSuccess message={success} />
 
                     {/* Submit Button */}
+<<<<<<< HEAD
                     <Button  disabled={isPending}
                         type="submit" className="p-[3px] relative font-semibold w-full">
                         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl w-full" />
@@ -146,6 +159,17 @@ export const RegisterForm = () => {
 
                     
                     
+=======
+                    <Button 
+                        disabled={isPending}
+                        type="submit"
+                        variant="goldHover"
+                    className="w-full text-lg font-semibold"
+                    >
+                        Register
+                    </Button>
+                    <h1 className="text-center font-medium">or</h1>
+>>>>>>> f569afabd03dcdb6d032d2720aa6143c4f79a890
                 </form>
             </Form>
         </CardWrapper>

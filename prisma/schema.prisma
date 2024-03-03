@@ -78,9 +78,15 @@ model Course {
   title String @db.Text
   description String? @db.Text
   imageUrl String? @db.Text
+
   language String?
   language2 String?
   language3 String?
+
+  issue String?
+  solution String?
+  bonus String?
+
   price Float?
   isPublished Boolean @default(false)
   learningOutcome String? 

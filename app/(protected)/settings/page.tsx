@@ -26,12 +26,12 @@ const SettingsPage = () => {
    
     
     return (
-        <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8">
+        <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8 landing">
             <Tabs defaultValue="account" className="sm:w-[250px] md:w-[400px] lg:w-[600px]">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="account">Account</TabsTrigger>
 
-                    <TabsTrigger value="payment">Payment</TabsTrigger>
+                    <TabsTrigger value="purchases">Purchases</TabsTrigger>
                 </TabsList>
                 <TabsContent value="account">
                     <Card>
@@ -61,23 +61,20 @@ const SettingsPage = () => {
                     </Card>
                 </TabsContent>
                 {/*TODO: Payment history & invoices*/}
-                <TabsContent value="payment">
+                <TabsContent value="purchases">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Payments</CardTitle>
+                            <CardTitle>Purchases</CardTitle>
                                 <CardDescription>
-                                    Manage your payments here.
+                                    Manage your purchases here.
                                 </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2">
-                            <div className="space-y-1">
+                            <div className="">
                                 
-                                <Button type='submit' variant="pinkHover">Payment History</Button>
+                                <Button type='submit' variant="pinkHover">Courses purchased</Button>
                             </div>
-                            <div className="space-y-2">
-                                
-                                <Button type='submit' variant="blueHover" >Invoices</Button>
-                            </div>
+                            
                         </CardContent>
                         
                     </Card>
