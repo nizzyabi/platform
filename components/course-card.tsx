@@ -3,10 +3,8 @@ import Link from "next/link";
 import { CourseProgress } from "@/components/course-progress";
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
-import { Chapter, Course } from "@prisma/client";
-import { formatPrice } from "@/lib/format";
-import { BookMarked } from "lucide-react";
-
+import { Course } from "@prisma/client";
+import { IconBook2 } from "@tabler/icons-react";
 interface CourseCardProps {
     id: string;
     title: string;
@@ -60,9 +58,9 @@ export const CourseCard = async ({
                         {description}
                     </div>
                     
-                    <div className="flex items-center gap-x-2 text-sm md:text-xs">
+                    <div className="flex items-center gap-x-2 text-md md:text-sm text-slate-200">
                         <div className="flex items-center gap-x-1 ">
-                        <BookMarked width={20} height={20} className="" />
+                        <IconBook2 width={20} height={20}  />
                             <span className="mt-0.5 font-semibold text-slate-100 ml-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
