@@ -1,9 +1,8 @@
-import { Category, Course, Purchase } from '@prisma/client';
+import { Course, Purchase } from '@prisma/client';
 import { CourseCard } from '@/components/course-card';
 
 
-type CourseWithProgressWithCategory = Course & {
-    category: Category | null;
+type CourseWithProgress = Course & {
     progress: number | null;
     chapters: { id: string }[];
 }
@@ -15,7 +14,7 @@ interface CoursesPurchased {
 }
 
 interface CoursesListProps {
-    items: CourseWithProgressWithCategory[];
+    items: CourseWithProgress[];
 }
 
 export const CoursesList = async ({
