@@ -57,7 +57,7 @@ const ChapterIdPage = async ({
                
             </div>
             <div>
-                <div className="p-4 flex flex-col md:flex-row items-center justify-between">
+                <div className="mt-3 flex flex-col md:flex-row items-center justify-between ml-2">
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
                 
                 {purchase ? (
@@ -75,7 +75,7 @@ const ChapterIdPage = async ({
                 )}
                 </div>
                 
-                <div className="flex justify-end space-x-8">
+                <div className="flex justify-end space-x-8 pt-8">
                     <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
                         <FaGithub className="h-12 w-12" />
                     </Link>
