@@ -127,6 +127,7 @@ model Chapter {
   id String @id @default(uuid())
   title String
   description String? @db.Text
+  vimeoVideo String?
   videoUrl String? @db.Text
   position Int
   isPublished Boolean @default(false)
