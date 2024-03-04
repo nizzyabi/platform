@@ -19,11 +19,7 @@ export async function PATCH (
                 userId: session.user.id
             },
             include: {
-                chapters: {
-                    include: {
-                        muxData: true,
-                    }
-                }
+                chapters: true
             }
         });
 

@@ -2,10 +2,10 @@ import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { Banner } from "@/components/banner";
 import { redirect } from "next/navigation";
-import { VideoPlayer } from "./_components/video-player";
+
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { Preview } from "@/components/preview";
-import { File, Github } from "lucide-react";
+import { File, Github, Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
 import type { SVGProps } from 'react';
 import { FaDiscord } from "react-icons/fa6";
@@ -27,7 +27,6 @@ const ChapterIdPage = async ({
     const {
         chapter,
         course,
-        muxData,
         attachments,
         nextChapter,
         userProgress,
@@ -48,10 +47,22 @@ const ChapterIdPage = async ({
 
   return (
     <div className="pt-8">
+        {isLocked ? (
+            <div className="locked bg-[#191919] flex items-center justify-center">
+                <Lock className="text-white"/>
+            </div>
+        ) : (
+        // This is the video player which will be shown when the video is not locked
         <div className="responsive-iframe-container">
-  <iframe src={`${chapter.vimeoVideo}`} allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="stripecam">
-  </iframe>
-</div>
+          <iframe 
+            src={`${chapter.vimeoVideo}`} 
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+            title="Video"
+            
+          >
+          </iframe>
+        </div>
+      )}
         <div className="flex flex-col">
             <div className="">
                
