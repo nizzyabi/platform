@@ -91,7 +91,7 @@ const ChapterIdPage = async ({
                         <FaGithub className="h-12 w-12" />
                     </Link>
 
-                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                    <Link href='https://discord.gg/nizar' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
                         <FaDiscord className="h-12 w-12" />
                     </Link>
 

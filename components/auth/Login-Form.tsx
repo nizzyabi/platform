@@ -14,13 +14,13 @@ import {
 import { LoginSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/Form-Error";
-import { FormSuccess } from "@/components/Form-Success";
 import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { IconArrowNarrowRight } from '@tabler/icons-react';
+import { FormError } from "../Form-Error";
+import { FormSuccess } from "../Form-Success";
 export const LoginForm = () => {
     // Search Params
     const searchParams = useSearchParams();

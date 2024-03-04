@@ -93,6 +93,10 @@ model Course {
 
 
   chapters Chapter[]
+
+  githubLink String?
+  notionLink String?
+  
   attachments Attachment[]
   purchases Purchase[]
 

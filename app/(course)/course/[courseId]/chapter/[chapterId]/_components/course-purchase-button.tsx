@@ -32,9 +32,14 @@ export const CoursePurchaseButton = ({
     }
     return (
           
-            <Button variant="basic" className="w-full md:w-auto" onClick={onClick} disabled={isLoading}>
-                Purchase course for {formatPrice(price)}
-            </Button>
+        <Button className="relative inline-flex h-12 overflow-hidden rounded-xl p-[1px] hover:opacity-50 ">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-[#191919] px-3 py-1 text-md font-bold text-white backdrop-blur-3xl">
+        Purchase course for {formatPrice(price)}
+        </span>
+        </Button>
+
+
         
     )
 }

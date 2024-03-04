@@ -39,8 +39,6 @@ export const{
       
       if(!exisitingUser?.emailVerified) return false;
 
-      //TODO: add 2FA
-
       return true;
     },
     // token & session
