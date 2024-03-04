@@ -16,10 +16,9 @@ export const Social = () => {
     }
     return (
         <div className="flex items-center justify-center   space-x-3 pr-12 pt-7">
-
             <Button
                 size="lg"
-                className='px-[65px] rounded-xl border-none  bg-zinc-800 text-md'
+                className='px-[65px] rounded-xl border-none hover:opacity-50 bg-zinc-800 text-md'
                 variant="outline"
                 onClick={() => onClick('google')}
             >
@@ -28,7 +27,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-                className='px-[68px] font-medium rounded-xl border-none text-md bg-zinc-800'
+                className='px-[68px] font-medium hover:opacity-50 rounded-xl border-none text-md bg-zinc-800'
                 variant="outline"
                 onClick={() => onClick('github')}
             >

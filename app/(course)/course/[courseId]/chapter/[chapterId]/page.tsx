@@ -5,8 +5,13 @@ import { redirect } from "next/navigation";
 import { VideoPlayer } from "./_components/video-player";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { Preview } from "@/components/preview";
-import { File } from "lucide-react";
+import { File, Github } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
+import type { SVGProps } from 'react';
+import { FaDiscord } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { SiNotion } from "react-icons/si";
+import Link from "next/link";
 
 const ChapterIdPage = async ({
     params
@@ -42,18 +47,14 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div>
+    <div className="pt-8">
+        <div className="responsive-iframe-container">
+  <iframe src={`${chapter.vimeoVideo}`} allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="stripecam">
+  </iframe>
+</div>
         <div className="flex flex-col">
-            <div className="py-10">
-                <VideoPlayer
-                    chapterId={params.chapterId}
-                    title={chapter.title}
-                    courseId={params.courseId}
-                    nextChapterId={nextChapter?.id}
-                    isLocked={isLocked}
-                    completeOnEnd={completeOnEnd}
-                    playbackId={muxData?.playbackId!}
-                />
+            <div className="">
+               
             </div>
             <div>
                 <div className="p-4 flex flex-col md:flex-row items-center justify-between">
@@ -73,6 +74,22 @@ const ChapterIdPage = async ({
                     />
                 )}
                 </div>
+                
+                <div className="flex justify-end space-x-8">
+                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                        <FaGithub className="h-12 w-12" />
+                    </Link>
+
+                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                        <FaDiscord className="h-12 w-12" />
+                    </Link>
+
+                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-50">
+                        <SiNotion className="h-10 w-10" />
+                    </Link>
+                </div>
+
+
                 <div>
                     <Preview value={chapter.description!} />
                 </div>
@@ -96,6 +113,12 @@ const ChapterIdPage = async ({
                 )}
             </div>
         </div>
+
+       
+
+
+        
+        
     </div>
   )
 }

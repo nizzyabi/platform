@@ -5,7 +5,6 @@ import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
-import { CategoryForm } from "./_components/category-form";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import Link from "next/link";
@@ -69,16 +68,11 @@ const CoursesIdPage = async ({
     course.language,
     course.language2,
     course.language3,
-    course.categoryId,
     course.chapters.some(chapter => chapter.isPublished)
   ];
 
   // categories
-  const categories = await db.category.findMany({
-    orderBy: {
-      name: "asc",
-    }
-  })
+ 
   // Get Total Fields
   const totalFields = requiredFields.length;
   // total that dont equal false
@@ -149,14 +143,6 @@ const CoursesIdPage = async ({
               <ImageForm
                 initialData={course}
                 courseId={course.id}
-              />
-              <CategoryForm
-                initialData={course}
-                courseId={course.id}
-                options={categories.map((category) => ({
-                  label: category.name,
-                  value: category.id,
-                }))}
               />
               <LanguageImageForm
                 initialData={course}

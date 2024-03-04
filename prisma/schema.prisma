@@ -90,8 +90,7 @@ model Course {
   price Float?
   isPublished Boolean @default(false)
   learningOutcome String? 
-  categoryId String?
-  category Category? @relation(fields: [categoryId], references: [id])
+
 
   chapters Chapter[]
   attachments Attachment[]
@@ -100,14 +99,9 @@ model Course {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([categoryId])
 }
 
-model Category {
-  id String @id @default(uuid())
-  name String @unique
-  courses Course[]
-}
+
 
 model Attachment {
   id String @id @default(uuid())
@@ -127,6 +121,7 @@ model Chapter {
   id String @id @default(uuid())
   title String
   description String? @db.Text
+  vimeoVideo String?
   videoUrl String? @db.Text
   position Int
   isPublished Boolean @default(false)

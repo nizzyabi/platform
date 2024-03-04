@@ -8,7 +8,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
+import { Chapter } from "@prisma/client";
 import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import {
   Form,
@@ -19,23 +19,26 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Combobox } from "@/components/ui/combobox";
+import { Editor } from "@/components/editor";
+import { init } from "aos";
+import { Preview } from "@/components/preview";
+import { Input } from "@/components/ui/input";
 
-interface CategoryFormProps {
-  initialData: Course;
+interface VimeoVideoFormProps {
+  initialData: Chapter;
   courseId: string;
-  options: { label: string; value: string; }[];
+  chapterId: string;
 };
 
 const formSchema = z.object({
-  categoryId: z.string().min(1),
+  vimeoVideo: z.string().min(1),
 });
 
-export const CategoryForm = ({
+export const VimeoVideoForm = ({
   initialData,
   courseId,
-  options,
-}: CategoryFormProps) => {
+  chapterId
+}: VimeoVideoFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -45,17 +48,16 @@ export const CategoryForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      categoryId: initialData?.categoryId || ""
+        vimeoVideo: initialData?.vimeoVideo || ""
     },
   });
-
 
   const { isSubmitting, isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
+      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, values);
+      toast.success("Chapter updated");
       toggleEdit();
       router.refresh();
     } catch {
@@ -63,32 +65,24 @@ export const CategoryForm = ({
     }
   }
 
-  const selectedOption = options.find((option) => option.value === initialData.categoryId);
-
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Course Category
+        Vimeo Video Link
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
               <AutoFixNormalIcon className="text-slate-200" />
-              
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        <div className="flex justify-between">
-        <p className={cn(
-          "text-sm mt-2",
-          !initialData.categoryId && "text-slate-300 italic"
-        )}>
-          {selectedOption?.label || "No category"}
+        <p className="text-sm mt-2">
+          {initialData.vimeoVideo}
         </p>
-        </div>
       )}
       {isEditing && (
         <Form {...form}>
@@ -98,12 +92,13 @@ export const CategoryForm = ({
           >
             <FormField
               control={form.control}
-              name="categoryId"
+              name="vimeoVideo"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
-                  <Combobox
-                      options={options}
+                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                    <Input
+                      disabled={isSubmitting}
+                      placeholder="e.g. 'Introduction to the course'"
                       {...field}
                     />
                   </FormControl>
@@ -111,14 +106,14 @@ export const CategoryForm = ({
                 </FormItem>
               )}
             />
-              <Button
-                disabled={!isValid || isSubmitting}
-                type="submit"
-                className=" flex"
-                variant="basic"
-              >
-                Save
-              </Button>
+            <Button
+              disabled={!isValid || isSubmitting}
+              type="submit"
+              className=" flex"
+              variant="basic"
+            >
+              Save
+            </Button>
           </form>
         </Form>
       )}
