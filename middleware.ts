@@ -33,14 +33,10 @@ export default auth((req):any => {
   }
   // if user is not logged in and route is not public, redirect to home page
   if (!isLoggedIn && !isPublicRoute) {
-    return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
-  }
+    return Response.redirect(new URL('/auth/register', nextUrl));
+}
   return null;
 })
-
-
-
-
 
 // Optionally, don't invoke Middleware on some paths
 export const config = {
