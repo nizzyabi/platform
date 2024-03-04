@@ -47,18 +47,14 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div>
+    <div className="pt-8">
+        <div className="responsive-iframe-container">
+  <iframe src={`${chapter.vimeoVideo}`} allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="stripecam">
+  </iframe>
+</div>
         <div className="flex flex-col">
-            <div className="py-10">
-                <VideoPlayer
-                    chapterId={params.chapterId}
-                    title={chapter.title}
-                    courseId={params.courseId}
-                    nextChapterId={nextChapter?.id}
-                    isLocked={isLocked}
-                    completeOnEnd={completeOnEnd}
-                    playbackId={muxData?.playbackId!}
-                />
+            <div className="">
+               
             </div>
             <div>
                 <div className="p-4 flex flex-col md:flex-row items-center justify-between">

@@ -38,7 +38,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="max-w-7xl mx-auto pt-10">
+      <div className="max-w-7xl mx-auto mt-10">
       <div className="flex flex-col">
         
         {purchase && (
@@ -52,7 +52,7 @@ interface CourseSidebarProps {
         )}
       </div>
       
-     <ScrollArea className="h-72 w-[290px] rounded">
+     <ScrollArea className="h-72 w-[290px]">
       <div className="flex flex-col w-full pt-6">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem

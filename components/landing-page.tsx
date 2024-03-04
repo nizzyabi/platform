@@ -57,6 +57,7 @@ export default function LandingPage() {
           <p>Copyright © 2024 - All right reserved by NizzyABI Corp.</p>
         </aside>
       </footer>
+      
     </div>
   )
 }
