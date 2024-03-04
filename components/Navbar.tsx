@@ -56,7 +56,7 @@ export default function Navbar() {
                     </motion.div>
                 
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
-                        <Link href="/roadmap">
+                        <Link href="https://dicord.gg/self-taught-devs">
                             <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Community</p>
                         </Link>
                         <Link href="/roadmap">
