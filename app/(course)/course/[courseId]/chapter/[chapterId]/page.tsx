@@ -31,6 +31,8 @@ const ChapterIdPage = async ({
         nextChapter,
         userProgress,
         purchase,
+        notionLink,
+        githubLink
     } = await getChapter({
         userId: session.user.id ?? '',
         courseId: params.courseId,
@@ -87,7 +89,7 @@ const ChapterIdPage = async ({
                 </div>
                 
                 <div className="flex justify-end space-x-8 pt-8">
-                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                    <Link href={`${course.githubLink}`} className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
                         <FaGithub className="h-12 w-12" />
                     </Link>
 
@@ -95,7 +97,7 @@ const ChapterIdPage = async ({
                         <FaDiscord className="h-12 w-12" />
                     </Link>
 
-                    <Link href='' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-50">
+                    <Link href={`${course.notionLink}`} className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-50">
                         <SiNotion className="h-10 w-10" />
                     </Link>
                 </div>

@@ -131,8 +131,6 @@ model Chapter {
   isPublished Boolean @default(false)
   isFree Boolean @default(false)
 
-  
-
   courseId String
   course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 

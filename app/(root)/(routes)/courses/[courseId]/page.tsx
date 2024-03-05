@@ -17,6 +17,8 @@ import { Language3ImageForm } from "./_components/language-image3";
 import { IssueForm } from "./_components/issue";
 import { SolutionForm } from "./_components/solution";
 import { BonusForm } from "./_components/bonuses";
+import { NotionForm } from "./_components/notion-link";
+import { GithubForm } from "./_components/github-link";
 const CoursesIdPage = async ({
   params
 }: {
@@ -68,6 +70,8 @@ const CoursesIdPage = async ({
     course.language,
     course.language2,
     course.language3,
+    course.githubLink,
+    course.notionLink,
     course.chapters.some(chapter => chapter.isPublished)
   ];
 
@@ -217,6 +221,20 @@ const CoursesIdPage = async ({
                 initialData={course}
                 courseId={course.id}
               />
+
+              <div>
+                <GithubForm
+                  courseId={course.id}
+                  initialData={course}
+                />
+              </div>
+
+              <div>
+                <NotionForm
+                  initialData={course}
+                  courseId={course.id}
+                />
+              </div>
           </div>
         </div>
       </div>

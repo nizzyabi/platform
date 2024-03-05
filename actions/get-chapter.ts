@@ -29,6 +29,8 @@ export const getChapter = async ({
       },
       select: {
         price: true,
+        notionLink: true,
+        githubLink: true
       }
     });
 
@@ -86,6 +88,8 @@ export const getChapter = async ({
       nextChapter,
       userProgress,
       purchase,
+      notionLink: course.notionLink,
+      githubLink: course.githubLink,
     };
   } catch (error) {
     console.log("[GET_CHAPTER]", error);
@@ -96,6 +100,8 @@ export const getChapter = async ({
       nextChapter: null,
       userProgress: null,
       purchase: null,
+      notionLink: null,
+      githubLink: null
     }
   }
 }
