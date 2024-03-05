@@ -116,7 +116,7 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
 .locked {
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  
+
   overflow: hidden;
 }
 

@@ -38,7 +38,7 @@ export const Sidebar = () => {
     return (
         <div className="space-y-4 flex flex-col h-full text-primary mt-8 ">
             
-        <div className=" flex flex-1 justify-center">
+        <div className="">
             
         {/* Mapping through each object of the route variable data. */}
         <div className="space-y-2">
@@ -47,15 +47,15 @@ export const Sidebar = () => {
                     href={route.href}
                     key={route.href} 
                                 className={cn(
-                                "text-slate-100 text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:opacity-50 transition rounded"
+                                "text-slate-100 text-sm group flex py-3 w-full justify-start font-medium cursor-pointer hover:opacity-50 transition rounded"
                                 ,
                                 pathname === route.href && "bg-slate-100/30 opacity-7"
                     )}
                      >
                     {/* Design & display icon & label */}
-                    <div className="flex flex-col gap-y-2 items-center flex-1">
-                        <route.icon className="h-5 w-5"/>
-                        {route.label}
+                    <div className="flex gap-y-2  ">
+                        <route.icon className="h-7 w-7 mr-3"/>
+                        <p className="mt-1 text-lg font-medium">{route.label}</p>
                     </div>
                     </Link>
                     ))}

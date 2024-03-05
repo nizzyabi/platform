@@ -11,6 +11,7 @@ import type { SVGProps } from 'react';
 import { FaDiscord } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
+
 import Link from "next/link";
 
 const ChapterIdPage = async ({
@@ -50,8 +51,14 @@ const ChapterIdPage = async ({
   return (
     <div className="pt-8">
         {isLocked ? (
-            <div className="locked bg-[#191919] flex items-center justify-center">
-                <Lock className="text-white"/>
+            <div className=" bg-[#191919] relative aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
+                    <Lock className="h-8 w-8" />
+                    <p className="text-lg">
+                        Purchase course to unlock
+                    </p>
+                </div>
+
             </div>
         ) : (
         // This is the video player which will be shown when the video is not locked
@@ -89,16 +96,17 @@ const ChapterIdPage = async ({
                 </div>
                 
                 <div className="flex justify-end space-x-8 pt-8">
-                    <Link href={`${course.githubLink}`} className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                    <Link href={`${course.githubLink}`} className="border border-slate-100/20 bg-[#131212] flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
                         <FaGithub className="h-12 w-12" />
                     </Link>
 
-                    <Link href='https://discord.gg/nizar' className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
+                    <Link href='https://discord.gg/nizar' className="border border-slate-100/20 bg-[#131212] flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-50">
                         <FaDiscord className="h-12 w-12" />
                     </Link>
 
-                    <Link href={`${course.notionLink}`} className="border border-slate-100/20 bg-zinc-800 flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-50">
+                    <Link href={`${course.notionLink}`} className="border border-slate-100/20 bg-[#131212] flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-50">
                         <SiNotion className="h-10 w-10" />
+                        <p></p>
                     </Link>
                 </div>
 
