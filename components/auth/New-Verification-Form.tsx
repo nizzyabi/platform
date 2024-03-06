@@ -1,6 +1,6 @@
 "use client";
 
-import { CardWrapper } from "@/components/auth/Card-Wrapper";
+import { CardWrapper } from "@/components/auth/card-wrapper";
 import { newVerification } from "@/actions/new-verification";
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react";

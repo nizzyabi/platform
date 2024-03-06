@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import UserButton from './user-button';
-import { Features } from './menuitems';
 import { MobileSidebar } from "@/components/mobile-sidebar"
+
 export default function Navbar() {
+
     const [isHovered, setIsHovered] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
     useEffect(() => {
@@ -20,6 +21,7 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
     const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
     
     return (

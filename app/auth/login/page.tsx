@@ -1,4 +1,4 @@
-import { LoginForm } from '@/components/auth/Login-Form'
+import { LoginForm } from '@/components/auth/login-form'
 
 function LoginPage() {
   return (

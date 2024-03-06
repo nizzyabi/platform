@@ -1,13 +1,10 @@
 import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
-import { Banner } from "@/components/banner";
 import { redirect } from "next/navigation";
-
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { Preview } from "@/components/preview";
-import { File, Github, Lock } from "lucide-react";
+import { File, Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
-import type { SVGProps } from 'react';
 import { FaDiscord } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";

@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Circle } from "lucide-react";
+import { Circle } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { FaLock } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
@@ -21,10 +21,12 @@ export const CourseSidebarItem = ({
   courseId,
   isLocked,
 }: CourseSidebarItemProps) => {
+
   const pathname = usePathname();
   const router = useRouter();
   const isActive = pathname?.includes(id);
   const Icon = isLocked ? FaLock : (isCompleted ? FaCheckCircle : Circle);
+
   const iconClassNames = cn(
     "text-slate-200/20",
     isActive && "text-slate-200",
@@ -32,7 +34,6 @@ export const CourseSidebarItem = ({
     isLocked && "text-red-500"
   );
   
-
   const onClick = () => {
     router.push(`/course/${courseId}/chapter/${id}`);
   }
@@ -46,8 +47,6 @@ export const CourseSidebarItem = ({
         
         isActive && "text-slate-200",
         isCompleted && "text-slate-200/20 hover:text-slate-200",
-        
-        
       )}
     >
       <div className="flex items-center gap-x-2 py-1">
@@ -55,7 +54,7 @@ export const CourseSidebarItem = ({
           size={17}
           className={iconClassNames}
         />
-        {label}
+          {label}
       </div>
       <div className={cn(
         "h-full transition-all",

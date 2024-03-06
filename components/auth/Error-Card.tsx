@@ -1,5 +1,5 @@
 
-import { BackButton } from "@/components/auth/Back-Button"
+import { BackButton } from "@/components/auth/back-button"
 import {
     Card,
     CardFooter,
