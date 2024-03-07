@@ -1,5 +1,5 @@
 
-import Coaching from '@/components/coaching'
+import Coaching from '@/components/Coaching'
 
 
 export default function page() {
