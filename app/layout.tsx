@@ -5,9 +5,9 @@ import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
-import Scroll from '@/components/scroll'
+import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/Navbar'
 
 const geist = GeistSans
 
