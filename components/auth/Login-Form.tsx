@@ -19,8 +19,8 @@ import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-import { FormSuccess } from "../form-success";
-import { FormError } from "../form-error";
+import { FormSuccess } from "../Form-Success";
+import { FormError } from "../Form-Error";
 FormError
 export const LoginForm = () => {
     // Search Params

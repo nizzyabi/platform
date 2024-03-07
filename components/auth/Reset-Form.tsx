@@ -14,8 +14,8 @@ import {
 import { ResetSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/form-error";
-import { FormSuccess } from "@/components/form-success";
+import { FormError } from "@/components/Form-Error";
+import { FormSuccess } from "@/components/Form-Success";
 import { useState, useTransition } from "react";
 import {reset} from "@/actions/reset";
 export const ResetForm = () => {
