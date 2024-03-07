@@ -19,7 +19,7 @@ export async function POST (
         const courseOwner = await db.course.findUnique({
             where: {
                 id: params.courseId,
-                userId: session.user.id
+                userId: session.user.id ?? ''
             }
         })
 

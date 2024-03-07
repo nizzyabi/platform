@@ -17,7 +17,7 @@ export async function POST(
 
     const guide = await db.course.create({
       data: {
-        userId: session.user.id,
+        userId: session.user.id ?? '',
         title,
       }
     });

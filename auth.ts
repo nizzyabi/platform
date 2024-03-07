@@ -35,7 +35,7 @@ export const{
       if(account?.provider !== "credentials") return true;
 
       // get exisiting user & restrict signin if they have not verified their email
-      const exisitingUser = await getUserById(user.id);
+      const exisitingUser = await getUserById(user.id ?? '');
       
       if(!exisitingUser?.emailVerified) return false;
 

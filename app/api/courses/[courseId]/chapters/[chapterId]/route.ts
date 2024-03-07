@@ -17,7 +17,7 @@ export async function DELETE(
       const ownCourse = await db.course.findUnique({
         where: {
           id: params.courseId,
-          userId: session.user.id
+          userId: session.user.id ?? ''
         }
       });
 
@@ -83,7 +83,7 @@ export async function PATCH(
         const ownCourse = await db.course.findUnique({
             where: {
                 id: params.courseId,
-                userId: session.user.id
+                userId: session.user.id ?? ''
             }
         });
 

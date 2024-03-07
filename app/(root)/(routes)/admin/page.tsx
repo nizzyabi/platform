@@ -15,7 +15,7 @@ const DataPage = async () => {
 
     const courses = await db.course.findMany({
         where: {
-            userId: session.user.id
+          userId: session.user.id ?? ''
         },
         orderBy: {
             createdAt: 'desc'
