@@ -18,9 +18,8 @@ import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { IconArrowNarrowRight } from '@tabler/icons-react';
-import { FormError } from "../Form-Error";
-import { FormSuccess } from "../Form-Success";
+import { FormError } from "../form-error";
+import { FormSuccess } from "../form-success";
 export const LoginForm = () => {
     // Search Params
     const searchParams = useSearchParams();
