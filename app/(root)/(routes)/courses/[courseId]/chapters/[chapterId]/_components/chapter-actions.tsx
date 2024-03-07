@@ -1,6 +1,6 @@
 'use client';
 
-import { ConfirmModal } from "@/components/modals/confirm-modal";
+import { ConfirmModal } from "@/components/modals/Confirm-Modal";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { Trash } from "lucide-react";
