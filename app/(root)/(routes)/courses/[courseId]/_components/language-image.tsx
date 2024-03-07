@@ -11,7 +11,7 @@ import { Course } from "@prisma/client";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/File-Upload";
+import { FileUpload } from "@/components/file-upload";
 
 interface LanguageImageProps {
   initialData: Course
