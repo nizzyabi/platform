@@ -22,7 +22,7 @@ export default function Navbar() {
         };
     }, []);
 
-    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
+    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]' : 'bg-transparent';
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
@@ -58,7 +58,7 @@ export default function Navbar() {
                     </motion.div>
                 
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
-                        <Link href="https://dicord.gg/nizar">
+                        <Link href="https://discord.gg/nizar">
                             <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Community</p>
                         </Link>
                         <Link href="/roadmap">

@@ -32,7 +32,7 @@ export default function Courses() {
           {nizzyuser && 
           <div className="flex items-center justify-center space-x-7">
             <Link href='/courses/add'>
-              <Button variant="goldHover">Create</Button>
+              <Button className="rounded-xl py-3 text-md px-5" variant="goldHover" >Create</Button>
             </Link>
             <Link href='/admin'>
               <Button variant="pinkHover">Admin</Button>
