@@ -27,7 +27,8 @@ export const CardWrapper = ({
     headerTitle,
 }: CardWrapperProps) => {
     return (
-        <Card className=" w-[500px] bg-[#131212] border border-slate-200/20  rounded-xl mx-20">
+        
+        <Card className=" xs:w-[200px] sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[500px] bg-[#131212] border border-slate-200/20 rounded-xl mt-40">
 
             <CardHeader>
                 <Header title={headerTitle}/>
@@ -39,7 +40,7 @@ export const CardWrapper = ({
 
             {/* If showSocial display it */}
             {showSocial && (
-                <CardFooter>
+                <CardFooter className="flex items-center justify-center">
                     <Social />
                 </CardFooter>
             )}
@@ -53,5 +54,6 @@ export const CardWrapper = ({
                  
             
         </Card>
+        
     )
 }
