@@ -22,7 +22,8 @@ const buttonVariants = cva(
         basic: 'bg-slate-100 text-black border border-[#1e1e1e] hover:text-slate-100 hover:bg-[#1e1e1e] hover:text-slate-100 hover:border hover:border-slate-100/20 my-3 rounded-xl',
         pinkHover:"border-2 border-white rounded-xl my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 font-medium hover: border-none",
         blueHover:"border-2 border-white rounded-xl my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 font-medium hover: border-none",
-        iconButton:"rounded-xl my-3 bg-[#191919] text-white hover:text-slate-100 hover:opacity-75 font-medium"
+        iconButton:"rounded-xl my-3 bg-[#191919] text-white hover:text-slate-100 hover:opacity-75 font-medium",
+        brand: "rounded-xl bg-[#191919] font-medium",
         
         
 
@@ -31,6 +32,7 @@ const buttonVariants = cva(
         default: "px-4 py-1.5",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        brand: "h-10 w-[110px]",
         icon: "h-10 w-10",
       },
     },

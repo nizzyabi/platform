@@ -31,6 +31,22 @@ const routes = [
         
         href: "/settings",
         label: "Settings",
+    },
+    {
+        href: "https://github.com/NizarAbiZaher",
+        label: "Github"
+    },
+    {
+        href: "https://www.youtube.com/@NizzyABI",
+        label: "Youtube",
+    },
+    {
+        href:'https://discord.gg/nizar',
+        label: "Community",
+    },
+    {
+        href: '/help',
+        label: "Help",
     }
 ]
 
@@ -49,13 +65,13 @@ export const Sidebar = () => {
                     key={route.href} 
                     
                     className={cn(
-                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-medium cursor-pointer  rounded "
+                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer  rounded "
                     )}
                      >
                     {/* Design & display icon & label */}
                     <div className="flex border-b w-full pb-3 ">
                         
-                        <p className="mt-1 text-lg font-medium hover:text-slate-100/90 duration-300">{route.label}</p>
+                        <p className="mt-1 text-lg font-normal hover:text-slate-100/90 duration-300">{route.label}</p>
                         
                     </div>
                     </Link>

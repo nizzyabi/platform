@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import UserButton from './user-button';
 import { MobileSidebar } from "@/components/mobile-sidebar"
+import Image from 'next/image';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Navbar() {
 
@@ -22,40 +25,36 @@ export default function Navbar() {
         };
     }, []);
 
-    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]' : 'bg-transparent';
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 800,
+          easing: "ease-out-cubic",
+        });
+      }, []);
+
+    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 ">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2" data-aos='fade-down'>
                 <div className="flex justify-between items-center">
                 <MobileSidebar />
-                <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ rotate: 360, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 260,
-                            damping: 20
-                        }}
-                        className="flex-shrink-0"
-                    >
+               
                         <Link href='/'  className="flex items-center"
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}>
                             
-                                <motion.img
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                    whileTap={{ scale: 0.9 }}
+                                <Image
                                     src='/gilbert_cool.png'
                                     width={70}
                                     height={70}
-                                    className='pb-2'
+                                    className='pb-2 hover:scale-110 duration-500'
                                     alt='logos2'
                                 />
                                 
                         </Link>
-                    </motion.div>
+                   
                 
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
                         <Link href="https://discord.gg/nizar">

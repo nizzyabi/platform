@@ -8,32 +8,38 @@ import Link from 'next/link';
 import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
+import { useCurrentUser } from '@/hooks/user-current-user';
 
 
 
 export default function LandingPage() {
+  const session = useCurrentUser();
+
   useEffect(() => {
     AOS.init({
       disable: "phone",
-      duration: 500,
+      duration: 800,
       easing: "ease-out-cubic",
     });
   }, []);
 
   return (
-    <div className='extra pt-40 landing'>
+    <div className='extra landing'>
+      <div className='pt-40'>
+
+      </div>
       <div className='mb-20 font-extrabold '>
-        <div data-aos="fade-left" className='flex-1 flex flex-col items-center justify-center mb-4'>
+        <div data-aos="fade-up" className='flex-1 flex flex-col items-center justify-center mb-4'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
-            <Button variant='goldHover'>
-              <Link href='/courses'>
+            <Button variant='brand' size='brand' className='mt-3 hover:bg-gradient-to-r from-yellow-500 to-orange-500 duration-500'>
+              <Link href={session ? '/courses' : '/auth/register'}>
                 Let's Start
               </Link>
             </Button>
         </div>
 
-        <div className='text-center' data-aos='fade-right'>
+        <div className='text-center' data-aos='fade-up'>
           <BentoGridThirdDemo />
         </div>
 
