@@ -1,11 +1,8 @@
 // Coaching page
 'use client'
-import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from 'react';
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "./ui/card";
 
 import { FcAbout, FcCalendar, FcTwoSmartphones, FcVideoCall, FcCommandLine, FcWorkflow, FcGlobe, FcSurvey, FcTemplate } from "react-icons/fc";
 
@@ -63,13 +60,7 @@ const coaching = [
 
 
 export default function Coaching() {
-  useEffect(() => {
-    AOS.init({
-      disable: "phone",
-      duration: 500,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+  
   return (
     <div>
         {/* Title */}

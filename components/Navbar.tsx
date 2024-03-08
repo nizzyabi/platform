@@ -58,16 +58,16 @@ export default function Navbar() {
                 
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
                         <Link href="https://discord.gg/nizar">
-                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Community</p>
+                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Community</p>
                         </Link>
                         <Link href="/roadmap">
-                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Roadmap</p>
+                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Roadmap</p>
                         </Link>
                         <Link href="/courses">
-                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Courses</p>
+                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Courses</p>
                         </Link>
                         <Link href="/coaching">
-                            <p className="hover:opacity-60 px-3 py-2 rounded-md text-lg font-medium">Coaching</p>
+                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Coaching</p>
                         </Link>
                         
                         <UserButton />

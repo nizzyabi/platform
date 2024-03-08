@@ -19,10 +19,10 @@ const UserButton = () => {
                 <Link href='/settings'>
                     {!session.image ? (
                         <Avatar 
-                        alt='logo' className="shadow-xl shadow-black hover:scale-110 transition-transform duration-500  bg-gradient-to-r from-pink-500 to-purple-500" sx={{ width: 40, height: 40}}>
+                        alt='logo' className="shadow-xl shadow-black hover:scale-110 transition-transform duration-300  bg-gradient-to-r from-pink-500 to-purple-500" sx={{ width: 40, height: 40}}>
                         </Avatar>
                     ): (
-                        <Avatar  src={session.image} className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50" sx={{ width: 40, height: 40 }}/>
+                        <Avatar  src={session.image} className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50 duration-300" sx={{ width: 40, height: 40 }}/>
                     )}
                 </Link>
             )}

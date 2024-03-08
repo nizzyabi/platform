@@ -58,8 +58,8 @@ export const CourseProgressButton = ({
       onClick={onClick}
       disabled={isLoading}
       type="button"
-      variant="basic"
-      className="w-full md:w-auto"
+      variant="brandLight"
+      className="py-2 px-5"
     >
       {isCompleted ? "Not completed" : "Mark as complete"}
       <Icon className="h-4 w-4 ml-2" />

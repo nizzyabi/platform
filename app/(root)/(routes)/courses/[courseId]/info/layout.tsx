@@ -71,7 +71,7 @@ const CourseInfoLayout = async ({
                 />
             </div>
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
-              <Button variant='basic'>
+              <Button variant='brand' size='brand'>
                 Go To Course
               </Button>
             </Link>

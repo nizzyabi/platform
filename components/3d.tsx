@@ -29,14 +29,14 @@ const testimonials = [
     message: "Nizar on YT has been a game-changer for me! His educational and entertaining videos really helped me get back into coding, improve my skills, and establish better routines. I owe a lot of my progress to his guidance and suggestions."
   },
   {
-    username: 'Gorlami',
-    avatar: '/mbdtf.jpeg',
-    message: "Nizar's content consistently delivers valuable insights and entertainment in equal measure. Proud to be a part of your community!"
+    username: 'Tiernandefranco',
+    avatar: '/teir.webp',
+    message: "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
   },
   {
-    username: 'Dominikdev',
-    avatar: '/dominik.png',
-    message: "Nizar's videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable."
+    username: 'Paulcam',
+    avatar: 'https://cdn.discordapp.com/attachments/1180473556774158336/1210967407154172014/230135c5-fc03-41ed-a086-7705d757de61.jpg?ex=65ec7c48&is=65da0748&hm=3da4c4c842a166d29c5cb1e0c2c5256995757ea5db270791e29acf700f763ad4&',
+    message: "Nizar has built an extraordinary community that I'm proud to be a part of. Surrounded by individuals eager to learn and help each other in tech and business, it has become the ideal environment for developing startup ideas and advancing open-source projects."
   },
   {
     username: 'Amanbhujel',
@@ -49,19 +49,20 @@ const testimonials = [
     message: "Nizar helped me keep motivation in my own startup, and his videos are also nice to listen to while coding by myself."
   },
   {
-    username: 'Tiernandefranco',
-    avatar: '/teir.webp',
-    message: "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
+    username: 'Dominikdev',
+    avatar: '/dominik.png',
+    message: "Nizar's videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable."
   },
-  {
-    username: 'Paulcam',
-    avatar: 'https://cdn.discordapp.com/attachments/1180473556774158336/1210967407154172014/230135c5-fc03-41ed-a086-7705d757de61.jpg?ex=65ec7c48&is=65da0748&hm=3da4c4c842a166d29c5cb1e0c2c5256995757ea5db270791e29acf700f763ad4&',
-    message: "Nizar has built an extraordinary community that I'm proud to be a part of. Surrounded by individuals eager to learn and help each other in tech and business, it has become the ideal environment for developing startup ideas and advancing open-source projects."
-  },
+  
   {
     username: 'Calculuscoder',
     avatar: 'https://cdn.discordapp.com/attachments/1199203733691703376/1210980909155618896/IMG_9874.JPG?ex=65ec88db&is=65da13db&hm=abf0d282a9bb36bcb2e3de4d9353be127ccd8521be046f75eff38e0acd1a41c4&',
     message: "Nizar has been a great friend, leader, and instructor in the software development field. I've closely followed his videos and YouTube channel for several months and his content is amazing."
+  },
+  {
+    username: 'Gorlami',
+    avatar: '/mbdtf.jpeg',
+    message: "Nizar's content consistently delivers valuable insights and entertainment in equal measure. Proud to be a part of your community!"
   },
   {
     username: '3.ba',
@@ -75,7 +76,7 @@ const testimonials = [
 export function ThreeD() {
   return (
     // Adjusted the gap class to a smaller value, e.g., gap-2 for tighter spacing
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:px-20 xl:px-40 2xl:px-10 items-start gap-2 pt-20">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:px-20 xl:px-40 2xl:px-10 items-start gap-2 pt-8">
       {testimonials.map((testimonial, index) => (
         <CardContainer className="" key={testimonial.username}>
           <CardBody className="bg-[#131212] relative group/card border-slate-100/20   h-auto rounded-xl px-6 py-3 border ">

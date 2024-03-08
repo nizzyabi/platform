@@ -2,7 +2,6 @@
 'use client'
 import * as React from "react"
 import Link from "next/link";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useCurrentUser } from "@/hooks/user-current-user";
@@ -13,13 +12,7 @@ import Search from "./search";
 
 export default function Courses() {
   // AOS Effect
-  useEffect(() => {
-    AOS.init({
-      disable: "phone",
-      duration: 500,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+  
   const session = useCurrentUser();
   const nizzyuser = session?.id === 'clrulbr1h0000x3js9ldvplex';
 
@@ -30,12 +23,12 @@ export default function Courses() {
               <h1 className="font-bold text-7xl  pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
           </div>
           {nizzyuser && 
-          <div className="flex items-center justify-center space-x-7">
+          <div className="flex items-center justify-center space-x-7 mt-6">
             <Link href='/courses/add'>
-              <Button className="rounded-xl py-3 text-md px-5" variant="goldHover" >Create</Button>
+              <Button className="" variant="brand" size='brand' >Create</Button>
             </Link>
             <Link href='/admin'>
-              <Button variant="pinkHover">Admin</Button>
+              <Button className='bg-slate-100 text-zinc-800' variant="brand" size='brand'>Admin</Button>
             </Link>
           </div>
           }

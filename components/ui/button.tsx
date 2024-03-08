@@ -23,7 +23,8 @@ const buttonVariants = cva(
         pinkHover:"border-2 border-white rounded-xl my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 font-medium hover: border-none",
         blueHover:"border-2 border-white rounded-xl my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 font-medium hover: border-none",
         iconButton:"rounded-xl my-3 bg-[#191919] text-white hover:text-slate-100 hover:opacity-75 font-medium",
-        brand: "rounded-xl bg-[#191919] font-medium",
+        brand: "rounded-xl bg-[#191919]  hover:opacity-70 font-medium transition duration-300",
+        brandLight: "rounded-xl bg-slate-100 text-zinc-800 hover:opacity-70 font-medium transition duration-300"
         
         
 

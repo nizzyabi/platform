@@ -14,7 +14,7 @@ interface CourseCardProps {
     description: string;
     course?: Course []
   };
-export const CourseCard = async ({
+export const CourseCard =  async ({
     id,
     title,
     imageUrl,
@@ -24,7 +24,7 @@ export const CourseCard = async ({
     course,
     
 }: CourseCardProps) => {
-    {/*const session = await auth()
+    const session = await auth()
     if (!session) {
         return null
     }
@@ -35,11 +35,11 @@ export const CourseCard = async ({
                 courseId: id
             }
         }
-    });*/}
+    })
     return (
         
         <Link href={`courses/${id}/info`}> 
-            <div className="group hover:opacity-60 transition duration-300 overflow-hidden  h-full bg-[#131212] rounded">
+            <div className="group hover:opacity-75 transition duration-300 overflow-hidden  h-full bg-[#131212] rounded">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
