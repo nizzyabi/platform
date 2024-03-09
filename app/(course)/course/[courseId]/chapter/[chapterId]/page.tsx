@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
 
 import Link from "next/link";
+import Notes from "@/components/notes";
 
 const ChapterIdPage = async ({
     params
@@ -110,6 +111,9 @@ const ChapterIdPage = async ({
                 </div>
                 
             </div>
+            <Notes 
+                
+            />
         </div>
 
        
