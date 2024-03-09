@@ -24,8 +24,8 @@ const routes = [
     },
     {
         
-        href: "/coaching",
-        label: "Coaching",
+        href: "/mentorship",
+        label: "Mentorship",
     },
     {
         
@@ -43,10 +43,6 @@ const routes = [
     {
         href:'https://discord.gg/nizar',
         label: "Community",
-    },
-    {
-        href: '/help',
-        label: "Help",
     }
 ]
 

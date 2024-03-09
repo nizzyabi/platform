@@ -10,7 +10,7 @@ import { FcAbout, FcCalendar, FcTwoSmartphones, FcVideoCall, FcCommandLine, FcWo
 const coaching = [
   {
     title: "Passive 📱",
-    description: "Get the benefits of personal advice and help but on the low",
+    description: "Get the benefits of mentorship and advice but on the low!",
     price: "$40",
     includes: [
       <p className="flex"><FcVideoCall className='mr-2 mt-1'/>Bi-Weekly Live Lessons</p>,
@@ -26,7 +26,7 @@ const coaching = [
   },
   {
     title: "Active 💪🏽",
-    description: "Speed up the process with more live lessons and help",
+    description: "Speed up your learning with more live sessions and help",
     price: "$35",
     includes: [
       <p className="flex"><FcVideoCall className='mr-2 mt-1'/>Weekly Live Lessons</p>,
@@ -42,7 +42,7 @@ const coaching = [
   },
   {
     title: "Ultra 🚀",
-    description: "Get the most out of coding with unlimited help & assitance!",
+    description: "Get the most out of coding with unlimited help, mentorship & assitance!",
     price: "$30",
     includes: [
       <p className="flex"><FcVideoCall className='mr-2 mt-1'/>Live Lessons 3x a Week</p>,
@@ -62,7 +62,7 @@ const coaching = [
 export default function Coaching() {
   
   return (
-    <div>
+    <div className="pb-40">
         {/* Title */}
         <div className="text-center pb-5 pt-40">
             <h1 className="font-bold text-7xl ">Coaching</h1>
@@ -70,7 +70,7 @@ export default function Coaching() {
         </div>
 
         
-        <div className="  flex items-center justify-center space-x-3 px-8 pt-20">
+        <div className="flex items-center justify-center space-x-3 px-8 pt-20">
           {/* Link to coaching */}
           {coaching.map((item, index) => (
             <Card key={index} className="w-[450px]">
@@ -78,7 +78,7 @@ export default function Coaching() {
                 <div className="flex justify-between pb-2">
                   <h1 className="text-3xl font-semibold">{item.title}</h1>
                 </div>
-                <p className="text-lg font-medium"><span className="text-5xl font-bold text-slate-100">{item.price}</span> <span className="opacity-40">/ session</span></p>
+                <p className="text-lg font-normal"><span className="text-5xl font-bold text-slate-100">{item.price}</span> <span className="opacity-40">/ session</span></p>
                 <CardDescription className="text-md opacity-40">{item.description}</CardDescription>
               </CardHeader>
               <CardContent>
