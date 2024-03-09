@@ -10,7 +10,7 @@ export default function Notes() {
  
   // Renders the editor instance using a React component.
   return (
-    <div className="mt-5  ">
+    <div className="mt-5 pb-8 border-b border-b-slate-100/20">
       <BlockNoteView editor={editor} data-theming-css-variables-demo formattingToolbar={true} className="rounded-xl border-2 border-slate-100/10" />
       
     </div>

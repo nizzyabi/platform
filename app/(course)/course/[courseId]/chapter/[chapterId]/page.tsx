@@ -3,14 +3,13 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { Preview } from "@/components/preview";
-import { File, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
-import { FaDiscord } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
-import { SiNotion } from "react-icons/si";
+import { IconBrandNotion, IconBrandGithub, IconBrandDiscord } from "@tabler/icons-react";
 
 import Link from "next/link";
 import Notes from "@/components/notes";
+import Image from "next/image";
 
 const ChapterIdPage = async ({
     params
@@ -71,7 +70,7 @@ const ChapterIdPage = async ({
       )}
         <div>
             <div>
-                <div className="mt-8 flex items-center justify-between ml-2">
+                <div className="mt-8 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
                 
                 {purchase ? (
@@ -88,25 +87,35 @@ const ChapterIdPage = async ({
                     />
                 )}
                 </div>
-
-                <Notes />
-                
+                <div>
+                    <h1 className="font-semibold text-xl pt-2">Notes</h1>
+                    <Notes />
+                </div>
                 <div className="flex justify-end space-x-8 pt-8">
-                    <Link href={`${course.githubLink}`} className="bg-[#191919] flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-75 duration-300">
-                        <FaGithub className="h-12 w-12" />
+                    <Link href={`${course.githubLink}`} className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
+                    <div className="flex item-center justify-center">
+                        <IconBrandGithub height={60} width={60} strokeWidth={1}/>
+                        </div>
+                        <p className="text-center mt-2">Github</p>
                     </Link>
 
-                    <Link href='https://discord.gg/nizar' className="bg-[#191919] flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-75 duration-300">
-                        <FaDiscord className="h-12 w-12" />
+                    <Link href='https://discord.gg/nizar' className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
+                    <div className="flex item-center justify-center">
+                        <IconBrandDiscord height={60} width={60} strokeWidth={1}/>
+                        </div>
+                        <p className="text-center mt-2">Discord</p>
                     </Link>
 
-                    <Link href={`${course.notionLink}`} className="bg-[#191919] flex item-center justify-center w-20 py-3 rounded-xl hover:opacity-75 duration-300">
-                        <SiNotion className="h-10 w-10" />
-                        <p></p>
+                    <Link href={`${course.notionLink}`} className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
+                    <div className="flex item-center justify-center">
+                        <IconBrandNotion height={60} width={60} strokeWidth={1}/>
+                        </div>
+                        <p className="text-center mt-2">Notion</p>
                     </Link>
                 </div>
             </div>
         </div>  
+        
     </div>
   )
 }
