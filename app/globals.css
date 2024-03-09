@@ -142,6 +142,16 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
   padding-right: 0;
 }
 
+/* Base theme */
+
+ 
+/* Changes for dark mode */
+.bn-container[data-theming-css-variables-demo][data-color-scheme="dark"] {
+  --bn-colors-editor-text: #ffffff;
+  --bn-colors-editor-background: #2c2c2c;
+  --bn-colors-side-menu: #ffffff;
+ 
+}
 
 
 @import "~@uploadthing/react/styles.css"

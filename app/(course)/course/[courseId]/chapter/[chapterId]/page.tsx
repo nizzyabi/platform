@@ -89,6 +89,8 @@ const ChapterIdPage = async ({
                     />
                 )}
                 </div>
+
+                <Notes />
                 
                 <div className="flex justify-end space-x-8 pt-8">
                     <Link href={`${course.githubLink}`} className="bg-[#191919] flex item-center justify-center w-20 py-2 rounded-xl hover:opacity-75 duration-300">
@@ -111,9 +113,7 @@ const ChapterIdPage = async ({
                 </div>
                 
             </div>
-            <Notes 
-                
-            />
+            
         </div>
 
        
