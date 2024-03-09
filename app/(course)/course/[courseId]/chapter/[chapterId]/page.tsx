@@ -65,12 +65,11 @@ const ChapterIdPage = async ({
             src={`${chapter.vimeoVideo}`} 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             title="Video"
-            
           >
           </iframe>
         </div>
       )}
-        <div className="">
+        <div>
             <div>
                 <div className="mt-8 flex items-center justify-between ml-2">
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
@@ -106,21 +105,8 @@ const ChapterIdPage = async ({
                         <p></p>
                     </Link>
                 </div>
-
-
-                <div>
-                    <Preview value={chapter.description!} />
-                </div>
-                
             </div>
-            
-        </div>
-
-       
-
-
-        
-        
+        </div>  
     </div>
   )
 }
