@@ -90,8 +90,9 @@ const ChapterIdPage = async ({
                 <div>
                     <h1 className="font-semibold text-xl pt-2">Notes</h1>
                     <Notes />
+                    
                 </div>
-                <div className="flex justify-end space-x-8 pt-8">
+                <div className="flex items-center justify-center space-x-8 pt-8">
                     <Link href={`${course.githubLink}`} className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
                     <div className="flex item-center justify-center">
                         <IconBrandGithub height={60} width={60} strokeWidth={1}/>
