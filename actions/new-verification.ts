@@ -1,12 +1,12 @@
 "use server";
-import { useRouter } from "next/navigation"
+
 import { db } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
+
 import { getVerificationTokenByToken } from "@/data/verification-token";
 import { Router } from "express";
 
 export const newVerification = async (token:string) => {
-    const router = useRouter();
     // if no token, display message
     const exisitingToken = await getVerificationTokenByToken(token);
 

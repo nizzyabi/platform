@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { CardWrapper } from "@/components/auth/Card-Wrapper";
 import { newVerification } from "@/actions/new-verification";
