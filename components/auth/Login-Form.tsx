@@ -43,7 +43,7 @@ export const LoginForm = () => {
             password: ""
         }
     })
-    // onSubmit Function
+    // onSubmit Function For Login
     const onSubmit = (values: z.infer<typeof LoginSchema>) => {
         // reset fields when submitting form
         setError("");

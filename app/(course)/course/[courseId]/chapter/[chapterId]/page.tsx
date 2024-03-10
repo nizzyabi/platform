@@ -16,6 +16,7 @@ const ChapterIdPage = async ({
 }: {
     params: { courseId: string; chapterId: string; }
 }) => {
+    // get user
     const session = await auth();
 
     if (!session) {

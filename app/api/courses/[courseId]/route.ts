@@ -7,6 +7,7 @@ export async function DELETE (
     { params }: { params: { courseId: string } }
 ) {
     try {
+        // authenticate
         const session = await auth();
 
         if (!session) {
