@@ -9,6 +9,8 @@ import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 
@@ -25,6 +27,7 @@ export default function LandingPage() {
 
   return (
     <div className='extra landing'>
+      
       <div className='pt-40'>
       </div>
       <div className='mb-20 font-extrabold '>
