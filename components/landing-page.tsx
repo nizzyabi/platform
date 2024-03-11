@@ -26,12 +26,12 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className='extra landing'>
+    <div data-aos="fade-up" className='extra landing'>
       
       <div className='pt-40'>
       </div>
       <div className='mb-20 font-extrabold '>
-        <div data-aos="fade-up" className='flex-1 flex flex-col items-center justify-center mb-4'>
+        <div className='flex-1 flex flex-col items-center justify-center mb-4'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
             <Button variant='brand' size='brand' className='mt-3'>
