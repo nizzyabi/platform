@@ -62,7 +62,7 @@ export const PriceForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Price
         <Button onClick={toggleEdit} variant="ghost">
@@ -100,7 +100,7 @@ export const PriceForm = ({
                   <FormControl className="rounded bg-slate-100 text-[#2c2c2c] placeholder:text-black/50">
                     <Input
                       type="number"
-                      step="0.01"
+                      step="0.00"
                       disabled={isSubmitting}
                       placeholder="Set a price for your course"
                       {...field}

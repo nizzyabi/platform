@@ -86,7 +86,7 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       {isUpdating && (
         <div className="absolute h-full w-full bg-slate-500/20 top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
@@ -100,7 +100,6 @@ export const ChaptersForm = ({
           ) : (
             <>
               <AddCircleIcon className="text-slate-200" />
-              
             </>
           )}
         </Button>

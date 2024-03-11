@@ -11,6 +11,7 @@ import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Wand2 } from 'lucide-react';
 
 
 
@@ -35,8 +36,8 @@ export default function LandingPage() {
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
             <Button variant='brand' size='brand' className='mt-3'>
-              <Link href={session ? '/courses' : '/auth/register'}>
-                Let's Start
+              <Link href={session ? '/courses' : '/auth/register'} className='flex'>
+                Let's Start <Wand2 className='ml-2 h-4 w-4' />
               </Link>
             </Button>
         </div>
