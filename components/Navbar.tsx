@@ -66,8 +66,8 @@ export default function Navbar() {
                         <Link href="/courses">
                             <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Courses</p>
                         </Link>
-                        <Link href="/coaching">
-                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Coaching</p>
+                        <Link href="/mentorship">
+                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Mentorship</p>
                         </Link>
                         
                         <UserButton />

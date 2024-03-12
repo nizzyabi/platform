@@ -20,15 +20,15 @@ export default function Courses() {
     return (
       <div>
           <div className="text-center pt-40">
-              <h1 className="font-bold text-7xl  pt-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">Courses</h1>
+              <h1 className="font-bold text-7xl  pt-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500 ">Courses</h1>
           </div>
           {nizzyuser && 
           <div className="flex items-center justify-center space-x-7 mt-6">
             <Link href='/courses/add'>
-              <Button className="" variant="brand" size='brand' >Create</Button>
+              <Button variant="default" className='font-medium py-2 mt-3'>Create</Button>
             </Link>
             <Link href='/admin'>
-              <Button className='bg-slate-100 text-zinc-800' variant="brand" size='brand'>Admin</Button>
+              <Button variant="default" className='font-medium py-2 mt-3'>Admin</Button>
             </Link>
           </div>
           }

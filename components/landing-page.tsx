@@ -35,7 +35,7 @@ export default function LandingPage() {
         <div className='flex-1 flex flex-col items-center justify-center mb-4'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
-            <Button variant='default' className='font-medium py-2 mt-3 '>
+            <Button variant='default' className='font-medium py-2 mt-3'>
               <Link href={session ? '/courses' : '/auth/register'} className='flex'>
                 Get started
               </Link>

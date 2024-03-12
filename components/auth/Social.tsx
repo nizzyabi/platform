@@ -16,7 +16,7 @@ export const Social = () => {
         <div className="flex items-center justify-center   space-x-3 pt-7">
             <Button
                 size="lg"
-                className=' xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[60px] rounded-xl border-none hover:opacity-50 bg-zinc-800 text-md'
+                className=' xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[60px] rounded-[5px] border-none hover:opacity-50 bg-zinc-800 text-md'
                 variant="outline"
                 onClick={() => onClick('google')}
             >
@@ -25,7 +25,7 @@ export const Social = () => {
 
             <Button
                 size="lg"
-                className='xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[68px] font-medium hover:opacity-50 rounded-xl border-none text-md bg-zinc-800'
+                className='xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[68px] font-medium hover:opacity-50 rounded-[5px] border-none text-md bg-zinc-800'
                 variant="outline"
                 onClick={() => onClick('github')}
             >
