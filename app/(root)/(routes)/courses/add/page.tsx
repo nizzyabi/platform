@@ -50,7 +50,7 @@ const CreatePage = () => {
   }
 
   return ( 
-    <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full pt-40">
+    <div className="max-w-5xl mx-auto flex items-center justify-center h-full pt-40">
       <div>
         <h1 className="text-5xl text-center font-bold">
           Name your course
@@ -69,7 +69,7 @@ const CreatePage = () => {
                   <FormLabel>
                     Course title
                   </FormLabel>
-                  <FormControl className="relative ">
+                  <FormControl className="relative bg-slate-100 text-[#2e2e2e]">
                     
                     <Input
                       disabled={isSubmitting}
@@ -87,7 +87,8 @@ const CreatePage = () => {
               <Button
                 type="submit"
                 disabled={!isValid || isSubmitting}
-                variant='blueHover'
+                variant='default'
+                className="mt-2 py-2"
               >
                 Continue
               </Button>

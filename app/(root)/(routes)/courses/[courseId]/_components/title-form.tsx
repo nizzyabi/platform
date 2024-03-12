@@ -72,7 +72,7 @@ export const TitleForm = ({
         <>Cancel</>
       ) : (
         <>
-          <AutoFixNormalIcon className="text-slate-200" />
+          <p>Edit</p>
         </>
       )}
     </Button>
