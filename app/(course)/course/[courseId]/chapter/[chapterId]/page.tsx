@@ -6,10 +6,13 @@ import { Preview } from "@/components/preview";
 import { Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
 import { IconBrandNotion, IconBrandGithub, IconBrandDiscord } from "@tabler/icons-react";
+import { FaDiscord, FaGithub } from "react-icons/fa";
+import { RiNotionFill } from "react-icons/ri";
 
 import Link from "next/link";
 import Notes from "@/components/notes";
-import Image from "next/image";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const ChapterIdPage = async ({
     params
@@ -44,6 +47,24 @@ const ChapterIdPage = async ({
 
     const isLocked = !chapter.isFree && !purchase;
     const completeOnEnd = !!purchase && !userProgress?.isCompleted;
+
+    const links = [
+        {
+            href: `${course.githubLink}`,
+            label: 'Github',
+            icon: <FaGithub className="text-[#020817]"/>
+        },
+        {
+            href: 'https://discord.gg/nizar',
+            label: 'Discord',
+            icon: <FaDiscord className='text-[#6466F1]'/>
+        },
+        {
+            href: `${course.notionLink}`,
+            label: 'Notion',
+            icon: <RiNotionFill className="text-black"/>
+        }
+    ]
     
 
   return (
@@ -89,31 +110,22 @@ const ChapterIdPage = async ({
                 )}
                 </div>
                 <div>
-                    <h1 className="font-semibold text-xl pt-2">Notes</h1>
-                    <Notes />
+                    <h1 className="font-semibold text-xl pt-2 mb-4">Code</h1>
+                    <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${chapter.title}`} style={atomOneDark}>
+                        {`console.log('Hello World')`}
+                    </SyntaxHighlighter>
                     
                 </div>
                 <div className="flex items-center justify-center space-x-8 pt-8">
-                    <Link href={`${course.githubLink}`} className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
-                    <div className="flex item-center justify-center">
-                        <IconBrandGithub height={60} width={60} strokeWidth={1}/>
-                        </div>
-                        <p className="text-center mt-2">Github</p>
-                    </Link>
-
-                    <Link href='https://discord.gg/nizar' className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
-                    <div className="flex item-center justify-center">
-                        <IconBrandDiscord height={60} width={60} strokeWidth={1}/>
-                        </div>
-                        <p className="text-center mt-2">Discord</p>
-                    </Link>
-
-                    <Link href={`${course.notionLink}`} className="bg-zinc-800 w-40 py-3 rounded-xl hover:opacity-75 duration-300 border border-slate-100/20">
-                    <div className="flex item-center justify-center">
-                        <IconBrandNotion height={60} width={60} strokeWidth={1}/>
-                        </div>
-                        <p className="text-center mt-2">Notion</p>
-                    </Link>
+                    
+                    {links.map((link, index) => (
+                        <Link href={link.href} key={link.href} className="bg-slate-100 w-[120px] py-3 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
+                            <div className="flex item-center justify-center">
+                                <p className="text-center text-6xl">{link.icon}</p>
+                            </div>
+                            <p className="text-center text-[#2e2e2e] font-semibold mt-2">{link.label}</p>
+                        </Link>
+                    ))}     
                 </div>
             </div>
         </div>  

@@ -11,7 +11,7 @@ import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { Wand2 } from 'lucide-react';
+
 
 
 
@@ -55,8 +55,6 @@ export default function LandingPage() {
               </Link>
             </Button>
             <LanguageBackground />
-            
-
             </div>
             
             

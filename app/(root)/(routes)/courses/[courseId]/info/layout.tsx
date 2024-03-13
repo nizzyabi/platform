@@ -8,6 +8,8 @@ import { db } from "@/lib/db";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 
@@ -60,6 +62,7 @@ const CourseInfoLayout = async ({
           <div className="text-center pb-8">
             <h1 className="text-7xl font-bold mb-3">{course?.title}</h1>
             <p className="text-xl opacity-50 font-medium pb-8">{course?.description}</p>
+           
             
             <div className="flex items-center justify-center pb-4">
                 <Image 
@@ -69,12 +72,19 @@ const CourseInfoLayout = async ({
                     height={800} 
                     className="rounded shadow-lg shadow-black"
                 />
+                 
             </div>
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
               <Button variant='brand' size='brand'>
                 Go To Course
               </Button>
             </Link>
+          </div>
+
+          <div className="rounded border border-slate-100/10">
+          <SyntaxHighlighter className='rounded' language="javascript" style={atomOneDark}>
+              {`${course?.description}`}
+          </SyntaxHighlighter>
           </div>
 
           <div>
