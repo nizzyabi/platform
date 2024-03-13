@@ -65,7 +65,7 @@ export default function Coaching() {
     <div className="pb-40">
         {/* Title */}
         <div className="text-center pb-5 pt-40">
-            <h1 className="font-bold text-7xl ">Coaching</h1>
+            <h1 className="font-bold text-7xl ">Mentorship</h1>
             <p className="text-lg md:text-xl pt-1">Get personal advice, mentorship, & guidance to learn code faster!</p> 
         </div>
 
