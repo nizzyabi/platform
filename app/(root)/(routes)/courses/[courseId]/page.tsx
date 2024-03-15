@@ -5,7 +5,6 @@ import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
 import { PriceForm } from "./_components/price-form";
-import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import Link from "next/link";
 import { AlertTriangle, ArrowLeft } from "lucide-react";
@@ -215,15 +214,9 @@ const CoursesIdPage = async ({
             <div>
               <div className="flex items-center gap-x-2"> 
                 <h2 className="text-3xl font-bold">
-                  Resources & Attachments
+                  Course Resources
                 </h2>
               </div>
-              {/* Attachments */}
-              <AttachmentForm
-                initialData={course}
-                courseId={course.id}
-              />
-
               <CodeLanguageForm
                 initialData={course}
                 courseId={course.id}

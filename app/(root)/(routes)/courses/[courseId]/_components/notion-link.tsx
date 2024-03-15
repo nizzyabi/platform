@@ -68,14 +68,14 @@ export const NotionForm = ({
   <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
   <div className="font-semibold flex items-center justify-between text-xl">
     Notion Link
-    <Button onClick={toggleEdit} >
-      {isEditing ? (
-        <>Cancel</>
-      ) : (
-        <>
-          <AutoFixNormalIcon className="text-slate-200" />
-        </>
-      )}
+    <Button onClick={toggleEdit}>
+          {isEditing ? (
+            <>Cancel</>
+          ) : (
+          <>
+            <p>Edit</p>
+          </>
+          )}
     </Button>
   </div>
   {!isEditing && (

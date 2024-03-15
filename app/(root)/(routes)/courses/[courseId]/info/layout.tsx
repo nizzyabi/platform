@@ -81,10 +81,8 @@ const CourseInfoLayout = async ({
             </Link>
           </div>
 
-          <div className="rounded border border-slate-100/10">
-          <SyntaxHighlighter className='rounded' language="javascript" style={atomOneDark}>
-              {`${course?.description}`}
-          </SyntaxHighlighter>
+          <div className="">
+          <p>{course?.description}</p>
           </div>
 
           <div>

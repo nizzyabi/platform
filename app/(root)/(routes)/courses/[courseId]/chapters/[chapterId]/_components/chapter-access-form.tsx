@@ -66,16 +66,16 @@ export const ChapterAccessForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#1e1e1e] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Chapter Access
-        <Button onClick={toggleEdit} variant="ghost">
+        <Button onClick={toggleEdit}>
           {isEditing ? (
             <>Cancel</>
           ) : (
-            <>
-              <AutoFixNormalIcon className="text-slate-200" />
-            </>
+          <>
+            <p>Edit</p>
+          </>
           )}
         </Button>
       </div>
@@ -106,7 +106,7 @@ export const ChapterAccessForm = ({
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
-                      className="text-slate-200/90 rounded"
+                      className="text-slate-200/90 rounded "
                     />
                   </FormControl>
                   <div className="space-y-1 leading-none ">

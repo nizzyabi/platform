@@ -94,12 +94,12 @@ export const ChaptersForm = ({
       )}
       <div className="font-semibold flex items-center justify-between text-xl">
         Chapters
-        <Button onClick={toggleCreating} variant="ghost">
+        <Button onClick={toggleCreating}>
           {isCreating ? (
             <>Cancel</>
           ) : (
             <>
-              <AddCircleIcon className="text-slate-200" />
+              <p>Add</p>
             </>
           )}
         </Button>
