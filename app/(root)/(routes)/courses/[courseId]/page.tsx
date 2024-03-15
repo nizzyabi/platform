@@ -19,6 +19,7 @@ import { SolutionForm } from "./_components/solution";
 import { BonusForm } from "./_components/bonuses";
 import { NotionForm } from "./_components/notion-link";
 import { GithubForm } from "./_components/github-link";
+import { CodeLanguageForm } from "./_components/code-language-form";
 const CoursesIdPage = async ({
   params
 }: {
@@ -72,6 +73,7 @@ const CoursesIdPage = async ({
     course.language3,
     course.githubLink,
     course.notionLink,
+    course.courseLanguage,
     course.chapters.some(chapter => chapter.isPublished)
   ];
 
@@ -218,6 +220,11 @@ const CoursesIdPage = async ({
               </div>
               {/* Attachments */}
               <AttachmentForm
+                initialData={course}
+                courseId={course.id}
+              />
+
+              <CodeLanguageForm
                 initialData={course}
                 courseId={course.id}
               />

@@ -34,7 +34,8 @@ const ChapterIdPage = async ({
         userProgress,
         purchase,
         notionLink,
-        githubLink
+        githubLink,
+        courseLanguage,
     } = await getChapter({
         userId: session.user.id ?? '',
         courseId: params.courseId,
@@ -112,7 +113,7 @@ const ChapterIdPage = async ({
                 {chapter.code && chapter.code.trim().length > 0 && (
                     <div>
                     <h1 className="font-semibold text-xl pt-2 mb-4">Code</h1>
-                    <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${chapter.title}`} style={atomOneDark}>
+                    <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${course.courseLanguage}`} style={atomOneDark}>
                         {`${chapter.code}`}
                     </SyntaxHighlighter>
                     

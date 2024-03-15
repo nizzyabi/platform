@@ -30,7 +30,8 @@ export const getChapter = async ({
       select: {
         price: true,
         notionLink: true,
-        githubLink: true
+        githubLink: true,
+        courseLanguage: true
       }
     });
 
@@ -90,6 +91,7 @@ export const getChapter = async ({
       purchase,
       notionLink: course.notionLink,
       githubLink: course.githubLink,
+      courseLanguage: course.courseLanguage
     };
   } catch (error) {
     console.log("[GET_CHAPTER]", error);

@@ -79,6 +79,9 @@ model Course {
   description String? @db.Text
   imageUrl String? @db.Text
 
+  // language being used
+  courseLanguage String?
+
   language String?
   language2 String?
   language3 String?
