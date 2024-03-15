@@ -109,13 +109,15 @@ const ChapterIdPage = async ({
                     />
                 )}
                 </div>
-                <div>
+                {chapter.code && chapter.code.trim().length > 0 && (
+                    <div>
                     <h1 className="font-semibold text-xl pt-2 mb-4">Code</h1>
                     <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${chapter.title}`} style={atomOneDark}>
-                        {`console.log('Hello World')`}
+                        {`${chapter.code}`}
                     </SyntaxHighlighter>
                     
-                </div>
+                    </div>
+                )}
                 <div className="flex items-center justify-center space-x-8 pt-8">
                     
                     {links.map((link, index) => (

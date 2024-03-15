@@ -123,10 +123,14 @@ model Attachment {
 
 model Chapter {
   id String @id @default(uuid())
+
   title String
   description String? @db.Text
   vimeoVideo String?
   videoUrl String? @db.Text
+
+  code String?
+  
   position Int
   isPublished Boolean @default(false)
   isFree Boolean @default(false)

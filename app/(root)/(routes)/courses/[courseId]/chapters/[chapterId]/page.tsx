@@ -8,7 +8,7 @@ import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessForm } from "./_components/chapter-access-form";
 import ChapterActions from "./_components/chapter-actions";
 import { VimeoVideoForm } from "./_components/vimeo-video";
-
+import { ChapterCodeForm } from "./_components/chapter-code";
 
 const ChapterIdPage = async ({
   params
@@ -132,6 +132,16 @@ const ChapterIdPage = async ({
               </h2>
             </div>
             <VimeoVideoForm
+              initialData={chapter}
+              courseId={params.courseId}
+              chapterId={params.chapterId}
+            />
+          </div>
+          <div>
+            <div className="flex items-center gap-x-2">
+              <h2>Chapter Code</h2>
+            </div>
+            <ChapterCodeForm
               initialData={chapter}
               courseId={params.courseId}
               chapterId={params.chapterId}
