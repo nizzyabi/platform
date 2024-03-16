@@ -17,6 +17,7 @@ const ChapterIdPage = async ({
 }) => {
     // get user
     const session = await auth();
+    
 
     if (!session) {
         return redirect("/");
@@ -65,14 +66,15 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div className="pt-8">
+    <div className="pt-8 mb-20">
         {isLocked ? (
             <div className=" xs:mt-3 sm:mt-3 bg-[#131212] relative aspect-video">
                 <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
                     <Lock className="h-8 w-8" />
-                    <p className="text-lg">
-                        Purchase course to unlock
-                    </p>
+                    <CoursePurchaseButton
+                        courseId={params.courseId}
+                        price={course.price!}
+                    />
                 </div>
 
             </div>
@@ -92,19 +94,12 @@ const ChapterIdPage = async ({
                 <div className="mt-8 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
                 
-                {purchase ? (
                     <CourseProgressButton 
                         chapterId={params.chapterId}
                         courseId={params.courseId}
                         nextChapterId={nextChapter?.id}
                         isCompleted={!!userProgress?.isCompleted}
                     />
-                ) : (
-                    <CoursePurchaseButton
-                        courseId={params.courseId}
-                        price={course.price!}
-                    />
-                )}
                 </div>
                 {chapter.code && chapter.code.trim().length > 0 && (
                     <div>
