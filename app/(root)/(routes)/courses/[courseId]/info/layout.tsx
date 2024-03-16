@@ -60,22 +60,19 @@ const CourseInfoLayout = async ({
         <div className="pt-40 px-12 pb-40 space-y-10">
 
           <div className="text-center pb-8">
-            <h1 className="text-7xl font-bold mb-3">{course?.title}</h1>
-            <p className="text-xl opacity-50 font-medium pb-8">{course?.description}</p>
-           
+            <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
+            <p className="text-sm opacity-50 font-medium pb-8">{course?.description}</p>
             
-            <div className="flex items-center justify-center pb-4">
-                <Image 
-                    src={`${course?.imageUrl}`} 
-                    alt='Image' 
-                    width={800} 
-                    height={800} 
-                    className="rounded shadow-lg shadow-black"
-                />
-                 
-            </div>
+            <div className="responsive-intro-video-container xs:mt-3 sm:mt-3">
+          <iframe 
+            src={`${course?.introVideo}`} 
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+            title="Video"
+          >
+          </iframe>
+        </div>
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
-              <Button variant='brand' size='brand'>
+              <Button variant='basic' size='brand'>
                 Go To Course
               </Button>
             </Link>

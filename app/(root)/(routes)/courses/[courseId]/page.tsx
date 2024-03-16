@@ -19,6 +19,8 @@ import { BonusForm } from "./_components/bonuses";
 import { NotionForm } from "./_components/notion-link";
 import { GithubForm } from "./_components/github-link";
 import { CodeLanguageForm } from "./_components/code-language-form";
+import { IntroVideoForm } from "./_components/intro-video";
+
 const CoursesIdPage = async ({
   params
 }: {
@@ -73,6 +75,7 @@ const CoursesIdPage = async ({
     course.githubLink,
     course.notionLink,
     course.courseLanguage,
+    course.introVideo,
     course.chapters.some(chapter => chapter.isPublished)
   ];
 
@@ -193,6 +196,7 @@ const CoursesIdPage = async ({
                 initialData={course}
                 />
             </div>
+            
             <div>
               <IssueForm
                 courseId={course.id}
@@ -207,6 +211,12 @@ const CoursesIdPage = async ({
             </div>
             <div>
               <BonusForm
+                courseId={course.id}
+                initialData={course}
+              />
+            </div>
+            <div>
+              <IntroVideoForm
                 courseId={course.id}
                 initialData={course}
               />

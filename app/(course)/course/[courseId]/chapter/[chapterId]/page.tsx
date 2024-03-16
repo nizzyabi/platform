@@ -2,15 +2,11 @@ import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
-import { Preview } from "@/components/preview";
 import { Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
-import { IconBrandNotion, IconBrandGithub, IconBrandDiscord } from "@tabler/icons-react";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { RiNotionFill } from "react-icons/ri";
-
 import Link from "next/link";
-import Notes from "@/components/notes";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
