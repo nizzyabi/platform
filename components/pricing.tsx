@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 const tiers = [
   {
     name: "Free",
-    price: 0,
+    price: 60,
     description: "Free forever, for teams just getting started",
-    features: ["10k Events per month", "1 Alert"],
+    features: ["Bi-weekly calls", "Private Discord", "Unlimited Messaging"],
     cta: "Get Started for Free",
   },
   {
@@ -103,7 +103,7 @@ export const Pricing: React.FC = () => {
 
                         <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60">
                           <span className="text-4xl">${tier.price}</span>
-                          <span className="text-lg">/ month</span>
+                          <span className="text-lg">/ session</span>
                         </h3>
                         <p className="mt-4 text-sm leading-6 text-zinc-400">{tier.description}</p>
                         <ul role="list" className="mt-8 text-sm space-y-3 leading-6 text-zinc-300">

@@ -32,13 +32,31 @@ export default function LandingPage() {
       
       <div className='pt-40'>
       </div>
+      <div className="container mx-auto text-center">
+            <div className="mb-6">
+              <div className="relative inline-flex before:absolute before:inset-0 ">
+                <Link
+                  className="px-3 py-1 text-sm font-medium inline-flex items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(theme(colors.primary.900),_theme(colors.primary.900))_padding-box,_conic-gradient(theme(colors.primary.400),_theme(colors.primary.700)_25%,_theme(colors.primary.700)_75%,_theme(colors.primary.400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
+                  href="https://github.com/NizarAbiZaher"
+                  target="_blank"
+                >
+                  <span className="relative inline-flex items-center">
+                    We Are Open Source{" "}
+                    <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                      -&gt;
+                    </span>
+                  </span>
+                </Link>
+              </div>
+              </div>
+              </div>
       <div className='mb-20 font-extrabold '>
         <div className='flex-1 flex flex-col items-center justify-center mb-4'>
         
-            <h1 className='text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60 header-landing text-center'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
+            <h1 className='text-7xl font-bold header-landing text-center'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
             <Link
-                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
                 href={session ? '/courses' : '/auth/register'}
               >
                 Get Started{" "}
