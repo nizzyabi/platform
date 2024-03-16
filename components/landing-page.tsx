@@ -11,6 +11,7 @@ import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { ArrowRight } from 'lucide-react';
 
 
 
@@ -35,11 +36,13 @@ export default function LandingPage() {
         <div className='flex-1 flex flex-col items-center justify-center mb-4'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
-            <Button variant='default' className='font-medium py-2 mt-3'>
-              <Link href={session ? '/courses' : '/auth/register'} className='flex'>
-                Get started
+            <Link
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                href={session ? '/courses' : '/auth/register'}
+              >
+                Get Started{" "}
+                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
               </Link>
-            </Button>
         </div>
 
         <div className='text-center'>
@@ -49,11 +52,15 @@ export default function LandingPage() {
         <div className='pt-64'>
           <div className='text-center'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block '> Languages</span></h1>
-            <Button variant='default' className='font-semibold py-2 mt-5 mb-8'>
-              <Link href={session ? '/courses' : '/auth/register'} className='flex'>
-                Let's Start
+            <div className='flex items-center justify-center mb-8'>
+            <Link
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                href={session ? '/courses' : '/auth/register'}
+              >
+                Get Started{" "}
+                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
               </Link>
-            </Button>
+            </div>
             <LanguageBackground />
             </div>
             
@@ -63,11 +70,15 @@ export default function LandingPage() {
         <div>
           <div className='text-center pt-64'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
-            <Button variant='default' className='font-semibold py-2 mt-5'>
-              <Link href={session ? '/courses' : '/auth/register'} className='flex'>
-                Let's Start
+            <div className='flex items-center justify-center mb-'>
+            <Link
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                href={session ? '/courses' : '/auth/register'}
+              >
+                Get Started{" "}
+                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
               </Link>
-            </Button>
+            </div>
           </div>
 
           <ThreeD />
