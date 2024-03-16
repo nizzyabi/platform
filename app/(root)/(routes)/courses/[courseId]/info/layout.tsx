@@ -63,7 +63,7 @@ const CourseInfoLayout = async ({
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium pb-8">{course?.description}</p>
             
-            <div className="responsive-intro-video-container xs:mt-3 sm:mt-3">
+            <div className="responsive-intro-video-container mt-12 mb-8">
           <iframe 
             src={`${course?.introVideo}`} 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
@@ -71,16 +71,14 @@ const CourseInfoLayout = async ({
           >
           </iframe>
         </div>
+
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
-              <Button variant='basic' size='brand'>
+              <Button variant='default'>
                 Go To Course
               </Button>
             </Link>
-          </div>
 
-          <div className="">
-          <p>{course?.description}</p>
-          </div>
+        </div>
 
           <div>
             <Preview value={course?.issue!}/>
@@ -89,6 +87,10 @@ const CourseInfoLayout = async ({
           <div>
             <Preview value={course?.solution!}/>
           </div>
+
+          <div className="text-center">
+
+            <h1 className="text-3xl mb-8 font-bold">Languages</h1>
 
             <div className="flex items-center justify-center pb-4 space-x-4">
                 <Image 
@@ -111,6 +113,7 @@ const CourseInfoLayout = async ({
                     width={200} 
                     height={200}
                 />
+            </div>
             </div>
 
             <div className="text-center  pt-5">
