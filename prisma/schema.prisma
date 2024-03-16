@@ -78,6 +78,7 @@ model Course {
   title String @db.Text
   description String? @db.Text
   imageUrl String? @db.Text
+  introVideo String? @db.Text
 
   // language being used
   courseLanguage String?
