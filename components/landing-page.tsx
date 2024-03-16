@@ -34,7 +34,8 @@ export default function LandingPage() {
       </div>
       <div className='mb-20 font-extrabold '>
         <div className='flex-1 flex flex-col items-center justify-center mb-4'>
-            <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
+        
+            <h1 className='text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60 header-landing text-center'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
             <Link
                 className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
