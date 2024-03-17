@@ -92,7 +92,7 @@ export const Mentorship: React.FC = () => {
                           {tier.name}
                         </h3>
 
-                        <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60">
+                        <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-slate-200">
                           <span className="text-4xl">${tier.price}</span>
                           <span className="text-lg">/ session</span>
                         </h3>
