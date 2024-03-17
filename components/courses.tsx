@@ -26,19 +26,6 @@ export default function Courses() {
                 <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
               </div>
           </div>
-          {nizzyuser && 
-          <div className="flex items-center justify-center space-x-7 mt-6">
-            <Link href='/courses/add'>
-              <Button variant="default" className='font-medium py-2 mt-3'>Create</Button>
-            </Link>
-            <Link href='/admin'>
-              <Button variant="default" className='font-medium py-2 mt-3'>Admin</Button>
-            </Link>
-          </div>
-          }
-          
-          
-          
       </div>
     )
   }
