@@ -2,8 +2,6 @@
 "use client"
 import { useEffect } from "react";
 import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
 import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
 import { IoBuildOutline } from "react-icons/io5";
@@ -13,6 +11,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Separator } from "@/components/ui/separator";
 
 export default function Roadmap() {
     // Current User Data
@@ -219,20 +218,13 @@ export default function Roadmap() {
         }
 
     ]
-    // AOS Effect
-    useEffect(() => {
-        AOS.init({
-          disable: "phone",
-          duration: 500,
-          easing: "ease-out-cubic",
-        });
-      }, []);
+    
 
     return (
         <div className="pt-40 pb-40 landing">
             {/* Roadmap Title */}
-            <div data-aos='fade-right'>
-                <h1 className="text-5xl text-center font-bold "> 
+            <div>
+                <h1 className="text-7xl text-center font-bold "> 
                     {!session ? (
                         <p>Roadmap</p>
                     ): (
@@ -240,10 +232,13 @@ export default function Roadmap() {
                     )}
                 </h1>
                 <p className='pt-3 font-medium text-md text-slate-100/40 text-center'>Full roadmap to being a web developer</p>
+                <div className="flex items-center justify-center">
+                <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
+                </div>
             </div>
 
             {/* Resources */}
-            <div data-aos='fade-left' className="space-y-20">
+            <div className="space-y-20">
                 {roadmapData.map((item, index) => (
                     <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900 border border-slate-100/20">
                         <div className="flex items-center justify-between">

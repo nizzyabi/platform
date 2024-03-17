@@ -37,7 +37,7 @@ export default function Navbar() {
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2" data-aos='fade-down'>
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-2">
                 <div className="flex justify-between items-center">
                 <MobileSidebar />
                

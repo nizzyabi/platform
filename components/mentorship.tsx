@@ -4,6 +4,7 @@ import { Particles } from "./particles";
 import { ArrowRight, Check } from "lucide-react";
 import { useCallback, useId, useMemo } from "react";
 import { cn } from "@/lib/utils";
+import { Separator } from "./ui/separator";
 
 const tiers = [
   {
@@ -58,6 +59,10 @@ export const Mentorship: React.FC = () => {
           <div className="text-center pb-5 pt-40 mb-12">
             <h1 className="font-bold text-7xl ">Mentorship</h1>
             <p className="text-md text-slate-100/40 pt-1">Get personal advice, mentorship, & guidance to learn code faster!</p> 
+            <div className="flex items-center justify-center">
+                <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
+            </div>
+            
         </div>
           {/* Pricing tabs */}
           <HighlightGroup className="h-full grid gap-6 md:grid-cols-12 group">

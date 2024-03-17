@@ -26,7 +26,7 @@ export const CoursesList = async ({
         <div>
             
            
-            <div className='px-4 py-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4'>
+            <div className=' py-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 max-w-[1600px] mx-auto xs: px-20 sm:px-10 md:px-6 lg:px-8 pt-12'>
                 {items.map((item) => (
                     <CourseCard 
                         key={item.id}
