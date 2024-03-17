@@ -7,7 +7,7 @@ import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
 import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/nav'
 import { Suspense } from 'react'
 import { Skeleton } from '@/components/ui/skeleton'
 
