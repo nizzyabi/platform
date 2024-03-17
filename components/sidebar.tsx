@@ -65,7 +65,7 @@ export const Sidebar = () => {
                     )}
                      >
                     {/* Design & display icon & label */}
-                    <div className="flex border-b w-full pb-3 ">
+                    <div className="flex border-b border-slate-100/70 w-full pb-3 ">
                         
                         <p className="mt-1 text-lg font-normal hover:text-slate-100/90 duration-300">{route.label}</p>
                         

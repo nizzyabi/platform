@@ -21,6 +21,7 @@ export default function Courses() {
       <div>
           <div className="text-center pt-40">
               <h1 className="font-bold text-7xl  pt-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500 ">Courses</h1>
+              <p className="text-md text-slate-100/40 pt-1">Checkout our free & paid courses below!</p> 
           </div>
           {nizzyuser && 
           <div className="flex items-center justify-center space-x-7 mt-6">

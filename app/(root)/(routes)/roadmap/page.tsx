@@ -239,13 +239,13 @@ export default function Roadmap() {
                         <p>{session?.user.name}'s Roadmap</p>
                     )}
                 </h1>
-                <p className='pt-3 font-medium text-xl text-gray-200 text-center'>Full roadmap to being a web developer</p>
+                <p className='pt-3 font-medium text-md text-slate-100/40 text-center'>Full roadmap to being a web developer</p>
             </div>
 
             {/* Resources */}
             <div data-aos='fade-left' className="space-y-20">
                 {roadmapData.map((item, index) => (
-                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-[#131212] border border-slate-100/20">
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900 border border-slate-100/20">
                         <div className="flex items-center justify-between">
                             <h1 className="text-4xl font-semibold p-3">{item.title}</h1>
                             <TooltipProvider>
@@ -260,7 +260,7 @@ export default function Roadmap() {
                             </TooltipProvider>
                         </div>
 
-                        <p className="text-center font-medium text-slate-300/40 text-xl">{item.description}</p>
+                        <p className="text-center font-medium text-slate-200 text-lg">{item.description}</p>
                         <div className="flex justify-center space-x-8">
                             {item.resources.map((resource, resIndex) => (
                                 <Link key={resIndex} href={resource.link}>
