@@ -52,7 +52,7 @@ interface CourseSidebarProps {
         )}
       </div>
       
-     <ScrollArea className="h-72 w-[290px]">
+     <ScrollArea className="h-72 pr-2 border-r ">
       <div className="flex flex-col  pt-6">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem

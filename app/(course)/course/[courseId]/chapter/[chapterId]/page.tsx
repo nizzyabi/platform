@@ -68,7 +68,7 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div className="pt-8 mb-20">
+    <div className="pt-8 mb-20 ">
         {isLocked ? (
             <div className=" xs:mt-3 sm:mt-3 bg-[#131212] relative aspect-video">
                 <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
@@ -83,7 +83,7 @@ const ChapterIdPage = async ({
             
         ) : (
         // This is the video player which will be shown when the video is not locked
-        <div className="responsive-iframe-container xs:mt-3 sm:mt-3">
+        <div className=" xs:mt-3 sm:mt-3 responsive-iframe-container">
             <Suspense fallback={<Skeleton className="bg-white"/>}>
                 <iframe 
                     src={`${chapter.vimeoVideo}`} 
