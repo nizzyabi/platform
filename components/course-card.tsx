@@ -80,7 +80,7 @@ export const CourseCard =  async ({
                             />
                         )}
                         {!price && (
-                            <button className="bg-transparent text-slate-100 mb-3 p-1 font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] text-md">
+                            <button className="bg-transparent text-slate-100 mb-3 px-4 py-1.5 font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] text-md">
                                 Free
                             </button>
                         )}
