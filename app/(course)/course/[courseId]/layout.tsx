@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { getProgress } from "@/actions/get-progress";
 import { CourseSidebar } from "./_components/course-sidebar";
 import { CourseNavbar } from "./_components/course-navbar";
+import { Suspense } from "react";
 
 
 const CourseLayout = async ({

@@ -8,6 +8,8 @@ import { ConfettiProvder } from '@/components/providers/confetti-provider'
 import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
 import Navbar from '@/components/Navbar'
+import { Suspense } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
 
 const geist = GeistSans
 
@@ -31,6 +33,7 @@ export default async function RootLayout({
         <ToastProvider />
         <ConfettiProvder />
           {children}
+        
       </body>
     </html>
     </SessionProvider>

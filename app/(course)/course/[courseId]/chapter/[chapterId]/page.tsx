@@ -9,6 +9,8 @@ import { RiNotionFill } from "react-icons/ri";
 import Link from "next/link";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const ChapterIdPage = async ({
     params
@@ -78,17 +80,24 @@ const ChapterIdPage = async ({
                 </div>
 
             </div>
+            
         ) : (
         // This is the video player which will be shown when the video is not locked
         <div className="responsive-iframe-container xs:mt-3 sm:mt-3">
-          <iframe 
-            src={`${chapter.vimeoVideo}`} 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-            title="Video"
-          >
-          </iframe>
+            <Suspense fallback={<Skeleton className="bg-white"/>}>
+                <iframe 
+                    src={`${chapter.vimeoVideo}`} 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                    title="Video"
+                >
+                </iframe>
+          </Suspense>
+        
         </div>
+        
+
       )}
+      
         <div>
             <div>
                 <div className="mt-8 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
@@ -123,7 +132,6 @@ const ChapterIdPage = async ({
                 </div>
             </div>
         </div>  
-        
     </div>
   )
 }
