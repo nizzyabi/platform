@@ -12,7 +12,8 @@ interface CourseCardProps {
     chaptersLength: number;
     progress: number | null;
     description: string;
-    course?: Course []
+    course?: Course [];
+    price?: number;
   };
 export const CourseCard =  async ({
     id,
@@ -22,6 +23,7 @@ export const CourseCard =  async ({
     progress,
     description,
     course,
+    price,
     
 }: CourseCardProps) => {
     const session = await auth()
@@ -66,16 +68,19 @@ export const CourseCard =  async ({
                             </span>
                         </div>
                     </div>
-                        {progress !== null ? (
+                        {progress !== null && (
                             <CourseProgress
                                 variant={progress === 100 ? "success" : "default"}
                                 size="sm"
                                 value={progress}
                                 
                             />
-                        ) : (
+                        )}
+                    </div>
+                    <div>
+                        {!price && (
                             <div>
-                                
+                                Free!
                             </div>
                         )}
                     </div>

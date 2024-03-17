@@ -64,7 +64,6 @@ const CoursesIdPage = async ({
     course.title,
     course.description,
     course.imageUrl,
-    course.price,
     course.learningOutcome,
     course.solution,
     course.bonus,
