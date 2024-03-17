@@ -60,11 +60,11 @@ export default function Search() {
     return (
         <div className="flex items-center justify-center">
           <>
-          <div className="flex items-center justify-center ">
-            <div className="relative w-[200px]">
+          <div className="flex items-center justify-center hover:bg-opacity-50">
+            <div className="relative w-[200px] hover:opacity-30">
               <div onClick={handleClick} className="flex items-center justify-between bg-zinc-900 rounded cursor-pointer px-2 py-1">
                 <SearchIcon className="text-slate-100/50 h-5 w-5" />
-                <span className="flex-1 text-slate-100 placeholder:text-slate-100/50 ml-2 font-medium">Search</span>
+                <p className="flex-1 text-slate-100 placeholder:text-slate-100/50 ml-2 font-medium text-md">Search</p>
                 <div className="text-slate-100">
                   <span className=" bg-white/20 p-1 rounded bg-opacity-80 text-xs">⌘ K</span>
                 </div>

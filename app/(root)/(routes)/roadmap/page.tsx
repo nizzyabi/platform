@@ -224,7 +224,7 @@ export default function Roadmap() {
         <div className="pt-40 pb-40 landing">
             {/* Roadmap Title */}
             <div>
-                <h1 className="text-7xl text-center font-bold "> 
+                <h1 className="text-6xl text-center font-bold "> 
                     {!session ? (
                         <p>Roadmap</p>
                     ): (
