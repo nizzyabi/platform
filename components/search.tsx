@@ -60,13 +60,13 @@ export default function Search() {
     return (
         <div className="flex items-center justify-center">
           <>
-          <div className="flex items-center justify-center pt-5">
-            <div className="relative w-96">
-              <div onClick={handleClick} className="flex items-center justify-between bg-white rounded cursor-pointer border border-black p-2">
-                <SearchIcon className="text-black/50 h-4 w-4" />
-                <span className="flex-1 text-black/50 placeholder:text-black/50 ml-2">Search for a course</span>
-                <div className="text-black">
-                  <span className=" bg-black/20 p-1 rounded bg-opacity-80 text-xs">⌘ K</span>
+          <div className="flex items-center justify-center ">
+            <div className="relative w-[200px]">
+              <div onClick={handleClick} className="flex items-center justify-between bg-zinc-900 rounded cursor-pointer px-2 py-1">
+                <SearchIcon className="text-slate-100/50 h-5 w-5" />
+                <span className="flex-1 text-slate-100 placeholder:text-slate-100/50 ml-2 font-medium">Search</span>
+                <div className="text-slate-100">
+                  <span className=" bg-white/20 p-1 rounded bg-opacity-80 text-xs">⌘ K</span>
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Search() {
             <CommandDialog open={open} onOpenChange={setOpen}>
               
               <CommandInput 
-                placeholder="JavaScript Course" className="border-slate-100/50 w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
+                placeholder="Learn to code guide" className="w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
               
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>

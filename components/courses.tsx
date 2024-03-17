@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useCurrentUser } from "@/hooks/user-current-user";
 import { Button } from "@/components/ui/button";
-import Search from "./search";
 import { Separator } from "./ui/separator";
 
 
@@ -37,9 +36,9 @@ export default function Courses() {
             </Link>
           </div>
           }
-          {/*
-          <Search />
-          */}
+          
+          
+          
       </div>
     )
   }

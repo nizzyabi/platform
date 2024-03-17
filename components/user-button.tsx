@@ -10,11 +10,12 @@ const UserButton = () => {
     return (
         <div>
             {!session ? (
-                <Link href='/auth/register'>
-                    <Button variant='basic'>
-                        <h1 className="text-md">Sign Up</h1>
-                    </Button>
-                </Link>
+                 <Link
+                 className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-0.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
+                 href={session ? '/courses' : '/auth/register'}
+               >
+                 Sign Up
+               </Link>
             ): (
                 <Link href='/settings'>
                     {!session.image ? (
