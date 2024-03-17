@@ -7,24 +7,24 @@ import { cn } from "@/lib/utils";
 
 const tiers = [
   {
-    name: "Free",
-    price: 60,
+    name: "Basic",
+    price: 70,
     description: "Free forever, for teams just getting started",
-    features: ["Bi-weekly calls", "Private Discord", "Unlimited Messaging"],
+    features: ["Bi-Weekly Live Lessons", "Private Discord", "Weekly Check-ins", "Unlimited Texts"],
     cta: "Get Started for Free",
   },
   {
-    name: "Pro",
-    price: 20,
+    name: "Managable",
+    price: 60,
     description: "For larger teams with increased usage",
-    features: ["50k Events per month", "10 Alerts"],
+    features: ["Weekly Live Lessons", "Private Discord", "Weekly Check-ins", "Unlimited Text", "Build Projects Together", "Personal Learning Plan"],
     cta: "Try Pro for 14 days",
   },
   {
-    name: "Enterprise",
+    name: "All in",
     price: 50,
     description: "For businesses with custom needs",
-    features: ["500k Events per month", "Unlimited Alerts"],
+    features: ["Live Lessons 3x a Week", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan", "Code Review Sessions", "Lifetime Free Access To Courses", "Job Search Help"],
     cta: "Scale Up",
   },
 ];
@@ -53,21 +53,12 @@ export const Pricing: React.FC = () => {
         </div>
       </div>
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
-        <div className="py-12 md:py-20">
+        <div>
           {/* Content */}
-          <div className="max-w-3xl pb-12 mx-auto text-center md:pb-20">
-            <div>
-              <div className="inline-flex pb-3 font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-200">
-                Pricing plans
-              </div>
-            </div>
-            <h2 className="pb-4 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60">
-              Simple and transparent
-            </h2>
-            <p className="text-lg text-zinc-400">
-              Invite your whole team, we don't do seat based pricing here.
-            </p>
-          </div>
+          <div className="text-center pb-5 pt-40 mb-12">
+            <h1 className="font-bold text-7xl ">Mentorship</h1>
+            <p className="text-md text-slate-100/40 pt-1">Get personal advice, mentorship, & guidance to learn code faster!</p> 
+        </div>
           {/* Pricing tabs */}
           <HighlightGroup className="h-full grid gap-6 md:grid-cols-12 group">
             {/* Box #1 */}
@@ -107,25 +98,24 @@ export const Pricing: React.FC = () => {
                         </h3>
                         <p className="mt-4 text-sm leading-6 text-zinc-400">{tier.description}</p>
                         <ul role="list" className="mt-8 text-sm space-y-3 leading-6 text-zinc-300">
-                          {tier.features.map((feature) => (
-                            <li key={feature} className="flex gap-x-3">
-                              <Check
-                                className={cn("h-6 w-5 flex-none", {
-                                  "text-emerald-400": i === 0,
-                                  "text-yellow-300": i === 1,
-                                  "text-rose-500": i === 2,
-                                })}
-                                aria-hidden="true"
-                              />
-                              {feature}
-                            </li>
-                          ))}
+                        {tier.features.map((feature) => (
+                          <li key={feature} className="flex gap-x-3">
+                            <Check
+                              className={cn("h-6 w-5 flex-none", {
+                                "text-emerald-400": i === 0,
+                                "text-yellow-300": i === 1,
+                                "text-rose-500": i === 2,
+                              })}
+                            />
+                          {feature}
+                          </li>
+                        ))}
                         </ul>
                         <Link
                           className="mt-16 w-full justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group"
                           href="/overview"
                         >
-                          Get Started{" "}
+                          Book a call{" "}
                           <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
                         </Link>
                       </div>
@@ -148,23 +138,6 @@ export const Pricing: React.FC = () => {
                       aria-hidden="true"
                     >
                       <div className="absolute inset-0 translate-z-0 bg-zinc-800 rounded-full blur-[80px]" />
-                    </div>
-                    {/* Text */}
-
-                    <div className="p-8">
-                      <h3 className="text-lg font-semibold leading-8">Full-time mentorship</h3>
-
-                      <p className="mt-4 text-sm leading-6 text-zinc-400">
-                        Full-time mentorship
-                      </p>
-                      <div className="mt-16 ">
-                        <Link
-                          className="font-medium  whitespace-nowrap transition duration-150 ease-in-out text-zinc-100 hover:text-white group"
-                          href="https://github.com/chronark/highstorm"
-                        >
-                          Custom pricing
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
