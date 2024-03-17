@@ -5,6 +5,8 @@ import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { Course } from "@prisma/client";
 import { IconBook2 } from "@tabler/icons-react";
+import { Suspense } from "react";
+import { Button } from "./ui/button";
 interface CourseCardProps {
     id: string;
     title: string;
@@ -41,6 +43,7 @@ export const CourseCard =  async ({
     return (
         
         <Link href={`courses/${id}/info`}> 
+        
             <div className="group hover:opacity-75 transition duration-300 overflow-hidden  h-full bg-[#131212] rounded">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
@@ -49,14 +52,13 @@ export const CourseCard =  async ({
                         src={imageUrl}
                         alt={title}
                     />
-                    h
                 </div>
                 <div className="flex flex-col px-3 space-y-6 pt-4">
                     <div className="text-2xl font-extrabold">
                         {title}
                     </div>
 
-                    <div className="text-md font-medium">
+                    <div className="text-sm font-medium text-slate-100/50">
                         {description}
                     </div>
                     
@@ -68,6 +70,7 @@ export const CourseCard =  async ({
                             </span>
                         </div>
                     </div>
+                    <div>
                         {progress !== null && (
                             <CourseProgress
                                 variant={progress === 100 ? "success" : "default"}
@@ -76,15 +79,13 @@ export const CourseCard =  async ({
                                 
                             />
                         )}
-                    </div>
-                    <div>
                         {!price && (
-                            <div>
+                            <button className="bg-transparent text-slate-100 mb-3 p-2 font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] text-md">
                                 Free!
-                            </div>
+                            </button>
                         )}
-                    </div>
-                    
+                        </div>
+                    </div>                
                 </div>
         </Link>
     )

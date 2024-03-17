@@ -1,5 +1,6 @@
 import { Course, Purchase } from '@prisma/client';
 import { CourseCard } from '@/components/course-card';
+import { Suspense } from 'react';
 
 
 type CourseWithProgress = Course & {
@@ -23,6 +24,8 @@ export const CoursesList = async ({
         
     return (
         <div>
+            
+           
             <div className='px-4 py-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4'>
                 {items.map((item) => (
                     <CourseCard 
