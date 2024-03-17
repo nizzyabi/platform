@@ -57,7 +57,7 @@ export default function Navbar() {
                    
                 
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
-                        <Link href="https://discord.gg/nizar">
+                        <Link href="/community">
                             <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Community</p>
                         </Link>
                         <Link href="/roadmap">
