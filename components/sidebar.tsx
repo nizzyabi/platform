@@ -24,8 +24,8 @@ const routes = [
     },
     {
         
-        href: "/mentorship",
-        label: "Mentorship",
+        href: "/tutoring",
+        label: "Tutoring",
     },
     {
         
