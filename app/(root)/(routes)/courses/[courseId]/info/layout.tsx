@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 import { db } from "@/lib/db";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -77,12 +78,15 @@ const CourseInfoLayout = async ({
           </iframe>
           </div>
         
-
-            <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12 pt-12">
-              <Button variant='default'>
-                Go To Course
-              </Button>
-            </Link>
+            <div className='flex-1 flex flex-col items-center justify-center mb-4 mt-8'>
+            <Link
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
+                href={`/course/${course?.id}`}
+              >
+                Go To Course{" "}
+                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
+              </Link>
+            </div>
 
         </div>
 
