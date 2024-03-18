@@ -9,23 +9,23 @@ import { Separator } from "./ui/separator";
 const tiers = [
   {
     name: "Basic",
-    price: 70,
+    price: 80,
     description: "Free forever, for teams just getting started",
-    features: ["Bi-Weekly Live Lessons", "Private Discord", "Weekly Check-ins", "Unlimited Texts"],
+    features: ["4 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts"],
     cta: "Get Started for Free",
   },
   {
     name: "Managable",
-    price: 60,
+    price: 70,
     description: "For larger teams with increased usage",
-    features: ["Weekly Live Lessons", "Private Discord", "Weekly Check-ins", "Unlimited Text", "Build Projects Together", "Personal Learning Plan"],
+    features: ["6 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan"],
     cta: "Try Pro for 14 days",
   },
   {
     name: "All in",
-    price: 50,
+    price: 60,
     description: "For businesses with custom needs",
-    features: ["Live Lessons 3x a Week", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan", "Code Review Sessions", "Lifetime Free Access To Courses", "Job Search Help"],
+    features: ["10 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan", "Code Review Sessions", "Lifetime Free Access To Courses", "Job Search Help"],
     cta: "Scale Up",
   },
 ];
@@ -57,7 +57,7 @@ export const Mentorship: React.FC = () => {
         <div>
           {/* Content */}
           <div className="text-center pb-5 pt-40 mb-12">
-            <h1 className="font-bold text-7xl ">Mentorship</h1>
+            <h1 className="font-bold text-7xl mx-6"> Personal Tutoring</h1>
             <p className="text-md text-slate-100/40 pt-1">Get personal advice, mentorship, & guidance to learn code faster!</p> 
             <div className="flex items-center justify-center">
                 <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
@@ -72,7 +72,7 @@ export const Mentorship: React.FC = () => {
               <div
                 key={tier.name}
                 className="h-full md:col-span-6  lg:col-span-4 group/item"
-                data-aos="fade-down"
+                
               >
                 <HighlighterItem>
                   <div className="relative h-full bg-zinc-900 rounded-[inherit] z-20 overflow-hidden">
@@ -99,7 +99,7 @@ export const Mentorship: React.FC = () => {
 
                         <h3 className="inline-flex items-baseline pb-1 mt-6 font-bold text-slate-200">
                           <span className="text-4xl">${tier.price}</span>
-                          <span className="text-lg">/ session</span>
+                          <span className="text-lg">/ lesson</span>
                         </h3>
                         <p className="mt-4 text-sm leading-6 text-zinc-400">{tier.description}</p>
                         <ul role="list" className="mt-8 text-sm space-y-3 leading-6 text-zinc-300">
@@ -129,7 +129,7 @@ export const Mentorship: React.FC = () => {
                 </HighlighterItem>
               </div>
             ))}
-            <div className="h-full md:col-span-6 lg:col-span-12  group/item" data-aos="fade-down">
+            <div className="h-full md:col-span-6 lg:col-span-12  group/item" >
               <HighlighterItem>
                 <div className="relative h-full bg-zinc-900 rounded-[inherit] z-20 overflow-hidden">
                   <Particles
