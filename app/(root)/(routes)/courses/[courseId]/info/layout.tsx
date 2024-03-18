@@ -3,6 +3,7 @@ import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 import { db } from "@/lib/db";
 import Image from "next/image";
@@ -62,18 +63,22 @@ const CourseInfoLayout = async ({
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
+            <div className="flex items-center justify-center">
+                <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40 mb-8" />
+            </div>
             
-            
+          <div className="lg:px-80 md:px-40 sm:px-5">
           <iframe 
             src={`${course?.introVideo}`} 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             title="Video"
-            className="aspect-video w-full sm:px-2 md:px-8 lg:px-12 xl:px-20 border"
+            className="aspect-video w-full"
           >
           </iframe>
+          </div>
         
 
-            <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
+            <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12 pt-12">
               <Button variant='default'>
                 Go To Course
               </Button>
@@ -93,7 +98,7 @@ const CourseInfoLayout = async ({
 
             <h1 className="text-3xl mb-8 font-bold">Languages</h1>
 
-            <div className="flex items-center justify-center pb-4 space-x-4">
+            <div className="flex items-center justify-center pb-4 space-x-4 mx-12">
                 <Image 
                     src={`${course?.language}`} 
                     alt='Image' 
