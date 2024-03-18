@@ -61,16 +61,17 @@ const CourseInfoLayout = async ({
 
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
-            <p className="text-sm opacity-50 font-medium pb-8">{course?.description}</p>
+            <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
             
-            <div className="responsive-intro-video-container mt-12 mb-8">
+            
           <iframe 
             src={`${course?.introVideo}`} 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             title="Video"
+            className="aspect-video w-full sm:px-2 md:px-8 lg:px-12 xl:px-20 border"
           >
           </iframe>
-        </div>
+        
 
             <Link href={`/course/${course?.id}`} className="flex items-center justify-center pb-12">
               <Button variant='default'>

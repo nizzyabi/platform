@@ -38,7 +38,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="sm:hidden md:flex ml-8">
+      <div className="hidden md:flex ml-8">
       <div className="flex flex-col">
         
         {purchase && (
@@ -52,8 +52,8 @@ interface CourseSidebarProps {
         )}
       </div>
       
-     <ScrollArea className="h-72 pr-40 border-r ">
-      <div className="flex flex-col">
+     <div>
+      <ScrollArea className="flex flex-col h-72 w-full pr-40 border-r">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -64,9 +64,8 @@ interface CourseSidebarProps {
             isLocked={!chapter.isFree && !purchase}
           />
         ))}
-      </div>
       </ScrollArea>
-      
+      </div>
     </div>
     )
   }
