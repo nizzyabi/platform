@@ -68,7 +68,29 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div className="pt-8 mb-20 ">
+    <div className="ml-12 lg:mr-8 border w-full">
+        <div>
+            <iframe
+             src={`${chapter.vimeoVideo}`} 
+             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+             title="Video"
+             className="w-full aspect-video"
+             >
+            </iframe>
+        </div>
+        <div className="mt-3 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
+                    <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
+                
+                    <CourseProgressButton 
+                        chapterId={params.chapterId}
+                        courseId={params.courseId}
+                        nextChapterId={nextChapter?.id}
+                        isCompleted={!!userProgress?.isCompleted}
+                    />
+        </div>
+        
+
+    {/*<div className="pt-8 mb-20 ">
         {isLocked ? (
             <div className=" xs:mt-3 sm:mt-3 bg-[#131212] relative aspect-video">
                 <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
@@ -132,6 +154,7 @@ const ChapterIdPage = async ({
                 </div>
             </div>
         </div>  
+    </div>*/}
     </div>
   )
 }

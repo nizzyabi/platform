@@ -38,7 +38,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="max-w-7xl mx-auto mt-10">
+      <div className="sm:hidden md:flex ml-8 border">
       <div className="flex flex-col">
         
         {purchase && (
@@ -52,8 +52,8 @@ interface CourseSidebarProps {
         )}
       </div>
       
-     <ScrollArea className="h-72 pr-2 border-r ">
-      <div className="flex flex-col  pt-6">
+     <ScrollArea className="h-72 pr-40 border-r ">
+      <div className="flex flex-col">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
