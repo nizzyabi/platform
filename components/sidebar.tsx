@@ -5,10 +5,10 @@ import Link from "next/link";
 import {
     SheetClose,
   } from "@/components/ui/sheet"
-
+import { useSession } from "next-auth/react";
+  
 const routes = [
     {
-       
         href: "/",
         label: "Home",
     },
@@ -47,33 +47,32 @@ const routes = [
 ]
 
 export const Sidebar = () => {
-    
-
+    const { data: session } = useSession();
     return (
         <div className="space-y-4 flex flex-col h-full text-primary mt-12 ">
-            
-        {/* Mapping through each object of the route variable data. */}
-        <div className="space-y-2">
-            {routes.map((route) => (
-                <SheetClose asChild>
-                <Link
-                    href={route.href}
-                    key={route.href} 
-                    
-                    className={cn(
-                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer  rounded "
-                    )}
-                     >
-                    {/* Design & display icon & label */}
+            {/* Mapping through each object of the route variable data. */}
+            <div className="space-y-2">
+                {!session && (
                     <div className="flex border-b border-slate-100/70 w-full pb-3 ">
-                        
-                        <p className="mt-1 text-lg font-normal hover:text-slate-100/90 duration-300">{route.label}</p>
-                        
+                        <p className="mt-1 text-lg font-normal text-slate-100/40 hover:text-slate-100/90 duration-300">Sign In</p>
                     </div>
-                    </Link>
+                )}
+                {routes.map((route) => (
+                    <SheetClose asChild>
+                        <Link
+                            href={route.href}
+                            key={route.href} 
+                            className={cn(
+                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer  rounded "
+                        )}>
+                        {/* Design & display icon & label */}
+                            <div className="flex border-b border-slate-100/70 w-full pb-3 ">
+                                <p className="mt-1 text-lg font-normal hover:text-slate-100/90 duration-300">{route.label}</p>
+                            </div>
+                        </Link>
                     </SheetClose>
-                    ))}
-                    </div>
+                ))}
             </div>
+        </div>
     )
 }

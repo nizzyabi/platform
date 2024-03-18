@@ -43,7 +43,7 @@ const _useColor = (hash: string): [number, number, number] => {
 
 export const Mentorship: React.FC = () => {
   return (
-    <section className="relative">
+    <section className="relative landing">
       {/* Radial gradient */}
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none -z-10"

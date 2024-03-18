@@ -2,9 +2,9 @@ import { ResetForm } from "@/components/auth/Reset-Form"
 
 const ResetPage = () => {
   return (
-    
-    <ResetForm />
-
+    <div className="landing">
+      <ResetForm />
+    </div>
    
   )
 }

@@ -2,7 +2,9 @@ import { RegisterForm } from '@/components/auth/Register-Form'
 
 function RegisterPage() {
   return (
-    <RegisterForm />
+    <div className='landing'>
+      <RegisterForm />
+    </div>
   )
 }
 

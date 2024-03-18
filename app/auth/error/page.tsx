@@ -2,7 +2,9 @@ import { ErrorCard } from "@/components/auth/Error-Card"
 
 const AuthErrorPage = () => {
   return (
-    <ErrorCard />
+    <div className="landing">
+      <ErrorCard />
+    </div>
   )
 }
 
