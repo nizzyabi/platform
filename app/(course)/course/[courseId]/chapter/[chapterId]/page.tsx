@@ -68,7 +68,7 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div className="ml-12 lg:mr-8 border w-full">
+    <div className="mx-12 lg:mr-12 w-full">
         <div>
             <iframe
              src={`${chapter.vimeoVideo}`} 
@@ -87,8 +87,29 @@ const ChapterIdPage = async ({
                         nextChapterId={nextChapter?.id}
                         isCompleted={!!userProgress?.isCompleted}
                     />
+                    
         </div>
-        
+        {chapter.code && chapter.code.trim().length > 0 && (
+                    <div>
+                    <h1 className="font-semibold text-xl pt-2 mb-4">Code</h1>
+                    <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${course.courseLanguage}`} style={atomOneDark}>
+                        {`${chapter.code}`}
+                    </SyntaxHighlighter>
+                    
+                    </div>
+                )}
+                <div className="flex items-center justify-center space-x-8 pt-8">
+                    
+                    {links.map((link, index) => (
+                        <Link href={link.href} key={link.href} className="bg-slate-100 w-[120px] py-3 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
+                            <div className="flex item-center justify-center">
+                                <p className="text-center text-6xl">{link.icon}</p>
+                            </div>
+                            <p className="text-center text-[#2e2e2e] font-semibold mt-2">{link.label}</p>
+                        </Link>
+                    ))}     
+                </div>
+
 
     {/*<div className="pt-8 mb-20 ">
         {isLocked ? (

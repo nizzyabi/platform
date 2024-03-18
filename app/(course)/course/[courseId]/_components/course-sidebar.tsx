@@ -38,7 +38,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="sm:hidden md:flex ml-8 border">
+      <div className="sm:hidden md:flex ml-8">
       <div className="flex flex-col">
         
         {purchase && (
