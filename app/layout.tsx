@@ -30,7 +30,7 @@ export default async function RootLayout({
         <Scroll />
         <ToastProvider />
         <ConfettiProvder />
-          {children}
+        {children}
       </body>
     </html>
     </SessionProvider>

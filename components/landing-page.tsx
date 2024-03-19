@@ -1,6 +1,5 @@
 'use client'
 // Imports 
-import { Button } from '@/components/ui/button'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
@@ -9,8 +8,6 @@ import { LanguageBackground } from './designs/bg-gradient';
 import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { ArrowRight } from 'lucide-react';
 
 
@@ -29,30 +26,30 @@ export default function LandingPage() {
 
   return (
     <div data-aos="fade-up" className='extra landing'>
-      
+
       <div className='pt-40'>
       </div>
       <div className="container mx-auto text-center">
-            <div className="mb-6">
-              <div className="relative inline-flex before:absolute before:inset-0 ">
-                <Link
-                  className="px-3 py-1 text-sm font-medium inline-flex items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out w-full group relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
-                  href="https://github.com/NizarAbiZaher"
-                  target="_blank"
-                >
-                  <span className="relative inline-flex items-center">
-                    We Are Open Source{" "}
-                    <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-              </div>
-              </div>
+        <div className="mb-6">
+          <div className="relative inline-flex before:absolute before:inset-0 ">
+            <Link
+              className="px-3 py-1 text-sm font-medium inline-flex items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out w-full group relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
+              href="https://github.com/NizarAbiZaher"
+              target="_blank"
+            >
+              <span className="relative inline-flex items-center">
+                We Are Open Source{" "}
+                <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                  -&gt;
+                </span>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div className='mb-20 font-extrabold '>
         <div className='flex-1 flex flex-col items-center justify-center mb-4'>
-        
             <h1 className='text-7xl font-bold header-landing text-center'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
             <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
             <Link
@@ -72,7 +69,7 @@ export default function LandingPage() {
           <div className='text-center'>
             <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block '> Languages</span></h1>
             <div className='flex items-center justify-center mb-8'>
-            <Link
+              <Link
                 className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
                 href={session ? '/courses' : '/auth/register'}
               >
@@ -102,7 +99,9 @@ export default function LandingPage() {
 
           <ThreeD />
         </div>
+
       </div>
+      
       <footer className="footer footer-center p-4 bg-base-300 text-base-content text-center">
         <aside>
           <p>Copyright © 2024 - All right reserved by NizzyABI Corp.</p>
