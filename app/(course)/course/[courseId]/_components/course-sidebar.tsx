@@ -53,7 +53,7 @@ interface CourseSidebarProps {
       </div>
       
      <div>
-      <ScrollArea className="flex flex-col h-72 w-full pr-40 border-r">
+      <ScrollArea className="flex flex-col h-72 w-full overflow-x-auto border-r">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}

@@ -72,9 +72,10 @@ const ChapterIdPage = async ({
         <div>
             <iframe
              src={`${chapter.vimeoVideo}`} 
-             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+             allow="autoplay; fullscreen; picture-in-picture; clipboard-write " 
              title="Video"
              className="w-full aspect-video"
+             
              >
             </iframe>
         </div>

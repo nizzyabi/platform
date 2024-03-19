@@ -24,10 +24,9 @@ const SettingsPage = () => {
         logout();
     }
    
-    
     return (
         <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8 landing">
-            <Tabs defaultValue="account" className="sm:w-[250px] md:w-[400px] lg:w-[600px]">
+            <Tabs defaultValue="account" className="xs:w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px]">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="account">Account</TabsTrigger>
 
@@ -56,7 +55,7 @@ const SettingsPage = () => {
                                 </div>
                             </CardContent>
                             <CardFooter>
-                                <Button type='submit' variant="goldHover" onClick={onClick}>Sign Out</Button>
+                                <Button type='submit' variant="default" onClick={onClick}>Sign Out</Button>
                             </CardFooter>
                     </Card>
                 </TabsContent>
@@ -66,13 +65,13 @@ const SettingsPage = () => {
                         <CardHeader>
                             <CardTitle>Purchases</CardTitle>
                                 <CardDescription>
-                                    Manage your purchases here.
+                                    See your purchases here
                                 </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2">
-                            <div className="">
+                            <div className="mb-3">
                                 
-                                <Button type='submit' variant="pinkHover">Courses purchased</Button>
+                                <Button type='submit' variant="default">Courses purchased</Button>
                             </div>
                             
                         </CardContent>

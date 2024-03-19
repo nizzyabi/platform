@@ -43,7 +43,7 @@ export const CourseSidebarItem = ({
       onClick={onClick}
       type="button"
       className={cn(
-        "flex items-center gap-x-2 text-slate-200/20 text-lg font-semibold transition-all hover:text-slate-200 ",
+        "flex items-center gap-x-2 text-slate-200/20 text-md font-semibold min-w-0 transition-all hover:text-slate-200 border w-full pr-40",
         
         isActive && "text-slate-200",
         isCompleted && "text-slate-200/20 hover:text-slate-200",
@@ -54,7 +54,7 @@ export const CourseSidebarItem = ({
           size={17}
           className={iconClassNames}
         />
-          {label}
+          <span className="pr-40 border border-blue-500">{label}</span>
       </div>
       <div className={cn(
         "h-full transition-all",
