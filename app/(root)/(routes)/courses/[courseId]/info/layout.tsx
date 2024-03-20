@@ -51,7 +51,7 @@ const CourseInfoLayout = async ({
     });
     
     return (
-        <div className="pt-40 px-12 pb-40 space-y-10">
+        <div className="pt-40  pb-40 space-y-10">
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
@@ -59,7 +59,7 @@ const CourseInfoLayout = async ({
                 <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40 mb-8" />
             </div>
             
-            <div className="lg:px-80 md:px-40 sm:px-5">
+            <div className="lg:px-80 md:px-40 sm:px-12">
               <iframe 
               src={`${course?.introVideo}`} 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
@@ -90,12 +90,12 @@ const CourseInfoLayout = async ({
           <div className="text-center">
             <h1 className="text-3xl mb-8 font-bold">Stack</h1>
 
-            <div className="flex items-center justify-center pb-4 space-x-3">
+            <div className="flex items-center justify-center pb-4 space-x-5 w-full">
               <Image 
                 src={`${course?.language}`} 
                 alt='Image' 
-                width={120}
-                height={120}
+                width={100}
+                height={100}
               />
               <Image 
                 src={`${course?.language2}`} 
