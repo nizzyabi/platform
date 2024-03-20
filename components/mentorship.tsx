@@ -7,24 +7,11 @@ import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
 
 const tiers = [
+  
   {
-    name: "Basic",
-    price: 80,
-    description: "Free forever, for teams just getting started",
-    features: ["4 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts"],
-    cta: "Get Started for Free",
-  },
-  {
-    name: "Managable",
-    price: 70,
-    description: "For larger teams with increased usage",
-    features: ["6 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan"],
-    cta: "Try Pro for 14 days",
-  },
-  {
-    name: "All in",
+    name: "What is coding tutoring?",
     price: 60,
-    description: "For businesses with custom needs",
+    description: "",
     features: ["10 Lessons / month", "Private Discord", "Weekly Check-ins", "Unlimited Texts", "Build Projects Together", "Personal Learning Plan", "Code Review Sessions", "Lifetime Free Access To Courses", "Job Search Help"],
     cta: "Scale Up",
   },
@@ -43,7 +30,7 @@ const _useColor = (hash: string): [number, number, number] => {
 
 export const Mentorship: React.FC = () => {
   return (
-    <section className="relative landing">
+    <section className=" landing pb-40">
       {/* Radial gradient */}
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none -z-10"
@@ -65,17 +52,17 @@ export const Mentorship: React.FC = () => {
             
         </div>
           {/* Pricing tabs */}
-          <HighlightGroup className="h-full grid gap-6 md:grid-cols-12 group">
+          <HighlightGroup className=" flex items-center justify-center">
             {/* Box #1 */}
 
             {tiers.map((tier, i) => (
               <div
                 key={tier.name}
-                className="h-full md:col-span-6  lg:col-span-4 group/item"
+                className="h-full w-[500px]"
                 
               >
                 <HighlighterItem>
-                  <div className="relative h-full bg-zinc-900 rounded-[inherit] z-20 overflow-hidden">
+                  <div className="h-full bg-zinc-900 rounded-[inherit]">
                     <Particles
                       className="absolute inset-0 -z-10 opacity-10 group-hover/item:opacity-100 transition-opacity duration-1000 ease-in-out"
                       quantity={(i + 1) ** 2 * 10}
@@ -102,14 +89,12 @@ export const Mentorship: React.FC = () => {
                           <span className="text-lg">/ lesson</span>
                         </h3>
                         <p className="mt-4 text-sm leading-6 text-zinc-400">{tier.description}</p>
-                        <ul role="list" className="mt-8 text-sm space-y-3 leading-6 text-zinc-300">
+                        <ul role="list" className="mt-8 text-md space-y-3 leading-6 text-zinc-300">
                         {tier.features.map((feature) => (
                           <li key={feature} className="flex gap-x-3">
                             <Check
                               className={cn("h-6 w-5 flex-none", {
-                                "text-emerald-400": i === 0,
-                                "text-yellow-300": i === 1,
-                                "text-rose-500": i === 2,
+                                "text-purple-400": true,
                               })}
                             />
                           {feature}

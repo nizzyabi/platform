@@ -68,7 +68,7 @@ const ChapterIdPage = async ({
     
 
   return (
-    <div className="px-6 w-full">
+    <div className="w-full px-5 overflow-hidden mb-5">
         <div>
             <iframe
              src={`${chapter.vimeoVideo}`} 
