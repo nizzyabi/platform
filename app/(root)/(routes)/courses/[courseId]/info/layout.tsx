@@ -51,7 +51,7 @@ const CourseInfoLayout = async ({
     });
     
     return (
-        <div className="pt-40  pb-40 space-y-10">
+        <div className="pt-40  pb-40 space-y-10 text-center">
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
@@ -59,12 +59,12 @@ const CourseInfoLayout = async ({
                 <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40 mb-8" />
             </div>
             
-            <div className="lg:px-80 md:px-40 sm:px-12">
+            <div className="flex items-center justify-center">
               <iframe 
               src={`${course?.introVideo}`} 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
               title="Video"
-              className="aspect-video w-full"
+              className="aspect-video sm:w-[500px] md:w-[700px]"
               ></iframe>
             </div>
         
@@ -77,17 +77,42 @@ const CourseInfoLayout = async ({
                 <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
               </Link>
             </div>
+
+            <div className="flex items-center justify-center">
+                <Separator className="mt-8 bg-slate-100/20 h-0.5 w-20 mb-8" />
+            </div>
           </div>
 
           <div>
-            <Preview value={course?.issue!}/>
+            <h1 className="text-5xl font-bold ">What will I learn?</h1>
           </div>
 
           <div>
-            <Preview value={course?.solution!}/>
+            <h1 className="text-5xl font-bold ">Tech stack we will use</h1>
+            
           </div>
 
-          <div className="text-center">
+          <div>
+            <h1 className="text-5xl font-bold ">What's included?</h1>
+          </div>
+
+          <div>
+            <h1 className="text-5xl font-bold ">Difficulty level</h1>
+            {course?.bonus}
+          </div>
+
+          <div>
+            <h1 className="text-5xl font-bold">Purchase course</h1>
+            {
+              !course?.price
+              ? <p>This course is free!</p>
+              : <button>Buy this course for ${course?.price}</button>
+            }
+          </div>
+
+          
+
+          {/*<div className="text-center">
             <h1 className="text-3xl mb-8 font-bold">Stack</h1>
 
             <div className="flex items-center justify-center pb-4 space-x-5 w-full">
@@ -110,23 +135,17 @@ const CourseInfoLayout = async ({
                 height={120} 
               />
             </div>
-          </div>
+    </div>*/}
 
-          <div className="text-center  pt-5">
-            <h1 className="text-5xl font-semibold ">About this course</h1>
-            <h1 className="pr-20 text-2xl font-semibold">What you will learn:</h1>
-            <div className="flex justify-center items-center mr-12">
-              <Preview value={course?.learningOutcome!} />
-            </div>
-          </div>
+          
 
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-              <h1 className="text-center text-5xl font-semibold my-8">Chapters</h1>
+              <h1 className="text-center text-5xl font-bold my-8">Chapters</h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {course?.chapters.map((chapter, index) => (
                   <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
-                    <div className="bg-[#131212] shadow-lg shadow-black/50 rounded-[5px] w-[300px] p-6 m-4 flex flex-col hover:bg-[#1a1a1a] transition duration-300 ease-in-out">
+                    <div className="bg-zinc-900 shadow-lg shadow-black/50 rounded-[5px] w-[300px] p-6 m-4 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
                       <h2 className="text-xl font-bold text-white mb-4"><span className="mr-2 font-extrabold">0{index + 1}  </span>{chapter.title}</h2>
                       <p className="opacity-50">{chapter.description}</p>
                     </div>
@@ -134,10 +153,6 @@ const CourseInfoLayout = async ({
                 ))}
               </div>
             </div>
-          </div>
-            
-          <div className="text-4xl">
-            <Preview value={course?.bonus!}/>
           </div>
         </div>
     )

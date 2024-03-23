@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Preview } from "@/components/preview";
 import { Editor } from "@/components/editor";
+import { Textarea } from "@/components/ui/textarea";
 
 interface BonusFormProps {
   initialData: Course;
@@ -89,24 +90,26 @@ export const BonusForm = ({
       )}
       {isEditing && (
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
-          >
-            <FormField
-              control={form.control}
-              name="bonus"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Editor
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-4 mt-4"
+        >
+          <FormField
+            control={form.control}
+            name="bonus"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                  <Textarea
+                    disabled={isSubmitting}
+                    placeholder="e.g. 'This course is about...'"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
             <Button
               disabled={!isValid || isSubmitting}
               type="submit"
@@ -115,8 +118,8 @@ export const BonusForm = ({
             >
               Save
             </Button>
-          </form>
-        </Form>
+        </form>
+      </Form>
       )}
     </div>
   )
