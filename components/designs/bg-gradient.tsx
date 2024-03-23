@@ -9,16 +9,12 @@ type ImageInfo = {
 };
 
 const imagesRow1: ImageInfo[] = [
-  { src: '/Next.png', alt: 'JavaScript', padding: 'p-7' },
+  { src: '/next.png', alt: 'Nextjs', padding: 'p-7' },
   { src: '/JS.png', alt: 'JavaScript', padding: 'p-7' },
   { src: '/prisma.png', alt: 'Prisma', padding: 'p-7' },
 ];
 
-const imagesRow2: ImageInfo[] = [
-  { src: '/JS.png', alt: 'JavaScript', padding: 'p-7' },
-  { src: '/C.png', alt: 'C', padding: 'p-6' },
-  { src: '/next.png', alt: 'Next.js', padding: 'p-7' },
-];
+
 
 const renderImages = (images: ImageInfo[]) => (
   <div className="flex justify-center space-x-7">
