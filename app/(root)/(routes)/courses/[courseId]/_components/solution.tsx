@@ -10,7 +10,6 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
 import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
-
 import {
   Form,
   FormControl,
@@ -90,24 +89,26 @@ export const SolutionForm = ({
       )}
       {isEditing && (
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
-          >
-            <FormField
-              control={form.control}
-              name="solution"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Editor
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-4 mt-4"
+        >
+          <FormField
+            control={form.control}
+            name="solution"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                  <Textarea
+                    disabled={isSubmitting}
+                    placeholder="e.g. 'This course is about...'"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
             <Button
               disabled={!isValid || isSubmitting}
               type="submit"
@@ -116,8 +117,8 @@ export const SolutionForm = ({
             >
               Save
             </Button>
-          </form>
-        </Form>
+        </form>
+      </Form>
       )}
     </div>
   )

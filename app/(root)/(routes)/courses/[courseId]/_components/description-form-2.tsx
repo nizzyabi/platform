@@ -21,20 +21,21 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Preview } from "@/components/preview";
 import { Editor } from "@/components/editor";
+import { Textarea } from "@/components/ui/textarea";
 
-interface IssueFormProps {
+interface DescriptionForm2Props {
   initialData: Course;
   courseId: string;
 };
 
 const formSchema = z.object({
-    issue: z.string().min(1),
+    description2: z.string().min(1),
 });
 
-export const IssueForm = ({
+export const DescriptionForm2 = ({
   initialData,
   courseId
-}: IssueFormProps) => {
+}: DescriptionForm2Props) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current)
@@ -44,7 +45,7 @@ export const IssueForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        issue: initialData?.issue || ""
+      description2: initialData?.description2 || ""
     },
   });
 
@@ -64,7 +65,7 @@ export const IssueForm = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Issue
+        Description2
         <Button onClick={toggleEdit}>
           {isEditing ? (
             <>Cancel</>
@@ -78,34 +79,36 @@ export const IssueForm = ({
       {!isEditing && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.issue && "text-slate-300 italic"
+          !initialData.description2 && "text-slate-300 italic"
         )}>
-          {!initialData.issue && "No issue"}
-          {initialData.issue && (
-            <Preview value={initialData.issue} />
+          {!initialData.description2 && "No issue"}
+          {initialData.description2 && (
+            <Preview value={initialData.description2} />
           )}
         </div>
       )}
       {isEditing && (
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 mt-4"
-          >
-            <FormField
-              control={form.control}
-              name="issue"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
-                    <Editor
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-4 mt-4"
+        >
+          <FormField
+            control={form.control}
+            name="description2"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                  <Textarea
+                    disabled={isSubmitting}
+                    placeholder="e.g. 'This course is about...'"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
             <Button
               disabled={!isValid || isSubmitting}
               type="submit"
@@ -114,8 +117,8 @@ export const IssueForm = ({
             >
               Save
             </Button>
-          </form>
-        </Form>
+        </form>
+      </Form>
       )}
     </div>
   )

@@ -87,9 +87,9 @@ model Course {
   language2 String?
   language3 String?
 
-  issue String?
+  description2 String?
   solution String?
-  bonus String?
+  difficulty String?
 
   price Float?
   isPublished Boolean @default(false)

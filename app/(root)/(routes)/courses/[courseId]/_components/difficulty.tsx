@@ -4,13 +4,10 @@ import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
-
 import {
   Form,
   FormControl,
@@ -21,22 +18,21 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Preview } from "@/components/preview";
-import { Editor } from "@/components/editor";
 import { Textarea } from "@/components/ui/textarea";
 
-interface BonusFormProps {
+interface DifficultyFormProps {
   initialData: Course;
   courseId: string;
 };
 
 const formSchema = z.object({
-    bonus: z.string().min(1),
+    difficulty: z.string().min(1),
 });
 
-export const BonusForm = ({
+export const DifficultyForm = ({
   initialData,
   courseId
-}: BonusFormProps) => {
+}: DifficultyFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current)
@@ -46,7 +42,7 @@ export const BonusForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        bonus: initialData?.bonus || ""
+      difficulty: initialData?.difficulty || ""
     },
   });
 
@@ -66,7 +62,7 @@ export const BonusForm = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Bonuses
+        Difficulty
         <Button onClick={toggleEdit}>
           {isEditing ? (
             <>Cancel</>
@@ -80,11 +76,11 @@ export const BonusForm = ({
       {!isEditing && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.bonus && "text-slate-300 italic"
+          !initialData.difficulty && "text-slate-300 italic"
         )}>
-          {!initialData.bonus && "No bonus"}
-          {initialData.bonus && (
-            <Preview value={initialData.bonus} />
+          {!initialData.difficulty && "No level of difficulty set"}
+          {initialData.difficulty && (
+            <Preview value={initialData.difficulty} />
           )}
         </div>
       )}
@@ -96,7 +92,7 @@ export const BonusForm = ({
         >
           <FormField
             control={form.control}
-            name="bonus"
+            name="difficulty"
             render={({ field }) => (
               <FormItem>
                 <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
