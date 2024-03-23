@@ -120,6 +120,7 @@ const CourseInfoLayout = async ({
 
           <div>
             <h1 className="text-5xl font-bold ">What's included?</h1>
+            {course?.included}
           </div>
 
           <div>

@@ -23,19 +23,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { Preview } from "@/components/preview";
 import { Editor } from "@/components/editor";
 
-interface SolutionFormProps {
+interface IncludedFormProps {
   initialData: Course;
   courseId: string;
 };
 
 const formSchema = z.object({
-  solution: z.string().min(1),
+  included: z.string().min(1),
 });
 
-export const SolutionForm = ({
+export const IncludedForm = ({
   initialData,
   courseId
-}: SolutionFormProps) => {
+}: IncludedFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current)
@@ -45,7 +45,7 @@ export const SolutionForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        solution: initialData?.solution || ""
+      included: initialData?.included || ""
     },
   });
 
@@ -65,7 +65,7 @@ export const SolutionForm = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Solution
+        Includes
         <Button onClick={toggleEdit}>
           {isEditing ? (
             <>Cancel</>
@@ -79,11 +79,11 @@ export const SolutionForm = ({
       {!isEditing && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.solution && "text-slate-300 italic"
+          !initialData.included && "text-slate-300 italic"
         )}>
-          {!initialData.solution && "No solution"}
-          {initialData.solution && (
-            <Preview value={initialData.solution} />
+          {!initialData.included && "No included content"}
+          {initialData.included && (
+            <Preview value={initialData.included} />
           )}
         </div>
       )}
@@ -95,7 +95,7 @@ export const SolutionForm = ({
         >
           <FormField
             control={form.control}
-            name="solution"
+            name="included"
             render={({ field }) => (
               <FormItem>
                 <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">

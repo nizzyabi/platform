@@ -14,7 +14,7 @@ import { LanguageImageForm } from "./_components/language-image";
 import { Language2ImageForm } from "./_components/language-image2";
 import { Language3ImageForm } from "./_components/language-image3";
 import { DescriptionForm2 } from "./_components/description-form-2";
-import { SolutionForm } from "./_components/solution";
+import { IncludedForm } from "./_components/included-form";
 import { DifficultyForm } from "./_components/difficulty";
 import { NotionForm } from "./_components/notion-link";
 import { GithubForm } from "./_components/github-link";
@@ -65,7 +65,7 @@ const CoursesIdPage = async ({
     course.description,
     course.imageUrl,
     course.learningOutcome,
-    course.solution,
+    course.included,
     course.difficulty,
     course.description2,
     course.language,
@@ -203,7 +203,7 @@ const CoursesIdPage = async ({
               />
             </div>
             <div>
-              <SolutionForm
+              <IncludedForm
                 courseId={course.id}
                 initialData={course}
               />
