@@ -8,6 +8,7 @@ import {
 import { CourseSidebar } from "./course-sidebar";
 
 import { Book } from "lucide-react";
+import { CourseMobileSidebarContent } from "./course-mobile-sidebar-content";
 
 interface CourseMobileSidebarProps {
   course: Course & {
@@ -27,9 +28,9 @@ export const CourseMobileSidebar = ({
       <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition mx-5 mb-5">
         <h1 className="rounded-[5px] bg-zinc-900 hover:opacity-75 font-medium transition duration-300 px-8 py-2 text-sm">Chapters</h1>
       </SheetTrigger>
-      <SheetContent side="left" className="p-6 bg-zinc-900  border-none text-slate-200">
-        <CourseSidebar
-          course={course}
+      <SheetContent side="left" className="p-6 bg-zinc-900  border-none text-slate-200 w-80">
+        <CourseMobileSidebarContent 
+          course={course} 
           progressCount={progressCount}
         />
       </SheetContent>

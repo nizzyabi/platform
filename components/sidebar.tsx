@@ -58,12 +58,12 @@ export const Sidebar = () => {
                     </div>
                 )}
                 {routes.map((route) => (
-                    <SheetClose asChild>
+                    <SheetClose asChild className="w-20">
                         <Link
                             href={route.href}
                             key={route.href} 
                             className={cn(
-                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer  rounded "
+                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer rounded "
                         )}>
                         {/* Design & display icon & label */}
                             <div className="flex border-b border-slate-100/70 w-full pb-3 ">
