@@ -9,6 +9,7 @@ import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import { ArrowRight } from 'lucide-react';
+import Footer from "./footer";
 
 
 
@@ -38,7 +39,7 @@ export default function LandingPage() {
               target="_blank"
             >
               <span className="relative inline-flex items-center">
-                We Are Open Source{" "}
+                What is this? {" "}
                 <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                   -&gt;
                 </span>
@@ -102,11 +103,7 @@ export default function LandingPage() {
 
       </div>
       
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content text-center">
-        <aside>
-          <p>Copyright © 2024 - All right reserved by NizzyABI Corp.</p>
-        </aside>
-      </footer>
+      <Footer />
       
     </div>
   )

@@ -9,9 +9,6 @@ import { RiNotionFill } from "react-icons/ri";
 import Link from "next/link";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { Suspense } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-
 const ChapterIdPage = async ({
     params
 }: {

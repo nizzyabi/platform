@@ -299,7 +299,7 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    title: "Code With Others",
+    title: "Get Personal Advice",
     description: (
       <span className="text-sm">
         Experience the power of coding with others in real-time.
