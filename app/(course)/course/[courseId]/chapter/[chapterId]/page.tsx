@@ -69,6 +69,20 @@ const ChapterIdPage = async ({
 
   return (
     <div className="w-full px-5 lg:pr-12 overflow-hidden mb-5">
+        {isLocked ? (
+            <div className="bg-zinc-900 relative aspect-video">
+                <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
+                    <Lock className="h-8 w-8" />
+                    <CoursePurchaseButton
+                        courseId={params.courseId}
+                        price={course.price!}
+                    />
+                </div>
+
+            </div>
+            
+        ) : (
+        // This is the video player which will be shown when the video is not locked
         <div>
             <iframe
              src={`${chapter.vimeoVideo}`} 
@@ -79,6 +93,10 @@ const ChapterIdPage = async ({
              >
             </iframe>
         </div>
+        
+
+      )}
+        
         <div className="mt-3 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
                     <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
                 
@@ -110,73 +128,6 @@ const ChapterIdPage = async ({
                         </Link>
                     ))}     
                 </div>
-
-
-    {/*<div className="pt-8 mb-20 ">
-        {isLocked ? (
-            <div className=" xs:mt-3 sm:mt-3 bg-[#131212] relative aspect-video">
-                <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
-                    <Lock className="h-8 w-8" />
-                    <CoursePurchaseButton
-                        courseId={params.courseId}
-                        price={course.price!}
-                    />
-                </div>
-
-            </div>
-            
-        ) : (
-        // This is the video player which will be shown when the video is not locked
-        <div className=" xs:mt-3 sm:mt-3 responsive-iframe-container">
-            <Suspense fallback={<Skeleton className="bg-white"/>}>
-                <iframe 
-                    src={`${chapter.vimeoVideo}`} 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    title="Video"
-                >
-                </iframe>
-          </Suspense>
-        
-        </div>
-        
-
-      )}
-      
-        <div>
-            <div>
-                <div className="mt-8 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
-                    <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
-                
-                    <CourseProgressButton 
-                        chapterId={params.chapterId}
-                        courseId={params.courseId}
-                        nextChapterId={nextChapter?.id}
-                        isCompleted={!!userProgress?.isCompleted}
-                    />
-                </div>
-                {chapter.code && chapter.code.trim().length > 0 && (
-                    <div>
-                    <h1 className="font-semibold text-xl pt-2 mb-4">Code</h1>
-                    <SyntaxHighlighter className='border border-slate-100/20 rounded-[5px]' language={`${course.courseLanguage}`} style={atomOneDark}>
-                        {`${chapter.code}`}
-                    </SyntaxHighlighter>
-                    
-                    </div>
-                )}
-                <div className="flex items-center justify-center space-x-8 pt-8">
-                    
-                    {links.map((link, index) => (
-                        <Link href={link.href} key={link.href} className="bg-slate-100 w-[120px] py-3 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
-                            <div className="flex item-center justify-center">
-                                <p className="text-center text-6xl">{link.icon}</p>
-                            </div>
-                            <p className="text-center text-[#2e2e2e] font-semibold mt-2">{link.label}</p>
-                        </Link>
-                    ))}     
-                </div>
-            </div>
-        </div>  
-    </div>*/}
     </div>
   )
 }

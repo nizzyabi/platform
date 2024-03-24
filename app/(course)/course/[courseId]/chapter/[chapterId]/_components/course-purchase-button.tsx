@@ -32,7 +32,7 @@ export const CoursePurchaseButton = ({
     }
     return (
           
-        <Button onClick={onClick} className="px-8 py-3 text-md" variant='brand' >
+        <Button onClick={onClick} className="px-8 py-3 text-md" >
             Purchase course for {formatPrice(price)}
         </Button>
 
