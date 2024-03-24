@@ -1,7 +1,7 @@
 // Imports 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from 'next/navigation';
-import { Menu } from "lucide-react"
+import { AlignLeft, Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Sidebar } from "@/components/sidebar"
 
@@ -18,7 +18,7 @@ export const MobileSidebar = () => {
         <Sheet >
             {/* When user clicks on Menu, there is an action (via sheet trigger)*/}
             <SheetTrigger className="md:hidden pr-4 text-primary">
-                <Menu className="h-8 w-8 hover:text-slate-100/50 duration-300"/>
+                <AlignLeft className="h-8 w-8 hover:text-slate-100/50 duration-300"/>
             </SheetTrigger>
             {/* Content within sidebar (sidebar component) once sheet trigger (menu button) is clicked */}
             <SheetContent side="left" className="p-6 bg-[#191919] border-none text-slate-200 w-80">

@@ -4,10 +4,6 @@ import {
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
-
-import { CourseSidebar } from "./course-sidebar";
-
-import { Book } from "lucide-react";
 import { CourseMobileSidebarContent } from "./course-mobile-sidebar-content";
 
 interface CourseMobileSidebarProps {
