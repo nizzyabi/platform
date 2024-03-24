@@ -120,9 +120,9 @@ const ChapterIdPage = async ({
                 <div className="flex items-center justify-center space-x-8 pt-8">
                     
                     {links.map((link, index) => (
-                        <Link href={link.href} key={link.href} className="bg-slate-100 w-[120px] py-3 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
+                        <Link href={link.href} key={link.href} className="bg-slate-100 w-[100px] py-2 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
                             <div className="flex item-center justify-center">
-                                <p className="text-center text-6xl">{link.icon}</p>
+                                <p className="text-center text-5xl">{link.icon}</p>
                             </div>
                             <p className="text-center text-[#2e2e2e] font-semibold mt-2">{link.label}</p>
                         </Link>

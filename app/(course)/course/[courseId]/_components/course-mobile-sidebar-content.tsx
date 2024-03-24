@@ -4,7 +4,8 @@ import { db } from '@/lib/db';
 import { Chapter, Course, UserProgress } from '@prisma/client'
 import { redirect } from 'next/navigation';
 import { CourseSidebarItem } from './course-sidebar-item';
-import { ScrollArea } from '@/components/ui/scrollbar';
+import { ScrollArea, ScrollBar } from '@/components/ui/scrollbar';
+
 
 
 interface CourseMobileSidebarContentProps {
@@ -48,8 +49,9 @@ export const CourseMobileSidebarContent = async ({
       )}
     </div>
     
-   <div className='pt-12 space-y-5'>
+   <div className='pt-12'>
    <ScrollArea className="flex flex-col h-full w-30 w-full overflow-x-auto pr-2">
+    
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -60,6 +62,7 @@ export const CourseMobileSidebarContent = async ({
             isLocked={!chapter.isFree && !purchase}
           />
         ))}
+        
       </ScrollArea>
     </div>
   </div>
