@@ -28,7 +28,6 @@ const routes = [
         label: "Tutoring",
     },
     {
-        
         href: "/settings",
         label: "Settings",
     },
@@ -57,13 +56,14 @@ export const Sidebar = () => {
                         <p className="mt-1 text-lg font-normal text-slate-100/40 hover:text-slate-100/90 duration-300">Sign In</p>
                     </div>
                 )}
+                
                 {routes.map((route) => (
-                    <SheetClose asChild>
+                    <SheetClose asChild className="w-20">
                         <Link
                             href={route.href}
                             key={route.href} 
                             className={cn(
-                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer  rounded "
+                                "text-slate-100/40 text-sm group flex py-2 w-full justify-start font-light cursor-pointer rounded "
                         )}>
                         {/* Design & display icon & label */}
                             <div className="flex border-b border-slate-100/70 w-full pb-3 ">

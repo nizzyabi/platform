@@ -33,6 +33,7 @@ export default async function RootLayout({
         {children}
       </body>
     </html>
+    
     </SessionProvider>
     
     
