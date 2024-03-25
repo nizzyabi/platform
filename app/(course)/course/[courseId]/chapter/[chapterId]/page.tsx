@@ -1,4 +1,3 @@
-'use client'
 import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
