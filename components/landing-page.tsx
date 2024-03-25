@@ -9,8 +9,7 @@ import { BentoGridThirdDemo } from './bento';
 import { ThreeD } from './3d';
 import { useCurrentUser } from '@/hooks/user-current-user';
 import { ArrowRight } from 'lucide-react';
-import Footer from "./footer";
-
+import Footer from "./Footer";
 
 
 
