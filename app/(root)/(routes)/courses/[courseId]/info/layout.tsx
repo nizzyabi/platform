@@ -94,28 +94,30 @@ const CourseInfoLayout = async ({
 
           <div>
             <h1 className="text-5xl font-bold ">Tech stack we will use</h1>
-            <div className="text-center">
-              <div className="flex items-center justify-center pb-4 pt-5 space-x-5 w-full">
+              <div className="flex items-center justify-center pb-4 pt-5 space-x-5">
                 <Image 
                   src={`${course?.language}`} 
                   alt='Image' 
                   width={100}
                   height={100}
+                  
                 />
+               
                 <Image 
                   src={`${course?.language2}`} 
                   alt='Image' 
-                  width={100} 
-                  height={100} 
+                  width={140} 
+                  height={140} 
+                  
                 />
                 <Image 
                   src={`${course?.language3}`} 
                   alt='Image' 
                   width={100} 
                   height={100} 
+                  
                 />
               </div>
-            </div>
           </div>
 
           <div>
@@ -137,34 +139,7 @@ const CourseInfoLayout = async ({
             }
           </div>
 
-          
-
-          {/*<div className="text-center">
-            <h1 className="text-3xl mb-8 font-bold">Stack</h1>
-
-            <div className="flex items-center justify-center pb-4 space-x-5 w-full">
-              <Image 
-                src={`${course?.language}`} 
-                alt='Image' 
-                width={100}
-                height={100}
-              />
-              <Image 
-                src={`${course?.language2}`} 
-                alt='Image' 
-                width={120} 
-                height={120} 
-              />
-              <Image 
-                src={`${course?.language3}`} 
-                alt='Image' 
-                width={120} 
-                height={120} 
-              />
-            </div>
-    </div>*/}
-
-          
+        
 
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
