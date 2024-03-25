@@ -28,7 +28,6 @@ const routes = [
         label: "Tutoring",
     },
     {
-        
         href: "/settings",
         label: "Settings",
     },
@@ -57,6 +56,7 @@ export const Sidebar = () => {
                         <p className="mt-1 text-lg font-normal text-slate-100/40 hover:text-slate-100/90 duration-300">Sign In</p>
                     </div>
                 )}
+                
                 {routes.map((route) => (
                     <SheetClose asChild className="w-20">
                         <Link
