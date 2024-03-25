@@ -51,7 +51,7 @@ const CourseInfoLayout = async ({
     });
     
     return (
-        <div className="pt-40  pb-40 space-y-10 text-center landing">
+        <div className="pt-40 mx-20 pb-40 space-y-10 text-center landing">
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
@@ -95,7 +95,7 @@ const CourseInfoLayout = async ({
           <div>
             <h1 className="text-5xl font-bold ">Tech stack we will use</h1>
             <div className="text-center">
-              <div className="flex items-center justify-center pb-4 space-x-5 w-full">
+              <div className="flex items-center justify-center pb-4 pt-5 space-x-5 w-full">
                 <Image 
                   src={`${course?.language}`} 
                   alt='Image' 
@@ -124,7 +124,7 @@ const CourseInfoLayout = async ({
           </div>
 
           <div>
-            <h1 className="text-5xl font-bold ">Difficulty level</h1>
+            <h1 className="text-5xl font-bold">Difficulty level</h1>
             {course?.difficulty}
           </div>
 
