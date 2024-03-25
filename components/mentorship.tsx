@@ -56,9 +56,8 @@ export const Mentorship: React.FC = () => {
             
         </div>
 
-        <div className="flex items-center justify-center">
-        <iframe src="https://player.vimeo.com/video/918976093?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" className="aspect-video sm:w-[600px] md:w-[900px] sm:px-20"></iframe>
-        </div>
+        {/* Images of what we can build */}
+      
 
         <div>
           <h1 className="font-bold text-4xl mx-6">What's included?</h1>
@@ -66,6 +65,12 @@ export const Mentorship: React.FC = () => {
 
         <div>
           <h1 className="font-bold text-4xl mx-6">Why tutor with Nizar?</h1>
+        </div>
+        <div>
+          <h1 className="font-bold text-4xl mx-6">What does a tutoring session look like?</h1>
+          <div className="flex items-center justify-center">
+            <iframe src="https://player.vimeo.com/video/918976093?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" className="aspect-video sm:w-[600px] md:w-[900px] sm:px-20"></iframe>
+          </div>
         </div>
           {/* Pricing tabs */}
           <HighlightGroup className=" flex items-center justify-center">
