@@ -242,17 +242,8 @@ export default function Roadmap() {
                 {roadmapData.map((item, index) => (
                     <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900">
                         <div className="flex items-center justify-between">
-                            <h1 className="text-4xl font-semibold p-3">{item.title}</h1>
-                            <TooltipProvider>
-                                <Tooltip>
-                                    <TooltipTrigger>
-                                        <Image src={item.difficulty} alt="difficulty" width={40} height={40} />
-                                    </TooltipTrigger>
-                                    <TooltipContent className="bg-[#131212] p-3 rounded">
-                                        <p className="font-semibold">Level: {item.difficultyTitle}</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                            </TooltipProvider>
+                            <h1 className="text-4xl font-semibold p-2">{item.title}</h1>
+                            <p className="text-zinc-400 text-3xl font-bold">0{index + 1}</p>
                         </div>
 
                         <p className="text-center font-medium text-slate-200 text-lg">{item.description}</p>
