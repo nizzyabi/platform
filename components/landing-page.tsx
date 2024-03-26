@@ -38,7 +38,7 @@ export default function LandingPage() {
               target="_blank"
             >
               <span className="relative inline-flex items-center">
-                What is this? {" "}
+                Want to contribute? Checkout the Github Repo {" "}
                 <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                   -&gt;
                 </span>
