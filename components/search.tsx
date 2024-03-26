@@ -1,7 +1,6 @@
 'use client'
 import * as React from "react"
 import Link from "next/link";
-import { SiNextdotjs } from "react-icons/si";
 import {
   CommandDialog,
   CommandEmpty,
@@ -11,35 +10,33 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
-import { BiBrain, BiLogoJavascript, BiLogoReact } from "react-icons/bi";
-import { FaHtml5 } from "react-icons/fa";
+
 
 
 const commandInputs = [
     {
-      course: "NextJS",
-      icon: <SiNextdotjs className='mr-2 text-slate-100'/>,
-      link: '/courses/nextjs'
+      course: "Authentication",
+      link: '/courses/auth'
     },
     {
-      course: "React",
-      icon: <BiLogoReact className="text-cyan-300 mr-2"/>,
-      link: '/courses/react'
+      course: "Courses",
+      link: '/courses'
     },
     {
-      course: "HTML & CSS",
-      icon: <FaHtml5 className="text-orange-500 mr-2"/>,
-      link: '/courses/html-css'
+      course: "Roadmap",
+      link: '/roadmap'
     },
     {
-      course: "Focus & Deep Work",
-      icon: <BiBrain className="text-pink-300 mr-2"/>,
-      link: '/courses/focus-deep-work'
+      course: "Tutoring",
+      link: '/tutoring'
     },
     {
-      course: "JavaScript",
-      icon: <BiLogoJavascript className="text-yellow-500 mr-2"/>,
-      link: '/courses/javascript'
+      course: "Settings",
+      link: '/settings'
+    },
+    {
+      course: "Home",
+      link: '/'
     },
   ]
 export default function Search() {
@@ -54,9 +51,12 @@ export default function Search() {
       document.addEventListener("keydown", down)
       return () => document.removeEventListener("keydown", down)
     }, [])
+
     const handleClick = () => {
       setOpen(true);
     }
+
+
     return (
         <div className="flex items-center justify-center">
           <>
@@ -75,7 +75,7 @@ export default function Search() {
             <CommandDialog open={open} onOpenChange={setOpen}>
               
               <CommandInput 
-                placeholder="Learn to code guide" className="w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
+                placeholder="Authentication Course" className="w-[400px] text-slate-100 placeholder:text-slate-100/50"/>
               
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
@@ -83,7 +83,7 @@ export default function Search() {
                 <CommandGroup>
                   {commandInputs.map((item) => (
                     <Link href={item.link} key={item.link} >
-                      <CommandItem>{item.icon}{item.course}</CommandItem>
+                      <CommandItem>{item.course}</CommandItem>
                     </Link>
                   ))}
                   
