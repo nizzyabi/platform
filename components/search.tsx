@@ -10,33 +10,56 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
+import { Book, Github, Home, LockIcon, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
+import { FaDiscord } from "react-icons/fa";
 
 
 
 const commandInputs = [
     {
       course: "Authentication",
-      link: '/courses/auth'
+      link: '/courses/auth',
+      icon: <LockIcon />
     },
     {
       course: "Courses",
-      link: '/courses'
+      link: '/courses',
+      icon: <Book />
     },
     {
       course: "Roadmap",
-      link: '/roadmap'
+      link: '/roadmap',
+      icon: <TrafficCone />
     },
     {
       course: "Tutoring",
-      link: '/tutoring'
+      link: '/tutoring',
+      icon: <Shapes />
     },
     {
       course: "Settings",
-      link: '/settings'
+      link: '/settings',
+      icon: <Settings />
     },
     {
       course: "Home",
-      link: '/'
+      link: '/',
+      icon: <Home />
+    },
+    {
+      course: "Github",
+      link: 'https://github.com/NizarAbiZaher',
+      icon: <Github />
+    },
+    {
+      course: "Youtube",
+      link: 'https://www.youtube.com/@NizzyABI',
+      icon: <Youtube />
+    },
+    {
+      course: "Discord",
+      link: '/roadmap',
+      icon: <FaDiscord />
     },
   ]
 export default function Search() {
@@ -83,7 +106,7 @@ export default function Search() {
                 <CommandGroup>
                   {commandInputs.map((item) => (
                     <Link href={item.link} key={item.link} >
-                      <CommandItem>{item.course}</CommandItem>
+                      <CommandItem><p className="mr-4">{item.icon}</p>{item.course}</CommandItem>
                     </Link>
                   ))}
                   
