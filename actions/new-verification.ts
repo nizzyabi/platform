@@ -4,7 +4,8 @@ import { db } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
 
 import { getVerificationTokenByToken } from "@/data/verification-token";
-import { Router } from "express";
+import { getSession, signIn } from "next-auth/react";
+
 
 export const newVerification = async (token:string) => {
     // if no token, display message

@@ -52,9 +52,9 @@ export const Sidebar = () => {
             {/* Mapping through each object of the route variable data. */}
             <div className="space-y-2">
                 {!session && (
-                    <div className="flex border-b border-slate-100/70 w-full pb-3 ">
+                    <Link href='/auth/register' className="flex border-b border-slate-100/70 w-full pb-3 ">
                         <p className="mt-1 text-lg font-normal text-slate-100/40 hover:text-slate-100/90 duration-300">Sign In</p>
-                    </div>
+                    </Link>
                 )}
                 
                 {routes.map((route) => (
