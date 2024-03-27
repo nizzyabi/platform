@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export function BentoGridThirdDemo() {
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] px-8">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -68,7 +68,13 @@ const SkeletonOne = () => {
         variants={variants}
         className="flex flex-row rounded-full border border-neutral-100 p-2  items-center space-x-2 bg-black "
       >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex-shrink-0" />
+        <Image
+          src="/calc2.webp"
+          alt="avatar"
+          height="100"
+          width="100"
+          className="rounded-full h-8 w-8"
+        />
         <div className="w-full bg-[#2e2e2e] h-4 rounded-full " />
       </motion.div>
       <motion.div
@@ -76,13 +82,25 @@ const SkeletonOne = () => {
         className="flex flex-row rounded-full border border-neutral-100  p-2 items-center space-x-2 w-3/4 ml-auto bg-black"
       >
         <div className="w-full bg-[#2e2e2e] h-4 rounded-full " />
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex-shrink-0" />
+        <Image
+          src="/nizar.png"
+          alt="avatar"
+          height="100"
+          width="100"
+          className="rounded-full h-8 w-8"
+        />
       </motion.div>
       <motion.div
         variants={variants}
         className="flex flex-row rounded-full border border-neutral-100 p-2 items-center space-x-2 bg-black"
       >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex-shrink-0" />
+        <Image
+          src="/calc2.webp"
+          alt="avatar"
+          height="100"
+          width="100"
+          className="rounded-full h-8 w-8"
+        />
         <div className="w-full bg-[#2e2e2e] h-4 rounded-full" />
       </motion.div>
     </motion.div>
@@ -190,7 +208,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4 border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/gilbert_hoodie.png"
+          src='/sven.webp'
           alt="avatar"
           height="100"
           width="100"
@@ -205,7 +223,7 @@ const SkeletonFour = () => {
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-[#2e2e2e] p-4 border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="/gilbert_cool.png"
+          src="/paulos.webp"
           alt="avatar"
           height="100"
           width="100"
@@ -223,7 +241,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/ares_hoodie.png"
+          src="/tirnan.webp"
           alt="avatar"
           height="100"
           width="100"
@@ -276,13 +294,13 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-[#2e2e2e] "
       >
         <Image
-          src="/gilbert.png"
+          src="/nizar.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="text-sm text-slate-200">
+        <p className="text-sm text-slate-200 pt-1">
           What's the best framework out there?
         </p>
       </motion.div>
@@ -291,7 +309,13 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-full border border-neutral-100 p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-[#2e2e2e]"
       >
         <p className="text-sm text-slate-200"> NextJS.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex-shrink-0" />
+        <Image
+          src="/calc.webp"
+          alt="avatar"
+          height="100"
+          width="100"
+          className="rounded-full h-10 w-10"
+        />
       </motion.div>
     </motion.div>
   );
@@ -299,10 +323,10 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    title: "Get Personal Advice",
+    title: "Get Personal Tutoring",
     description: (
       <span className="text-sm">
-        Experience the power of coding with others in real-time.
+        Experience the power of coding with someone in real-time.
       </span>
     ),
     header: <SkeletonOne />,
@@ -313,7 +337,7 @@ const items = [
     title: "Improve At Programming",
     description: (
       <span className="text-sm">
-        Learn to code with a variety of languages and frameworks.
+        Level up your programming skills with a variety of languages and frameworks.
       </span>
     ),
     header: <SkeletonTwo />,
@@ -324,8 +348,7 @@ const items = [
     title: "Beautiful Colors & Fonts",
     description: (
       <span className="text-sm">
-        Choose from a wide range of colors and fonts to make your apps
-        beautiful.
+        Build apps with the best modern day colors, tools, & fonts.
       </span>
     ),
     header: <SkeletonThree />,
@@ -337,7 +360,7 @@ const items = [
     title: "Have Fun Coding",
     description: (
       <span className="text-sm">
-        Enjoy coding with a beautiful and fun interface.
+        Make coding fun with easy-to-follow tutorials & videos.
       </span>
     ),
     header: <SkeletonFour />,
@@ -349,7 +372,7 @@ const items = [
     title: "Talk To Others",
     description: (
       <span className="text-sm">
-        Share your thoughts and ideas with others in the community.
+        Share your success & failures with others in the discord group.
       </span>
     ),
     header: <SkeletonFive />,

@@ -4,10 +4,10 @@ import { db } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
 
 import { getVerificationTokenByToken } from "@/data/verification-token";
-import { getSession, signIn } from "next-auth/react";
-
 
 export const newVerification = async (token:string) => {
+
+    
     // if no token, display message
     const exisitingToken = await getVerificationTokenByToken(token);
 
@@ -39,6 +39,8 @@ export const newVerification = async (token:string) => {
         where: { id: exisitingToken.id }
     });
 
-    return { success: "Email verified! 🎉"}
+    return { success: "Email verified 🎉. Go to login to continue"}
+
+    
     
 }

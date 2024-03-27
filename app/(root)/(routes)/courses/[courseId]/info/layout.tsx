@@ -120,17 +120,17 @@ const CourseInfoLayout = async ({
               </div>
           </div>
 
-          <div>
+          <div className="mx-auto max-w-2xl">
             <h1 className="text-5xl font-bold ">What's included?</h1>
             {course?.included}
           </div>
 
-          <div>
+          <div className="mx-auto max-w-2xl">
             <h1 className="text-5xl font-bold">Difficulty level</h1>
             {course?.difficulty}
           </div>
 
-          <div>
+          <div className="mx-auto max-w-2xl">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             {
               !course?.price
