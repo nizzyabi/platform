@@ -12,6 +12,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import { Book, Github, Home, LockIcon, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 
 
@@ -79,6 +80,15 @@ export default function Search() {
       setOpen(true);
     }
 
+    const router = useRouter();
+    const handleItemClick = (url:any) => {
+      setOpen(false); // Close the dialog
+      router.push(url); // Navigate programmatically
+    };
+  
+    
+
+
 
     return (
         <div className="flex items-center justify-center">
@@ -105,9 +115,9 @@ export default function Search() {
 
                 <CommandGroup>
                   {commandInputs.map((item) => (
-                    <Link href={item.link} key={item.link} >
+                    <div onClick={() => handleItemClick(item.link)} key={item.link} >
                       <CommandItem><p className="mr-4">{item.icon}</p>{item.course}</CommandItem>
-                    </Link>
+                    </div>
                   ))}
                   
                 </CommandGroup>
