@@ -62,15 +62,16 @@ export function DataTable<TData, TValue>({
             onChange={(event) =>
               table.getColumn("title")?.setFilterValue(event.target.value)
             }
-            className="max-w-sm"
+            
+            className="max-w-sm bg-slate-200 placeholder:text-black/40 text-black"
           />
           <Link href='/courses/add'>
-            <Button variant="basic">
+            <Button className="rounded-[5px] py-2">
               New course
             </Button>
           </Link>
         </div>
-    <div className="rounded border border-slate-100/50 bg-[#191919] mt-3">
+    <div className="rounded border border-slate-100/50 bg-zinc-900 mt-3">
       <Table>
         <TableHeader >
           {table.getHeaderGroups().map((headerGroup) => (
@@ -117,13 +118,14 @@ export function DataTable<TData, TValue>({
     <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="basic"
+          className="rounded-[5px] py-2"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
           Previous
         </Button>
         <Button
-          variant="basic"
+          className="rounded-[5px] py-2"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
