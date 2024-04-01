@@ -144,14 +144,14 @@ const CourseInfoLayout = async ({
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
               <h1 className="text-center text-5xl font-bold my-8">Chapters</h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {course?.chapters.map((chapter, index) => (
                   <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
-                    <div className="bg-zinc-900 shadow-lg shadow-black/50 rounded-[5px] w-[300px] p-6 m-4 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
+                    <div className="bg-zinc-900 shadow-lg shadow-black/50 rounded-[5px]  w-full p-6 m-4 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
                       <div className="flex">
-                        <h2 className="text-xl font-bold text-white mb-4"><span className="mr-2 font-extrabold">0{index + 1}  </span>{chapter.title}</h2>
+                        <h2 className="text-xl font-bold text-white mb-4"><span className="mr-2 font-extrabold text-2xl opacity-40">0{index + 1}  </span>{chapter.title}</h2>
                       </div>
-                      <p className="opacity-50">{chapter.description}</p>
+                      <p className="opacity-50 flex">{chapter.description}</p>
                     </div>
                   </Link>
                 ))}
