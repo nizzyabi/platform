@@ -64,17 +64,17 @@ export const Actions = ({
   }
 
   return (
-    <div className="flex items-center gap-x-2">
+    <div className="flex items-center gap-x-2 mb-2">
         <Button
             onClick={onClick}
             disabled={disabled || isLoading}
-            variant='goldHover'
+            className="rounded-[5px] py-2"
         >
             {isPublished ? 'Unpublish' : 'Publish'}
         </Button>
         <ConfirmModal onConfirm={onDelete}>
-            <Button variant="iconButton" disabled={isLoading}>
-                <Trash />
+            <Button className="rounded-[5px] py-2 bg-zinc-900 text-slate-100" disabled={isLoading}>
+                Delete Course
             </Button>
         </ConfirmModal>
     </div>
