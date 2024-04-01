@@ -225,7 +225,7 @@ export default function Roadmap() {
         <div className="pt-40 pb-40 landing">
             {/* Roadmap Title */}
             <div>
-                <h1 className="text-6xl text-center font-bold "> 
+                <h1 className="text-6xl text-center font-bold mx-4"> 
                     {!session ? (
                         <p>Roadmap</p>
                     ): (
@@ -239,16 +239,16 @@ export default function Roadmap() {
             </div>
 
             {/* Resources */}
-            <div className="space-y-20">
+            <div className="space-y-20 mx-2">
                 {roadmapData.map((item, index) => (
-                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900">
+                    <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900 ">
                         <div className="flex items-center justify-between">
                             <h1 className="text-4xl font-semibold p-2">{item.title}</h1>
                             <p className="text-zinc-400 text-3xl font-bold">0{index + 1}</p>
                         </div>
 
                         <p className="text-center font-medium text-slate-200 text-lg">{item.description}</p>
-                        <div className="flex justify-center space-x-8">
+                        <div className="flex justify-center space-x-8 ">
                             {item.resources.map((resource, resIndex) => (
                                 <Link key={resIndex} href={resource.link}>
                                     <p className="text-5xl bg-slate-200  hover:opacity-70 duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">{resource.icon}</p>
