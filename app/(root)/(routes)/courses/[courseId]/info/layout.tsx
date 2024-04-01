@@ -104,9 +104,13 @@ const CourseInfoLayout = async ({
             {
               !course?.price
               ? <p className="pt-5">This course is free!</p>
-              : <button className="pt-5">Buy this course for ${course?.price}</button>
+              : <button className="inline-flex h-20 animate-shimmer items-center justify-center border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-[5px]">
+              Purchase course for ${course?.price}
+            </button>
             }
           </div>
+
+          
 
         
 

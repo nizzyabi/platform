@@ -53,6 +53,7 @@ module.exports = withUt({
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,7 +73,19 @@ module.exports = withUt({
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "shimmer": "shimmer 2s infinite linear"
       },
+      "keyframes": {
+        shimmer: {
+          from: {
+            "background-position": "0 0"
+          },
+          to: {
+            "background-position": "-200% 0"
+          
+          }
+        }
+      }
     },
   },
   plugins: [require("tailwindcss-animate", "daisyui")],
