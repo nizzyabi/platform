@@ -11,8 +11,6 @@ import { useCurrentUser } from '@/hooks/user-current-user';
 import { ArrowRight } from 'lucide-react';
 import Footer from "./Footer";
 
-
-
 export default function LandingPage() {
   const session = useCurrentUser();
 
