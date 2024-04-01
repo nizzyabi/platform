@@ -1,17 +1,17 @@
 // Roadmap Page
 "use client"
-import { useEffect } from "react";
+
 import Link from "next/link";
 import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
 import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
+import { FcCommandLine, FcGraduationCap, FcTreeStructure, FcFolder } from "react-icons/fc";
+
 import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GiHammerNails } from "react-icons/gi";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export default function Roadmap() {
     // Current User Data
@@ -32,7 +32,7 @@ export default function Roadmap() {
                 {
                     title: 'cs50',
                     link: 'https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?utm_source=google&utm_campaign=19315581336&utm_medium=cpc&utm_term=cs50&hsa_acc=7245054034&hsa_cam=19315581336&hsa_grp=144242542723&hsa_ad=642052609431&hsa_src=g&hsa_tgt=kwd-296840910&hsa_kw=cs50&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiA9dGqBhAqEiwAmRpTC1knf9hYdaVMlE5mOdfTYfbbCW1kFNlkMka0vZ0XDe-kCGTsRW3HMRoCq9wQAvD_BwE',
-                    icon: <BiSolidSchool className="text-blue-600"/>
+                    icon: <FcGraduationCap />
                 }
             ]           
         },
@@ -55,7 +55,7 @@ export default function Roadmap() {
                 {
                     title: 'Project',
                     link: 'https://youtu.be/p0bGHP-PXD4?si=s08EKVPT3caNgzxN/',
-                    icon: <IoBuildOutline className="text-purple-500"/>
+                    icon: <FcCommandLine />
                 }
             ]
 
@@ -74,12 +74,12 @@ export default function Roadmap() {
                 {
                     title: 'JavaScript',
                     link: 'https://youtu.be/PkZNo7MFNFg?si=iYfLsiYjPP2h7DN5',
-                    icon: <BiLogoJavascript className="text-yellow-400" />
+                    icon: <Image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVR4nO2WT0hVQRTGz/GZ7yEiRJJ/SsMiRaigUFwUhQgGouLChZS5Cmmj5c4kol1tRNoYLcJ0JRKUFYmUJi5EQSP/dEFxkUW4iQyUIMS+mHe5jtN7ihLeO8L54OPBmXmX+c2c+90hEolEIisFh2CTSQAcOQFIC+1GQbcM5CV2gt91SIw6we885EPm2GHarYJeMATACX7XIS3k/M+O8YZ7282xmT5CbTkjI42RGGJkHWbUVTJmX+4DgMFOQiSsx2iTkyMcHbcWYH2WkHtU18NJjILj7q9XKz7D+PPJUoCPz3U9IYEx/cKtLw4STmQzbl5jrExYfALDXbqu2uj3lJ7/64NlKRQP4MuQWa8uZXx+t9PnWQCgfPmC+eJGwozrNYz5/n0C8G2YcLYgNoFCIRdkddJyAGW1yNYGRkpyLMjpPMaPMcsBPH8fJdxvJqQfMiEar3KwACrvtwP4N+d/jlM0/7352Rk+AqgUqSphvH6kawsDJsCrDj3W/YBQeCo279tb9H+SDvgE0NNG0c+/lya36hkddwnnz5ktoe4+ar66/3i1kmLG1yG3vjxOuFSkx9TX2heAuTcaYCufPKavBg9bzZNhZhxJN68SyrcbfGyh908JqSnxF69a4e0Ts/fv3Nge+GJh/CjdMwDlpRFCUx0jJ9PNc3VNriljTD6LP3+sh3ClgpGf6+7+wVR34Y/vEdZmtkq1PQTwwyQAjpwAfG0hkUgkIj/0FxH0JVVHu8XgAAAAAElFTkSuQmCC" alt='hi' height={60} width={60}/>
                 },
                 {
                     title: 'Project',
                     link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-                    icon: <IoBuildOutline className="text-purple-500"/>
+                    icon: <FcCommandLine />
                 },
             ]
 
@@ -98,7 +98,7 @@ export default function Roadmap() {
                 {
                     title: 'React Project',
                     link: "https://youtu.be/b9eMGE7QtTk?si=HPCbJHJaBkGZq3OS",
-                    icon: <IoBuildOutline className="text-purple-500"/>
+                    icon: <FcCommandLine />
                 },
                 {
                     title: 'Next',
@@ -108,7 +108,7 @@ export default function Roadmap() {
                 {
                     title: 'Next Project',
                     link: "https://youtu.be/pUNSHPyVryU?si=pyuPmFD1qQVUcSs-",
-                    icon: <GiHammerNails className="text-purple-500"/>
+                    icon: <FcCommandLine />
                 },
                
             ]
@@ -158,13 +158,13 @@ export default function Roadmap() {
                 {
                     title: 'MERN Project',
                     link: "https://youtu.be/0osXx2oJu44?si=jAgisHX-nI-TXNLw",
-                    icon: <FaSquareShareNodes className="text-black"/>
+                    icon: <FcTreeStructure />
                     
                 },
                 {
                     title: 'MERN Stack Project',
                     link: 'https://youtu.be/-42K44A1oMA?si=AQ6Tbf-1mfM20Qgb',
-                    icon: <GiHammerNails className="text-purple-500"/>
+                    icon: <FcCommandLine />
                 }
                 
             ]
@@ -184,7 +184,7 @@ export default function Roadmap() {
                 {
                     title: 'software',
                     link: 'https://youtu.be/tv-_1er1mWI?si=ouX4gv8L3HHEXEqR',
-                    icon: <FaCode className="text-blue-500"/>
+                    icon: <FcCommandLine />
                 },
                 {
                     title: 'Github',
@@ -212,7 +212,7 @@ export default function Roadmap() {
                 {
                     title: 'Interview Prep',
                     link: 'https://youtu.be/5uhmS8nzxM4?si=LhHymrGRN3qPez_R',
-                    icon: <FaPaperclip className="text-blue-500"/>
+                    icon: <FcFolder />
                 }
             ]
         }
@@ -257,6 +257,7 @@ export default function Roadmap() {
                     </div>
                 ))}
             </div> 
+            
         </div>
     )
 }
