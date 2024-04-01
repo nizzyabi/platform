@@ -84,8 +84,7 @@ model Course {
   courseLanguage String?
 
   language String?
-  language2 String?
-  language3 String?
+  
 
   description2 String?
   included String?

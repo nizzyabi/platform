@@ -11,8 +11,7 @@ import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { Actions } from "./_components/actions";
 import { LearningOutcomeForm } from "./_components/learning-outcome";
 import { LanguageImageForm } from "./_components/language-image";
-import { Language2ImageForm } from "./_components/language-image2";
-import { Language3ImageForm } from "./_components/language-image3";
+
 import { DescriptionForm2 } from "./_components/description-form-2";
 import { IncludedForm } from "./_components/included-form";
 import { DifficultyForm } from "./_components/difficulty";
@@ -69,8 +68,6 @@ const CoursesIdPage = async ({
     course.difficulty,
     course.description2,
     course.language,
-    course.language2,
-    course.language3,
     course.githubLink,
     course.notionLink,
     course.courseLanguage,
@@ -155,14 +152,7 @@ const CoursesIdPage = async ({
                 initialData={course}
                 courseId={course.id}
               />
-              <Language2ImageForm
-                initialData={course}
-                courseId={course.id}
-              />
-              <Language3ImageForm
-                initialData={course}
-                courseId={course.id}
-              />
+              
           </div>
 
           <div className="space-y-6">
