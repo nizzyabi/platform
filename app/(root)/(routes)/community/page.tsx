@@ -1,11 +1,11 @@
-import { Community } from "./_components/community"
+import { Post } from "./_components/post"
 
 
 
 export default function page() {
   return (
     <div>
-      <Community />
+      <Post  />
     </div>
   )
 }
