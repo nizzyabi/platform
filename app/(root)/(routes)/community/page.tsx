@@ -1,11 +1,13 @@
-import { Post } from "./_components/post"
+import { CreatePost } from "./_components/create-post"
+import { Posts } from "./_components/posts"
 
 
 
 export default function page() {
   return (
     <div>
-      <Post  />
+      <CreatePost  />
+      <Posts />
     </div>
   )
 }

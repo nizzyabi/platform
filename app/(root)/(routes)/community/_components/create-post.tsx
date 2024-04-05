@@ -9,15 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Avatar } from "@mui/material"
 import { useCallback, useState } from "react"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormMessage,
-  } from "@/components/ui/form";
 import { PostCreationRequest, PostValidator } from "@/lib/post"
+import { toast } from "react-hot-toast"
 
   
 
@@ -27,12 +20,14 @@ interface PostProps {
     content: any;
 }
 
-export const Post = () => {
+export const CreatePost = () => {
   const session = useCurrentUser()
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset,
+    watch
   } = useForm<PostCreationRequest>({
     resolver: zodResolver(PostValidator),
     defaultValues: {
@@ -41,25 +36,44 @@ export const Post = () => {
     }
   })
 
+  // Get the user so that we can show who posted.
+
+  const watchedTitle = watch('title');
+  const watchedContent = watch('content');
+
+  const onSubmit = (data:any) => {
+    data.preventDefault()
+
+    console.log("Title", data.title, "Content", data.content)
+    toast.success('Post created')
+
+    reset({
+        title: '', // Reset title to empty string
+        content: '' // Reset content to empty string
+      });
+  }
+
   return (
     <div className='landing pt-40'>
       <div className="flex items-center justify-center">
-            <form id='post'>
+            <form id='post' onSubmit={onSubmit}>
                 <Dialog>
                     <DialogTrigger asChild>
                         <div className="flex items-center justify-center bg-slate-200 h-12 rounded-[5px] text-[#121212]/80 pr-[100px] sm:pr-[200px] md:pr-80 pl-3 py-7 cursor-pointer">
                             <Avatar src={`${session?.image}`} className="mr-2"/>
-                            <p className="font-medium no-wrap">Write something...</p>
+                            <p className="font-normal no-wrap">Write something...</p>
                         </div>
                     </DialogTrigger>
-                    <DialogContent className="bg-slate-200 text-[#191919] rounded-[5px] w-[300px] sm:w-[300px] md:w-[400px] lg:w-[600px]" >
+                    <DialogContent className="bg-slate-200 text-[#191919] rounded-[5px] w-[300px] sm:w-[400px] md:w-[400px] lg:w-[600px]" >
                         <DialogHeader>
                             <DialogTitle>
                                 <Input placeholder="Title" className="py-0 placeholder:text-3xl text-3xl bg-slate-200"
+                                {...register('title')}
                                 />
                             </DialogTitle>
                             <DialogDescription className="text-gray-400">
-                                <Textarea placeholder="Write something..." className="border-none text-[#191919] placeholder:text-gray-400 text-md placeholder:text-md" 
+                                <Textarea placeholder="Content" className="border-none text-[#191919] placeholder:text-gray-400 text-md placeholder:text-md"
+                                {...register('content')}
                                 />
                             </DialogDescription>
                         </DialogHeader>
@@ -68,12 +82,13 @@ export const Post = () => {
                             <DialogClose>
                                 <Button className="bg-transparent hover:text-[#191919] text-[#191919]/50 w-20">Cancel</Button>
                             </DialogClose>
-                
-                            <Button 
-                                className="bg-[#191919] text-slate-100 hover:opacity-90 w-20" 
-                                 type="submit" form="post">
+                            <DialogClose>
+                                <Button 
+                                    className="bg-[#191919] text-slate-100 hover:opacity-90 w-20" 
+                                    type="submit" form="post" disabled={!watchedTitle || !watchedContent}>
                                     Post
-                            </Button>
+                                </Button>
+                            </DialogClose>
                         </div>
                     </DialogContent>
                 </Dialog>
