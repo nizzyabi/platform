@@ -191,6 +191,7 @@ model StripeCustomer {
 
 model Post {
   id String @id @default(uuid())
+  userId String
   title String
   content String
   published Boolean @default(false)

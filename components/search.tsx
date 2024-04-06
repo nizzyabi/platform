@@ -10,7 +10,7 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
-import { Book, Github, Home, LockIcon, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
+import { Book, Globe, Github, Home, LockIcon, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
@@ -18,47 +18,52 @@ import { useRouter } from "next/navigation";
 
 const commandInputs = [
     {
-      course: "Authentication",
+      title: "Authentication Course",
       link: '/courses/auth',
       icon: <LockIcon />
     },
     {
-      course: "Courses",
+      title: "Community",
+      link: '/community',
+      icon: <Globe />
+    },
+    {
+      title: "Courses",
       link: '/courses',
       icon: <Book />
     },
     {
-      course: "Roadmap",
+      title: "Roadmap",
       link: '/roadmap',
       icon: <TrafficCone />
     },
     {
-      course: "Tutoring",
+      title: "Tutoring",
       link: '/tutoring',
       icon: <Shapes />
     },
     {
-      course: "Settings",
+      title: "Settings",
       link: '/settings',
       icon: <Settings />
     },
     {
-      course: "Home",
+      title: "Home",
       link: '/',
       icon: <Home />
     },
     {
-      course: "Github",
+      title: "Github",
       link: 'https://github.com/NizarAbiZaher',
       icon: <Github />
     },
     {
-      course: "Youtube",
+      title: "Youtube",
       link: 'https://www.youtube.com/@NizzyABI',
       icon: <Youtube />
     },
     {
-      course: "Discord",
+      title: "Discord",
       link: '/roadmap',
       icon: <FaDiscord />
     },
@@ -116,7 +121,7 @@ export default function Search() {
                 <CommandGroup>
                   {commandInputs.map((item) => (
                     <div onClick={() => handleItemClick(item.link)} key={item.link} >
-                      <CommandItem><p className="mr-4">{item.icon}</p>{item.course}</CommandItem>
+                      <CommandItem><p className="mr-4">{item.icon}</p>{item.title}</CommandItem>
                     </div>
                   ))}
                   
