@@ -11,33 +11,31 @@ import { Post } from "@prisma/client"
 import Link from "next/link"
 
 interface PostCardProps {
-    data: Post[]
+    items: Post[]
 }
 
 export const PostsCard = async ({
-    data
+    items
 }: PostCardProps) => {
     return (
         <div>
-        
-            {data.map((post) => (
-                <Link href={`/community/${post.id}/comments`} className="text-center pt-12 flex items-center justify-center">
-                <Card className="text-[#191919]/90 bg-slate-200 w-[300px] sm:w-[400px] md:w-[400px] lg:w-[600px]" key={post.id}>
-                <CardHeader>
-                    <div className="flex justify-between">
-                        <h1 className="font-bold text-2xl">{post.title}</h1>
-                        <p className="font-semibold text-lg">{post.userId}</p>
-                    </div>
-                </CardHeader>
-                <CardContent className="flex ">
-                    <h1>{post.content}</h1>
-                </CardContent>
-                <CardFooter className="text-gray-400">
+            {items.map((post) => (
+                <Link href={`/community/${post.id}/comment`} className="text-center pt-12 flex items-center justify-center ">
+                    <Card className="text-[#191919]/90 bg-slate-200 w-[500px] sm:w-[500px] md:w-[600px] lg:w-[800px] p-2 hover:opacity-80 duration-300 transition" key={post.id}>
+                        <CardHeader>
+                            <div className="flex justify-between">
+                                <h1 className="font-bold text-2xl">{post.title}</h1>
+                                <p className="font-semibold text-lg">{post.userId}</p>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="flex ">
+                            <h1>{post.content}</h1>
+                        </CardContent>
+                        <CardFooter className="text-gray-400">
                     
-                </CardFooter>
-                
-            </Card>
-            </Link>
+                        </CardFooter>
+                    </Card>
+                </Link>
             ))}
         </div>
     )

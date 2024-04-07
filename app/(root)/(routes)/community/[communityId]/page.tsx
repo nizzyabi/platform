@@ -1,6 +1,7 @@
 import { auth } from "@/auth"
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
+import { PostsCard } from "../_components/post-card";
 
 const CommunityIdPage = async ({
     params
@@ -26,8 +27,9 @@ const CommunityIdPage = async ({
 
     return (
         <div>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
+            
         </div>
     )
 }
+
+export default CommunityIdPage 

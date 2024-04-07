@@ -66,8 +66,7 @@ export const CreatePost = ({
 
   return (
     <div className='landing pt-40 flex items-center justify-center'>
-        
-      <Card className="text-slate-200 bg-zinc-900 w-[500px] sm:w-[500px] md:w-[600px] lg:w-[800px]">
+      <Card className="text-slate-200 bg-zinc-900 w-[500px] sm:w-[500px] md:w-[600px] lg:w-[800px] p-2">
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
                 <CardHeader>

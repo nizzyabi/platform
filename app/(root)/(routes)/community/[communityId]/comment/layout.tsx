@@ -1,11 +1,15 @@
 const PostComments = async ({
-    params
+    params,
+    children
 }: {
     params: { communityId: string}
+    children: React.ReactNode
 }) => {
     return (
-        <div>
+        <div className="pt-40 text-center">
             {params.communityId}
+            {children}
+            
         </div>
     )
 }

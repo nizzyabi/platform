@@ -8,12 +8,15 @@ export default async function PostsPage () {
   const posts = await db.post.findMany({
     where: {
       userId: session?.user.id ?? ''
+    },
+    orderBy: {
+      createdAt: 'desc'
     }
   })
   return (
     <div>
       <CreatePost  />
-      <PostsCard data={posts} />
+      <PostsCard items={posts} />
     </div>
   )
 }
