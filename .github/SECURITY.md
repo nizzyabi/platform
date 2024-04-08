@@ -16,7 +16,7 @@ If you have found a security vulnerability in our project, please report it to u
 
 #### Option 2: Email (For High-Risk Vulnerabilities)
 
-If you believe the security vulnerability is exceptionally high-risk and should not be disclosed publicly, you can contact us via email at <your email>. Please use this email address exclusively for reporting security vulnerabilities.
+If you believe the security vulnerability is exceptionally high-risk and should not be disclosed publicly, you can contact us via email at nizabizaher@gmail.com. Please use this email address exclusively for reporting security vulnerabilities.
 
 ### What to Include in Your Report
 
