@@ -50,7 +50,7 @@ const testimonials = [
   {
     username: 'Dominikdev',
     avatar: '/testimonials/dominik.webp',
-    message: "Nizar's videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable."
+    message: "Nizar and his videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable."
   },
   
   {
@@ -85,7 +85,7 @@ export function ThreeD() {
                   className="text-xl font-bold text-slate-100 flex space-between items-center"
               >
                   <div className="flex">
-                    <Avatar src={testimonial.avatar} alt={testimonial.username + "s" + " " + "Avatar"} />
+                    <Avatar src={testimonial.avatar} alt={`${testimonial.username}s Avatar`} />
                     <p className="pt-3 pl-2">@{testimonial.username}</p>
                   </div>
               </CardItem>
