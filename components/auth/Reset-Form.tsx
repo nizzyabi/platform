@@ -80,6 +80,7 @@ export const ResetForm = () => {
                                             placeholder="TylerDurden@gmail.com"
                                             disabled={isPending}
                                             type='email'
+                                            className="bg-zinc-900 text-slate-100"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />

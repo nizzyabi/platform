@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { auth } from "@/auth";
 import {  } from "@/data/user";
 
-
+// POST
 export async function POST(
   req: Request,
 ) {
@@ -15,16 +15,16 @@ export async function POST(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const guide = await db.course.create({
+    const course = await db.course.create({
       data: {
         userId: session.user.id ?? '',
         title,
       }
     });
 
-    return NextResponse.json(guide);
+    return NextResponse.json(course);
   } catch (error) {
-    console.log("[GUIDE]", error);
+    console.log("[COURSE]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

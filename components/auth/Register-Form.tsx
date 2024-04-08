@@ -82,6 +82,7 @@ export const RegisterForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='name'
+                                            className="bg-zinc-900 text-slate-100"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -101,6 +102,7 @@ export const RegisterForm = () => {
                                             placeholder="TylerDurden@gmail.com"
                                             disabled={isPending}
                                             type='email'
+                                            className="bg-zinc-900 text-slate-100"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
@@ -120,7 +122,9 @@ export const RegisterForm = () => {
                                             placeholder="••••••••"
                                             {...field}
                                             disabled={isPending}
-                                            type='password' />
+                                            type='password'
+                                            className="bg-zinc-900 text-slate-100"
+                                            />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
                                 </FormItem>

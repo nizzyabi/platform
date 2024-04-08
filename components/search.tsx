@@ -23,11 +23,6 @@ const commandInputs = [
       icon: <LockIcon />
     },
     {
-      title: "Community",
-      link: '/community',
-      icon: <Globe />
-    },
-    {
       title: "Courses",
       link: '/courses',
       icon: <Book />
@@ -100,7 +95,7 @@ export default function Search() {
           <>
           <div className="flex items-center justify-center ">
             <div className="relative w-[200px] hover:opacity-50 transition duration-300">
-              <div onClick={handleClick} className="flex items-center justify-between bg-zinc-900 rounded cursor-pointer px-2 py-1">
+              <div onClick={handleClick} className="flex items-center justify-between bg-zinc-900 rounded cursor-pointer px-2 py-1.5">
                 <SearchIcon className="text-slate-100/50 h-5 w-5" />
                 <p className="flex-1 text-slate-100 placeholder:text-slate-100/50 ml-2 font-medium text-md">Search</p>
                 <div className="text-slate-100">

@@ -4,18 +4,26 @@ import { Button } from "@/components/ui/button"
 import { Avatar } from "@mui/material"
 import Link from "next/link"
 import { useCurrentUser } from "@/hooks/user-current-user"
+import { useRouter } from "next/navigation"
 
 const UserButton = () => {
     const session = useCurrentUser();   
+    const router = useRouter();
+    const onClick = () => {
+        router.push('/courses')
+    }
     return (
         <div>
             {!session ? (
-                 <Link
-                 className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-2 py-0.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
-                 href={session ? '/courses' : '/auth/register'}
-               >
-                 <p>Sign Up</p>
-               </Link>
+                 
+                 <Button
+                        type="submit" onClick={onClick} className="p-[3px] relative font-semibold w-full">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
+                        <div className="px-7 py-0.5  w-full bg-zinc-800 rounded-[5px]  relative group transition duration-200 text-white hover:bg-transparent text-lg">
+                            Sign Up
+                        </div>
+                    </Button>
+               
             ): (
                 <Link href='/settings'>
                     {!session.image ? (

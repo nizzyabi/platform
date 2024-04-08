@@ -86,6 +86,7 @@ export const LoginForm = () => {
                                             placeholder="TylerDurden@gmail.com"
                                             disabled={isPending}
                                             type='email'
+                                            className="bg-zinc-900 text-slate-100"
                                         />
                                     </FormControl>
                                     
@@ -106,7 +107,7 @@ export const LoginForm = () => {
                                             {...field}
                                             disabled={isPending}
                                             type='password'
-                                            
+                                            className="bg-zinc-900 text-slate-100"
                                             />
                                     </FormControl>
                                     <Button

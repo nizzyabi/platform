@@ -38,7 +38,7 @@ const CreatePage = () => {
   });
 
   const { isSubmitting, isValid } = form.formState;
-
+  // onsubmit
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const response = await axios.post("/api/courses", values);
