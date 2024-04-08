@@ -1,0 +1,22 @@
+name: "Feature Request"
+description: Create a new feature request
+title: "[REQUEST] - <title>"
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: Description
+    attributes:
+      label: "Description"
+      description: Provide a brief explanation of the feature
+      placeholder: Describe your feature request in a few lines
+    validations:
+      required: true
+  - type: textarea
+    id: basic_example
+    attributes:
+      label: "Basic Example"
+      description: Provide some basic examples of your feature.
+      placeholder: An example for your feature request.
+    validations:
+      required: false
+  
