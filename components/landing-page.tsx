@@ -65,10 +65,10 @@ export default function LandingPage() {
 
         <div className='pt-64'>
           <div className='text-center'>
-            <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block '> Languages</span></h1>
+            <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 block '> Languages</span></h1>
             <div className='flex items-center justify-center mb-8'>
               <Link
-                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-8 mb-2"
                 href={session ? '/courses' : '/auth/register'}
               >
                 Get Started{" "}
@@ -83,10 +83,10 @@ export default function LandingPage() {
 
         <div>
           <div className='text-center pt-64'>
-            <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
+            <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
             <div className='flex items-center justify-center mb-'>
             <Link
-                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4"
+                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group my-8"
                 href={session ? '/courses' : '/auth/register'}
               >
                 Get Started{" "}
