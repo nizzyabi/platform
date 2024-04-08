@@ -10,7 +10,7 @@ const UserButton = () => {
     const session = useCurrentUser();   
     const router = useRouter();
     const onClick = () => {
-        router.push('/courses')
+        router.push('/auth/register')
     }
     return (
         <div>

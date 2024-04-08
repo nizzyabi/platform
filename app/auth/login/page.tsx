@@ -2,7 +2,7 @@ import { LoginForm } from '@/components/auth/Login-Form'
 
 function LoginPage() {
   return (
-    <div className='landing'>
+    <div>
       <LoginForm/>
     </div>
   )

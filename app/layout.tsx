@@ -24,7 +24,7 @@ export default async function RootLayout({
   const session = await auth()
   return (   
    <SessionProvider session={session}>
-    <html lang="en" className='body-background'>
+    <html lang="en" className='landing'>
       <body className={geist.className}>
         <Navbar />
         <Scroll />
