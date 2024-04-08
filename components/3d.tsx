@@ -76,7 +76,7 @@ const testimonials = [
 export function ThreeD() {
   return (
     // Adjusted the gap class to a smaller value, e.g., gap-2 for tighter spacing
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:px-20 xl:px-40 2xl:px-10 items-start gap-2 pt-8">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:px-20 xl:px-40 2xl:px-10 items-start gap-2">
       {testimonials.map((testimonial, index) => (
         <CardContainer className="" key={testimonial.username}>
           <CardBody className="bg-[#131212] relative group/card border-slate-100/20   h-auto rounded-xl px-6 py-3 border ">
