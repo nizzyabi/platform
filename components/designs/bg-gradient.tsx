@@ -12,7 +12,7 @@ const imagesRow1: ImageInfo[] = [
   { src: '/next.png', alt: 'Nextjs', padding: 'p-8' },
   { src: '/JS.png', alt: 'JavaScript', padding: 'p-8' },
   { src: '/prisma.png', alt: 'Prisma', padding: 'p-8' },
-  { src: '/c.png', alt: 'Nextjs', padding: 'p-[29px]' },
+  { src: '/C.png', alt: 'Nextjs', padding: 'p-[29px]' },
   { src: '/react.png', alt: 'JavaScript', padding: 'p-[41px]' },
   { src: '/TS.png', alt: 'React', padding: 'p-[35px]' },
 ];
