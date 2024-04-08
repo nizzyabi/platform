@@ -34,7 +34,7 @@ export default function Navbar() {
         });
       }, []);
 
-    const navbarChange = hasScrolled ? '${navbarChange} border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
+    const navbarChange = hasScrolled ? '${navbarChange} backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
     
     return (
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>

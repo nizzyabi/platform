@@ -73,7 +73,7 @@ const SkeletonOne = () => {
           alt="avatar"
           height="100"
           width="100"
-          className="rounded-full h-8 w-8"
+          className="rounded-full w-8 object-fit aspect-square"
         />
         <div className="w-full bg-[#2e2e2e] h-4 rounded-full " />
       </motion.div>
@@ -87,7 +87,7 @@ const SkeletonOne = () => {
           alt="avatar"
           height="100"
           width="100"
-          className="rounded-full h-8 w-8"
+          className="rounded-full w-8 object-fit aspect-square"
         />
       </motion.div>
       <motion.div
@@ -99,7 +99,7 @@ const SkeletonOne = () => {
           alt="avatar"
           height="100"
           width="100"
-          className="rounded-full h-8 w-8"
+          className="rounded-full w-8 object-fit aspect-square"
         />
         <div className="w-full bg-[#2e2e2e] h-4 rounded-full" />
       </motion.div>
@@ -164,14 +164,14 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex flex-1 w-full h-full min-h-[6rem] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] rounded-lg flex-col space-y-2"
+      className="flex flex-1 rounded-md w-full h-full min-h-[6rem] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
         backgroundSize: "400% 400%",
       }}
     >
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
+      <motion.div className="h-full w-full"></motion.div>
     </motion.div>
   );
 };
@@ -291,7 +291,7 @@ const SkeletonFive = () => {
     >
       <motion.div
         variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-[#2e2e2e] "
+        className="flex flex-row items-center rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 text-start space-x-2 bg-[#2e2e2e] "
       >
         <Image
           src="/nizar.png"
