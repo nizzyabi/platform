@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Codep
+
+Codep is a Programming Course Platform for self taught developers who want to improve their web development skills!
 
 ## Getting Started
 
-First, run the development server:
+These instructions will give you a copy of the project up and running on
+your local machine for development and testing purposes. See deployment
+for notes on deploying the project on a live system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requirements for the software and other tools to build, test and push 
+- [NPM](https://www.npmjs.com/) (or any other package manager)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Note: In case you use another package manager, research the equivalent commands for your package manager.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installing
 
-## Learn More
+A step by step series of examples that tell you how to get a development
+environment running
 
-To learn more about Next.js, take a look at the following resources:
+Installing modules and dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    npm install --save-dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Running the local development server
 
-## Deploy on Vercel
+    npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You should now be able to see the project up and running at http://localhost:3000/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Running the tests
+
+These steps ensure you are doing everything correctly and stay within structure.
+
+### Style test
+
+Checks if the best practices and the right coding format has been used:
+
+    npm run check
+    or
+    npx prettier . --check
+
+If the command before succeeds, you should see something similar to this:
+
+    Checking formatting...
+    All matched files use Prettier code style!
+
+If that is not the case, you can adjust your code to match the project's code format. For that simply run:
+
+    npm run format
+    or
+    npx prettier . --write
+
+## Built With
+
+  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
+  - [GNU](https://www.gnu.org/) - Used to choose the license
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
+of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+  - **Nizar Abi** - *Project owner* - [NizarAbiZaher](https://github.com/NizarAbiZaher)
+
+See also the list of
+[contributors](https://github.com/NizarAbiZaher/platform/graphs/contributors)
+who participated in this project.
+
+## License
+
+This project is licensed under the GNU General Public License Version 3 - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+  - [dpaulos6](https://github.com/dpaulos6) - *Styling and project cleanup, README writer*
+  - [mezotv](https://github.com/mezotv) - *Repository setup, Folder structure cleanup*
