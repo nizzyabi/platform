@@ -1,23 +1,22 @@
 # Codep
 
-Codep is a Programming Course Platform for self taught developers who want to improve their web development skills!
+Codep is a Programming Course Platform for self-taught developers who want to improve their web development skills.
 
 ## Getting Started
 
 These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Requirements for the software and other tools to build, test and push 
+Requirements for the software and other tools to build, test, and push 
 - [NPM](https://www.npmjs.com/) (or any other package manager)
 
 Note: In case you use another package manager, research the equivalent commands for your package manager.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
+A step-by-step series of examples that tell you how to get a development
 environment running
 
 Installing modules and dependencies:
@@ -36,7 +35,7 @@ These steps ensure you are doing everything correctly and stay within structure.
 
 ### Style test
 
-Checks if the best practices and the right coding format has been used:
+Check if the best practices and the right coding format have been used:
 
     npm run check
     or
