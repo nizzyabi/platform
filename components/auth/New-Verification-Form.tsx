@@ -10,24 +10,20 @@ import { CircularProgress } from "@mui/material"
 
 
 export const NewVerificationForm = () => {
-    // use state
     const [error, setError] = useState<string | undefined>();
     const [success, setSuccess] = useState<string | undefined>();
 
-    // set search params & get token
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
 
-    // onSubmit wihtin a useCallBack
     const onSubmit = useCallback(() => {
-        // if we have a success or error message, break the function
         if (success || error) return;
         
-        // check if user has token
         if (!token) {
             setError("No token provided");
             return;
         }
+
         newVerification(token)
             .then((data) => {
                 setSuccess(data.success);
@@ -38,10 +34,10 @@ export const NewVerificationForm = () => {
                 setError("Something went wrong");
             })
     }, [token, success, error]);
-    // useEffect
+
     useEffect(() => {
         onSubmit();
-}, [onSubmit])
+    }, [onSubmit])
 
     return (
         <CardWrapper
