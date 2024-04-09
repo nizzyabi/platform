@@ -84,7 +84,7 @@ const ChapterIdPage = async ({
              className="w-full aspect-video"
              ></iframe>
         </div>
-      )}
+        )}
         <div className="mt-3 flex items-center justify-between pb-8 border-b border-b-slate-100/20">
             <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
             <CourseProgressButton 

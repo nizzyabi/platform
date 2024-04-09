@@ -31,7 +31,7 @@ const SettingsPage = () => {
                     <TabsTrigger value="purchases">Purchases</TabsTrigger>
                 </TabsList>
                 <TabsContent value="account">
-                    <Card>
+                    <Card className="p-2">
                         <CardHeader >
                             <CardTitle>Account</CardTitle>
                             <CardDescription>Make changes to your account here.</CardDescription>
@@ -57,7 +57,7 @@ const SettingsPage = () => {
                 </TabsContent>
                 {/*TODO: Payment history & invoices*/}
                 <TabsContent value="purchases">
-                    <Card>
+                    <Card className="p-2">
                         <CardHeader>
                             <CardTitle>Purchases</CardTitle>
                             <CardDescription>See your purchases here</CardDescription>

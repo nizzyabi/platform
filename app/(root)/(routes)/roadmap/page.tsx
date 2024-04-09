@@ -1,14 +1,9 @@
-// Roadmap Page
 "use client"
-
 import Link from "next/link";
-import { BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoYoutube, BiSolidSchool } from "react-icons/bi";
-import { FaCode, FaFreeCodeCamp, FaGithub, FaNode, FaPaperclip, FaSquareShareNodes } from "react-icons/fa6";
+import { BiLogoMongodb, BiLogoReact, BiLogoYoutube } from "react-icons/bi";
+import { FaFreeCodeCamp, FaGithub, FaNode } from "react-icons/fa6";
 import { FcCommandLine, FcGraduationCap, FcTreeStructure, FcFolder } from "react-icons/fc";
-
-import { IoBuildOutline } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
-import { GiHammerNails } from "react-icons/gi";
 import { useSession } from "next-auth/react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
@@ -219,11 +214,8 @@ export default function Roadmap() {
         }
 
     ]
-    
-
     return (
         <div className="pt-40 pb-40 landing">
-            {/* Roadmap Title */}
             <div>
                 <h1 className="text-6xl text-center font-bold mx-4"> 
                     {!session ? (
@@ -237,8 +229,6 @@ export default function Roadmap() {
                 <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
                 </div>
             </div>
-
-            {/* Resources */}
             <div className="space-y-20 mx-2">
                 {roadmapData.map((item, index) => (
                     <div key={index} className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900 ">
@@ -258,7 +248,6 @@ export default function Roadmap() {
                     </div>
                 ))}
             </div> 
-            
         </div>
     )
 }
