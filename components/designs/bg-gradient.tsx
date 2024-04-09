@@ -11,7 +11,7 @@ const imagesRow1: ImageInfo[] = [
   { src: '/next.png', alt: 'Nextjs' },
   { src: '/JS.png', alt: 'JavaScript' },
   { src: '/prisma.png', alt: 'Prisma' },
-  { src: '/c.png', alt: 'Nextjs' },
+  { src: '/C.png', alt: 'Nextjs' },
   { src: '/react.png', alt: 'JavaScript' },
   { src: '/TS.png', alt: 'React' }
 ]
