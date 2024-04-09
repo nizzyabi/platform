@@ -1,6 +1,6 @@
-# Codep
+# Nizzyabi.com
 
-Codep is a Programming Course Platform for self-taught developers who want to improve their web development skills.
+Nizzyabi.com is a Programming Course Platform for self-taught developers who want to improve their web development skills.
 
 ## Getting Started
 
