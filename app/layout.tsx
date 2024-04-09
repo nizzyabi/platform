@@ -12,7 +12,7 @@ import Navbar from '@/components/nav'
 const geist = GeistSans
 
 export const metadata: Metadata = {
-  title: 'Nizar',
+  title: 'NizzyABI',
   description: 'Self taught developers',
 }
 

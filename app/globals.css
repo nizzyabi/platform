@@ -7,8 +7,7 @@
 html {
   scroll-behavior: smooth;
   color: white;
-  background-color: black; /* Replace with actual color value */
-  /*background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2c2c2c, #191919); */
+  background-color: black;
   background: radial-gradient(circle at 50%, #2c2c2c, #191919);
   
 }
@@ -18,18 +17,18 @@ html {
     radial-gradient(circle at center, rgba(255, 255, 255, 0.0057) 0, rgba(255, 255, 255, 0.0057) 1px, transparent 1px),
     linear-gradient(to right, rgba(255, 255, 255, 0.0057) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.0057) 1px, transparent 1px);
-  background-size: 10px 10px; /* sets the size of the grid */
+  background-size: 10px 10px; 
   background-attachment: fixed;
-  background-color: #2c2c2c; /* Modify to better match your desired base color */
+  background-color: #2c2c2c; 
 }
 
 .landing {  background-image:
   radial-gradient(circle at center, rgba(255, 255, 255, 0.01) 0, rgba(255, 255, 255, 0.017) 1px, transparent 1px),
   linear-gradient(to right, rgba(255, 255, 255, 0.017) 1px, transparent 1px),
   linear-gradient(to bottom, rgba(255, 255, 255, 0.017) 1px, transparent 1px);
-background-size: 10px 10px; /* sets the size of the grid */
+background-size: 10px 10px;
 background-attachment: fixed;
-background-color: #2c2c2c; /* Modify to better match your desired base color */
+background-color: #2c2c2c;
 }
 
 
@@ -62,30 +61,28 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
 
 @media screen and (max-width: 599px) {
   .image-container {
-      width: 50px; /* Smaller on mobile */
+      width: 50px; 
       height: 50px;
-      
-      /* Adjust height as needed */
   }
 }
 
 @media screen and (min-width: 600px) {
   .image-container {
-      width: 50px; /* Medium on tablets */
-      height: 50px; /* Adjust height as needed */
+      width: 50px; 
+      height: 50px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .image-container {
-      width: 70px; /* Larger on desktop */
-      height: 70px; /* Adjust height as needed */
+      width: 70px;
+      height: 70px;
   }
 }
 
 @media (min-width: 1024px) {
   .responsive-iframe-container {
-    max-width: 1600px; /* or whatever your navbar's max-width is */
+    max-width: 1600px; 
     margin-right: auto;
     margin-left: auto;
   }
@@ -98,9 +95,9 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
 
 /* Image Size */
 .responsive-image {
-  width: 100%; /* Make the image fill its container */
-  max-width: 70px; /* Set a max-width if you want to limit how large it can grow */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  max-width: 70px;
+  height: auto;
 }
 
 .ql-container {
@@ -117,10 +114,9 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
   overflow: visible;
 }
 
-/* This will be your responsive iframe container */
 .responsive-iframe-container {
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%; 
   overflow: hidden;
   width: 100%;
 }
@@ -137,11 +133,9 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
 
 .locked {
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%; 
   overflow: hidden;
 }
-
-
 
 .responsive-intro-video-container iframe {
   position: relative;
@@ -155,13 +149,8 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
    
 }
 
-/* This is the iframe itself */
-
-
-
-/* Tailwind padding adjustments */
 .sm\:px-20 {
-  padding-left: 5rem; /* Adjust according to your design */
+  padding-left: 5rem; 
   padding-right: 5rem;
    
 }
@@ -171,10 +160,6 @@ background-color: #2c2c2c; /* Modify to better match your desired base color */
   padding-right: 0;
 }
 
-
-
- 
-/* Changes for dark mode */
 .bn-container[data-theming-css-variables-demo][data-color-scheme="dark"] {
   --bn-colors-editor-text: #ffffff;
   --bn-colors-editor-background: #2c2c2c;
