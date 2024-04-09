@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     username: 'Tiernandefranco',
-    avatar: '/teir.webp',
+    avatar: '/testimonials/tiernande.webp',
     message: "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
   },
   {
