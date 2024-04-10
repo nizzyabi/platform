@@ -35,7 +35,7 @@ const UserButton = () => {
           ) : (
             <Avatar
               src={session.image}
-              className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50 duration-300"
+              className="shadow-md shadow-black  hover:border-blue-500/50 duration-300"
               sx={{ width: 40, height: 40 }}
             />
           )}

@@ -47,7 +47,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex h-[36px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
-            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
+            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium mt-1">
               <Link
                 href="/roadmap"
                 className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"

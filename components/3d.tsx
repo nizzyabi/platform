@@ -87,7 +87,7 @@ export function ThreeD() {
     <div className="w-fit mx-auto">
       <ResponsiveMasonry
         className="flex w-full mx-auto justify-start"
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3, 1500: 4 }}
+        columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
       >
         <Masonry gutter="1.5rem" className="masonry-grid">
           {testimonials.map((testimonial) => (
