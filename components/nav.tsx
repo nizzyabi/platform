@@ -52,7 +52,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden md:flex h-[36px] lg:h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-3 navbar transition-all">
+          <div className="hidden md:flex h-[36px] lg:h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
             <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
               <Link
                 href="/roadmap"
@@ -73,7 +73,7 @@ export default function Navbar() {
                 Tutoring
               </Link>
             </div>
-            <div className="flex h-full gap-4 lg:gap-7">
+            <div className="flex h-full gap-6 lg:gap-7">
               <Search />
               <UserButton />
             </div>
