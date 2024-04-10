@@ -219,9 +219,9 @@ export default function Roadmap() {
             <div>
                 <h1 className="text-6xl text-center font-bold mx-4"> 
                     {!session ? (
-                        <p>Roadmap</p>
+                        <p className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Roadmap</p>
                     ): (
-                        <p>{session?.user.name}'s Roadmap</p>
+                        <p className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">{session?.username}'s Roadmap</p>
                     )}
                 </h1>
                 <p className='pt-3 font-medium text-md text-slate-100/40 text-center'>Full roadmap to being a web developer</p>
