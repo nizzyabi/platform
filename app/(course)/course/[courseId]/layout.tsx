@@ -52,43 +52,17 @@ const CourseLayout = async ({
 
   return (
     <div className="sm:mt-20 md:mt-40 max-w-[1600px] mx-auto ">
-      
       <CourseNavbar 
         course={course}
         progressCount={progressCount}
       />
-    
-    <div className="flex">
-      
-      <CourseSidebar
-        course={course}
-        progressCount={await progressCount}
-      />
-      
-      {children}
-
-      
-    
-    {/*<div className="h-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-[80px]  inset-y-0 w-40 pt-20 ">
-          <CourseNavbar 
-            course={course}
-            progressCount={progressCount}
-          />
-        </div>
-        <main className="pl-40 pt-[10px] h-full">
-          {children}
-        </main>
-        <div className="hidden md:flex h-full w-40 pt-20 flex-col fixed inset-y-0 ">
-          <CourseSidebar 
-            course={course}
-            progressCount={await progressCount}
-          />
-        </div>
+      <div className="flex">
+        <CourseSidebar
+          course={course}
+          progressCount={await progressCount}
+        />
+        {children}
       </div>
-    </div>*/}
-    </div>
     </div>
   )
 }

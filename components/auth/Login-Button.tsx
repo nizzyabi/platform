@@ -1,8 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-
-// interface
 interface LoginButtonProps {
     children: React.ReactNode;
     mode?: "modal" | "redirect",
@@ -16,13 +14,10 @@ export const LoginButton = ({
 }: LoginButtonProps) => {
     const router = useRouter();
 
-
-    // onClick Functionality
     const onClick = () => {
         router.push("/auth/login")
     };
 
-    // If specific mode, display something
     if (mode === "modal") {
         return (
             <span>
@@ -30,6 +25,7 @@ export const LoginButton = ({
             </span>
         )
     }
+    
     return (
         <span onClick={onClick} className="cursor-pointer">
         {children}

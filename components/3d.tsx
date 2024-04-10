@@ -33,9 +33,8 @@ const testimonials = [
   },
   {
     username: 'Tiernandefranco',
-    avatar: '/testimonials/teir.webp',
-    message:
-      "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
+    avatar: '/testimonials/tiernande.webp',
+    message: "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
   },
   {
     username: 'Paul',
@@ -83,7 +82,7 @@ const testimonials = [
 ]
 
 interface props {
-  className: string
+  className?: string
 }
 
 export function ThreeD({ className }: props) {

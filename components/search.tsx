@@ -10,18 +10,13 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import SearchIcon from '@mui/icons-material/Search';
-import { Book, Globe, Github, Home, LockIcon, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
+import { Book, Circle, Github, Home, Settings, Shapes, TrafficCone, Youtube } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 
 
 const commandInputs = [
-    {
-      title: "Authentication Course",
-      link: '/courses/auth',
-      icon: <LockIcon />
-    },
     {
       title: "Courses",
       link: '/courses',
@@ -82,14 +77,9 @@ export default function Search() {
 
     const router = useRouter();
     const handleItemClick = (url:any) => {
-      setOpen(false); // Close the dialog
-      router.push(url); // Navigate programmatically
+      setOpen(false); 
+      router.push(url);
     };
-  
-    
-
-
-
     return (
         <div className="flex items-center justify-center">
           <>
@@ -116,7 +106,7 @@ export default function Search() {
                 <CommandGroup>
                   {commandInputs.map((item) => (
                     <div onClick={() => handleItemClick(item.link)} key={item.link} >
-                      <CommandItem><p className="mr-4">{item.icon}</p>{item.title}</CommandItem>
+                      <CommandItem className="text-slate-100/50 hover:text-slate-100/50"><Circle className="pr-2 mr-1"/>{item.title}</CommandItem>
                     </div>
                   ))}
                   

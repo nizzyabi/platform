@@ -1,15 +1,15 @@
 'use client'
-// Imports
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-import Link from 'next/link'
-import { LanguageBackground } from './designs/bg-gradient'
-import { BentoGridThirdDemo } from './bento'
-import { ThreeD } from './3d'
-import { useCurrentUser } from '@/hooks/user-current-user'
-import { ArrowRight } from 'lucide-react'
-import Footer from './Footer'
+// Imports 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { LanguageBackground } from './designs/bg-gradient';
+import { Bento } from './bento';
+import { ThreeD } from './3d';
+import { useCurrentUser } from '@/hooks/user-current-user';
+import { ArrowRight } from 'lucide-react';
+import Footer from "./Footer";
 
 export default function LandingPage() {
   const session = useCurrentUser()
@@ -44,29 +44,21 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className="mb-20 font-extrabold ">
-        <div className="flex-1 flex flex-col items-center justify-center mb-4">
-          <h1 className="text-7xl font-bold header-landing text-center">
-            Learn To
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
-              {' '}
-              Code
-            </span>
-          </h1>
-          <p className="pt-3 font-medium text-xl text-gray-200">
-            && have fun doing it
-          </p>
+      <div className='mb-20 font-extrabold '>
+        <div className='flex-1 flex flex-col items-center justify-center mb-4'>
+          <h1 className='text-7xl font-bold header-landing text-center'>Learn To<span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500'> Code</span></h1>
+          <p className='pt-3 font-medium text-xl text-gray-200'>&& have fun doing it</p>
           <Link
-            className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
-            href={session ? '/courses' : '/auth/register'}
+          className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
+          href={session ? '/courses' : '/auth/register'}
           >
-            Get Started{' '}
+            Get Started{" "}
             <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
           </Link>
         </div>
 
-        <div className="text-center">
-          <BentoGridThirdDemo />
+        <div className='text-center'>
+          <Bento />
         </div>
 
         <div className="pt-64">
@@ -92,15 +84,9 @@ export default function LandingPage() {
         </div>
 
         <div>
-          <div className="text-center pt-64">
-            <h1 className="text-7xl text-slate-100 text-center pt-3 font-bold header-landing">
-              Hear It From
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block">
-                {' '}
-                Others
-              </span>
-            </h1>
-            <div className="flex items-center justify-center mb-">
+          <div className='text-center pt-64'>
+            <h1 className='text-7xl text-slate-100 text-center pt-3 font-bold header-landing'>Hear It From<span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block'> Others</span></h1>
+            <div className='flex items-center justify-center mb-'>
               <Link
                 className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group my-8"
                 href={session ? '/courses' : '/auth/register'}
@@ -110,11 +96,9 @@ export default function LandingPage() {
               </Link>
             </div>
           </div>
-
-          <ThreeD className="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" />
+          <ThreeD />
         </div>
       </div>
-
       <Footer />
     </div>
   )

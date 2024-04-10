@@ -12,8 +12,8 @@ import Navbar from '@/components/nav'
 const geist = GeistSans
 
 export const metadata: Metadata = {
-  title: 'Nizar',
-  description: 'Self taught developers'
+  title: 'NizzyABI',
+  description: 'Self taught developers',
 }
 
 export default async function RootLayout({

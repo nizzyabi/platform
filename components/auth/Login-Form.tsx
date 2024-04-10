@@ -23,19 +23,14 @@ import { FormSuccess } from "../Form-Success";
 import { FormError } from "../Form-Error";
 FormError
 export const LoginForm = () => {
-    // Search Params
+    
     const searchParams = useSearchParams();
-    // If we get the url param of OAuthAccountNotLinked, we set the error message to be displayed
     const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already in use with different provider!" : "";
 
-    // Transition & pending state. Pending state is set when the inputs have been submitted so that they are disable.
     const [isPending, startTransition] = useTransition();
-    // Error & Success State
     const [error, setError] = useState<string | undefined>("");
-
     const [success, setSuccess] = useState<string | undefined>("");
 
-    // Form Hook
     const form = useForm<z.infer<typeof LoginSchema>>({
         resolver: zodResolver(LoginSchema),
         defaultValues: {
@@ -43,13 +38,10 @@ export const LoginForm = () => {
             password: ""
         }
     })
-    // onSubmit Function For Login
+
     const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-        // reset fields when submitting form
         setError("");
         setSuccess("");
-
-        // import login from @/actions/login
         startTransition(() => {
             login(values)
               .then((data) => {
@@ -73,7 +65,6 @@ export const LoginForm = () => {
                     className="space-y-4">
                 
                     <div className="space-y-2">
-                        {/* Email Input Form */}
                         <FormField 
                             control={form.control}
                             name="email"
@@ -93,8 +84,6 @@ export const LoginForm = () => {
                                 </FormItem>
                             )}
                         />
-
-                        {/* Password Input Form */}
                         <FormField 
                             control={form.control}
                             name="password"
@@ -125,14 +114,9 @@ export const LoginForm = () => {
                                 </FormItem>
                             )}
                         />
-                    </div>
-                    {/* Form Error */}
+                    </div>     
                     <FormError message={error || urlError} />
-                    {/* Form Success */}
                     <FormSuccess message={success} />
-                    
-
-                    {/* Submit Button */}
                     <Button  disabled={isPending}
                         type="submit" className="p-[3px] relative font-semibold w-full">
                         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
@@ -140,10 +124,7 @@ export const LoginForm = () => {
                             Login &rarr;
                         </div>
                     </Button>
-                    
-                    
                 </form>
-                
             </Form>
         </CardWrapper>
     )

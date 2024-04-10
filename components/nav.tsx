@@ -40,23 +40,18 @@ export default function Navbar() {
         <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-2">
                 <div className="flex justify-between items-center">
-                <MobileSidebar />
-               
-                        <Link href='/'  className="flex items-center"
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}>
-                            
-                                <Image
-                                    src='/gilbert_cool.png'
-                                    width={70}
-                                    height={70}
-                                    className='pb-2 hover:scale-110 duration-500'
-                                    alt='logos2'
-                                />
-                                
-                        </Link>
-                   
-                
+                    <MobileSidebar />
+                    <Link href='/'  className="flex items-center"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}>
+                        <Image
+                            src='/gilbert_cool.png'
+                            width={70}
+                            height={70}
+                            className='pb-2 hover:scale-110 duration-500'
+                            alt='logos2'
+                        />      
+                    </Link>
                     <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
                         <Link href="/roadmap">
                             <p className="hover:opacity-70 transition duration-500 px-3 py-2 rounded-md text-lg font-medium">Roadmap</p>
@@ -68,7 +63,6 @@ export default function Navbar() {
                             <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Tutoring</p>
                         </Link>
                         <Search />
-                        
                         <UserButton />
                     </div>
                 </div>
