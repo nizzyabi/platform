@@ -98,7 +98,7 @@ export default function Search() {
           Search
         </p>
         <div className="text-slate-100">
-          <span className=" bg-white/20 py-1 px-1.5 rounded bg-opacity-80 text-xs">
+          <span className=" no-wrap bg-white/20 hidden lg:inline-block py-1 px-1.5 rounded bg-opacity-80 text-xs">
             ⌘ K
           </span>
         </div>

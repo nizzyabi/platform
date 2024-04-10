@@ -24,13 +24,7 @@ export default function Navbar() {
     }
   }, [])
 
-  useEffect(() => {
-    AOS.init({
-      disable: 'phone',
-      duration: 800,
-      easing: 'ease-out-cubic'
-    })
-  }, [])
+  
 
   const navbarChange = hasScrolled
     ? 'backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90'
@@ -52,7 +46,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden md:flex h-[36px] lg:h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
+          <div className="hidden md:flex h-[36px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
             <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
               <Link
                 href="/roadmap"

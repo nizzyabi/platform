@@ -241,7 +241,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/testimonials/teir.webp"
+          src="/testimonials/tiernande.webp"
           alt="avatar"
           height={9999}
           width={9999}
