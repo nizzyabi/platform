@@ -14,7 +14,7 @@ const UserButton = () => {
   }
   return (
     <>
-      {session ? (
+      {!session ? (
         <Button
           type="submit"
           onClick={onClick}
