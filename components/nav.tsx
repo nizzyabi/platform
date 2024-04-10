@@ -24,8 +24,6 @@ export default function Navbar() {
     }
   }, [])
 
-  
-
   const navbarChange = hasScrolled
     ? 'backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90'
     : 'bg-transparent border-b border-transparent'
@@ -46,8 +44,8 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden md:flex h-[36px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
-            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium mt-1">
+          <div className="hidden md:flex h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
+            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
               <Link
                 href="/roadmap"
                 className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"

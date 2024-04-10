@@ -12,9 +12,15 @@ import {
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-export function Bento() {
+interface props {
+  className?: string
+}
+
+export function Bento({ className }: props) {
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] px-8">
+    <BentoGrid
+      className={`max-w-4xl mx-auto md:auto-rows-[20rem] px-8 ${className}`}
+    >
       {items.map((item, i) => (
         <BentoGridItem
           key={i}

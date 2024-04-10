@@ -10,6 +10,7 @@ import { ThreeD } from './3d'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import { ArrowRight } from 'lucide-react'
 import Footer from './Footer'
+import PrimaryButton from './ui/get-started-button'
 
 export default function LandingPage() {
   const session = useCurrentUser()
@@ -23,99 +24,79 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div data-aos="fade-up" className="extra landing">
-      <div className="pt-40"></div>
-      <div className="container mx-auto text-center">
-        <div className="mb-6">
-          <div className="relative inline-flex before:absolute before:inset-0 ">
-            <Link
-              className="px-3 py-1 text-sm font-medium inline-flex items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out w-full group relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
-              href="https://github.com/NizarAbiZaher"
-              target="_blank"
-            >
-              <span className="relative inline-flex items-center">
-                Github repository{' '}
-                <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
-                  -&gt;
-                </span>
-              </span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-20 font-extrabold ">
-        <div className="flex-1 flex flex-col items-center justify-center mb-4">
-          <h1 className="text-7xl font-bold header-landing text-center">
-            Learn To
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
-              {' '}
-              Code
-            </span>
-          </h1>
-          <p className="pt-3 font-medium text-xl text-gray-200">
-            && have fun doing it
-          </p>
+    <>
+      <main
+        data-aos="fade-up"
+        className="extra landing py-20 mt-20 flex flex-col gap-52"
+      >
+        <section className="flex flex-col gap-12 justify-center items-center">
           <Link
-            className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-4 mb-4"
-            href={session ? '/courses' : '/auth/register'}
+            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
+            href="https://github.com/NizarAbiZaher"
+            target="_blank"
           >
-            Get Started{' '}
-            <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
+            <span className="relative inline-flex items-center gap-2">
+              Github repository{' '}
+              <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out">
+                -&gt;
+              </span>
+            </span>
           </Link>
-        </div>
-
-        <div className="text-center">
-          <Bento />
-        </div>
-
-        <div className="pt-64">
-          <div className="text-center">
-            <h1 className="text-7xl text-slate-100 text-center pt-3 font-bold header-landing">
-              Learn Modern Day
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 block ">
+          <div className="flex flex-col gap-2 w-fit">
+            <span className="text-7xl font-bold header-landing text-center">
+              Learn To
+              <b className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-500">
                 {' '}
-                Languages
-              </span>
-            </h1>
-            <div className="flex items-center justify-center mb-8">
-              <Link
-                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group mt-8 mb-2"
-                href={session ? '/courses' : '/auth/register'}
-              >
-                Get Started{' '}
-                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
-              </Link>
-            </div>
-            <LanguageBackground />
+                Code
+              </b>
+            </span>
+            <span className="text-5xl text-center font-bold">
+              && have fun doing it!
+            </span>
           </div>
-        </div>
+          <PrimaryButton
+            href={session ? '/courses' : '/auth/register'}
+            className="bg-white text-zinc-900"
+          />
+          <Bento className="text-center" />
+        </section>
 
-        <div>
-          <div className="text-center pt-64">
-            <h1 className="text-7xl text-slate-100 text-center pt-3 font-bold header-landing">
-              Hear It From
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 block">
-                {' '}
+        <section className="flex flex-col gap-12 justify-center items-center">
+          <span className="flex flex-col gap-2 items-center text-7xl font-bold header-landing">
+            Learn Modern Day
+            <b className="w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-500 block ">
+              {' '}
+              Technologies
+            </b>
+          </span>
+          <LanguageBackground />
+          <PrimaryButton
+            href={session ? '/courses' : '/auth/register'}
+            className="bg-cyan-500 text-white"
+          >
+            See Courses
+          </PrimaryButton>
+        </section>
+
+        <section>
+          <div className="flex flex-col items-center gap-8 text-center">
+            <span className="flex flex-col w-fit text-7xl text-slate-100 text-center pt-3 font-bold header-landing">
+              Hear It From{' '}
+              <b className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
                 Others
-              </span>
-            </h1>
-            <div className="flex items-center justify-center mb-">
-              <Link
-                className="w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white group my-8"
-                href={session ? '/courses' : '/auth/register'}
-              >
-                Get Started{' '}
-                <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
-              </Link>
-            </div>
+              </b>
+            </span>
+            <ThreeD />
+            <PrimaryButton
+              href="https://discord.gg/nizar"
+              className="bg-indigo-400 text-white"
+            >
+              Join Us
+            </PrimaryButton>
           </div>
-
-          <ThreeD />
-        </div>
-      </div>
-
+        </section>
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
