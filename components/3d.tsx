@@ -34,7 +34,8 @@ const testimonials = [
   {
     username: 'Tiernandefranco',
     avatar: '/testimonials/tiernande.webp',
-    message: "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
+    message:
+      "Nizar's channel came into my recommended shortly after I had finished learning basic web development, and despite originally attempting to leverage my skills in a regular career, his videos showcasing him building his startup pulled me back into pursuing an idea I had semi-given up on."
   },
   {
     username: 'Paul',
@@ -81,18 +82,14 @@ const testimonials = [
   }
 ]
 
-interface props {
-  className: string
-}
-
-export function ThreeD({ className }: props) {
+export function ThreeD() {
   return (
     <div className="w-fit mx-auto">
       <ResponsiveMasonry
         className="flex w-full mx-auto justify-start"
         columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3, 1500: 4 }}
       >
-        <Masonry gutter="1.5rem" className="">
+        <Masonry gutter="1.5rem" className="masonry-grid">
           {testimonials.map((testimonial) => (
             <CardContainer className="flex h-full" key={testimonial.username}>
               <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-3 border ">

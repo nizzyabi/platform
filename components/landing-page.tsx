@@ -111,7 +111,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <ThreeD className="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" />
+          <ThreeD />
         </div>
       </div>
 
