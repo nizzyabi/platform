@@ -45,12 +45,12 @@ export default function LandingPage() {
           <div className="flex flex-col gap-2 w-fit">
             <span className="text-7xl font-bold header-landing text-center">
               Learn To
-              <b className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-500">
+              <b className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
                 {' '}
                 Code
               </b>
             </span>
-            <span className="text-5xl text-center font-bold">
+            <span className="pt-3 font-medium text-xl text-gray-200 text-center">
               && have fun doing it!
             </span>
           </div>

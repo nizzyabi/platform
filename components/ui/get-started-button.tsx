@@ -18,7 +18,7 @@ const PrimaryButton = ({
   return (
     <Link
       href={href}
-      className={`flex w-fit mx-auto justify-center text-xl items-center whitespace-nowrap transition duration-200 ease-in-out font-medium rounded-lg px-8 py-2 group gap-2 hover:shadow-lg !shadow-black/40 overflow-hidden relative ${className}`}
+      className={`w-50 justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded px-4 py-1.5  text-zinc-900 group ${className}`}
     >
       {children ? (
         children
@@ -28,7 +28,7 @@ const PrimaryButton = ({
         </>
       )}
       {withArrow ? (
-        <ArrowRight className="w-full h-5 aspect-square text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out" />
+        <ArrowRight className="w-3 h-3 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
       ) : (
         <></>
       )}
