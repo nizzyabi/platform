@@ -168,8 +168,6 @@ html {
   --bn-colors-side-menu: #ffffff;
 }
 
-@import '~@uploadthing/react/styles.css';
-
 .masonry-grid > div {
   width: auto !important;
   flex: 0 !important;
