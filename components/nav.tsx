@@ -13,7 +13,7 @@ export default function Navbar() {
   const [hasScrolled, setHasScrolled] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = 100
+      const scrollThreshold = 25
       setHasScrolled(window.pageYOffset > scrollThreshold)
     }
 
