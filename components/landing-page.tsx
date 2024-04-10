@@ -54,7 +54,7 @@ export default function LandingPage() {
           </div>
           <GetStartedButton
             href={session ? '/courses' : '/auth/register'}
-            className="text-zinc-900"
+            className="bg-white text-zinc-900"
           />
           <Bento className="text-center" />
         </section>
