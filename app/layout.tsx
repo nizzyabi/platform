@@ -13,32 +13,26 @@ const geist = GeistSans
 
 export const metadata: Metadata = {
   title: 'NizzyABI',
-  description: 'Self taught developers',
+  description: 'Self taught developers'
 }
 
 export default async function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
-}) {  
+}) {
   const session = await auth()
-  return (   
-   <SessionProvider session={session}>
-    <html lang="en" className='landing'>
-      <body className={geist.className}>
-        <Navbar />
-        <Scroll />
-        <ToastProvider />
-        <ConfettiProvder />
-        {children}
-      </body>
-    </html>
-    
+  return (
+    <SessionProvider session={session}>
+      <html lang="en" className="landing">
+        <body className={geist.className}>
+          <Navbar />
+          <Scroll />
+          <ToastProvider />
+          <ConfettiProvder />
+          {children}
+        </body>
+      </html>
     </SessionProvider>
-    
-    
-    
-    
-    
   )
 }
