@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { LanguageBackground } from './designs/bg-gradient'
-import { BentoGridThirdDemo } from './bento'
+import { Bento } from './bento'
 import { ThreeD } from './3d'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import { ArrowRight } from 'lucide-react'
@@ -66,7 +66,7 @@ export default function LandingPage() {
         </div>
 
         <div className="text-center">
-          <BentoGridThirdDemo />
+          <Bento />
         </div>
 
         <div className="pt-64">

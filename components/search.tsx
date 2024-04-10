@@ -1,6 +1,5 @@
 'use client'
 import * as React from 'react'
-import Link from 'next/link'
 import {
   CommandDialog,
   CommandEmpty,
@@ -12,10 +11,8 @@ import {
 import SearchIcon from '@mui/icons-material/Search'
 import {
   Book,
-  Globe,
   Github,
   Home,
-  LockIcon,
   Settings,
   Shapes,
   TrafficCone,
@@ -25,11 +22,6 @@ import { FaDiscord } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 
 const commandInputs = [
-  {
-    title: 'Authentication Course',
-    link: '/courses/auth',
-    icon: <LockIcon />
-  },
   {
     title: 'Courses',
     link: '/courses',
@@ -71,6 +63,7 @@ const commandInputs = [
     icon: <FaDiscord />
   }
 ]
+
 export default function Search() {
   const [open, setOpen] = React.useState(false)
   React.useEffect(() => {
@@ -90,8 +83,8 @@ export default function Search() {
 
   const router = useRouter()
   const handleItemClick = (url: any) => {
-    setOpen(false) // Close the dialog
-    router.push(url) // Navigate programmatically
+    setOpen(false)
+    router.push(url)
   }
 
   return (
