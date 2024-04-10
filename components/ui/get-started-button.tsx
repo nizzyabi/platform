@@ -9,7 +9,7 @@ interface ButtonProps {
   withArrow?: boolean
 }
 
-const GetStartedButton = ({
+const PrimaryButton = ({
   href,
   className,
   children,
@@ -36,4 +36,4 @@ const GetStartedButton = ({
   )
 }
 
-export default GetStartedButton
+export default PrimaryButton

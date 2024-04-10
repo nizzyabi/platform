@@ -10,7 +10,7 @@ import { ThreeD } from './3d'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import { ArrowRight } from 'lucide-react'
 import Footer from './Footer'
-import GetStartedButton from './ui/get-started-button'
+import PrimaryButton from './ui/get-started-button'
 
 export default function LandingPage() {
   const session = useCurrentUser()
@@ -50,9 +50,11 @@ export default function LandingPage() {
                 Code
               </b>
             </span>
-            <span className="text-6xl font-bold">while having fun!</span>
+            <span className="text-5xl text-center font-bold">
+              && have fun doing it!
+            </span>
           </div>
-          <GetStartedButton
+          <PrimaryButton
             href={session ? '/courses' : '/auth/register'}
             className="bg-white text-zinc-900"
           />
@@ -68,12 +70,12 @@ export default function LandingPage() {
             </b>
           </span>
           <LanguageBackground />
-          <GetStartedButton
+          <PrimaryButton
             href={session ? '/courses' : '/auth/register'}
             className="bg-cyan-500 text-white"
           >
             See Courses
-          </GetStartedButton>
+          </PrimaryButton>
         </section>
 
         <section>
@@ -85,12 +87,12 @@ export default function LandingPage() {
               </b>
             </span>
             <ThreeD />
-            <GetStartedButton
+            <PrimaryButton
               href="https://discord.gg/nizar"
               className="bg-indigo-400 text-white"
             >
               Join Us
-            </GetStartedButton>
+            </PrimaryButton>
           </div>
         </section>
       </main>
