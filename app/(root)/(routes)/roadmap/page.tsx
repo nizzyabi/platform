@@ -44,14 +44,14 @@ export default function Roadmap() {
         'It is time to learn the basics of web development using the building blocks of the web (HTML & CSS).',
       resources: [
         {
+          title: 'Crash Course',
+          link: 'https://youtu.be/qz0aGYrrlhU?si=MWq32KfthGCzYIE3',
+          icon: <BiLogoYoutube className="text-red-500" />
+        },
+        {
           title: 'FCC',
           link: 'https://www.freecodecamp.org/learn/2022/responsive-web-design/',
           icon: <FaFreeCodeCamp className="text-green-800" />
-        },
-        {
-          title: 'Git',
-          link: 'https://youtu.be/RGOj5yH7evk?si=I-fu026AFLILSRbS',
-          icon: <BiLogoYoutube className="text-red-500" />
         },
         {
           title: 'Project',
@@ -252,7 +252,7 @@ export default function Roadmap() {
             </p>
             <div className="flex justify-center space-x-8 ">
               {item.resources.map((resource, resIndex) => (
-                <Link key={resIndex} href={resource.link}>
+                <Link key={resIndex} href={resource.link} target="_blank">
                   <p className="text-5xl bg-slate-200  hover:opacity-70 duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">
                     {resource.icon}
                   </p>
