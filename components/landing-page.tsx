@@ -61,14 +61,9 @@ export default function LandingPage() {
           <Bento className="text-center" />
         </section>
 
-        <section className="flex flex-col gap-12 justify-center items-center">
-          <span className="flex flex-col gap-2 items-center text-7xl font-bold header-landing">
-            Learn Modern Day
-            <b className="w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-500 block ">
-              {' '}
-              Technologies
-            </b>
-          </span>
+        <section className="flex flex-col items-center gap-8 text-center">
+        <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block '> Languages</span></h1>
+          
           <LanguageBackground />
           <PrimaryButton
             href={session ? '/courses' : '/auth/register'}
