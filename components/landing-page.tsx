@@ -62,7 +62,7 @@ export default function LandingPage() {
         </section>
 
         <section className="flex flex-col items-center gap-8 text-center">
-        <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500 block '> Languages</span></h1>
+        <h1 className='text-7xl text-slate-100 text-center pt-3 font-semibold header-landing'>Learn Modern Day<span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 block '> Technologies</span></h1>
           
           <LanguageBackground />
           <PrimaryButton
