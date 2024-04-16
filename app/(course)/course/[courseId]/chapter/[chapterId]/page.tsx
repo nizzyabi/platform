@@ -67,7 +67,7 @@ const ChapterIdPage = async ({
         {isLocked ? (
             <div className="bg-zinc-900 relative aspect-video">
                 <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
-                    <Lock className="h-8 w-8" />
+                    
                     <CoursePurchaseButton
                         courseId={params.courseId}
                         price={course.price!}
