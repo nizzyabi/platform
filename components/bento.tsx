@@ -12,9 +12,15 @@ import {
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-export function Bento() {
+interface props {
+  className?: string
+}
+
+export function Bento({ className }: props) {
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] px-8">
+    <BentoGrid
+      className={`max-w-4xl mx-auto md:auto-rows-[20rem] px-8 ${className}`}
+    >
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -241,7 +247,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-[#2e2e2e] p-4  border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="/testimonials/teir.webp"
+          src="/testimonials/tiernande.webp"
           alt="avatar"
           height={9999}
           width={9999}

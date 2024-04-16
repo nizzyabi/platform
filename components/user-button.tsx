@@ -13,36 +13,28 @@ const UserButton = () => {
     router.push('/auth/register')
   }
   return (
-    <div>
+    <>
       {!session ? (
         <Button
           type="submit"
           onClick={onClick}
-          className="p-[3px] relative font-semibold w-full bg-transparent"
+          className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[7.5px] w-full" />
-          <div className="px-7 py-0.5  w-full bg-zinc-800 rounded-[5px]  relative group transition duration-200 text-white hover:bg-transparent text-lg">
+          <div className="flex items-center px-5 lg:px-7 h-full bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
             Sign Up
           </div>
         </Button>
       ) : (
         <Link href="/settings">
-          {!session.image ? (
-            <Avatar
-              alt="logo"
-              className="shadow-xl shadow-black hover:scale-110 transition-transform duration-300  bg-gradient-to-r from-pink-500 to-purple-500"
-              sx={{ width: 40, height: 40 }}
-            ></Avatar>
-          ) : (
-            <Avatar
-              src={session.image}
-              className="shadow-md shadow-black border-2 border-transparent hover:border-blue-500/50 duration-300"
-              sx={{ width: 40, height: 40 }}
-            />
-          )}
+          <Avatar
+            src={session.image ? session.image : ''}
+            alt="logo"
+            className="shadow-md shadow-black hover:scale-110 transition-transform duration-300  bg-gradient-to-r from-pink-500 to-purple-500"
+            sx={{ width: 40, height: 40 }}
+          ></Avatar>
         </Link>
       )}
-    </div>
+    </>
   )
 }
 

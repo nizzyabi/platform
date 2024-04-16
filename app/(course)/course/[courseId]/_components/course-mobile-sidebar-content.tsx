@@ -50,7 +50,7 @@ export const CourseMobileSidebarContent = async ({
     </div>
     
    <div className='pt-12'>
-   <ScrollArea className="flex flex-col h-full w-30 w-full overflow-x-auto pr-2">
+   <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto pr-2">
     
         {course.chapters.map((chapter) => (
           <CourseSidebarItem

@@ -87,11 +87,11 @@ export const Mentorship: React.FC = () => {
                       <div className="flex max-w-2xl mx-auto mt-16 md:w-5/12 lg:w-1/2 sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                         <div className="z-10 flex-none max-w-3xl sm:max-w-5xl lg:max-w-none" data-aos='fade-left'>
                           <Image
-                            src="voice.svg"
+                            src="/voicescribe.svg"
                             alt="App screenshot"
                             width={2432}
                             height={1442}
-                            className="w-[76rem] z-10 rounded-xl border border-white/10"
+                            className="w-[76rem] z-10 rounded-xl"
                           />
                         </div>
                       </div>

@@ -41,7 +41,7 @@ export const CoursesList = async ({
                 ))}
             </div>
             {items.length === 0 && (
-                <div className='text-center text-sm text-muted-foreground mt-10'>
+                <div className='text-center text-base text-muted-foreground mt-10'>
                     No courses found
                 </div>
             )}

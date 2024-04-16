@@ -13,7 +13,7 @@ const geist = GeistSans
 
 export const metadata: Metadata = {
   title: 'NizzyABI',
-  description: 'Self taught developers',
+  description: 'Self taught developers'
 }
 
 export default async function RootLayout({

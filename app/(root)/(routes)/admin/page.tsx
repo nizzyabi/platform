@@ -12,7 +12,7 @@ const DataPage = async () => {
     if (!session) {
         return redirect('/')
     }
-
+     
     const courses = await db.course.findMany({
         where: {
           userId: session.user.id ?? ''
@@ -24,7 +24,9 @@ const DataPage = async () => {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={courses} />
+      { session?.user.email === "nizabizaher@gmail.com" && (
+        <DataTable columns={columns} data={courses} />
+      )}
     </div>
   )
 }

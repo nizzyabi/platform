@@ -1,73 +1,77 @@
 'use client'
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import UserButton from './user-button';
-import { MobileSidebar } from "@/components/mobile-sidebar"
-import Image from 'next/image';
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Search from './search';
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import UserButton from './user-button'
+import { MobileSidebar } from '@/components/mobile-sidebar'
+import Image from 'next/image'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import Search from './search'
 
 export default function Navbar() {
+  const [hasScrolled, setHasScrolled] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 25
+      setHasScrolled(window.pageYOffset > scrollThreshold)
+    }
 
-    const [isHovered, setIsHovered] = useState(false);
-    const [hasScrolled, setHasScrolled] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollThreshold = 100;
-            setHasScrolled(window.pageYOffset > scrollThreshold);
-        };
+    window.addEventListener('scroll', handleScroll)
 
-        window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+  const navbarChange = hasScrolled
+    ? 'backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90'
+    : 'bg-transparent border-b border-transparent'
 
-    useEffect(() => {
-        AOS.init({
-          disable: "phone",
-          duration: 800,
-          easing: "ease-out-cubic",
-        });
-      }, []);
+  return (
+    <nav className={`fixed top-0 w-full z-50 ${navbarChange} transition`}>
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="flex justify-between items-center">
+          <MobileSidebar />
 
-    const navbarChange = hasScrolled ? '${navbarChange} backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90' : 'bg-transparent';
-    
-    return (
-        <nav className={`fixed top-0 w-full z-50 ${navbarChange}`}>
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-2">
-                <div className="flex justify-between items-center">
-                    <MobileSidebar />
-                    <Link href='/'  className="flex items-center"
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}>
-                        <Image
-                            src='/gilbert_cool.png'
-                            width={70}
-                            height={70}
-                            className='pb-2 hover:scale-110 duration-500'
-                            alt='logos2'
-                        />      
-                    </Link>
-                    <div className="hidden md:flex items-center text-lg md:text-lg font-medium mr-2 navbar space-x-7">
-                        <Link href="/roadmap">
-                            <p className="hover:opacity-70 transition duration-500 px-3 py-2 rounded-md text-lg font-medium">Roadmap</p>
-                        </Link>
-                        <Link href="/courses">
-                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Courses</p>
-                        </Link>
-                        <Link href="/tutoring">
-                            <p className="hover:opacity-50 duration-300 px-3 py-2 rounded-md text-lg font-medium">Tutoring</p>
-                        </Link>
-                        <Search />
-                        <UserButton />
-                    </div>
-                </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/gilbert_cool.png"
+              width={999}
+              height={999}
+              className="w-20 hover:scale-110 duration-500"
+              alt="Codep Logo"
+            />
+          </Link>
+
+          <div className="hidden md:flex h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
+            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
+              <Link
+                href="/roadmap"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+              >
+                Roadmap
+              </Link>
+              <Link
+                href="/courses"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+              >
+                Courses
+              </Link>
+              <Link
+                href="/tutoring"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+              >
+                Tutoring
+              </Link>
             </div>
-        </nav>
-    );
+            <div className="flex h-full gap-6 lg:gap-7">
+              <Search />
+              <UserButton />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
 }
-
