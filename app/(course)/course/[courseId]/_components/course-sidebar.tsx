@@ -7,6 +7,7 @@ import { CourseProgress } from "@/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
 import { ScrollArea } from "@/components/ui/scrollbar";
+import Scroll from "@/components/Scroll";
 
 
 interface CourseSidebarProps {
@@ -53,7 +54,7 @@ interface CourseSidebarProps {
       </div>
       
      <div>
-      <ScrollArea className="flex flex-col h-full w-30 w-full overflow-x-auto  pr-2 ">
+      <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -63,6 +64,7 @@ interface CourseSidebarProps {
             courseId={course.id}
             isLocked={!chapter.isFree && !purchase}
           />
+          
         ))}
       </ScrollArea>
       </div>
