@@ -37,14 +37,16 @@ export default function Navbar() {
           <MobileSidebar />
 
           <Link href="/" className="flex items-center">
-            <Image
-              src="/gilbert_cool.png"
-              width={999}
-              height={999}
-              className="w-20 hover:scale-110 duration-500"
-              alt="Codep Logo"
-            />
+            <h1 className='text-2xl font-bold text-white'>
+              <span className=' transition-all duration-300 ease-in-out'>
+                nizzy
+              </span>
+              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500  '>
+                abi
+              </span>
+            </h1>
           </Link>
+
 
           <div className="hidden md:flex h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
             <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">

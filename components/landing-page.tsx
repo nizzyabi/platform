@@ -45,10 +45,10 @@ export default function LandingPage() {
           <div className="flex flex-col gap-2 w-fit">
             <span className="flex flex-col text-5xl md:text-6xl lg:text-7xl font-bold header-landing text-center">
               Learn to
-              <b className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
                 {' '}
                 Code
-              </b>
+              </span>
             </span>
             <span className="pt-3 font-medium text-xl text-gray-200 text-center">
               && have fun doing it!
@@ -65,10 +65,10 @@ export default function LandingPage() {
           <div className="flex flex-col gap-12 justify-center items-center w-fit">
             <span className="sm:flex flex-col gap-2 text-center items-center text-5xl md:text-6xl lg:text-7xl font-bold header-landing">
               Learn Modern Day
-              <b className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-500 block ">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-500 block ">
                 {' '}
                 Technologies
-              </b>
+              </span>
             </span>
             <LanguageBackground />
             <PrimaryButton
@@ -84,9 +84,9 @@ export default function LandingPage() {
           <div className="flex flex-col w-fit items-center gap-8 text-center">
             <span className="sm:flex flex-col text-5xl md:text-6xl lg:text-7xl text-slate-100 text-center pt-3 font-bold header-landing">
               Hear It From{' '}
-              <b className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
                 Others
-              </b>
+              </span>
             </span>
             <ThreeD />
             <PrimaryButton

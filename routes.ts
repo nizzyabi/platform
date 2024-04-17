@@ -1,6 +1,6 @@
 // Public Routes
 export const publicRoutes = [
-"/", '/api/webhook', "/coaching", "/courses", '/roadmap', "/auth/new-verification", '/api/uploadthing /', "/api/uploadthing" 
+"/", '/api/webhook', "/coaching", "/courses", '/roadmap', "/auth/new-verification", '/api/uploadthing /', "/api/uploadthing" , "/tutoring"
 ]
 
 // Private Routes (if you had a login page, you would protect it after the user has been logged in as you dont want them to access the login page after they have logged in)
