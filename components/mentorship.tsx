@@ -103,11 +103,11 @@ export const Mentorship: React.FC = () => {
                           data-aos="fade-left"
                         >
                           <Image
-                            src="/tutoring/code.png"
+                            src="/voicescribe.svg"
                             alt="App screenshot"
                             width={2432}
                             height={1442}
-                            className="w-[76rem] z-10 rounded-xl border border-white/10"
+                            className="w-[76rem] z-10 rounded-xl"
                           />
                         </div>
                       </div>

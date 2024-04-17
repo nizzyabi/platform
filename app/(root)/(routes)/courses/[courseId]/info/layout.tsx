@@ -1,12 +1,14 @@
 
+import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
 import { Preview } from "@/components/preview";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
+import { Button } from "@mui/material";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 
 const CourseInfoLayout = async ({
@@ -49,6 +51,9 @@ const CourseInfoLayout = async ({
             }
         }
     });
+
+    
+    
     
     return (
         <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
@@ -64,7 +69,7 @@ const CourseInfoLayout = async ({
               src={`${course?.introVideo}`} 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
               title="Video"
-              className="aspect-video w-[700px]"
+              className="aspect-video w-[700px] rounded-[5px]"
               ></iframe>
             </div>
         
@@ -101,22 +106,33 @@ const CourseInfoLayout = async ({
 
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-5xl font-bold">Purchase course</h1>
+            <div className="pt-20">
             {
-              !course?.price
-              ? <p className="pt-5">This course is free!</p>
-              : <button className="inline-flex h-20 animate-shimmer items-center justify-center border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-[5px]">
-              Purchase course for ${course?.price}
-            </button>
+              !course?.price ? 
+              
+              <Link
+                type="submit"
+                href={`/course/${course?.id}`}
+                className=" font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 transition duration-150 ease-in-out px-1 py-1 group"
+              >
+                <div className="flex items-center px-5 lg:px-7 h-20 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
+                  This Course Is Free! {" "}
+                  <ArrowRight className="w-4 h-4 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2" />
+                </div>
+              </Link>
+              : 
+              <CoursePurchaseButton
+                courseId={params.courseId}
+                price={course?.price!}
+              />
             }
+            
+            </div>
           </div>
-
-          
-
-        
 
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-              <h1 className="text-center text-5xl font-bold my-8">Chapters</h1>
+              <h1 className="text-center text-5xl font-bold mb-8">Chapters</h1>
               <div className="flex items-center justify-center">
                 <Separator className=" bg-slate-100/20 h-0.5 w-40 mb-12" />
               </div>
