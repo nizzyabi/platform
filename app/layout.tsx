@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description: 'Self taught developers'
 }
 
+
+
+
+
 export default async function RootLayout({
   children
 }: {
