@@ -96,7 +96,7 @@ const CourseInfoLayout = async ({
 
           <div className="mx-auto max-w-2xl">
             <h1 className="text-4xl font-bold">What's included?</h1>
-            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap">{course?.included}</p>
+            <p className="font-medium text-slate-100/80 pt-4 whitespace-pre-wrap">{course?.included}</p>
           </div>
 
           <div className="mx-auto max-w-2xl">
