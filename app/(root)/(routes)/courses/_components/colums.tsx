@@ -84,22 +84,14 @@ export const columns: ColumnDef<Course>[] = [
       const { id } = row.original;
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+        
+          <Link href={`/courses/${id}`}>
             <Button variant="ghost" className="h-4 w-8 p-0">
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4"/>
             </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align='end' className="rounded border-slate-100/30 bg-[#191919]">
-            <Link href={`/courses/${id}`}>
-              <DropdownMenuItem className=" rounded bg-[#191919] cursor-pointer">
-                <Wand2 className="h-4 w-4 mr-2"/>
-                Edit
-              </DropdownMenuItem>
-            </Link>
-          </DropdownMenuContent>
-        </DropdownMenu>      
+          </Link>
+          
       )
     }
   }

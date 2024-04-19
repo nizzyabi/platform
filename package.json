@@ -92,6 +92,7 @@
     "react-spinners": "^0.13.8",
     "react-syntax-highlighter": "^15.5.0",
     "react-vertical-timeline-component": "^3.6.0",
+    "recharts": "^2.12.5",
     "resend": "^2.1.0",
     "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",

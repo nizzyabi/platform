@@ -55,6 +55,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
+        {/*
         <div className="flex items-center justify-between pt-20">
           <Input
             placeholder="Filter courses..."
@@ -65,17 +66,13 @@ export function DataTable<TData, TValue>({
             
             className="max-w-sm bg-slate-200 placeholder:text-black/40 text-black"
           />
-          <Link href='/courses/add'>
-            <Button className="rounded-[5px] py-2">
-              New course
-            </Button>
-          </Link>
-        </div>
-    <div className="rounded border border-slate-100/50 bg-zinc-900 mt-3">
+          
+        </div>*/}
+    <div className="bg-[#111010] mt-3 rounded-[5px]">
       <Table>
         <TableHeader >
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow className="border-b border-slate-100/50" key={headerGroup.id}>
+            <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id} >
@@ -97,9 +94,10 @@ export function DataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+                className="border-transparent"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="pl-8">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
@@ -116,6 +114,11 @@ export function DataTable<TData, TValue>({
       </Table>
     </div>
     <div className="flex items-center justify-end space-x-2 py-4">
+        <Link href='/courses/add'>
+          <Button className="rounded-[5px] py-2">
+            New course
+          </Button>
+        </Link>
         <Button
           variant="basic"
           className="rounded-[5px] py-2"
