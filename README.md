@@ -19,15 +19,54 @@ Note: In case you use another package manager, research the equivalent commands 
 A step-by-step series of examples that tell you how to get a development
 environment running
 
-Installing modules and dependencies:
+### Spin up the environment
+```shell
+npm run compose:up
+```
+> ℹ️ You can spin down the environment with `npm run compose:down`, or `npm run compose:wipe`
+> to completely wipe the environment and the volumes it created
 
-    npm install --save-dev
+Alternatively you can use a local postgres server or an instance in the cloud (Supabase for example)
 
-Running the local development server
+### Setting up environment variables
+Copy the `.env.example` file into your own `.env` file 
+(which you have to create at the same level) and fill in the environment variables
 
-    npm run dev
+### Setting up the database
+```shell
+npx prisma generate
+npx prisma migrate dev
+```
+
+### Installing modules and dependencies:
+```shell
+npm install --save-dev
+```
+
+### Running the local development server
+```shell
+npm run dev
+```
 
 You should now be able to see the project up and running at http://localhost:3000/
+
+## Updating the database schema
+Update the prisma schema (located in [./prisma/schema.prisma](./prisma/schema.prisma))
+
+Generate a new migration with the following prisma command:
+```shell
+npx prisma migrate dev --name "MIGRATION NAME"
+# or
+npx prisma migrate dev
+# then it will prompt you for a migration name
+```
+
+Regenerate the prisma client just to be sure it's up-to-date
+```shell
+npx prisma generate
+```
+
+The schema and the database should be updated now, you're good to go.
 
 ## Running the tests
 
@@ -37,9 +76,11 @@ These steps ensure you are doing everything correctly and stay within structure.
 
 Check if the best practices and the right coding format have been used:
 
-    npm run check
-    or
-    npx prettier . --check
+```shell
+npm run check
+# or
+npx prettier . --check
+```
 
 If the command before succeeds, you should see something similar to this:
 
@@ -48,9 +89,11 @@ If the command before succeeds, you should see something similar to this:
 
 If that is not the case, you can adjust your code to match the project's code format. For that simply run:
 
-    npm run format
-    or
-    npx prettier . --write
+```shell
+npm run format
+# or
+npx prettier . --write
+```
 
 ## Built With
 
