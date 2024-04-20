@@ -92,11 +92,11 @@ export function ThreeD() {
         <Masonry gutter="1.5rem" className="masonry-grid">
           {testimonials.map((testimonial) => (
             <CardContainer className="flex h-full" key={testimonial.username}>
-              <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-3 border ">
+              <CardBody className="bg-[#131212] sm:max-w-[unset] max-w-[18.75em] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-3 border ">
                 <div className="flex justify-between">
                   <CardItem
                     translateZ="50"
-                    className="text-xl font-bold text-slate-100 flex space-between items-center"
+                    className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
                   >
                     <div className="flex">
                       <Avatar
@@ -111,7 +111,7 @@ export function ThreeD() {
                     className="text-xl font-bold text-slate-100 flex space-between items-center"
                   >
                     <p>
-                      <FaDiscord className="text-blue-500 text-5xl" />
+                      <FaDiscord className="text-blue-500 text-2xl sm:text-4xl md:text-5xl" />
                     </p>
                   </CardItem>
                 </div>
