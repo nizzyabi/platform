@@ -39,7 +39,7 @@ export default function Navbar() {
               <span className='transition-all duration-300 ease-in-out group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-purple-500'>
                 nizzy
               </span>
-              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:text-white''>
+              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:text-white'>
                 abi
               </span>
             </h1>
