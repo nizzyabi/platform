@@ -10,22 +10,18 @@ import {
   getFilteredRowModel,
   useReactTable,
   ColumnFiltersState,
-
 } from "@tanstack/react-table"
 
 import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
-import { PlusCircle } from "lucide-react"
-import { CardContent } from "./card"
+import { DashboardCardContent } from "./dashboard-card"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -57,7 +53,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="mt-3">
         
-    <CardContent>
+    <DashboardCardContent>
       <section className="flex justify-between">
         <div>
         <p>Courses</p>
@@ -109,7 +105,7 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-    </CardContent>
+    </DashboardCardContent>
     
     </div>
   )

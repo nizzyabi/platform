@@ -1,14 +1,11 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
-import { Preview } from "@/components/preview";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
-import { Button } from "@mui/material";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 
 const CourseInfoLayout = async ({

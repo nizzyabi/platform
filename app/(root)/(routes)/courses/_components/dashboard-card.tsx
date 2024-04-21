@@ -4,16 +4,16 @@ import React from "react";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export type CardProps = {
+export type DashboardCardProps = {
   label: string;
   icon: LucideIcon;
   amount: string;
   discription: string;
 };
 
-export default function Card(props: CardProps) {
+export default function DashboardCard(props: DashboardCardProps) {
   return (
-    <CardContent>
+    <DashboardCardContent>
       <section className="flex justify-between gap-2 text-slate-100">
         {/* label */}
         <p className="text-sm">{props.label}</p>
@@ -24,11 +24,11 @@ export default function Card(props: CardProps) {
         <h2 className="text-2xl font-semibold">{props.amount}</h2>
         <p className="text-xs">{props.discription}</p>
       </section>
-    </CardContent>
+    </DashboardCardContent>
   );
 }
 
-export function CardContent(props: React.HTMLAttributes<HTMLDivElement>) {
+export function DashboardCardContent(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       {...props}
