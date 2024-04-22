@@ -53,11 +53,13 @@ const CourseLayout = async ({
         course={course}
         progressCount={progressCount}
       />
+     
       <div className="flex">
         <CourseSidebar
           course={course}
           progressCount={await progressCount}
         />
+         
         {children}
       </div>
     </div>
