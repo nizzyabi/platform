@@ -33,7 +33,7 @@ export function DashboardCardContent(props: React.HTMLAttributes<HTMLDivElement>
     <div
       {...props}
       className={cn(
-        "flex w-full flex-col gap-3 rounded-[5px]  p-5 shadow bg-[#111010]",
+        "flex w-full flex-col gap-3 rounded-[5px] p-5 shadow bg-[#111010]",
         props.className
       )}
     />

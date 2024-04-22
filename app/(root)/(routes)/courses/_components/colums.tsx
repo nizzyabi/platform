@@ -43,7 +43,7 @@ export const columns: ColumnDef<Course>[] = [
         currency: "USD"
       }).format(price);
 
-      return <p className="text-[16px]">{formatted}</p>
+      return <p className="text-sm">{formatted}</p>
     }
   },
   {

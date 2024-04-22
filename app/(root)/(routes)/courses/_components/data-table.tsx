@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="mt-3">
         
-    <DashboardCardContent>
+    <DashboardCardContent className="">
       <section className="flex justify-between">
         <p className="pt-3">Courses</p>
         <div className="flex items-center justify-between">
@@ -76,8 +76,7 @@ export function DataTable<TData, TValue>({
       </section>
       
       <Table>
-        
-        <TableBody>
+        <TableBody >
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
@@ -86,7 +85,7 @@ export function DataTable<TData, TValue>({
                 className="border-transparent "
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="text-[16px]">
+                  <TableCell key={cell.id} className="text-sm py-4 px-0">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
