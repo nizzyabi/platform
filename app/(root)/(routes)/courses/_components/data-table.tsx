@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { DashboardCardContent } from "./dashboard-card"
+import { Plus } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -51,18 +52,16 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="mt-3">
+    <div className="">
         
     <DashboardCardContent className="">
       <section className="flex justify-between">
-        <p className="pt-3">Courses</p>
-        <div className="flex items-center justify-between">
+        <p>Courses</p>
+        
         <Link href='/courses/add'>
-          <Button className="rounded-[5px] py-[10px] bg-slate-200 mr-3">
-            New course
-          </Button>
+          <Plus className="h-4 w-4"/>
         </Link>
-          <Input
+          {/* <Input
             placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
@@ -70,19 +69,19 @@ export function DataTable<TData, TValue>({
             }
             
             className="max-w-xs py-0 bg-slate-200 placeholder:text-black/40 text-black"
-          />
+          />*/}
           
-        </div>
+        
       </section>
       
       <Table>
-        <TableBody >
+        <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
-                className="border-transparent "
+                className="border-transparent"
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id} className="text-sm py-4 px-0">

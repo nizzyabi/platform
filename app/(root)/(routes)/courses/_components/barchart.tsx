@@ -65,7 +65,7 @@ const data = [
 export default function BarChart({}: Props) {
   return (
     <ResponsiveContainer width={"100%"} height={350}>
-      <BarGraph data={data} margin={{ top: 0, left: 0, right: 0, bottom: 0 }} >
+      <BarGraph data={data} margin={{ top: 0, left: -15, right: 0, bottom: 0 }}>
         <XAxis
           dataKey={"name"}
           tickLine={false}
@@ -73,14 +73,18 @@ export default function BarChart({}: Props) {
           stroke="#F1F5F9"
           fontSize={13}
           padding={{ left: 0, right: 0 }}
+          
+          
         />
         <YAxis
           tickLine={false}
+          
           axisLine={true}
           stroke="#F1F5F9"
           fontSize={13}
           tickFormatter={(value) => `$${value}`}
           padding={{ top: 0, bottom: 0 }}
+          
         />
         <Bar dataKey={"total"} radius={[4, 4, 0, 0]} stroke='#F1F5F9' fill="#F1F5F9" />
       </BarGraph>

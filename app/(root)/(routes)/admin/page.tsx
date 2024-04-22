@@ -167,9 +167,12 @@ const DataPage = async () => {
                 />
               ))}
             </DashboardCardContent>
+            <DashboardCardContent className="p-0">
+              <DataTable columns={columns} data={courses} />
+            </DashboardCardContent>
           </section>
         </div>
-        <DataTable columns={columns} data={courses} />
+        
       </div>
       )}
     </div>
