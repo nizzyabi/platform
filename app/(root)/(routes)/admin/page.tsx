@@ -5,15 +5,16 @@ import { DataTable } from "../courses/_components/data-table"
 import BarChart from "../courses/_components/barchart";
 import DashboardCard, { DashboardCardContent, DashboardCardProps } from "../courses/_components/dashboard-card";
 import SalesCard, { SalesProps} from "../courses/_components/sales-card";
+import UserDataCard, {UserDataProps} from "../courses/_components/user-data-card";
 import { auth } from "@/auth"
 import { db } from "@/lib/db";
-import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
+import { Radio, CreditCard, DollarSign, User, BadgeDollarSign, UserRoundCheck, CandlestickChart } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const cardData: DashboardCardProps[] = [
   {
     label: "Total Revenue",
-    amount: "$1,999.89",
+    amount: "$929",
     discription: "+20.1% from last month",
     icon: DollarSign
   },
@@ -21,7 +22,7 @@ const cardData: DashboardCardProps[] = [
     label: "Users",
     amount: "+511",
     discription: "+80.1% from last month",
-    icon: Users
+    icon: User
   },
   {
     label: "Sales",
@@ -33,7 +34,7 @@ const cardData: DashboardCardProps[] = [
     label: "Live Users",
     amount: "+28",
     discription: "+2 since last hour",
-    icon: Activity
+    icon: Radio
   }
 ];
 
@@ -65,6 +66,34 @@ const uesrSalesData: SalesProps[] = [
   }
 ];
 
+const userData: UserDataProps[] = [
+  {
+    name: "Tyler Durden",
+    email: "tyle.durden@gmail.com",
+    time: "2 hours ago"
+  },
+  {
+    name: "Alex Jones",
+    email: "alex.jones@hotmail.com",
+    time: "1 hour ago"
+  },
+  {
+    name: "Joe Rogan",
+    email: "joerogan_chimp@gmail.com",
+    time: "8 hours ago",
+  },
+  {
+    name: "Steve Jobs",
+    email: "stevejob@apple.com",
+    time: "1 day ago",
+  },
+  {
+    name: "Maha Isk",
+    email: "mahaisk@gmail.com",
+    time: "1 day ago",
+  }
+]
+
 const DataPage = async () => {
     const session = await auth();
 
@@ -83,7 +112,7 @@ const DataPage = async () => {
 
   return (
     <div className="flex flex-col gap-5 w-full pt-40">
-      <h1 className="font-bold text-7xl mx-6 text-center"> Dashboard</h1>
+      <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
       <div className="flex items-center justify-center">
           <Separator className=" bg-slate-100/20 h-0.5 w-40" />
       </div>
@@ -91,34 +120,50 @@ const DataPage = async () => {
       <div className="container mx-auto py-10"> 
         <div className="flex flex-col gap-5  w-full">
           <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
-            {cardData.map((d, i) => (
+            {cardData.map((data, index) => (
               <DashboardCard
-                key={i}
-                amount={d.amount}
-                discription={d.discription}
-                icon={d.icon}
-                label={d.label}
+                key={index}
+                amount={data.amount}
+                discription={data.discription}
+                icon={data.icon}
+                label={data.label}
               />
             ))}
           </section>
           <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-slate-100">
             <DashboardCardContent>
-              <p className="p-4 font-semibold ">Overview</p>
+              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+                <p>Sales Data</p>
+                <CandlestickChart className="h-4 w-4" />
+              </section>
               <BarChart />
             </DashboardCardContent>
-            <DashboardCardContent className="flex justify-between gap-4">
-              <section>
+            <DashboardCardContent>
+              <section className="flex justify-between gap-2 text-slate-100 pb-2">
                 <p>Recent Sales</p>
-                <p className="text-sm text-gray-400">
-                  You made 22 sales this month.
-                </p>
+                <BadgeDollarSign className="h-4 w-4" />
+                  
               </section>
-              {uesrSalesData.map((d, i) => (
+              {uesrSalesData.map((data, index) => (
                 <SalesCard
-                  key={i}
-                  email={d.email}
-                  name={d.name}
-                  saleAmount={d.saleAmount}
+                  key={index}
+                  email={data.email}
+                  name={data.name}
+                  saleAmount={data.saleAmount}
+                />
+              ))}
+            </DashboardCardContent>
+            <DashboardCardContent>
+              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+                <p>Recent Users</p>
+                <UserRoundCheck className="h-4 w-4" />
+              </section>
+              {userData.map((data, index) => (
+                <UserDataCard
+                  key={index}
+                  email={data.email}
+                  name={data.name}
+                  time={data.time}
                 />
               ))}
             </DashboardCardContent>

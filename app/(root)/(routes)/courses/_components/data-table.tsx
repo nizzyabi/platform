@@ -55,11 +55,7 @@ export function DataTable<TData, TValue>({
         
     <DashboardCardContent>
       <section className="flex justify-between">
-        <div>
-        <p>Courses</p>
-        <p className="text-sm text-gray-400 m-0">
-        Edit & manage your courses.</p>
-        </div>
+        <p className="pt-3">Courses</p>
         <div className="flex items-center justify-between">
         <Link href='/courses/add'>
           <Button className="rounded-[5px] py-[10px] bg-slate-200 mr-3">
@@ -67,7 +63,7 @@ export function DataTable<TData, TValue>({
           </Button>
         </Link>
           <Input
-            placeholder="Filter courses..."
+            placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("title")?.setFilterValue(event.target.value)
@@ -87,7 +83,7 @@ export function DataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
-                className="border-transparent"
+                className="border-transparent "
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id} className="text-[16px]">
