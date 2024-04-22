@@ -30,14 +30,14 @@ export const CourseCard =  async ({
 }: CourseCardProps) => {
     const session = await auth()
     
-    const purchase = await db.purchase.findUnique({
+    {/*const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
                 userId: session?.user.id ?? '',
                 courseId: id,
             }
         }
-    })
+    })*/}
 
    
     return (

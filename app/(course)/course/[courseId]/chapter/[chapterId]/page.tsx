@@ -17,11 +17,7 @@ const ChapterIdPage = async ({
     params: { courseId: string; chapterId: string; }
 }) => {
     const session = await auth();
-    
-    if (!session) {
-        return redirect("/");
-    }
-
+   
     const {
         chapter,
         course,
@@ -33,7 +29,7 @@ const ChapterIdPage = async ({
         githubLink,
         courseLanguage,
     } = await getChapter({
-        userId: session.user.id ?? '',
+        userId: session?.user.id ?? '',
         courseId: params.courseId,
         chapterId: params.chapterId
     })

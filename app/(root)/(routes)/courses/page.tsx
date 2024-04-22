@@ -11,7 +11,7 @@ import React from 'react'
 const CoursesPage = async ({}) => {
   const session = await auth()
   const courses = await getCourses({
-    userId: session.user?.id
+    userId: session?.user?.id
   })
   return (
     <div>
