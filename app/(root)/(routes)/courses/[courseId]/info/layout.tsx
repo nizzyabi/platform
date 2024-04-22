@@ -48,9 +48,6 @@ const CourseInfoLayout = async ({
             }
         }
     });
-
-    
-    
     
     return (
         <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
