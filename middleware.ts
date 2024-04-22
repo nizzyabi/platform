@@ -1,3 +1,5 @@
+{/*
+
 import authConfig from "@/auth.config"
 import NextAuth from "next-auth"
 import {
@@ -43,3 +45,4 @@ export default auth((req):any => {
 export const config = {
   matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 }
+*/}

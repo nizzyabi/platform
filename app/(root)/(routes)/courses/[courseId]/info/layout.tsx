@@ -14,9 +14,7 @@ const CourseInfoLayout = async ({
     params: { courseId: string;  };
 }) => {
     const session  = await auth();
-    if (!session) {
-        return redirect("/")
-    }
+
     const course = await db.course.findUnique({
         where: {
           id: params.courseId,
@@ -29,7 +27,7 @@ const CourseInfoLayout = async ({
             include: {
               userProgress: {
                 where: {
-                  userId: session.user.id ?? '',
+                  userId: session?.user.id ?? '',
                 },
               }
             },
@@ -43,7 +41,7 @@ const CourseInfoLayout = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id ?? '',
+                userId: session?.user.id ?? '',
                 courseId: params.courseId
             }
         }
