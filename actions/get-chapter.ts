@@ -2,9 +2,9 @@ import { db } from "@/lib/db";
 import { Attachment, Chapter } from "@prisma/client";
 
 interface GetChapterProps {
-  userId: string;
-  courseId: string;
-  chapterId: string;
+  userId?: any;
+  courseId?: any;
+  chapterId?: any;
 };
 
 export const getChapter = async ({
@@ -31,7 +31,8 @@ export const getChapter = async ({
         price: true,
         notionLink: true,
         githubLink: true,
-        courseLanguage: true
+        courseLanguage: true,
+        title: true,
       }
     });
 
@@ -91,7 +92,8 @@ export const getChapter = async ({
       purchase,
       notionLink: course.notionLink,
       githubLink: course.githubLink,
-      courseLanguage: course.courseLanguage
+      courseLanguage: course.courseLanguage,
+      title: course.title,
     };
   } catch (error) {
     console.log("[GET_CHAPTER]", error);
@@ -103,7 +105,8 @@ export const getChapter = async ({
       userProgress: null,
       purchase: null,
       notionLink: null,
-      githubLink: null
+      githubLink: null,
+      title: null,
     }
   }
 }

@@ -78,7 +78,6 @@ export default function BarChart({}: Props) {
         />
         <YAxis
           tickLine={false}
-          
           axisLine={true}
           stroke="#F1F5F9"
           fontSize={13}

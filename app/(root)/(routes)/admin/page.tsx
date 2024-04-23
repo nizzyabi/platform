@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { columns } from "../courses/_components/colums"
 import { DataTable } from "../courses/_components/data-table"
 import BarChart from "../courses/_components/barchart";
+
 import DashboardCard, { DashboardCardContent, DashboardCardProps } from "../courses/_components/dashboard-card";
 import SalesCard, { SalesProps} from "../courses/_components/sales-card";
 import UserDataCard, {UserDataProps} from "../courses/_components/user-data-card";
@@ -15,25 +16,25 @@ const cardData: DashboardCardProps[] = [
   {
     label: "Total Revenue",
     amount: "$929",
-    discription: "+20.1% from last month",
+    description: "+20.1% from last month",
     icon: DollarSign
   },
   {
     label: "Users",
     amount: "+511",
-    discription: "+80.1% from last month",
+    description: "+80.1% from last month",
     icon: User
   },
   {
     label: "Sales",
     amount: "+15",
-    discription: "+19% from last month",
+    description: "+19% from last month",
     icon: CreditCard
   },
   {
     label: "Live Users",
     amount: "+28",
-    discription: "+2 since last hour",
+    description: "+2 since last hour",
     icon: Radio
   }
 ];
@@ -124,7 +125,7 @@ const DataPage = async () => {
               <DashboardCard
                 key={index}
                 amount={data.amount}
-                discription={data.discription}
+                description={data.description}
                 icon={data.icon}
                 label={data.label}
               />
@@ -153,23 +154,7 @@ const DataPage = async () => {
                 />
               ))}
             </DashboardCardContent>
-            <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-slate-100 pb-2">
-                <p>Recent Users</p>
-                <UserRoundCheck className="h-4 w-4" />
-              </section>
-              {userData.map((data, index) => (
-                <UserDataCard
-                  key={index}
-                  email={data.email}
-                  name={data.name}
-                  time={data.time}
-                />
-              ))}
-            </DashboardCardContent>
-            <DashboardCardContent className="p-0">
-              <DataTable columns={columns} data={courses} />
-            </DashboardCardContent>
+            
           </section>
         </div>
         
