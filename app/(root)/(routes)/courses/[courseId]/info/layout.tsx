@@ -103,7 +103,16 @@ const CourseInfoLayout = async ({
             {
               !course?.price ? 
               <div className="flex items-center justify-center">
-              <PrimaryButton href={``} className="bg-white text-zinc-900 w-fit "/>
+              <Link
+                type="submit"
+                href={`/course/${course?.id}`}
+                className=" font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 transition duration-150 ease-in-out px-1 py-1 group"
+              >
+                <div className="flex items-center px-5 lg:px-7 h-12 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
+                  This Course Is Free! {" "}
+                  <ArrowRight className="w-4 h-4 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2" />
+                </div>
+              </Link>
               </div>
               : 
               <CoursePurchaseButton
