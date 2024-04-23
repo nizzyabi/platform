@@ -109,7 +109,6 @@ const CourseInfoLayout = async ({
               >
                 <div className="flex items-center px-5 lg:px-7 h-12 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
                   This Course Is Free! {" "}
-                  <ArrowRight className="w-4 h-4 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2" />
                 </div>
               </Link>
               : 
