@@ -1,6 +1,7 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
+import PrimaryButton from "@/components/ui/get-started-button";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
 import { ArrowRight } from "lucide-react";
@@ -101,16 +102,9 @@ const CourseInfoLayout = async ({
             <div className="pt-20">
             {
               !course?.price ? 
-              
-              <Link
-                type="submit"
-                href={`/course/${course?.id}`}
-                className=" font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 transition duration-150 ease-in-out px-1 py-1 group"
-              >
-                <div className="flex items-center px-5 lg:px-7 h-12 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
-                  This Course Is Free! {" "}
-                </div>
-              </Link>
+              <div className="flex items-center justify-center">
+              <PrimaryButton href={``} className="bg-white text-zinc-900 w-fit "/>
+              </div>
               : 
               <CoursePurchaseButton
                 courseId={params.courseId}
