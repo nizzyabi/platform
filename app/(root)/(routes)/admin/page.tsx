@@ -154,6 +154,23 @@ const DataPage = async () => {
                 />
               ))}
             </DashboardCardContent>
+            <DashboardCardContent>
+              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+                <p>Recent Users</p>
+                <UserRoundCheck className="h-4 w-4" />
+              </section>
+              {userData.map((data, index) => (
+                <UserDataCard
+                  key={index}
+                  email={data.email}
+                  name={data.name}
+                  time={data.time}
+                />
+              ))}
+            </DashboardCardContent>
+            <DashboardCardContent className="p-0">
+              <DataTable columns={columns} data={courses} />
+            </DashboardCardContent>
             
           </section>
         </div>

@@ -100,6 +100,7 @@ const CourseInfoLayout = async ({
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             <div className="pt-20">
+              
             {
               !course?.price ? 
               <div className="flex items-center justify-center">
