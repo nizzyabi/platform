@@ -31,7 +31,7 @@ export default function LandingPage() {
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link
             className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center border border-slate-100/30 rounded-full  text-zinc-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none"
-            href="https://github.com/NizarAbiZaher"
+            href="https://github.com/NizarAbiZaher/platform"
             target="_blank"
           >
             <span className="relative inline-flex items-center gap-2">
@@ -54,7 +54,7 @@ export default function LandingPage() {
             </span>
           </div>
           <PrimaryButton
-            href={session ? '/courses' : '/auth/register'}
+            href='/courses'
             className="bg-white text-zinc-900"
           />
           <Bento className="text-center" />

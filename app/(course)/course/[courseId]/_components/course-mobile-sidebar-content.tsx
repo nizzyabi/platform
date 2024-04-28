@@ -22,14 +22,12 @@ export const CourseMobileSidebarContent = async ({
 }: CourseMobileSidebarContentProps) => {
     const session = await auth();
   
-    if (!session) {
-      return redirect("/");
-    }
+    
 
     const purchase = await db.purchase.findUnique({
       where: {
         userId_courseId: {
-          userId: session.user.id ?? '',
+          userId: session?.user.id ?? '',
           courseId: course.id,
         }
       }

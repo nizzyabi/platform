@@ -25,8 +25,6 @@ interface CourseSidebarProps {
   }: CourseSidebarProps) => {
     const session = await auth();
   
-    
-
     const purchase = await db.purchase.findUnique({
       where: {
         userId_courseId: {

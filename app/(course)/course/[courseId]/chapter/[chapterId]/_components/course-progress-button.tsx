@@ -45,7 +45,7 @@ export const CourseProgressButton = ({
       toast.success("Progress updated");
       router.refresh();
     } catch {
-      toast.error("You must be logged in to track progress");
+      toast.error("Sign up to track progress");
     } finally {
       setIsLoading(false);
     }

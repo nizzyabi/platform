@@ -38,8 +38,5 @@ export const CoursePurchaseButton = ({
                 Purchase course for {formatPrice(price)}
             </div>
         </Button>
-
-
-        
     )
 }
