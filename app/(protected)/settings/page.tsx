@@ -1,4 +1,6 @@
 'use client'
+
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/actions/logout";
 import { useCurrentUser } from "@/hooks/user-current-user";
@@ -23,7 +25,10 @@ const SettingsPage = () => {
     const onClick = () => {
         logout();
     }
-    return (
+
+    return !session ? (
+        redirect('/')
+      ) : (
         <div className="flex flex-col space-y-20 items-center justify-center pt-40 px-8 landing">
             <Tabs defaultValue="account" className="xs:w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px]">
                 <TabsList className="grid w-full grid-cols-2">
