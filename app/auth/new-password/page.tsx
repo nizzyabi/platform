@@ -1,9 +1,7 @@
-import { NewPasswordForm } from "@/components/auth/New-Password-Form"
+import { NewPasswordForm } from '@/components/auth/New-Password-Form'
 
 const NewPasswordPage = () => {
-  return (
-    <NewPasswordForm />
-  )
+  return <NewPasswordForm />
 }
 
 export default NewPasswordPage

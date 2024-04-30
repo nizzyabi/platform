@@ -1,59 +1,58 @@
-"use client";
+'use client'
 
-import * as z from "zod";
-import axios from "axios";
-import { Pencil, PlusCircle, ImageIcon, File, Loader2, X } from "lucide-react";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { Attachment, Course } from "@prisma/client";
-import Image from "next/image";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/File-Upload";
-
+import * as z from 'zod'
+import axios from 'axios'
+import { Pencil, PlusCircle, ImageIcon, File, Loader2, X } from 'lucide-react'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+import { Attachment, Course } from '@prisma/client'
+import Image from 'next/image'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import { Button } from '@/components/ui/button'
+import { FileUpload } from '@/components/File-Upload'
 
 interface AttachmentFormProps {
-  initialData: Course & { attachments: Attachment[] };
-  courseId: string;
-};
+  initialData: Course & { attachments: Attachment[] }
+  courseId: string
+}
 
 const formSchema = z.object({
-  url: z.string().min(1),
-});
+  url: z.string().min(1)
+})
 
 export const AttachmentForm = ({
   initialData,
   courseId
 }: AttachmentFormProps) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [isEditing, setIsEditing] = useState(false)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
 
-  const toggleEdit = () => setIsEditing((current) => !current);
+  const toggleEdit = () => setIsEditing((current) => !current)
 
-  const router = useRouter();
+  const router = useRouter()
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post(`/api/courses/${courseId}/attachments`, values);
-      toast.success("Course updated");
-      toggleEdit();
-      router.refresh();
+      await axios.post(`/api/courses/${courseId}/attachments`, values)
+      toast.success('Course updated')
+      toggleEdit()
+      router.refresh()
     } catch {
-      toast.error("Something went wrong");
+      toast.error('Something went wrong')
     }
-  };
+  }
 
   const onDelete = async (id: string) => {
     try {
-      setDeletingId(id);
-      await axios.delete(`/api/courses/${courseId}/attachments/${id}`);
-      toast.success("Attachment deleted");
-      router.refresh();
+      setDeletingId(id)
+      await axios.delete(`/api/courses/${courseId}/attachments/${id}`)
+      toast.success('Attachment deleted')
+      router.refresh()
     } catch {
-      toast.error("Something went wrong");
+      toast.error('Something went wrong')
     } finally {
-      setDeletingId(null);
+      setDeletingId(null)
     }
   }
 
@@ -62,9 +61,7 @@ export const AttachmentForm = ({
       <div className="font-semibold flex items-center justify-between text-xl">
         Course Attachments
         <Button onClick={toggleEdit} variant="ghost">
-          {isEditing && (
-            <>Cancel</>
-          )}
+          {isEditing && <>Cancel</>}
           {!isEditing && (
             <>
               <AddCircleIcon className="text-slate-200" />
@@ -87,9 +84,7 @@ export const AttachmentForm = ({
                   className="flex items-center p-3 w-full bg-slate-100 border-[#191919] border text-[#191919] rounded"
                 >
                   <File className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <p className="text-xs line-clamp-1">
-                    {attachment.name}
-                  </p>
+                  <p className="text-xs line-clamp-1">{attachment.name}</p>
                   {deletingId === attachment.id && (
                     <div>
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -115,7 +110,7 @@ export const AttachmentForm = ({
             endpoint="courseAttachment"
             onChange={(url) => {
               if (url) {
-                onSubmit({ url: url });
+                onSubmit({ url: url })
               }
             }}
           />

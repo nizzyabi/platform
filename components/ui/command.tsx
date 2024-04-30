@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { type DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
-import SearchIcon from '@mui/icons-material/Search';
-import { cn } from "@/lib/utils"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import * as React from 'react'
+import { type DialogProps } from '@radix-ui/react-dialog'
+import { Command as CommandPrimitive } from 'cmdk'
+import SearchIcon from '@mui/icons-material/Search'
+import { cn } from '@/lib/utils'
+import { Dialog, DialogContent } from '@/components/ui/dialog'
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
@@ -14,7 +14,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground border-slate-100/50",
+      'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground border-slate-100/50',
       className
     )}
     {...props}
@@ -40,12 +40,15 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-slate-100/30 px-3" cmdk-input-wrapper="">
+  <div
+    className="flex items-center border-b border-slate-100/30 px-3"
+    cmdk-input-wrapper=""
+  >
     <SearchIcon className="mr-5 shrink-0 opacity-50 text-slate-100" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 border-black/50",
+        'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 border-black/50',
         className
       )}
       {...props}
@@ -61,7 +64,7 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
+    className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
     {...props}
   />
 ))
@@ -110,7 +113,7 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 h-px bg-slate-100/50", className)}
+    className={cn('-mx-1 h-px bg-slate-100/50', className)}
     {...props}
   />
 ))
@@ -121,15 +124,15 @@ const CommandItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
   <CommandPrimitive.Item
-  ref={ref}
-  className={cn(
-    "relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-slate-100/20 aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-slate-100/20 cursor-pointer text-slate-100 ",
-    className
-  )}
-  {...props}
->
-  {children}
-</CommandPrimitive.Item>
+    ref={ref}
+    className={cn(
+      'relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-slate-100/20 aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-slate-100/20 cursor-pointer text-slate-100 ',
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </CommandPrimitive.Item>
 ))
 
 CommandItem.displayName = CommandPrimitive.Item.displayName
@@ -141,14 +144,14 @@ const CommandShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground",
+        'ml-auto text-xs tracking-widest text-muted-foreground',
         className
       )}
       {...props}
     />
   )
 }
-CommandShortcut.displayName = "CommandShortcut"
+CommandShortcut.displayName = 'CommandShortcut'
 
 export {
   Command,
@@ -159,5 +162,5 @@ export {
   CommandGroup,
   CommandItem,
   CommandShortcut,
-  CommandSeparator,
+  CommandSeparator
 }

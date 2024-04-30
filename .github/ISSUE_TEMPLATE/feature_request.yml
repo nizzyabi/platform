@@ -1,12 +1,12 @@
-name: "Feature Request"
+name: 'Feature Request'
 description: Create a new feature request
-title: "[REQUEST] - <title>"
-labels: ["enhancement"]
+title: '[REQUEST] - <title>'
+labels: ['enhancement']
 body:
   - type: textarea
     id: Description
     attributes:
-      label: "Description"
+      label: 'Description'
       description: Provide a brief explanation of the feature
       placeholder: Describe your feature request in a few lines
     validations:
@@ -14,9 +14,8 @@ body:
   - type: textarea
     id: basic_example
     attributes:
-      label: "Basic Example"
+      label: 'Basic Example'
       description: Provide some basic examples of your feature.
       placeholder: An example for your feature request.
     validations:
       required: false
-  

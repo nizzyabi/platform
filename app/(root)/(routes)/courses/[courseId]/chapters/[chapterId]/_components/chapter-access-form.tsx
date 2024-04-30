@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import * as z from "zod";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { Chapter } from "@prisma/client";
+import * as z from 'zod'
+import axios from 'axios'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+import { Chapter } from '@prisma/client'
 
 import {
   Form,
@@ -16,52 +16,55 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Editor } from "@/components/editor";
-import { Preview } from "@/components/preview";
-import { Checkbox } from "@/components/ui/checkbox";
+  FormMessage
+} from '@/components/ui/form'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Editor } from '@/components/editor'
+import { Preview } from '@/components/preview'
+import { Checkbox } from '@/components/ui/checkbox'
 
 interface ChapterAccessFormProps {
-  initialData: Chapter;
-  courseId: string;
-  chapterId: string;
-};
+  initialData: Chapter
+  courseId: string
+  chapterId: string
+}
 
 const formSchema = z.object({
-  isFree: z.boolean().default(false),
-});
+  isFree: z.boolean().default(false)
+})
 
 export const ChapterAccessForm = ({
   initialData,
   courseId,
   chapterId
 }: ChapterAccessFormProps) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false)
 
-  const toggleEdit = () => setIsEditing((current) => !current);
+  const toggleEdit = () => setIsEditing((current) => !current)
 
-  const router = useRouter();
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       isFree: !!initialData.isFree
-    },
-  });
+    }
+  })
 
-  const { isSubmitting, isValid } = form.formState;
+  const { isSubmitting, isValid } = form.formState
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, values);
-      toast.success("Chapter updated");
-      toggleEdit();
-      router.refresh();
+      await axios.patch(
+        `/api/courses/${courseId}/chapters/${chapterId}`,
+        values
+      )
+      toast.success('Chapter updated')
+      toggleEdit()
+      router.refresh()
     } catch {
-      toast.error("Something went wrong");
+      toast.error('Something went wrong')
     }
   }
 
@@ -73,17 +76,19 @@ export const ChapterAccessForm = ({
           {isEditing ? (
             <>Cancel</>
           ) : (
-          <>
-            <p>Edit</p>
-          </>
+            <>
+              <p>Edit</p>
+            </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        <p className={cn(
-          "text-sm mt-2",
-          !initialData.isFree && "text-slate-200 italic"
-        )}>
+        <p
+          className={cn(
+            'text-sm mt-2',
+            !initialData.isFree && 'text-slate-200 italic'
+          )}
+        >
           {initialData.isFree ? (
             <>This chapter is free for preview.</>
           ) : (

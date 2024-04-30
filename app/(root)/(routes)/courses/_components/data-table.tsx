@@ -1,5 +1,5 @@
-"use client"
-import * as React from "react"
+'use client'
+import * as React from 'react'
 import {
   ColumnDef,
   SortingState,
@@ -9,18 +9,13 @@ import {
   getSortedRowModel,
   getFilteredRowModel,
   useReactTable,
-  ColumnFiltersState,
-} from "@tanstack/react-table"
+  ColumnFiltersState
+} from '@tanstack/react-table'
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table"
-import Link from "next/link"
-import { DashboardCardContent } from "./dashboard-card"
-import { Plus } from "lucide-react"
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
+import Link from 'next/link'
+import { DashboardCardContent } from './dashboard-card'
+import { Plus } from 'lucide-react'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -29,10 +24,12 @@ interface DataTableProps<TData, TValue> {
 
 export function DataTable<TData, TValue>({
   columns,
-  data,
+  data
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    []
+  )
 
   const table = useReactTable({
     data,
@@ -45,20 +42,19 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
-      columnFilters,
-    },
+      columnFilters
+    }
   })
 
   return (
     <div className="">
-        
-    <DashboardCardContent className="">
-      <section className="flex justify-between">
-        <p>Courses</p>
-        
-        <Link href='/courses/add'>
-          <Plus className="h-4 w-4"/>
-        </Link>
+      <DashboardCardContent className="">
+        <section className="flex justify-between">
+          <p>Courses</p>
+
+          <Link href="/courses/add">
+            <Plus className="h-4 w-4" />
+          </Link>
           {/* <Input
             placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
@@ -68,37 +64,40 @@ export function DataTable<TData, TValue>({
             
             className="max-w-xs py-0 bg-slate-200 placeholder:text-black/40 text-black"
           />*/}
-          
-        
-      </section>
-      
-      <Table>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-                className="border-transparent"
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="text-sm py-4 px-0">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
+        </section>
+
+        <Table>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && 'selected'}
+                  className="border-transparent"
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="text-sm py-4 px-0">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
+                  No results.
+                </TableCell>
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </DashboardCardContent>
-    
+            )}
+          </TableBody>
+        </Table>
+      </DashboardCardContent>
     </div>
   )
 }

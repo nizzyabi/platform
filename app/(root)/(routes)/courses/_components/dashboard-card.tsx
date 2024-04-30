@@ -1,15 +1,15 @@
 /** @format */
 
-import React from "react";
-import { LucideIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import React from 'react'
+import { LucideIcon } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export type DashboardCardProps = {
-  label: string;
-  icon: LucideIcon;
-  amount: string;
-  description: string;
-};
+  label: string
+  icon: LucideIcon
+  amount: string
+  description: string
+}
 
 export default function DashboardCard(props: DashboardCardProps) {
   return (
@@ -25,17 +25,19 @@ export default function DashboardCard(props: DashboardCardProps) {
         <p className="text-xs">{props.description}</p>
       </section>
     </DashboardCardContent>
-  );
+  )
 }
 
-export function DashboardCardContent(props: React.HTMLAttributes<HTMLDivElement>) {
+export function DashboardCardContent(
+  props: React.HTMLAttributes<HTMLDivElement>
+) {
   return (
     <div
       {...props}
       className={cn(
-        "flex w-full flex-col gap-3 rounded-[5px] p-5 shadow bg-[#111010]",
+        'flex w-full flex-col gap-3 rounded-[5px] p-5 shadow bg-[#111010]',
         props.className
       )}
     />
-  );
+  )
 }

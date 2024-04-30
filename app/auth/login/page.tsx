@@ -3,7 +3,7 @@ import { LoginForm } from '@/components/auth/Login-Form'
 function LoginPage() {
   return (
     <div>
-      <LoginForm/>
+      <LoginForm />
     </div>
   )
 }

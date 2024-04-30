@@ -1,69 +1,62 @@
-import {auth} from "@/auth"
-import { Chapter, Course, UserProgress } from "@prisma/client"
-import { redirect } from "next/navigation";
+import { auth } from '@/auth'
+import { Chapter, Course, UserProgress } from '@prisma/client'
+import { redirect } from 'next/navigation'
 
-import { db } from "@/lib/db";
-import { CourseProgress } from "@/components/course-progress";
+import { db } from '@/lib/db'
+import { CourseProgress } from '@/components/course-progress'
 
-import { CourseSidebarItem } from "./course-sidebar-item";
-import { ScrollArea } from "@/components/ui/scrollbar";
-import Scroll from "@/components/Scroll";
-
+import { CourseSidebarItem } from './course-sidebar-item'
+import { ScrollArea } from '@/components/ui/scrollbar'
+import Scroll from '@/components/Scroll'
 
 interface CourseSidebarProps {
   course: Course & {
     chapters: (Chapter & {
-      userProgress: UserProgress[] | null;
+      userProgress: UserProgress[] | null
     })[]
-  };
-  progressCount: number;
-};
+  }
+  progressCount: number
+}
 
-  export const CourseSidebar = async ({
-    course,
-    progressCount,
-  }: CourseSidebarProps) => {
-    const session = await auth();
-  
-    const purchase = await db.purchase.findUnique({
-      where: {
-        userId_courseId: {
-          userId: session?.user.id ?? '',
-          courseId: course.id,
-        }
+export const CourseSidebar = async ({
+  course,
+  progressCount
+}: CourseSidebarProps) => {
+  const session = await auth()
+
+  const purchase = await db.purchase.findUnique({
+    where: {
+      userId_courseId: {
+        userId: session?.user.id ?? '',
+        courseId: course.id
       }
-    });
-  
-    return (
-      <div className="hidden md:flex ml-8">
+    }
+  })
+
+  return (
+    <div className="hidden md:flex ml-8">
       <div className="flex flex-col">
-        
         {purchase && (
           <div className="mt-3">
-            
-            <CourseProgress
-              variant="default"
-              value={progressCount}
-            />
+            <CourseProgress variant="default" value={progressCount} />
           </div>
         )}
       </div>
-      
-     <div>
-      <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto">
-        {course.chapters.map((chapter) => (
-          <CourseSidebarItem
-            key={chapter.id}
-            id={chapter.id}
-            label={chapter.title}
-            isCompleted={!!chapter.userProgress?.[0]?.isCompleted}
-            courseId={course.id}
-            isLocked={!chapter.isFree && !purchase}
-          />
-          
-        ))}
-      </ScrollArea>
+
+      <div>
+        <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto">
+          {course.chapters.map((chapter) => (
+            <CourseSidebarItem
+              key={chapter.id}
+              id={chapter.id}
+              label={chapter.title}
+              isCompleted={!!chapter.userProgress?.[0]?.isCompleted}
+              courseId={course.id}
+              isLocked={!chapter.isFree && !purchase}
+            />
+          ))}
+        </ScrollArea>
       </div>
     </div>
-    )
-  }
+  )
+}

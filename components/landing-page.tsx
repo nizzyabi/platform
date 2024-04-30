@@ -53,10 +53,7 @@ export default function LandingPage() {
               && have fun doing it!
             </span>
           </div>
-          <PrimaryButton
-            href='/courses'
-            className="bg-white text-zinc-900"
-          />
+          <PrimaryButton href="/courses" className="bg-white text-zinc-900" />
           <Bento className="text-center" />
         </section>
 

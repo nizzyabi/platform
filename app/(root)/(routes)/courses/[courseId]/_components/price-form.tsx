@@ -1,63 +1,60 @@
-"use client";
+'use client'
 
-import * as z from "zod";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
+import * as z from 'zod'
+import axios from 'axios'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+import { Course } from '@prisma/client'
 
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
-import { formatPrice } from "@/lib/format";
+  FormMessage
+} from '@/components/ui/form'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Input } from '@/components/ui/input'
+import { formatPrice } from '@/lib/format'
 
 interface PriceFormProps {
-  initialData: Course;
-  courseId: string;
-};
+  initialData: Course
+  courseId: string
+}
 
 const formSchema = z.object({
-  price: z.coerce.number(),
-});
+  price: z.coerce.number()
+})
 
-export const PriceForm = ({
-  initialData,
-  courseId
-}: PriceFormProps) => {
-  const [isEditing, setIsEditing] = useState(false);
+export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
+  const [isEditing, setIsEditing] = useState(false)
 
-  const toggleEdit = () => setIsEditing((current) => !current);
+  const toggleEdit = () => setIsEditing((current) => !current)
 
-  const router = useRouter();
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      price: initialData?.price || undefined,
-    },
-  });
+      price: initialData?.price || undefined
+    }
+  })
 
-  const { isSubmitting, isValid } = form.formState;
+  const { isSubmitting, isValid } = form.formState
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
-      toggleEdit();
-      router.refresh();
+      await axios.patch(`/api/courses/${courseId}`, values)
+      toast.success('Course updated')
+      toggleEdit()
+      router.refresh()
     } catch {
-      toast.error("Something went wrong");
+      toast.error('Something went wrong')
     }
   }
 
@@ -69,21 +66,20 @@ export const PriceForm = ({
           {isEditing ? (
             <>Cancel</>
           ) : (
-          <>
-            <p>Edit</p>
-          </>
+            <>
+              <p>Edit</p>
+            </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        <p className={cn(
-          "text-sm mt-2",
-          !initialData.price && "text-slate-200 italic"
-        )}>
-          {initialData.price
-            ? formatPrice(initialData.price)
-            : "No price"
-          }
+        <p
+          className={cn(
+            'text-sm mt-2',
+            !initialData.price && 'text-slate-200 italic'
+          )}
+        >
+          {initialData.price ? formatPrice(initialData.price) : 'No price'}
         </p>
       )}
       {isEditing && (
@@ -116,8 +112,8 @@ export const PriceForm = ({
               className=" flex"
               variant="basic"
             >
-            Save
-          </Button>
+              Save
+            </Button>
           </form>
         </Form>
       )}

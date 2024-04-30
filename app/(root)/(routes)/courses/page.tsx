@@ -1,11 +1,10 @@
-
-import { getCourses } from '@/actions/get-courses';
-import { auth } from '@/auth';
+import { getCourses } from '@/actions/get-courses'
+import { auth } from '@/auth'
 import Courses from '@/components/courses'
-import { CoursesList } from '@/components/courses-list';
-import { Button } from '@/components/ui/button';
-import { useCurrentUser } from '@/hooks/user-current-user';
-import Link from 'next/link';
+import { CoursesList } from '@/components/courses-list'
+import { Button } from '@/components/ui/button'
+import { useCurrentUser } from '@/hooks/user-current-user'
+import Link from 'next/link'
 import React from 'react'
 
 const CoursesPage = async ({}) => {
@@ -16,7 +15,7 @@ const CoursesPage = async ({}) => {
   return (
     <div>
       <Courses />
-      <CoursesList items={courses}/>
+      <CoursesList items={courses} />
     </div>
   )
 }

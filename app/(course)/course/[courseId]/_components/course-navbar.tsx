@@ -1,27 +1,20 @@
-import { Chapter, Course, UserProgress } from "@prisma/client"
+import { Chapter, Course, UserProgress } from '@prisma/client'
 
-import { CourseMobileSidebar } from "./course-mobile-sidebar";
+import { CourseMobileSidebar } from './course-mobile-sidebar'
 
 interface CourseNavbarProps {
   course: Course & {
     chapters: (Chapter & {
-      userProgress: UserProgress[] | null;
-    })[];
-  };
-  progressCount: any;
-};
+      userProgress: UserProgress[] | null
+    })[]
+  }
+  progressCount: any
+}
 
-export const CourseNavbar = ({
-  course,
-  progressCount,
-}: CourseNavbarProps) => {
+export const CourseNavbar = ({ course, progressCount }: CourseNavbarProps) => {
   return (
     <div className="flex items-center bg-[#1919191] mt-20 shadow-sm">
-      <CourseMobileSidebar
-        course={course}
-        progressCount={progressCount}
-      />
-          
+      <CourseMobileSidebar course={course} progressCount={progressCount} />
     </div>
   )
 }

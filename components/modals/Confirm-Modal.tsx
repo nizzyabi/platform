@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   AlertDialog,
@@ -9,23 +9,18 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  AlertDialogTrigger
+} from '@/components/ui/alert-dialog'
 
 interface ConfirmModalProps {
-  children: React.ReactNode;
-  onConfirm: () => void;
-};
+  children: React.ReactNode
+  onConfirm: () => void
+}
 
-export const ConfirmModal = ({
-  children,
-  onConfirm
-}: ConfirmModalProps) => {
+export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        {children}
-      </AlertDialogTrigger>
+      <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
@@ -35,11 +30,9 @@ export const ConfirmModal = ({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={onConfirm}>
-            Continue
-          </AlertDialogAction>
+          <AlertDialogAction onClick={onConfirm}>Continue</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
-};
+  )
+}

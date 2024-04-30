@@ -9,7 +9,8 @@ your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Requirements for the software and other tools to build, test, and push 
+Requirements for the software and other tools to build, test, and push
+
 - [NPM](https://www.npmjs.com/) (or any other package manager)
 
 Note: In case you use another package manager, research the equivalent commands for your package manager.
@@ -54,8 +55,8 @@ If that is not the case, you can adjust your code to match the project's code fo
 
 ## Built With
 
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
-  - [GNU](https://www.gnu.org/) - Used to choose the license
+- [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
+- [GNU](https://www.gnu.org/) - Used to choose the license
 
 ## Contributing
 
@@ -64,7 +65,7 @@ of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-  - **Nizar Abi** - *Project owner* - [NizarAbiZaher](https://github.com/NizarAbiZaher)
+- **Nizar Abi** - _Project owner_ - [NizarAbiZaher](https://github.com/NizarAbiZaher)
 
 See also the list of
 [contributors](https://github.com/NizarAbiZaher/platform/graphs/contributors)
@@ -76,5 +77,5 @@ This project is licensed under the GNU General Public License Version 3 - see th
 
 ## Acknowledgments
 
-  - [dpaulos6](https://github.com/dpaulos6) - *Styling and project cleanup, README writer*
-  - [mezotv](https://github.com/mezotv) - *Repository setup, Folder structure cleanup*
+- [dpaulos6](https://github.com/dpaulos6) - _Styling and project cleanup, README writer_
+- [mezotv](https://github.com/mezotv) - _Repository setup, Folder structure cleanup_

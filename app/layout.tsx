@@ -12,8 +12,8 @@ import Navbar from '@/components/nav'
 const geist = GeistSans
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nizzyabi.com"),
-  keywords: ["Nizar", "Nizzyabi", "Coding", "Programming", "School"],
+  metadataBase: new URL('https://nizzyabi.com'),
+  keywords: ['Nizar', 'Nizzyabi', 'Coding', 'Programming', 'School'],
   title: {
     default: 'Nizzyabi',
     template: `%s | Nizzyabi`
