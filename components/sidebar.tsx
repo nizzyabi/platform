@@ -51,9 +51,11 @@ export const Sidebar = () => {
         <div className="space-y-4 flex flex-col h-full text-primary mt-12 ">
             <div className="space-y-2">
                 {!session && (
+                    <SheetClose asChild className="w-20">
                     <Link href='/auth/register' className="flex border-b border-slate-100/70 w-full pb-3 ">
                         <p className="mt-1 text-lg font-normal text-slate-100/40 hover:text-slate-100/90 duration-300">Sign In</p>
                     </Link>
+                    </SheetClose>
                 )}
                 {routes.map((route) => (
                     <SheetClose asChild className="w-20">
