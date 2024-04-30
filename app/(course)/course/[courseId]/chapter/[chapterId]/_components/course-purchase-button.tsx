@@ -30,6 +30,7 @@ export const CoursePurchaseButton = ({
             setIsLoading(false);
         }
     }
+   
     return (
           
         <Button onClick={onClick} className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500">
@@ -37,8 +38,5 @@ export const CoursePurchaseButton = ({
                 Purchase course for {formatPrice(price)}
             </div>
         </Button>
-
-
-        
     )
 }

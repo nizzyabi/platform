@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import { useCurrentUser } from "@/hooks/user-current-user";
 import { db } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { NextResponse } from "next/server";

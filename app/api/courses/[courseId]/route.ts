@@ -56,8 +56,8 @@ export async function PATCH(
         if (!session) {
             return new NextResponse("Unauthorized", { status: 401 });
         }
-        // update guide
-        const guide = await db.course.update({
+        // update course
+        const course = await db.course.update({
             where: {
                 id: courseId,
                 userId: session.user.id ?? ''
@@ -66,7 +66,7 @@ export async function PATCH(
                 ...values
             }
         });
-        return NextResponse.json(guide)
+        return NextResponse.json(course)
     } catch (error) {
         console.log("[COURSE]", error);
         return new NextResponse("Internal Error", { status: 500 });

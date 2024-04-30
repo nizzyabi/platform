@@ -1,26 +1,21 @@
-// npx prisma generate
-// npx prisma db push
-// npx prisma migrate reset (reset)
-// DB Source
 datasource db {
   provider  = "postgresql"
   url  	    = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
-// Prisma Client Call
+
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
-//User Role
+
 enum UserRole {
   USER
   ADMIN
 }
 
-// User Model
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -32,7 +27,7 @@ model User {
   accounts      Account[]
   createdAt     DateTime  @default(now())
 }
-// Account Model
+
 model Account {
   id                 String  @id @default(cuid())
   userId             String
@@ -51,7 +46,6 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
-// Verification Token
 model VerificationToken {
   id        String   @id @default(cuid())
   email     String
@@ -61,7 +55,6 @@ model VerificationToken {
   @@unique([email, token])
 }
 
-// Password Reset Token
 model PasswordResetToken {
   id       String   @id @default(cuid())
   email     String
@@ -71,7 +64,6 @@ model PasswordResetToken {
   @@unique([email, token])
 }
 
-// Courses
 model Course {
   id String @id @default(uuid())
   userId String
@@ -107,8 +99,6 @@ model Course {
   updatedAt DateTime @updatedAt
 
 }
-
-
 
 model Attachment {
   id String @id @default(uuid())
@@ -189,16 +179,3 @@ model StripeCustomer {
   updatedAt DateTime @updatedAt
 }
 
-model Post {
-  id String @id @default(uuid())
-  userId String
-  
-  title String
-  content String
-  published Boolean @default(false)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  
-}

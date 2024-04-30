@@ -65,7 +65,7 @@ export const DescriptionForm2 = ({
   return (
     <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Description2
+        Building
         <Button onClick={toggleEdit}>
           {isEditing ? (
             <>Cancel</>

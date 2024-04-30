@@ -30,19 +30,18 @@ export const CourseCard =  async ({
 }: CourseCardProps) => {
     const session = await auth()
     
-    const purchase = await db.purchase.findUnique({
+    {/*const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
                 userId: session?.user.id ?? '',
                 courseId: id,
             }
         }
-    })
+    })*/}
 
    
     return (
         <Link href={`/courses/${id}/info`}>
-
         
             <div className="group hover:opacity-75 transition duration-300 overflow-hidden  h-full bg-zinc-900 rounded-xl">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">

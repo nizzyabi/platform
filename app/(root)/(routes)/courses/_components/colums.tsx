@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Course } from "@prisma/client"
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal, Wand2 } from "lucide-react"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -49,7 +43,7 @@ export const columns: ColumnDef<Course>[] = [
         currency: "USD"
       }).format(price);
 
-      return <div>{formatted}</div>
+      return <p className="text-sm">{formatted}</p>
     }
   },
   {
@@ -70,8 +64,8 @@ export const columns: ColumnDef<Course>[] = [
 
       return (
         <Badge className={cn(
-          "bg-slate-500 hover:bg-slate-500",
-          isPublished && "bg-blue-500 hover:bg-blue-500"
+          "bg-slate-500/20 hover:bg-slate-500/20",
+          isPublished && "bg-gradient-to-r from-indigo-500 to-purple-500"
         )}>
           {isPublished ? "Published" : "Draft"}
         </Badge>
@@ -84,22 +78,13 @@ export const columns: ColumnDef<Course>[] = [
       const { id } = row.original;
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+        
+          <Link href={`/courses/${id}`}>
             <Button variant="ghost" className="h-4 w-8 p-0">
-              <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4"/>
             </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align='end' className="rounded border-slate-100/30 bg-[#191919]">
-            <Link href={`/courses/${id}`}>
-              <DropdownMenuItem className=" rounded bg-[#191919] cursor-pointer">
-                <Wand2 className="h-4 w-4 mr-2"/>
-                Edit
-              </DropdownMenuItem>
-            </Link>
-          </DropdownMenuContent>
-        </DropdownMenu>      
+          </Link>
+          
       )
     }
   }

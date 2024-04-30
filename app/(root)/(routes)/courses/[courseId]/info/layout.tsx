@@ -1,14 +1,12 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
-import { Preview } from "@/components/preview";
+import PrimaryButton from "@/components/ui/get-started-button";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
-import { Button } from "@mui/material";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 
 const CourseInfoLayout = async ({
@@ -17,9 +15,7 @@ const CourseInfoLayout = async ({
     params: { courseId: string;  };
 }) => {
     const session  = await auth();
-    if (!session) {
-        return redirect("/")
-    }
+
     const course = await db.course.findUnique({
         where: {
           id: params.courseId,
@@ -32,7 +28,7 @@ const CourseInfoLayout = async ({
             include: {
               userProgress: {
                 where: {
-                  userId: session.user.id ?? '',
+                  userId: session?.user.id ?? '',
                 },
               }
             },
@@ -46,14 +42,11 @@ const CourseInfoLayout = async ({
     const purchase = await db.purchase.findUnique({
         where: {
             userId_courseId: {
-                userId: session.user.id ?? '',
+                userId: session?.user.id ?? '',
                 courseId: params.courseId
             }
         }
     });
-
-    
-    
     
     return (
         <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
@@ -96,7 +89,7 @@ const CourseInfoLayout = async ({
 
           <div className="mx-auto max-w-2xl">
             <h1 className="text-4xl font-bold">What's included?</h1>
-            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap">{course?.included}</p>
+            <p className="font-medium text-slate-100/80 pt-4 whitespace-pre-wrap">{course?.included}</p>
           </div>
 
           <div className="mx-auto max-w-2xl">
@@ -107,19 +100,21 @@ const CourseInfoLayout = async ({
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             <div className="pt-20">
+              
             {
               !course?.price ? 
-              
+              <div className="flex items-center justify-center">
               <Link
                 type="submit"
                 href={`/course/${course?.id}`}
                 className=" font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 transition duration-150 ease-in-out px-1 py-1 group"
               >
-                <div className="flex items-center px-5 lg:px-7 h-20 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
+                <div className="flex items-center px-5 lg:px-7 h-12 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
                   This Course Is Free! {" "}
                   <ArrowRight className="w-4 h-4 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2" />
                 </div>
               </Link>
+              </div>
               : 
               <CoursePurchaseButton
                 courseId={params.courseId}

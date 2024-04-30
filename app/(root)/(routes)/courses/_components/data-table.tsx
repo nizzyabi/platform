@@ -10,21 +10,17 @@ import {
   getFilteredRowModel,
   useReactTable,
   ColumnFiltersState,
-
 } from "@tanstack/react-table"
 
 import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import Link from "next/link"
-import { PlusCircle } from "lucide-react"
+import { DashboardCardContent } from "./dashboard-card"
+import { Plus } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -54,52 +50,39 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
-        <div className="flex items-center justify-between pt-20">
-          <Input
-            placeholder="Filter courses..."
+    <div className="">
+        
+    <DashboardCardContent className="">
+      <section className="flex justify-between">
+        <p>Courses</p>
+        
+        <Link href='/courses/add'>
+          <Plus className="h-4 w-4"/>
+        </Link>
+          {/* <Input
+            placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("title")?.setFilterValue(event.target.value)
             }
             
-            className="max-w-sm bg-slate-200 placeholder:text-black/40 text-black"
-          />
-          <Link href='/courses/add'>
-            <Button className="rounded-[5px] py-2">
-              New course
-            </Button>
-          </Link>
-        </div>
-    <div className="rounded border border-slate-100/50 bg-zinc-900 mt-3">
+            className="max-w-xs py-0 bg-slate-200 placeholder:text-black/40 text-black"
+          />*/}
+          
+        
+      </section>
+      
       <Table>
-        <TableHeader >
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow className="border-b border-slate-100/50" key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id} >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+                className="border-transparent"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="text-sm py-4 px-0">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
@@ -114,24 +97,8 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-    </div>
-    <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="basic"
-          className="rounded-[5px] py-2"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          className="rounded-[5px] py-2"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
-      </div>
+    </DashboardCardContent>
+    
     </div>
   )
 }

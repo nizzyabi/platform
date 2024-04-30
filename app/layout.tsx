@@ -12,8 +12,15 @@ import Navbar from '@/components/nav'
 const geist = GeistSans
 
 export const metadata: Metadata = {
-  title: 'NizzyABI',
-  description: 'Self taught developers'
+  metadataBase: new URL("https://nizzyabi.com"),
+  keywords: ["Nizar", "Nizzyabi", "Coding", "Programming", "School"],
+  title: {
+    default: 'Nizzyabi',
+    template: `%s | Nizzyabi`
+  },
+  openGraph: {
+    description: 'Learn to code && have fun doing it.'
+  }
 }
 
 export default async function RootLayout({
