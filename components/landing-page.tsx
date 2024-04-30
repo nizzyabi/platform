@@ -26,7 +26,7 @@ export default function LandingPage() {
     <>
       <main
         data-aos="fade-up"
-        className="extra landing py-20 mt-20 flex flex-col gap-52"
+        className="extra landing py-20 mt-20 flex flex-col gap-52 px-6"
       >
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link
@@ -42,22 +42,22 @@ export default function LandingPage() {
             </span>
           </Link>
           <div className="flex flex-col gap-2 w-fit">
-            <span className="sm:text-7xl text-5xl xxs:text-6xl font-bold header-landing text-center">
-              Learn To
-              <b className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
+            <span className="flex flex-col text-5xl md:text-6xl lg:text-7xl font-bold header-landing text-center">
+              Learn to
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
                 {' '}
                 Code
-              </b>
+              </span>
             </span>
             <span className="pt-3 font-medium text-base xxs:text-xl text-gray-200 text-center">
               && have fun doing it!
             </span>
           </div>
           <PrimaryButton
-            href='/courses'
-            className="bg-white text-zinc-900"
+            href={session ? '/courses' : '/auth/register'}
+            className="bg-white"
           />
-          <Bento className="text-center" />
+          <Bento className="text-center select-none" />
         </section>
 
         <section className="flex flex-col items-center gap-8 text-center">
@@ -82,14 +82,15 @@ export default function LandingPage() {
           <div className="flex flex-col items-center gap-8 text-center">
             <span className="flex flex-col w-fit sm:text-7xl text-4xl xs:text-5xl text-slate-100 text-center pt-3 font-bold header-landing">
               Hear It From{' '}
-              <b className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
                 Others
-              </b>
+              </span>
             </span>
             <ThreeD />
             <PrimaryButton
               href="https://discord.gg/nizar"
-              className="bg-indigo-400 text-white"
+              className="bg-indigo-400"
+              target="_blank"
             >
               Join Us
             </PrimaryButton>

@@ -17,10 +17,10 @@ const imagesRow1: ImageInfo[] = [
 ]
 
 const renderImages = (images: ImageInfo[]) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
     {images.map(({ src, alt }) => (
       <BackgroundGradient
-        className="rounded-[22px] min-w-28 sm:min-w-32 md:min-w-48 flex items-center justify-center aspect-square bg-[#131212] relative"
+        className="rounded-[22px] min-w-28 sm:min-w-32 md:min-w-48 flex items-center justify-center aspect-square bg-[#131212] relative select-none"
         key={src}
       >
         <Image
@@ -28,7 +28,7 @@ const renderImages = (images: ImageInfo[]) => (
           alt={alt}
           height={9999}
           width={9999}
-          className="absolute w-2/3 object-contain"
+          className="absolute w-3/5 object-contain rounded-xl"
         />
       </BackgroundGradient>
     ))}
@@ -37,8 +37,6 @@ const renderImages = (images: ImageInfo[]) => (
 
 export function LanguageBackground() {
   return (
-    <div className="flex flex-col items-center space-y-5">
-      {renderImages(imagesRow1)}
-    </div>
+    <div className="flex flex-col items-center">{renderImages(imagesRow1)}</div>
   )
 }

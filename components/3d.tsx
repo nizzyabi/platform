@@ -5,6 +5,7 @@ import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
 import { FaDiscord } from 'react-icons/fa'
 import { Avatar } from '@mui/material'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { AtSign } from 'lucide-react'
 
 const testimonials = [
   {
@@ -91,28 +92,32 @@ export function ThreeD() {
       >
         <Masonry gutter="1.5rem" className="masonry-grid">
           {testimonials.map((testimonial) => (
-            <CardContainer className="flex h-full" key={testimonial.username}>
-              <CardBody className="bg-[#131212] sm:max-w-[unset] max-w-[18.75em] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-3 border ">
+            <CardContainer
+              className="flex h-full cursor-default"
+              key={testimonial.username}
+            >
+              <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-4 border ">
                 <div className="flex justify-between">
                   <CardItem
                     translateZ="50"
                     className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
                   >
-                    <div className="flex">
+                    <div className="flex gap-2 items-center">
                       <Avatar
                         src={testimonial.avatar}
                         alt={`${testimonial.username}s Avatar`}
                       />
-                      <p className="pt-3 pl-2">@{testimonial.username}</p>
+                      <span className="flex gap-0.5 items-center">
+                        <AtSign className="w-5 h-5 text-zinc-500" />
+                        {testimonial.username}
+                      </span>
                     </div>
                   </CardItem>
                   <CardItem
                     translateZ="50"
                     className="text-xl font-bold text-slate-100 flex space-between items-center"
                   >
-                    <p>
-                      <FaDiscord className="text-blue-500 text-2xl sm:text-4xl md:text-5xl" />
-                    </p>
+                    <FaDiscord className="text-indigo-400 text-4xl" />
                   </CardItem>
                 </div>
 

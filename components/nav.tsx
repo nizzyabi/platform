@@ -29,7 +29,9 @@ export default function Navbar() {
     : 'bg-transparent border-b border-transparent'
 
   return (
-    <nav className={`fixed top-0 w-full z-50 ${navbarChange} transition`}>
+    <nav
+      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none`}
+    >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex justify-between items-center">
           <MobileSidebar />
