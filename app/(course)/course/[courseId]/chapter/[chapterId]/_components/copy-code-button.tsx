@@ -14,7 +14,7 @@ export const CopyCodeButton = ({
     const onClick = (codeExample:string) => {
         navigator.clipboard.writeText(codeExample)
         .then(() => {
-            toast.success('Code copied to clipboard!');
+            toast.success('Copied!');
         })
         .catch(err => toast.error('Failed to copy code'))
     }
