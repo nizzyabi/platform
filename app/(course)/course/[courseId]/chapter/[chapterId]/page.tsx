@@ -8,6 +8,7 @@ import { RiNotionFill } from "react-icons/ri";
 import Link from "next/link";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { CopyCodeButton } from "./_components/copy-code-button";
 const ChapterIdPage = async ({
     params
 }: {
@@ -90,20 +91,24 @@ const ChapterIdPage = async ({
             />  
         </div>
         {chapter.code && chapter.code.trim().length > 0 && (
-            <div>    
+            <div> 
+                  
                 <h1 className="font-semibold text-xl pt-2 mb-4 ">Code</h1>
-                <div>
-
-                    <SyntaxHighlighter className=' border-slate-100/10 rounded-[5px] shadow-lg border-2' language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
+                <div className="bg-[#18181B] border-slate-100/10 rounded-[5px] shadow-lg border-2">
+                    <div className="flex justify-end">
+                    <CopyCodeButton code={chapter.code}/>
+                    </div>
+                    <SyntaxHighlighter className='' language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
                         backgroundColor: '#18181B',
                         fontFamily: 'Inter',
                         fontWeight: '400',
                         fontSize: '14px',
                         padding: '15px',
-                        paddingTop: '20px',
+                        
                         paddingBottom: '20px',
                         colorRendering: 'optimizeQuality',
                     }}>
+                        
                         
                         {`${chapter.code}`}
                     </SyntaxHighlighter>
