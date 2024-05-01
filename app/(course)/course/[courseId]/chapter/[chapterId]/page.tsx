@@ -2,15 +2,12 @@ import { getChapter } from "@/actions/get-chapter";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
-import { Lock } from "lucide-react";
 import { CourseProgressButton } from "./_components/course-progress-button";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { RiNotionFill } from "react-icons/ri";
 import Link from "next/link";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark, dark, atelierDuneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-
+import { atomOneDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const ChapterIdPage = async ({
     params
 }: {
@@ -57,6 +54,8 @@ const ChapterIdPage = async ({
             icon: <RiNotionFill className="text-black"/>
         }
     ]
+
+   
     
   return (
     <div className="w-full px-5 lg:pr-12 overflow-hidden mb-5">
@@ -94,17 +93,18 @@ const ChapterIdPage = async ({
             <div>    
                 <h1 className="font-semibold text-xl pt-2 mb-4 ">Code</h1>
                 <div>
-                    <SyntaxHighlighter className=' border-slate-100/20 rounded-[5px] shadow-lg shadow-black border-2' language={`${course.courseLanguage}`} style={atelierDuneDark} wrapLongLines customStyle={{
+
+                    <SyntaxHighlighter className=' border-slate-100/10 rounded-[5px] shadow-lg border-2' language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
                         backgroundColor: '#18181B',
                         fontFamily: 'Inter',
-                        fontWeight: '100',
+                        fontWeight: '400',
                         fontSize: '14px',
                         padding: '15px',
                         paddingTop: '20px',
                         paddingBottom: '20px',
-                        color: 'slate',
                         colorRendering: 'optimizeQuality',
                     }}>
+                        
                         {`${chapter.code}`}
                     </SyntaxHighlighter>
                 </div>
