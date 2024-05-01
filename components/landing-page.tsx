@@ -54,7 +54,7 @@ export default function LandingPage() {
             </span>
           </div>
           <PrimaryButton
-            href={session ? '/courses' : '/auth/register'}
+            href='/courses'
             className="bg-white"
           />
           <Bento className="text-center select-none" />
@@ -71,7 +71,7 @@ export default function LandingPage() {
 
           <LanguageBackground />
           <PrimaryButton
-            href={session ? '/courses' : '/auth/register'}
+            href='/courses'
             className="bg-cyan-500 text-white"
           >
             See Courses
