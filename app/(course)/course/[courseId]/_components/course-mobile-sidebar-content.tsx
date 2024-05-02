@@ -11,7 +11,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scrollbar';
 interface CourseMobileSidebarContentProps {
     course: Course & {
         chapters: (Chapter & {
-            userProgress: UserProgress[]
+            userProgress: UserProgress[] | null;
         })[]
     };
     progressCount: number;
@@ -37,6 +37,7 @@ export const CourseMobileSidebarContent = async ({
       <div className='pt-12'>
         {purchase && (
           <div>
+
             <CourseProgress
             variant="default"
             value={progressCount}
