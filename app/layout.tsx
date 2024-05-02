@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-
+import { Analytics } from "@vercel/analytics/react"
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
@@ -38,6 +38,7 @@ export default async function RootLayout({
           <ToastProvider />
           <ConfettiProvder />
           {children}
+          <Analytics />
         </body>
       </html>
     </SessionProvider>

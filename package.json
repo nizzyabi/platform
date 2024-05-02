@@ -55,6 +55,7 @@
     "@tsparticles/slim": "^3.1.0",
     "@types/bcryptjs": "^2.4.6",
     "@uploadthing/react": "^6.2.0",
+    "@vercel/analytics": "^1.2.2",
     "aos": "^2.3.4",
     "axios": "^1.6.5",
     "bcrypt": "^5.1.1",
