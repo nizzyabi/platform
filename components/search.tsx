@@ -33,11 +33,6 @@ const commandInputs = [
     icon: <TrafficCone />
   },
   {
-    title: 'Tutoring',
-    link: '/tutoring',
-    icon: <Shapes />
-  },
-  {
     title: 'Settings',
     link: '/settings',
     icon: <Settings />

@@ -23,11 +23,6 @@ const routes = [
         label: "Courses",
     },
     {
-        
-        href: "/tutoring",
-        label: "Tutoring",
-    },
-    {
         href: "/settings",
         label: "Settings",
     },

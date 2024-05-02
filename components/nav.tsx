@@ -63,10 +63,10 @@ export default function Navbar() {
                 Courses
               </Link>
               <Link
-                href="/tutoring"
+                href="http://discord.gg/nizar"
                 className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
               >
-                Tutoring
+                Discord
               </Link>
             </div>
             <div className="flex h-full gap-6 lg:gap-7">
