@@ -1,12 +1,12 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
-import PrimaryButton from "@/components/ui/get-started-button";
+import { FcAutomatic, FcComboChart, FcFlashOn, FcGraduationCap, FcTimeline, FcTreeStructure } from "react-icons/fc";
+
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 
 const CourseInfoLayout = async ({
@@ -78,23 +78,35 @@ const CourseInfoLayout = async ({
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold ">What will I build?</h1>
-            <p className="font-medium text-slate-100/70 pt-4">{course?.description2}</p>           
+            <div className="flex">
+              <FcAutomatic className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold ">What will we build?</h1>
+            </div>
+            <p className="font-medium text-slate-100/70 pt-4 text-sm ml-2">{course?.description2}</p>           
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">What will I learn?</h1>
-            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap">{course?.learningOutcome}</p> 
+            <div className="flex">
+              <FcGraduationCap className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold">What will I learn?</h1>
+            </div>
+            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap text-sm ml-3">{course?.learningOutcome}</p> 
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">What's included?</h1>
-            <p className="font-medium text-slate-100/80 pt-4 whitespace-pre-wrap">{course?.included}</p>
+            <div className="flex">
+              <FcFlashOn className='h-10 w-10'/>
+              <h1 className="text-4xl font-bold">What's included?</h1>
+            </div>
+            <p className="font-medium text-slate-100/80 pt-4 whitespace-pre-wrap text-sm ml-4">{course?.included}</p>
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">Difficulty level</h1>
-            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/30 rounded-[5px] bg-zinc-900 whitespace-pre-wrap">{course?.difficulty}</p>
+            <div className="flex">
+              <FcTimeline className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold">Difficulty level</h1>
+            </div>
+            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/30 rounded-[5px] bg-zinc-900 whitespace-pre-wrap text-sm ml-1">{course?.difficulty}</p>
           </div>
 
           <div className="mx-auto max-w-2xl text-center">
