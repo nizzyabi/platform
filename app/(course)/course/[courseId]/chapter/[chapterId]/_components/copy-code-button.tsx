@@ -1,8 +1,6 @@
 "use client"
 import { Copy } from "lucide-react";
-import { useState, useEffect } from 'react';
 import { toast } from "react-hot-toast";
-
 interface CopyCodeButtonProps {
     code: string;
 }
@@ -10,7 +8,6 @@ interface CopyCodeButtonProps {
 export const CopyCodeButton = ({
     code
 }:CopyCodeButtonProps) => {
-    const [isCopied, setIsCopied] = useState(false);
     const onClick = (codeExample:string) => {
         navigator.clipboard.writeText(codeExample)
         .then(() => {
@@ -26,3 +23,4 @@ export const CopyCodeButton = ({
         </div>
     )
 }
+
