@@ -36,20 +36,16 @@ interface CourseSidebarProps {
   
     return (
       <div className="hidden md:flex ml-8">
-      <div className="flex flex-col">
-        
-        {purchase && (
-          <div className="mt-3">
-            
-            <CourseProgress
-              variant="default"
-              value={progressCount}
-            />
-          </div>
-        )}
-      </div>
-      
      <div>
+     {purchase && (
+        <div>
+          
+          <CourseProgress
+            variant="default"
+            value={progressCount}
+          />
+        </div>
+      )}
       <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem

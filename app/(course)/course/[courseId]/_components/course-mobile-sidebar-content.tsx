@@ -11,7 +11,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scrollbar';
 interface CourseMobileSidebarContentProps {
     course: Course & {
         chapters: (Chapter & {
-            userProgress: UserProgress[] | null;
+            userProgress: UserProgress[]
         })[]
     };
     progressCount: number;
@@ -34,22 +34,16 @@ export const CourseMobileSidebarContent = async ({
     });
   return (
     <div className="md:flex ">
-    <div className="flex flex-col">
-      
-      {purchase && (
-        <div className="mt-3">
-          
-          <CourseProgress
+      <div className='pt-12'>
+        {purchase && (
+          <div>
+            <CourseProgress
             variant="default"
             value={progressCount}
-          />
-        </div>
-      )}
-    </div>
-    
-   <div className='pt-12'>
-   <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto pr-2">
-    
+            />
+          </div>
+        )}
+      <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto pr-5">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -60,7 +54,6 @@ export const CourseMobileSidebarContent = async ({
             isLocked={!chapter.isFree && !purchase}
           />
         ))}
-        
       </ScrollArea>
     </div>
   </div>
