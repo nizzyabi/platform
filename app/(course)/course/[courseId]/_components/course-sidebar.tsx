@@ -37,7 +37,7 @@ interface CourseSidebarProps {
     return (
       <div className="hidden md:flex ml-8">
      <div>
-     {purchase && (
+     {session && (
         <div>
           
           <CourseProgress
