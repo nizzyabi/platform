@@ -2,11 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CourseProgress } from "@/components/course-progress";
 import { auth } from "@/auth";
-import { db } from "@/lib/db";
 import { Course } from "@prisma/client";
 import { IconBook2 } from "@tabler/icons-react";
-import { Suspense } from "react";
-import { Button } from "./ui/button";
 interface CourseCardProps {
     id: string;
     title: string;

@@ -94,17 +94,17 @@ const ChapterIdPage = async ({
             <div> 
                   
                 <h1 className="font-semibold text-xl pt-2 mb-4 ">Code</h1>
-                <div className="bg-[#18181B] border-slate-100/10 rounded-[5px] shadow-lg border-2">
-                    <div className="flex justify-end">
+                <div className="bg-[#18181B] border-slate-100/10 rounded-[5px] rounded-t-[8px] border-2">
+                    <div className="flex justify-end bg-[#6c7280] rounded-t-[5px] border-slate-200/10 pr-1">
                     <CopyCodeButton code={chapter.code}/>
                     </div>
-                    <SyntaxHighlighter className='' language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
+                    <SyntaxHighlighter  language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
                         backgroundColor: '#18181B',
                         fontFamily: 'Inter',
                         fontWeight: '400',
                         fontSize: '14px',
                         padding: '15px',
-                        
+                        paddingTop: '5px',
                         paddingBottom: '20px',
                         colorRendering: 'optimizeQuality',
                     }}>
