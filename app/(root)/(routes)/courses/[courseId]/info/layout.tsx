@@ -39,15 +39,6 @@ const CourseInfoLayout = async ({
           },
         },
       });
-    const purchase = await db.purchase.findUnique({
-        where: {
-            userId_courseId: {
-                userId: session?.user.id ?? '',
-                courseId: params.courseId
-            }
-        }
-    });
-    
     return (
         <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
           <div className="text-center pb-8">
