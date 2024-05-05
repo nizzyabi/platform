@@ -101,8 +101,8 @@ export default function Search() {
 
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput
-          placeholder="Authentication Course"
-          className="w-[400px] text-slate-100 placeholder:text-slate-100/50"
+          placeholder="Search"
+          className="w-[400px] text-slate-100 placeholder:text-slate-100/50 text-sm"
         />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
