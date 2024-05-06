@@ -11,6 +11,7 @@ import { auth } from "@/auth"
 import { db } from "@/lib/db";
 import { Radio, CreditCard, DollarSign, User, BadgeDollarSign, UserRoundCheck, CandlestickChart } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import MyButton from "@/components/ui/custome-button";
 
 const cardData: DashboardCardProps[] = [
   {
@@ -114,6 +115,7 @@ const DataPage = async () => {
   return (
     <div className="flex flex-col gap-5 w-full pt-40">
       <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
+      <MyButton />
       <div className="flex items-center justify-center">
           <Separator className=" bg-slate-100/20 h-0.5 w-40" />
       </div>
