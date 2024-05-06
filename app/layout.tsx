@@ -38,7 +38,7 @@ export default async function RootLayout({
           <Scroll />
           <ToastProvider />
           <ConfettiProvder />
-          <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+          {/*<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />*/}
           {children}
           <Analytics />
           
