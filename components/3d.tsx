@@ -100,7 +100,7 @@ export function ThreeD() {
                 <div className="flex justify-between">
                   <CardItem
                     translateZ="50"
-                    className="text-xl font-bold text-slate-100 flex space-between items-center"
+                    className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
                   >
                     <div className="flex gap-2 items-center">
                       <Avatar

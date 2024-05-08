@@ -37,11 +37,11 @@ export default function Navbar() {
           <MobileSidebar />
 
           <Link href="/" className="flex items-center">
-            <h1 className='text-2xl font-bold text-white'>
-              <span className=' transition-all duration-300 ease-in-out'>
+            <h1 className='group text-2xl font-bold '>
+              <span>
                 nizzy
               </span>
-              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500  '>
+              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 '>
                 abi
               </span>
             </h1>
@@ -63,10 +63,10 @@ export default function Navbar() {
                 Courses
               </Link>
               <Link
-                href="/tutoring"
+                href="http://discord.gg/nizar"
                 className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
               >
-                Tutoring
+                Discord
               </Link>
             </div>
             <div className="flex h-full gap-6 lg:gap-7">

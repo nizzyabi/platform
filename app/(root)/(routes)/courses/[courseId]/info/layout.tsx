@@ -1,14 +1,12 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
-import { Preview } from "@/components/preview";
+import { FcAutomatic, FcComboChart, FcFlashOn, FcGraduationCap, FcTimeline, FcTreeStructure } from "react-icons/fc";
+
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
-import { Button } from "@mui/material";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
 
 
 const CourseInfoLayout = async ({
@@ -17,9 +15,7 @@ const CourseInfoLayout = async ({
     params: { courseId: string;  };
 }) => {
     const session  = await auth();
-    if (!session) {
-        return redirect("/")
-    }
+
     const course = await db.course.findUnique({
         where: {
           id: params.courseId,
@@ -32,7 +28,7 @@ const CourseInfoLayout = async ({
             include: {
               userProgress: {
                 where: {
-                  userId: session.user.id ?? '',
+                  userId: session?.user.id ?? '',
                 },
               }
             },
@@ -43,18 +39,6 @@ const CourseInfoLayout = async ({
           },
         },
       });
-    const purchase = await db.purchase.findUnique({
-        where: {
-            userId_courseId: {
-                userId: session.user.id ?? '',
-                courseId: params.courseId
-            }
-        }
-    });
-
-    
-    
-    
     return (
         <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
           <div className="text-center pb-8">
@@ -85,41 +69,55 @@ const CourseInfoLayout = async ({
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold ">What will I build?</h1>
-            <p className="font-medium text-slate-100/70 pt-4">{course?.description2}</p>           
+            <div className="flex">
+              <FcAutomatic className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold ">What will we build?</h1>
+            </div>
+            <p className="font-medium text-slate-100/70 pt-4 text-sm ml-2">{course?.description2}</p>           
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">What will I learn?</h1>
-            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap">{course?.learningOutcome}</p> 
+            <div className="flex">
+              <FcGraduationCap className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold">What will I learn?</h1>
+            </div>
+            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap text-sm ml-3">{course?.learningOutcome}</p> 
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">What's included?</h1>
-            <p className="font-medium text-slate-100/70 pt-4 whitespace-pre-wrap">{course?.included}</p>
+            <div className="flex">
+              <FcFlashOn className='h-10 w-10'/>
+              <h1 className="text-4xl font-bold">What's included?</h1>
+            </div>
+            <p className="font-medium text-slate-100/80 pt-4 whitespace-pre-wrap text-sm ml-4">{course?.included}</p>
           </div>
 
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold">Difficulty level</h1>
-            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/30 rounded-[5px] bg-zinc-900 whitespace-pre-wrap">{course?.difficulty}</p>
+            <div className="flex">
+              <FcTimeline className='h-10 w-10 mr-2'/>
+              <h1 className="text-4xl font-bold">Difficulty level</h1>
+            </div>
+            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/30 rounded-[5px] bg-zinc-900 whitespace-pre-wrap text-sm ml-1">{course?.difficulty}</p>
           </div>
 
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             <div className="pt-20">
+              
             {
               !course?.price ? 
-              
+              <div className="flex items-center justify-center">
               <Link
                 type="submit"
                 href={`/course/${course?.id}`}
                 className=" font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 transition duration-150 ease-in-out px-1 py-1 group"
               >
-                <div className="flex items-center px-5 lg:px-7 h-20 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
+                <div className="flex items-center px-5 lg:px-7 h-12 bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
                   This Course Is Free! {" "}
                   <ArrowRight className="w-4 h-4 tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2" />
                 </div>
               </Link>
+              </div>
               : 
               <CoursePurchaseButton
                 courseId={params.courseId}

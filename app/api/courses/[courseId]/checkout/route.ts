@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import { useCurrentUser } from "@/hooks/user-current-user";
 import { db } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { NextResponse } from "next/server";
@@ -82,7 +81,7 @@ export async function POST(
             customer: stripeCustomer.stripeCustomerId,
             line_items,
             mode: 'payment',
-            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/courses/${course.id}`,
+            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/courses/${course.id}/success`,
             cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}`,
             metadata: {
                 courseId: course.id,

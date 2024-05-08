@@ -8,12 +8,10 @@ import { useCurrentUser } from '@/hooks/user-current-user';
 import Link from 'next/link';
 import React from 'react'
 
-const CoursesPage = async ({}) => {
+const CoursesPage = async () => {
   const session = await auth()
-
-  
   const courses = await getCourses({
-    userId: session?.user.id
+    userId: session?.user?.id
   })
   return (
     <div>

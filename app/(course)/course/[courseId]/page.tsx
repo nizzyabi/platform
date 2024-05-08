@@ -1,3 +1,4 @@
+import { getCourses } from "@/actions/get-courses";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 

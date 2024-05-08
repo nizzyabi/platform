@@ -19,6 +19,8 @@ import { NotionForm } from "./_components/notion-link";
 import { GithubForm } from "./_components/github-link";
 import { CodeLanguageForm } from "./_components/code-language-form";
 import { IntroVideoForm } from "./_components/intro-video";
+import { getCourses } from "@/actions/get-courses";
+import { getChapter } from "@/actions/get-chapter";
 
 const CoursesIdPage = async ({
   params
@@ -28,16 +30,12 @@ const CoursesIdPage = async ({
   // get user ID
   const session = await auth()
 
-  // check if user is logged in
-  if (!session) {
-    return redirect('/')
-  }
 
   // get course
   const course = await db.course.findUnique({
     where: {
       id: params.courseId,
-      userId: session.user.id ?? ''
+      userId: session?.user.id ?? ''
     },
     include: {
       chapters: {

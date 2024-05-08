@@ -55,7 +55,7 @@ export const Actions = ({
 
       toast.success("Course deleted");
       router.refresh();
-      router.push(`/courses`);
+      router.push(`/admin`);
     } catch {
       toast.error("Something went wrong");
     } finally {
