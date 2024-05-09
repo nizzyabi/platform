@@ -1,8 +1,7 @@
 // Scroll Animation
 'use client'
 import { useEffect, useState } from 'react'
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
-import { ArrowUp, ChevronUp } from 'lucide-react'
+import { ChevronUp } from 'lucide-react'
 
 const Scroll = () => {
   const [isVisible, setIsVisible] = useState(false)

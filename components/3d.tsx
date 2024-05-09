@@ -57,7 +57,7 @@ const testimonials = [
       'Nizar helped me keep motivation in my own startup, and his videos are also nice to listen to while coding by myself.'
   },
   {
-    username: 'Dominikdev',
+    username: 'Svenplb',
     avatar: '/testimonials/dominik.webp',
     message:
       'Nizar and his videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable.'

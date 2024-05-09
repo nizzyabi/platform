@@ -1,7 +1,5 @@
 import { Course, Purchase } from '@prisma/client';
 import { CourseCard } from '@/components/course-card';
-import { Suspense } from 'react';
-
 
 type CourseWithProgress = Course & {
     progress: number | null;

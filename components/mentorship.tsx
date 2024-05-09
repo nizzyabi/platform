@@ -1,6 +1,4 @@
 'use client'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { Separator } from './ui/separator'
 import Image from 'next/image'
 import { AlertTriangle, Calendar, GitMerge, Rocket } from 'lucide-react'

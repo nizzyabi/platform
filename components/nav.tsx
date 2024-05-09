@@ -1,12 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import UserButton from './user-button'
 import { MobileSidebar } from '@/components/mobile-sidebar'
-import Image from 'next/image'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import Search from './search'
 
 export default function Navbar() {

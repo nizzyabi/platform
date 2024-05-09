@@ -25,17 +25,6 @@ export const CourseCard =  async ({
     price,
     
 }: CourseCardProps) => {
-    const session = await auth()
-    
-    {/*const purchase = await db.purchase.findUnique({
-        where: {
-            userId_courseId: {
-                userId: session?.user.id ?? '',
-                courseId: id,
-            }
-        }
-    })*/}
-
    
     return (
         <Link href={`/courses/${id}/info`}>
