@@ -14,7 +14,7 @@ interface CourseCardProps {
     course?: Course [];
     price?: number;
   };
-export const CourseCard =  async ({
+export const CourseCard =  ({
     id,
     title,
     imageUrl,
