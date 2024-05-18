@@ -71,7 +71,7 @@ export const LoginForm = () => {
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="TylerDurden@gmail.com"
+                      placeholder="tylerdurden@gmail.com"
                       disabled={isPending}
                       type="email"
                       className="bg-zinc-900 text-slate-100"
@@ -88,7 +88,7 @@ export const LoginForm = () => {
                   <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="••••••••"
+                      placeholder="password"
                       {...field}
                       disabled={isPending}
                       type="password"

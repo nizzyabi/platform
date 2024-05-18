@@ -19,11 +19,15 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { useRouter } from 'next/navigation'
 
 const SettingsPage = () => {
+    const router = useRouter()
     const session = useCurrentUser();
     const onClick = () => {
         logout();
+        router.push('/')
+        router.refresh()
     }
 
     return !session ? (
