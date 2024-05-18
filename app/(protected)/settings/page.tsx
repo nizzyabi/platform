@@ -1,5 +1,5 @@
 'use client'
-
+import { useState, useEffect } from 'react';
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/actions/logout";
@@ -22,12 +22,12 @@ import {
 import { useRouter } from 'next/navigation'
 
 const SettingsPage = () => {
+    
     const router = useRouter()
     const session = useCurrentUser();
     const onClick = () => {
         logout();
-        router.push('/')
-        router.refresh()
+        router.push('/auth/login')
     }
 
     return !session ? (
@@ -64,7 +64,6 @@ const SettingsPage = () => {
                         </CardFooter>
                     </Card>
                 </TabsContent>
-                {/*TODO: Payment history & invoices*/}
                 <TabsContent value="purchases">
                     <Card className="p-2">
                         <CardHeader>
