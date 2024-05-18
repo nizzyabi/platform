@@ -58,9 +58,9 @@ const testimonials = [
   },
   {
     username: 'Svenplb',
-    avatar: '/testimonials/dominik.webp',
+    avatar: '/testimonials/sven.webp',
     message:
-      'Nizar and his videos have significantly improved my coding skills and helped me learn new things. The positive atmosphere of his Discord community is also enjoyable.'
+      'Nizar simplifies coding into easy, bite-sized videos, making complex concepts easy to understand. Beyond teaching code, he guides you on how to think like a programmer, almost like rewiring your brain.'
   },
 
   {
