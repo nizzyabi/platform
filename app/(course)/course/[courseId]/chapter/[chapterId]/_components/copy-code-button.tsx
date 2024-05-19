@@ -18,7 +18,7 @@ export const CopyCodeButton = ({
     return (
         <div>
             <button onClick={() => onClick(code)}>
-                <Copy className="h-5 w-5 mt-2 mr-2"/>
+                <Copy className="h-5 w-5 mt-2 mr-2 hover:opacity-50 transition-opacity duration-200"/>
             </button>
         </div>
     )
