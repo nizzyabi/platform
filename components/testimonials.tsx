@@ -1,8 +1,6 @@
 'use client'
 
 import React from 'react'
-import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card'
-import { FaDiscord } from 'react-icons/fa'
 import { Avatar } from '@mui/material'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { AtSign } from 'lucide-react'

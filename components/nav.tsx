@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import UserButton from './user-button'
-import Search from './search'
+import UserButton from '@/components/user-button'
+import Search from '@/components/search'
 
 export default function Navbar() {
   const [hasScrolled, setHasScrolled] = useState(false)

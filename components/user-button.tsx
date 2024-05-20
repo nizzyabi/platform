@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { AtSign, Github, Instagram, LogOut, Mail, User, Youtube } from 'lucide-react'
+import { Github, Instagram, LogOut, Mail, User, Youtube } from 'lucide-react'
 import { logout } from '@/actions/logout'
 const UserButton = () => {
   const session = useCurrentUser()
