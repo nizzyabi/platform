@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import { CoursePurchaseButton } from "./_components/course-purchase-button";
 import { CourseProgressButton } from "./_components/course-progress-button";
 import { FaDiscord, FaGithub } from "react-icons/fa";
-import { RiNotionFill } from "react-icons/ri";
 import Link from "next/link";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -49,11 +48,6 @@ const ChapterIdPage = async ({
             label: 'Discord',
             icon: <FaDiscord className='text-[#6466F1]'/>
         },
-        {
-            href: `${course.notionLink}`,
-            label: 'Notion',
-            icon: <RiNotionFill className="text-black"/>
-        }
     ]
 
    
@@ -92,35 +86,31 @@ const ChapterIdPage = async ({
         </div>
         {chapter.code && chapter.code.trim().length > 0 && (
             <div> 
-                  
-                <h1 className="font-semibold text-xl pt-2 mb-4 ">Code</h1>
-                <div className="bg-[#18181B] shadow shadow-[#191919] border-slate-100/30 rounded-[5px] rounded-t-[8px] ">
-                    <div className="flex justify-end bg-[#262525] rounded-t-[5px] border-slate-200/10 p-0.5">
+    
+                <div className="bg-[#18181B] shadow shadow-[#191919] border-slate-100/30 rounded-[5px] rounded-t-[8px] mt-5">
+                    <div className="border-b rounded-t-[5px] border-slate-200/10 px-2.5 py-2">
                     <CopyCodeButton code={chapter.code}/>
                     </div>
                     <SyntaxHighlighter  language={`${course.courseLanguage}`} style={atomOneDark} wrapLongLines customStyle={{
                         backgroundColor: '#18181B',
-                        
                         fontSize: '15px',
                         padding: '15px',
                         paddingTop: '5px',
                         paddingBottom: '20px',
                         colorRendering: 'optimizeQuality',
                     }}>
-                        
-                        
                         {`${chapter.code}`}
                     </SyntaxHighlighter>
                 </div>
             </div>
         )}
-        <div className="flex items-center justify-center space-x-8 pt-8">
-            {links.map((link, index) => (
-                <Link href={link.href} key={link.href} className="bg-slate-100 w-[100px] py-2 rounded-[5px] hover:opacity-75 duration-300 border border-slate-100/20">
+        <div className="flex items-center justify-end space-x-5 pt-8">
+            {links.map((link) => (
+                <Link href={link.href} key={link.href} className="bg-slate-100 px-2 py-2 rounded-[5px] hover:opacity-80 transition duration-300 border border-slate-100/20">
                     <div className="flex item-center justify-center">
                         <p className="text-center text-5xl">{link.icon}</p>
                     </div>
-                    <p className="text-center text-[#2e2e2e] font-semibold mt-2">{link.label}</p>
+                    
                 </Link>
             ))}     
         </div>

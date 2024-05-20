@@ -40,7 +40,7 @@ const CourseInfoLayout = async ({
         },
       });
     return (
-        <div className="pt-40 mx-5 md:mx-20 pb-40 space-y-20 landing">
+        <div className="pt-40 mx-5 md:mx-20 pb-40  landing">
           <div className="text-center pb-8">
             <h1 className="text-6xl font-extrabold mb-3">{course?.title}</h1>
             <p className="text-sm opacity-50 font-medium ">{course?.description}</p>
@@ -67,7 +67,7 @@ const CourseInfoLayout = async ({
               </Link>
             </div>
           </div>
-
+          <div className="space-y-12">
           <div className="mx-auto max-w-2xl">
             <div className="flex">
               <FcAutomatic className='h-10 w-10 mr-2'/>
@@ -97,12 +97,15 @@ const CourseInfoLayout = async ({
               <FcTimeline className='h-10 w-10 mr-2'/>
               <h1 className="text-4xl font-bold">Difficulty level</h1>
             </div>
-            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/30 rounded-[5px] bg-zinc-900 whitespace-pre-wrap text-sm ml-1">{course?.difficulty}</p>
+            <p className="font-medium text-slate-100/80 mt-4 p-2 border border-slate-100/20 rounded-[5px] bg-zinc-900 whitespace-pre-wrap text-sm ml-1">{course?.difficulty}</p>
           </div>
 
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center pt-10">
             <h1 className="text-5xl font-bold">Purchase course</h1>
-            <div className="pt-20">
+              <div className="flex items-center justify-center">
+                <Separator className=" bg-slate-100/20 h-0.5 w-40 mt-10" />
+              </div>
+            <div className="pt-12">
               
             {
               !course?.price ? 
@@ -130,7 +133,7 @@ const CourseInfoLayout = async ({
 
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-              <h1 className="text-center text-5xl font-bold mb-8">Chapters</h1>
+              <h1 className="text-center text-5xl font-bold mb-8 mt-8">Chapters</h1>
               <div className="flex items-center justify-center">
                 <Separator className=" bg-slate-100/20 h-0.5 w-40 mb-12" />
               </div>
@@ -147,6 +150,7 @@ const CourseInfoLayout = async ({
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
     )
