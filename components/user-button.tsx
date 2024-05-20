@@ -26,28 +26,44 @@ const UserButton = () => {
     logout();
     router.push('/auth/login')
 }
+const style = {
+  width: {
+    xs: 35, // width on extra-small devices
+    md: 40, // default width
+  },
+  height: {
+    xs: 35, // height on extra-small devices
+    md: 40, // default height
+  },
+};
 
   return (
     <>
       {!session ? (
-        <Button
+        <div>
+          <Link href='/auth/register' className='flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2'>
+            <LogOut className='text-slate-100 h-5.5 w-5'/>
+          </Link>
+          
+          <Button
           type="submit"
           onClick={onClick}
-          className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full"
+          className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full hidden md:flex"
         >
           <div className="flex items-center px-5 lg:px-7 h-full bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg">
             Sign Up
           </div>
         </Button>
+        </div>
       ) : (
         
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild className='cursor-pointer'>
               <Avatar
                 src={session.image ? session.image : ''}
                 alt="logo"
-                className="shadow-md shadow-black cursor-pointer bg-gradient-to-r from-pink-500 to-purple-500"
-                sx={{ width: 40, height: 40 }}
+                className="shadow-md shadow-[#191919] cursor-pointer bg-gradient-to-r from-pink-500 to-purple-500 xs:mt-0.5 ml-0.5 md:my-0"
+                sx={style}
               ></Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className='bg-[#0E0E0E] border-slate-100/20 w-56'>

@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex justify-between items-center">
-          <MobileSidebar />
+          {/*<MobileSidebar />*/}
 
           <Link href="/" className="flex items-center">
             <h1 className='group text-2xl font-bold '>
@@ -44,28 +44,28 @@ export default function Navbar() {
           </Link>
 
 
-          <div className="hidden md:flex h-[40px] items-center text-lg md:text-lg font-medium mr-2 gap-4 navbar transition-all">
-            <div className="flex items-center lg:gap-4 h-full text-base lg:text-lg font-medium">
+          <div className=" flex h-[40px] items-center text-lg md:text-lg font-medium lg:gap-4 navbar transition-all">
+            <div className="flex items-center  h-full xs:text-[17px] sm:text-lg">
               <Link
                 href="/roadmap"
-                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 xs:px-2 rounded-lg"
               >
                 Roadmap
               </Link>
               <Link
                 href="/courses"
-                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-2 sm:px-4  rounded-lg"
               >
                 Courses
               </Link>
               <Link
                 href="http://discord.gg/nizar"
-                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-4 rounded-lg"
+                className="flex items-center hover:bg-white/5 h-full transition duration-300 xs:px-2 px-4  rounded-lg"
               >
                 Discord
               </Link>
             </div>
-            <div className="flex h-full gap-6 lg:gap-7">
+            <div className="flex h-full md:gap-6">
               <Search />
               <UserButton />
             </div>
