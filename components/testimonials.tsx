@@ -21,10 +21,10 @@ const testimonials = [
       "Discovered this server on YouTube, and it's been a pleasant surprise. The community here is so welcoming, and the content is genuinely helpful, unlike some others out there just looking to grab your attention and money."
   },
   {
-    username: 'Liambrewster',
-    avatar: '/testimonials/liam.webp',
+    username: 'Bacio001',
+    avatar: '/testimonials/bacio.webp',
     message:
-      'Nizar’s breakdown of project building in live streams and videos is simply brilliant. His clear, easy-to-follow approach has made a significant impact on my understanding and confidence to get building! Highly recommended!'
+      'Nizar helped me keep motivation in my own startup, and his videos are also nice to listen to while coding by myself.'
   },
   {
     username: 'JonasDieNuss',
@@ -51,10 +51,10 @@ const testimonials = [
       "After watching Nizar's videos, I've been inspired to pursue my own business venture, and I'm confident he'll become a remarkable entrepreneur and influencer."
   },
   {
-    username: 'Bacio001',
-    avatar: '/testimonials/bacio.webp',
+    username: 'Liambrewster ',
+    avatar: '/testimonials/liam.webp',
     message:
-      'Nizar helped me keep motivation in my own startup, and his videos are also nice to listen to while coding by myself.'
+      'Nizar’s breakdown of project building in live streams and videos is simply brilliant. His clear, easy-to-follow approach has made a significant impact on my understanding and confidence to get building! Highly recommended!'
   },
   {
     username: 'Svenplb',
@@ -83,7 +83,7 @@ const testimonials = [
   }
 ]
 
-export function ThreeD() {
+export function TestimonialCard() {
   return (
     <div className="w-fit mx-auto">
       <ResponsiveMasonry
@@ -92,14 +92,14 @@ export function ThreeD() {
       >
         <Masonry gutter="1.5rem" className="masonry-grid">
           {testimonials.map((testimonial) => (
-            <CardContainer
+            <div
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-5 py-4 border ">
+              <div className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-5 py-4 border ">
                 <div className="flex justify-between">
-                  <CardItem
-                    translateZ="50"
+                  <div
+                    
                     className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
                   >
                     <div className="flex gap-2 items-center">
@@ -112,20 +112,20 @@ export function ThreeD() {
                         {testimonial.username}
                       </span>
                     </div>
-                  </CardItem>
-                  <CardItem
-                    translateZ="50"
+                  </div>
+                  <div
+                    
                     className="text-xl font-bold text-slate-100 flex space-between items-center"
                   >
-                    <FaDiscord className="text-indigo-400 text-4xl" />
-                  </CardItem>
+                     
+                  </div>
                 </div>
 
-                <CardItem className="font-medium pt-4 opacity-50">
+                <div className="font-medium pt-4 opacity-50">
                   <p>"{testimonial.message}"</p>
-                </CardItem>
-              </CardBody>
-            </CardContainer>
+                </div>
+              </div>
+            </div>
           ))}
         </Masonry>
       </ResponsiveMasonry>

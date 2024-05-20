@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { LanguageBackground } from './designs/bg-gradient'
 import { Bento } from './bento'
-import { ThreeD } from './3d'
+import { TestimonialCard } from './testimonials'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import Footer from './Footer'
 import PrimaryButton from './ui/get-started-button'
@@ -86,7 +86,7 @@ export default function LandingPage() {
                 Others
               </span>
             </span>
-            <ThreeD />
+            <TestimonialCard />
             <PrimaryButton
               href="https://discord.gg/nizar"
               className="bg-slate-100"
