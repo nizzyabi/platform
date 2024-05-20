@@ -225,7 +225,7 @@ export default function Roadmap() {
 
   return (
     <div className="pt-40 pb-40 landing">
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-2 items-center text-center">
         <span className="text-6xl font-bold">
           {!session ? 'Roadmap' : `${session.user.name}'s Roadmap`}
         </span>
