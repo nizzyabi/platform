@@ -55,7 +55,7 @@ export default function LandingPage() {
           </div>
           <PrimaryButton
             href='/courses'
-            className="bg-white"
+            className="bg-slate-100"
           />
           <Bento className="text-center select-none" />
         </section>
@@ -72,7 +72,7 @@ export default function LandingPage() {
           <LanguageBackground />
           <PrimaryButton
             href='/courses'
-            className="bg-cyan-500 text-white"
+            className="bg-slate-100"
           >
             See Courses
           </PrimaryButton>
@@ -89,7 +89,7 @@ export default function LandingPage() {
             <ThreeD />
             <PrimaryButton
               href="https://discord.gg/nizar"
-              className="bg-indigo-400"
+              className="bg-slate-100"
               target="_blank"
             >
               Join Us

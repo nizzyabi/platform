@@ -96,7 +96,7 @@ export function ThreeD() {
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-6 py-4 border ">
+              <CardBody className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-5 py-4 border ">
                 <div className="flex justify-between">
                   <CardItem
                     translateZ="50"
