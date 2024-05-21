@@ -15,23 +15,27 @@ import { LoginSchema } from '@/schemas'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { login } from '@/actions/login'
-import { useState, useTransition } from 'react'
+import { useEffect, useRef, useState, useTransition } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import toast from "react-hot-toast"
 
-import { FormSuccess } from '../Form-Success'
-import { FormError } from '../Form-Error'
-FormError
 export const LoginForm = () => {
   const searchParams = useSearchParams()
   const urlError =
     searchParams.get('error') === 'OAuthAccountNotLinked'
       ? 'Email already in use with different provider!'
       : ''
-
+      
   const [isPending, startTransition] = useTransition()
-  const [error, setError] = useState<string | undefined>('')
-  const [success, setSuccess] = useState<string | undefined>('')
+
+  const hasDisplayedError = useRef(false)
+  useEffect(() => {
+    if (urlError && !hasDisplayedError.current) {
+      toast.error(urlError)
+      hasDisplayedError.current = true
+    }
+  }, [urlError])
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -42,12 +46,15 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    setError('')
-    setSuccess('')
     startTransition(() => {
       login(values).then((data) => {
-        setError(data?.error)
-        setSuccess(data?.success)
+        if (data?.error) {
+          toast.error(data.error)
+        }
+        if (data?.success) {
+          toast.success(data.success)
+          form.reset({ email: '', password: ''})
+        }
       })
     })
   }
@@ -108,15 +115,14 @@ export const LoginForm = () => {
               )}
             />
           </div>
-          <FormError message={error || urlError} />
-          <FormSuccess message={success} />
+          
           <Button
             disabled={isPending}
             type="submit"
             className="p-[3px] relative font-semibold w-full"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
-            <div className="px-8 py-2  w-full bg-zinc-800 rounded-[5px]  relative group transition duration-200 text-white hover:bg-transparent text-lg">
+            <div className="px-8 py-2  w-full bg-zinc-800 rounded-[5px] relative group transition duration-200 text-white hover:bg-transparent text-lg">
               Login &rarr;
             </div>
           </Button>

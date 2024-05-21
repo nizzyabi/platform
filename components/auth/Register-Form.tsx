@@ -14,15 +14,12 @@ import {
 import { RegisterSchema } from '@/schemas'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { FormError } from '@/components/Form-Error'
-import { FormSuccess } from '@/components/Form-Success'
 import { register } from '@/actions/register'
 import { useState, useTransition } from 'react'
+import { toast } from 'react-hot-toast'
 
 export const RegisterForm = () => {
   const [isPending, startTransition] = useTransition()
-  const [error, setError] = useState<string | undefined>('')
-  const [success, setSuccess] = useState<string | undefined>('')
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
@@ -34,12 +31,15 @@ export const RegisterForm = () => {
   })
 
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
-    setError('')
-    setSuccess('')
     startTransition(() => {
       register(values).then((data) => {
-        setError(data.error)
-        setSuccess(data.success)
+        if (data?.error) {
+          toast.error(data.error)
+        }
+        if (data?.success) {
+          toast.success(data.success)
+          form.reset({ email: '', password: '', name: '' })
+        }
       })
     })
   }
@@ -112,8 +112,7 @@ export const RegisterForm = () => {
               )}
             />
           </div>
-          <FormError message={error} />
-          <FormSuccess message={success} />
+          
           <Button
             disabled={isPending}
             type="submit"
