@@ -23,39 +23,40 @@ import { useRouter } from 'next/navigation'
 
 const commandInputs = [
   {
-    title: 'Courses',
-    link: '/courses',
-    icon: <Book />
+    title: 'Frontend Analytics Dashboard',
+    link: '/courses/frontend-analytics-dashboard/info',
   },
   {
-    title: 'Roadmap',
-    link: '/roadmap',
-    icon: <TrafficCone />
+    title: 'Stripe Payment',
+    link: '/courses/stripe/info',
+  },
+  {
+    title: 'NextJS Landing Page',
+    link: '/courses/nextjs-landing/info',
+  },
+  {
+    title: 'Functional Backend & Database',
+    link: '/courses/functional-backend-database/info',
   },
   {
     title: 'Settings',
     link: '/settings',
-    icon: <Settings />
   },
   {
     title: 'Home',
     link: '/',
-    icon: <Home />
   },
   {
     title: 'Github',
     link: 'https://github.com/NizarAbiZaher',
-    icon: <Github />
   },
   {
     title: 'Youtube',
     link: 'https://www.youtube.com/@NizzyABI',
-    icon: <Youtube />
   },
   {
     title: 'Discord',
     link: '/roadmap',
-    icon: <FaDiscord />
   }
 ]
 
@@ -117,7 +118,6 @@ export default function Search() {
             {commandInputs.map((item) => (
               <div onClick={() => handleItemClick(item.link)} key={item.link}>
                 <CommandItem>
-                  <p className="mr-4">{item.icon}</p>
                   {item.title}
                 </CommandItem>
               </div>
