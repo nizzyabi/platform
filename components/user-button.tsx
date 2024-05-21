@@ -62,9 +62,9 @@ const style = {
               <Avatar
                 src={session.image ? session.image : ''}
                 alt="logo"
-                className="shadow-md shadow-[#191919] cursor-pointer bg-gradient-to-r from-pink-500 to-purple-500 xs:mt-0.5 ml-0.5 md:my-0"
+                className="shadow-md shadow-[#191919] cursor-pointer bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 xs:mt-0.5 ml-0.5 md:my-0"
                 sx={style}
-              ></Avatar>
+              > </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className='bg-[#0E0E0E] border-slate-100/20 w-56'>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
