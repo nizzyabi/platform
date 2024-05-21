@@ -86,7 +86,7 @@ export default function Search() {
     <>
     <div
         onClick={handleClick}
-        className="flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2"
+        className="flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2 mr-1.5"
       >
         <SearchIcon className="text-slate-100 h-6 w-6" />
       </div>
