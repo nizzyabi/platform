@@ -140,7 +140,7 @@ const CourseInfoLayout = async ({
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {course?.chapters.map((chapter, index) => (
                   <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
-                    <div className="bg-zinc-900 shadow-lg shadow-black/50 rounded-[5px]  w-full p-6  flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
+                    <div className="bg-zinc-900 shadow-lg shadow-black/50 rounded-[5px] w-full p-6 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
                       <div className="flex">
                         <h2 className="text-2xl font-bold text-white mb-4"><span className="mr-2 font-extrabold text-2xl opacity-40">{index + 1 <= 9 ? `0${index +  1}` : index + 1}</span>{chapter.title}</h2>
                       </div>

@@ -19,7 +19,7 @@ export const CopyCodeButton = ({
     return (
         <div className="flex items-center justify-between">
             <div>
-                <Terminal className='h-6 w-6'/>
+                <Terminal className='h-6 w-6 text-slate-100/50'/>
             </div>
             <button onClick={() => onClick(code)}>
                 <Copy className="h-5 w-5 hover:opacity-50 transition-opacity duration-200"/>

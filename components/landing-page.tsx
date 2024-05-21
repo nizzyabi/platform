@@ -26,7 +26,7 @@ export default function LandingPage() {
     <>
       <main
         data-aos="fade-up"
-        className="extra landing py-20 mt-20 flex flex-col gap-52 px-6"
+        className="extra landing py-20 mt-10 sm:mt-20 flex flex-col gap-52 px-6"
       >
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link

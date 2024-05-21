@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none `}
+      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none sm:pt-0 pt-1 `}
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-wrap justify-between items-center">
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-wrap items-center">
-            <div className="flex items-center font-medium text-[15px] sm:text-lg">
+            <div className="flex items-center font-medium text-[16px] sm:text-lg">
               <Link
                 href="/roadmap"
                 className="flex items-center hover:bg-white/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
