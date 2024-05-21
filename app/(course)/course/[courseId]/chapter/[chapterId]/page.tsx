@@ -53,7 +53,7 @@ const ChapterIdPage = async ({
    
     
   return (
-    <div className="w-full px-5 lg:pr-12 overflow-hidden mb-5">
+    <div className="w-full xs:mx-3.5 sm:mx-5 mx-6 overflow-hidden mb-5 sm:pr-2 lg:pr-3">
         {isLocked ? (
             <div className="bg-zinc-900 relative aspect-video">
                 <div className="absolute inset-0 flex items-center justify-center flex-col gap-y-2">
