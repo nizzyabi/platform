@@ -44,6 +44,13 @@ const DataPage = async () => {
             createdAt: 'desc'
         },
     });
+    const recentUsers = await db.user.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: 5,
+    })
+   
 
     const cardData: DashboardCardProps[] = [
       {
@@ -96,33 +103,12 @@ const DataPage = async () => {
       }
     ];
     
-    const userData: UserDataProps[] = [
-      {
-        name: "Tyler Durden",
-        email: "tyle.durden@gmail.com",
-        time: "2 hours ago"
-      },
-      {
-        name: "Alex Jones",
-        email: "alex.jones@hotmail.com",
-        time: "1 hour ago"
-      },
-      {
-        name: "Joe Rogan",
-        email: "joerogan_chimp@gmail.com",
-        time: "8 hours ago",
-      },
-      {
-        name: "Steve Jobs",
-        email: "stevejob@apple.com",
-        time: "1 day ago",
-      },
-      {
-        name: "Maha Isk",
-        email: "mahaisk@gmail.com",
-        time: "1 day ago",
-      }
-    ]
+    const userData: UserDataProps[] = recentUsers.map(account => ({
+      name: account.name || 'Unknown',
+      email: account.email || 'No email',
+      image: account.image || '/avatar.png',
+      time: account.createdAt.toISOString(), // Format this as needed
+    }));
   return (
     <div className="flex flex-col gap-5 w-full pt-40">
       <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
@@ -175,6 +161,7 @@ const DataPage = async () => {
                   key={index}
                   email={data.email}
                   name={data.name}
+                  image={data.image}
                   time={data.time}
                 />
               ))}
@@ -182,7 +169,6 @@ const DataPage = async () => {
             <DashboardCardContent className="p-0">
               <DataTable columns={columns} data={courses} />
             </DashboardCardContent>
-            
           </section>
         </div>
         

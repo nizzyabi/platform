@@ -1,6 +1,9 @@
+import Image from "next/image";
+
 export type UserDataProps = {
     name: string;
     email: string;
+    image: any;
     time: string;
 }
 
