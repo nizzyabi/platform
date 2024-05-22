@@ -25,13 +25,21 @@ const DataPage = async () => {
     }
 
     const userCount = await db.account.count();
+
     const salesCount = await db.purchase.count();
+
     const purchases = await db.purchase.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: 7,
       include: {
         course: true,
       },
     });
+
     const totalRevenue = purchases.reduce((sum, purchase) => sum + (purchase.course.price || 0), 0)
+
     const courseCount = await db.course.count({
       where: {
         isPublished: true
@@ -49,9 +57,8 @@ const DataPage = async () => {
       orderBy: {
         createdAt: 'desc'
       },
-      take: 5,
+      take: 7,
     })
-   
 
     const cardData: DashboardCardProps[] = [
       {
@@ -76,40 +83,25 @@ const DataPage = async () => {
       }
     ];
     
-    const uesrSalesData: SalesProps[] = [
-      {
-        name: "Tyler Durden",
-        email: "tyler.durden@gmail.com",
-        saleAmount: "+$85.00"
-      },
-      {
-        name: "John Wayne",
-        email: "john.wayne@email.com",
-        saleAmount: "+$22.00"
-      },
-      {
-        name: "Moe Lester",
-        email: "moe.lester@email.com",
-        saleAmount: "+$39.00"
-      },
-      {
-        name: "Thanos",
-        email: "thanos@email.com",
-        saleAmount: "+$50.00"
-      },
-      {
-        name: "Black Hawk",
-        email: "black.hawk@email.com",
-        saleAmount: "+$39.00"
-      }
-    ];
+    const uesrSalesData: SalesProps[] = await Promise.all(purchases.map(async (purchase) => {
+      const user = await db.user.findUnique({
+        where: { id: purchase.userId },
+      });
+      return {
+        name: user?.name || 'Unknown',
+        email: user?.email || 'No email',
+        image: user?.image || '/mesh.jpeg',
+        saleAmount: `+$${(purchase.course.price || 0).toFixed(2)}`,
+      };
+    }));
     
     const userData: UserDataProps[] = recentUsers.map(account => ({
       name: account.name || 'Unknown',
       email: account.email || 'No email',
-      image: account.image || '',
+      image: account.image || '/mesh.jpeg',
       time: formatDistanceToNow(new Date(account.createdAt), { addSuffix: true }),
     }));
+
   return (
     <div className="flex flex-col gap-5 w-full pt-40">
       <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
@@ -147,6 +139,7 @@ const DataPage = async () => {
                 <SalesCard
                   key={index}
                   email={data.email}
+                  image={data.image}
                   name={data.name}
                   saleAmount={data.saleAmount}
                 />
