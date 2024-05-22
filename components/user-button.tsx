@@ -40,23 +40,21 @@ const style = {
 
   return (
     <>
-    
       {!session ? (
-        <div>
+        <>
           <Link href='/auth/register' className='flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2'>
             <LogOut className='text-slate-100 h-5.5 w-5'/>
           </Link>
           
-          <Button
+          <Link  href='/auth/register'
           type="submit"
-          onClick={onClick}
           className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full hidden md:flex"
         >
           <div className="flex items-center px-5 lg:px-7 h-full bg-zinc-800 rounded-md transition duration-300 text-white hover:bg-transparent text-base lg:text-lg py-0.5">
             Sign Up
           </div>
-        </Button>
-        </div>
+        </Link>
+        </>
       ) : (
         
           <DropdownMenu>

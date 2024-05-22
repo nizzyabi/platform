@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { login } from '@/actions/login'
 import { useEffect, useRef, useState, useTransition } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import toast from "react-hot-toast"
 
@@ -28,7 +28,7 @@ export const LoginForm = () => {
       : ''
       
   const [isPending, startTransition] = useTransition()
-
+  const router = useRouter()
   const hasDisplayedError = useRef(false)
   useEffect(() => {
     if (urlError && !hasDisplayedError.current) {
@@ -53,6 +53,7 @@ export const LoginForm = () => {
         }
         if (data?.success) {
           toast.success(data.success)
+          router.refresh();
           form.reset({ email: '', password: ''})
         }
       })
