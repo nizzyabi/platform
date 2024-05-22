@@ -15,30 +15,32 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Github, Instagram, LogOut, Mail, User, Youtube } from 'lucide-react'
-import { logout } from '@/actions/logout'
+import { signOut } from 'next-auth/react'
+
 const UserButton = () => {
   const session = useCurrentUser()
   const router = useRouter()
   const onClick = () => {
     router.push('/auth/register')
   }
-  const Logout = () => {
-    logout();
-    router.push('/auth/login')
-}
+  const Logout = async () => {
+    signOut();
+    router.refresh();
+  }
 const style = {
   width: {
-    xs: 35, // width on extra-small devices
-    md: 40, // default width
+    xs: 35,
+    md: 40,
   },
   height: {
-    xs: 35, // height on extra-small devices
-    md: 40, // default height
+    xs: 35, 
+    md: 40, 
   },
 };
 
   return (
     <>
+    
       {!session ? (
         <div>
           <Link href='/auth/register' className='flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2'>
@@ -103,7 +105,7 @@ const style = {
               <DropdownMenuSeparator className='bg-slate-100/20'/>
               <DropdownMenuItem className='cursor-pointer'>
                 <LogOut className='mr-2 h-4 w-4' />
-                <button type='submit' onClick={Logout}>Log out</button>
+                <button type='submit' onClick={Logout}>Sign Out</button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
