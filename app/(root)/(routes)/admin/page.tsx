@@ -11,6 +11,7 @@ import { auth } from "@/auth"
 import { db } from "@/lib/db";
 import { CreditCard, DollarSign, User, BadgeDollarSign, UserRoundCheck, CandlestickChart, MonitorPlay } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { formatDistanceToNow } from 'date-fns';
 
 
 
@@ -106,8 +107,8 @@ const DataPage = async () => {
     const userData: UserDataProps[] = recentUsers.map(account => ({
       name: account.name || 'Unknown',
       email: account.email || 'No email',
-      image: account.image || '/avatar.png',
-      time: account.createdAt.toISOString(), // Format this as needed
+      image: account.image || '',
+      time: formatDistanceToNow(new Date(account.createdAt), { addSuffix: true }),
     }));
   return (
     <div className="flex flex-col gap-5 w-full pt-40">
