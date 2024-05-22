@@ -60,7 +60,7 @@ export function DataTable<TData, TValue>({
         <Link href='/courses/add'>
           <Plus className="h-4 w-4"/>
         </Link>
-          <Input
+          {/*<Input
             placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
@@ -68,9 +68,7 @@ export function DataTable<TData, TValue>({
             }
             
             className="max-w-xs py-0 bg-slate-200 placeholder:text-black/40 text-black"
-          />
-          
-        
+          />*/}
       </section>
       
       <Table>

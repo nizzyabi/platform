@@ -7,8 +7,7 @@ import { cn } from "@/lib/utils";
 export type DashboardCardProps = {
   label: string;
   icon: LucideIcon;
-  amount: string;
-  description: string;
+  amount: any;
 };
 
 export default function DashboardCard(props: DashboardCardProps) {
@@ -22,7 +21,6 @@ export default function DashboardCard(props: DashboardCardProps) {
       </section>
       <section className="flex flex-col gap-1 text-slate-100">
         <h2 className="text-2xl font-semibold">{props.amount}</h2>
-        <p className="text-xs">{props.description}</p>
       </section>
     </DashboardCardContent>
   );
