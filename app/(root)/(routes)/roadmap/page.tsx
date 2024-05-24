@@ -225,7 +225,7 @@ export default function Roadmap() {
 
   return (
     <div className="pt-40 pb-40 landing">
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-2 items-center text-center">
         <span className="text-6xl font-bold">
           {!session ? 'Roadmap' : `${session.user.name}'s Roadmap`}
         </span>
@@ -240,7 +240,7 @@ export default function Roadmap() {
         {roadmapData.map((item, index) => (
           <div
             key={index}
-            className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto p-6 rounded-xl bg-zinc-900 "
+            className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto px-4 pt-2 pb-4 rounded-xl bg-zinc-900 "
           >
             <div className="flex items-center justify-between">
               <h1 className="text-4xl font-semibold p-2">{item.title}</h1>

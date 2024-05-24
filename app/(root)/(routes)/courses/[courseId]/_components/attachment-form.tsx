@@ -10,7 +10,7 @@ import { Attachment, Course } from "@prisma/client";
 import Image from "next/image";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Button } from "@/components/ui/button";
-import { FileUpload } from "@/components/File-Upload";
+import { FileUpload } from "@/components/upload-file";
 
 
 interface AttachmentFormProps {

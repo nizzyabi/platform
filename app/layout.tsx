@@ -8,12 +8,10 @@ import { ConfettiProvder } from '@/components/providers/confetti-provider'
 import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
 import Navbar from '@/components/nav'
-import {GoogleAnalytics} from '@next/third-parties/google'
 const geist = GeistSans
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nizzyabi.com"),
-  keywords: ["Nizar", "Nizzyabi", "Coding", "Programming", "School"],
   title: {
     default: 'Nizzyabi',
     template: `%s | Nizzyabi`
@@ -33,15 +31,12 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en" className="landing" >
         <body className={geist.className}>
-          
           <Navbar />
           <Scroll />
           <ToastProvider />
           <ConfettiProvder />
-          {/*<GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />*/}
           {children}
           <Analytics />
-          
         </body>
       </html>
     </SessionProvider>

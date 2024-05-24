@@ -21,6 +21,7 @@ import {
 import Link from "next/link"
 import { DashboardCardContent } from "./dashboard-card"
 import { Plus } from "lucide-react"
+import { Input } from "@/components/ui/input"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -59,7 +60,7 @@ export function DataTable<TData, TValue>({
         <Link href='/courses/add'>
           <Plus className="h-4 w-4"/>
         </Link>
-          {/* <Input
+          {/*<Input
             placeholder="Search for courses..."
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
@@ -68,8 +69,6 @@ export function DataTable<TData, TValue>({
             
             className="max-w-xs py-0 bg-slate-200 placeholder:text-black/40 text-black"
           />*/}
-          
-        
       </section>
       
       <Table>
@@ -82,7 +81,7 @@ export function DataTable<TData, TValue>({
                 className="border-transparent"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="text-sm py-4 px-0">
+                  <TableCell key={cell.id} className="text-sm py-4 px-0 ">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

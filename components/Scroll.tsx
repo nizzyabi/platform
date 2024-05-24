@@ -1,8 +1,7 @@
 // Scroll Animation
 'use client'
 import { useEffect, useState } from 'react'
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
-import { ArrowUp, ChevronUp } from 'lucide-react'
+import { ChevronUp } from 'lucide-react'
 
 const Scroll = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -30,13 +29,13 @@ const Scroll = () => {
 
   return (
     <button
-      className={`fixed flex items-start justify-center bottom-6 right-6 rounded-full border border-zinc-600 outline-none duration-200 z-50 p-2 bg-zinc-800 hover:bg-zinc-900/50 transition-all ${
+      className={`fixed flex items-start justify-center bottom-6 right-6 rounded-full border border-zinc-600 outline-none duration-200 z-50 p-2 bg-zinc-800 hover:opacity-90 transition-all ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={scrollToTop}
     >
       <div className="">
-        <ChevronUp className="h-10 w-10" />
+        <ChevronUp className="h-6 w-6" />
       </div>
     </button>
   )

@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { LanguageBackground } from './designs/bg-gradient'
 import { Bento } from './bento'
-import { ThreeD } from './3d'
+import { TestimonialCard } from './testimonials'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import Footer from './Footer'
 import PrimaryButton from './ui/get-started-button'
@@ -26,7 +26,7 @@ export default function LandingPage() {
     <>
       <main
         data-aos="fade-up"
-        className="extra landing py-20 mt-20 flex flex-col gap-52 px-6"
+        className="extra landing py-20 mt-10 sm:mt-20 flex flex-col gap-52 px-6"
       >
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link
@@ -53,7 +53,10 @@ export default function LandingPage() {
               && have fun doing it!
             </span>
           </div>
-          <PrimaryButton href="/courses" className="bg-white" />
+          <PrimaryButton
+            href='/courses'
+            className="bg-slate-100"
+          />
           <Bento className="text-center select-none" />
         </section>
 
@@ -67,7 +70,10 @@ export default function LandingPage() {
           </h1>
 
           <LanguageBackground />
-          <PrimaryButton href="/courses" className="bg-cyan-500 text-white">
+          <PrimaryButton
+            href='/courses'
+            className="bg-slate-100"
+          >
             See Courses
           </PrimaryButton>
         </section>
@@ -80,10 +86,10 @@ export default function LandingPage() {
                 Others
               </span>
             </span>
-            <ThreeD />
+            <TestimonialCard />
             <PrimaryButton
               href="https://discord.gg/nizar"
-              className="bg-indigo-400"
+              className="bg-slate-100"
               target="_blank"
             >
               Join Us

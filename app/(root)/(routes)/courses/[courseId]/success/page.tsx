@@ -51,7 +51,7 @@ export default async function Success ({
                 <div className="flex items-center justify-center mt-5">
                 <PrimaryButton
                     href={`/course/${params.courseId}`}
-                    className="bg-white"
+                    className="bg-white hover:opacity-90"
                 >Go To Course</PrimaryButton>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const progressVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-yellow-500 to-orange-500",
+        default: "bg-green-500",
         success: "bg-gradient-to-r from-pink-500 to-purple-500",
       },
     },

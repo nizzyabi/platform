@@ -1,6 +1,7 @@
 "use client"
-import { Copy } from "lucide-react";
+import { Copy, Terminal } from "lucide-react";
 import { toast } from "react-hot-toast";
+
 interface CopyCodeButtonProps {
     code: string;
 }
@@ -16,9 +17,12 @@ export const CopyCodeButton = ({
         .catch(err => toast.error('Failed to copy code'))
     }
     return (
-        <div>
+        <div className="flex items-center justify-between">
+            <div>
+                <Terminal className='h-6 w-6 text-slate-100/50'/>
+            </div>
             <button onClick={() => onClick(code)}>
-                <Copy className="h-5 w-5 mt-2 mr-2"/>
+                <Copy className="h-5 w-5 hover:opacity-50 transition-opacity duration-200"/>
             </button>
         </div>
     )

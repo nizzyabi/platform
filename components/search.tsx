@@ -23,39 +23,40 @@ import { useRouter } from 'next/navigation'
 
 const commandInputs = [
   {
-    title: 'Courses',
-    link: '/courses',
-    icon: <Book />
+    title: 'Frontend Analytics Dashboard',
+    link: '/courses/frontend-analytics-dashboard/info',
   },
   {
-    title: 'Roadmap',
-    link: '/roadmap',
-    icon: <TrafficCone />
+    title: 'Stripe Payment',
+    link: '/courses/stripe/info',
+  },
+  {
+    title: 'NextJS Landing Page',
+    link: '/courses/nextjs-landing/info',
+  },
+  {
+    title: 'Functional Backend & Database',
+    link: '/courses/functional-backend-database/info',
   },
   {
     title: 'Settings',
     link: '/settings',
-    icon: <Settings />
   },
   {
     title: 'Home',
     link: '/',
-    icon: <Home />
   },
   {
     title: 'Github',
     link: 'https://github.com/NizarAbiZaher',
-    icon: <Github />
   },
   {
     title: 'Youtube',
     link: 'https://www.youtube.com/@NizzyABI',
-    icon: <Youtube />
   },
   {
     title: 'Discord',
     link: '/roadmap',
-    icon: <FaDiscord />
   }
 ]
 
@@ -84,9 +85,16 @@ export default function Search() {
 
   return (
     <>
+    <div
+        onClick={handleClick}
+        className="flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-white/5 px-2 py-2 mr-1.5"
+      >
+        <SearchIcon className="text-slate-100 h-6 w-6" />
+      </div>
+
       <div
         onClick={handleClick}
-        className="flex w-[125px] lg:w-[200px] h-full items-center justify-between bg-black/70 hover:bg-zinc-900/60 group rounded-lg cursor-pointer px-2.5 transition duration-300"
+        className="hidden md:flex w-[125px] lg:w-[200px] h-full items-center justify-between bg-black/70 hover:bg-zinc-900/60 group rounded-lg cursor-pointer px-2.5 py-1 transition duration-300 md:ml-3"
       >
         <SearchIcon className="text-slate-100/50 h-5 w-5" />
         <p className="flex-1 text-slate-100/75 group-hover:text-slate-100 ml-2 font-medium text-base lg:text-lg transition duration-300">
@@ -110,7 +118,6 @@ export default function Search() {
             {commandInputs.map((item) => (
               <div onClick={() => handleItemClick(item.link)} key={item.link}>
                 <CommandItem>
-                  <p className="mr-4">{item.icon}</p>
                   {item.title}
                 </CommandItem>
               </div>

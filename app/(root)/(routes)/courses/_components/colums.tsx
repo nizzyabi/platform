@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 
 export const columns: ColumnDef<Course>[] = [
   {
+    // the access key is the data you are getting
     accessorKey: "title",
     header: ({ column }) => {
       return (

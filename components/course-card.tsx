@@ -14,7 +14,7 @@ interface CourseCardProps {
     course?: Course [];
     price?: number;
   };
-export const CourseCard =  async ({
+export const CourseCard =  ({
     id,
     title,
     imageUrl,
@@ -25,22 +25,11 @@ export const CourseCard =  async ({
     price,
     
 }: CourseCardProps) => {
-    const session = await auth()
-    
-    {/*const purchase = await db.purchase.findUnique({
-        where: {
-            userId_courseId: {
-                userId: session?.user.id ?? '',
-                courseId: id,
-            }
-        }
-    })*/}
-
    
     return (
         <Link href={`/courses/${id}/info`}>
         
-            <div className="group hover:opacity-75 transition duration-300 overflow-hidden  h-full bg-zinc-900 rounded-xl">
+            <div className="hover:opacity-75 transition duration-300 overflow-hidden bg-zinc-900 rounded-xl">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill

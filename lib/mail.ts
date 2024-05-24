@@ -10,7 +10,7 @@ export const sendVerificationEmail = async (
     const confirmLink = `https://nizzyabi.com/auth/new-verification?token=${token}`;
 
     await resend.emails.send({
-        from: "Nizar <noreply@nizarlanding.com>",
+        from: "Nizar <noreply@nizzyabi.com>",
         to: email,
         subject: "Confirm your email",
         html: `<p>Click <a href="${confirmLink}">here</a> to confirm email.</p>`
@@ -31,7 +31,7 @@ export const sendPasswordResetEmail = async (
     const resetLink = `http://nizzyabi.com/auth/new-password?token=${token}`;
 
     await resend.emails.send({
-        from: "onboarding@resend.dev",
+        from: "Nizar <noreply@nizzyabi.com>",
         to: email,
         subject: "Reset your password",
         html: `<p>Click <a href="${resetLink}">here</a> to reset your password.</p>`
