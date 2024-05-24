@@ -25,9 +25,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none pt-3 `}
+      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none px-4 sm:px-6 lg:px-8 py-4`}
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div className="max-w-[1600px] mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <Link href="/" className="flex items-center">
             <h1 className='group text-lg md:text-2xl font-bold'>
