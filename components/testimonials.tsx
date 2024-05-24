@@ -83,7 +83,7 @@ const testimonials = [
 
 export function TestimonialCard() {
   return (
-    <div className="w-fit mx-auto">
+    <div className="w-fit mx-auto max-w-4xl">
       <ResponsiveMasonry
         className="flex w-full mx-auto justify-start"
         columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
@@ -94,12 +94,9 @@ export function TestimonialCard() {
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <div className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-5 py-4 border ">
+              <div className="bg-[#131212] relative group/card border-slate-100/20 rounded-xl px-5 py-4 border ">
                 <div className="flex justify-between">
-                  <div
-                    
-                    className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
-                  >
+                  <div className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center">
                     <div className="flex gap-2 items-center">
                       <Avatar
                         src={testimonial.avatar}
@@ -111,12 +108,7 @@ export function TestimonialCard() {
                       </span>
                     </div>
                   </div>
-                  <div
-                    
-                    className="text-xl font-bold text-slate-100 flex space-between items-center"
-                  >
-                     
-                  </div>
+                  <div className="text-xl font-bold text-slate-100 flex space-between items-center"></div>
                 </div>
 
                 <div className="font-medium pt-4 opacity-50">

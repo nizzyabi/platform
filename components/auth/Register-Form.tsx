@@ -119,7 +119,7 @@ export const RegisterForm = () => {
             className="p-[3px] relative font-semibold w-full bg-transparent"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[7.5px] w-full" />
-            <div className="px-8 py-2  w-full bg-zinc-800 rounded-[5px] relative group transition duration-200 text-white hover:bg-transparent text-lg">
+            <div className="px-8 py-2 w-full bg-zinc-800 rounded-[5px] relative group transition duration-200 text-white hover:bg-transparent text-lg">
               Register &rarr;
             </div>
           </Button>
