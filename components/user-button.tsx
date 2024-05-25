@@ -14,8 +14,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Github, Instagram, LogOut, Mail, User, Youtube } from 'lucide-react'
+import { Github, LogOut, Youtube } from 'lucide-react'
 import { signOut } from 'next-auth/react'
+import { FaDiscord, FaYoutube, FaGithub } from "react-icons/fa"
 
 const UserButton = () => {
   const session = useCurrentUser()
@@ -66,44 +67,34 @@ const style = {
                 sx={style}
               > </Avatar>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='bg-[#0E0E0E] border-slate-100/20 w-56'>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator className='bg-slate-100/20'/>
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                    <User className='mr-2 h-4 w-4' />
-                    <span>{session.name}</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                    <Mail className="mr-2 h-4 w-4"/>
-                    <span>{session.email}</span>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
+            <DropdownMenuContent className='bg-[#0E0E0E] border-slate-100/20 w-48'>
+              <DropdownMenuLabel className="py-0 pt-1">{session?.name}</DropdownMenuLabel>
+              <DropdownMenuLabel className="opacity-70 text-sm font-normal">{session?.email}</DropdownMenuLabel>
               <DropdownMenuSeparator className='bg-slate-100/20'/>
               <DropdownMenuGroup>
                 <DropdownMenuItem>
                     <Link className="flex" href='https://github.com/NizarAbiZaher'>
-                        <Github className="mr-2 mt-0.5 h-4 w-4"/>
+                        <FaGithub className="mr-2 mt-0.5 h-4 w-4"/>
                         <span>GitHub</span>
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                     <Link className="flex" href='https://www.youtube.com/@NizzyABI'>
-                        <Youtube className="mr-2 mt-0.5 h-4 w-4"/>
+                        <FaYoutube className="mr-2 mt-0.5 h-4 w-4"/>
                         <span>Youtube</span>
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <Link className="flex" href='https://www.instagram.com/nizzyabi/'>
-                        <Instagram className="mr-2 mt-0.5 h-4 w-4"/>
-                        <span>Instagram</span>
+                    <Link className="flex" href='www.discord.gg/nizar'>
+                        <FaDiscord className="mr-2 mt-0.5 h-4 w-4"/>
+                        <span>Discord</span>
                     </Link>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator className='bg-slate-100/20'/>
               <DropdownMenuItem className='cursor-pointer'>
                 <LogOut className='mr-2 h-4 w-4' />
-                <button type='submit' onClick={Logout}>Sign Out</button>
+                <button type='submit' onClick={Logout}>Log out</button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
