@@ -1,4 +1,5 @@
 'use client'
+
 import * as z from 'zod'
 import { CardWrapper } from '@/components/auth/Card-Wrapper'
 import { useForm } from 'react-hook-form'
@@ -19,6 +20,7 @@ import { useEffect, useRef, useState, useTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import toast from "react-hot-toast"
+import { useSession } from 'next-auth/react'
 
 export const LoginForm = () => {
   const searchParams = useSearchParams()
@@ -29,6 +31,7 @@ export const LoginForm = () => {
       
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
+  const { update } = useSession()
   const hasDisplayedError = useRef(false)
   useEffect(() => {
     if (urlError && !hasDisplayedError.current) {
@@ -55,8 +58,9 @@ export const LoginForm = () => {
           toast.success(data.success)
           form.reset({ email: '', password: ''})
           if (data.success === 'Logged in!') {
-            router.refresh()
-            router.push('/')
+            update().then(() => {
+              window.location.href = '/' 
+            })
           }
         }
       })
