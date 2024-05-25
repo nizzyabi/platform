@@ -28,7 +28,7 @@ export const sendPasswordResetEmail = async (
     email: string,
     token: string,
 ) => {
-    const resetLink = `http://nizzyabi.com/auth/new-password?token=${token}`;
+    const resetLink = `https://nizzyabi.com/auth/new-password?token=${token}`;
 
     await resend.emails.send({
         from: "Nizar <noreply@nizzyabi.com>",

@@ -15,15 +15,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Github, LogOut, Youtube } from 'lucide-react'
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { FaDiscord, FaYoutube, FaGithub } from "react-icons/fa"
+import { useEffect } from 'react'
+
 
 const UserButton = () => {
   const session = useCurrentUser()
   const router = useRouter()
-  const onClick = () => {
-    router.push('/auth/register')
-  }
   const Logout = async () => {
     signOut();
     router.push('/auth/login')

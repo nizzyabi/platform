@@ -53,8 +53,11 @@ export const LoginForm = () => {
         }
         if (data?.success) {
           toast.success(data.success)
-          router.refresh();
           form.reset({ email: '', password: ''})
+          if (data.success === 'Logged in!') {
+            router.refresh()
+            router.push('/')
+          }
         }
       })
     })
