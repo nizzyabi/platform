@@ -26,7 +26,7 @@ const UserButton = () => {
   }
   const Logout = async () => {
     signOut();
-    router.push('/login')
+    router.push('/auth/login')
   }
 const style = {
   width: {
