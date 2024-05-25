@@ -21,6 +21,12 @@ export const reset = async (values: z.infer<typeof ResetSchema>) => {
     if(!existingUser) {
         return { error: "Email does not exist!" }
     }
+
+    // check if user is using an oauth provider
+    if(existingUser.password === null) {
+        return { error: "You signed up with a social provider!" }
+    }
+
     //send reset email
     const passwordResetToken = await generatePasswordResetToken(email);
     await sendPasswordResetEmail(

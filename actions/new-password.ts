@@ -10,7 +10,7 @@ export const newPassword = async (
     values: z.infer<typeof NewPasswordSchema>,
     token?: string | null,
 ) => {
-    // if error, return error
+    // if no token, return error
     if (!token) {
         return { error: "Token is required"};
     }
@@ -18,7 +18,7 @@ export const newPassword = async (
     // validate fields
     const validatedFields = NewPasswordSchema.safeParse(values);
 
-    // if not fields are not valid, return error
+    // if fields are not valid, return error
     if (!validatedFields.success) {
         return { error: "Invalid Fields" };
     }
