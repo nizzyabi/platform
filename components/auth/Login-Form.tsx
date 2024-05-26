@@ -70,7 +70,7 @@ export const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1 w-full">
           <div className="space-y-2">
             <FormField
               control={form.control}
@@ -87,6 +87,7 @@ export const LoginForm = () => {
                       className="bg-zinc-900 text-slate-100"
                     />
                   </FormControl>
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -98,13 +99,14 @@ export const LoginForm = () => {
                   <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="password"
+                      placeholder="••••••••"
                       {...field}
                       disabled={isPending}
                       type="password"
                       className="bg-zinc-900 text-slate-100"
                     />
                   </FormControl>
+                  <FormMessage className="text-red-500" />
                   <Button
                     size="sm"
                     variant="link"
@@ -113,7 +115,7 @@ export const LoginForm = () => {
                   >
                     <Link href="/auth/reset">Forgot Password?</Link>
                   </Button>
-                  <FormMessage className="text-red-500" />
+                  
                 </FormItem>
               )}
             />
@@ -126,7 +128,7 @@ export const LoginForm = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
             <div className="px-8 py-2  w-full bg-zinc-800 rounded-[5px] relative group transition duration-200 text-white hover:bg-transparent text-lg">
-              Login &rarr;
+              Login
             </div>
           </Button>
         </form>
