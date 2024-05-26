@@ -13,23 +13,23 @@ export const Social = () => {
         });
     }
     return (
-        <div className="flex items-center justify-center   space-x-3 pt-7">
+        <div className="flex gap-2 mt-3">
             <Button
                 size="lg"
-                className=' xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[60px] rounded-[5px] border-none hover:opacity-50 transition duration-300 bg-zinc-800 text-md'
+                className='rounded-[5px] border-none hover:opacity-50 transition duration-300 bg-zinc-800 text-md'
                 variant="outline"
                 onClick={() => onClick('google')}
             >
-                <IconBrandGoogle className='h-6 w-6 mr-2'/> Google
+                <IconBrandGoogle className='mr-2'/> Google
             </Button>
 
             <Button
                 size="lg"
-                className='xs:px-[20px] sm:px-[30px] md:px-[40px] lg:px-[68px] font-medium transition duration-300 hover:opacity-50 rounded-[5px] border-none text-md bg-zinc-800'
+                className='rounded-[5px] border-none hover:opacity-50 transition duration-300 bg-zinc-800 text-md'
                 variant="outline"
                 onClick={() => onClick('github')}
             >
-                <IconBrandGithub className="h-6 w-6 mr-2"/> <span>Github</span>
+                <IconBrandGithub className="mr-2"/> <span>Github</span>
                 <BottomGradient />
             </Button>
         </div>

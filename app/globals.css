@@ -104,20 +104,6 @@ html {
   height: auto;
 }
 
-.ql-container {
-  font-size: 18px !important;
-  background-color: transparent;
-  color: white;
-
-  font-weight: 200 !important;
-}
-
-.ql-snow {
-  background-color: white;
-  color: #191919;
-  overflow: visible;
-}
-
 .responsive-iframe-container {
   position: relative;
   padding-top: 56.25%;
@@ -172,3 +158,4 @@ html {
   width: auto !important;
   flex: 0 !important;
 }
+
