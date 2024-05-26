@@ -94,11 +94,11 @@ export function TestimonialCard() {
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <div className="bg-[#131212] relative group/card border-slate-100/20 h-full rounded-xl px-5 py-4 border ">
+              <div className="bg-secondary relative group/card border-primary/20 h-full rounded-xl px-5 py-4 border ">
                 <div className="flex justify-between">
                   <div
                     
-                    className="text-base sm:text-xl font-bold text-slate-100 flex space-between items-center"
+                    className="text-base sm:text-xl font-bold text-primary/70 flex space-between items-center"
                   >
                     <div className="flex gap-2 items-center">
                       <Avatar
@@ -106,14 +106,14 @@ export function TestimonialCard() {
                         alt={`${testimonial.username}s Avatar`}
                       />
                       <span className="flex gap-0.5 items-center">
-                        <AtSign className="w-5 h-5 text-zinc-500" />
+                        <AtSign className="w-5 h-5 text-primary/70" />
                         {testimonial.username}
                       </span>
                     </div>
                   </div>
                   <div
                     
-                    className="text-xl font-bold text-slate-100 flex space-between items-center"
+                    className="text-xl font-bold text-primary flex space-between items-center"
                   >
                      
                   </div>

@@ -17,10 +17,10 @@ const imagesRow1: ImageInfo[] = [
 ]
 
 const renderImages = (images: ImageInfo[]) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8 ">
     {images.map(({ src, alt }) => (
       <div
-        className="rounded-[22px] min-w-28 sm:min-w-32 md:min-w-48 flex items-center justify-center aspect-square bg-[#131212] relative select-none"
+        className="rounded-[22px] min-w-28 sm:min-w-32 md:min-w-48 flex items-center justify-center aspect-square bg-secondary border border-primary/20 relative select-none"
         key={src}
       >
         <Image
