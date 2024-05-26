@@ -16,11 +16,11 @@ import { LoginSchema } from '@/schemas'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { login } from '@/actions/login'
-import { useEffect, useRef, useState, useTransition } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useRef, useTransition } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import toast from "react-hot-toast"
-import { useSession } from 'next-auth/react'
+
 
 export const LoginForm = () => {
   const searchParams = useSearchParams()
@@ -30,8 +30,6 @@ export const LoginForm = () => {
       : ''
       
   const [isPending, startTransition] = useTransition()
-  const router = useRouter()
-  const { update } = useSession()
   const hasDisplayedError = useRef(false)
   useEffect(() => {
     if (urlError && !hasDisplayedError.current) {
@@ -49,19 +47,16 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+        
     startTransition(() => {
       login(values).then((data) => {
         if (data?.error) {
-          toast.error(data.error)
+            toast.error(data.error)
         }
         if (data?.success) {
-          toast.success(data.success)
-          form.reset({ email: '', password: ''})
-          if (data.success === 'Logged in!') {
-            update().then(() => {
-              window.location.href = '/' 
-            })
-          }
+            toast.success(data.success)
+            form.reset({ email: '', password: ''})
+            window.location.href = '/'
         }
       })
     })
