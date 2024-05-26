@@ -28,8 +28,8 @@ export const CourseSidebarItem = ({
   const Icon = isLocked ? FaLock : (isCompleted ? FaCheckCircle : Circle);
 
   const iconClassNames = cn(
-    "text-slate-200/20",
-    isActive && "text-slate-200",
+    "text-primary/70",
+    isActive && "text-primary/60",
     isCompleted && "text-green-500",
     isLocked && "text-red-500"
   );
@@ -43,10 +43,10 @@ export const CourseSidebarItem = ({
       onClick={onClick}
       type="button"
       className={cn(
-        "flex items-center  text-slate-200/20 text-md  font-semibold min-w-0 transition-all hover:text-slate-200 pb-8 ",
+        "flex items-center text-primary/30 text-md  font-semibold min-w-0 transition-all hover:text-primary/70 pb-8 ",
         
-        isActive && "text-slate-200",
-        isCompleted && "text-slate-200/20 hover:text-slate-200",
+        isActive && "text-primary",
+        isCompleted && "text-primary/30 hover:text-primary/70",
       )}
     >
       <div className="flex items-center py-1">

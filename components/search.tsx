@@ -96,8 +96,8 @@ export default function Search() {
         onClick={handleClick}
         className="hidden md:flex w-[125px] lg:w-[200px] h-full items-center justify-between bg-primary/10 hover:bg-secondary/60 group rounded-lg cursor-pointer px-2.5 py-2 transition duration-300 md:ml-3"
       >
-        <SearchIcon className="text-primary/10 h-5 w-5" />
-        <p className="flex-1 text-primary group-hover:text-primary ml-2 font-medium text-base lg:text-lg transition duration-300">
+        <SearchIcon className="text-primary/30 h-5 w-5" />
+        <p className="flex-1 text-primary/30 group-hover:text-primary ml-2 font-medium text-base lg:text-lg transition duration-300">
           Search
         </p>
         <div className="text-primary">

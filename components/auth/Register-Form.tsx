@@ -104,7 +104,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       type="password"
-                      className="bg-secondary border-primary/20"
+                      className="bg-secondary border-primary/20 text-2xl"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
