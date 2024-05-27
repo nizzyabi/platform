@@ -18,6 +18,7 @@ import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
 import { useState, useTransition } from "react";
 import {reset} from "@/actions/reset";
+import toast from "react-hot-toast";
 export const ResetForm = () => {
     
     const [isPending, startTransition] = useTransition();
@@ -37,8 +38,13 @@ export const ResetForm = () => {
         startTransition(() => {
            reset(values)
               .then((data) => {
-                setError(data?.error);
-                setSuccess(data?.success);
+                if (data?.error) {
+                    toast.error(data.error)
+                  }
+                  if (data?.success) {
+                    toast.success(data.success)
+                    form.reset({ email: '' })
+                  }
              })
         })
     }

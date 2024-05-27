@@ -19,6 +19,7 @@ import { FormError } from "@/components/Form-Error";
 import { FormSuccess } from "@/components/Form-Success";
 import { useState, useTransition } from "react";
 import { newPassword } from "@/actions/new-password";
+import toast from "react-hot-toast";
 
 export const NewPasswordForm = () => {
     const searchParams = useSearchParams();
@@ -41,8 +42,13 @@ export const NewPasswordForm = () => {
         startTransition(() => {
             newPassword(values, token)
               .then((data) => {
-                setError(data?.error);
-                setSuccess(data?.success);
+                if (data?.error) {
+                    toast.error(data.error)
+                  }
+                  if (data?.success) {
+                    toast.success(data.success)
+                    form.reset({ password: ''})
+                  }
              })
         })
     }

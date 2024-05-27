@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import { Circle } from "lucide-react";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -29,7 +30,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className=" rounded [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-secondary/60 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 bg-secondary">
+        <Command className=" rounded [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-secondary/60 border border-primary/20 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 bg-secondary">
           {children}
         </Command>
       </DialogContent>
@@ -46,7 +47,7 @@ const CommandInput = React.forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-primary/50 disabled:cursor-not-allowed disabled:opacity-50 border-primary/50",
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-primary disabled:cursor-not-allowed disabled:opacity-50 border-primary/50",
         className
       )}
       {...props}
@@ -124,7 +125,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
   ref={ref}
   className={cn(
-    "relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-primary/20 aria-selected:text-primary/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-primary/20 cursor-pointer text-primary ",
+    "relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-primary/20 aria-selected:text-primary data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-primary/20 cursor-pointer text-primary ",
     className
   )}
   {...props}

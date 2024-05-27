@@ -11,6 +11,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search'
 import {
   Book,
+  Circle,
   Github,
   Home,
   Settings,
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react'
 import { FaDiscord } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
+import { CircleBackslashIcon } from '@radix-ui/react-icons'
 
 const commandInputs = [
   {
@@ -118,7 +120,7 @@ export default function Search() {
             {commandInputs.map((item) => (
               <div onClick={() => handleItemClick(item.link)} key={item.link}>
                 <CommandItem>
-                  {item.title}
+                   <Circle className='h-3 w-3 mr-2'/> <p>{item.title}</p>
                 </CommandItem>
               </div>
             ))}
