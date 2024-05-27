@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-wrap items-center">
-            <div className="flex items-center font-medium text-[16px] sm:text-lg">
+            <div className="flex items-center font-medium text-[15px] sm:text-md">
               <Link
                 href="/roadmap"
                 className="flex items-center hover:bg-primary/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
@@ -55,7 +55,7 @@ export default function Navbar() {
               </Link>
               
             </div>
-            <div className="flex items-center sm:gap-4">
+            <div className="flex items-center gap-1 md:gap-4">
               <Search />
               <ModeToggle />
               <UserButton />

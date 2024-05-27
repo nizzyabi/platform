@@ -7,13 +7,12 @@ import Link from 'next/link'
 import { LanguageBackground } from './designs/bg-gradient'
 import { Bento } from './bento'
 import { TestimonialCard } from './testimonials'
-import { useCurrentUser } from '@/hooks/user-current-user'
 import Footer from './Footer'
 import PrimaryButton from './ui/get-started-button'
+import AvatarCircles from './ui/user-avatar-card'
+
 
 export default function LandingPage() {
-  const session = useCurrentUser()
-
   useEffect(() => {
     AOS.init({
       disable: 'phone',
@@ -21,6 +20,7 @@ export default function LandingPage() {
       easing: 'ease-out-cubic'
     })
   }, [])
+
 
   return (
     <>
@@ -86,6 +86,7 @@ export default function LandingPage() {
                 Others
               </span>
             </span>
+            <AvatarCircles />
             <TestimonialCard />
             <PrimaryButton
               href="https://discord.gg/nizar"
