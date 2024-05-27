@@ -1,5 +1,4 @@
 import React from 'react'
-import { BackgroundGradient } from '../ui/background-gradient'
 import Image from 'next/image'
 
 type ImageInfo = {

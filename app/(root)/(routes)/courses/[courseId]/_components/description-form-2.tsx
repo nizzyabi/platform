@@ -20,7 +20,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Preview } from "@/components/preview";
-import { Editor } from "@/components/editor";
 import { Textarea } from "@/components/ui/textarea";
 
 interface DescriptionForm2Props {
