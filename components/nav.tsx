@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import UserButton from '@/components/user-button'
 import Search from '@/components/search'
+import { ModeToggle } from '@/components/mode-toggle'
 
 export default function Navbar() {
   const [hasScrolled, setHasScrolled] = useState(false)
@@ -20,7 +21,7 @@ export default function Navbar() {
   }, [])
 
   const navbarChange = hasScrolled
-    ? 'backdrop-blur border-b border-slate-100/20 bg-[#2e2e2e]/90'
+    ? 'backdrop-blur border-b border-slate-100/20 bg-secondary/90'
     : 'bg-transparent border-b border-transparent'
 
   return (
@@ -39,23 +40,18 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-wrap items-center">
-            <div className="flex items-center font-medium text-[16px] sm:text-lg">
-              <Link
-                href="/roadmap"
-                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
-              >
-                Roadmap
-              </Link>
+            <div className="flex items-center font-medium text-[17px]">
               <Link
                 href="/courses"
-                className="flex items-center hover:bg-white/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
+                className="flex items-center hover:bg-primary/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
               >
                 Courses
               </Link>
               
             </div>
-            <div className="flex items-center md:gap-4">
+            <div className="flex items-center gap-1 md:gap-4">
               <Search />
+              <ModeToggle />
               <UserButton />
             </div>
           </div>

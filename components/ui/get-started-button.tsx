@@ -20,7 +20,7 @@ const PrimaryButton = ({
   return (
     <Link
       href={href}
-      className={`w-50 justify-center flex gap-1 items-center whitespace-nowrap transition duration-150 ease-in-out font-medium text-black text-lg rounded-md px-5 py-1.5 group select-none ${className}`}
+      className={`w-50 justify-center flex gap-1 items-center whitespace-nowrap transition duration-150 ease-in-out font-medium text-secondary text-lg rounded-md px-5 py-1.5 group select-none ${className}`}
       target={target}
     >
       {children ? children : 'Get Started'}

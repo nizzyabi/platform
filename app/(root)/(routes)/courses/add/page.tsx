@@ -69,12 +69,13 @@ const CreatePage = () => {
                     <FormLabel>
                       Course title
                     </FormLabel>
-                    <FormControl className="relative bg-slate-100 text-[#2e2e2e]">
+                    <FormControl className="relative">
                       
                       <Input
                         disabled={isSubmitting}
                         placeholder="e.g. 'Advanced web development'"
                         {...field}
+                        className='bg-secondary border-primary/20'
                       />
                       
                     </FormControl>

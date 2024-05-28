@@ -86,9 +86,9 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       {isUpdating && (
-        <div className="absolute h-full w-full bg-slate-500/20 top-0 right-0 rounded-m flex items-center justify-center">
+        <div className="absolute h-full w-full bg-secondary top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
         </div>
       )}
@@ -115,11 +115,12 @@ export const ChaptersForm = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                  <FormControl className="rounded">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage />
@@ -140,7 +141,7 @@ export const ChaptersForm = ({
       {!isCreating && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.chapters.length && "text-slate-300 italic"
+          !initialData.chapters.length && "text-primary/70 italic"
         )}>
           {!initialData.chapters.length && "No chapters"}
           <ChaptersList

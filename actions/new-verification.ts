@@ -40,7 +40,4 @@ export const newVerification = async (token:string) => {
     });
 
     return { success: "Email verified 🎉. Go to login to continue"}
-
-    
-    
 }

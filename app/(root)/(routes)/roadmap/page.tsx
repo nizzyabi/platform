@@ -233,27 +233,27 @@ export default function Roadmap() {
           Full roadmap to being a web developer
         </span>
         <div className="flex items-center justify-center">
-          <Separator className="mt-8 bg-slate-100/20 h-0.5 w-40" />
+          <Separator className="mt-8 bg-secondary h-0.5 w-40" />
         </div>
       </div>
       <div className="space-y-20 mx-2">
         {roadmapData.map((item, index) => (
           <div
             key={index}
-            className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto px-4 pt-2 pb-4 rounded-xl bg-zinc-900 "
+            className="mt-8 space-y-12 max-w-xl lg:max-w-3xl mx-auto px-4 pt-2 pb-4 rounded-xl bg-secondary"
           >
             <div className="flex items-center justify-between">
               <h1 className="text-4xl font-semibold p-2">{item.title}</h1>
-              <p className="text-zinc-400 text-3xl font-bold">0{index + 1}</p>
+              <p className="text-primary/50 text-3xl font-bold">0{index + 1}</p>
             </div>
 
-            <p className="text-center font-medium text-slate-200 text-lg">
+            <p className="text-center font-medium text-primary text-lg">
               {item.description}
             </p>
             <div className="flex justify-center space-x-8 ">
               {item.resources.map((resource, resIndex) => (
                 <Link key={resIndex} href={resource.link} target="_blank">
-                  <p className="text-5xl bg-slate-200  hover:opacity-70 duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">
+                  <p className="text-5xl bg-primary hover:opacity-70 duration-500 h-[70px] w-[70px] flex justify-center items-center rounded">
                     {resource.icon}
                   </p>
                 </Link>

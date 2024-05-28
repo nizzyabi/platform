@@ -65,7 +65,7 @@ export const GithubForm = ({
   }
 
   return (
-  <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+  <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
   <div className="font-semibold flex items-center justify-between text-xl">
     Github Link
     <Button onClick={toggleEdit}>
@@ -79,7 +79,7 @@ export const GithubForm = ({
     </Button>
   </div>
   {!isEditing && (
-    <p className="text-lg mt-2">
+    <p className="text-primary/70 mt-2 text-sm">
       {initialData.githubLink}
     </p>
   )}
@@ -94,11 +94,12 @@ export const GithubForm = ({
           name="githubLink"
           render={({ field }) => (
             <FormItem>
-              <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+              <FormControl className="relative rounded">
                 <Input
                   disabled={isSubmitting}
                   placeholder="e.g. 'Github repository link...'"
                   {...field}
+                  className="bg-secondary border-primary/20"
                 />
               </FormControl>
               <FormMessage />

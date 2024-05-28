@@ -8,11 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-slate-100 text-[#2e2e2e] hover:opacity-90 duration-300 rounded-[5px]",
+        default: "bg-primary text-secondary hover:opacity-90 duration-300 rounded-[5px]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "",
+          "border border-input bg-background hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         discord: " hover:opacity-70 rounded-full my-4 bg-[#738ADB] text-slate-100",

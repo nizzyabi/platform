@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
 import { Preview } from "@/components/preview";
-import { Editor } from "@/components/editor";
+
 
 interface IncludedFormProps {
   initialData: Course;
@@ -63,7 +63,7 @@ export const IncludedForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Includes
         <Button onClick={toggleEdit}>
@@ -77,15 +77,12 @@ export const IncludedForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <div className={cn(
-          "text-sm mt-2",
-          !initialData.included && "text-slate-300 italic"
+        <p className={cn(
+          "flex text-primary/70 mt-2 text-sm",
+          !initialData.included && "text-primary/70 italic text-sm"
         )}>
-          {!initialData.included && "No included content"}
-          {initialData.included && (
-            <Preview value={initialData.included} />
-          )}
-        </div>
+          {initialData.included || "No included text"}
+        </p>
       )}
       {isEditing && (
         <Form {...form}>
@@ -98,11 +95,12 @@ export const IncludedForm = ({
             name="included"
             render={({ field }) => (
               <FormItem>
-                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                <FormControl className="rounded">
                   <Textarea
                     disabled={isSubmitting}
                     placeholder="e.g. 'This course is about...'"
                     {...field}
+                    className="bg-secondary border-primary/20"
                   />
                 </FormControl>
                 <FormMessage />

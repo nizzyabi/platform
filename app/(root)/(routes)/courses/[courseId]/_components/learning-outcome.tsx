@@ -22,7 +22,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
 import { Preview } from "@/components/preview";
-import { Editor } from "@/components/editor";
 
 interface LearningOutcomeFormProps {
   initialData: Course;
@@ -64,7 +63,7 @@ export const LearningOutcomeForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Learning Outcome
         <Button onClick={toggleEdit}>
@@ -79,13 +78,10 @@ export const LearningOutcomeForm = ({
       </div>
       {!isEditing && (
         <div className={cn(
-          "text-sm mt-2",
-          !initialData.learningOutcome && "text-slate-300 italic"
+          "text-primary/70 mt-2 text-sm",
+          !initialData.learningOutcome && "text-primary/70 italic text-sm"
         )}>
-          {!initialData.learningOutcome && "No description"}
-          {initialData.learningOutcome && (
-            <Preview value={initialData.learningOutcome} />
-          )}
+          {initialData.learningOutcome || "No learning outcome"}
         </div>
       )}
       {isEditing && (
@@ -99,11 +95,12 @@ export const LearningOutcomeForm = ({
             name="learningOutcome"
             render={({ field }) => (
               <FormItem>
-                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                <FormControl className="rounded">
                   <Textarea
                     disabled={isSubmitting}
                     placeholder="e.g. 'This course is about...'"
                     {...field}
+                    className="bg-secondary border-primary/20"
                   />
                 </FormControl>
                 <FormMessage />

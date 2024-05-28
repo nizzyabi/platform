@@ -29,7 +29,7 @@ export const CourseCard =  ({
     return (
         <Link href={`/courses/${id}/info`}>
         
-            <div className="hover:opacity-75 transition duration-300 overflow-hidden bg-zinc-900 rounded-xl">
+            <div className="hover:opacity-75 transition duration-300 overflow-hidden bg-secondary rounded-xl border border-primary/20">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
@@ -39,18 +39,18 @@ export const CourseCard =  ({
                     />
                 </div>
                 <div className="flex flex-col px-3 space-y-6 pt-4">
-                    <div className="text-2xl font-extrabold">
+                    <div className="text-2xl font-extrabold text-primary/90">
                         {title}
                     </div>
 
-                    <div className="text-sm font-medium text-slate-100/50">
+                    <div className="text-sm font-medium text-primary/50">
                         {description}
                     </div>
                     
-                    <div className="flex items-center gap-x-2 text-md md:text-sm text-slate-200">
+                    <div className="flex items-center gap-x-2 text-md md:text-sm text-primary/50">
                         <div className="flex items-center gap-x-1 ">
                         <IconBook2 width={20} height={20}  />
-                            <span className="mt-0.5 font-semibold text-slate-100 ml-1">
+                            <span className="mt-0.5 font-semibold text-primary/50 ml-1">
                                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
                             </span>
                         </div>
@@ -65,7 +65,7 @@ export const CourseCard =  ({
                             />
                         )}
                         {!price && (
-                            <button className="bg-transparent text-slate-100 mb-3 px-4 py-1.5 font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] text-md">
+                            <button className="bg-transparent text-white mb-3 px-4 py-1.5 font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] text-md">
                                 Free
                             </button>
                         )}

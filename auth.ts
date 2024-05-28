@@ -40,6 +40,7 @@ export const{
       if(!exisitingUser?.emailVerified) return false;
 
       return true;
+
     },
     // token & session
     async session({ session, token }) {

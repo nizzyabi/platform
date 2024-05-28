@@ -4,7 +4,7 @@ import { BsTwitterX, BsYoutube, BsDiscord, BsGithub } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <div className="pb-4 text-slate-200/50">
+    <div className="pb-4 text-primary">
       <div className="text-center pt-[30px] text-sm pb-2 ">
         Want to contribute? Find it on <Link href='https://github.com/NizarAbiZaher/platform'><span className="text-blue-500 hover:underline">GitHub</span></Link>
       </div>

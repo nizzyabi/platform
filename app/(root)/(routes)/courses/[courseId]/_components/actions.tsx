@@ -31,7 +31,7 @@ export const Actions = ({
 
       if (isPublished) {
         await axios.patch(`/api/courses/${courseId}/unpublish`);
-        toast.success("Guides unpublished");
+        toast.success("Course unpublished");
       } else {
         await axios.patch(`/api/courses/${courseId}/publish`);
         toast.success("Course published!");

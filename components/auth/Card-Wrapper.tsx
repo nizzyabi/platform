@@ -22,7 +22,7 @@ export const CardWrapper = ({
   headerTitle
 }: CardWrapperProps) => {
   return (
-    <Card className=" xs:w-[200px] sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[500px] bg-[#131212] border border-slate-200/20 rounded-xl mt-12 md:mt-[150px]">
+    <Card className="mx-auto max-w-xl border bg-secondary border-primary/20 rounded-xl mt-12 md:mt-[150px]">
       <CardHeader>
         <Header title={headerTitle} />
       </CardHeader>

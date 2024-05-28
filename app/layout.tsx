@@ -9,7 +9,7 @@ import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
 import Navbar from '@/components/nav'
 const geist = GeistSans
-
+import { ThemeProvider } from "@/components/ui/theme-provider"
 export const metadata: Metadata = {
   metadataBase: new URL("https://nizzyabi.com"),
   title: {
@@ -29,14 +29,21 @@ export default async function RootLayout({
   const session = await auth()
   return (
     <SessionProvider session={session}>
-      <html lang="en" className="landing" >
+      <html lang="en" className="">
         <body className={geist.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
           <Scroll />
           <ToastProvider />
           <ConfettiProvder />
           {children}
           <Analytics />
+          </ThemeProvider>
         </body>
       </html>
     </SessionProvider>

@@ -7,6 +7,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import { Circle } from "lucide-react";
+
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
@@ -14,7 +16,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground border-slate-100/50",
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-secondary text-secondary-foreground border-primary/50",
       className
     )}
     {...props}
@@ -28,7 +30,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className=" rounded [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-white/60 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 bg-zinc-900">
+        <Command className=" rounded [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-secondary/60 border border-primary/20 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 bg-secondary">
           {children}
         </Command>
       </DialogContent>
@@ -40,12 +42,12 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-slate-100/30 px-3" cmdk-input-wrapper="">
-    <SearchIcon className="mr-5 shrink-0 opacity-50 text-slate-100" />
+  <div className="flex items-center border-b border-primary/30 px-3" cmdk-input-wrapper="">
+    <SearchIcon className="mr-5 shrink-0 opacity-50 text-primary" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 border-black/50",
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-primary disabled:cursor-not-allowed disabled:opacity-50 border-primary/50",
         className
       )}
       {...props}
@@ -74,7 +76,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="py-6 text-center text-sm text-slate-100"
+    className="py-6 text-center text-sm text-primary"
     {...props}
   />
 ))
@@ -94,7 +96,7 @@ const CommandGroup = React.forwardRef<
       [&_[cmdk-group-heading]]:py-1.5 
       [&_[cmdk-group-heading]]:text-xs 
       [&_[cmdk-group-heading]]:font-medium 
-      [&_[cmdk-group-heading]]:text-black/80
+      [&_[cmdk-group-heading]]:text-secondary/80
     `,
       className
     )}
@@ -110,7 +112,7 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 h-px bg-slate-100/50", className)}
+    className={cn("-mx-1 h-px bg-primary/50", className)}
     {...props}
   />
 ))
@@ -123,7 +125,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
   ref={ref}
   className={cn(
-    "relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-slate-100/20 aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-slate-100/20 cursor-pointer text-slate-100 ",
+    "relative flex select-none items-center rounded px-2 py-1.5 text-sm outline-none aria-selected:bg-primary/20 aria-selected:text-primary data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-primary/20 cursor-pointer text-primary ",
     className
   )}
   {...props}
@@ -141,7 +143,7 @@ const CommandShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground",
+        "ml-auto text-xs tracking-widest text-primary",
         className
       )}
       {...props}

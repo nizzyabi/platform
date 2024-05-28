@@ -66,7 +66,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       type="name"
-                      className="bg-zinc-900 text-slate-100"
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
                       placeholder="tylerdurden@gmail.com"
                       disabled={isPending}
                       type="email"
-                      className="bg-zinc-900 text-slate-100"
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -104,7 +104,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       type="password"
-                      className="bg-zinc-900 text-slate-100"
+                      className="bg-secondary border-primary/20 text-2xl"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -116,11 +116,11 @@ export const RegisterForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="p-[3px] relative font-semibold w-full bg-transparent"
+            className="p-[3px] bg-primary relative font-semibold w-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[7.5px] w-full" />
-            <div className="px-8 py-2 w-full bg-zinc-800 rounded-[5px] relative group transition duration-200 text-white hover:bg-transparent text-lg">
-              Register &rarr;
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
+            <div className="px-8 py-2  w-full bg-secondary rounded-[5px] relative group transition duration-200 text-primary hover:bg-transparent text-lg">
+              Register
             </div>
           </Button>
         </form>
