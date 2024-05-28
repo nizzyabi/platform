@@ -60,7 +60,7 @@ export const DifficultyForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Difficulty
         <Button onClick={toggleEdit}>
@@ -74,15 +74,12 @@ export const DifficultyForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <div className={cn(
-          "text-sm mt-2",
-          !initialData.difficulty && "text-slate-300 italic"
-        )}>
-          {!initialData.difficulty && "No level of difficulty set"}
-          {initialData.difficulty && (
-            <Preview value={initialData.difficulty} />
-          )}
-        </div>
+       <p className={cn(
+        "flex text-primary/70 mt-2 text-sm",
+        !initialData.difficulty && "text-primary/70 italic text-sm"
+      )}>
+        {initialData.difficulty || "No difficulty"}
+      </p>
       )}
       {isEditing && (
         <Form {...form}>
@@ -95,11 +92,12 @@ export const DifficultyForm = ({
             name="difficulty"
             render={({ field }) => (
               <FormItem>
-                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                <FormControl className="rounded">
                   <Textarea
                     disabled={isSubmitting}
                     placeholder="e.g. 'This course is about...'"
                     {...field}
+                    className="bg-secondary border-primary/20"
                   />
                 </FormControl>
                 <FormMessage />

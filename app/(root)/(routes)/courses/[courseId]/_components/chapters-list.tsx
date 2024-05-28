@@ -8,10 +8,10 @@ import {
   Draggable,
   DropResult,
 } from "@hello-pangea/dnd";
-import { Grip, Pencil } from "lucide-react";
+import { ArrowRight, Grip, PencilRuler } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
+
 // interface will have an item, edit, and reorder prop
 interface ChaptersListProps {
   items: Chapter[];
@@ -86,41 +86,41 @@ export const ChaptersList = ({
                 {(provided) => (
                   <div
                     className={cn(
-                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-slate-100 text-[#1e1e1e]",
-                      chapter.isPublished && "bg-slate-100 border-slate-100/30 text-[#191919]"
+                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-primary text-primary",
+                      chapter.isPublished && "bg-primary/30 border-primary/20 text-primary"
                     )}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                   >
                     <div
                       className={cn(
-                        "px-2 py-3 text-[#1e1e1e] border-r border-r-black/40 hover:bg-slate-200 rounded-l-md transition",
-                        chapter.isPublished && "border-r-slate-200"
+                        "px-2 py-3 text-secondary border-r border-r-primary/20 rounded-l transition",
+                        chapter.isPublished && "border-r-primary/20"
                       )}
                       {...provided.dragHandleProps}
                     >
                       <Grip
-                        className="h-5 w-5"
+                        className="h-5 w-5 text-primary"
                       />
                     </div>
                     {chapter.title}
                     <div className="ml-auto pr-2 flex items-center gap-x-2">
                       {chapter.isFree && (
-                        <Badge>
+                        <Badge className="bg-primary text-secondary">
                           Free
                         </Badge>
                       )}
                       <Badge
                         className={cn(
-                          "bg-[#1e1e1e] hover:bg-[#191919] text-slate-100",
+                          "bg-primary text-white",
                           chapter.isPublished && "bg-gradient-to-r from-pink-500 to-purple-500"
                         )}
                       >
                         {chapter.isPublished ? "posted" : "draft"}
                       </Badge>
-                      <AutoFixNormalIcon
+                      <ArrowRight
                         onClick={() => onEdit(chapter.id)}
-                        className="mb-1 cursor-pointer text-[#1e1e1e]"
+                        className="cursor-pointer text-primary/70 h-4 w-4"
                       />
                     </div>
                   </div>

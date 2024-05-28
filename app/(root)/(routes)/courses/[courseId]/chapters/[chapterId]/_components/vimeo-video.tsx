@@ -4,12 +4,10 @@ import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Chapter } from "@prisma/client";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import {
   Form,
   FormControl,
@@ -19,8 +17,6 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { init } from "aos";
-import { Preview } from "@/components/preview";
 import { Input } from "@/components/ui/input";
 
 interface VimeoVideoFormProps {
@@ -65,7 +61,7 @@ export const VimeoVideoForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Vimeo Video Link
         <Button onClick={toggleEdit}>
@@ -79,8 +75,11 @@ export const VimeoVideoForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <p className="text-sm mt-2">
-          {initialData.vimeoVideo}
+        <p className={cn(
+          "flex text-primary/70 mt-2 text-sm",
+          !initialData.vimeoVideo && "text-primary/70 italic text-sm"
+        )}>
+          {initialData.vimeoVideo || "No description"}
         </p>
       )}
       {isEditing && (
@@ -94,11 +93,12 @@ export const VimeoVideoForm = ({
               name="vimeoVideo"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                  <FormControl className="relative rounded">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage />

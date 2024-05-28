@@ -68,7 +68,7 @@ const ChapterIdPage = async ({
                 isPublished={chapter.isPublished}
               />
             </div>
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full pt-8">
               <div className="flex flex-col gap-y-2">
                 <h1 className="text-5xl font-bold">
                   Chapter Creation
@@ -126,22 +126,14 @@ const ChapterIdPage = async ({
           </div>
           <div>
             <div className="flex items-center gap-x-2">
-              
-              <h2 className="text-3xl font-bold">
-                Add a video
-              </h2>
+              <h2 className="text-3xl font-bold">Chapter Code & Video</h2>
             </div>
-            <VimeoVideoForm
+            <ChapterCodeForm
               initialData={chapter}
               courseId={params.courseId}
               chapterId={params.chapterId}
             />
-          </div>
-          <div>
-            <div className="flex items-center gap-x-2">
-              <h2>Chapter Code</h2>
-            </div>
-            <ChapterCodeForm
+            <VimeoVideoForm
               initialData={chapter}
               courseId={params.courseId}
               chapterId={params.chapterId}

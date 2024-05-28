@@ -62,7 +62,7 @@ export const PriceForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Price
         <Button onClick={toggleEdit}>
@@ -77,8 +77,8 @@ export const PriceForm = ({
       </div>
       {!isEditing && (
         <p className={cn(
-          "text-sm mt-2",
-          !initialData.price && "text-slate-200 italic"
+          "text-sm mt-2 text-primary/70",
+          !initialData.price && "italic"
         )}>
           {initialData.price
             ? formatPrice(initialData.price)
@@ -97,13 +97,14 @@ export const PriceForm = ({
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="rounded bg-slate-100 text-[#2c2c2c] placeholder:text-black/50">
+                  <FormControl className="rounded ">
                     <Input
                       type="number"
                       step="0.00"
                       disabled={isSubmitting}
                       placeholder="Set a price for your course"
                       {...field}
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage />

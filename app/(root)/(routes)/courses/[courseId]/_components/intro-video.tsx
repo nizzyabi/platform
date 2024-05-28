@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 interface IntroVideoFormProps {
     initialData: Course;
@@ -59,7 +60,7 @@ export const IntroVideoForm = ({
     }
 
     return (
-        <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+        <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Intro Video Link
         <Button onClick={toggleEdit}>
@@ -73,8 +74,11 @@ export const IntroVideoForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <p className="text-sm mt-2">
-          {initialData.introVideo}
+        <p className={cn(
+          "flex text-primary/70 mt-2 text-sm",
+          !initialData.introVideo && "text-primary/70 italic text-sm"
+        )}>
+          {initialData.introVideo || "No video link"}
         </p>
       )}
       {isEditing && (
@@ -88,11 +92,12 @@ export const IntroVideoForm = ({
               name="introVideo"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                  <FormControl className="relative rounded">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage />

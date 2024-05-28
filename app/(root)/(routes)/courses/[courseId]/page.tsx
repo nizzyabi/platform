@@ -10,17 +10,12 @@ import Link from "next/link";
 import { AlertTriangle, ArrowLeft } from "lucide-react";
 import { Actions } from "./_components/actions";
 import { LearningOutcomeForm } from "./_components/learning-outcome";
-import { LanguageImageForm } from "./_components/language-image";
-
-import { DescriptionForm2 } from "./_components/description-form-2";
+import { BuildingForm } from "./_components/building-form";
 import { IncludedForm } from "./_components/included-form";
 import { DifficultyForm } from "./_components/difficulty";
-import { NotionForm } from "./_components/notion-link";
 import { GithubForm } from "./_components/github-link";
 import { CodeLanguageForm } from "./_components/code-language-form";
 import { IntroVideoForm } from "./_components/intro-video";
-import { getCourses } from "@/actions/get-courses";
-import { getChapter } from "@/actions/get-chapter";
 
 const CoursesIdPage = async ({
   params
@@ -65,9 +60,7 @@ const CoursesIdPage = async ({
     course.included,
     course.difficulty,
     course.description2,
-    course.language,
     course.githubLink,
-    course.notionLink,
     course.courseLanguage,
     course.introVideo,
     course.chapters.some(chapter => chapter.isPublished)
@@ -113,11 +106,11 @@ const CoursesIdPage = async ({
                   Course Setup
                 </h1>
                 {/* Amount Complete */}
-                <span className="text-md text-slate-300 text-center">
+                <span className="text-md text-primary/60 text-center">
                   {completionText} Complete
                 </span>
                 {!course.isPublished && (
-                  <div className="flex space-x-2 text-red-500 items-center justify-center pt-8">
+                  <div className="flex space-x-2 text-red-500 items-center justify-center pt-4">
                     <AlertTriangle />
                     <p>This course is not published</p>
                   </div>
@@ -146,25 +139,13 @@ const CoursesIdPage = async ({
                 initialData={course}
                 courseId={course.id}
               />
-              <LanguageImageForm
-                initialData={course}
-                courseId={course.id}
-              />
-              
-          </div>
-
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-x-2">
-                <h2 className="text-3xl font-bold">
-                  Course Chapters
-                </h2>
-              </div>
               <ChaptersForm
                 initialData={course}
                 courseId={course.id}
               />
-            </div>
+          </div>
+
+          <div className="space-y-6">
             <div>
               <div className="flex items-center gap-x-1">
                 <h2 className="text-3xl font-bold">
@@ -176,63 +157,42 @@ const CoursesIdPage = async ({
                 initialData={course}
                 courseId={course.id}
               />
-            </div>
-            <div>
+            
               <LearningOutcomeForm
                 courseId={course.id}
                 initialData={course}
                 />
-            </div>
             
-            <div>
-              <DescriptionForm2
+              <BuildingForm
                 courseId={course.id}
                 initialData={course}
               />
-            </div>
-            <div>
+            
               <IncludedForm
                 courseId={course.id}
                 initialData={course}
               />
-            </div>
-            <div>
+           
               <DifficultyForm
                 courseId={course.id}
                 initialData={course}
               />
-            </div>
-            <div>
+            
+            
               <IntroVideoForm
                 courseId={course.id}
                 initialData={course}
               />
-            </div>
-            <div>
-              <div className="flex items-center gap-x-2"> 
-                <h2 className="text-3xl font-bold">
-                  Course Resources
-                </h2>
-              </div>
-              <CodeLanguageForm
+            
+            <CodeLanguageForm
                 initialData={course}
                 courseId={course.id}
               />
-
-              <div>
-                <GithubForm
-                  courseId={course.id}
-                  initialData={course}
-                />
-              </div>
-
-              <div>
-                <NotionForm
-                  initialData={course}
-                  courseId={course.id}
-                />
-              </div>
-          </div>
+            <GithubForm
+                courseId={course.id}
+                initialData={course}
+            />
+            </div>
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ChapterTitleFormProps {
   initialData: {
@@ -61,7 +62,7 @@ export const ChapterTitleForm = ({
   }
 
   return (
-    <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
       <div className="font-semibold flex items-center justify-between text-xl">
         Chapter Title
         <Button onClick={toggleEdit}>
@@ -75,8 +76,11 @@ export const ChapterTitleForm = ({
         </Button>
       </div>
       {!isEditing && (
-        <p className="text-sm mt-2">
-          {initialData.title}
+        <p className={cn(
+          "flex text-primary/70 mt-2 text-sm",
+          !initialData.title && "text-primary/70 italic text-sm"
+        )}>
+          {initialData.title || "No title"}
         </p>
       )}
       {isEditing && (
@@ -90,11 +94,12 @@ export const ChapterTitleForm = ({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+                  <FormControl className="relative rounded">
                     <Input
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="bg-secondary border-primary/20"
                     />
                   </FormControl>
                   <FormMessage />

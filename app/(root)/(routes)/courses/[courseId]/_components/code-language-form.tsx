@@ -65,7 +65,7 @@ export const CodeLanguageForm = ({
   }
 
   return (
-  <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+  <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
   <div className="font-semibold flex items-center justify-between text-xl">
     Code Language
     <Button onClick={toggleEdit} >
@@ -80,7 +80,7 @@ export const CodeLanguageForm = ({
   </div>
   {!isEditing && (
     <div className="flex justify-between">
-    <p className="text-sm mt-2">
+    <p className="text-primary/70 mt-2 text-sm">
       {initialData.courseLanguage}
     </p>
     </div>
@@ -96,11 +96,12 @@ export const CodeLanguageForm = ({
           name="courseLanguage"
           render={({ field }) => (
             <FormItem>
-              <FormControl className="relative rounded bg-slate-100 text-[#2e2e2e]">
+              <FormControl className="relative rounded">
                 <Input
                   disabled={isSubmitting}
                   placeholder="e.g. 'Advanced web development'"
                   {...field}
+                  className="bg-secondary border-primary/20"
                 />
               </FormControl>
               <FormMessage />

@@ -62,7 +62,7 @@ export const ChapterCodeForm = ({
       }
     
     return (
-        <div className="mt-6 border border-slate-100/20 shadow-md bg-[#131212] bg-opacity-95 rounded-xl p-4">
+        <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
             <div className="font-semibold flex items-center justify-between text-xl">
                 Chapter Code
                 <Button onClick={toggleEdit}>
@@ -78,8 +78,8 @@ export const ChapterCodeForm = ({
             {!isEditing && (
                 <div className="flex justify-between">
                     <p className={cn(
-                        "text-sm mt-2",
-                        !initialData.code && "text-slate-300 italic"
+                        "flex text-primary/70 mt-2 text-sm",
+                        !initialData.code && "text-primary/70 italic text-sm"
                         )}>
                         {initialData.code || "No code"}
                     </p>
@@ -96,11 +96,12 @@ export const ChapterCodeForm = ({
                         name="code"
                         render={({ field }) => (
                             <FormItem>
-                                <FormControl className="rounded bg-slate-100 text-[#2c2c2c]">
+                                <FormControl className="rounded ">
                                     <Textarea
                                     disabled={isSubmitting}
                                     placeholder="e.g. 'console.log('Hello World')"
                                     {...field}
+                                    className="bg-secondary border-primary/20"
                                     />
                                 </FormControl>
                                 <FormMessage />
