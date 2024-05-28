@@ -72,7 +72,7 @@ const DataPage = async () => {
         icon: User
       },
       {
-        label: "Sales",
+        label: "Customers",
         amount: `+${salesCount}`,
         icon: CreditCard
       },
@@ -106,7 +106,7 @@ const DataPage = async () => {
     <div className="flex flex-col gap-5 w-full pt-40">
       <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
       <div className="flex items-center justify-center">
-          <Separator className=" bg-slate-100/20 h-0.5 w-40" />
+          <Separator className=" bg-primary/20 h-0.5 w-40" />
       </div>
       { session?.user.email === "nizabizaher@gmail.com" && (
       <div className="container mx-auto py-10"> 
@@ -121,16 +121,16 @@ const DataPage = async () => {
               />
             ))}
           </section>
-          <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-slate-100">
+          <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-primary">
             <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+              <section className="flex justify-between gap-2 text-primary pb-2">
                 <p>Sales Data</p>
                 <CandlestickChart className="h-4 w-4" />
               </section>
               <BarChart />
             </DashboardCardContent>
             <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+              <section className="flex justify-between gap-2 text-primary pb-2">
                 <p>Recent Sales</p>
                 <BadgeDollarSign className="h-4 w-4" />
                   
@@ -146,7 +146,7 @@ const DataPage = async () => {
               ))}
             </DashboardCardContent>
             <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-slate-100 pb-2">
+              <section className="flex justify-between gap-2 text-primary pb-2">
                 <p>Recent Users</p>
                 <UserRoundCheck className="h-4 w-4" />
               </section>

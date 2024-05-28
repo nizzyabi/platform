@@ -47,7 +47,6 @@ export default function Navbar() {
               >
                 Courses
               </Link>
-              
             </div>
             <div className="flex items-center gap-1 md:gap-4">
               <Search />

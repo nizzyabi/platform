@@ -1,15 +1,10 @@
 "use client";
-
-import { db } from "@/lib/db";
 import { cn } from "@/lib/utils";
-
 interface AvatarCirclesProps {
   className?: string;
-  numPeople?: number;
 }
 
 export default function AvatarCircles({
-  numPeople,
   className,
 }: AvatarCirclesProps) {
   return (
