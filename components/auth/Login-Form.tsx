@@ -19,8 +19,7 @@ import { login } from '@/actions/login'
 import { useEffect, useRef, useTransition } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import toast from "react-hot-toast"
-
+import toast from 'react-hot-toast'
 
 export const LoginForm = () => {
   const searchParams = useSearchParams()
@@ -28,7 +27,7 @@ export const LoginForm = () => {
     searchParams.get('error') === 'OAuthAccountNotLinked'
       ? 'Email already in use with different provider!'
       : ''
-      
+
   const [isPending, startTransition] = useTransition()
   const hasDisplayedError = useRef(false)
   useEffect(() => {
@@ -47,16 +46,15 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-        
     startTransition(() => {
       login(values).then((data) => {
         if (data?.error) {
-            toast.error(data.error)
+          toast.error(data.error)
         }
         if (data?.success) {
-            toast.success(data.success)
-            form.reset({ email: '', password: ''})
-            window.location.href = '/'
+          toast.success(data.success)
+          form.reset({ email: '', password: '' })
+          window.location.href = '/'
         }
       })
     })
@@ -70,7 +68,10 @@ export const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1 w-full">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-1 w-full"
+        >
           <div className="space-y-2">
             <FormField
               control={form.control}
@@ -115,19 +116,18 @@ export const LoginForm = () => {
                   >
                     <Link href="/auth/reset">Forgot Password?</Link>
                   </Button>
-                  
                 </FormItem>
               )}
             />
           </div>
-          
+
           <Button
             disabled={isPending}
             type="submit"
-            className="p-[3px] bg-primary relative font-semibold w-full"
+            className="p-[3px] bg-transparent relative font-semibold w-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px] w-full" />
-            <div className="px-8 py-2  w-full bg-secondary rounded-[5px] relative group transition duration-200 text-primary hover:bg-transparent text-lg">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[7.5px] w-full" />
+            <div className="px-8 py-2  w-full bg-secondary rounded-[5px] relative group transition duration-200 text-primary hover:text-white hover:bg-transparent text-lg">
               Login
             </div>
           </Button>
