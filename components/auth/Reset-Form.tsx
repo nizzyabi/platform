@@ -22,9 +22,6 @@ import toast from "react-hot-toast";
 export const ResetForm = () => {
     
     const [isPending, startTransition] = useTransition();
-    const [error, setError] = useState<string | undefined>("");
-    const [success, setSuccess] = useState<string | undefined>("");
-
     const form = useForm<z.infer<typeof ResetSchema>>({
         resolver: zodResolver(ResetSchema),
         defaultValues: {
@@ -33,8 +30,6 @@ export const ResetForm = () => {
     })
     
     const onSubmit = (values: z.infer<typeof ResetSchema>) => {
-        setError("");
-        setSuccess("");
         startTransition(() => {
            reset(values)
               .then((data) => {
@@ -83,8 +78,6 @@ export const ResetForm = () => {
                             )}
                         />
                     </div>
-                    <FormError message={error} />
-                    <FormSuccess message={success} />
                     <Button
                         disabled={isPending}
                         type="submit"
