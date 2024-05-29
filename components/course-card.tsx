@@ -29,7 +29,7 @@ export const CourseCard =  ({
     return (
         <Link href={`/courses/${id}/info`}>
         
-            <div className="hover:opacity-75 transition duration-300 overflow-hidden bg-secondary rounded-xl border border-primary/20">
+            <div className="transition duration-300 overflow-hidden bg-secondary rounded-xl border border-primary/20">
                 <div className="relative w-full aspect-video rounded-t overflow-hidden">
                     <Image
                         fill
