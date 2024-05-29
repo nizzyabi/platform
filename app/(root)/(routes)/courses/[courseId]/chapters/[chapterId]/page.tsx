@@ -96,7 +96,7 @@ const ChapterIdPage = async ({
               <div className="flex items-center gap-x-2">
                 
                 <h2 className="text-3xl font-bold">
-                  Customize chapter
+                  Customize Chapter
                 </h2>
               </div>
               <ChapterTitleForm
