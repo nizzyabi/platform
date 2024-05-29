@@ -1,92 +1,93 @@
-/** @format */
 "use client";
-import React from "react";
+import { useTheme } from "next-themes";
 import {
-  BarChart as BarGraph,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Bar
-} from "recharts";
+    BarChart as BarGraph,
+    ResponsiveContainer,
+    XAxis,
+    YAxis,
+    Bar
+  } from "recharts";
+import { light_theme } from "@/lib/theme-constant";
+import { CandlestickChart } from "lucide-react";
 
-type Props = {};
+// TODO: Make it functional 
+const cashData = [
+    {
+        month: "Jan",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Feb",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Mar",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Apr",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "May",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Jun",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Jul",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Aug",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Sep",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Oct",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Nov",
+        total: Math.floor(Math.random() * 100)
+    },
+    {
+        month: "Dec",
+        total: Math.floor(Math.random() * 100)
+    }
+]
 
-const data = [
-  {
-    name: "Jan",
-    total: Math.floor(Math.random() * 300) 
-  },
-  {
-    name: "Feb",
-    total: Math.floor(Math.random() * 300)
-  },
-  {
-    name: "Mar",
-    total: Math.floor(Math.random() * 300) 
-  },
-  {
-    name: "Apr",
-    total: Math.floor(Math.random() * 100)
-  },
-  {
-    name: "May",
-    total: Math.floor(Math.random() * 100)
-  },
-  {
-    name: "Jun",
-    total: Math.floor(Math.random() * 100)
-  },
-  {
-    name: "Jul",
-    total: Math.floor(Math.random() * 100) 
-  },
-  {
-    name: "Aug",
-    total: Math.floor(Math.random() * 100) 
-  },
-  {
-    name: "Sep",
-    total: Math.floor(Math.random() * 100) 
-  },
-  {
-    name: "Oct",
-    total: Math.floor(Math.random() * 100) 
-  },
-  {
-    name: "Nov",
-    total: Math.floor(Math.random() * 100) 
-  },
-  {
-    name: "Dec",
-    total: Math.floor(Math.random() * 100)
-  }
-];
+export default function BarChart() {
 
-export default function BarChart({}: Props) {
-  return (
-    <ResponsiveContainer width={"100%"} height={350}>
-      <BarGraph data={data} margin={{ top: 0, left: -15, right: 0, bottom: 0 }}>
-        <XAxis
-          dataKey={"name"}
-          tickLine={false}
-          axisLine={true}
-          stroke="#F1F5F9"
-          fontSize={13}
-          padding={{ left: 0, right: 0 }}
-          
-          
-        />
-        <YAxis
-          tickLine={false}
-          axisLine={true}
-          stroke="#F1F5F9"
-          fontSize={13}
-          tickFormatter={(value) => `$${value}`}
-          padding={{ top: 0, bottom: 0 }}
-          
-        />
-        <Bar dataKey={"total"} radius={[4, 4, 0, 0]} stroke='#F1F5F9' fill="#F1F5F9" />
-      </BarGraph>
-    </ResponsiveContainer>
-  );
-}
+    const { theme }  = useTheme()
+    
+    return (
+            <ResponsiveContainer width={"100%"} height={350}>
+                <BarGraph data={cashData} margin={{ top: 0, left: -15, right: 0, bottom: 0 }}>
+                    <XAxis
+                        dataKey={"month"}
+                        tickLine={false}
+                        axisLine={true}
+                        stroke={`${theme === light_theme ? "#000000" : "#f3f3f3"}`}
+                        fontSize={13}
+                        padding={{ left: 0, right: 0 }}
+                    />
+                    <YAxis
+                        dataKey={"total"}
+                        tickLine={false}
+                        axisLine={true}
+                        stroke={`${theme === light_theme ? "#000000" : "#f3f3f3"}`}
+                        fontSize={13}
+                        tickFormatter={(value) => `$${value}`}
+                        padding={{ top: 0, bottom: 0 }}
+                    />
+                <Bar dataKey={"total"} radius={[5, 5, 0, 0]} stroke={`${theme === light_theme ? "#000000" : "#f3f3f3"}`} fill={`${theme === light_theme ? "#000000" : "#f3f3f3"}`} />
+            </BarGraph>
+        </ResponsiveContainer>
+    )
+    }

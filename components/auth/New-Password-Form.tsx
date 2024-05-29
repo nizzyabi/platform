@@ -26,19 +26,13 @@ export const NewPasswordForm = () => {
     const token = searchParams.get("token");
     
     const [isPending, startTransition] = useTransition();
-    const [error, setError] = useState<string | undefined>("");
-    const [success, setSuccess] = useState<string | undefined>("");
-
     const form = useForm<z.infer<typeof NewPasswordSchema>>({
         resolver: zodResolver(NewPasswordSchema),
         defaultValues: {
             password: "",
         }
     })
-
     const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => {
-        setError("");
-        setSuccess("");
         startTransition(() => {
             newPassword(values, token)
               .then((data) => {
@@ -86,8 +80,6 @@ export const NewPasswordForm = () => {
                             )}
                         />
                     </div>
-                    <FormError message={error} />
-                    <FormSuccess message={success} />
                     <Button
                         disabled={isPending}
                         type="submit"

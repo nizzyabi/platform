@@ -13,7 +13,6 @@ import {
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="!h-[40px] !w-[40px] !p-2.5">
