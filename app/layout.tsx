@@ -38,13 +38,12 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            
+            <CustomBackground />
             <Navbar />
             <Scroll />
             <ToastProvider />
             <ConfettiProvder />
             {children}
-            
             <Analytics />
           </ThemeProvider>
         </body>
