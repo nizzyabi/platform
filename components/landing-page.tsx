@@ -30,7 +30,7 @@ export default function LandingPage() {
       >
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link
-            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center border border-primary/30 rounded-full  text-primary hover:text-primary/50 transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-primary/30 before:rounded-full before:pointer-events-none"
+            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center border border-primary/30 rounded-full text-white  transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-primary/30 before:rounded-full before:pointer-events-none"
             href="https://github.com/NizarAbiZaher/platform"
             target="_blank"
           >
