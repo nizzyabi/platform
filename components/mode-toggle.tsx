@@ -16,7 +16,7 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="!h-[44px] !w-[44px] !p-2.5">
+      <DropdownMenuTrigger asChild className="!h-[40px] !w-[40px] !p-2.5">
         <Button variant="outline">
           <Sun className="h-10 w-10 flex dark:hidden" />
           <Moon className="h-10 w-10 hidden dark:flex" />

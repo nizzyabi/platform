@@ -21,7 +21,7 @@ export default function Navbar() {
   }, [])
 
   const navbarChange = hasScrolled
-    ? 'backdrop-blur border-b border-slate-100/20 bg-secondary/90'
+    ? 'backdrop-blur border-b border-primary/20 bg-secondary/90'
     : 'bg-transparent border-b border-transparent'
 
   return (
@@ -31,9 +31,9 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <Link href="/" className="flex items-center">
-            <h1 className='group text-lg md:text-2xl font-bold'>
+            <h1 className="group text-lg md:text-2xl font-bold">
               <span>nizzy</span>
-              <span className='transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500'>
+              <span className="transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
                 abi
               </span>
             </h1>
@@ -47,7 +47,6 @@ export default function Navbar() {
               >
                 Courses
               </Link>
-              
             </div>
             <div className="flex items-center gap-1 md:gap-4">
               <Search />

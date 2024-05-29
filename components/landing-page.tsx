@@ -11,7 +11,6 @@ import Footer from './Footer'
 import PrimaryButton from './ui/get-started-button'
 import AvatarCircles from './ui/user-avatar-card'
 
-
 export default function LandingPage() {
   useEffect(() => {
     AOS.init({
@@ -21,7 +20,6 @@ export default function LandingPage() {
     })
   }, [])
 
-
   return (
     <>
       <main
@@ -30,7 +28,7 @@ export default function LandingPage() {
       >
         <section className="flex flex-col gap-12 justify-center items-center">
           <Link
-            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center border border-primary/30 rounded-full  text-primary hover:text-primary/50 transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-primary/30 before:rounded-full before:pointer-events-none"
+            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center rounded-full text-primary hover:text-primary/75 transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-primary/30 before:rounded-full before:pointer-events-none"
             href="https://github.com/NizarAbiZaher/platform"
             target="_blank"
           >
@@ -53,10 +51,7 @@ export default function LandingPage() {
               && have fun doing it
             </span>
           </div>
-          <PrimaryButton
-            href='/courses'
-            className="bg-primary"
-          />
+          <PrimaryButton href="/courses" className="bg-primary" />
           <Bento className="text-center select-none" />
         </section>
 
@@ -70,10 +65,7 @@ export default function LandingPage() {
           </h1>
 
           <LanguageBackground />
-          <PrimaryButton
-            href='/courses'
-            className="bg-primary"
-          >
+          <PrimaryButton href="/courses" className="bg-primary">
             See Courses
           </PrimaryButton>
         </section>
