@@ -15,7 +15,7 @@ export function ModeToggle() {
   const { setTheme } = useTheme()
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="!h-[40px] !w-[40px] !p-2.5">
+      <DropdownMenuTrigger asChild className="w-10 h-10 p-2.5">
         <Button variant="outline">
           <Sun className="h-10 w-10 flex dark:hidden" />
           <Moon className="h-10 w-10 hidden dark:flex" />

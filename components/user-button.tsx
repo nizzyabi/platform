@@ -43,7 +43,7 @@ const UserButton = () => {
         <>
           <Link
             href="/auth/register"
-            className="flex md:hidden items-center justify-center  rounded-lg cursor-pointer transition duration-300 hover:bg-primary/5 px-2 py-2"
+            className="flex md:hidden items-center justify-center rounded-lg cursor-pointer transition duration-300 hover:bg-primary/5 px-2 py-2 max-h-10"
           >
             <LogOut className="text-primary h-5.5 w-5 ml-1" />
           </Link>
@@ -51,9 +51,9 @@ const UserButton = () => {
           <Link
             href="/auth/register"
             type="submit"
-            className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full hidden md:flex"
+            className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full hidden md:flex max-h-10"
           >
-            <div className="flex items-center px-5 lg:px-7 h-full bg-secondary rounded-md transition duration-300 text-primary hover:bg-transparent hover:text-white text-base lg:text-lg py-1.5">
+            <div className="flex items-center px-5 lg:px-7 h-full bg-secondary rounded-md transition duration-300 text-primary hover:bg-transparent hover:text-white text-base lg:text-lg py-1 max-h-10">
               Sign Up
             </div>
           </Link>
