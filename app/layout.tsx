@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
@@ -9,9 +9,10 @@ import Scroll from '@/components/Scroll'
 import { GeistSans } from 'geist/font/sans'
 import Navbar from '@/components/nav'
 const geist = GeistSans
-import { ThemeProvider } from "@/components/ui/theme-provider"
+import { ThemeProvider } from '@/components/ui/theme-provider'
+import CustomBackground from '@/components/custom-background'
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nizzyabi.com"),
+  metadataBase: new URL('https://nizzyabi.com'),
   title: {
     default: 'Nizzyabi',
     template: `%s | Nizzyabi`
@@ -31,18 +32,19 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={geist.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <Scroll />
-          <ToastProvider />
-          <ConfettiProvder />
-          {children}
-          <Analytics />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <CustomBackground />
+            <Navbar />
+            <Scroll />
+            <ToastProvider />
+            <ConfettiProvder />
+            {children}
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>

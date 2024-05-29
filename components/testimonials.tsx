@@ -83,7 +83,7 @@ const testimonials = [
 
 export function TestimonialCard() {
   return (
-    <div className="w-fit mx-auto">
+    <div className="w-fit mx-auto max-w-4xl">
       <ResponsiveMasonry
         className="flex w-full mx-auto justify-start"
         columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
