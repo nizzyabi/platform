@@ -1,3 +1,6 @@
+import ResetPassword from "@/emails/reset-password";
+import LinkEmail from "@/emails/verify-email";
+import { render } from "@react-email/components";
 import { Resend } from "resend";
 
 const resend  = new Resend(process.env.RESEND_API_KEY);
@@ -13,7 +16,7 @@ export const sendVerificationEmail = async (
         from: "Nizar <noreply@nizzyabi.com>",
         to: email,
         subject: "Confirm your email",
-        html: `<p>Click <a href="${confirmLink}">here</a> to confirm email.</p>`
+        html: render(LinkEmail({ token }))
     })
 
     resend.contacts.create({
@@ -34,7 +37,7 @@ export const sendPasswordResetEmail = async (
         from: "Nizar <noreply@nizzyabi.com>",
         to: email,
         subject: "Reset your password",
-        html: `<p>Click <a href="${resetLink}">here</a> to reset your password.</p>`
+        html: render(ResetPassword({ token }))
     })
 
 }
