@@ -77,4 +77,3 @@ This project is licensed under the GNU General Public License Version 3 - see th
 ## Acknowledgments
 
   - [dpaulos6](https://github.com/dpaulos6) - *Styling and project cleanup, README writer*
-  - [mezotv](https://github.com/mezotv) - *Repository setup, Folder structure cleanup*
