@@ -51,9 +51,9 @@ const UserButton = () => {
           <Link
             href="/auth/register"
             type="submit"
-            className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-full hidden md:flex max-h-10"
+            className="p-[2px] font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 h-[40px] hidden md:flex max-h-[40px]"
           >
-            <div className="flex items-center px-5 lg:px-7 h-full bg-secondary rounded-md transition duration-300 text-primary hover:bg-transparent hover:text-white text-base lg:text-lg py-1 max-h-10">
+            <div className="flex items-center px-5 lg:px-7 h-full bg-secondary rounded-md transition duration-300 text-primary hover:bg-transparent hover:text-white text-base lg:text-lg">
               Sign Up
             </div>
           </Link>

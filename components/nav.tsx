@@ -26,34 +26,30 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 ${navbarChange} transition select-none px-4 sm:px-6 lg:px-8 py-4`}
+      className={`fixed flex items-center justify-between max-w-[1600px] top-0 w-full mx-auto z-50 ${navbarChange} transition select-none px-4 sm:px-6 lg:px-8 py-4`}
     >
-      <div className="max-w-[1600px] mx-auto">
-        <div className="flex flex-wrap justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <h1 className="group text-lg md:text-2xl font-bold">
-              <span>nizzy</span>
-              <span className="transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
-                abi
-              </span>
-            </h1>
-          </Link>
+      <Link href="/" className="flex items-center">
+        <h1 className="group text-lg md:text-2xl font-bold">
+          <span>nizzy</span>
+          <span className="transition-all duration-300 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
+            abi
+          </span>
+        </h1>
+      </Link>
 
-          <div className="flex flex-wrap items-center">
-            <div className="flex items-center font-medium text-[17px]">
-              <Link
-                href="/courses"
-                className="flex items-center hover:bg-primary/5 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2"
-              >
-                Courses
-              </Link>
-            </div>
-            <div className="flex items-center gap-1 md:gap-4">
-              <Search />
-              <ModeToggle />
-              <UserButton />
-            </div>
-          </div>
+      <div className="flex flex-wrap items-center max-h-[40px] h-full">
+        <div className="flex items-center font-medium text-[17px] h-full">
+          <Link
+            href="/courses"
+            className="flex items-center hover:bg-primary/5 transition duration-300 px-2 sm:px-4 rounded-lg py-2"
+          >
+            Courses
+          </Link>
+        </div>
+        <div className="flex items-center gap-1 md:gap-4 h-full">
+          <Search />
+          <ModeToggle />
+          <UserButton />
         </div>
       </div>
     </nav>
