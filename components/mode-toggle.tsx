@@ -16,7 +16,7 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="h-[40px] w-[40px]">
-        <button className="flex items-center justify-center hover:bg-primary/5 text-primary rounded-lg transition">
+        <button className="flex items-center justify-center hover:bg-primary/5 text-primary rounded-lg transition duration-300">
           <Sun className="h-7 w-7 flex dark:hidden" />
           <Moon className="h-7 w-7 hidden dark:flex" />
           <span className="sr-only">Toggle theme</span>
