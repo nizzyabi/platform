@@ -1,36 +1,46 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Moon, Sun, Computer } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
+import * as React from 'react'
+import { Moon, Sun, Computer } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <DropdownMenuTrigger asChild className="w-10 h-10 p-2.5">
+        <Button variant="outline">
+          <Sun className="h-10 w-10 flex dark:hidden" />
+          <Moon className="h-10 w-10 hidden dark:flex" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="border-primary/20">
-        <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer">
-          <Sun className="h-[1rem] w-[1rem] mr-1.5 "/> Light
+        <DropdownMenuItem
+          onClick={() => setTheme('light')}
+          className="cursor-pointer"
+        >
+          <Sun className="h-[1rem] w-[1rem] mr-1.5 " /> Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer">
-          <Moon className="h-[1rem] w-[1rem] mr-1.5"/>Dark
+        <DropdownMenuItem
+          onClick={() => setTheme('dark')}
+          className="cursor-pointer"
+        >
+          <Moon className="h-[1rem] w-[1rem] mr-1.5" />
+          Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer">
-          <Computer className="h-[1rem] w-[1rem] mr-1.5"/> System
+        <DropdownMenuItem
+          onClick={() => setTheme('system')}
+          className="cursor-pointer"
+        >
+          <Computer className="h-[1rem] w-[1rem] mr-1.5" /> System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

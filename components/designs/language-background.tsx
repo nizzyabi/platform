@@ -10,9 +10,9 @@ const imagesRow1: ImageInfo[] = [
   { src: '/next.png', alt: 'Nextjs' },
   { src: '/JS.png', alt: 'JavaScript' },
   { src: '/prisma.png', alt: 'Prisma' },
-  { src: '/C.png', alt: 'Nextjs' },
-  { src: '/react.png', alt: 'JavaScript' },
-  { src: '/TS.png', alt: 'React' }
+  { src: '/C.png', alt: 'C' },
+  { src: '/react.png', alt: 'React' },
+  { src: '/TS.png', alt: 'TypeScript' }
 ]
 
 const renderImages = (images: ImageInfo[]) => (
@@ -27,7 +27,9 @@ const renderImages = (images: ImageInfo[]) => (
           alt={alt}
           height={9999}
           width={9999}
-          className="absolute w-3/5 object-contain rounded-xl"
+          className={`absolute w-3/5 object-contain rounded-xl ${
+            alt === 'Nextjs' ? 'brightness-0 dark:brightness-100' : ''
+          }`}
         />
       </div>
     ))}
