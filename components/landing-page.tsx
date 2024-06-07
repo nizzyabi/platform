@@ -66,19 +66,19 @@ export default async function LandingPage() {
 
       <div className='space-y-8'>
         <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually <span className='bg-primary px-4 text-base100'>Help</span></h1>
-        <p className='text-lg font-semibold text-baseContentSecondary text-center '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
+        <p className='text-lg font-semibold text-baseContentSecondary text-center pb-7 '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
      
       
-      <div className='flex items-center justify-center gap-4 whitespace-pre-wrap'>
+      <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 items-center'>
       {cardData.map((card, index) => (
-        <div key={index} className="card w-96 bg-baseContent shadow-xl">
+        <div key={index} className="card w-96 md:w-full bg-base100 text-baseContent shadow-xl mx-8">
           <figure><img src={card.imgSrc} alt="Shoes" /></figure>
           <div className="card-body">
             <h2 className="card-title">
               {card.title}
               <div className="badge badge-secondary bg-primary text-base100 border-primary">{card.badge}</div>
             </h2>
-            <p>{card.description}</p>
+            <p className='text-baseSecondary'>{card.description}</p>
             <div className="card-actions justify-end">
               {card.tags.map((tag, tagIndex) => (
                 <div key={tagIndex} className="badge badge-outline">{tag}</div>
