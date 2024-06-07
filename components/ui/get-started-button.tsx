@@ -20,13 +20,10 @@ const PrimaryButton = ({
   return (
     <Link
       href={href}
-      className={`w-50 justify-center flex gap-1 items-center whitespace-nowrap transition duration-150 ease-in-out font-medium text-secondary text-lg rounded-md px-5 py-1.5 group select-none ${className}`}
+      className={`btn border-none w-fit justify-center flex gap-1 items-center whitespace-nowrap transition duration-150 ease-in-out font-medium text-lg rounded-lg px-12 py-2.5 group select-none bg-primary text-base100 hover:bg-[#088f64] ${className}`}
       target={target}
     >
       {children ? children : 'Get Started'}
-      {withArrow ? (
-        <ArrowRight className="w-full h-3.5 aspect-square text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out" />
-      ) : null}
     </Link>
   )
 }

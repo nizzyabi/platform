@@ -1,96 +1,103 @@
-'use client'
 // Imports
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-import Link from 'next/link'
-import { LanguageBackground } from './designs/language-background'
-import { Bento } from './bento'
-import { TestimonialCard } from './testimonials'
-import Footer from './Footer'
+import { db } from '@/lib/db'
 import PrimaryButton from './ui/get-started-button'
 import AvatarCircles from './ui/user-avatar-card'
+import { TestimonialCard } from './testimonials'
+import Faq from './faq'
 
-export default function LandingPage() {
-  useEffect(() => {
-    AOS.init({
-      disable: 'phone',
-      duration: 800,
-      easing: 'ease-out-cubic'
-    })
-  }, [])
-
+export default async function LandingPage() {
+  const users = await db.user.count()
+  const cardData = [
+    {
+      imgSrc: "/dashboard.png",
+      title: "Full Stack Analytics Dashboard",
+      badge: "NEW",
+      description: "Build a functional dashboard to track your apps user information, payments, and more!",
+      tags: ["NextJS", "Typescript"],
+    },
+    {
+      imgSrc: "/dashboard.png",
+      title: "Stripe Payment Integration",
+      badge: "NEW",
+      description: "Recieve payments from your users by building & connecting to stripe to your software.",
+      tags: ["NextJS", "Typescript", "Stripe"],
+    },
+    {
+      imgSrc: "/dashboard.png",
+      title: "Functional Backend & Database",
+      badge: "NEW",
+      description: "Learn the basics of backend developement by connecting to & storing user data in a database!",
+      tags: ["Prisma", "Postgres", "NeonDB"],
+    },
+  ];
+  
   return (
-    <>
-      <main
-        data-aos="fade-up"
-        className="extra landing py-20 mt-10 sm:mt-20 flex flex-col gap-52 px-6"
+    <div className='pt-20 space-y-40'>
+      
+      <div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
-        <section className="flex flex-col gap-12 justify-center items-center">
-          <Link
-            className="flex w-fit mx-auto px-3 py-1 text-sm font-medium items-center justify-center rounded-full text-primary hover:text-primary/75 transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-primary/30 before:rounded-full before:pointer-events-none"
-            href="https://github.com/NizarAbiZaher/platform"
-            target="_blank"
-          >
-            <span className="relative inline-flex items-center gap-2">
-              Github repository{' '}
-              <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out">
-                -&gt;
-              </span>
-            </span>
-          </Link>
-          <div className="flex flex-col gap-2 w-fit">
-            <span className="flex flex-col text-5xl md:text-6xl lg:text-7xl font-bold header-landing text-center">
-              Learn to
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500">
+        <div className="flex flex-col justify-center text-center lg:text-left ">
+          <div className="flex flex-col justify-center text-center lg:text-left">
+            <span className=" flex flex-col text-5xl md:text-5xl lg:text-6xl font-bold header-landing text-baseContent">
+              Learn To Code
+              <span className=''>
                 {' '}
-                Code
+                && <span className='underline decoration-wavy decoration-primary underline-offset-8'>Have Fun</span> Doing It
               </span>
             </span>
-            <span className="pt-3 font-medium text-base xxs:text-xl text-primary/40 text-center">
-              && have fun doing it
+            <span className="pt-3 font-medium text-xl text-baseContentSecondary ">
+              Build beautiful apps & websites with easy to follow tutorials
             </span>
+            <div className='flex items-center justify-center lg:justify-start'>
+              <PrimaryButton href="/courses" className='mt-3'/>
+            </div>
+            <div className='pt-4'>
+              <AvatarCircles className='flex items-center justify-center lg:flex lg:justify-start '/>
+              <p className='font-semibold text-baseContent mt-2 lg:ml-2'>Join <span className='font-extrabold'>{users}</span> improved developers!</p>
+            </div>
           </div>
-          <PrimaryButton href="/courses" className="bg-primary" />
-          <Bento className="text-center select-none" />
-        </section>
-
-        <section className="flex flex-col items-center gap-8 text-center">
-          <h1 className="sm:text-7xl text-3xl xxs:text-4xl xs:text-5xl text-primary text-center pt-3 font-semibold header-landing">
-            Learn Modern Day
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 block ">
-              {' '}
-              Technologies
-            </span>
-          </h1>
-
-          <LanguageBackground />
-          <PrimaryButton href="/courses" className="bg-primary">
-            See Courses
-          </PrimaryButton>
-        </section>
-
-        <section>
-          <div className="flex flex-col items-center gap-8 text-center">
-            <span className="flex flex-col w-fit sm:text-7xl text-4xl xs:text-5xl text-primary text-center pt-3 font-bold header-landing">
-              Hear It From{' '}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
-                Others
-              </span>
-            </span>
-            <AvatarCircles />
-            <TestimonialCard />
-            <PrimaryButton
-              href="https://discord.gg/nizar"
-              className="bg-primary"
-              target="_blank"
-            >
-              Join Us
-            </PrimaryButton>
+          {/*<Bento className="text-center select-none" />*/}
           </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+          <div className="flex items-center justify-center md:h-full">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PHI7F9AQhBI?si=ueaPGvDQM6GDL-ne" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </div>
+      </div>
+
+      <div className='space-y-8'>
+        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually <span className='bg-primary px-4 text-base100'>Help</span></h1>
+        <p className='text-lg font-semibold text-baseContentSecondary text-center '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
+     
+      
+      <div className='flex items-center justify-center gap-4 whitespace-pre-wrap'>
+      {cardData.map((card, index) => (
+        <div key={index} className="card w-96 bg-baseContent shadow-xl">
+          <figure><img src={card.imgSrc} alt="Shoes" /></figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              {card.title}
+              <div className="badge badge-secondary bg-primary text-base100 border-primary">{card.badge}</div>
+            </h2>
+            <p>{card.description}</p>
+            <div className="card-actions justify-end">
+              {card.tags.map((tag, tagIndex) => (
+                <div key={tagIndex} className="badge badge-outline">{tag}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      </div>
+
+      </div>
+
+      <div className='text-center space-y-8'>
+        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold'>Hear it from over {users} developers</h1>
+        <p className='text-lg font-semibold text-baseContentSecondary'>They used the courses to build apps & improve at coding</p>
+        <TestimonialCard />
+      </div>
+
+      <Faq />
+    </div>
   )
 }

@@ -6,11 +6,16 @@ import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
 import Scroll from '@/components/Scroll'
-import { GeistSans } from 'geist/font/sans'
+import { Poppins } from 'next/font/google'
 import Navbar from '@/components/nav'
-const geist = GeistSans
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin-ext"],
+})
 import { ThemeProvider } from '@/components/ui/theme-provider'
-import CustomBackground from '@/components/custom-background'
+
+
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nizzyabi.com'),
   title: {
@@ -30,22 +35,14 @@ export default async function RootLayout({
   const session = await auth()
   return (
     <SessionProvider session={session}>
-      <html lang="en">
-        <body className={geist.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <CustomBackground />
+      <html lang="en" className='bg-base200'>
+        <body className={poppins.className}> 
             <Navbar />
             <Scroll />
             <ToastProvider />
             <ConfettiProvder />
             {children}
             <Analytics />
-          </ThemeProvider>
         </body>
       </html>
     </SessionProvider>

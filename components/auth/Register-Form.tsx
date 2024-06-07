@@ -66,7 +66,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       type="name"
-                      className="bg-secondary border-primary/20"
+                      className="bg-secondary border-baseContent/20"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
                       placeholder="tylerdurden@gmail.com"
                       disabled={isPending}
                       type="email"
-                      className="bg-secondary border-primary/20"
+                      className="bg-secondary border-baseContent/20"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -104,7 +104,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       type="password"
-                      className="bg-secondary border-primary/20 text-2xl"
+                      className="bg-secondary border-baseContent/20"
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -118,8 +118,7 @@ export const RegisterForm = () => {
             type="submit"
             className="p-[3px] bg-transparent relative font-semibold w-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[7.5px] w-full" />
-            <div className="px-8 py-2  w-full bg-secondary rounded-[5px] relative group transition duration-200 text-primary hover:text-white hover:bg-transparent text-lg">
+            <div className="px-8 py-2  w-full bg-secondary rounded-[5px] relative group transition duration-200 text-base100 bg-primary text-lg">
               Register
             </div>
           </Button>
