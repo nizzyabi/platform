@@ -35,7 +35,7 @@ export default async function LandingPage() {
     <div className='pt-20 space-y-40'>
       
       <div
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
         <div className="flex flex-col justify-center text-center lg:text-left ">
           <div className="flex flex-col justify-center text-center lg:text-left">
@@ -69,7 +69,7 @@ export default async function LandingPage() {
         <p className='text-lg font-semibold text-baseContentSecondary text-center pb-7 '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
      
       
-      <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 items-center'>
+      <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 items-center'>
       {cardData.map((card, index) => (
         <div key={index} className="card w-96 md:w-full bg-base100 text-baseContent shadow-xl mx-8">
           <figure><img src={card.imgSrc} alt="Shoes" /></figure>

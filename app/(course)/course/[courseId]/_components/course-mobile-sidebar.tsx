@@ -20,16 +20,19 @@ export const CourseMobileSidebar = ({
   progressCount,
 }: CourseMobileSidebarProps) => {
   return (
-    <Sheet>
-      <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition xs:mx-3.5 sm:mx-5 mx-6 mb-5">
-        <h1 className="rounded-[5px] bg-primary text-secondary hover:opacity-75 font-medium transition duration-300 px-8 py-2 text-sm ml-0">Chapters</h1>
-      </SheetTrigger>
-      <SheetContent side="left" className="p-6 border-none w-80">
-        <CourseMobileSidebarContent 
+    <div className="drawer">
+      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content md:hidden">
+        <label htmlFor="my-drawer" className="btn bg-primary hover:bg-primary border-primary hover:border-primary text-base100 drawer-button m-4">Chapters</label>
+      </div> 
+      <div className="drawer-side">
+      <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+
+      <CourseMobileSidebarContent 
           course={course} 
           progressCount={progressCount}
         />
-      </SheetContent>
-    </Sheet>
+      </div>
+    </div>
   )
 }
