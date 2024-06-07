@@ -41,7 +41,7 @@ const ChapterIdPage = async ({
         {
             href: `${course.githubLink}`,
             label: 'Github',
-            icon: <FaGithub className="text-secondary"/>
+            icon: <FaGithub className="text-black"/>
         },
         {
             href: 'https://discord.gg/nizar',
@@ -75,8 +75,8 @@ const ChapterIdPage = async ({
              ></iframe>
         </div>
         )}
-        <div className="mt-3 flex items-center justify-between pb-8 border-b border-b-primary/20">
-            <h2 className="font-bold text-2xl mb-2">{chapter.title}</h2>
+        <div className="mt-3 flex items-center justify-between pb-8 border-b border-b-baseContent/20">
+            <h2 className="font-bold text-2xl mb-2 text-baseContent">{chapter.title}</h2>
             <CourseProgressButton 
                 chapterId={params.chapterId}
                 courseId={params.courseId}
@@ -106,7 +106,7 @@ const ChapterIdPage = async ({
         )}
         <div className="flex items-center justify-end space-x-5 pt-8">
             {links.map((link) => (
-                <Link href={link.href} key={link.href} className="bg-primary px-2 py-2 rounded-[5px] hover:opacity-80 transition duration-300 border border-slate-100/20">
+                <Link href={link.href} key={link.href} className="bg-base100 px-2 py-2 rounded-[5px] hover:opacity-80 transition duration-300 border border-slate-100/20 shadow-xl">
                     <div className="flex item-center justify-center">
                         <p className="text-center text-5xl">{link.icon}</p>
                     </div>

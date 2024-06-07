@@ -35,18 +35,18 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="hidden md:flex ml-8">
+      <div className="hidden md:flex ml-8 h-full">
      <div>
      {session && (
         <div>
-          
+
           <CourseProgress
             variant="default"
             value={progressCount}
           />
         </div>
       )}
-      <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto">
+      <ScrollArea className="flex flex-col w-30 h-full w-full">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
