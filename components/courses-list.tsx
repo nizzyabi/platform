@@ -35,6 +35,7 @@ export const CoursesList = async ({
                         progress={item.progress}
                         description={item.description!}
                         price={item.price!}
+                        createdAt={item.createdAt}
                     />
                 ))}
             </div>

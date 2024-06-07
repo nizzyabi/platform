@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CourseProgress } from "@/components/course-progress";
 import { Course } from "@prisma/client";
 import { IconBook2 } from "@tabler/icons-react";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 interface CourseCardProps {
     id: string;
     title: string;
@@ -13,6 +13,7 @@ interface CourseCardProps {
     description: string;
     course?: Course [];
     price?: number;
+    createdAt: Date;
   };
 export const CourseCard =  ({
     id,
@@ -23,12 +24,21 @@ export const CourseCard =  ({
     description,
     course,
     price,
+    createdAt
     
 }: CourseCardProps) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isNew, setIsNew] = useState(false);
+
+    useEffect(() => {
+        const oneMonthAgo = new Date();
+        oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+        if (new Date(createdAt) >= oneMonthAgo) {
+            setIsNew(true);
+        }
+    }, [createdAt]);
     return (
         <Link href={`/courses/${id}/info`}>
-            <div className="card bg-base100">
+            <div className="card bg-base100 shadow-xl">
                 <figure>
                     <img
                         src={imageUrl}
@@ -36,7 +46,14 @@ export const CourseCard =  ({
                     />
                 </figure>
                 <div className="card-body p-3">
-                    <h2 className="p-0 card-title text-baseContent">{title}</h2>
+                    <h2 className="p-0 card-title text-baseContent">
+                        {title}
+                        {isNew && (
+                            <div className="badge text-base100 border-primary bg-primary">
+                                New
+                            </div>
+                        )}
+                    </h2>
 
                     <div className="text-sm font-medium text-baseContent/50">
                         {description}
@@ -59,6 +76,7 @@ export const CourseCard =  ({
                                 
                             />
                         )}
+                        
                         {!price && (
                             <button className="text-white mb-3 px-4 py-1.5 font-semibold bg-primary rounded-[6px] text-md">
                                 Free
