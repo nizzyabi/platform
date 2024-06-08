@@ -32,7 +32,7 @@ export default async function LandingPage() {
   ];
   
   return (
-    <div className='pt-20 space-y-40'>
+    <div className='pt-20 space-y-80'>
       
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
@@ -41,16 +41,16 @@ export default async function LandingPage() {
           <div className="flex flex-col justify-center text-center lg:text-left">
             <span className=" flex flex-col text-5xl md:text-5xl lg:text-6xl font-bold header-landing text-baseContent">
               Learn To Code
-              <span className=''>
+              <span>
                 {' '}
                 && <span className='underline decoration-wavy decoration-primary underline-offset-8'>Have Fun</span> Doing It
               </span>
             </span>
-            <span className="pt-3 font-medium text-xl text-baseContentSecondary ">
+            <span className="pt-[16px] font-medium text-xl text-baseContentSecondary ">
               Build beautiful apps & websites with easy to follow tutorials
             </span>
             <div className='flex items-center justify-center lg:justify-start'>
-              <PrimaryButton href="/courses" className='mt-3'/>
+              <PrimaryButton href="/courses" className='mt-[25px]'/>
             </div>
             <div className='pt-4'>
               <AvatarCircles className='flex items-center justify-center lg:flex lg:justify-start '/>
@@ -64,7 +64,7 @@ export default async function LandingPage() {
           </div>
       </div>
 
-      <div className='space-y-8'>
+      <div className='space-y-8 bg-[#dddee2] py-12'>
         <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually <span className='bg-primary px-4 text-base100'>Help</span></h1>
         <p className='text-lg font-semibold text-baseContentSecondary text-center pb-7 '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
      
@@ -89,6 +89,12 @@ export default async function LandingPage() {
       ))}
       </div>
 
+      </div>
+
+
+      {/* Description of yourself and why people should buy from you (and also a video of you and the courses)*/}
+      <div>
+        <h1></h1>
       </div>
 
       <div className='text-center space-y-8'>

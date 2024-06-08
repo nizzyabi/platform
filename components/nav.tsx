@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className={`top-0 w-full z-50 transition p-5`}>
-      <div className=" mx-auto text-baseContent">
+      <div className=" mx-auto text-baseContent max-w-7xl">
         <div className="flex flex-wrap justify-between items-center">
           <Link href="/" className="flex items-center">
             <h1 className="group text-2xl font-bold " >

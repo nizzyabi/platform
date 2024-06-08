@@ -14,10 +14,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { Github, LogOut, Youtube } from 'lucide-react'
+import { Github, LogOut, LogOutIcon, Youtube } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import { FaDiscord, FaYoutube, FaGithub } from 'react-icons/fa'
-import { useEffect } from 'react'
+import { useState } from 'react'
 import { Separator } from './ui/separator'
 
 const UserButton = () => {
@@ -37,6 +37,7 @@ const UserButton = () => {
       md: 40
     }
   }
+  
 
   return (
     <>
@@ -59,7 +60,8 @@ const UserButton = () => {
         </>
       ) : (
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className=" m-1">
+          <div tabIndex={0} role="button" className='ml-2'>
+            
             <Avatar
               src={session.image ? session.image : ''}
               alt="logo"
@@ -67,11 +69,10 @@ const UserButton = () => {
               sx={style}
             />  
           </div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base100 rounded-box w-52 p-4">
-              <a>{session?.name}</a>
-              <a className='border-b pb-2'>{session?.email}</a>
-              
-              <div onClick={Logout} className='py-2 cursor-pointer'>Logout</div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base100 rounded-box w-52">
+              <li onClick={Logout} className=' cursor-pointer'>
+                <a><LogOutIcon className='h-4 w-4'/> Logout</a>
+              </li>
             </ul>
           </div>
       )}
