@@ -64,7 +64,7 @@ export default async function LandingPage() {
           </div>
       </div>
 
-      <div className='space-y-8 bg-[#dddee2] py-12'>
+      <div className='space-y-8 bg-[#dddee2] py-20'>
         <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually <span className='bg-primary px-4 text-base100'>Help</span></h1>
         <p className='text-lg font-semibold text-baseContentSecondary text-center pb-7 '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
      
@@ -93,9 +93,17 @@ export default async function LandingPage() {
 
 
       {/* Description of yourself and why people should buy from you (and also a video of you and the courses)*/}
-      <div>
-        <h1></h1>
-      </div>
+      <div className="flex items-center justify-center min-h-screen p-4">
+  <div className='mockup-browser border w-full max-w-[760px] shadow-xl'>
+    <div className="mockup-browser-toolbar">
+      <div className="input truncate">https://nizzyabi.com</div>
+    </div>
+    <div className='flex items-center justify-center'>
+      <iframe className="w-full aspect-video" src="https://www.youtube.com/embed/xD7oN-D-qK0?si=unty45SKbHkShE2E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    </div>
+  </div>
+</div>
+
 
       <div className='text-center space-y-8'>
         <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold'>Hear it from over {users} developers</h1>
@@ -103,7 +111,6 @@ export default async function LandingPage() {
         <TestimonialCard />
       </div>
 
-      <Faq />
     </div>
   )
 }

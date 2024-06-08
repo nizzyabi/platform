@@ -12,10 +12,10 @@ export const Social = () => {
     })
   }
   return (
-    <div className="flex gap-2 mt-3">
+    <div className="flex gap-2">
       <Button
         size="lg"
-        className="bg-black/5 dark:bg-white/5 rounded-[5px] border-none text-md hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-300"
+        className="bg-base100 rounded-[5px] border-baseContent border-2 text-md text-baseContent"
         variant="outline"
         onClick={() => onClick('google')}
       >
@@ -24,7 +24,7 @@ export const Social = () => {
 
       <Button
         size="lg"
-        className="bg-black/5 dark:bg-white/5 rounded-[5px] border-none text-md hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-300"
+        className="bg-base100 rounded-[5px] border-baseContent border-2 text-md text-baseContent"
         variant="outline"
         onClick={() => onClick('github')}
       >
