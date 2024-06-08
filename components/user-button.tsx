@@ -44,9 +44,9 @@ const UserButton = () => {
         <>
           <Link
             href="/auth/register"
-            className="flex md:hidden items-center justify-center rounded-lg cursor-pointer transition duration-300 hover:bg-primary/5 px-2 py-2 max-h-10"
+            className="flex md:hidden items-center justify-center rounded-lg cursor-pointer transition duration-300 hover:bg-black/10 px-2 py-2 max-h-10"
           >
-            <LogOut className="text-primary h-5.5 w-5 ml-1" />
+            <LogOut className="text-baseContent h-5.5 w-5 ml-1" />
           </Link>
 
           <Link
@@ -67,10 +67,11 @@ const UserButton = () => {
               sx={style}
             />  
           </div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base100 rounded-box w-52 ">
-              <li><a>{session?.name}</a></li>
-              <li><a>{session?.email}</a></li>
-              <li onClick={Logout}><a>Logout</a></li>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base100 rounded-box w-52 p-4">
+              <a>{session?.name}</a>
+              <a className='border-b pb-2'>{session?.email}</a>
+              
+              <div onClick={Logout} className='py-2 cursor-pointer'>Logout</div>
             </ul>
           </div>
       )}
