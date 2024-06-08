@@ -4,6 +4,8 @@ import PrimaryButton from './ui/get-started-button'
 import AvatarCircles from './ui/user-avatar-card'
 import { TestimonialCard } from './testimonials'
 import Faq from './faq'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function LandingPage() {
   const users = await db.user.count()
@@ -12,28 +14,31 @@ export default async function LandingPage() {
       imgSrc: "/dashboard.png",
       title: "Full Stack Analytics Dashboard",
       badge: "NEW",
+      href: '/',
       description: "Build a functional dashboard to track your apps user information, payments, and more!",
       tags: ["NextJS", "Typescript"],
     },
     {
-      imgSrc: "/dashboard.png",
-      title: "Stripe Payment Integration",
-      badge: "NEW",
-      description: "Recieve payments from your users by building & connecting to stripe to your software.",
-      tags: ["NextJS", "Typescript", "Stripe"],
-    },
-    {
-      imgSrc: "/dashboard.png",
+      imgSrc: "/backend.png",
       title: "Functional Backend & Database",
       badge: "NEW",
+      href: '/courses/functional-backend-database/info',
       description: "Learn the basics of backend developement by connecting to & storing user data in a database!",
       tags: ["Prisma", "Postgres", "NeonDB"],
+    },
+    {
+      imgSrc: "/stripe.png",
+      title: "StripeJS Payment Integration",
+      badge: "NEW",
+      href: '/courses/stripe/info',
+      description: "Recieve payments from your users by building & connecting to stripe to your software.",
+      tags: ["NextJS", "Typescript", "Stripe"],
     },
   ];
   
   return (
-    <div className='pt-20 space-y-80'>
-      
+    <div className='py-[100px] space-y-[250px]'>
+
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
@@ -71,9 +76,10 @@ export default async function LandingPage() {
       
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 items-center'>
       {cardData.map((card, index) => (
-        <div key={index} className="card w-96 md:w-full bg-base100 text-baseContent shadow-xl mx-8">
+        <Link href={card.href} key={index} className="card w-96 md:w-full bg-base100 text-baseContent shadow-xl mx-8">
           <figure><img src={card.imgSrc} alt="Shoes" /></figure>
           <div className="card-body">
+           
             <h2 className="card-title">
               {card.title}
               <div className="badge badge-secondary bg-primary text-base100 border-primary">{card.badge}</div>
@@ -85,7 +91,7 @@ export default async function LandingPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Link>
       ))}
       </div>
 
@@ -93,21 +99,21 @@ export default async function LandingPage() {
 
 
       {/* Description of yourself and why people should buy from you (and also a video of you and the courses)*/}
-      <div className="flex items-center justify-center min-h-screen p-4">
-  <div className='mockup-browser border w-full max-w-[760px] shadow-xl'>
-    <div className="mockup-browser-toolbar">
-      <div className="input truncate">https://nizzyabi.com</div>
-    </div>
-    <div className='flex items-center justify-center'>
-      <iframe className="w-full aspect-video" src="https://www.youtube.com/embed/xD7oN-D-qK0?si=unty45SKbHkShE2E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-    </div>
-  </div>
-</div>
+      <div className="flex items-center justify-center min-h-screen px-4">
+        <div className='mockup-browser border w-full max-w-[760px] shadow-xl'>
+          <div className="mockup-browser-toolbar">
+            <div className="input truncate">https://nizzyabi.com</div>
+          </div>
+          <div className='flex items-center justify-center'>
+            <iframe className="w-full aspect-video" src="https://player.vimeo.com/video/955336719?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </div>
+        </div>
+      </div>
 
 
-      <div className='text-center space-y-8'>
-        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold'>Hear it from over {users} developers</h1>
-        <p className='text-lg font-semibold text-baseContentSecondary'>They used the courses to build apps & improve at coding</p>
+      <div className='text-center space-y-5 px-2' id='testimonials'>
+        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold'>{users} Happy Developers</h1>
+        <p className='text-lg font-medium text-baseContentSecondary'>Here's what developers have to say about us.</p>
         <TestimonialCard />
       </div>
 
