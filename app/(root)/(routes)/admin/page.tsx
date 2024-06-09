@@ -11,7 +11,8 @@ import { auth } from "@/auth"
 import { db } from "@/lib/db";
 import { CreditCard, DollarSign, User, BadgeDollarSign, UserRoundCheck, CandlestickChart, MonitorPlay } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { formatDistanceToNow } from 'date-fns';
+import { eachMonthOfInterval, endOfMonth, format, formatDistanceToNow, startOfMonth } from "date-fns";
+import LineGraph from "../courses/_components/line-graph";
 
 
 
@@ -23,7 +24,7 @@ const DataPage = async () => {
     if (!session) {
         return redirect('/')
     }
-
+    const currentDate = new Date()
     const userCount = await db.account.count();
 
     const salesCount = await db.purchase.count();
@@ -102,12 +103,53 @@ const DataPage = async () => {
       time: formatDistanceToNow(new Date(account.createdAt), { addSuffix: true }),
     }));
 
+      // Users This Month
+  const usersThisMonth = await db.user.groupBy({
+    by: ['createdAt'],
+    _count: {
+      createdAt: true
+    },
+    orderBy: {
+      createdAt: 'asc'
+    }
+  })
+
+    const monthlyUserData = eachMonthOfInterval({
+      start: startOfMonth(new Date(usersThisMonth[0]?.createdAt || new Date())),
+      end: endOfMonth(currentDate)
+    }).map(month => {
+      const monthString = format(month, 'MMM');
+      const userMonthly = usersThisMonth.filter(user => format(new Date(user.createdAt), 'MMM') === monthString).reduce((total, user) => total + user._count.createdAt, 0);
+      return { month: monthString, total: userMonthly}
+      
+    })
+  
+    // Sales This Month
+    const salesData = purchases.reduce((acc, purchase) => {
+      const month = format(new Date(purchase.createdAt), 'MMM') // format as "MMM"
+      const price = purchase.course.price || 0
+
+      if (!acc[month]) {
+          acc[month] = 0
+      }
+
+      acc[month] += price
+      return acc
+    }, {} as Record<string, number>)
+
+  // Format the data for the chart
+    const formattedData = Object.keys(salesData).map((month) => ({
+      month,
+      total: salesData[month],
+    }))
+
+
+  
+    
+
   return (
-    <div className="flex flex-col gap-5 w-full pt-40">
-      <h1 className="font-bold text-7xl mx-6 text-center">Dashboard</h1>
-      <div className="flex items-center justify-center">
-          <Separator className=" bg-primary/20 h-0.5 w-40" />
-      </div>
+    <div className="flex flex-col gap-5 w-full pt-20">
+      <h1 className="font-bold text-7xl mx-6 text-center text-baseContent">Dashboard</h1>
       { session?.user.email === "nizabizaher@gmail.com" && (
       <div className="container mx-auto py-10"> 
         <div className="flex flex-col gap-5  w-full">
@@ -121,16 +163,11 @@ const DataPage = async () => {
               />
             ))}
           </section>
-          <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-primary">
+          <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-baseContent">
+            <BarChart data={monthlyUserData}/>
+            <LineGraph data={formattedData}/>
             <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-primary pb-2">
-                <p>Sales Data</p>
-                <CandlestickChart className="h-4 w-4" />
-              </section>
-              <BarChart />
-            </DashboardCardContent>
-            <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-primary pb-2">
+              <section className="flex justify-between gap-2 text-baseContent pb-2">
                 <p>Recent Sales</p>
                 <BadgeDollarSign className="h-4 w-4" />
                   
@@ -146,7 +183,7 @@ const DataPage = async () => {
               ))}
             </DashboardCardContent>
             <DashboardCardContent>
-              <section className="flex justify-between gap-2 text-primary pb-2">
+              <section className="flex justify-between gap-2 text-baseContent pb-2">
                 <p>Recent Users</p>
                 <UserRoundCheck className="h-4 w-4" />
               </section>
@@ -160,10 +197,11 @@ const DataPage = async () => {
                 />
               ))}
             </DashboardCardContent>
-            <DashboardCardContent className="p-0">
+            
+          </section>
+          <DashboardCardContent className="p-0 text-baseContent">
               <DataTable columns={columns} data={courses} />
             </DashboardCardContent>
-          </section>
         </div>
         
       </div>

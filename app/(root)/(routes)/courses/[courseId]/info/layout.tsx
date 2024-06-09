@@ -77,7 +77,7 @@ const CourseInfoLayout = async ({
               <Image 
                 height={400} 
                 width={400} 
-                src='/app.png' 
+                src={`${course?.imageUrl}`}
                 alt='app'
                 className="object-cover h-full w-full"
               />
@@ -105,17 +105,13 @@ const CourseInfoLayout = async ({
               </div>
             </div>
 
-
+            
 
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="mockup-window bg-[#0F0F0F] flex items-center justify-center md:h-full">
-                <Image 
-                  height={400} 
-                  width={400} 
-                  src='/app.png' 
-                  alt='app'
-                  className="object-cover h-full w-full"
-                />
+              <div className="mockup-code bg-[#0F0F0F] md:h-full text-left text-lg">
+                <pre data-prefix="1"><code>npm i tutorial</code></pre> 
+                <pre data-prefix="2" className="text-warning"><code>learning...</code></pre> 
+                <pre data-prefix="3" className="text-success"><code>tutorial learnt!</code></pre>
               </div>
               <div className="flex flex-col justify-center text-center lg:text-left">
                 <div className="flex flex-col text-4xl font-bold text-baseContent">

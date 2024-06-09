@@ -15,7 +15,7 @@ export default function UserDataCard(props: UserDataProps) {
         </div>
         <div className="text-sm">
             <p>{props.name}</p>
-            <div className="text-ellipsis overflow-hidden whitespace-nowrap w-[120px]  sm:w-auto  text-primary/30">
+            <div className="text-ellipsis overflow-hidden whitespace-nowrap w-[120px]  sm:w-auto  text-baseContent/30">
                 {props.email}
             </div>
         </div>
