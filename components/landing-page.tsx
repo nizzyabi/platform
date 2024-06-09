@@ -3,9 +3,7 @@ import { db } from '@/lib/db'
 import PrimaryButton from './ui/get-started-button'
 import AvatarCircles from './ui/user-avatar-card'
 import { TestimonialCard } from './testimonials'
-import Faq from './faq'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default async function LandingPage() {
   const users = await db.user.count()
@@ -84,7 +82,7 @@ export default async function LandingPage() {
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 items-center'>
       {cardData.map((card, index) => (
         <Link href={card.href} key={index} className="card w-96 md:w-full bg-base100 text-baseContent shadow-xl mx-8">
-          <figure><img src={card.imgSrc} alt="Shoes" /></figure>
+          <figure><img src={card.imgSrc} alt="Course Image" /></figure>
           <div className="card-body">
            
             <h2 className="card-title">
