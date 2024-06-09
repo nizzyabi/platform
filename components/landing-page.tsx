@@ -9,7 +9,7 @@ export default async function LandingPage() {
   const users = await db.user.count()
   const cardData = [
     {
-      imgSrc: "/dashboard.png",
+      imgSrc: "/dash.png",
       title: "Full Stack Analytics Dashboard",
       badge: "NEW",
       href: '/',
