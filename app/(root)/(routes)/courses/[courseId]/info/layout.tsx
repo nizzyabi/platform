@@ -1,11 +1,8 @@
 
 import { CoursePurchaseButton } from "@/app/(course)/course/[courseId]/chapter/[chapterId]/_components/course-purchase-button";
 import { auth } from "@/auth";
-import { FcAutomatic, FcComboChart, FcFlashOn, FcGraduationCap, FcTimeline, FcTreeStructure } from "react-icons/fc";
-
-import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import PrimaryButton from "@/components/ui/get-started-button";
 import Image from "next/image";
@@ -41,7 +38,8 @@ const CourseInfoLayout = async ({
           },
         },
       });
-      const includedItems = course?.included?.split('\n') || [];
+    const includedItems = course?.included?.split('\n') || [];
+    const learningOutcomeItems = course?.learningOutcome?.split('\n') || [];
 
     return (
         <div className="py-20 space-y-20 mx-5 md:mx-20  landing">
@@ -51,7 +49,7 @@ const CourseInfoLayout = async ({
 
             <div className="flex items-center justify-center mt-3">
               <iframe 
-              src={`${course?.introVideo}&autoplay=1&&muted=1&loop=1`} 
+              src={`${course?.introVideo}`} 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
               title="Video"
               className="aspect-video w-[700px] rounded-[5px]"
@@ -66,14 +64,13 @@ const CourseInfoLayout = async ({
           </div>
 
           <div className="space-y-20 text-center">
-
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
               <div className="flex flex-col justify-center text-center lg:text-left">
 
                 <div className="flex flex-col text-4xl font-bold text-baseContent">
                 <h1 className="text-4xl font-bold ">What will we build?</h1>
-                <p className="font-medium text-baseContentSecondary pt-4 text-lg">{course?.description2}</p> 
+                <p className="font-medium text-baseContentSecondary pt-4 text-lg max-w-2xl">{course?.description2}</p> 
               </div>
             </div>
             <div className="mockup-window bg-[#0F0F0F] flex items-center justify-center md:h-full">
@@ -85,26 +82,49 @@ const CourseInfoLayout = async ({
                 className="object-cover h-full w-full"
               />
             </div>          
-          
-          </div>
-
-          <div className="mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold">What will I learn?</h1>
-            <p className="font-medium text-baseContentSecondary pt-4 whitespace-pre-wrap text-sm ml-3">{course?.learningOutcome}</p> 
-          </div>
+            </div>
 
           
+            <div className="max-w-5xl  mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col justify-center items-center text-center">
+                <div className="text-baseContent">
+                  <h1 className="text-4xl font-bold">What will I learn?</h1>
+                  <div className="max-w-2xl mx-auto mt-8 rounded-lg   p-10 bg-primary/20">
+                    <p className="text-lg font-semibold text-left">In this course, you will learn to:</p>
+                    <div className="font-medium text-baseContentSecondary pt-4 text-lg text-center">
+                    {learningOutcomeItems.map((item, index) => (
+                        <div key={index} className="font-medium text-baseContent text-md flex items-center ">
+                          <Check className="text-baseContentSecondary h-8 w-8 pr-2 "/> 
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold">Difficulty level</h1>
-            <p className="font-medium text-baseContentSecondary 0 mt-4 p-2 border border-slate-100/20 rounded-lg bg-[#0F0F0F] whitespace-pre-wrap text-sm ml-1">{course?.difficulty}</p>
+
+
+          
+
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+              <div className="flex flex-col justify-center text-center lg:text-left">
+
+                <div className="flex flex-col text-4xl font-bold text-baseContent">
+                <h1 className="text-4xl font-bold ">Difficulty Level</h1>
+                <p className="font-medium text-baseContentSecondary pt-4 text-lg max-w-2xl">{course?.difficulty}</p> 
+              </div>
+            </div>
+                    
           </div>
-
+          
           <div className="mx-auto max-w-7xl text-center pt-10">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             
             <div className="pt-12 flex items-center justify-center">
-              { !course?.price ? 
+              {!course?.price ? 
                 <div className="card w-[500px] bg-base100 shadow-xl border-2 border-primary">
                   <div className="card-body">
                     <h2 className="card-title text-center text-2xl">{course?.title}</h2>
