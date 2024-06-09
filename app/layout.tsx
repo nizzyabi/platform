@@ -5,14 +5,13 @@ import { SessionProvider } from 'next-auth/react'
 import { auth } from '@/auth'
 import { ToastProvider } from '@/components/providers/toaster-provider'
 import { ConfettiProvder } from '@/components/providers/confetti-provider'
-import Scroll from '@/components/Scroll'
 import { Poppins } from 'next/font/google'
 import Navbar from '@/components/nav'
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin-ext"],
 })
-import { ThemeProvider } from '@/components/ui/theme-provider'
+
 
 
 
@@ -38,11 +37,12 @@ export default async function RootLayout({
       <html lang="en" className='bg-base200'>
         <body className={poppins.className}> 
             <Navbar />
-            <Scroll />
+            {/*<Scroll />*/}
             <ToastProvider />
             <ConfettiProvder />
             {children}
             <Analytics />
+            
         </body>
       </html>
     </SessionProvider>

@@ -4,6 +4,7 @@ import PrimaryButton from './ui/get-started-button'
 import AvatarCircles from './ui/user-avatar-card'
 import { TestimonialCard } from './testimonials'
 import Link from 'next/link'
+import Footer from './Footer'
 
 export default async function LandingPage() {
   const users = await db.user.count()
@@ -68,7 +69,7 @@ export default async function LandingPage() {
           <div className="flex items-center justify-center md:h-full">
           <div className='mockup-window bg-[#0F0F0F] border-2 border-slate-100/20 w-full max-w-[1060px] shadow-xl'>
           <div className='flex items-center justify-center'>
-            <iframe className="w-full aspect-video" src="https://player.vimeo.com/video/955336719?autoplay=1&&muted=1&loop=1&autopause=0?badge=0&&amp;player_id=0&amp;app_id=58479" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            <iframe className="w-full aspect-video" src="https://player.vimeo.com/video/955336719?&muted=1&loop=1&autopause=0?badge=0&&amp;player_id=0&amp;app_id=58479" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </div>
         </div>
           </div>
