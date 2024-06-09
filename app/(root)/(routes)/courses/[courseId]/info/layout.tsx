@@ -63,7 +63,7 @@ const CourseInfoLayout = async ({
             </div>
           </div>
 
-          <div className="space-y-20 text-center">
+          <div className="space-y-[200px] text-center">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
               <div className="flex flex-col justify-center text-center lg:text-left">
@@ -99,6 +99,7 @@ const CourseInfoLayout = async ({
                         </div>
                       ))}
                     </div>
+                    <PrimaryButton className="w-full mt-4" href={`/course/${course?.id}`}>Go To Course</PrimaryButton>
                   </div>
                 </div>
               </div>
@@ -106,20 +107,24 @@ const CourseInfoLayout = async ({
 
 
 
-          
-
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="mockup-window bg-[#0F0F0F] flex items-center justify-center md:h-full">
+                <Image 
+                  height={400} 
+                  width={400} 
+                  src='/app.png' 
+                  alt='app'
+                  className="object-cover h-full w-full"
+                />
+              </div>
               <div className="flex flex-col justify-center text-center lg:text-left">
-
                 <div className="flex flex-col text-4xl font-bold text-baseContent">
-                <h1 className="text-4xl font-bold ">Difficulty Level</h1>
-                <p className="font-medium text-baseContentSecondary pt-4 text-lg max-w-2xl">{course?.difficulty}</p> 
+                  <h1 className="text-4xl font-bold ">Difficulty Level</h1>
+                  <p className="font-medium text-baseContentSecondary pt-4 text-lg max-w-2xl">{course?.difficulty}</p> 
+                </div>
               </div>
             </div>
-                    
-          </div>
-          
+  
           <div className="mx-auto max-w-7xl text-center pt-10">
             <h1 className="text-5xl font-bold">Purchase course</h1>
             
@@ -194,6 +199,7 @@ const CourseInfoLayout = async ({
               </div>
             </div>
           </div>
+
           </div>
         </div>
     )
