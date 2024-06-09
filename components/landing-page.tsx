@@ -42,35 +42,42 @@ export default async function LandingPage() {
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
-        <div className="flex flex-col justify-center text-center lg:text-left ">
+        <div>
           <div className="flex flex-col justify-center text-center lg:text-left">
-            <span className=" flex flex-col text-5xl md:text-5xl lg:text-6xl font-bold header-landing text-baseContent">
+            <span className="flex flex-col text-5xl md:text-5xl lg:text-6xl font-bold header-landing text-baseContent">
               Learn To Code
               <span>
                 {' '}
-                && <span className='underline decoration-wavy decoration-primary underline-offset-8'>Have Fun</span> Doing It
+                && <span className='underline decoration-wavy decoration-primary underline-offset-8'>Have Fun</span> 
+              </span>
+              <span>
+              Doing It
               </span>
             </span>
-            <span className="pt-[16px] font-medium text-xl text-baseContentSecondary ">
+            <span className="py-[16px] font-medium text-xl text-baseContentSecondary ">
               Build beautiful apps & websites with easy to follow tutorials
             </span>
             <div className='flex items-center justify-center lg:justify-start'>
-              <PrimaryButton href="/courses" className='mt-[25px]'/>
+              <PrimaryButton href="/courses"/>
             </div>
             <div className='pt-4'>
-              <AvatarCircles className='flex items-center justify-center lg:flex lg:justify-start '/>
+              <AvatarCircles className='flex items-center justify-center lg:flex lg:justify-start'/>
               <p className='font-semibold text-baseContent mt-2 lg:ml-2'>Join <span className='font-extrabold'>{users}</span> improved developers!</p>
             </div>
           </div>
           {/*<Bento className="text-center select-none" />*/}
           </div>
           <div className="flex items-center justify-center md:h-full">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PHI7F9AQhBI?si=ueaPGvDQM6GDL-ne" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <div className='mockup-window bg-[#0F0F0F] border-2 border-slate-100/20 w-full max-w-[1060px] shadow-xl'>
+          <div className='flex items-center justify-center'>
+            <iframe className="w-full aspect-video" src="https://player.vimeo.com/video/955336719?autoplay=1&&muted=1&loop=1&autopause=0?badge=0&&amp;player_id=0&amp;app_id=58479" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </div>
+        </div>
           </div>
       </div>
 
-      <div className='space-y-8 bg-[#dddee2] py-20'>
-        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually <span className='bg-primary px-4 text-base100'>Help</span></h1>
+      <div className='space-y-8 bg-[#0F0F0F] py-20'>
+        <h1 className='text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold text-center '>Tutorials That Actually Help</h1>
         <p className='text-lg font-semibold text-baseContentSecondary text-center pb-7 '>Our courses include a mix of building & learning. The perfect mix for anyone trying to learn! </p>
      
       
@@ -98,17 +105,6 @@ export default async function LandingPage() {
       </div>
 
 
-      {/* Description of yourself and why people should buy from you (and also a video of you and the courses)*/}
-      <div className="flex items-center justify-center min-h-screen px-4">
-        <div className='mockup-browser border w-full max-w-[760px] shadow-xl'>
-          <div className="mockup-browser-toolbar">
-            <div className="input truncate">https://nizzyabi.com</div>
-          </div>
-          <div className='flex items-center justify-center'>
-            <iframe className="w-full aspect-video" src="https://player.vimeo.com/video/955336719?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-          </div>
-        </div>
-      </div>
 
 
       <div className='text-center space-y-5 px-2' id='testimonials'>

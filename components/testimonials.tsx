@@ -94,7 +94,7 @@ export function TestimonialCard() {
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <div className="bg-base100 relative group/card border-primary h-full rounded-xl px-5 py-4 border ">
+              <div className="bg-base100 relative group/card border-slate-100/20 h-full rounded-lg px-5 py-4 border-2 ">
                 <div className="flex justify-between">
                   <div
                     

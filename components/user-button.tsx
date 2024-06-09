@@ -60,7 +60,7 @@ const UserButton = () => {
         </>
       ) : (
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className='ml-2'>
+          <div tabIndex={0} role="button" className='ml-2 btn py-0 px-0 bg-transparent shadow-none border-none hover:bg-transparent'>
             
             <Avatar
               src={session.image ? session.image : ''}
