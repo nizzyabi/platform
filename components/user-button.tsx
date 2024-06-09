@@ -65,7 +65,7 @@ const UserButton = () => {
             <Avatar
               src={session.image ? session.image : ''}
               alt="logo"
-              className="cursor-pointer bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 xs:mt-0.5 ml-0.5 md:my-0"
+              className="cursor-pointer bg-primary xs:mt-0.5 ml-0.5 md:my-0"
               sx={style}
             />  
           </div>

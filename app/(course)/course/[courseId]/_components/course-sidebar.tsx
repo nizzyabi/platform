@@ -35,7 +35,7 @@ interface CourseSidebarProps {
     });
   
     return (
-      <div className="hidden md:flex ml-8 h-full">
+      <div className="hidden md:flex ml-5 h-full">
      <div>
      {session && (
         <div>

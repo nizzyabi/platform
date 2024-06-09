@@ -17,7 +17,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-wrap items-center">
-            <div className="flex items-center font-medium text-[17px]">
+            <div className="flex items-center font-medium text-sm sm:text-[17px]">
               <Link
                 href="/courses"
                 className="flex items-center hover:bg-black/10 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"

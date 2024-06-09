@@ -31,7 +31,7 @@ export const CourseProgress = ({
         )}>
           {Math.round(value)}% Complete
         </p>
-      <progress className="w-full progress-success progress bg-opacity/50" value={value} max={100}></progress>
+      <progress className="w-full progress-primary progress bg-opacity/50" value={value} max={100}></progress>
        
     </div>
   )
