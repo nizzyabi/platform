@@ -123,25 +123,28 @@ const DataPage = async () => {
       return { month: monthString, total: userMonthly}
       
     })
-  
-    // Sales This Month
+    const monthOrder = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const salesData = purchases.reduce((acc, purchase) => {
-      const month = format(new Date(purchase.createdAt), 'MMM') // format as "MMM"
-      const price = purchase.course.price || 0
-
+      const month = format(new Date(purchase.createdAt), 'MMM'); // format as "MMM"
+      const price = purchase.course.price || 0;
+    
       if (!acc[month]) {
-          acc[month] = 0
+        acc[month] = 0;
       }
-
-      acc[month] += price
-      return acc
-    }, {} as Record<string, number>)
-
-  // Format the data for the chart
+    
+      acc[month] += price;
+      return acc;
+    }, {} as Record<string, number>);
+    
+    // Format the data for the chart
     const formattedData = Object.keys(salesData).map((month) => ({
       month,
       total: salesData[month],
-    }))
+    }));
+    
+    // Sort the formattedData array by month
+    formattedData.sort((a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month));
+    
 
 
   
@@ -164,8 +167,8 @@ const DataPage = async () => {
             ))}
           </section>
           <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2 text-baseContent">
-            <BarChart data={monthlyUserData}/>
             <LineGraph data={formattedData}/>
+            <BarChart data={monthlyUserData}/>
             <DashboardCardContent>
               <section className="flex justify-between gap-2 text-baseContent pb-2">
                 <p>Recent Sales</p>

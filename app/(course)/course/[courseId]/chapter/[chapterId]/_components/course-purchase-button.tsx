@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { useCurrentUser } from "@/hooks/user-current-user";
 import { formatPrice } from "@/lib/format"
 import axios from "axios";
 import { useState } from "react";
@@ -14,22 +15,24 @@ export const CoursePurchaseButton = ({
     price,
     courseId
 }: CoursePurchaseButtonProps) => {
-
+    const session = useCurrentUser()
     const [isLoading, setIsLoading] = useState(false);
     const onClick = async () => {
+        if (!session) {
+            toast.error('Sign in to purchase!');
+            return;
+        }
+
         try {
             setIsLoading(true);
             const response = await axios.post(`/api/courses/${courseId}/checkout`);
             window.location.assign(response.data.url);
         } catch (error) {
-
-            toast.error("An error occurred. Please try again.")
-
+            toast.error('An error occurred, please try again');
         } finally {
-
             setIsLoading(false);
         }
-    }
+    };
    
     return (
           

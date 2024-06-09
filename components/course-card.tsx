@@ -4,6 +4,7 @@ import { CourseProgress } from "@/components/course-progress";
 import { Course } from "@prisma/client";
 import { IconBook2 } from "@tabler/icons-react";
 import { useEffect, useState } from 'react';
+import { useCurrentUser } from "@/hooks/user-current-user";
 interface CourseCardProps {
     id: string;
     title: string;
@@ -28,7 +29,7 @@ export const CourseCard =  ({
     
 }: CourseCardProps) => {
     const [isNew, setIsNew] = useState(false);
-
+    const session = useCurrentUser();
     useEffect(() => {
         const oneMonthAgo = new Date();
         oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
@@ -68,7 +69,7 @@ export const CourseCard =  ({
                         </div>
                     </div>
                     <div>
-                        {progress !== null && (
+                        {session && progress !== null && (
                             <CourseProgress
                                 variant={progress === 100 ? "success" : "default"}
                                 size="sm"
