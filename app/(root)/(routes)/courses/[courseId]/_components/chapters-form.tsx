@@ -127,14 +127,14 @@ export const ChaptersForm = ({
                 </FormItem>
               )}
             />
-             <Button
+             <button
                 disabled={!isValid || isSubmitting}
                 type="submit"
-                className=" flex"
-                variant="basic"
+                className="flex btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100"
+                
               >
                 Save
-              </Button>
+              </button>
           </form>
         </Form>
       )}

@@ -87,7 +87,7 @@ export const ChaptersList = ({
                 {(provided) => (
                   <div
                     className={cn(
-                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-primary text-baseContent",
+                      "flex items-center gap-x-2  rounded mb-4 text-sm bg-primary/30 text-baseContent",
                       chapter.isPublished && "bg-primary/30 border-primary/20 text-baseContent"
                     )}
                     ref={provided.innerRef}
