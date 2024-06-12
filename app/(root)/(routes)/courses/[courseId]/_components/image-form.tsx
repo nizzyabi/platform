@@ -47,10 +47,10 @@ export const ImageForm = ({
   }
 
   return (
-    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+    <div className="mt-6 rounded-lg p-5 shadow-xl bg-base100">
       <div className="font-semibold flex items-center justify-between text-xl">
         Course Image
-        <Button onClick={toggleEdit}>
+        <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
           {isEditing ? (
             <>Cancel</>
           ) : (
@@ -58,7 +58,7 @@ export const ImageForm = ({
             <p>Edit</p>
           </>
           )}
-        </Button>
+        </button>
       </div>
       {!isEditing && (
         !initialData.imageUrl ? (

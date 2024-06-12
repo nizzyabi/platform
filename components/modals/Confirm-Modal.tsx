@@ -26,7 +26,7 @@ export const ConfirmModal = ({
       <AlertDialogTrigger asChild>
         {children}
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="bg-base100 text-baseContent">
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
           <AlertDialogDescription>
@@ -34,8 +34,8 @@ export const ConfirmModal = ({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={onConfirm}>
+          <AlertDialogCancel className="btn rounded-lg h-4 bg-white hover:bg-white/70 hover:text-black border-none text-black">Cancel</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
             Continue
           </AlertDialogAction>
         </AlertDialogFooter>

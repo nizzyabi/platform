@@ -24,6 +24,7 @@ const DataPage = async () => {
     if (!session) {
         return redirect('/')
     }
+    
     const currentDate = new Date()
     const userCount = await db.account.count();
 

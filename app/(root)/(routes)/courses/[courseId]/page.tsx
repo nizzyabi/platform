@@ -80,7 +80,7 @@ const CoursesIdPage = async ({
   
   return (
     <>
-      <div className="lg:px-[250px] md:px-[50px] sm:px-6 pt-40">
+      <div className="lg:px-[250px] md:px-[50px] sm:px-6 py-20">
         {/* Title */}
         <div className="flex items-center justify-center">
           <div className="w-full">

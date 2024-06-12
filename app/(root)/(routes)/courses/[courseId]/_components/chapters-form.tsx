@@ -86,7 +86,7 @@ export const ChaptersForm = ({
   }
 
   return (
-    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+    <div className="mt-6 rounded-lg p-5 shadow-xl bg-base100">
       {isUpdating && (
         <div className="absolute h-full w-full bg-secondary top-0 right-0 rounded-m flex items-center justify-center">
           <Loader2 className="animate-spin h-6 w-6 text-sky-700" />
@@ -94,7 +94,7 @@ export const ChaptersForm = ({
       )}
       <div className="font-semibold flex items-center justify-between text-xl">
         Chapters
-        <Button onClick={toggleCreating}>
+        <button onClick={toggleCreating} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
           {isCreating ? (
             <>Cancel</>
           ) : (
@@ -102,7 +102,7 @@ export const ChaptersForm = ({
               <p>Add</p>
             </>
           )}
-        </Button>
+        </button>
       </div>
       {isCreating && (
         <Form {...form}>
@@ -120,7 +120,7 @@ export const ChaptersForm = ({
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
-                      className="bg-secondary border-primary/20"
+                      className="bg-base200 border-baseContent/20 text-baseContent"
                     />
                   </FormControl>
                   <FormMessage />
@@ -140,8 +140,8 @@ export const ChaptersForm = ({
       )}
       {!isCreating && (
         <div className={cn(
-          "text-sm mt-2",
-          !initialData.chapters.length && "text-primary/70 italic"
+          "text-baseContent/70 mt-2 text-sm",
+          !initialData.chapters.length
         )}>
           {!initialData.chapters.length && "No chapters"}
           <ChaptersList
