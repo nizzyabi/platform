@@ -77,7 +77,7 @@ const CourseInfoLayout = async ({
               <Image 
                 height={400} 
                 width={400} 
-                src={`${course?.imageUrl}`}
+                src={`${course?.buildingImage}`}
                 alt='app'
                 className="object-cover h-full w-full"
               />

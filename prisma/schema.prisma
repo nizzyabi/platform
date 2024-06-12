@@ -69,7 +69,10 @@ model Course {
   userId String
   title String @db.Text
   description String? @db.Text
+  
   imageUrl String? @db.Text
+  buildingImage String? @db.Text
+
   introVideo String? @db.Text
 
   // language being used
