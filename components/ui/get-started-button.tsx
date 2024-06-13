@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 
@@ -6,7 +5,6 @@ interface ButtonProps {
   className?: string
   href: string
   children?: ReactNode
-  withArrow?: boolean
   target?: string
 }
 
@@ -14,7 +12,6 @@ const PrimaryButton = ({
   href,
   className,
   children,
-  withArrow = true,
   target = '_self'
 }: ButtonProps) => {
   return (
