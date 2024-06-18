@@ -124,7 +124,7 @@ export default async function LandingPage() {
         </div>
       </div>
 
-      <div className="text-center space-y-5 px-2" id="testimonials">
+      <div className="text-center space-y-5 px-2 scroll-mt-8" id="testimonials">
         <h1 className="text-baseContent text-5xl md:text-5xl lg:text-6xl font-bold">
           {users} Happy Developers
         </h1>

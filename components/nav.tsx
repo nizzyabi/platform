@@ -23,7 +23,7 @@ export default function Navbar() {
               Courses
             </Link>
             <Link
-              href="#testimonials"
+              href="/#testimonials"
               className="flex items-center hover:bg-white/[0.025] h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
             >
               Testimonials
