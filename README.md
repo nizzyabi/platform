@@ -23,11 +23,11 @@ Installing modules and dependencies:
 
     npm install --save-dev
 
-Running the local development server
+Running the local development server:
 
     npm run dev
 
-You should now be able to see the project up and running at http://localhost:3000/
+You should now be able to see the project up and running at http://localhost:3000/.
 
 ## Running the tests
 
