@@ -16,6 +16,7 @@ import { DifficultyForm } from "./_components/difficulty";
 import { GithubForm } from "./_components/github-link";
 import { CodeLanguageForm } from "./_components/code-language-form";
 import { IntroVideoForm } from "./_components/intro-video";
+import { BuildingImageForm } from "./_components/building-image-form";
 
 const CoursesIdPage = async ({
   params
@@ -56,6 +57,7 @@ const CoursesIdPage = async ({
     course.title,
     course.description,
     course.imageUrl,
+    course.buildingImage,
     course.learningOutcome,
     course.included,
     course.difficulty,
@@ -80,7 +82,7 @@ const CoursesIdPage = async ({
   
   return (
     <>
-      <div className="lg:px-[250px] md:px-[50px] sm:px-6 pt-40">
+      <div className="lg:px-[250px] md:px-[50px] sm:px-6 py-20">
         {/* Title */}
         <div className="flex items-center justify-center">
           <div className="w-full">
@@ -136,6 +138,10 @@ const CoursesIdPage = async ({
                 courseId={course.id}
               />
               <ImageForm
+                initialData={course}
+                courseId={course.id}
+              />
+              <BuildingImageForm 
                 initialData={course}
                 courseId={course.id}
               />

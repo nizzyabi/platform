@@ -62,10 +62,10 @@ export const ChapterCodeForm = ({
       }
     
     return (
-        <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+        <div className="mt-6 rounded-lg p-5  shadow-xl bg-base100">
             <div className="font-semibold flex items-center justify-between text-xl">
                 Chapter Code
-                <Button onClick={toggleEdit}>
+                <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
                     {isEditing ? (
                         <>Cancel</>
                     ) : (
@@ -73,13 +73,13 @@ export const ChapterCodeForm = ({
                         <p>Edit</p>
                     </>
                     )}
-                </Button>
+                </button>
             </div>
             {!isEditing && (
                 <div className="flex justify-between">
                     <p className={cn(
-                        "flex text-primary/70 mt-2 text-sm",
-                        !initialData.code && "text-primary/70 italic text-sm"
+                        "flex text-baseContent/70 mt-2 text-sm",
+                        !initialData.code
                         )}>
                         {initialData.code || "No code"}
                     </p>
@@ -101,21 +101,21 @@ export const ChapterCodeForm = ({
                                     disabled={isSubmitting}
                                     placeholder="e.g. 'console.log('Hello World')"
                                     {...field}
-                                    className="bg-secondary border-primary/20"
+                                    className="bg-base200 border-baseContent/20 text-baseContent"
                                     />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <Button
+                    <button
                     disabled={!isValid || isSubmitting}
                     type="submit"
-                    className=" flex"
-                    variant="basic"
+                    className="flex btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100"
+                    
                     >
                         Save
-                    </Button>
+                    </button>
                 </form>
                 </Form>
             )}

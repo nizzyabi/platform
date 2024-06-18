@@ -61,10 +61,10 @@ export const VimeoVideoForm = ({
   }
 
   return (
-    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+    <div className="mt-6 rounded-lg p-5  shadow-xl bg-base100">
       <div className="font-semibold flex items-center justify-between text-xl">
         Vimeo Video Link
-        <Button onClick={toggleEdit}>
+        <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
           {isEditing ? (
             <>Cancel</>
           ) : (
@@ -72,12 +72,12 @@ export const VimeoVideoForm = ({
             <p>Edit</p>
           </>
           )}
-        </Button>
+        </button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "flex text-primary/70 mt-2 text-sm",
-          !initialData.vimeoVideo && "text-primary/70 italic text-sm"
+          "flex text-baseContent/70 mt-2 text-sm",
+          !initialData.vimeoVideo
         )}>
           {initialData.vimeoVideo || "No description"}
         </p>
@@ -98,21 +98,21 @@ export const VimeoVideoForm = ({
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
-                      className="bg-secondary border-primary/20"
+                      className="bg-base200 border-baseContent/20 text-baseContent"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button
+            <button
               disabled={!isValid || isSubmitting}
               type="submit"
-              className=" flex"
-              variant="basic"
+              className="flex btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100"
+              
             >
               Save
-            </Button>
+            </button>
           </form>
         </Form>
       )}

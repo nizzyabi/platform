@@ -48,7 +48,7 @@ const CourseLayout = async ({
   const progressCount = getProgress(session?.user.id ?? '', course.id)
 
   return (
-    <div className="sm:mt-20 md:mt-[120px] max-w-[1600px] mx-auto ">
+    <div className="md:mt-20 max-w-7xl mx-auto">
       <CourseNavbar 
         course={course}
         progressCount={progressCount}

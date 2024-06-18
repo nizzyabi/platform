@@ -62,10 +62,10 @@ export const ChapterAccessForm = ({
   }
 
   return (
-    <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+    <div className="mt-6 rounded-lg p-5  shadow-xl bg-base100">
       <div className="font-semibold flex items-center justify-between text-xl">
         Chapter Access
-        <Button onClick={toggleEdit}>
+        <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
           {isEditing ? (
             <>Cancel</>
           ) : (
@@ -73,12 +73,12 @@ export const ChapterAccessForm = ({
             <p>Edit</p>
           </>
           )}
-        </Button>
+        </button>
       </div>
       {!isEditing && (
         <p className={cn(
-          "flex text-primary/70 mt-2 text-sm",
-          !initialData.isFree && "text-primary/70 italic text-sm"
+          "flex text-baseContent/70 mt-2 text-sm",
+          !initialData.isFree
         )}>
           {initialData.isFree ? (
             <>This chapter is free for preview.</>
@@ -102,11 +102,11 @@ export const ChapterAccessForm = ({
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
-                      className="bg-primary rounded "
+                      className="bg-base200 border-baseContent/20 text-baseContent"
                     />
                   </FormControl>
-                  <div className="space-y-1 leading-none ">
-                    <FormDescription>
+                  <div className="space-y-2 leading-none mt-3">
+                    <FormDescription className="mt-3">
                       Check if you want to make this chapter free
                     </FormDescription>
                   </div>
@@ -114,14 +114,13 @@ export const ChapterAccessForm = ({
               )}
             />
             <div className="flex items-center gap-x-2">
-              <Button
+              <button
                 disabled={!isValid || isSubmitting}
                 type="submit"
-                className=" flex"
-                variant="basic"
+                className="flex btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100"
               >
                 Save
-              </Button>
+              </button>
             </div>
           </form>
         </Form>

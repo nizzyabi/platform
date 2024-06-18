@@ -65,8 +65,8 @@ export const columns: ColumnDef<Course>[] = [
 
       return (
         <Badge className={cn(
-          "bg-primary/30 text-white hover:bg-primary/30",
-          isPublished && "bg-gradient-to-r from-indigo-500 to-purple-500 text-white"
+          "bg-primary text-base100",
+          isPublished && "bg-primary text-base100"
         )}>
           {isPublished ? "Published" : "Draft"}
         </Badge>
@@ -81,9 +81,7 @@ export const columns: ColumnDef<Course>[] = [
       return (
         
           <Link href={`/courses/${id}`}>
-            <Button variant="ghost" className="h-4 w-8 p-0">
-              <MoreHorizontal className="h-4 w-4"/>
-            </Button>
+            <MoreHorizontal className="h-4 w-4"/>
           </Link>
           
       )

@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 
 //interface 
 interface TitleFormProps {
@@ -64,10 +64,10 @@ export const TitleForm = ({
   }
 
   return (
-  <div className="mt-6 border border-primary/20 shadow-md bg-secondary bg-opacity-95 rounded-[5px] p-4">
+  <div className="mt-6 rounded-lg p-5 shadow-xl bg-base100">
   <div className="font-semibold flex items-center justify-between text-xl">
     Title
-    <Button onClick={toggleEdit} >
+    <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
       {isEditing ? (
         <>Cancel</>
       ) : (
@@ -75,14 +75,12 @@ export const TitleForm = ({
           <p>Edit</p>
         </>
       )}
-    </Button>
+    </button>
   </div>
   {!isEditing && (
-    <div className="flex justify-between">
-    <p className="text-primary/70 mt-2 text-sm">
-      {initialData.title}
-    </p>
-    </div>
+    <p className="text-baseContent/70 mt-2 text-sm text-left">
+    {initialData.title}
+  </p>
   )}
   {isEditing && (
     <Form {...form}>
@@ -100,7 +98,7 @@ export const TitleForm = ({
                   disabled={isSubmitting}
                   placeholder="e.g. 'Advanced web development'"
                   {...field}
-                  className="bg-secondary border-primary/20"
+                  className="bg-base200 border-baseContent/20 text-baseContent"
                 />
               </FormControl>
               <FormMessage />
@@ -108,14 +106,13 @@ export const TitleForm = ({
           )}
         />
         
-          <Button
+          <button
             disabled={!isValid || isSubmitting}
             type="submit"
-            className=" flex"
-            variant="basic"
+            className="flex btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100"
           >
             Save
-          </Button>
+          </button>
         
       </form>
     </Form>

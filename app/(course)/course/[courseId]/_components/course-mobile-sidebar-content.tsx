@@ -33,18 +33,17 @@ export const CourseMobileSidebarContent = async ({
       }
     });
   return (
-    <div className="md:flex ">
+    <div className="md:flex bg-base100 min-h-full">
       <div className='pt-12'>
         {purchase && (
           <div>
-
             <CourseProgress
             variant="default"
             value={progressCount}
             />
           </div>
         )}
-      <ScrollArea className="flex flex-col h-[500px] w-30 w-full overflow-x-auto pr-5">
+      <div className="flex flex-col w-30 w-full overflow-x-auto pr-5 overflow-visible ml-3">
         {course.chapters.map((chapter) => (
           <CourseSidebarItem
             key={chapter.id}
@@ -55,7 +54,7 @@ export const CourseMobileSidebarContent = async ({
             isLocked={!chapter.isFree && !purchase}
           />
         ))}
-      </ScrollArea>
+      </div>
     </div>
   </div>
   )

@@ -3,31 +3,28 @@
 import * as z from "zod";
 import axios from "axios";
 import { ImageIcon } from "lucide-react";
-import AutoFixNormalIcon from '@mui/icons-material/AutoFixNormal';
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
 import Image from "next/image";
-
-import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/upload-file";
 
-interface ImageFormProps {
+interface BuildingImageFormProps {
   initialData: Course
   courseId: string;
 };
 
 const formSchema = z.object({
-  imageUrl: z.string().min(1, {
+  buildingImage: z.string().min(1, {
     message: "Image is required",
   }),
 });
 
-export const ImageForm = ({
+export const BuildingImageForm = ({
   initialData,
   courseId
-}: ImageFormProps) => {
+}: BuildingImageFormProps) => {
   
   const [isEditing, setIsEditing] = useState(false);
 
@@ -49,7 +46,7 @@ export const ImageForm = ({
   return (
     <div className="mt-6 rounded-lg p-5 shadow-xl bg-base100">
       <div className="font-semibold flex items-center justify-between text-xl">
-        Course Image
+        Building Image
         <button onClick={toggleEdit} className="btn rounded-lg h-4 bg-primary hover:bg-primary/70 border-none text-slate-100">
           {isEditing ? (
             <>Cancel</>
@@ -61,7 +58,7 @@ export const ImageForm = ({
         </button>
       </div>
       {!isEditing && (
-        !initialData.imageUrl ? (
+        !initialData.buildingImage ? (
           <div className="flex items-center justify-center h-60 mt-4 rounded">
             <ImageIcon className="h-10 w-10" />
           </div>
@@ -71,7 +68,7 @@ export const ImageForm = ({
               alt="Upload"
               fill
               className="object-cover rounded-md"
-              src={initialData.imageUrl}
+              src={initialData.buildingImage}
             />
           </div>
         )
@@ -82,7 +79,7 @@ export const ImageForm = ({
             endpoint="courseImage"
             onChange={(url) => {
               if (url) {
-                onSubmit({ imageUrl: url });
+                onSubmit({ buildingImage: url });
               }
             }}
           />

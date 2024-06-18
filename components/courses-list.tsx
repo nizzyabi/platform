@@ -23,8 +23,7 @@ export const CoursesList = async ({
     return (
         <div>
             
-           
-            <div className=' py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 max-w-[1600px] mx-auto px-12'>
+            <div className=' py-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto px-4 lg:px-0'>
                 {items.map((item) => (
                     <CourseCard 
                         key={item.id}
@@ -35,6 +34,7 @@ export const CoursesList = async ({
                         progress={item.progress}
                         description={item.description!}
                         price={item.price!}
+                        createdAt={item.createdAt}
                     />
                 ))}
             </div>

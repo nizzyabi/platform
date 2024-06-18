@@ -19,7 +19,7 @@ const buttonVariants = cva(
         discord:
           ' hover:opacity-70 rounded-full my-4 bg-[#738ADB] text-slate-100',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'text-baseContent underline-offset-4 hover:underline',
         goldHover:
           'border-2 border-white rounded-xl my-3 bg-slate-100 text-black hover:text-slate-100 hover:bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 font-medium hover: border-none',
         basic:
@@ -38,7 +38,7 @@ const buttonVariants = cva(
       size: {
         default: 'px-4 py-1.5',
         sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
+        lg: 'h-11 rounded-[6px] px-8',
         brand: 'h-10 w-[110px]',
         icon: 'h-10 w-10'
       }

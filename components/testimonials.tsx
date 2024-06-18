@@ -83,9 +83,9 @@ const testimonials = [
 
 export function TestimonialCard() {
   return (
-    <div className="w-fit mx-auto max-w-4xl">
+    <div className="w-fit mx-auto max-w-7xl">
       <ResponsiveMasonry
-        className="flex w-full mx-auto justify-start"
+        className="flex mx-auto justify-start"
         columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
       >
         <Masonry gutter="1.5rem" className="masonry-grid">
@@ -94,11 +94,11 @@ export function TestimonialCard() {
               className="flex h-full cursor-default"
               key={testimonial.username}
             >
-              <div className="bg-secondary relative group/card border-primary/20 h-full rounded-xl px-5 py-4 border ">
+              <div className="bg-base100 relative group/card border-slate-100/20 h-full rounded-lg px-5 py-4 border-2 ">
                 <div className="flex justify-between">
                   <div
                     
-                    className="text-base sm:text-xl font-bold text-primary/70 flex space-between items-center"
+                    className="text-base sm:text-xl font-bold text-baseContent flex space-between items-center"
                   >
                     <div className="flex gap-2 items-center">
                       <Avatar
@@ -106,20 +106,15 @@ export function TestimonialCard() {
                         alt={`${testimonial.username}s Avatar`}
                       />
                       <span className="flex gap-0.5 items-center">
-                        <AtSign className="w-5 h-5 text-primary/70" />
-                        {testimonial.username}
+                        
+                        @{testimonial.username}
                       </span>
                     </div>
                   </div>
-                  <div
-                    
-                    className="text-xl font-bold text-primary flex space-between items-center"
-                  >
-                     
-                  </div>
+                  
                 </div>
 
-                <div className="font-medium pt-4 opacity-50">
+                <div className="font-medium pt-4 text-baseContentSecondary opacity-70">
                   <p>"{testimonial.message}"</p>
                 </div>
               </div>

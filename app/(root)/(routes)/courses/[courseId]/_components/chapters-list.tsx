@@ -82,12 +82,13 @@ export const ChaptersList = ({
                 key={chapter.id} 
                 draggableId={chapter.id} 
                 index={index}
+                
               >
                 {(provided) => (
                   <div
                     className={cn(
-                      "flex items-center gap-x-2 border rounded mb-4 text-sm bg-primary text-primary",
-                      chapter.isPublished && "bg-primary/30 border-primary/20 text-primary"
+                      "flex items-center gap-x-2  rounded mb-4 text-sm bg-primary/30 text-baseContent",
+                      chapter.isPublished && "bg-primary/30 border-primary/20 text-baseContent"
                     )}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
@@ -100,20 +101,20 @@ export const ChaptersList = ({
                       {...provided.dragHandleProps}
                     >
                       <Grip
-                        className="h-5 w-5 text-primary"
+                        className="h-5 w-5 text-baseContent"
                       />
                     </div>
                     {chapter.title}
                     <div className="ml-auto pr-2 flex items-center gap-x-2">
                       {chapter.isFree && (
-                        <Badge className="bg-primary text-secondary">
+                        <Badge className="bg-primary text-white">
                           Free
                         </Badge>
                       )}
                       <Badge
                         className={cn(
                           "bg-primary text-white",
-                          chapter.isPublished && "bg-gradient-to-r from-pink-500 to-purple-500"
+                          chapter.isPublished && "bg-primary"
                         )}
                       >
                         {chapter.isPublished ? "posted" : "draft"}

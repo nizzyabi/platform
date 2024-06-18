@@ -48,7 +48,7 @@ const ChapterIdPage = async ({
   return (
     <>
       
-      <div className="lg:px-[250px] md:px-[50px] sm:px-6 pt-40">
+      <div className="lg:px-[250px] md:px-[50px] sm:px-6 py-20">
         <div className="flex items-center justify-between">
           <div className="w-full">
             <div className="flex justify-between">
@@ -73,7 +73,7 @@ const ChapterIdPage = async ({
                 <h1 className="text-5xl font-bold">
                   Chapter Creation
                 </h1>
-                <span className="text-md text-slate-300 text-center">
+                <span className="text-md text-baseContent text-center">
                   Complete all fields {completionText}
                   
                 </span>
@@ -96,7 +96,7 @@ const ChapterIdPage = async ({
               <div className="flex items-center gap-x-2">
                 
                 <h2 className="text-3xl font-bold">
-                  Customize chapter
+                  Customize Chapter
                 </h2>
               </div>
               <ChapterTitleForm

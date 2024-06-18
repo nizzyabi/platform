@@ -69,7 +69,10 @@ model Course {
   userId String
   title String @db.Text
   description String? @db.Text
+  
   imageUrl String? @db.Text
+  buildingImage String? @db.Text
+
   introVideo String? @db.Text
 
   // language being used
@@ -162,10 +165,9 @@ model Purchase {
 
   courseId String
   course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
-
+  
   @@unique([userId, courseId])
   @@index([courseId])
 }

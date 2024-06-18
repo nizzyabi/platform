@@ -5,9 +5,9 @@ import { Separator } from './ui/separator'
 
 export default function Courses() {
   return (
-    <div className="flex flex-col gap-2 items-center pt-40">
-      <span className="text-6xl font-bold">Courses</span>
-      <span className="font-medium text-md text-primary/40">
+    <div className="flex flex-col gap-2 items-center pt-20">
+      <span className="text-6xl font-bold text-baseContent">Courses</span>
+      <span className="font-medium text-md text-baseContentSecondary">
         Checkout our free & paid courses below!
       </span>
       <div className="flex items-center justify-center">
