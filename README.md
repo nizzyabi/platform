@@ -9,7 +9,8 @@ your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Requirements for the software and other tools to build, test, and push 
+Requirements for the software and other tools to build, test, and push:
+
 - [NPM](https://www.npmjs.com/) (or any other package manager)
 
 Note: In case you use another package manager, research the equivalent commands for your package manager.
@@ -17,17 +18,17 @@ Note: In case you use another package manager, research the equivalent commands 
 ### Installing
 
 A step-by-step series of examples that tell you how to get a development
-environment running
+environment running.
 
 Installing modules and dependencies:
 
     npm install --save-dev
 
-Running the local development server
+Running the local development server:
 
     npm run dev
 
-You should now be able to see the project up and running at http://localhost:3000/
+You should now be able to see the project up and running at http://localhost:3000/.
 
 ## Running the tests
 
@@ -54,8 +55,8 @@ If that is not the case, you can adjust your code to match the project's code fo
 
 ## Built With
 
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
-  - [GNU](https://www.gnu.org/) - Used to choose the license
+- [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
+- [GNU](https://www.gnu.org/) - Used to choose the license
 
 ## Contributing
 
@@ -64,7 +65,7 @@ of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-  - **Nizar Abi** - *Project owner* - [NizarAbiZaher](https://github.com/NizarAbiZaher)
+- **Nizar Abi** - _Project owner_ - [NizarAbiZaher](https://github.com/NizarAbiZaher)
 
 See also the list of
 [contributors](https://github.com/NizarAbiZaher/platform/graphs/contributors)
@@ -76,4 +77,4 @@ This project is licensed under the GNU General Public License Version 3 - see th
 
 ## Acknowledgments
 
-  - [dpaulos6](https://github.com/dpaulos6) - *Styling and project cleanup, README writer*
+- [dpaulos6](https://github.com/dpaulos6) - _Styling and project cleanup, README writer_
