@@ -14,6 +14,12 @@ const ChapterIdPage = async ({
     params: { courseId: string; chapterId: string; }
 }) => {
     const session = await auth();
+    const handleLinkClick = (e:any) => {
+        if (!session) {
+            e.preventDefault();
+            
+        }
+    };
    
     const {
         chapter,
@@ -110,7 +116,6 @@ const ChapterIdPage = async ({
                     <div className="flex item-center justify-center">
                         <p className="text-center text-5xl">{link.icon}</p>
                     </div>
-                    
                 </Link>
             ))}     
         </div>

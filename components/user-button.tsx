@@ -1,24 +1,12 @@
 // User Button Avatar
 'use client'
-import { Button } from '@/components/ui/button'
 import { Avatar } from '@mui/material'
-import Link from 'next/link'
 import { useCurrentUser } from '@/hooks/user-current-user'
 import { useRouter } from 'next/navigation'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Github, LogOut, LogOutIcon, Youtube } from 'lucide-react'
-import { signOut, useSession } from 'next-auth/react'
-import { FaDiscord, FaYoutube, FaGithub } from 'react-icons/fa'
-import { useState } from 'react'
-import { Separator } from './ui/separator'
+import { LogOut, LogOutIcon } from 'lucide-react'
+import { signIn, signOut } from 'next-auth/react'
+import { FaGithub } from 'react-icons/fa'
+import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
 
 const UserButton = () => {
   const session = useCurrentUser()
@@ -27,6 +15,17 @@ const UserButton = () => {
     signOut()
     router.push('/auth/login')
   }
+  const handleOpenModal = () => {
+    const modal = document.getElementById('my_modal_2') as HTMLDialogElement | null;
+    if (modal) {
+      modal.showModal();
+    }
+};
+const onClick = (provider: 'github') => {
+  signIn(provider, {
+    callbackUrl: DEFAULT_LOGIN_REDIRECT
+  })
+}
   const style = {
     width: {
       xs: 35,
@@ -43,20 +42,25 @@ const UserButton = () => {
     <>
       {!session ? (
         <>
-          <Link
-            href="/auth/register"
-            className="flex md:hidden items-center justify-center rounded-lg cursor-pointer transition duration-300 hover:bg-black/10 px-2 py-2 max-h-10"
-          >
-            <LogOut className="text-baseContent h-5.5 w-5 ml-1" />
-          </Link>
-
-          <Link
-            href="/auth/register"
-            type="submit"
-            className="px-5 py-2 font-semibold rounded-[6px] bg-primary text-base100 h-full hidden md:flex"
-          >
-            Sign Up
-          </Link>
+          <button className=" flex md:hidden" onClick={handleOpenModal}>
+            <LogOut className=" text-baseContent h-5.5 w-5 ml-1" />
+          </button>
+          <button onClick={handleOpenModal} className='hidden md:flex btn bg-primary border-none text-base100 hover:bg-primary'>
+            Login
+          </button>
+          <dialog id="my_modal_2" className="modal text-baseContent bg-base100/10">
+            <div className="modal-box text-baseContent bg-base100">
+              <form method="dialog">
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <h1 className='text-center font-bold text-lg'>Login</h1>
+              <p className='text-center mt-2 text-sm'>Create an account to access the full platform</p>               
+              <button onClick={() => onClick('github')} className='w-full btn bg-primary border-none text-base100 hover:bg-primary mt-4'><FaGithub className='h-6 w-6'/> Login With Github</button>          
+            </div>
+            <form method="dialog" className="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
         </>
       ) : (
         <div className="dropdown dropdown-end">
