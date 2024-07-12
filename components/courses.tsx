@@ -10,9 +10,7 @@ export default function Courses() {
       <span className="font-medium text-md text-baseContentSecondary">
         Checkout our free & paid courses below!
       </span>
-      <div className="flex items-center justify-center">
-        <Separator className="mt-8 bg-primary/20 h-0.5 w-40" />
-      </div>
+      
     </div>
   )
 }
