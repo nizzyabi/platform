@@ -24,12 +24,6 @@ export default function Navbar() {
               >
                 Courses
               </Link>
-              <Link
-                href="#testimonials"
-                className="flex items-center hover:bg-black/10 h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
-              >
-                Testimonials
-              </Link>
             </div>
             <div className="flex items-center gap-1 md:gap-4">
               <UserButton />
