@@ -22,12 +22,12 @@ export default function Navbar() {
             >
               Courses
             </Link>
-            <Link
+            {/* <Link
               href="/#testimonials"
               className="flex items-center hover:bg-white/[0.025] h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
             >
               Testimonials
-            </Link>
+            </Link> */}
             <UserButton />
           </div>
         </div>

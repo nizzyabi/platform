@@ -8,8 +8,8 @@ import { LoginSchema } from "./schemas"
 import { getUserByEmail } from "@/data/user"
 
 export default {
+  // Google & Github providers
   providers: [
-    // OAuth authentication providers... the raw data is found at /api/auth/providers
     Github({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -19,16 +19,16 @@ export default {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     
     }),
-
     Credentials({
       async authorize(credentials) {
+        // Validate the credentials given by the user
         const validatedFields = await LoginSchema.safeParse(credentials)
 
         if (validatedFields.success) {
           const { email, password } = validatedFields.data;
 
           const user = await getUserByEmail(email);
-          // by no password I mean that the user is using a social login (Google, Github, etc.)
+        
           if(!user || !user.password) return null;
 
           // check if passwords match

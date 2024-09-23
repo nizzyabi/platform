@@ -14,6 +14,12 @@ const ChapterIdPage = async ({
     params: { courseId: string; chapterId: string; }
 }) => {
     const session = await auth();
+    const handleLinkClick = (e:any) => {
+        if (!session) {
+            e.preventDefault();
+            
+        }
+    };
    
     const {
         chapter,
@@ -106,11 +112,10 @@ const ChapterIdPage = async ({
         )}
         <div className="flex items-center justify-end space-x-5 pt-8">
             {links.map((link) => (
-                <Link href={link.href} key={link.href} className="bg-base100 px-2 py-2 rounded-[5px] hover:opacity-80 transition duration-300 border border-slate-100/20 shadow-xl">
+                <Link href={link.href} key={link.href} className="btn bg-baseContent hover:bg-baseContent h-20 border-none shadow-xl">
                     <div className="flex item-center justify-center">
                         <p className="text-center text-5xl">{link.icon}</p>
                     </div>
-                    
                 </Link>
             ))}     
         </div>

@@ -72,15 +72,11 @@ model Course {
   
   imageUrl String? @db.Text
   buildingImage String? @db.Text
-
   introVideo String? @db.Text
 
   // language being used
   courseLanguage String?
-
   language String?
-  
-
   description2 String?
   included String?
   difficulty String?
@@ -88,7 +84,6 @@ model Course {
   price Float?
   isPublished Boolean @default(false)
   learningOutcome String? 
-
 
   chapters Chapter[]
 

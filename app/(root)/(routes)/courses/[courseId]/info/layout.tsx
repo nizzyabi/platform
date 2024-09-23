@@ -57,9 +57,10 @@ const CourseInfoLayout = async ({
             </div>
         
             <div className='flex-1 flex flex-col items-center justify-center mb-4 mt-8'>
-              <PrimaryButton href={`/course/${course?.id}`}>
+                <PrimaryButton href={`/course/${course?.id}`}>
                 Go To Course
               </PrimaryButton>
+              
             </div>
           </div>
 
@@ -184,9 +185,10 @@ const CourseInfoLayout = async ({
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {course?.chapters.map((chapter, index) => (
                   <Link href={`/course/${course?.id}/chapter/${chapter.id}`} key={chapter.id}>
-                    <div className="bg-[#0F0F0F] border-2 border-slate-100/20 rounded-[5px] w-full p-6 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out">
-                      <div className="flex">
-                        <h2 className="text-2xl font-bold text-baseContent mb-4"><span className="mr-2 font-extrabold text-2xl opacity-40">{index + 1 <= 9 ? `0${index +  1}` : index + 1}</span>{chapter.title}</h2>
+                    <div className="bg-base100 border-2 border-primary rounded-lg w-full p-6 flex flex-col hover:bg-opacity-80 transition duration-300 ease-in-out indicator">
+                    <span className="indicator-item badge badge-primary text-base100 text-xl font-bold rounded-full h-8 w-8">{index + 1 <= 9 ? `${index +  1}` : index + 1}</span>
+                      <div className="flex justify-start">
+                        <h2 className="text-2xl font-bold text-baseContent mb-4">{chapter.title}</h2>
                       </div>
                       <p className="opacity-50 flex">{chapter.description}</p>
                     </div>
