@@ -18,16 +18,10 @@ export default function Navbar() {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href="/courses"
-              className="flex items-center hover:bg-white/[0.025] h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
+              className="flex items-center hover:bg-white/[0.025] h-12 transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
             >
               Courses
             </Link>
-            {/* <Link
-              href="/#testimonials"
-              className="flex items-center hover:bg-white/[0.025] h-full transition duration-300 px-2 sm:px-4 rounded-lg py-2 font-semibold"
-            >
-              Testimonials
-            </Link> */}
             <UserButton />
           </div>
         </div>
