@@ -18,7 +18,7 @@ export default function Footer() {
         <h6 className="footer-title">Socials</h6>
         <div className="grid grid-flow-col gap-4">
           <Link
-            href="https://github.com/NizarAbiZaher"
+            href="https://github.com/nizzyabi"
             className="hover:text-primary transition duration-200"
           >
             <BsGithub className="h-7 w-7" />
